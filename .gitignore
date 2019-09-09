@@ -1,3 +1,7 @@
+## Custom ##
+*.tmp
+
+## C++ Gitignore ##
 # Prerequisites
 *.d
 
