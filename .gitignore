@@ -1,5 +1,7 @@
 ## Custom ##
 *.tmp
+*.vscode
+*.DS_Store
 
 ## C++ Gitignore ##
 # Prerequisites
