@@ -1,0 +1,13 @@
+Spring/target/*
+.settings/*
+.classpath
+.project
+.idea
+*.iml
+/target
+_site/
+*.log
+*.gz
+*.swp
+.mvn/
+/bin/
