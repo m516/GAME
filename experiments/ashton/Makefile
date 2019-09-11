@@ -6,5 +6,5 @@ main: main.o
 main.o: main.cpp
 	g++ -c -Wall -Werror -g main.cpp -o main.o -lm
 
-clear:
+clean:
 	rm -f main *~ *.o
