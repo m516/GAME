@@ -92,7 +92,34 @@ Repeat this process for all your project deployment configurations. What fun!
 ![Image](documents/RPi/Development/images/12.png)
 
 ## 6. Deploy/Debug the code
-Write your code...
+Write your code. If you don't have any or would just like to test your setup, use the following code:
+```
+//Source: https://www.sfml-dev.org/tutorials/2.5/start-linux.php
+#include <SFML/Graphics.hpp>
+
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
+
+    return 0;
+}
+```
 ![Image](documents/RPi/Development/images/13.png)
 
 ...and (hopefully) SFML works on your Pi!
