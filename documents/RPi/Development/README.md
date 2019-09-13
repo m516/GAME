@@ -9,13 +9,15 @@ More info can be found at the
 
 ## 2. Prepare Your Pi
 ### Initial Pi Setup
-TODO document initial Pi setup (expand filesystem, set OpenGL driver, etc.)
+* [Install Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+* Use [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) to expand the Pi's filesystem, enable SSH, set the GPU memory to something decent and set the GL driver to "full KMS" to acclerate graphics with the GPU.
 
-### SSH Setup
-TODO document SSH server/client preparation
-
-### Install C++ Development Packages
-TODO document C++ compiler/debugger
+**Cool Pi hack:** raspi-config doesn't need the interactive menus. You can do most of the same things with commands such as these [(Source)](https://github.com/l10n-tw/rc_gui/blob/master/src/rc_gui.c):
+```
+raspi-config nonint do_expand_rootfs
+raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
+raspi-config nonint do_ssh 1
+```
 
 ### Install SFML
 For this project, we need to use the SFML libraries for our Pi. There is a special repository for this library [here](https://github.com/mickelson/sfml-pi).
@@ -47,15 +49,17 @@ Name your project and give it a home
 
 Study how this project works and read the built-in README very well. 
 It will be your friend as you setup your Pi.
+
+Also, deploy the code that already exists in the project. In doing so, you will build the code for the first time. This build will trigger a configuration dialog specific to your instance of Visual Studio that asks for the hostname/password of your Pi. If you fill these out correctly, Visual Studio will connect to the Raspberry Pi via SSH and install its own packages on your Pi.These packages will enable you to remotely deploy and debug your code. Once it has successfully deployed, you proably won't need the pre-existing C++ code in this project anymore, so you can get rid if it.
 ![Image](documents/RPi/Development/images/05.png)
 
 ## 5. Configure Your Project
+Right now, your project is set up to use the WiringPi library that came with the Pi's OS. Our project relies on [SFML](https://www.sfml-dev.org/), and that is a library that must be installed on your Pi and is not registered by Visual Studio. This section is dedicated to configuring the Pi and Visual Studio to support remote development with the SFML library.
+
 Go to the Properties editor for your new project.
 ![Image](documents/RPi/Development/images/06.png)
 
-A window like this should pop up. Go to the Linker/Input setting
-to configure the libraries that should be included when Visual
-Studio builds your code.
+A window like this should pop up. Go to the Linker/Input setting to configure the libraries that should be included when Visual Studio builds your code.
 ![Image](documents/RPi/Development/images/07.png)
 
 Edit the Library Dependencies option if necessary. 
