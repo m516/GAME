@@ -52,7 +52,9 @@ Name your project and give it a home
 Study how this project works and read the built-in README very well. 
 It will be your friend as you setup your Pi.
 
-Also, deploy the code that already exists in the project. In doing so, you will build the code for the first time. This build will trigger a configuration dialog specific to your instance of Visual Studio that asks for the hostname/password of your Pi. If you fill these out correctly, Visual Studio will connect to the Raspberry Pi via SSH and install its own packages on your Pi.These packages will enable you to remotely deploy and debug your code. Once it has successfully deployed, you proably won't need the pre-existing C++ code in this project anymore, so you can get rid if it.
+Also, deploy the code that already exists in the project. In doing so, you will build the code for the first time. This build will trigger a configuration dialog specific to your instance of Visual Studio that asks for the hostname/password of your Pi. If you ever need to get back to this dialog, go to *tools/options*, and under *Cross Platform/Conection Manager*, you can edit your SSH connections.
+
+If you fill these out correctly, Visual Studio will connect to the Raspberry Pi via SSH and install its own packages on your Pi. These packages will enable you to remotely deploy and debug your code. Once it has successfully deployed, you will notice that GPIO pin 17 should turn off and on as written in *main.cpp*. When this happens, Visual Studio has successfully connected to your Pi via SSH, deployed its code to the Pi, and executed it. Now you can start configuring your project so you can developing your own code!
 
 ![Pressing the circled button will cause the configuration dialog to appear](documents/RPi/Development/images/05.png)
 
@@ -108,7 +110,9 @@ Repeat this process for all your project deployment configurations. What fun!
 
 ## 7. Writing and Deploying Programs
 
-Write your code. If you don't have any or would just like to test your setup, use the following code:
+Write your code. Note that the function initially executed is *int main* in the file *main.cpp*, which may still be occupied by the Blink program. If you don't want the Pi to blink an LED, you can modify the source code or remove it entirely so you have an empty *main* function.
+
+If you don't have any or would just like to test your setup, use the following code:
 
 ```
 //Source: https://www.sfml-dev.org/tutorials/2.5/start-linux.php
