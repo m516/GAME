@@ -16,7 +16,7 @@ More info can be found at the
 ```
 raspi-config nonint do_expand_rootfs
 raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
-raspi-config nonint do_ssh 1
+raspi-config nonint do_ssh 0
 ```
 
 ### Install SFML
@@ -34,36 +34,44 @@ sudo ldconfig
 
 ## 3. Configure Visual Studio
 Run Visual Studio Installer to modify your version of Visual Studio
-![Image](documents/RPi/Development/images/01.png)
+![Visual Studio Installer](documents/RPi/Development/images/01.png)
 
 Install the "Linux Development with C++" workload and open Visual
 Studio after it's done installing
-![Image](documents/RPi/Development/images/02.png)
+![Installing the "Linux Development with C++" workload](documents/RPi/Development/images/02.png)
 
 ## 4. Create a New Visual Studio Project
 For this project, we'll use the "Raspberry Pi Blink" template
-![Image](documents/RPi/Development/images/03.png)
+
+![Raspberry Pi Blink Template](documents/RPi/Development/images/03.png)
 
 Name your project and give it a home
-![Image](documents/RPi/Development/images/04.png)
+
+![Naming the Project](documents/RPi/Development/images/04.png)
 
 Study how this project works and read the built-in README very well. 
 It will be your friend as you setup your Pi.
 
-Also, deploy the code that already exists in the project. In doing so, you will build the code for the first time. This build will trigger a configuration dialog specific to your instance of Visual Studio that asks for the hostname/password of your Pi. If you fill these out correctly, Visual Studio will connect to the Raspberry Pi via SSH and install its own packages on your Pi.These packages will enable you to remotely deploy and debug your code. Once it has successfully deployed, you proably won't need the pre-existing C++ code in this project anymore, so you can get rid if it.
-![Image](documents/RPi/Development/images/05.png)
+Also, deploy the code that already exists in the project. In doing so, you will build the code for the first time. This build will trigger a configuration dialog specific to your instance of Visual Studio that asks for the hostname/password of your Pi. If you ever need to get back to this dialog, go to *tools/options*, and under *Cross Platform/Conection Manager*, you can edit your SSH connections.
+
+If you fill these out correctly, Visual Studio will connect to the Raspberry Pi via SSH and install its own packages on your Pi. These packages will enable you to remotely deploy and debug your code. Once it has successfully deployed, you will notice that GPIO pin 17 should turn off and on as written in *main.cpp*. When this happens, Visual Studio has successfully connected to your Pi via SSH, deployed its code to the Pi, and executed it. Now you can start configuring your project so you can developing your own code!
+
+![Pressing the circled button will cause the configuration dialog to appear](documents/RPi/Development/images/05.png)
 
 ## 5. Configure Your Project
 Right now, your project is set up to use the WiringPi library that came with the Pi's OS. Our project relies on [SFML](https://www.sfml-dev.org/), and that is a library that must be installed on your Pi and is not registered by Visual Studio. This section is dedicated to configuring the Pi and Visual Studio to support remote development with the SFML library.
 
 Go to the Properties editor for your new project.
-![Image](documents/RPi/Development/images/06.png)
+
+![Circled is the Properties editor](documents/RPi/Development/images/06.png)
 
 A window like this should pop up. Go to the Linker/Input setting to configure the libraries that should be included when Visual Studio builds your code.
-![Image](documents/RPi/Development/images/07.png)
+
+![The Properties editor](documents/RPi/Development/images/07.png)
 
 Edit the Library Dependencies option if necessary. 
-![Image](documents/RPi/Development/images/08.png)
+
+![Library Dependencies option under Configuration Properties / Linker / Input](documents/RPi/Development/images/08.png)
 
 The values in this field will tell Visual Studio what installed libraries to  link into your project. When Visual Studio builds your code and populates its intellisense code completion database, it will look for these libraries. (To link a project on the Pi with an installed library called *foo*, it adds -l*foo* to the build command automatically). 
 
@@ -74,7 +82,9 @@ SFML names its libraries as follows:
 *  sfml-audio [Audio Module](https://www.sfml-dev.org/tutorials/2.5/#audio-module)
 *  sfml-network [Network Module](https://www.sfml-dev.org/tutorials/2.5/#network-module)
 
-![Image](documents/RPi/Development/images/09.png)
+![The Library Dependencies option edited to use the 5 SFML modules](documents/RPi/Development/images/09.png)
+
+## 6. Programming Your Project
 
 SFML depends on an X11 display for rendering graphics, but when a program is run apart from X11 (e.g. via SSH or TTY), it will not have access to that display. If X11 isn't installed on the Pi (as is the case with Raspbian lite), install it with the following commands:
 
@@ -87,16 +97,23 @@ sudo apt install xinit
 sudo apt install raspberrypi-ui-mods
 ```
 Then in Visual Studio, set the pre-launch command to `export DISPLAY=:0`
-![Image](documents/RPi/Development/images/10.png)
+
+![The pre-launch command option under Configuration Properties/Debugging](documents/RPi/Development/images/10.png)
 
 To clean up your build settings, if you removed the Blink code and your project doesn't depend on WiringPi anymore, or if you want to add your own post-bulid commands, remove/replace the "command line" and "description" fields under Build Events/Remote Post-Build Events
-![Image](documents/RPi/Development/images/11.png)
+
+![Cleaning the command line option (optional)](documents/RPi/Development/images/11.png)
 
 Repeat this process for all your project deployment configurations. What fun!
-![Image](documents/RPi/Development/images/12.png)
 
-## 6. Deploy/Debug the code
-Write your code. If you don't have any or would just like to test your setup, use the following code:
+![Press the configuration dropdown menu to do these steps for all your deployment configurations](documents/RPi/Development/images/12.png)
+
+## 7. Writing and Deploying Programs
+
+Write your code. Note that the function initially executed is *int main* in the file *main.cpp*, which may still be occupied by the Blink program. If you don't want the Pi to blink an LED, you can modify the source code or remove it entirely so you have an empty *main* function.
+
+If you don't have any or would just like to test your setup, use the following code:
+
 ```
 //Source: https://www.sfml-dev.org/tutorials/2.5/start-linux.php
 #include <SFML/Graphics.hpp>
@@ -124,7 +141,9 @@ int main()
     return 0;
 }
 ```
-![Image](documents/RPi/Development/images/13.png)
+
+![The code above in Visual Studio](documents/RPi/Development/images/13.png)
 
 ...and (hopefully) SFML works on your Pi!
-![Image](documents/RPi/Development/images/14.png)
+
+![The Pi successfully running and debugging our code!](documents/RPi/Development/images/14.png)
