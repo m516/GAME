@@ -8,6 +8,24 @@ More info can be found at the
 [Visual Studio download page](https://visualstudio.microsoft.com/downloads/)
 
 ## 2. Prepare Your Pi
+
+### TL;DR
+In a Raspberry Pi terminal type
+
+```
+sudo raspi-config nonint do_expand_rootfs
+sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
+sudo raspi-config nonint do_ssh 0
+sudo apt-get install openssh-server g++ gdb gdbserver
+sudo apt-get install cmake libflac-dev libogg-dev libvorbis-dev libopenal-dev libjpeg8-dev libfreetype6-dev libudev-dev libraspberrypi-dev
+cd
+mkdir build
+cd build
+cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
+sudo make install
+sudo ldconfig
+```
+
 ### Initial Pi Setup
 * [Install Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 * Use [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) to expand the Pi's filesystem, enable SSH, set the GPU memory to something decent and set the GL driver to "full KMS" to acclerate graphics with the GPU.
@@ -17,6 +35,12 @@ More info can be found at the
 raspi-config nonint do_expand_rootfs
 raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 raspi-config nonint do_ssh 0
+```
+
+Then install packages for compiling and debugging C++
+
+```
+sudo apt-get install openssh-server g++ gdb gdbserver
 ```
 
 ### Install SFML
