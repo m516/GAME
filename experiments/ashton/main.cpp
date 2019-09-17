@@ -36,14 +36,14 @@ int main()
 		sf::Vector2u windowSize = window.getSize();
 
 		// Create a rectangle named "rect"
-		sf::RectangleShape rect(sf::Vector2f(200, 50.f));
+		sf::RectangleShape rect(sf::Vector2f(200.f, 50.f));
 
 		// Draw welcome text
 		sf::Text text;
 		text.setFont(font);
 		text.setString("Welcome to G.A.M.E.");
 		text.setPosition((windowSize.x / 2) - 200, (windowSize.y / 2) - 50);
-		text.setCharacterSize(32); // In Pixels
+		text.setCharacterSize(12); // In Pixels
 		text.setFillColor(sf::Color::White);
 		window.draw(text);
 
@@ -51,7 +51,7 @@ int main()
 		{
 			// Change text and draw
 			text.setString("Option 1");
-			text.setPosition(200, 200);
+			text.setPosition(100, 100);
 			window.draw(text);
 			// Change rectangle color & draw
 			rect.setFillColor(sf::Color(100, 250, 50));
@@ -60,7 +60,7 @@ int main()
 		else
 		{
 			text.setString("Option 2");
-			text.setPosition(200, 300);
+			text.setPosition(100, 150);
 			window.draw(text);
 			rect.setFillColor(sf::Color(250, 100, 50));
 			window.draw(rect);
