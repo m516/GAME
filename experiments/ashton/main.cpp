@@ -22,16 +22,19 @@ int main()
 	// Need this to do threading with X
 	XInitThreads();
 	// Create a window with rendoring
-	sf::RenderWindow window(sf::VideoMode(256, 256), "G.A.M.E.", sf::Style::Resize + sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode(256, 256), "G.A.M.E.", sf::Style::Default);
 	
+	int screenWidth = sf::VideoMode::getDesktopMode().width;
+	int screenHeight = sf::VideoMode::getDesktopMode().height;
+	window.setPosition(sf::Vector2i(screenWidth / 2, screenHeight / 2));
 	
-	window.setFramerateLimit(120);
+	// window.setFramerateLimit(120);
 	// Load font
 	
 	font.loadFromFile("bitwise.ttf");
 
 	// Scale window up
-	// window.setSize(sf::Vector2u(1920, 1080));
+	window.setSize(sf::Vector2u(1920, 1080));
 	
 	// Keep running while the app runs
 	// Need std::ref to pass by reference
@@ -41,16 +44,16 @@ int main()
 
 	while (window.isOpen())
 	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		EventHandler(window);
 	}
 
 	return 0;
 }
 
-const sf::Time timePerFrame = sf::seconds(1.f/60.f); // 1/60 ~ 60FPS
-sf::Time timeSinceLastUpdate = sf::Time::Zero;
-
-sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight) {
+// https://github.com/SFML/SFML/wiki/Source:-Letterbox-effect-using-a-view
+sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight) 
+{
 
     // Compares the aspect ratio of the window to the aspect ratio of the view,
     // and sets the view's viewport accordingly in order to archieve a letterbox effect.
@@ -70,12 +73,14 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight) {
     // If horizontalSpacing is true, the black bars will appear on the left and right side.
     // Otherwise, the black bars will appear on the top and bottom.
 
-    if (horizontalSpacing) {
+    if (horizontalSpacing) // Right/left bars
+	{
         sizeX = viewRatio / windowRatio;
         posX = (1 - sizeX) / 2.f;
     }
 
-    else {
+    else // Top/bottom bars
+	{
         sizeY = windowRatio / viewRatio;
         posY = (1 - sizeY) / 2.f;
     }
@@ -86,6 +91,8 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight) {
 }
 
 sf::View view;
+const sf::Time timePerFrame = sf::milliseconds(1.f); // 1/60 ~ 60FPS
+sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
 void Renderer(sf::RenderWindow &window)
 {
@@ -100,12 +107,13 @@ void Renderer(sf::RenderWindow &window)
 		// Calculate time since last updated frame
 		sf::Time elapsedTime = myClock.restart();
 		timeSinceLastUpdate += elapsedTime;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
 		// Update frame
 		while (timeSinceLastUpdate > timePerFrame)
 		{
 			delta = timeSinceLastUpdate.asSeconds();
-			window.clear(sf::Color::Black);
+			window.clear(sf::Color(100, 100, 100));
 			window.setView(view);
 
 			sf::Vector2u windowSize = window.getSize();
@@ -120,7 +128,7 @@ void Renderer(sf::RenderWindow &window)
 			sf::Text text;
 			text.setFont(font);
 			text.setString("Welcome to G.A.M.E.");
-			text.setPosition((windowSize.x / 2) - 200, (windowSize.y / 2) - 50);
+			text.setPosition((windowSize.x / 2), (windowSize.y / 2));
 			text.setCharacterSize(12); // In Pixels
 			text.setFillColor(sf::Color::White);
 			window.draw(text);
