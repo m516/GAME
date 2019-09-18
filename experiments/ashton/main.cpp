@@ -22,7 +22,7 @@ int main()
 	XInitThreads();
 	// Create a window with rendoring
 	sf::RenderWindow window(sf::VideoMode(256, 256), "G.A.M.E.", sf::Style::Default);
-	window.setFramerateLimit(30);
+	window.setFramerateLimit(120);
 	// Load font
 	
 	font.loadFromFile("bitwise.ttf");
