@@ -22,7 +22,7 @@ int main()
 	XInitThreads();
 	// Create a window with rendoring
 	sf::RenderWindow window(sf::VideoMode(256, 256), "G.A.M.E.", sf::Style::Default);
-
+	window.setFramerateLimit(30);
 	// Load font
 	
 	font.loadFromFile("bitwise.ttf");
@@ -32,42 +32,44 @@ int main()
 	
 	// Keep running while the app runs
 	// Need std::ref to pass by reference
-	std::thread thread_obj(EventHandler, std::ref(window));
+	// std::thread thread_obj(EventHandler, std::ref(window));
 	std::thread thread_obj2(Renderer, std::ref(window));
 	// thread_obj.join();
 
 	while (window.isOpen())
 	{
-		
+		EventHandler(window);
 	}
 
 	return 0;
 }
 
+const sf::Time timePerFrame = sf::seconds(1.f/60.f); // 1/60 ~ 60FPS
+sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
 void Renderer(sf::RenderWindow &window)
 {
 	sf::Clock framerate;
 
-	do
+	while (window.isOpen())
 	{
-		if (framerate.getElapsedTime().asMilliseconds() > 1/60)
+		// Calculate time since last updated frame
+		sf::Time elapsedTime = myClock.restart();
+		timeSinceLastUpdate += elapsedTime;
+
+		// Update frame
+		while (timeSinceLastUpdate > timePerFrame)
 		{
-			delta = 1000.f / myClock.restart().asMicroseconds();
-			framerate.restart();
-			// Get window size
+			delta = timeSinceLastUpdate.asSeconds();
+			window.clear(sf::Color::Black);
+
 			sf::Vector2u windowSize = window.getSize();
 
-			// Create a rectangle named "rect"
 			sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
 			rect.setFillColor(sf::Color::Green);
 			
-			window.clear(sf::Color::Black);
-			
-		
-			rect.move(sf::Vector2f(
-				x,
-				y
-			));
+			sf::Vector2f movePos(x, y);
+			rect.move(movePos * delta);
 
 			// Draw welcome text
 			sf::Text text;
@@ -100,48 +102,43 @@ void Renderer(sf::RenderWindow &window)
 			// Display the window
 			window.display();
 		}
-		
 	}
-	while (window.isOpen());
 }
 
 // Event handler with window passed by -reference-
 void EventHandler(sf::RenderWindow &window)
 {
 	sf::Event event;
-	while (window.isOpen())
+	while (window.pollEvent(event)) /// While events are "queued"
 	{
-		while (window.pollEvent(event)) /// While events are "queued"
+		// Key Down
+		if (event.type == sf::Event::KeyPressed)
 		{
-			// Key Down
-			if (event.type == sf::Event::KeyPressed)
+			if (event.key.code == sf::Keyboard::Enter)
 			{
-				if (event.key.code == sf::Keyboard::Enter)
-				{
-					temp = !temp;
-				}
-
-				float speed = 10;
-				switch (event.key.code)
-				{
-					case sf::Keyboard::Right:
-						x += speed * delta;	
-						break;
-					case sf::Keyboard::Left:
-						x -= speed * delta;
-						break;
-					case sf::Keyboard::Up:
-						y -= speed * delta;
-						break;
-					case sf::Keyboard::Down:
-						y += speed * delta;
-						break;
-				}
+				temp = !temp;
 			}
 
-			// Terminate program
-			if (event.type == sf::Event::Closed)
-				window.close();
+			float speed = 100;
+			switch (event.key.code)
+			{
+				case sf::Keyboard::Right:
+					x += speed;	
+					break;
+				case sf::Keyboard::Left:
+					x -= speed;
+					break;
+				case sf::Keyboard::Up:
+					y -= speed;
+					break;
+				case sf::Keyboard::Down:
+					y += speed;
+					break;
+			}
 		}
+
+		// Terminate program
+		if (event.type == sf::Event::Closed)
+			window.close();
 	}
 }
