@@ -11,10 +11,32 @@ float y = 0;
 float delta = 0;
 sf::Font font;
 sf::Clock myClock;
+
 void EventHandler(sf::RenderWindow &);
 void Renderer(sf::RenderWindow &);
 sf::View getLetterboxView(sf::View, int, int);
+void Rainbow(sf::RectangleShape &, sf::RenderWindow &);
 
+sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
+
+uint32_t color_palette[16] = {
+	0xFFffffff,
+	0xFF6df7c1,
+	0xFF11adc1,
+	0xFF606c81,
+	0xFF393457,
+	0xFF1e8875,
+	0xFF5bb361,
+	0xFFa1e55a,
+	0xFFf7e476,
+	0xFFf99252,
+	0xFFcb4d68,
+	0xFF6a3771,
+	0xFFc92464,
+	0xFFf48cb6,
+	0xFFf7b69e,
+	0xFF9b9c82
+};
 
 // Testing stuff
 int main()
@@ -30,7 +52,6 @@ int main()
 	
 	// window.setFramerateLimit(120);
 	// Load font
-	
 	font.loadFromFile("bitwise.ttf");
 
 	// Scale window up
@@ -40,6 +61,7 @@ int main()
 	// Need std::ref to pass by reference
 	// std::thread thread_obj(EventHandler, std::ref(window));
 	std::thread thread_obj2(Renderer, std::ref(window));
+	std::thread thread_obj1(Rainbow, std::ref(rect), std::ref(window));
 	// thread_obj.join();
 
 	while (window.isOpen())
@@ -78,7 +100,6 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight)
         sizeX = viewRatio / windowRatio;
         posX = (1 - sizeX) / 2.f;
     }
-
     else // Top/bottom bars
 	{
         sizeY = windowRatio / viewRatio;
@@ -93,6 +114,23 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight)
 sf::View view;
 const sf::Time timePerFrame = sf::milliseconds(1.f); // 1/60 ~ 60FPS
 sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
+void Rainbow(sf::RectangleShape &rect, sf::RenderWindow &window)
+{
+	int i = 0;
+	while (true)
+	{
+		if (i >= 16)
+		{
+			i = 0;
+		}
+
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		rect.setFillColor(sf::Color(color_palette[i]));
+
+		i++;
+	}
+}
 
 void Renderer(sf::RenderWindow &window)
 {
@@ -117,18 +155,15 @@ void Renderer(sf::RenderWindow &window)
 			window.setView(view);
 
 			sf::Vector2u windowSize = window.getSize();
-
-			sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
-			rect.setFillColor(sf::Color::Green);
 			
 			sf::Vector2f movePos(x, y);
-			rect.move(movePos * delta);
+			rect.setPosition(movePos * delta);
 
 			// Draw welcome text
 			sf::Text text;
 			text.setFont(font);
 			text.setString("Welcome to G.A.M.E.");
-			text.setPosition((windowSize.x / 2), (windowSize.y / 2));
+			text.setPosition(100, 50);
 			text.setCharacterSize(12); // In Pixels
 			text.setFillColor(sf::Color::White);
 			window.draw(text);
@@ -140,7 +175,7 @@ void Renderer(sf::RenderWindow &window)
 				text.setPosition(100, 100);
 				window.draw(text);
 				// Change rectangle color & draw
-				rect.setFillColor(sf::Color(100, 250, 50));
+				// rect.setFillColor(sf::Color(100, 250, 50));
 				window.draw(rect);
 			}
 			else
@@ -148,7 +183,7 @@ void Renderer(sf::RenderWindow &window)
 				text.setString("Option 2");
 				text.setPosition(100, 150);
 				window.draw(text);
-				rect.setFillColor(sf::Color(250, 100, 50));
+				// rect.setFillColor(sf::Color(250, 100, 50));
 				window.draw(rect);
 			}
 
@@ -167,21 +202,20 @@ void EventHandler(sf::RenderWindow &window)
 	{
 		if (event.type == sf::Event::Resized)
 		{
-			std::cout << "Resize";
 			view = getLetterboxView(view, event.size.width, event.size.height);
 		}
 
 		// Key Down
 		if (event.type == sf::Event::KeyPressed)
 		{
-			if (event.key.code == sf::Keyboard::Enter)
-			{
-				temp = !temp;
-			}
-
 			float speed = 100;
 			switch (event.key.code)
 			{
+				// ENTER
+				case sf::Keyboard::Enter:
+					temp = !temp;
+					break;
+				// CONTROLS	
 				case sf::Keyboard::Right:
 					x += speed;	
 					break;
@@ -195,8 +229,6 @@ void EventHandler(sf::RenderWindow &window)
 					y += speed;
 					break;
 			}
-
-			
 		}
 
 		// Terminate program
