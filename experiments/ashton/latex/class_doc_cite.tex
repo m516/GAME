@@ -1,0 +1,108 @@
+\hypertarget{class_doc_cite}{}\doxysection{Doc\+Cite Class Reference}
+\label{class_doc_cite}\index{DocCite@{DocCite}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Cite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_cite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_cite_aba1aec0ac228dd1e707a5572fe199724}{Doc\+Cite}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&target, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context)
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_cite_a7f645fd99570ca0533c2e7087ae18bbd}{kind}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_cite_ae842d125098f64d7ee7bb1b955f2f6ba}{file}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_cite_a9d9d6c80250e7a9d18216a3eea4375ac}{rel\+Path}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_cite_ae5f235deff96cbae64d906842654abea}{ref}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_cite_acb79082b3765794abb193fcef75b1b2e}{anchor}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_cite_a5be8286837be9a125d7de5769aea0142}{text}} () const
+\item 
+void \mbox{\hyperlink{class_doc_cite_a0f18374c2b9d937c71e317b9d36f1647}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a citation of some bibliographic reference 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_cite_aba1aec0ac228dd1e707a5572fe199724}\label{class_doc_cite_aba1aec0ac228dd1e707a5572fe199724}} 
+\index{DocCite@{DocCite}!DocCite@{DocCite}}
+\index{DocCite@{DocCite}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{DocCite()}{DocCite()}}
+{\footnotesize\ttfamily Doc\+Cite\+::\+Doc\+Cite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{target,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_cite_a0f18374c2b9d937c71e317b9d36f1647}\label{class_doc_cite_a0f18374c2b9d937c71e317b9d36f1647}} 
+\index{DocCite@{DocCite}!accept@{accept}}
+\index{accept@{accept}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Cite\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_cite_acb79082b3765794abb193fcef75b1b2e}\label{class_doc_cite_acb79082b3765794abb193fcef75b1b2e}} 
+\index{DocCite@{DocCite}!anchor@{anchor}}
+\index{anchor@{anchor}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{anchor()}{anchor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Cite\+::anchor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_cite_ae842d125098f64d7ee7bb1b955f2f6ba}\label{class_doc_cite_ae842d125098f64d7ee7bb1b955f2f6ba}} 
+\index{DocCite@{DocCite}!file@{file}}
+\index{file@{file}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Cite\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_cite_a7f645fd99570ca0533c2e7087ae18bbd}\label{class_doc_cite_a7f645fd99570ca0533c2e7087ae18bbd}} 
+\index{DocCite@{DocCite}!kind@{kind}}
+\index{kind@{kind}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Cite\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_cite_ae5f235deff96cbae64d906842654abea}\label{class_doc_cite_ae5f235deff96cbae64d906842654abea}} 
+\index{DocCite@{DocCite}!ref@{ref}}
+\index{ref@{ref}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Cite\+::ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_cite_a9d9d6c80250e7a9d18216a3eea4375ac}\label{class_doc_cite_a9d9d6c80250e7a9d18216a3eea4375ac}} 
+\index{DocCite@{DocCite}!relPath@{relPath}}
+\index{relPath@{relPath}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{relPath()}{relPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Cite\+::rel\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_cite_a5be8286837be9a125d7de5769aea0142}\label{class_doc_cite_a5be8286837be9a125d7de5769aea0142}} 
+\index{DocCite@{DocCite}!text@{text}}
+\index{text@{text}!DocCite@{DocCite}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Cite\+::text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

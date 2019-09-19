@@ -1,0 +1,200 @@
+\hypertarget{class_doc_html_cell}{}\doxysection{Doc\+Html\+Cell Class Reference}
+\label{class_doc_html_cell}\index{DocHtmlCell@{DocHtmlCell}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Html\+Cell\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doc_html_cell}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}{Alignment}} \{ \mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a8dd1ecd8df71ef42303c2b64fd73804f}{Left}}, 
+\mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a65214529ecca545b977a6edf61de84c4}{Right}}, 
+\mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a6bf57086c5c581a2d4905ad7cfbec3e0}{Center}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_html_cell_a408005d09b36012a9aa432df386a8ed0}{Doc\+Html\+Cell}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&\mbox{\hyperlink{class_doc_html_cell_aac37591897467fbf1c9778c46c571673}{attribs}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_html_cell_ace62c55c933434c4f451847fede71851}{is\+Heading}})
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_html_cell_ace62c55c933434c4f451847fede71851}{is\+Heading}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_html_cell_a3f5ca6db8eaa23b261bbe688bc652644}{is\+First}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_html_cell_ac61b0f67d380a5ce45f5015e122bc34b}{is\+Last}} () const
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_html_cell_a344128532d6fb2eed59389c843b3d473}{kind}} () const
+\item 
+void \mbox{\hyperlink{class_doc_html_cell_ab472d7aee599717c94c69ab137310d2c}{mark\+First}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} v=\mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}})
+\item 
+void \mbox{\hyperlink{class_doc_html_cell_a50c10a42581d4ae558776aa2d7528cd2}{mark\+Last}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} v=\mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}})
+\item 
+const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \& \mbox{\hyperlink{class_doc_html_cell_aac37591897467fbf1c9778c46c571673}{attribs}} () const
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_ad1dda118e2ea47235f3880e56ae6e2a8}{parse}} ()
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_aa5b43dd579348e1e8e4df010176bd928}{parse\+Xml}} ()
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_a1291a4d81d1718d331d53f227244f2fa}{row\+Index}} () const
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_a02b389824b42f748e1b40fae79e9b8fe}{column\+Index}} () const
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_ae7a8ffd8ca1446e08942a68b3d0ef52c}{row\+Span}} () const
+\item 
+int \mbox{\hyperlink{class_doc_html_cell_a24da0ece61676c8b191ad61a5373bab5}{col\+Span}} () const
+\item 
+\mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}{Alignment}} \mbox{\hyperlink{class_doc_html_cell_abe42707109ca3bbad6ad388f766d8218}{alignment}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_doc_html_cell_a1f7413118a8c0d90c891a2695a7cb90d}{Doc\+Html\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a H\+T\+ML table cell 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}\label{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}} 
+\index{DocHtmlCell@{DocHtmlCell}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{Alignment}{Alignment}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}{Doc\+Html\+Cell\+::\+Alignment}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!DocHtmlCell@{DocHtmlCell}}\index{DocHtmlCell@{DocHtmlCell}!Left@{Left}}}\mbox{\Hypertarget{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a8dd1ecd8df71ef42303c2b64fd73804f}\label{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a8dd1ecd8df71ef42303c2b64fd73804f}} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!DocHtmlCell@{DocHtmlCell}}\index{DocHtmlCell@{DocHtmlCell}!Right@{Right}}}\mbox{\Hypertarget{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a65214529ecca545b977a6edf61de84c4}\label{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a65214529ecca545b977a6edf61de84c4}} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Center@{Center}!DocHtmlCell@{DocHtmlCell}}\index{DocHtmlCell@{DocHtmlCell}!Center@{Center}}}\mbox{\Hypertarget{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a6bf57086c5c581a2d4905ad7cfbec3e0}\label{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136a6bf57086c5c581a2d4905ad7cfbec3e0}} 
+Center&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_html_cell_a408005d09b36012a9aa432df386a8ed0}\label{class_doc_html_cell_a408005d09b36012a9aa432df386a8ed0}} 
+\index{DocHtmlCell@{DocHtmlCell}!DocHtmlCell@{DocHtmlCell}}
+\index{DocHtmlCell@{DocHtmlCell}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{DocHtmlCell()}{DocHtmlCell()}}
+{\footnotesize\ttfamily Doc\+Html\+Cell\+::\+Doc\+Html\+Cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&}]{attribs,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Heading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_html_cell_abe42707109ca3bbad6ad388f766d8218}\label{class_doc_html_cell_abe42707109ca3bbad6ad388f766d8218}} 
+\index{DocHtmlCell@{DocHtmlCell}!alignment@{alignment}}
+\index{alignment@{alignment}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{alignment()}{alignment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_html_cell_a1bfba233eb785db3496ea2a82d9a2136}{Doc\+Html\+Cell\+::\+Alignment}} Doc\+Html\+Cell\+::alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_doc_html_cell_aac37591897467fbf1c9778c46c571673}\label{class_doc_html_cell_aac37591897467fbf1c9778c46c571673}} 
+\index{DocHtmlCell@{DocHtmlCell}!attribs@{attribs}}
+\index{attribs@{attribs}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{attribs()}{attribs()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}}\& Doc\+Html\+Cell\+::attribs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_a24da0ece61676c8b191ad61a5373bab5}\label{class_doc_html_cell_a24da0ece61676c8b191ad61a5373bab5}} 
+\index{DocHtmlCell@{DocHtmlCell}!colSpan@{colSpan}}
+\index{colSpan@{colSpan}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{colSpan()}{colSpan()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::col\+Span (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_doc_html_cell_a02b389824b42f748e1b40fae79e9b8fe}\label{class_doc_html_cell_a02b389824b42f748e1b40fae79e9b8fe}} 
+\index{DocHtmlCell@{DocHtmlCell}!columnIndex@{columnIndex}}
+\index{columnIndex@{columnIndex}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{columnIndex()}{columnIndex()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::column\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_a3f5ca6db8eaa23b261bbe688bc652644}\label{class_doc_html_cell_a3f5ca6db8eaa23b261bbe688bc652644}} 
+\index{DocHtmlCell@{DocHtmlCell}!isFirst@{isFirst}}
+\index{isFirst@{isFirst}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{isFirst()}{isFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Html\+Cell\+::is\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_ace62c55c933434c4f451847fede71851}\label{class_doc_html_cell_ace62c55c933434c4f451847fede71851}} 
+\index{DocHtmlCell@{DocHtmlCell}!isHeading@{isHeading}}
+\index{isHeading@{isHeading}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{isHeading()}{isHeading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Html\+Cell\+::is\+Heading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_ac61b0f67d380a5ce45f5015e122bc34b}\label{class_doc_html_cell_ac61b0f67d380a5ce45f5015e122bc34b}} 
+\index{DocHtmlCell@{DocHtmlCell}!isLast@{isLast}}
+\index{isLast@{isLast}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{isLast()}{isLast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Html\+Cell\+::is\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_a344128532d6fb2eed59389c843b3d473}\label{class_doc_html_cell_a344128532d6fb2eed59389c843b3d473}} 
+\index{DocHtmlCell@{DocHtmlCell}!kind@{kind}}
+\index{kind@{kind}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Html\+Cell\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_html_cell_ab472d7aee599717c94c69ab137310d2c}\label{class_doc_html_cell_ab472d7aee599717c94c69ab137310d2c}} 
+\index{DocHtmlCell@{DocHtmlCell}!markFirst@{markFirst}}
+\index{markFirst@{markFirst}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{markFirst()}{markFirst()}}
+{\footnotesize\ttfamily void Doc\+Html\+Cell\+::mark\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{v = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_a50c10a42581d4ae558776aa2d7528cd2}\label{class_doc_html_cell_a50c10a42581d4ae558776aa2d7528cd2}} 
+\index{DocHtmlCell@{DocHtmlCell}!markLast@{markLast}}
+\index{markLast@{markLast}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{markLast()}{markLast()}}
+{\footnotesize\ttfamily void Doc\+Html\+Cell\+::mark\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{v = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_ad1dda118e2ea47235f3880e56ae6e2a8}\label{class_doc_html_cell_ad1dda118e2ea47235f3880e56ae6e2a8}} 
+\index{DocHtmlCell@{DocHtmlCell}!parse@{parse}}
+\index{parse@{parse}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_html_cell_aa5b43dd579348e1e8e4df010176bd928}\label{class_doc_html_cell_aa5b43dd579348e1e8e4df010176bd928}} 
+\index{DocHtmlCell@{DocHtmlCell}!parseXml@{parseXml}}
+\index{parseXml@{parseXml}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{parseXml()}{parseXml()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::parse\+Xml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_html_cell_a1291a4d81d1718d331d53f227244f2fa}\label{class_doc_html_cell_a1291a4d81d1718d331d53f227244f2fa}} 
+\index{DocHtmlCell@{DocHtmlCell}!rowIndex@{rowIndex}}
+\index{rowIndex@{rowIndex}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{rowIndex()}{rowIndex()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::row\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_cell_ae7a8ffd8ca1446e08942a68b3d0ef52c}\label{class_doc_html_cell_ae7a8ffd8ca1446e08942a68b3d0ef52c}} 
+\index{DocHtmlCell@{DocHtmlCell}!rowSpan@{rowSpan}}
+\index{rowSpan@{rowSpan}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{rowSpan()}{rowSpan()}}
+{\footnotesize\ttfamily int Doc\+Html\+Cell\+::row\+Span (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_doc_html_cell_a1f7413118a8c0d90c891a2695a7cb90d}\label{class_doc_html_cell_a1f7413118a8c0d90c891a2695a7cb90d}} 
+\index{DocHtmlCell@{DocHtmlCell}!DocHtmlTable@{DocHtmlTable}}
+\index{DocHtmlTable@{DocHtmlTable}!DocHtmlCell@{DocHtmlCell}}
+\doxysubsubsection{\texorpdfstring{DocHtmlTable}{DocHtmlTable}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

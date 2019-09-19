@@ -1,0 +1,128 @@
+\hypertarget{class_element_mapper}{}\doxysection{Element\+Mapper$<$ T $>$ Class Template Reference}
+\label{class_element_mapper}\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+
+
+{\ttfamily \#include $<$basehandler.\+h$>$}
+
+Inheritance diagram for Element\+Mapper$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_element_mapper}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Start\+Element\+Handler \mbox{\hyperlink{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}{Start\+Element\+HandlerT}}
+\item 
+typedef End\+Element\+Handler \mbox{\hyperlink{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}{End\+Element\+HandlerT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_element_mapper_a577e0935c5a56e7769cf629ee034bf58}{Element\+Mapper}} ()
+\item 
+virtual \mbox{\hyperlink{class_element_mapper_a2f6b4b87896a63625671dcb473048650}{$\sim$\+Element\+Mapper}} ()
+\item 
+void \mbox{\hyperlink{class_element_mapper_a8cb3260e99bb20970dd7a295d5553b70}{add\+Start\+Handler}} (const char $\ast$key)
+\item 
+void \mbox{\hyperlink{class_element_mapper_a3dee79deae8ce5172e558679385032ed}{add\+Start\+Handler}} (const char $\ast$key, T $\ast$obj, void(T\+::$\ast$handler)(const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&))
+\item 
+void \mbox{\hyperlink{class_element_mapper_accc283d02d0481be43a98662006ca80a}{add\+End\+Handler}} (const char $\ast$key)
+\item 
+void \mbox{\hyperlink{class_element_mapper_a7d2ce3844784f2040576adbdfe55068d}{add\+End\+Handler}} (const char $\ast$key, T $\ast$obj, void(T\+::$\ast$handler)())
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_dict}{Q\+Dict}}$<$ \mbox{\hyperlink{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}{Start\+Element\+HandlerT}} $>$ \mbox{\hyperlink{class_element_mapper_ac65b2d91a218457be0013a5b34ce6b60}{m\+\_\+start\+Handlers}}
+\item 
+\mbox{\hyperlink{class_q_dict}{Q\+Dict}}$<$ \mbox{\hyperlink{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}{End\+Element\+HandlerT}} $>$ \mbox{\hyperlink{class_element_mapper_acc10714885fecc41c06efd87a3277b71}{m\+\_\+end\+Handlers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}\label{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!EndElementHandlerT@{EndElementHandlerT}}
+\index{EndElementHandlerT@{EndElementHandlerT}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EndElementHandlerT}{EndElementHandlerT}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+typedef End\+Element\+Handler \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::\mbox{\hyperlink{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}{End\+Element\+HandlerT}}}
+
+\mbox{\Hypertarget{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}\label{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!StartElementHandlerT@{StartElementHandlerT}}
+\index{StartElementHandlerT@{StartElementHandlerT}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StartElementHandlerT}{StartElementHandlerT}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+typedef Start\+Element\+Handler \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::\mbox{\hyperlink{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}{Start\+Element\+HandlerT}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_element_mapper_a577e0935c5a56e7769cf629ee034bf58}\label{class_element_mapper_a577e0935c5a56e7769cf629ee034bf58}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!ElementMapper@{ElementMapper}}
+\index{ElementMapper@{ElementMapper}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ElementMapper()}{ElementMapper()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::\mbox{\hyperlink{class_element_mapper}{Element\+Mapper}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_element_mapper_a2f6b4b87896a63625671dcb473048650}\label{class_element_mapper_a2f6b4b87896a63625671dcb473048650}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!````~ElementMapper@{$\sim$ElementMapper}}
+\index{````~ElementMapper@{$\sim$ElementMapper}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$ElementMapper()}{~ElementMapper()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{class_element_mapper}{Element\+Mapper}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_element_mapper_accc283d02d0481be43a98662006ca80a}\label{class_element_mapper_accc283d02d0481be43a98662006ca80a}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!addEndHandler@{addEndHandler}}
+\index{addEndHandler@{addEndHandler}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEndHandler()}{addEndHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::add\+End\+Handler (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_element_mapper_a7d2ce3844784f2040576adbdfe55068d}\label{class_element_mapper_a7d2ce3844784f2040576adbdfe55068d}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!addEndHandler@{addEndHandler}}
+\index{addEndHandler@{addEndHandler}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEndHandler()}{addEndHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::add\+End\+Handler (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{T $\ast$}]{obj,  }\item[{void(T\+::$\ast$)()}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_element_mapper_a8cb3260e99bb20970dd7a295d5553b70}\label{class_element_mapper_a8cb3260e99bb20970dd7a295d5553b70}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!addStartHandler@{addStartHandler}}
+\index{addStartHandler@{addStartHandler}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addStartHandler()}{addStartHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::add\+Start\+Handler (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_element_mapper_a3dee79deae8ce5172e558679385032ed}\label{class_element_mapper_a3dee79deae8ce5172e558679385032ed}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!addStartHandler@{addStartHandler}}
+\index{addStartHandler@{addStartHandler}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addStartHandler()}{addStartHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::add\+Start\+Handler (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{T $\ast$}]{obj,  }\item[{void(T\+::$\ast$)(const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_element_mapper_acc10714885fecc41c06efd87a3277b71}\label{class_element_mapper_acc10714885fecc41c06efd87a3277b71}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!m\_endHandlers@{m\_endHandlers}}
+\index{m\_endHandlers@{m\_endHandlers}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_endHandlers}{m\_endHandlers}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{class_q_dict}{Q\+Dict}}$<$\mbox{\hyperlink{class_element_mapper_a3d3ef233834e26837676018b71f5d1aa}{End\+Element\+HandlerT}}$>$ \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::m\+\_\+end\+Handlers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_element_mapper_ac65b2d91a218457be0013a5b34ce6b60}\label{class_element_mapper_ac65b2d91a218457be0013a5b34ce6b60}} 
+\index{ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}!m\_startHandlers@{m\_startHandlers}}
+\index{m\_startHandlers@{m\_startHandlers}!ElementMapper$<$ T $>$@{ElementMapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_startHandlers}{m\_startHandlers}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{class_q_dict}{Q\+Dict}}$<$\mbox{\hyperlink{class_element_mapper_afca37050650c0a9d475f4c87b9189eac}{Start\+Element\+HandlerT}}$>$ \mbox{\hyperlink{class_element_mapper}{Element\+Mapper}}$<$ T $>$\+::m\+\_\+start\+Handlers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{basehandler_8h}{basehandler.\+h}}\end{DoxyCompactItemize}

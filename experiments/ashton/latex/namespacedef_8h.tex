@@ -1,0 +1,43 @@
+\hypertarget{namespacedef_8h}{}\doxysection{doxygen/src/namespacedef.h File Reference}
+\label{namespacedef_8h}\index{doxygen/src/namespacedef.h@{doxygen/src/namespacedef.h}}
+{\ttfamily \#include $<$qstrlist.\+h$>$}\newline
+{\ttfamily \#include $<$qdict.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sortdict.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definition.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filedef.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}}
+\item 
+class \mbox{\hyperlink{class_namespace_list}{Namespace\+List}}
+\item 
+class \mbox{\hyperlink{class_namespace_list_iterator}{Namespace\+List\+Iterator}}
+\item 
+class \mbox{\hyperlink{class_namespace_dict}{Namespace\+Dict}}
+\item 
+class \mbox{\hyperlink{class_namespace_s_dict}{Namespace\+S\+Dict}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_namespace_def}{Namespace\+Def}} $\ast$ \mbox{\hyperlink{namespacedef_8h_a18217f5bb01c6b062e8ee19e6e73dbe0}{create\+Namespace\+Def}} (const char $\ast$def\+File\+Name, int def\+Line, int def\+Column, const char $\ast$name, const char $\ast$ref=0, const char $\ast$ref\+File=0, const char $\ast$type=0, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Published=false)
+\item 
+\mbox{\hyperlink{class_namespace_def}{Namespace\+Def}} $\ast$ \mbox{\hyperlink{namespacedef_8h_adbb46235190b87e0bb503c0a0eaa1bb7}{create\+Namespace\+Def\+Alias}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$new\+Scope, const \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}} $\ast$nd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedef_8h_a18217f5bb01c6b062e8ee19e6e73dbe0}\label{namespacedef_8h_a18217f5bb01c6b062e8ee19e6e73dbe0}} 
+\index{namespacedef.h@{namespacedef.h}!createNamespaceDef@{createNamespaceDef}}
+\index{createNamespaceDef@{createNamespaceDef}!namespacedef.h@{namespacedef.h}}
+\doxysubsubsection{\texorpdfstring{createNamespaceDef()}{createNamespaceDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}}$\ast$ create\+Namespace\+Def (\begin{DoxyParamCaption}\item[{const char $\ast$}]{def\+File\+Name,  }\item[{int}]{def\+Line,  }\item[{int}]{def\+Column,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{ref = {\ttfamily 0},  }\item[{const char $\ast$}]{ref\+File = {\ttfamily 0},  }\item[{const char $\ast$}]{type = {\ttfamily 0},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Published = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Factory method to create new \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}} instance \mbox{\Hypertarget{namespacedef_8h_adbb46235190b87e0bb503c0a0eaa1bb7}\label{namespacedef_8h_adbb46235190b87e0bb503c0a0eaa1bb7}} 
+\index{namespacedef.h@{namespacedef.h}!createNamespaceDefAlias@{createNamespaceDefAlias}}
+\index{createNamespaceDefAlias@{createNamespaceDefAlias}!namespacedef.h@{namespacedef.h}}
+\doxysubsubsection{\texorpdfstring{createNamespaceDefAlias()}{createNamespaceDefAlias()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}}$\ast$ create\+Namespace\+Def\+Alias (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{new\+Scope,  }\item[{const \mbox{\hyperlink{class_namespace_def}{Namespace\+Def}} $\ast$}]{nd }\end{DoxyParamCaption})}
+
+Factory method to create an alias of an existing namespace. Used for inline namespaces. 

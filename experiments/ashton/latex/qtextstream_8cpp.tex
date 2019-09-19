@@ -1,0 +1,204 @@
+\hypertarget{qtextstream_8cpp}{}\doxysection{doxygen/qtools/qtextstream.cpp File Reference}
+\label{qtextstream_8cpp}\index{doxygen/qtools/qtextstream.cpp@{doxygen/qtools/qtextstream.cpp}}
+{\ttfamily \#include \char`\"{}qtextstream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qtextcodec.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qregexp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qfile.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_q_text_stream_private}{Q\+Text\+Stream\+Private}}
+\item 
+class \mbox{\hyperlink{class_q_string_buffer}{Q\+String\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a3ea4882d1064c52544ab9e65e32d849f}{C\+H\+E\+C\+K\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+R\+E\+C\+O\+ND}}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a55123db83bd340e2d7b6b9441d6bbad8}{I\+\_\+\+S\+H\+O\+RT}}~0x0010
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_aa406e2d42b71fd10cb4458c8bdeb9d02}{I\+\_\+\+I\+NT}}~0x0020
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a8de32821eba48c0bbe48863dfb313ca2}{I\+\_\+\+L\+O\+NG}}~0x0030
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a71d44e2aba8b28428d36a2800fee3c5b}{I\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+A\+SK}}~0x00f0
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a8cd7041ba7fddd4726cb2a3aa836bfc3}{I\+\_\+\+B\+A\+S\+E\+\_\+2}}~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a522c0aff51070556ffcde9b7664743d4}{Q\+T\+S\+::bin}}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a4244b7034cf1236c4e4910e922f830ca}{I\+\_\+\+B\+A\+S\+E\+\_\+8}}~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270aaae446d943e330aa999c7e6b80240c19}{Q\+T\+S\+::oct}}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_aca52629b77b1c336630a8da0dee9c101}{I\+\_\+\+B\+A\+S\+E\+\_\+10}}~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270adb3124814a4d120725541629e69f605d}{Q\+T\+S\+::dec}}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_ad746a03d0a9951b9e54b8a54ed9a5af9}{I\+\_\+\+B\+A\+S\+E\+\_\+16}}~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a26b652c69f47687937232329578b450b}{Q\+T\+S\+::hex}}
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a813392cc8b6b68aa3fbaf4862efe4d0c}{I\+\_\+\+B\+A\+S\+E\+\_\+\+M\+A\+SK}}~(\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a522c0aff51070556ffcde9b7664743d4}{Q\+T\+S\+::bin}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270aaae446d943e330aa999c7e6b80240c19}{Q\+T\+S\+::oct}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270adb3124814a4d120725541629e69f605d}{Q\+T\+S\+::dec}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a26b652c69f47687937232329578b450b}{Q\+T\+S\+::hex}})
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a7b27eb912d48c1db1229dcfaa602be76}{I\+\_\+\+S\+I\+G\+N\+ED}}~0x0100
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a85f61af876e12a6b0408b2cf5ddb5d98}{I\+\_\+\+U\+N\+S\+I\+G\+N\+ED}}~0x0200
+\item 
+\#define \mbox{\hyperlink{qtextstream_8cpp_a722c6560d1e3787e636f30fa77d5280f}{I\+\_\+\+S\+I\+G\+N\+\_\+\+M\+A\+SK}}~0x0f00
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_a3af909965131f746dc0e0ec4d6a89bbe}{bin}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_ad03e708ca2851657cb7e1288b33e6c60}{oct}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_abd5c80c44542dd47c4eacbb3f081d213}{dec}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_a6b8cf949d067d219879ab5f0bdd19e82}{hex}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_aab175cb3d03c3b5fe1e57df8b5f1998a}{endl}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_a9fa3d9088bdb1923c90894d593aeff28}{flush}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_a7398882ebab3d07d938d06c97c45cc07}{ws}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \& \mbox{\hyperlink{qtextstream_8cpp_a9c64e2daa423f038f8ff8a9fcbba7342}{reset}} (\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qtextstream_8cpp_a3ea4882d1064c52544ab9e65e32d849f}\label{qtextstream_8cpp_a3ea4882d1064c52544ab9e65e32d849f}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!CHECK\_STREAM\_PRECOND@{CHECK\_STREAM\_PRECOND}}
+\index{CHECK\_STREAM\_PRECOND@{CHECK\_STREAM\_PRECOND}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{CHECK\_STREAM\_PRECOND}{CHECK\_STREAM\_PRECOND}}
+{\footnotesize\ttfamily \#define C\+H\+E\+C\+K\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+R\+E\+C\+O\+ND}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} ( !dev ) \{               \(\backslash\)}
+\DoxyCodeLine{                qWarning( \textcolor{stringliteral}{"QTextStream: No device"} );   \(\backslash\)}
+\DoxyCodeLine{                return *\textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{qtextstream_8cpp_aca52629b77b1c336630a8da0dee9c101}\label{qtextstream_8cpp_aca52629b77b1c336630a8da0dee9c101}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_BASE\_10@{I\_BASE\_10}}
+\index{I\_BASE\_10@{I\_BASE\_10}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_BASE\_10}{I\_BASE\_10}}
+{\footnotesize\ttfamily \#define I\+\_\+\+B\+A\+S\+E\+\_\+10~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270adb3124814a4d120725541629e69f605d}{Q\+T\+S\+::dec}}}
+
+\mbox{\Hypertarget{qtextstream_8cpp_ad746a03d0a9951b9e54b8a54ed9a5af9}\label{qtextstream_8cpp_ad746a03d0a9951b9e54b8a54ed9a5af9}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_BASE\_16@{I\_BASE\_16}}
+\index{I\_BASE\_16@{I\_BASE\_16}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_BASE\_16}{I\_BASE\_16}}
+{\footnotesize\ttfamily \#define I\+\_\+\+B\+A\+S\+E\+\_\+16~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a26b652c69f47687937232329578b450b}{Q\+T\+S\+::hex}}}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a8cd7041ba7fddd4726cb2a3aa836bfc3}\label{qtextstream_8cpp_a8cd7041ba7fddd4726cb2a3aa836bfc3}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_BASE\_2@{I\_BASE\_2}}
+\index{I\_BASE\_2@{I\_BASE\_2}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_BASE\_2}{I\_BASE\_2}}
+{\footnotesize\ttfamily \#define I\+\_\+\+B\+A\+S\+E\+\_\+2~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a522c0aff51070556ffcde9b7664743d4}{Q\+T\+S\+::bin}}}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a4244b7034cf1236c4e4910e922f830ca}\label{qtextstream_8cpp_a4244b7034cf1236c4e4910e922f830ca}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_BASE\_8@{I\_BASE\_8}}
+\index{I\_BASE\_8@{I\_BASE\_8}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_BASE\_8}{I\_BASE\_8}}
+{\footnotesize\ttfamily \#define I\+\_\+\+B\+A\+S\+E\+\_\+8~\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270aaae446d943e330aa999c7e6b80240c19}{Q\+T\+S\+::oct}}}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a813392cc8b6b68aa3fbaf4862efe4d0c}\label{qtextstream_8cpp_a813392cc8b6b68aa3fbaf4862efe4d0c}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_BASE\_MASK@{I\_BASE\_MASK}}
+\index{I\_BASE\_MASK@{I\_BASE\_MASK}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_BASE\_MASK}{I\_BASE\_MASK}}
+{\footnotesize\ttfamily \#define I\+\_\+\+B\+A\+S\+E\+\_\+\+M\+A\+SK~(\mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a522c0aff51070556ffcde9b7664743d4}{Q\+T\+S\+::bin}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270aaae446d943e330aa999c7e6b80240c19}{Q\+T\+S\+::oct}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270adb3124814a4d120725541629e69f605d}{Q\+T\+S\+::dec}} $\vert$ \mbox{\hyperlink{class_q_text_stream_a3f5acf7658d4105759cbfbef40bed270a26b652c69f47687937232329578b450b}{Q\+T\+S\+::hex}})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_aa406e2d42b71fd10cb4458c8bdeb9d02}\label{qtextstream_8cpp_aa406e2d42b71fd10cb4458c8bdeb9d02}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_INT@{I\_INT}}
+\index{I\_INT@{I\_INT}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_INT}{I\_INT}}
+{\footnotesize\ttfamily \#define I\+\_\+\+I\+NT~0x0020}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a8de32821eba48c0bbe48863dfb313ca2}\label{qtextstream_8cpp_a8de32821eba48c0bbe48863dfb313ca2}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_LONG@{I\_LONG}}
+\index{I\_LONG@{I\_LONG}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_LONG}{I\_LONG}}
+{\footnotesize\ttfamily \#define I\+\_\+\+L\+O\+NG~0x0030}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a55123db83bd340e2d7b6b9441d6bbad8}\label{qtextstream_8cpp_a55123db83bd340e2d7b6b9441d6bbad8}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_SHORT@{I\_SHORT}}
+\index{I\_SHORT@{I\_SHORT}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_SHORT}{I\_SHORT}}
+{\footnotesize\ttfamily \#define I\+\_\+\+S\+H\+O\+RT~0x0010}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a722c6560d1e3787e636f30fa77d5280f}\label{qtextstream_8cpp_a722c6560d1e3787e636f30fa77d5280f}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_SIGN\_MASK@{I\_SIGN\_MASK}}
+\index{I\_SIGN\_MASK@{I\_SIGN\_MASK}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_SIGN\_MASK}{I\_SIGN\_MASK}}
+{\footnotesize\ttfamily \#define I\+\_\+\+S\+I\+G\+N\+\_\+\+M\+A\+SK~0x0f00}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a7b27eb912d48c1db1229dcfaa602be76}\label{qtextstream_8cpp_a7b27eb912d48c1db1229dcfaa602be76}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_SIGNED@{I\_SIGNED}}
+\index{I\_SIGNED@{I\_SIGNED}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_SIGNED}{I\_SIGNED}}
+{\footnotesize\ttfamily \#define I\+\_\+\+S\+I\+G\+N\+ED~0x0100}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a71d44e2aba8b28428d36a2800fee3c5b}\label{qtextstream_8cpp_a71d44e2aba8b28428d36a2800fee3c5b}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_TYPE\_MASK@{I\_TYPE\_MASK}}
+\index{I\_TYPE\_MASK@{I\_TYPE\_MASK}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_TYPE\_MASK}{I\_TYPE\_MASK}}
+{\footnotesize\ttfamily \#define I\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+A\+SK~0x00f0}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a85f61af876e12a6b0408b2cf5ddb5d98}\label{qtextstream_8cpp_a85f61af876e12a6b0408b2cf5ddb5d98}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!I\_UNSIGNED@{I\_UNSIGNED}}
+\index{I\_UNSIGNED@{I\_UNSIGNED}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{I\_UNSIGNED}{I\_UNSIGNED}}
+{\footnotesize\ttfamily \#define I\+\_\+\+U\+N\+S\+I\+G\+N\+ED~0x0200}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{qtextstream_8cpp_a3af909965131f746dc0e0ec4d6a89bbe}\label{qtextstream_8cpp_a3af909965131f746dc0e0ec4d6a89bbe}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!bin@{bin}}
+\index{bin@{bin}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{bin()}{bin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_abd5c80c44542dd47c4eacbb3f081d213}\label{qtextstream_8cpp_abd5c80c44542dd47c4eacbb3f081d213}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!dec@{dec}}
+\index{dec@{dec}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{dec()}{dec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& dec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_aab175cb3d03c3b5fe1e57df8b5f1998a}\label{qtextstream_8cpp_aab175cb3d03c3b5fe1e57df8b5f1998a}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!endl@{endl}}
+\index{endl@{endl}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{endl()}{endl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& endl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a9fa3d9088bdb1923c90894d593aeff28}\label{qtextstream_8cpp_a9fa3d9088bdb1923c90894d593aeff28}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!flush@{flush}}
+\index{flush@{flush}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& flush (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a6b8cf949d067d219879ab5f0bdd19e82}\label{qtextstream_8cpp_a6b8cf949d067d219879ab5f0bdd19e82}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!hex@{hex}}
+\index{hex@{hex}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{hex()}{hex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& hex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_ad03e708ca2851657cb7e1288b33e6c60}\label{qtextstream_8cpp_ad03e708ca2851657cb7e1288b33e6c60}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!oct@{oct}}
+\index{oct@{oct}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{oct()}{oct()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& oct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a9c64e2daa423f038f8ff8a9fcbba7342}\label{qtextstream_8cpp_a9c64e2daa423f038f8ff8a9fcbba7342}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!reset@{reset}}
+\index{reset@{reset}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qtextstream_8cpp_a7398882ebab3d07d938d06c97c45cc07}\label{qtextstream_8cpp_a7398882ebab3d07d938d06c97c45cc07}} 
+\index{qtextstream.cpp@{qtextstream.cpp}!ws@{ws}}
+\index{ws@{ws}!qtextstream.cpp@{qtextstream.cpp}}
+\doxysubsubsection{\texorpdfstring{ws()}{ws()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}}\& ws (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_text_stream}{Q\+Text\+Stream}} \&}]{s }\end{DoxyParamCaption})}
+

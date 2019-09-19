@@ -1,0 +1,100 @@
+\hypertarget{class_doc_index_entry}{}\doxysection{Doc\+Index\+Entry Class Reference}
+\label{class_doc_index_entry}\index{DocIndexEntry@{DocIndexEntry}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Index\+Entry\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_index_entry}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_index_entry_ad1b3c9ef9eee8065e366fe116cb4fee2}{Doc\+Index\+Entry}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$\mbox{\hyperlink{class_doc_index_entry_a02aaae83cb3ce69bdc972ce45facf9a4}{scope}}, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$md)
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_index_entry_a246d8de74105d446f2544b8aa51be833}{kind}} () const
+\item 
+int \mbox{\hyperlink{class_doc_index_entry_a32f8c84b803b04fd2de18d647593c8fe}{parse}} ()
+\item 
+const \mbox{\hyperlink{class_definition}{Definition}} $\ast$ \mbox{\hyperlink{class_doc_index_entry_a02aaae83cb3ce69bdc972ce45facf9a4}{scope}} () const
+\item 
+const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$ \mbox{\hyperlink{class_doc_index_entry_ada2b2456ca723ba1bfa6a8d2dd62a4be}{member}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_index_entry_ac267b515c9df901ab1505e070931996c}{entry}} () const
+\item 
+void \mbox{\hyperlink{class_doc_index_entry_a509e4da75e8dbfaf40488509357c6e3c}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing an entry in the index. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_index_entry_ad1b3c9ef9eee8065e366fe116cb4fee2}\label{class_doc_index_entry_ad1b3c9ef9eee8065e366fe116cb4fee2}} 
+\index{DocIndexEntry@{DocIndexEntry}!DocIndexEntry@{DocIndexEntry}}
+\index{DocIndexEntry@{DocIndexEntry}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{DocIndexEntry()}{DocIndexEntry()}}
+{\footnotesize\ttfamily Doc\+Index\+Entry\+::\+Doc\+Index\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{scope,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{md }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_index_entry_a509e4da75e8dbfaf40488509357c6e3c}\label{class_doc_index_entry_a509e4da75e8dbfaf40488509357c6e3c}} 
+\index{DocIndexEntry@{DocIndexEntry}!accept@{accept}}
+\index{accept@{accept}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Index\+Entry\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_index_entry_ac267b515c9df901ab1505e070931996c}\label{class_doc_index_entry_ac267b515c9df901ab1505e070931996c}} 
+\index{DocIndexEntry@{DocIndexEntry}!entry@{entry}}
+\index{entry@{entry}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{entry()}{entry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Index\+Entry\+::entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_index_entry_a246d8de74105d446f2544b8aa51be833}\label{class_doc_index_entry_a246d8de74105d446f2544b8aa51be833}} 
+\index{DocIndexEntry@{DocIndexEntry}!kind@{kind}}
+\index{kind@{kind}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Index\+Entry\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_index_entry_ada2b2456ca723ba1bfa6a8d2dd62a4be}\label{class_doc_index_entry_ada2b2456ca723ba1bfa6a8d2dd62a4be}} 
+\index{DocIndexEntry@{DocIndexEntry}!member@{member}}
+\index{member@{member}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{member()}{member()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_member_def}{Member\+Def}}$\ast$ Doc\+Index\+Entry\+::member (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_index_entry_a32f8c84b803b04fd2de18d647593c8fe}\label{class_doc_index_entry_a32f8c84b803b04fd2de18d647593c8fe}} 
+\index{DocIndexEntry@{DocIndexEntry}!parse@{parse}}
+\index{parse@{parse}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int Doc\+Index\+Entry\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_index_entry_a02aaae83cb3ce69bdc972ce45facf9a4}\label{class_doc_index_entry_a02aaae83cb3ce69bdc972ce45facf9a4}} 
+\index{DocIndexEntry@{DocIndexEntry}!scope@{scope}}
+\index{scope@{scope}!DocIndexEntry@{DocIndexEntry}}
+\doxysubsubsection{\texorpdfstring{scope()}{scope()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_definition}{Definition}}$\ast$ Doc\+Index\+Entry\+::scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

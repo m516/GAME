@@ -1,0 +1,175 @@
+\hypertarget{class_debug}{}\doxysection{Debug Class Reference}
+\label{class_debug}\index{Debug@{Debug}}
+
+
+{\ttfamily \#include $<$debug.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+Mask}} \{ \newline
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96aa1079d9a4345660aa3e283c322fd12f3}{Quiet}} = 0x00000000, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96ac4d3bb469126ba5f5ba50c724219edf5}{Find\+Members}} = 0x00000001, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a6988d421a5b346541cb4f804054562a4}{Functions}} = 0x00000002, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a442859fe9afb29937aeeac886b911f64}{Variables}} = 0x00000004, 
+\newline
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96aec63880706f2286cd7ca9057bf407e2f}{Preprocessor}} = 0x00000008, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96ae45530210daeb78c35e1b4c078277c8f}{Classes}} = 0x00000010, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96af158610d0a0e6dd08ec7cab215168fa5}{Comment\+Cnv}} = 0x00000020, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96afeb3ede15e44e56c363351c25efd2504}{Comment\+Scan}} = 0x00000040, 
+\newline
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96ab57325adbf79149e4bd7a010d6e83499}{Validate}} = 0x00000080, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a92b8cea26e6d5e2a5d3d04b63686bb2b}{Print\+Tree}} = 0x00000100, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a9cbd5d3516ffd3fe86238779edb2f7c5}{Time}} = 0x00000200, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a8dbe64e9ab683833c1ea7252649058a3}{Ext\+Cmd}} = 0x00000400, 
+\newline
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a4e7a964cec1d0423c74ab7045c1f6f6d}{Markdown}} = 0x00000800, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a5e47cf9df9552fe30480288b70288d72}{Filter\+Output}} = 0x00001000, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96a0c1d42bd6b09e5427669a49f082e823b}{Lex}} = 0x00002000, 
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96aa8db983f0b8626bee7c3f012c8b5d566}{Plantuml}} = 0x00004000, 
+\newline
+\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96afae1c4a49dc51808b18e3091bbc85e28}{Fortran\+Fixed2\+Free}} = 0x00008000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_debug_a5d86ffebf96f9f75b6c957db5f831da3}{print}} (\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+Mask}} mask, int prio, const char $\ast$\mbox{\hyperlink{gd_8h_a385b176a615b615a1efd83838ffdc24f}{fmt}},...)
+\item 
+static int \mbox{\hyperlink{class_debug_a24711079b52ca1e61539e7caa4ca61d8}{set\+Flag}} (const char $\ast$label)
+\item 
+static void \mbox{\hyperlink{class_debug_a1e78a9cfc37f50990e7701d56f7bf207}{clear\+Flag}} (const char $\ast$label)
+\item 
+static \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_debug_a92b0668ebfb43903d82ad112bf6c84e1}{is\+Flag\+Set}} (\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+Mask}} mask)
+\item 
+static void \mbox{\hyperlink{class_debug_a9a7dd2cc5af4551bf2d34ce8ba5a78b7}{print\+Flags}} (void)
+\item 
+static void \mbox{\hyperlink{class_debug_a666b610770dd7b7c0a87f2415aefe7d9}{set\+Priority}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class containing a print function for diagnostics. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96}\label{class_debug_a9e0b892a8030a4f64076850777991c96}} 
+\index{Debug@{Debug}!DebugMask@{DebugMask}}
+\index{DebugMask@{DebugMask}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{DebugMask}{DebugMask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+::\+Debug\+Mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quiet@{Quiet}!Debug@{Debug}}\index{Debug@{Debug}!Quiet@{Quiet}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96aa1079d9a4345660aa3e283c322fd12f3}\label{class_debug_a9e0b892a8030a4f64076850777991c96aa1079d9a4345660aa3e283c322fd12f3}} 
+Quiet&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FindMembers@{FindMembers}!Debug@{Debug}}\index{Debug@{Debug}!FindMembers@{FindMembers}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96ac4d3bb469126ba5f5ba50c724219edf5}\label{class_debug_a9e0b892a8030a4f64076850777991c96ac4d3bb469126ba5f5ba50c724219edf5}} 
+Find\+Members&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Functions@{Functions}!Debug@{Debug}}\index{Debug@{Debug}!Functions@{Functions}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a6988d421a5b346541cb4f804054562a4}\label{class_debug_a9e0b892a8030a4f64076850777991c96a6988d421a5b346541cb4f804054562a4}} 
+Functions&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Variables@{Variables}!Debug@{Debug}}\index{Debug@{Debug}!Variables@{Variables}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a442859fe9afb29937aeeac886b911f64}\label{class_debug_a9e0b892a8030a4f64076850777991c96a442859fe9afb29937aeeac886b911f64}} 
+Variables&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Preprocessor@{Preprocessor}!Debug@{Debug}}\index{Debug@{Debug}!Preprocessor@{Preprocessor}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96aec63880706f2286cd7ca9057bf407e2f}\label{class_debug_a9e0b892a8030a4f64076850777991c96aec63880706f2286cd7ca9057bf407e2f}} 
+Preprocessor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Classes@{Classes}!Debug@{Debug}}\index{Debug@{Debug}!Classes@{Classes}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96ae45530210daeb78c35e1b4c078277c8f}\label{class_debug_a9e0b892a8030a4f64076850777991c96ae45530210daeb78c35e1b4c078277c8f}} 
+Classes&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommentCnv@{CommentCnv}!Debug@{Debug}}\index{Debug@{Debug}!CommentCnv@{CommentCnv}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96af158610d0a0e6dd08ec7cab215168fa5}\label{class_debug_a9e0b892a8030a4f64076850777991c96af158610d0a0e6dd08ec7cab215168fa5}} 
+Comment\+Cnv&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommentScan@{CommentScan}!Debug@{Debug}}\index{Debug@{Debug}!CommentScan@{CommentScan}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96afeb3ede15e44e56c363351c25efd2504}\label{class_debug_a9e0b892a8030a4f64076850777991c96afeb3ede15e44e56c363351c25efd2504}} 
+Comment\+Scan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Validate@{Validate}!Debug@{Debug}}\index{Debug@{Debug}!Validate@{Validate}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96ab57325adbf79149e4bd7a010d6e83499}\label{class_debug_a9e0b892a8030a4f64076850777991c96ab57325adbf79149e4bd7a010d6e83499}} 
+Validate&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PrintTree@{PrintTree}!Debug@{Debug}}\index{Debug@{Debug}!PrintTree@{PrintTree}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a92b8cea26e6d5e2a5d3d04b63686bb2b}\label{class_debug_a9e0b892a8030a4f64076850777991c96a92b8cea26e6d5e2a5d3d04b63686bb2b}} 
+Print\+Tree&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Time@{Time}!Debug@{Debug}}\index{Debug@{Debug}!Time@{Time}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a9cbd5d3516ffd3fe86238779edb2f7c5}\label{class_debug_a9e0b892a8030a4f64076850777991c96a9cbd5d3516ffd3fe86238779edb2f7c5}} 
+Time&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ExtCmd@{ExtCmd}!Debug@{Debug}}\index{Debug@{Debug}!ExtCmd@{ExtCmd}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a8dbe64e9ab683833c1ea7252649058a3}\label{class_debug_a9e0b892a8030a4f64076850777991c96a8dbe64e9ab683833c1ea7252649058a3}} 
+Ext\+Cmd&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Markdown@{Markdown}!Debug@{Debug}}\index{Debug@{Debug}!Markdown@{Markdown}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a4e7a964cec1d0423c74ab7045c1f6f6d}\label{class_debug_a9e0b892a8030a4f64076850777991c96a4e7a964cec1d0423c74ab7045c1f6f6d}} 
+Markdown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilterOutput@{FilterOutput}!Debug@{Debug}}\index{Debug@{Debug}!FilterOutput@{FilterOutput}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a5e47cf9df9552fe30480288b70288d72}\label{class_debug_a9e0b892a8030a4f64076850777991c96a5e47cf9df9552fe30480288b70288d72}} 
+Filter\+Output&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lex@{Lex}!Debug@{Debug}}\index{Debug@{Debug}!Lex@{Lex}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96a0c1d42bd6b09e5427669a49f082e823b}\label{class_debug_a9e0b892a8030a4f64076850777991c96a0c1d42bd6b09e5427669a49f082e823b}} 
+Lex&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Plantuml@{Plantuml}!Debug@{Debug}}\index{Debug@{Debug}!Plantuml@{Plantuml}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96aa8db983f0b8626bee7c3f012c8b5d566}\label{class_debug_a9e0b892a8030a4f64076850777991c96aa8db983f0b8626bee7c3f012c8b5d566}} 
+Plantuml&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FortranFixed2Free@{FortranFixed2Free}!Debug@{Debug}}\index{Debug@{Debug}!FortranFixed2Free@{FortranFixed2Free}}}\mbox{\Hypertarget{class_debug_a9e0b892a8030a4f64076850777991c96afae1c4a49dc51808b18e3091bbc85e28}\label{class_debug_a9e0b892a8030a4f64076850777991c96afae1c4a49dc51808b18e3091bbc85e28}} 
+Fortran\+Fixed2\+Free&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_debug_a1e78a9cfc37f50990e7701d56f7bf207}\label{class_debug_a1e78a9cfc37f50990e7701d56f7bf207}} 
+\index{Debug@{Debug}!clearFlag@{clearFlag}}
+\index{clearFlag@{clearFlag}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{clearFlag()}{clearFlag()}}
+{\footnotesize\ttfamily void Debug\+::clear\+Flag (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_debug_a92b0668ebfb43903d82ad112bf6c84e1}\label{class_debug_a92b0668ebfb43903d82ad112bf6c84e1}} 
+\index{Debug@{Debug}!isFlagSet@{isFlagSet}}
+\index{isFlagSet@{isFlagSet}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{isFlagSet()}{isFlagSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Debug\+::is\+Flag\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+Mask}}}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_debug_a5d86ffebf96f9f75b6c957db5f831da3}\label{class_debug_a5d86ffebf96f9f75b6c957db5f831da3}} 
+\index{Debug@{Debug}!print@{print}}
+\index{print@{print}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Debug\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_debug_a9e0b892a8030a4f64076850777991c96}{Debug\+Mask}}}]{mask,  }\item[{int}]{prio,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_debug_a9a7dd2cc5af4551bf2d34ce8ba5a78b7}\label{class_debug_a9a7dd2cc5af4551bf2d34ce8ba5a78b7}} 
+\index{Debug@{Debug}!printFlags@{printFlags}}
+\index{printFlags@{printFlags}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{printFlags()}{printFlags()}}
+{\footnotesize\ttfamily void Debug\+::print\+Flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_debug_a24711079b52ca1e61539e7caa4ca61d8}\label{class_debug_a24711079b52ca1e61539e7caa4ca61d8}} 
+\index{Debug@{Debug}!setFlag@{setFlag}}
+\index{setFlag@{setFlag}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{setFlag()}{setFlag()}}
+{\footnotesize\ttfamily int Debug\+::set\+Flag (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_debug_a666b610770dd7b7c0a87f2415aefe7d9}\label{class_debug_a666b610770dd7b7c0a87f2415aefe7d9}} 
+\index{Debug@{Debug}!setPriority@{setPriority}}
+\index{setPriority@{setPriority}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
+{\footnotesize\ttfamily void Debug\+::set\+Priority (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{src_2debug_8h}{debug.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{src_2debug_8cpp}{debug.\+cpp}}\end{DoxyCompactItemize}

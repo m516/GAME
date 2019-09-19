@@ -1,0 +1,143 @@
+\hypertarget{gdhelpers_8h}{}\doxysection{doxygen/libmscgen/gdhelpers.h File Reference}
+\label{gdhelpers_8h}\index{doxygen/libmscgen/gdhelpers.h@{doxygen/libmscgen/gdhelpers.h}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a0e66b7426798cb1f40c28a9dde6e1a89}{G\+D\+H\+E\+L\+P\+E\+R\+S\+\_\+H}}~1
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a53c2d7682b98f13bfd0b16c55e09e3d5}{gd\+Mutex\+Declare}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a6a598320f6c864de4c90a95eca4c201d}{gd\+Mutex\+Setup}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a05e88db05de55f67d6ca23b004599c07}{gd\+Mutex\+Shutdown}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_abed050c2027aca542bbb45e31dc528e9}{gd\+Mutex\+Lock}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_ae96a44b7991d5766f5dae3f9cc2fbd6c}{gd\+Mutex\+Unlock}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a0e8b4e57d8e1f01618d9712326983fa5}{D\+P\+C\+M2\+D\+PI}}(dpcm)~(unsigned int)((dpcm)$\ast$2.\+54 + 0.\+5)
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_acea68f31f50f73a930b607217c4dca30}{D\+P\+M2\+D\+PI}}(dpm)~(unsigned int)((dpm)$\ast$0.\+0254 + 0.\+5)
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_ae18fbb26df5993942c88eaae9a6515f0}{D\+P\+I2\+D\+P\+CM}}(dpi)~(unsigned int)((dpi)/2.\+54 + 0.\+5)
+\item 
+\#define \mbox{\hyperlink{gdhelpers_8h_a55fe1b4bf738d1fc7b96a15b6fdbe318}{D\+P\+I2\+D\+PM}}(dpi)~(unsigned int)((dpi)/0.\+0254 + 0.\+5)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{gdhelpers_8h_a999e439f20fb3da07612c4d0b6cbb73f}{gd\+\_\+strtok\+\_\+r}} (char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}}, char $\ast$sep, char $\ast$$\ast$state)
+\item 
+void $\ast$ \mbox{\hyperlink{gdhelpers_8h_a6a42b9ac556536f6664b20d21db718ca}{gd\+Calloc}} (size\+\_\+t nmemb, size\+\_\+t \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+void $\ast$ \mbox{\hyperlink{gdhelpers_8h_a0a047dfe0b24cec479160d09bab6225b}{gd\+Malloc}} (size\+\_\+t \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+void $\ast$ \mbox{\hyperlink{gdhelpers_8h_ad99af1a15c15d81b85bd5fcede4f932f}{gd\+Realloc}} (void $\ast$ptr, size\+\_\+t \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+void $\ast$ \mbox{\hyperlink{gdhelpers_8h_a07fd8dc03ab694cebe4816a46524a449}{gd\+Realloc\+Ex}} (void $\ast$ptr, size\+\_\+t \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+int \mbox{\hyperlink{gdhelpers_8h_ad447ab61e47066efb12dc8faefb838b7}{overflow2}} (int \mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}, int \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gdhelpers_8h_a0e8b4e57d8e1f01618d9712326983fa5}\label{gdhelpers_8h_a0e8b4e57d8e1f01618d9712326983fa5}} 
+\index{gdhelpers.h@{gdhelpers.h}!DPCM2DPI@{DPCM2DPI}}
+\index{DPCM2DPI@{DPCM2DPI}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{DPCM2DPI}{DPCM2DPI}}
+{\footnotesize\ttfamily \#define D\+P\+C\+M2\+D\+PI(\begin{DoxyParamCaption}\item[{}]{dpcm }\end{DoxyParamCaption})~(unsigned int)((dpcm)$\ast$2.\+54 + 0.\+5)}
+
+\mbox{\Hypertarget{gdhelpers_8h_ae18fbb26df5993942c88eaae9a6515f0}\label{gdhelpers_8h_ae18fbb26df5993942c88eaae9a6515f0}} 
+\index{gdhelpers.h@{gdhelpers.h}!DPI2DPCM@{DPI2DPCM}}
+\index{DPI2DPCM@{DPI2DPCM}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{DPI2DPCM}{DPI2DPCM}}
+{\footnotesize\ttfamily \#define D\+P\+I2\+D\+P\+CM(\begin{DoxyParamCaption}\item[{}]{dpi }\end{DoxyParamCaption})~(unsigned int)((dpi)/2.\+54 + 0.\+5)}
+
+\mbox{\Hypertarget{gdhelpers_8h_a55fe1b4bf738d1fc7b96a15b6fdbe318}\label{gdhelpers_8h_a55fe1b4bf738d1fc7b96a15b6fdbe318}} 
+\index{gdhelpers.h@{gdhelpers.h}!DPI2DPM@{DPI2DPM}}
+\index{DPI2DPM@{DPI2DPM}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{DPI2DPM}{DPI2DPM}}
+{\footnotesize\ttfamily \#define D\+P\+I2\+D\+PM(\begin{DoxyParamCaption}\item[{}]{dpi }\end{DoxyParamCaption})~(unsigned int)((dpi)/0.\+0254 + 0.\+5)}
+
+\mbox{\Hypertarget{gdhelpers_8h_acea68f31f50f73a930b607217c4dca30}\label{gdhelpers_8h_acea68f31f50f73a930b607217c4dca30}} 
+\index{gdhelpers.h@{gdhelpers.h}!DPM2DPI@{DPM2DPI}}
+\index{DPM2DPI@{DPM2DPI}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{DPM2DPI}{DPM2DPI}}
+{\footnotesize\ttfamily \#define D\+P\+M2\+D\+PI(\begin{DoxyParamCaption}\item[{}]{dpm }\end{DoxyParamCaption})~(unsigned int)((dpm)$\ast$0.\+0254 + 0.\+5)}
+
+\mbox{\Hypertarget{gdhelpers_8h_a0e66b7426798cb1f40c28a9dde6e1a89}\label{gdhelpers_8h_a0e66b7426798cb1f40c28a9dde6e1a89}} 
+\index{gdhelpers.h@{gdhelpers.h}!GDHELPERS\_H@{GDHELPERS\_H}}
+\index{GDHELPERS\_H@{GDHELPERS\_H}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{GDHELPERS\_H}{GDHELPERS\_H}}
+{\footnotesize\ttfamily \#define G\+D\+H\+E\+L\+P\+E\+R\+S\+\_\+H~1}
+
+\mbox{\Hypertarget{gdhelpers_8h_a53c2d7682b98f13bfd0b16c55e09e3d5}\label{gdhelpers_8h_a53c2d7682b98f13bfd0b16c55e09e3d5}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMutexDeclare@{gdMutexDeclare}}
+\index{gdMutexDeclare@{gdMutexDeclare}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMutexDeclare}{gdMutexDeclare}}
+{\footnotesize\ttfamily \#define gd\+Mutex\+Declare(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_abed050c2027aca542bbb45e31dc528e9}\label{gdhelpers_8h_abed050c2027aca542bbb45e31dc528e9}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMutexLock@{gdMutexLock}}
+\index{gdMutexLock@{gdMutexLock}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMutexLock}{gdMutexLock}}
+{\footnotesize\ttfamily \#define gd\+Mutex\+Lock(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_a6a598320f6c864de4c90a95eca4c201d}\label{gdhelpers_8h_a6a598320f6c864de4c90a95eca4c201d}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMutexSetup@{gdMutexSetup}}
+\index{gdMutexSetup@{gdMutexSetup}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMutexSetup}{gdMutexSetup}}
+{\footnotesize\ttfamily \#define gd\+Mutex\+Setup(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_a05e88db05de55f67d6ca23b004599c07}\label{gdhelpers_8h_a05e88db05de55f67d6ca23b004599c07}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMutexShutdown@{gdMutexShutdown}}
+\index{gdMutexShutdown@{gdMutexShutdown}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMutexShutdown}{gdMutexShutdown}}
+{\footnotesize\ttfamily \#define gd\+Mutex\+Shutdown(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_ae96a44b7991d5766f5dae3f9cc2fbd6c}\label{gdhelpers_8h_ae96a44b7991d5766f5dae3f9cc2fbd6c}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMutexUnlock@{gdMutexUnlock}}
+\index{gdMutexUnlock@{gdMutexUnlock}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMutexUnlock}{gdMutexUnlock}}
+{\footnotesize\ttfamily \#define gd\+Mutex\+Unlock(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gdhelpers_8h_a999e439f20fb3da07612c4d0b6cbb73f}\label{gdhelpers_8h_a999e439f20fb3da07612c4d0b6cbb73f}} 
+\index{gdhelpers.h@{gdhelpers.h}!gd\_strtok\_r@{gd\_strtok\_r}}
+\index{gd\_strtok\_r@{gd\_strtok\_r}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gd\_strtok\_r()}{gd\_strtok\_r()}}
+{\footnotesize\ttfamily char$\ast$ gd\+\_\+strtok\+\_\+r (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{char $\ast$}]{sep,  }\item[{char $\ast$$\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_a6a42b9ac556536f6664b20d21db718ca}\label{gdhelpers_8h_a6a42b9ac556536f6664b20d21db718ca}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdCalloc@{gdCalloc}}
+\index{gdCalloc@{gdCalloc}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdCalloc()}{gdCalloc()}}
+{\footnotesize\ttfamily void$\ast$ gd\+Calloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_a0a047dfe0b24cec479160d09bab6225b}\label{gdhelpers_8h_a0a047dfe0b24cec479160d09bab6225b}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdMalloc@{gdMalloc}}
+\index{gdMalloc@{gdMalloc}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdMalloc()}{gdMalloc()}}
+{\footnotesize\ttfamily void$\ast$ gd\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_ad99af1a15c15d81b85bd5fcede4f932f}\label{gdhelpers_8h_ad99af1a15c15d81b85bd5fcede4f932f}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdRealloc@{gdRealloc}}
+\index{gdRealloc@{gdRealloc}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdRealloc()}{gdRealloc()}}
+{\footnotesize\ttfamily void$\ast$ gd\+Realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_a07fd8dc03ab694cebe4816a46524a449}\label{gdhelpers_8h_a07fd8dc03ab694cebe4816a46524a449}} 
+\index{gdhelpers.h@{gdhelpers.h}!gdReallocEx@{gdReallocEx}}
+\index{gdReallocEx@{gdReallocEx}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{gdReallocEx()}{gdReallocEx()}}
+{\footnotesize\ttfamily void$\ast$ gd\+Realloc\+Ex (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gdhelpers_8h_ad447ab61e47066efb12dc8faefb838b7}\label{gdhelpers_8h_ad447ab61e47066efb12dc8faefb838b7}} 
+\index{gdhelpers.h@{gdhelpers.h}!overflow2@{overflow2}}
+\index{overflow2@{overflow2}!gdhelpers.h@{gdhelpers.h}}
+\doxysubsubsection{\texorpdfstring{overflow2()}{overflow2()}}
+{\footnotesize\ttfamily int overflow2 (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+

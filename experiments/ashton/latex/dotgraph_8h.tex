@@ -1,0 +1,103 @@
+\hypertarget{dotgraph_8h}{}\doxysection{doxygen/src/dotgraph.h File Reference}
+\label{dotgraph_8h}\index{doxygen/src/dotgraph.h@{doxygen/src/dotgraph.h}}
+{\ttfamily \#include $<$qcstring.\+h$>$}\newline
+{\ttfamily \#include $<$qgstring.\+h$>$}\newline
+{\ttfamily \#include $<$qdir.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dot_graph}{Dot\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}} \{ \mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74}{G\+O\+F\+\_\+\+B\+I\+T\+M\+AP}}, 
+\mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa12efde0dedd2fed14ddd17d36e33071c}{G\+O\+F\+\_\+\+E\+PS}}
+ \}
+\item 
+enum \mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}{Embedded\+Output\+Format}} \{ \mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dccab182cf71eb4350296dd0fc42756ae743}{E\+O\+F\+\_\+\+Html}}, 
+\mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dcca0673ba3e7ca43f2cc3cfc948173d7019}{E\+O\+F\+\_\+\+La\+TeX}}, 
+\mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dccac497121b7a319f079203ce79ed343d12}{E\+O\+F\+\_\+\+Rtf}}, 
+\mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dccae4581acab1b8d3c03cfdd9a0772586a8}{E\+O\+F\+\_\+\+Doc\+Book}}
+ \}
+\item 
+enum \mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72}{Graph\+Type}} \{ \newline
+\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72a04ba5510c0046869cfe400ee78d06387}{Dependency}}, 
+\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72a527d7a3655e0c23a6c43fcdc6d9f1100}{Inheritance}}, 
+\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72ad6cefbfd4a3f14bb6afe1672fae4c5c7}{Collaboration}}, 
+\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72a3f2ae12e9fd5f5eed39e4feafef89e4d}{Hierarchy}}, 
+\newline
+\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72a2edc7a6d2de6c3fcb2b97f20bb68ae8d}{Call\+Graph}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}\label{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}} 
+\index{dotgraph.h@{dotgraph.h}!EmbeddedOutputFormat@{EmbeddedOutputFormat}}
+\index{EmbeddedOutputFormat@{EmbeddedOutputFormat}!dotgraph.h@{dotgraph.h}}
+\doxysubsubsection{\texorpdfstring{EmbeddedOutputFormat}{EmbeddedOutputFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}{Embedded\+Output\+Format}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EOF\_Html@{EOF\_Html}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!EOF\_Html@{EOF\_Html}}}\mbox{\Hypertarget{dotgraph_8h_a8680135da08a5ef57cebe20060912dccab182cf71eb4350296dd0fc42756ae743}\label{dotgraph_8h_a8680135da08a5ef57cebe20060912dccab182cf71eb4350296dd0fc42756ae743}} 
+E\+O\+F\+\_\+\+Html&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EOF\_LaTeX@{EOF\_LaTeX}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!EOF\_LaTeX@{EOF\_LaTeX}}}\mbox{\Hypertarget{dotgraph_8h_a8680135da08a5ef57cebe20060912dcca0673ba3e7ca43f2cc3cfc948173d7019}\label{dotgraph_8h_a8680135da08a5ef57cebe20060912dcca0673ba3e7ca43f2cc3cfc948173d7019}} 
+E\+O\+F\+\_\+\+La\+TeX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EOF\_Rtf@{EOF\_Rtf}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!EOF\_Rtf@{EOF\_Rtf}}}\mbox{\Hypertarget{dotgraph_8h_a8680135da08a5ef57cebe20060912dccac497121b7a319f079203ce79ed343d12}\label{dotgraph_8h_a8680135da08a5ef57cebe20060912dccac497121b7a319f079203ce79ed343d12}} 
+E\+O\+F\+\_\+\+Rtf&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EOF\_DocBook@{EOF\_DocBook}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!EOF\_DocBook@{EOF\_DocBook}}}\mbox{\Hypertarget{dotgraph_8h_a8680135da08a5ef57cebe20060912dccae4581acab1b8d3c03cfdd9a0772586a8}\label{dotgraph_8h_a8680135da08a5ef57cebe20060912dccae4581acab1b8d3c03cfdd9a0772586a8}} 
+E\+O\+F\+\_\+\+Doc\+Book&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}\label{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}} 
+\index{dotgraph.h@{dotgraph.h}!GraphOutputFormat@{GraphOutputFormat}}
+\index{GraphOutputFormat@{GraphOutputFormat}!dotgraph.h@{dotgraph.h}}
+\doxysubsubsection{\texorpdfstring{GraphOutputFormat}{GraphOutputFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_BITMAP@{GOF\_BITMAP}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!GOF\_BITMAP@{GOF\_BITMAP}}}\mbox{\Hypertarget{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74}\label{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74}} 
+G\+O\+F\+\_\+\+B\+I\+T\+M\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_EPS@{GOF\_EPS}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!GOF\_EPS@{GOF\_EPS}}}\mbox{\Hypertarget{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa12efde0dedd2fed14ddd17d36e33071c}\label{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523fa12efde0dedd2fed14ddd17d36e33071c}} 
+G\+O\+F\+\_\+\+E\+PS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72}} 
+\index{dotgraph.h@{dotgraph.h}!GraphType@{GraphType}}
+\index{GraphType@{GraphType}!dotgraph.h@{dotgraph.h}}
+\doxysubsubsection{\texorpdfstring{GraphType}{GraphType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72}{Graph\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dependency@{Dependency}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!Dependency@{Dependency}}}\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72a04ba5510c0046869cfe400ee78d06387}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72a04ba5510c0046869cfe400ee78d06387}} 
+Dependency&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inheritance@{Inheritance}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!Inheritance@{Inheritance}}}\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72a527d7a3655e0c23a6c43fcdc6d9f1100}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72a527d7a3655e0c23a6c43fcdc6d9f1100}} 
+Inheritance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Collaboration@{Collaboration}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!Collaboration@{Collaboration}}}\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72ad6cefbfd4a3f14bb6afe1672fae4c5c7}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72ad6cefbfd4a3f14bb6afe1672fae4c5c7}} 
+Collaboration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hierarchy@{Hierarchy}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!Hierarchy@{Hierarchy}}}\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72a3f2ae12e9fd5f5eed39e4feafef89e4d}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72a3f2ae12e9fd5f5eed39e4feafef89e4d}} 
+Hierarchy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CallGraph@{CallGraph}!dotgraph.h@{dotgraph.h}}\index{dotgraph.h@{dotgraph.h}!CallGraph@{CallGraph}}}\mbox{\Hypertarget{dotgraph_8h_a0c7c85309652245e03563b127f451f72a2edc7a6d2de6c3fcb2b97f20bb68ae8d}\label{dotgraph_8h_a0c7c85309652245e03563b127f451f72a2edc7a6d2de6c3fcb2b97f20bb68ae8d}} 
+Call\+Graph&\\
+\hline
+
+\end{DoxyEnumFields}

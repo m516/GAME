@@ -1,0 +1,75 @@
+\hypertarget{class_doc_white_space}{}\doxysection{Doc\+White\+Space Class Reference}
+\label{class_doc_white_space}\index{DocWhiteSpace@{DocWhiteSpace}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+White\+Space\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_white_space}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_white_space_afbeedad7743b79f86b5ababfb2186f71}{Doc\+White\+Space}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{class_doc_white_space_a9e8fbf6c6ca3efa8f4e7d9fce2352023}{chars}})
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_white_space_a8cc06255a7e2dc0f4d23567568235410}{kind}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_white_space_a9e8fbf6c6ca3efa8f4e7d9fce2352023}{chars}} () const
+\item 
+void \mbox{\hyperlink{class_doc_white_space_af3830207874d11f5e9fd193fe875d0fa}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing some amount of white space 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_white_space_afbeedad7743b79f86b5ababfb2186f71}\label{class_doc_white_space_afbeedad7743b79f86b5ababfb2186f71}} 
+\index{DocWhiteSpace@{DocWhiteSpace}!DocWhiteSpace@{DocWhiteSpace}}
+\index{DocWhiteSpace@{DocWhiteSpace}!DocWhiteSpace@{DocWhiteSpace}}
+\doxysubsubsection{\texorpdfstring{DocWhiteSpace()}{DocWhiteSpace()}}
+{\footnotesize\ttfamily Doc\+White\+Space\+::\+Doc\+White\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{chars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_white_space_af3830207874d11f5e9fd193fe875d0fa}\label{class_doc_white_space_af3830207874d11f5e9fd193fe875d0fa}} 
+\index{DocWhiteSpace@{DocWhiteSpace}!accept@{accept}}
+\index{accept@{accept}!DocWhiteSpace@{DocWhiteSpace}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+White\+Space\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_white_space_a9e8fbf6c6ca3efa8f4e7d9fce2352023}\label{class_doc_white_space_a9e8fbf6c6ca3efa8f4e7d9fce2352023}} 
+\index{DocWhiteSpace@{DocWhiteSpace}!chars@{chars}}
+\index{chars@{chars}!DocWhiteSpace@{DocWhiteSpace}}
+\doxysubsubsection{\texorpdfstring{chars()}{chars()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+White\+Space\+::chars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_white_space_a8cc06255a7e2dc0f4d23567568235410}\label{class_doc_white_space_a8cc06255a7e2dc0f4d23567568235410}} 
+\index{DocWhiteSpace@{DocWhiteSpace}!kind@{kind}}
+\index{kind@{kind}!DocWhiteSpace@{DocWhiteSpace}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+White\+Space\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\end{DoxyCompactItemize}

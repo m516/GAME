@@ -1,0 +1,211 @@
+\hypertarget{class_dev_null_code_doc_interface}{}\doxysection{Dev\+Null\+Code\+Doc\+Interface Class Reference}
+\label{class_dev_null_code_doc_interface}\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+Inheritance diagram for Dev\+Null\+Code\+Doc\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dev_null_code_doc_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a75e60fd56c45e70af39b3b926e76d53f}{codify}} (const char $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a44ad7fe7fba94cb200fd0d53642b1909}{write\+Code\+Link}} (const char $\ast$, const char $\ast$, const char $\ast$, const char $\ast$, const char $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a3f251d7e2651aa943adf84c35e27d094}{write\+Tooltip}} (const char $\ast$, const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&, const char $\ast$, const char $\ast$, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a32188c740a455bab278f9098212b8fec}{write\+Line\+Number}} (const char $\ast$, const char $\ast$, const char $\ast$, int)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a3a63c468ba7f134f5f5cfc5867a81e3a}{start\+Code\+Line}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a5aeb9fdbb29f60058c55adecefab457a}{end\+Code\+Line}} ()
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a8489329a11f50e9d9ab1a3a67d306a51}{start\+Font\+Class}} (const char $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_adb2939da13563e88a225059de3d767e5}{end\+Font\+Class}} ()
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_abfa6f09f69831c231f0fe7bb095b8fc4}{write\+Code\+Anchor}} (const char $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a1d33f0e7e7ef04490c9c5f4feb0f89dd}{linkable\+Symbol}} (int, const char $\ast$, \mbox{\hyperlink{class_definition}{Definition}} $\ast$, \mbox{\hyperlink{class_definition}{Definition}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_aa92227375021639cd5d53e47fc6ebdd6}{set\+Current\+Doc}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$, const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+virtual void \mbox{\hyperlink{class_dev_null_code_doc_interface_a8ea71442357b2793532f7bab3a9f6319}{add\+Word}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class implementing \mbox{\hyperlink{class_code_output_interface}{Code\+Output\+Interface}} by throwing away everything. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a8ea71442357b2793532f7bab3a9f6319}\label{class_dev_null_code_doc_interface_a8ea71442357b2793532f7bab3a9f6319}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!addWord@{addWord}}
+\index{addWord@{addWord}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{addWord()}{addWord()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::add\+Word (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a2734a8371d6e710620ad238ed8de118e}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a75e60fd56c45e70af39b3b926e76d53f}\label{class_dev_null_code_doc_interface_a75e60fd56c45e70af39b3b926e76d53f}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!codify@{codify}}
+\index{codify@{codify}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{codify()}{codify()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::codify (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes an code fragment to the output. This function should keep spaces visible, should break lines at a newline and should convert tabs to the right number of spaces. 
+
+Implements \mbox{\hyperlink{class_code_output_interface_aa29a5eedda08596ace50ed5b59c8ae7f}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a5aeb9fdbb29f60058c55adecefab457a}\label{class_dev_null_code_doc_interface_a5aeb9fdbb29f60058c55adecefab457a}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!endCodeLine@{endCodeLine}}
+\index{endCodeLine@{endCodeLine}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{endCodeLine()}{endCodeLine()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::end\+Code\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a line of code started with \mbox{\hyperlink{class_dev_null_code_doc_interface_a3a63c468ba7f134f5f5cfc5867a81e3a}{start\+Code\+Line()}} 
+
+Implements \mbox{\hyperlink{class_code_output_interface_afac5763eafc78f93b82691fb9a6dcff7}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_adb2939da13563e88a225059de3d767e5}\label{class_dev_null_code_doc_interface_adb2939da13563e88a225059de3d767e5}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!endFontClass@{endFontClass}}
+\index{endFontClass@{endFontClass}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{endFontClass()}{endFontClass()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::end\+Font\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a block started with \mbox{\hyperlink{class_dev_null_code_doc_interface_a8489329a11f50e9d9ab1a3a67d306a51}{start\+Font\+Class()}} 
+
+Implements \mbox{\hyperlink{class_code_output_interface_a2b8ac05a391dae36793aa3aa8714a0f6}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a1d33f0e7e7ef04490c9c5f4feb0f89dd}\label{class_dev_null_code_doc_interface_a1d33f0e7e7ef04490c9c5f4feb0f89dd}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!linkableSymbol@{linkableSymbol}}
+\index{linkableSymbol@{linkableSymbol}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{linkableSymbol()}{linkableSymbol()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::linkable\+Symbol (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_aa92227375021639cd5d53e47fc6ebdd6}\label{class_dev_null_code_doc_interface_aa92227375021639cd5d53e47fc6ebdd6}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!setCurrentDoc@{setCurrentDoc}}
+\index{setCurrentDoc@{setCurrentDoc}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{setCurrentDoc()}{setCurrentDoc()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::set\+Current\+Doc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_ac6c4cc087f351242ee92e5f042cf09df}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a3a63c468ba7f134f5f5cfc5867a81e3a}\label{class_dev_null_code_doc_interface_a3a63c468ba7f134f5f5cfc5867a81e3a}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!startCodeLine@{startCodeLine}}
+\index{startCodeLine@{startCodeLine}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{startCodeLine()}{startCodeLine()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::start\+Code\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a8489329a11f50e9d9ab1a3a67d306a51}\label{class_dev_null_code_doc_interface_a8489329a11f50e9d9ab1a3a67d306a51}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!startFontClass@{startFontClass}}
+\index{startFontClass@{startFontClass}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{startFontClass()}{startFontClass()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::start\+Font\+Class (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cls\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Starts a block with a certain meaning. Used for syntax highlighting, which elements of the same type are rendered using the same \textquotesingle{}font class\textquotesingle{}. 
+\begin{DoxyParams}{Parameters}
+{\em cls\+Name} & The category name. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_abfa6f09f69831c231f0fe7bb095b8fc4}\label{class_dev_null_code_doc_interface_abfa6f09f69831c231f0fe7bb095b8fc4}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!writeCodeAnchor@{writeCodeAnchor}}
+\index{writeCodeAnchor@{writeCodeAnchor}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeCodeAnchor()}{writeCodeAnchor()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::write\+Code\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Write an anchor to a source listing. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the anchor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a1f6394c4ef7c4143de90bcaf3a65c0b4}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a44ad7fe7fba94cb200fd0d53642b1909}\label{class_dev_null_code_doc_interface_a44ad7fe7fba94cb200fd0d53642b1909}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!writeCodeLink@{writeCodeLink}}
+\index{writeCodeLink@{writeCodeLink}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeCodeLink()}{writeCodeLink()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::write\+Code\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{tooltip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a link to an object in a code fragment. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & If this is non-\/zero, the object is to be found in an external documentation file. \\
+\hline
+{\em file} & The file in which the object is located. \\
+\hline
+{\em anchor} & The anchor uniquely identifying the object within the file. \\
+\hline
+{\em name} & The text to display as a placeholder for the link. \\
+\hline
+{\em tooltip} & The tooltip to display when the mouse is on the link. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a102e2b7f40916c75b79871307f5bb674}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a32188c740a455bab278f9098212b8fec}\label{class_dev_null_code_doc_interface_a32188c740a455bab278f9098212b8fec}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!writeLineNumber@{writeLineNumber}}
+\index{writeLineNumber@{writeLineNumber}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeLineNumber()}{writeLineNumber()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::write\+Line\+Number (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{int}]{line\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes the line number of a source listing 
+\begin{DoxyParams}{Parameters}
+{\em ref} & External reference (when imported from a tag file) \\
+\hline
+{\em file} & The file part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em anchor} & The anchor part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em line\+Number} & The line number to write \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a8115646785b65e292480c2e4e969b389}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_dev_null_code_doc_interface_a3f251d7e2651aa943adf84c35e27d094}\label{class_dev_null_code_doc_interface_a3f251d7e2651aa943adf84c35e27d094}} 
+\index{DevNullCodeDocInterface@{DevNullCodeDocInterface}!writeTooltip@{writeTooltip}}
+\index{writeTooltip@{writeTooltip}!DevNullCodeDocInterface@{DevNullCodeDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeTooltip()}{writeTooltip()}}
+{\footnotesize\ttfamily virtual void Dev\+Null\+Code\+Doc\+Interface\+::write\+Tooltip (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&}]{doc\+Info,  }\item[{const char $\ast$}]{decl,  }\item[{const char $\ast$}]{desc,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{def\+Info,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{decl\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a tool tip definition 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique identifier for the tooltip \\
+\hline
+{\em doc\+Info} & Info about the symbol\textquotesingle{}s documentation. \\
+\hline
+{\em decl} & full declaration of the symbol (for functions) \\
+\hline
+{\em desc} & brief description for the symbol \\
+\hline
+{\em def\+Info} & Info about the symbol\textquotesingle{}s definition in the source code \\
+\hline
+{\em decl\+Info} & Info about the symbol\textquotesingle{}s declaration in the source code \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a4326ca642f6ec228466ae310622f73ad}{Code\+Output\+Interface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{filedef_8cpp}{filedef.\+cpp}}\end{DoxyCompactItemize}

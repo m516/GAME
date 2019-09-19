@@ -1,0 +1,43 @@
+\hypertarget{definition_8h}{}\doxysection{doxygen/src/definition.h File Reference}
+\label{definition_8h}\index{doxygen/src/definition.h@{doxygen/src/definition.h}}
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qdict.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_doc_info}{Doc\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_brief_info}{Brief\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_body_info}{Body\+Info}}
+\item 
+class \mbox{\hyperlink{class_definition_intf}{Definition\+Intf}}
+\item 
+class \mbox{\hyperlink{class_definition}{Definition}}
+\item 
+struct \mbox{\hyperlink{struct_definition_1_1_cookie}{Definition\+::\+Cookie}}
+\item 
+class \mbox{\hyperlink{class_definition_list}{Definition\+List}}
+\item 
+class \mbox{\hyperlink{class_definition_list_iterator}{Definition\+List\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{definition_8h_ace91eb5210546b4624031c2bbf2a5ad3}{read\+Code\+Fragment}} (const char $\ast$file\+Name, int \&start\+Line, int \&end\+Line, \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{definition_8h_ace91eb5210546b4624031c2bbf2a5ad3}\label{definition_8h_ace91eb5210546b4624031c2bbf2a5ad3}} 
+\index{definition.h@{definition.h}!readCodeFragment@{readCodeFragment}}
+\index{readCodeFragment@{readCodeFragment}!definition.h@{definition.h}}
+\doxysubsubsection{\texorpdfstring{readCodeFragment()}{readCodeFragment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} read\+Code\+Fragment (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{int \&}]{start\+Line,  }\item[{int \&}]{end\+Line,  }\item[{\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{result }\end{DoxyParamCaption})}
+
+Reads a fragment from file {\itshape file\+Name} starting with line {\itshape start\+Line} and ending with line {\itshape end\+Line}. The result is returned as a string via {\itshape result}. The function returns T\+R\+UE if successful and F\+A\+L\+SE in case of an error.
+
+Reads a fragment of code from file {\itshape file\+Name} starting at line {\itshape start\+Line} and ending at line {\itshape end\+Line} (inclusive). The fragment is stored in {\itshape result}. If F\+A\+L\+SE is returned the code fragment could not be found.
+
+The file is scanned for a opening bracket (\textquotesingle{}\{\textquotesingle{}) from {\itshape start\+Line} onward The line actually containing the bracket is returned via start\+Line. The file is scanned for a closing bracket (\textquotesingle{}\}\textquotesingle{}) from {\itshape end\+Line} backward. The line actually containing the bracket is returned via end\+Line. Note that for V\+H\+DL code the bracket search is not done. 

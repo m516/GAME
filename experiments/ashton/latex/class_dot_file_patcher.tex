@@ -1,0 +1,123 @@
+\hypertarget{class_dot_file_patcher}{}\doxysection{Dot\+File\+Patcher Class Reference}
+\label{class_dot_file_patcher}\index{DotFilePatcher@{DotFilePatcher}}
+
+
+{\ttfamily \#include $<$dotfilepatcher.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dot_file_patcher_aaf02acecacecc1482f18bfaf154ec3aa}{Dot\+File\+Patcher}} (const char $\ast$patch\+File)
+\item 
+int \mbox{\hyperlink{class_dot_file_patcher_aa53ad66e5d0c6a04f6d198aa030b63f3}{add\+Map}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&map\+File, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} url\+Only, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&label)
+\item 
+int \mbox{\hyperlink{class_dot_file_patcher_af67aa4441f3e872f6d3c69667572c052}{add\+Figure}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&figure\+Name, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} height\+Check)
+\item 
+int \mbox{\hyperlink{class_dot_file_patcher_aac97171a3985fd07e09fef2a25819a16}{add\+S\+V\+G\+Conversion}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} url\+Only, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} zoomable, int graph\+Id)
+\item 
+int \mbox{\hyperlink{class_dot_file_patcher_a8a0183f93570ac3b1a8df3e0f7229a2b}{add\+S\+V\+G\+Object}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&figure\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_file_patcher_a02cd92c7c61a35c61c601ff6b409c5e5}{run}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_file_patcher_a36fcbf6fe68086f734c114a2d30c5516}{is\+S\+V\+G\+File}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_file_patcher_a41b5f45f16d6d358fd0eae80ad2d4152}{convert\+Map\+File}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, const char $\ast$map\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} rel\+Path, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} url\+Only=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context=\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}())
+\item 
+static \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_file_patcher_a5088c1af1bf7bf931a7c6aa1d7d6e24b}{write\+S\+V\+G\+Figure\+Link}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{gd_8h_a48bc11919b2752df9d14ce89557cfb25}{out}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&abs\+Img\+Name)
+\item 
+static \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_file_patcher_a758d0041438edacfddb89f71490f2382}{write\+Vec\+Gfx\+Figure}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{gd_8h_a48bc11919b2752df9d14ce89557cfb25}{out}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&figure\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to insert a set of map file into an output file 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dot_file_patcher_aaf02acecacecc1482f18bfaf154ec3aa}\label{class_dot_file_patcher_aaf02acecacecc1482f18bfaf154ec3aa}} 
+\index{DotFilePatcher@{DotFilePatcher}!DotFilePatcher@{DotFilePatcher}}
+\index{DotFilePatcher@{DotFilePatcher}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{DotFilePatcher()}{DotFilePatcher()}}
+{\footnotesize\ttfamily Dot\+File\+Patcher\+::\+Dot\+File\+Patcher (\begin{DoxyParamCaption}\item[{const char $\ast$}]{patch\+File }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dot_file_patcher_af67aa4441f3e872f6d3c69667572c052}\label{class_dot_file_patcher_af67aa4441f3e872f6d3c69667572c052}} 
+\index{DotFilePatcher@{DotFilePatcher}!addFigure@{addFigure}}
+\index{addFigure@{addFigure}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{addFigure()}{addFigure()}}
+{\footnotesize\ttfamily int Dot\+File\+Patcher\+::add\+Figure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{figure\+Name,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{height\+Check }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_file_patcher_aa53ad66e5d0c6a04f6d198aa030b63f3}\label{class_dot_file_patcher_aa53ad66e5d0c6a04f6d198aa030b63f3}} 
+\index{DotFilePatcher@{DotFilePatcher}!addMap@{addMap}}
+\index{addMap@{addMap}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{addMap()}{addMap()}}
+{\footnotesize\ttfamily int Dot\+File\+Patcher\+::add\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{map\+File,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{url\+Only,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{label }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_file_patcher_aac97171a3985fd07e09fef2a25819a16}\label{class_dot_file_patcher_aac97171a3985fd07e09fef2a25819a16}} 
+\index{DotFilePatcher@{DotFilePatcher}!addSVGConversion@{addSVGConversion}}
+\index{addSVGConversion@{addSVGConversion}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{addSVGConversion()}{addSVGConversion()}}
+{\footnotesize\ttfamily int Dot\+File\+Patcher\+::add\+S\+V\+G\+Conversion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{url\+Only,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{zoomable,  }\item[{int}]{graph\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_file_patcher_a8a0183f93570ac3b1a8df3e0f7229a2b}\label{class_dot_file_patcher_a8a0183f93570ac3b1a8df3e0f7229a2b}} 
+\index{DotFilePatcher@{DotFilePatcher}!addSVGObject@{addSVGObject}}
+\index{addSVGObject@{addSVGObject}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{addSVGObject()}{addSVGObject()}}
+{\footnotesize\ttfamily int Dot\+File\+Patcher\+::add\+S\+V\+G\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{figure\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_file_patcher_a41b5f45f16d6d358fd0eae80ad2d4152}\label{class_dot_file_patcher_a41b5f45f16d6d358fd0eae80ad2d4152}} 
+\index{DotFilePatcher@{DotFilePatcher}!convertMapFile@{convertMapFile}}
+\index{convertMapFile@{convertMapFile}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{convertMapFile()}{convertMapFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+File\+Patcher\+::convert\+Map\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t,  }\item[{const char $\ast$}]{map\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}}]{rel\+Path,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{url\+Only = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}},  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context = {\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+converts the rectangles in a client site image map into a stream 
+\begin{DoxyParams}{Parameters}
+{\em t} & the stream to which the result is written. \\
+\hline
+{\em map\+Name} & the name of the map file. \\
+\hline
+{\em rel\+Path} & the relative path to the root of the output directory (used in case C\+R\+E\+A\+T\+E\+\_\+\+S\+U\+B\+D\+I\+RS is enabled). \\
+\hline
+{\em url\+Only} & if F\+A\+L\+SE the url field in the map contains an external references followed by a \$ and then the \mbox{\hyperlink{struct_u_r_l}{U\+RL}}. \\
+\hline
+{\em context} & the context (file, class, or namespace) in which the map file was found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dot_file_patcher_a36fcbf6fe68086f734c114a2d30c5516}\label{class_dot_file_patcher_a36fcbf6fe68086f734c114a2d30c5516}} 
+\index{DotFilePatcher@{DotFilePatcher}!isSVGFile@{isSVGFile}}
+\index{isSVGFile@{isSVGFile}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{isSVGFile()}{isSVGFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+File\+Patcher\+::is\+S\+V\+G\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dot_file_patcher_a02cd92c7c61a35c61c601ff6b409c5e5}\label{class_dot_file_patcher_a02cd92c7c61a35c61c601ff6b409c5e5}} 
+\index{DotFilePatcher@{DotFilePatcher}!run@{run}}
+\index{run@{run}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+File\+Patcher\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dot_file_patcher_a5088c1af1bf7bf931a7c6aa1d7d6e24b}\label{class_dot_file_patcher_a5088c1af1bf7bf931a7c6aa1d7d6e24b}} 
+\index{DotFilePatcher@{DotFilePatcher}!writeSVGFigureLink@{writeSVGFigureLink}}
+\index{writeSVGFigureLink@{writeSVGFigureLink}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{writeSVGFigureLink()}{writeSVGFigureLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+File\+Patcher\+::write\+S\+V\+G\+Figure\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{out,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{abs\+Img\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if a reference to a S\+VG figure can be written and do so if possible. Returns F\+A\+L\+SE if not possible (for instance because the S\+VG file is not yet generated). \mbox{\Hypertarget{class_dot_file_patcher_a758d0041438edacfddb89f71490f2382}\label{class_dot_file_patcher_a758d0041438edacfddb89f71490f2382}} 
+\index{DotFilePatcher@{DotFilePatcher}!writeVecGfxFigure@{writeVecGfxFigure}}
+\index{writeVecGfxFigure@{writeVecGfxFigure}!DotFilePatcher@{DotFilePatcher}}
+\doxysubsubsection{\texorpdfstring{writeVecGfxFigure()}{writeVecGfxFigure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+File\+Patcher\+::write\+Vec\+Gfx\+Figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{out,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{figure\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{dotfilepatcher_8h}{dotfilepatcher.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{dotfilepatcher_8cpp}{dotfilepatcher.\+cpp}}\end{DoxyCompactItemize}

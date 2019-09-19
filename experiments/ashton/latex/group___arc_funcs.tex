@@ -1,0 +1,93 @@
+\hypertarget{group___arc_funcs}{}\doxysection{Arc handling functions}
+\label{group___arc_funcs}\index{Arc handling functions@{Arc handling functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___arc_funcs_gaa232f08756ad79ed0fbb51c783db51a4}{Msc\+Reset\+Arc\+Iterator}} (\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}} \mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\item 
+\mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} \mbox{\hyperlink{group___arc_funcs_ga1fe8a2bde88e688af26cabb0e89e8e8b}{Msc\+Next\+Arc}} (struct \mbox{\hyperlink{struct_msc_tag}{Msc\+Tag}} $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\item 
+const char $\ast$ \mbox{\hyperlink{group___arc_funcs_ga39bbbec3a8a3267586cd3c3a49c2fe42}{Msc\+Get\+Current\+Arc\+Source}} (\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}} \mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\item 
+const char $\ast$ \mbox{\hyperlink{group___arc_funcs_ga2a98c874eed63f42c8d85d4a2eabb839}{Msc\+Get\+Current\+Arc\+Dest}} (\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}} \mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\item 
+\mbox{\hyperlink{mscgen__msc_8h_a726ea06e08404159bf4b7f6f1efbb03d}{Msc\+Arc\+Type}} \mbox{\hyperlink{group___arc_funcs_ga8490f0c8545f83868823e66bfa9253ab}{Msc\+Get\+Current\+Arc\+Type}} (struct \mbox{\hyperlink{struct_msc_tag}{Msc\+Tag}} $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\item 
+const char $\ast$ \mbox{\hyperlink{group___arc_funcs_ga1c85fc4907789444de34b70efde5b28b}{Msc\+Get\+Current\+Arc\+Attrib}} (\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}} \mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}}, \mbox{\hyperlink{mscgen__msc_8h_a6610f9066d9f8d4b560743e8295ac132}{Msc\+Attrib\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})
+\item 
+unsigned int \mbox{\hyperlink{group___arc_funcs_ga95ec6ed0b6bffab3de4d581c7b711a0d}{Msc\+Get\+Current\+Arc\+Input\+Line}} (\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}} \mbox{\hyperlink{060__command__switch_8tcl_a78d127e8bda64d4471ac811ad512fbd9}{m}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___arc_funcs_ga1c85fc4907789444de34b70efde5b28b}\label{group___arc_funcs_ga1c85fc4907789444de34b70efde5b28b}} 
+\index{Arc handling functions@{Arc handling functions}!MscGetCurrentArcAttrib@{MscGetCurrentArcAttrib}}
+\index{MscGetCurrentArcAttrib@{MscGetCurrentArcAttrib}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscGetCurrentArcAttrib()}{MscGetCurrentArcAttrib()}}
+{\footnotesize\ttfamily const char$\ast$ Msc\+Get\+Current\+Arc\+Attrib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}}}]{m,  }\item[{\mbox{\hyperlink{mscgen__msc_8h_a6610f9066d9f8d4b560743e8295ac132}{Msc\+Attrib\+Type}}}]{a }\end{DoxyParamCaption})}
+
+Get the value of some attribute for the current arc. 
+\begin{DoxyRetVals}{Return values}
+{\em The} & attribute string, or N\+U\+LL if unset. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___arc_funcs_ga2a98c874eed63f42c8d85d4a2eabb839}\label{group___arc_funcs_ga2a98c874eed63f42c8d85d4a2eabb839}} 
+\index{Arc handling functions@{Arc handling functions}!MscGetCurrentArcDest@{MscGetCurrentArcDest}}
+\index{MscGetCurrentArcDest@{MscGetCurrentArcDest}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscGetCurrentArcDest()}{MscGetCurrentArcDest()}}
+{\footnotesize\ttfamily const char$\ast$ Msc\+Get\+Current\+Arc\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}}}]{m }\end{DoxyParamCaption})}
+
+Get the name of the entity at which the current arc terminates. 
+\begin{DoxyRetVals}{Return values}
+{\em The} & label for the entity at which the current arc stops. The returned string must not be modified. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___arc_funcs_ga95ec6ed0b6bffab3de4d581c7b711a0d}\label{group___arc_funcs_ga95ec6ed0b6bffab3de4d581c7b711a0d}} 
+\index{Arc handling functions@{Arc handling functions}!MscGetCurrentArcInputLine@{MscGetCurrentArcInputLine}}
+\index{MscGetCurrentArcInputLine@{MscGetCurrentArcInputLine}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscGetCurrentArcInputLine()}{MscGetCurrentArcInputLine()}}
+{\footnotesize\ttfamily unsigned int Msc\+Get\+Current\+Arc\+Input\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}}}]{m }\end{DoxyParamCaption})}
+
+Get the line of the input file at which the current arc was defined. 
+\begin{DoxyRetVals}{Return values}
+{\em The} & line number of the input file. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___arc_funcs_ga39bbbec3a8a3267586cd3c3a49c2fe42}\label{group___arc_funcs_ga39bbbec3a8a3267586cd3c3a49c2fe42}} 
+\index{Arc handling functions@{Arc handling functions}!MscGetCurrentArcSource@{MscGetCurrentArcSource}}
+\index{MscGetCurrentArcSource@{MscGetCurrentArcSource}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscGetCurrentArcSource()}{MscGetCurrentArcSource()}}
+{\footnotesize\ttfamily const char$\ast$ Msc\+Get\+Current\+Arc\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}}}]{m }\end{DoxyParamCaption})}
+
+Get the name of the entity from which the current arc originates. 
+\begin{DoxyRetVals}{Return values}
+{\em The} & label for the entity from which the current arc starts. The returned string must not be modified. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___arc_funcs_ga8490f0c8545f83868823e66bfa9253ab}\label{group___arc_funcs_ga8490f0c8545f83868823e66bfa9253ab}} 
+\index{Arc handling functions@{Arc handling functions}!MscGetCurrentArcType@{MscGetCurrentArcType}}
+\index{MscGetCurrentArcType@{MscGetCurrentArcType}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscGetCurrentArcType()}{MscGetCurrentArcType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__msc_8h_a726ea06e08404159bf4b7f6f1efbb03d}{Msc\+Arc\+Type}} Msc\+Get\+Current\+Arc\+Type (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_msc_tag}{Msc\+Tag}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+Get the type for some arc. \mbox{\Hypertarget{group___arc_funcs_ga1fe8a2bde88e688af26cabb0e89e8e8b}\label{group___arc_funcs_ga1fe8a2bde88e688af26cabb0e89e8e8b}} 
+\index{Arc handling functions@{Arc handling functions}!MscNextArc@{MscNextArc}}
+\index{MscNextArc@{MscNextArc}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscNextArc()}{MscNextArc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} Msc\+Next\+Arc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_msc_tag}{Msc\+Tag}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+Move to the next arc in the M\+SC. 
+\begin{DoxyRetVals}{Return values}
+{\em T\+R\+UE} & if there is another arc, otherwise F\+A\+L\+SE if the end of the list has been reached. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___arc_funcs_gaa232f08756ad79ed0fbb51c783db51a4}\label{group___arc_funcs_gaa232f08756ad79ed0fbb51c783db51a4}} 
+\index{Arc handling functions@{Arc handling functions}!MscResetArcIterator@{MscResetArcIterator}}
+\index{MscResetArcIterator@{MscResetArcIterator}!Arc handling functions@{Arc handling functions}}
+\doxysubsubsection{\texorpdfstring{MscResetArcIterator()}{MscResetArcIterator()}}
+{\footnotesize\ttfamily void Msc\+Reset\+Arc\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mscgen__msc_8h_aca0247f7333b575de97470366d5b5c27}{Msc}}}]{m }\end{DoxyParamCaption})}
+
+Reset the arc interator. This moves the pointer to the current arc to the head of the list. 

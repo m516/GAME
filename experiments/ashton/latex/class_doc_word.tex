@@ -1,0 +1,100 @@
+\hypertarget{class_doc_word}{}\doxysection{Doc\+Word Class Reference}
+\label{class_doc_word}\index{DocWord@{DocWord}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Word\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_word}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_word_a73bddea7072aff79b8ea69ce961d5c8f}{Doc\+Word}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{class_doc_word_af9ecbc2daa4fb051a07c510ab0a7d461}{word}})
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_word_af9ecbc2daa4fb051a07c510ab0a7d461}{word}} () const
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_word_a9a2af8f2baad39c39a8b1e958e453351}{kind}} () const
+\item 
+void \mbox{\hyperlink{class_doc_word_a68a82c3d5879eee5e06214f42667f224}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{class_doc_word_a6341cd12bc0d8d2bfa6d50e2e00338d9}{get\+Text\+Dir}} () const
+\item 
+virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{class_doc_word_ae95aef99552b572e0c7825d4e6885d0d}{get\+Text\+Basic\+Dir}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a word 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_word_a73bddea7072aff79b8ea69ce961d5c8f}\label{class_doc_word_a73bddea7072aff79b8ea69ce961d5c8f}} 
+\index{DocWord@{DocWord}!DocWord@{DocWord}}
+\index{DocWord@{DocWord}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{DocWord()}{DocWord()}}
+{\footnotesize\ttfamily Doc\+Word\+::\+Doc\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{word }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_word_a68a82c3d5879eee5e06214f42667f224}\label{class_doc_word_a68a82c3d5879eee5e06214f42667f224}} 
+\index{DocWord@{DocWord}!accept@{accept}}
+\index{accept@{accept}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Word\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_word_ae95aef99552b572e0c7825d4e6885d0d}\label{class_doc_word_ae95aef99552b572e0c7825d4e6885d0d}} 
+\index{DocWord@{DocWord}!getTextBasicDir@{getTextBasicDir}}
+\index{getTextBasicDir@{getTextBasicDir}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{getTextBasicDir()}{getTextBasicDir()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} Doc\+Word\+::get\+Text\+Basic\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_doc_node_ac2bfc174fc1a34cc8eacf51e318a329b}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_word_a6341cd12bc0d8d2bfa6d50e2e00338d9}\label{class_doc_word_a6341cd12bc0d8d2bfa6d50e2e00338d9}} 
+\index{DocWord@{DocWord}!getTextDir@{getTextDir}}
+\index{getTextDir@{getTextDir}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{getTextDir()}{getTextDir()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} Doc\+Word\+::get\+Text\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_doc_node_a5a9cb1f89177537eafca7bbb2159df06}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_word_a9a2af8f2baad39c39a8b1e958e453351}\label{class_doc_word_a9a2af8f2baad39c39a8b1e958e453351}} 
+\index{DocWord@{DocWord}!kind@{kind}}
+\index{kind@{kind}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Word\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_word_af9ecbc2daa4fb051a07c510ab0a7d461}\label{class_doc_word_af9ecbc2daa4fb051a07c510ab0a7d461}} 
+\index{DocWord@{DocWord}!word@{word}}
+\index{word@{word}!DocWord@{DocWord}}
+\doxysubsubsection{\texorpdfstring{word()}{word()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Word\+::word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

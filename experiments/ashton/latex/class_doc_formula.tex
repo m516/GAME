@@ -1,0 +1,108 @@
+\hypertarget{class_doc_formula}{}\doxysection{Doc\+Formula Class Reference}
+\label{class_doc_formula}\index{DocFormula@{DocFormula}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Formula\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_formula}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_formula_a381ed9f6ea1bbfbf5b247f30470417b3}{Doc\+Formula}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, int \mbox{\hyperlink{class_doc_formula_ad34d6903f1f038579b131efa2efc2a06}{id}})
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_formula_a58d06fddf5654083666a10e02e746e78}{kind}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_formula_a639835af31171584bbf72eab82d7f162}{name}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_formula_a4744feabb05063f6019698f2b47a960c}{text}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_formula_ae693f78dc76e8caf6060cb26fe3b58aa}{rel\+Path}} () const
+\item 
+int \mbox{\hyperlink{class_doc_formula_ad34d6903f1f038579b131efa2efc2a06}{id}} () const
+\item 
+void \mbox{\hyperlink{class_doc_formula_a714e301b3a0805e3f117e42d3953b881}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_formula_a3ffb67844f3342f7f7ca97ad1b885cfb}{is\+Inline}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing an item of a cross-\/referenced list 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_formula_a381ed9f6ea1bbfbf5b247f30470417b3}\label{class_doc_formula_a381ed9f6ea1bbfbf5b247f30470417b3}} 
+\index{DocFormula@{DocFormula}!DocFormula@{DocFormula}}
+\index{DocFormula@{DocFormula}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{DocFormula()}{DocFormula()}}
+{\footnotesize\ttfamily Doc\+Formula\+::\+Doc\+Formula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_formula_a714e301b3a0805e3f117e42d3953b881}\label{class_doc_formula_a714e301b3a0805e3f117e42d3953b881}} 
+\index{DocFormula@{DocFormula}!accept@{accept}}
+\index{accept@{accept}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Formula\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_formula_ad34d6903f1f038579b131efa2efc2a06}\label{class_doc_formula_ad34d6903f1f038579b131efa2efc2a06}} 
+\index{DocFormula@{DocFormula}!id@{id}}
+\index{id@{id}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Doc\+Formula\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_formula_a3ffb67844f3342f7f7ca97ad1b885cfb}\label{class_doc_formula_a3ffb67844f3342f7f7ca97ad1b885cfb}} 
+\index{DocFormula@{DocFormula}!isInline@{isInline}}
+\index{isInline@{isInline}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{isInline()}{isInline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Formula\+::is\+Inline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_formula_a58d06fddf5654083666a10e02e746e78}\label{class_doc_formula_a58d06fddf5654083666a10e02e746e78}} 
+\index{DocFormula@{DocFormula}!kind@{kind}}
+\index{kind@{kind}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Formula\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_formula_a639835af31171584bbf72eab82d7f162}\label{class_doc_formula_a639835af31171584bbf72eab82d7f162}} 
+\index{DocFormula@{DocFormula}!name@{name}}
+\index{name@{name}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Formula\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_formula_ae693f78dc76e8caf6060cb26fe3b58aa}\label{class_doc_formula_ae693f78dc76e8caf6060cb26fe3b58aa}} 
+\index{DocFormula@{DocFormula}!relPath@{relPath}}
+\index{relPath@{relPath}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{relPath()}{relPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Formula\+::rel\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_formula_a4744feabb05063f6019698f2b47a960c}\label{class_doc_formula_a4744feabb05063f6019698f2b47a960c}} 
+\index{DocFormula@{DocFormula}!text@{text}}
+\index{text@{text}!DocFormula@{DocFormula}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Formula\+::text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

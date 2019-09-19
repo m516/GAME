@@ -1,0 +1,74 @@
+\hypertarget{src_2config_8h}{}\doxysection{doxygen/src/config.h File Reference}
+\label{src_2config_8h}\index{doxygen/src/config.h@{doxygen/src/config.h}}
+{\ttfamily \#include \char`\"{}configvalues.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_config}{Config}}
+\begin{DoxyCompactList}\small\item\em Public function to deal with the configuration file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{src_2config_8h_ad8215ee2de81f98ebd320c3d46cba909}{Config\+\_\+get\+String}}(val)~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)
+\item 
+\#define \mbox{\hyperlink{src_2config_8h_aa25ed982e8be03f64344d6d56f5ae46b}{Config\+\_\+get\+Bool}}(val)~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)
+\item 
+\#define \mbox{\hyperlink{src_2config_8h_a710ff561f00a4f93a6eafaeec6c451f3}{Config\+\_\+get\+Int}}(val)~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)
+\item 
+\#define \mbox{\hyperlink{src_2config_8h_a3ca8543ba0c188e014785b4418067567}{Config\+\_\+get\+Enum}}(val)~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)
+\item 
+\#define \mbox{\hyperlink{src_2config_8h_a1d713236a48ec5dfe9d37d2eae12061e}{Config\+\_\+get\+List}}(val)~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)
+\end{DoxyCompactItemize}
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_config_a91bcb187ed95ec673137e413a4d77203}{Config\+::init}} ()
+\item 
+void \mbox{\hyperlink{namespace_config_ad762288cc87bc2cfc411ce419a4453f5}{Config\+::write\+Template}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} short\+List, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} update\+Only=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+void \mbox{\hyperlink{namespace_config_a27aded81204a4486717dcb65efb8f988}{Config\+::compare\+Doxyfile}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{namespace_config_a0a4bebb4ccf9e25679204573753f1a15}{Config\+::parse}} (const char $\ast$file\+Name, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} update=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+void \mbox{\hyperlink{namespace_config_a8cfddad5eb7c03beb96eddf1e78779db}{Config\+::post\+Process}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} clear\+Header\+And\+Footer, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} compare=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+void \mbox{\hyperlink{namespace_config_a151a6e9239fe223bebe4eb2d211fb543}{Config\+::check\+And\+Correct}} ()
+\item 
+void \mbox{\hyperlink{namespace_config_a7b3346b2e70cc73d231d540df5d67e57}{Config\+::deinit}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{src_2config_8h_aa25ed982e8be03f64344d6d56f5ae46b}\label{src_2config_8h_aa25ed982e8be03f64344d6d56f5ae46b}} 
+\index{config.h@{config.h}!Config\_getBool@{Config\_getBool}}
+\index{Config\_getBool@{Config\_getBool}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{Config\_getBool}{Config\_getBool}}
+{\footnotesize\ttfamily \#define Config\+\_\+get\+Bool(\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)}
+
+\mbox{\Hypertarget{src_2config_8h_a3ca8543ba0c188e014785b4418067567}\label{src_2config_8h_a3ca8543ba0c188e014785b4418067567}} 
+\index{config.h@{config.h}!Config\_getEnum@{Config\_getEnum}}
+\index{Config\_getEnum@{Config\_getEnum}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{Config\_getEnum}{Config\_getEnum}}
+{\footnotesize\ttfamily \#define Config\+\_\+get\+Enum(\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)}
+
+\mbox{\Hypertarget{src_2config_8h_a710ff561f00a4f93a6eafaeec6c451f3}\label{src_2config_8h_a710ff561f00a4f93a6eafaeec6c451f3}} 
+\index{config.h@{config.h}!Config\_getInt@{Config\_getInt}}
+\index{Config\_getInt@{Config\_getInt}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{Config\_getInt}{Config\_getInt}}
+{\footnotesize\ttfamily \#define Config\+\_\+get\+Int(\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)}
+
+\mbox{\Hypertarget{src_2config_8h_a1d713236a48ec5dfe9d37d2eae12061e}\label{src_2config_8h_a1d713236a48ec5dfe9d37d2eae12061e}} 
+\index{config.h@{config.h}!Config\_getList@{Config\_getList}}
+\index{Config\_getList@{Config\_getList}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{Config\_getList}{Config\_getList}}
+{\footnotesize\ttfamily \#define Config\+\_\+get\+List(\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)}
+
+\mbox{\Hypertarget{src_2config_8h_ad8215ee2de81f98ebd320c3d46cba909}\label{src_2config_8h_ad8215ee2de81f98ebd320c3d46cba909}} 
+\index{config.h@{config.h}!Config\_getString@{Config\_getString}}
+\index{Config\_getString@{Config\_getString}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{Config\_getString}{Config\_getString}}
+{\footnotesize\ttfamily \#define Config\+\_\+get\+String(\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})~(\mbox{\hyperlink{class_config_values_aa30d3cc90505491550d5e7a0bd407e53}{Config\+Values\+::instance}}().val)}
+
+some convenience macros for accessing the config options mainly done like this for backward compatibility 

@@ -1,0 +1,103 @@
+\hypertarget{class_file_list_context}{}\doxysection{File\+List\+Context Class Reference}
+\label{class_file_list_context}\index{FileListContext@{FileListContext}}
+
+
+{\ttfamily \#include $<$context.\+h$>$}
+
+Inheritance diagram for File\+List\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_list_context}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_file_list_context_1_1_private}{Private}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_file_list_context_a0394f04efdefc36ab71bc5608db94644}{count}} () const
+\item 
+virtual \mbox{\hyperlink{class_template_variant}{Template\+Variant}} \mbox{\hyperlink{class_file_list_context_ab0a889fd2011e3fbafc3271cd1d4c20f}{at}} (int index) const
+\item 
+virtual \mbox{\hyperlink{class_template_list_intf_1_1_const_iterator}{Template\+List\+Intf\+::\+Const\+Iterator}} $\ast$ \mbox{\hyperlink{class_file_list_context_a242d626e27147b2f7a07bc2c27417a4f}{create\+Iterator}} () const
+\item 
+virtual int \mbox{\hyperlink{class_file_list_context_a8b193daaaccb88cee19db52c368d727a}{add\+Ref}} ()
+\item 
+virtual int \mbox{\hyperlink{class_file_list_context_a757f759e1158e2c2859cb86b483fcd51}{release}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_file_list_context}{File\+List\+Context}} $\ast$ \mbox{\hyperlink{class_file_list_context_ab1bd545a3b94e91b2572639892ae1f46}{alloc}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_file_list_context_a8b193daaaccb88cee19db52c368d727a}\label{class_file_list_context_a8b193daaaccb88cee19db52c368d727a}} 
+\index{FileListContext@{FileListContext}!addRef@{addRef}}
+\index{addRef@{addRef}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily virtual int File\+List\+Context\+::add\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Increase object\textquotesingle{}s reference count 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a4b4973e2e15396d10bc4e3085462ca2b}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_file_list_context_ab1bd545a3b94e91b2572639892ae1f46}\label{class_file_list_context_ab1bd545a3b94e91b2572639892ae1f46}} 
+\index{FileListContext@{FileListContext}!alloc@{alloc}}
+\index{alloc@{alloc}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_file_list_context}{File\+List\+Context}}$\ast$ File\+List\+Context\+::alloc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_file_list_context_ab0a889fd2011e3fbafc3271cd1d4c20f}\label{class_file_list_context_ab0a889fd2011e3fbafc3271cd1d4c20f}} 
+\index{FileListContext@{FileListContext}!at@{at}}
+\index{at@{at}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_template_variant}{Template\+Variant}} File\+List\+Context\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the element at index position {\itshape index}. 
+
+Implements \mbox{\hyperlink{class_template_list_intf_aa51e57e72eacf4e8ce1055ee30a0f7f8}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_file_list_context_a0394f04efdefc36ab71bc5608db94644}\label{class_file_list_context_a0394f04efdefc36ab71bc5608db94644}} 
+\index{FileListContext@{FileListContext}!count@{count}}
+\index{count@{count}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily int File\+List\+Context\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of elements in the list 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a329e49e33484c2aa5106aac1bf4e5216}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_file_list_context_a242d626e27147b2f7a07bc2c27417a4f}\label{class_file_list_context_a242d626e27147b2f7a07bc2c27417a4f}} 
+\index{FileListContext@{FileListContext}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_template_list_intf_1_1_const_iterator}{Template\+List\+Intf\+::\+Const\+Iterator}} $\ast$ File\+List\+Context\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a new iterator for this list. \begin{DoxyNote}{Note}
+the user should call delete on the returned pointer. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_template_list_intf_a56b82384db24c3e121076a1da046d378}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_file_list_context_a757f759e1158e2c2859cb86b483fcd51}\label{class_file_list_context_a757f759e1158e2c2859cb86b483fcd51}} 
+\index{FileListContext@{FileListContext}!release@{release}}
+\index{release@{release}!FileListContext@{FileListContext}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily virtual int File\+List\+Context\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Decreases object\textquotesingle{}s reference count, destroy object if 0 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a0c53169c740c09dac47efc62bbe39674}{Template\+List\+Intf}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{context_8h}{context.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{context_8cpp}{context.\+cpp}}\end{DoxyCompactItemize}

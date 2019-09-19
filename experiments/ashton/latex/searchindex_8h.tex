@@ -1,0 +1,250 @@
+\hypertarget{searchindex_8h}{}\doxysection{doxygen/src/searchindex.h File Reference}
+\label{searchindex_8h}\index{doxygen/src/searchindex.h@{doxygen/src/searchindex.h}}
+{\ttfamily \#include $<$qintdict.\+h$>$}\newline
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qdict.\+h$>$}\newline
+{\ttfamily \#include $<$qvector.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sortdict.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definition.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_r_l}{U\+RL}}
+\item 
+struct \mbox{\hyperlink{struct_u_r_l_info}{U\+R\+L\+Info}}
+\item 
+class \mbox{\hyperlink{class_index_word}{Index\+Word}}
+\item 
+class \mbox{\hyperlink{class_search_index_intf}{Search\+Index\+Intf}}
+\item 
+class \mbox{\hyperlink{class_search_index}{Search\+Index}}
+\item 
+class \mbox{\hyperlink{class_search_index_external}{Search\+Index\+External}}
+\item 
+class \mbox{\hyperlink{class_search_definition_list}{Search\+Definition\+List}}
+\item 
+class \mbox{\hyperlink{class_search_index_list}{Search\+Index\+List}}
+\item 
+struct \mbox{\hyperlink{struct_search_index_info}{Search\+Index\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a9368511f65b06e6124a24bc5ac4614b2}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+A\+LL}}~0
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_ad3b9d29762c49d2c4bbbd41d1c68ef19}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+S\+S\+ES}}~1
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_aae106f76bc369a5aa7f17b79d2f9757a}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+ES}}~2
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a08084793220763202eb3dd7d8fba24df}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+R\+U\+C\+TS}}~3
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_af3db0d7a7669630aeb78349739f220c6}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}}~4
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a1d0249b3f2f15dd1b5e881df00836626}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES}}~5
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a635a2e92df604e5ed0332bb06c9669e2}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+I\+L\+ES}}~6
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_ac4fe1eb6160aaca1f68ad96d8ec3637e}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS}}~7
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_acb2ab2e86ce7e805d62b1f4020ffabbe}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+V\+A\+R\+I\+A\+B\+L\+ES}}~8
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a07ec16842dddf537e26d2c8ddd368dfc}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+T\+Y\+P\+E\+D\+E\+FS}}~9
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_aba6c587eec13873de5ccd7900181bbaf}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+ES}}~10
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a6e38beca02798ea3f80b04610a3972c9}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+I\+ES}}~11
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a5d6c3a6eae28e6c2bc54b47445cd29da}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+U\+MS}}~12
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_abc0dad59614a39f0edbc9ced149460fc}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+U\+M\+V\+A\+L\+U\+ES}}~13
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_abb8fc9a0778bf0439e72aa92bc4e17b3}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+R\+O\+P\+E\+R\+T\+I\+ES}}~14
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a554c8171a88f5708c79daa8d3d400c3b}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+V\+E\+N\+TS}}~15
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_ae391b4f2722baf8355d5d57e4cbfc18e}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+E\+L\+A\+T\+ED}}~16
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a5d27e0da63dddb1a4b6e2d7189e76f29}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+E\+F\+I\+N\+ES}}~17
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_aa4dc6b2cb5cea965a6ce59a25dce26bf}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+G\+R\+O\+U\+PS}}~18
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a6e92885b1759155d51e72752b11ba92e}{S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+A\+G\+ES}}~19
+\item 
+\#define \mbox{\hyperlink{searchindex_8h_a62d26c5c880a5812810eb6896ce831b3}{N\+U\+M\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+I\+C\+ES}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{searchindex_8h_a50d08832d359fc0cce18c3079d46eb9a}{init\+Search\+Indexer}} ()
+\item 
+void \mbox{\hyperlink{searchindex_8h_a88244abeb89e8a1f4e9f3366c2f7c25e}{finialize\+Search\+Indexer}} ()
+\item 
+void \mbox{\hyperlink{searchindex_8h_ac0eda995388973f317d11ea88a5e85d8}{create\+Javascript\+Search\+Index}} ()
+\item 
+void \mbox{\hyperlink{searchindex_8h_aa54f20a60167939cce6d5c29815ce318}{write\+Javascript\+Search\+Index}} ()
+\item 
+const \mbox{\hyperlink{struct_search_index_info}{Search\+Index\+Info}} $\ast$ \mbox{\hyperlink{searchindex_8h_a3abd0b19545dca818a978065292089e1}{get\+Search\+Indices}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{searchindex_8h_a62d26c5c880a5812810eb6896ce831b3}\label{searchindex_8h_a62d26c5c880a5812810eb6896ce831b3}} 
+\index{searchindex.h@{searchindex.h}!NUM\_SEARCH\_INDICES@{NUM\_SEARCH\_INDICES}}
+\index{NUM\_SEARCH\_INDICES@{NUM\_SEARCH\_INDICES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_SEARCH\_INDICES}{NUM\_SEARCH\_INDICES}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+I\+C\+ES~20}
+
+\mbox{\Hypertarget{searchindex_8h_a9368511f65b06e6124a24bc5ac4614b2}\label{searchindex_8h_a9368511f65b06e6124a24bc5ac4614b2}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_ALL@{SEARCH\_INDEX\_ALL}}
+\index{SEARCH\_INDEX\_ALL@{SEARCH\_INDEX\_ALL}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_ALL}{SEARCH\_INDEX\_ALL}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+A\+LL~0}
+
+\mbox{\Hypertarget{searchindex_8h_ad3b9d29762c49d2c4bbbd41d1c68ef19}\label{searchindex_8h_ad3b9d29762c49d2c4bbbd41d1c68ef19}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_CLASSES@{SEARCH\_INDEX\_CLASSES}}
+\index{SEARCH\_INDEX\_CLASSES@{SEARCH\_INDEX\_CLASSES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_CLASSES}{SEARCH\_INDEX\_CLASSES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+S\+S\+ES~1}
+
+\mbox{\Hypertarget{searchindex_8h_a5d27e0da63dddb1a4b6e2d7189e76f29}\label{searchindex_8h_a5d27e0da63dddb1a4b6e2d7189e76f29}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_DEFINES@{SEARCH\_INDEX\_DEFINES}}
+\index{SEARCH\_INDEX\_DEFINES@{SEARCH\_INDEX\_DEFINES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_DEFINES}{SEARCH\_INDEX\_DEFINES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+E\+F\+I\+N\+ES~17}
+
+\mbox{\Hypertarget{searchindex_8h_a6e38beca02798ea3f80b04610a3972c9}\label{searchindex_8h_a6e38beca02798ea3f80b04610a3972c9}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_DICTIONARIES@{SEARCH\_INDEX\_DICTIONARIES}}
+\index{SEARCH\_INDEX\_DICTIONARIES@{SEARCH\_INDEX\_DICTIONARIES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_DICTIONARIES}{SEARCH\_INDEX\_DICTIONARIES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+I\+ES~11}
+
+\mbox{\Hypertarget{searchindex_8h_a5d6c3a6eae28e6c2bc54b47445cd29da}\label{searchindex_8h_a5d6c3a6eae28e6c2bc54b47445cd29da}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_ENUMS@{SEARCH\_INDEX\_ENUMS}}
+\index{SEARCH\_INDEX\_ENUMS@{SEARCH\_INDEX\_ENUMS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_ENUMS}{SEARCH\_INDEX\_ENUMS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+U\+MS~12}
+
+\mbox{\Hypertarget{searchindex_8h_abc0dad59614a39f0edbc9ced149460fc}\label{searchindex_8h_abc0dad59614a39f0edbc9ced149460fc}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_ENUMVALUES@{SEARCH\_INDEX\_ENUMVALUES}}
+\index{SEARCH\_INDEX\_ENUMVALUES@{SEARCH\_INDEX\_ENUMVALUES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_ENUMVALUES}{SEARCH\_INDEX\_ENUMVALUES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+U\+M\+V\+A\+L\+U\+ES~13}
+
+\mbox{\Hypertarget{searchindex_8h_a554c8171a88f5708c79daa8d3d400c3b}\label{searchindex_8h_a554c8171a88f5708c79daa8d3d400c3b}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_EVENTS@{SEARCH\_INDEX\_EVENTS}}
+\index{SEARCH\_INDEX\_EVENTS@{SEARCH\_INDEX\_EVENTS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_EVENTS}{SEARCH\_INDEX\_EVENTS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+V\+E\+N\+TS~15}
+
+\mbox{\Hypertarget{searchindex_8h_af3db0d7a7669630aeb78349739f220c6}\label{searchindex_8h_af3db0d7a7669630aeb78349739f220c6}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_EXCEPTIONS@{SEARCH\_INDEX\_EXCEPTIONS}}
+\index{SEARCH\_INDEX\_EXCEPTIONS@{SEARCH\_INDEX\_EXCEPTIONS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_EXCEPTIONS}{SEARCH\_INDEX\_EXCEPTIONS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS~4}
+
+\mbox{\Hypertarget{searchindex_8h_a635a2e92df604e5ed0332bb06c9669e2}\label{searchindex_8h_a635a2e92df604e5ed0332bb06c9669e2}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_FILES@{SEARCH\_INDEX\_FILES}}
+\index{SEARCH\_INDEX\_FILES@{SEARCH\_INDEX\_FILES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_FILES}{SEARCH\_INDEX\_FILES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+I\+L\+ES~6}
+
+\mbox{\Hypertarget{searchindex_8h_ac4fe1eb6160aaca1f68ad96d8ec3637e}\label{searchindex_8h_ac4fe1eb6160aaca1f68ad96d8ec3637e}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_FUNCTIONS@{SEARCH\_INDEX\_FUNCTIONS}}
+\index{SEARCH\_INDEX\_FUNCTIONS@{SEARCH\_INDEX\_FUNCTIONS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_FUNCTIONS}{SEARCH\_INDEX\_FUNCTIONS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS~7}
+
+\mbox{\Hypertarget{searchindex_8h_aa4dc6b2cb5cea965a6ce59a25dce26bf}\label{searchindex_8h_aa4dc6b2cb5cea965a6ce59a25dce26bf}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_GROUPS@{SEARCH\_INDEX\_GROUPS}}
+\index{SEARCH\_INDEX\_GROUPS@{SEARCH\_INDEX\_GROUPS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_GROUPS}{SEARCH\_INDEX\_GROUPS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+G\+R\+O\+U\+PS~18}
+
+\mbox{\Hypertarget{searchindex_8h_aae106f76bc369a5aa7f17b79d2f9757a}\label{searchindex_8h_aae106f76bc369a5aa7f17b79d2f9757a}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_INTERFACES@{SEARCH\_INDEX\_INTERFACES}}
+\index{SEARCH\_INDEX\_INTERFACES@{SEARCH\_INDEX\_INTERFACES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_INTERFACES}{SEARCH\_INDEX\_INTERFACES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+ES~2}
+
+\mbox{\Hypertarget{searchindex_8h_a1d0249b3f2f15dd1b5e881df00836626}\label{searchindex_8h_a1d0249b3f2f15dd1b5e881df00836626}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_NAMESPACES@{SEARCH\_INDEX\_NAMESPACES}}
+\index{SEARCH\_INDEX\_NAMESPACES@{SEARCH\_INDEX\_NAMESPACES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_NAMESPACES}{SEARCH\_INDEX\_NAMESPACES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES~5}
+
+\mbox{\Hypertarget{searchindex_8h_a6e92885b1759155d51e72752b11ba92e}\label{searchindex_8h_a6e92885b1759155d51e72752b11ba92e}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_PAGES@{SEARCH\_INDEX\_PAGES}}
+\index{SEARCH\_INDEX\_PAGES@{SEARCH\_INDEX\_PAGES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_PAGES}{SEARCH\_INDEX\_PAGES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+A\+G\+ES~19}
+
+\mbox{\Hypertarget{searchindex_8h_abb8fc9a0778bf0439e72aa92bc4e17b3}\label{searchindex_8h_abb8fc9a0778bf0439e72aa92bc4e17b3}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_PROPERTIES@{SEARCH\_INDEX\_PROPERTIES}}
+\index{SEARCH\_INDEX\_PROPERTIES@{SEARCH\_INDEX\_PROPERTIES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_PROPERTIES}{SEARCH\_INDEX\_PROPERTIES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+R\+O\+P\+E\+R\+T\+I\+ES~14}
+
+\mbox{\Hypertarget{searchindex_8h_ae391b4f2722baf8355d5d57e4cbfc18e}\label{searchindex_8h_ae391b4f2722baf8355d5d57e4cbfc18e}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_RELATED@{SEARCH\_INDEX\_RELATED}}
+\index{SEARCH\_INDEX\_RELATED@{SEARCH\_INDEX\_RELATED}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_RELATED}{SEARCH\_INDEX\_RELATED}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+E\+L\+A\+T\+ED~16}
+
+\mbox{\Hypertarget{searchindex_8h_aba6c587eec13873de5ccd7900181bbaf}\label{searchindex_8h_aba6c587eec13873de5ccd7900181bbaf}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_SEQUENCES@{SEARCH\_INDEX\_SEQUENCES}}
+\index{SEARCH\_INDEX\_SEQUENCES@{SEARCH\_INDEX\_SEQUENCES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_SEQUENCES}{SEARCH\_INDEX\_SEQUENCES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+ES~10}
+
+\mbox{\Hypertarget{searchindex_8h_a08084793220763202eb3dd7d8fba24df}\label{searchindex_8h_a08084793220763202eb3dd7d8fba24df}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_STRUCTS@{SEARCH\_INDEX\_STRUCTS}}
+\index{SEARCH\_INDEX\_STRUCTS@{SEARCH\_INDEX\_STRUCTS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_STRUCTS}{SEARCH\_INDEX\_STRUCTS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+R\+U\+C\+TS~3}
+
+\mbox{\Hypertarget{searchindex_8h_a07ec16842dddf537e26d2c8ddd368dfc}\label{searchindex_8h_a07ec16842dddf537e26d2c8ddd368dfc}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_TYPEDEFS@{SEARCH\_INDEX\_TYPEDEFS}}
+\index{SEARCH\_INDEX\_TYPEDEFS@{SEARCH\_INDEX\_TYPEDEFS}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_TYPEDEFS}{SEARCH\_INDEX\_TYPEDEFS}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+T\+Y\+P\+E\+D\+E\+FS~9}
+
+\mbox{\Hypertarget{searchindex_8h_acb2ab2e86ce7e805d62b1f4020ffabbe}\label{searchindex_8h_acb2ab2e86ce7e805d62b1f4020ffabbe}} 
+\index{searchindex.h@{searchindex.h}!SEARCH\_INDEX\_VARIABLES@{SEARCH\_INDEX\_VARIABLES}}
+\index{SEARCH\_INDEX\_VARIABLES@{SEARCH\_INDEX\_VARIABLES}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{SEARCH\_INDEX\_VARIABLES}{SEARCH\_INDEX\_VARIABLES}}
+{\footnotesize\ttfamily \#define S\+E\+A\+R\+C\+H\+\_\+\+I\+N\+D\+E\+X\+\_\+\+V\+A\+R\+I\+A\+B\+L\+ES~8}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{searchindex_8h_ac0eda995388973f317d11ea88a5e85d8}\label{searchindex_8h_ac0eda995388973f317d11ea88a5e85d8}} 
+\index{searchindex.h@{searchindex.h}!createJavascriptSearchIndex@{createJavascriptSearchIndex}}
+\index{createJavascriptSearchIndex@{createJavascriptSearchIndex}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{createJavascriptSearchIndex()}{createJavascriptSearchIndex()}}
+{\footnotesize\ttfamily void create\+Javascript\+Search\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{searchindex_8h_a88244abeb89e8a1f4e9f3366c2f7c25e}\label{searchindex_8h_a88244abeb89e8a1f4e9f3366c2f7c25e}} 
+\index{searchindex.h@{searchindex.h}!finializeSearchIndexer@{finializeSearchIndexer}}
+\index{finializeSearchIndexer@{finializeSearchIndexer}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{finializeSearchIndexer()}{finializeSearchIndexer()}}
+{\footnotesize\ttfamily void finialize\+Search\+Indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Cleanup the search indexer \mbox{\Hypertarget{searchindex_8h_a3abd0b19545dca818a978065292089e1}\label{searchindex_8h_a3abd0b19545dca818a978065292089e1}} 
+\index{searchindex.h@{searchindex.h}!getSearchIndices@{getSearchIndices}}
+\index{getSearchIndices@{getSearchIndices}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{getSearchIndices()}{getSearchIndices()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_search_index_info}{Search\+Index\+Info}}$\ast$ get\+Search\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{searchindex_8h_a50d08832d359fc0cce18c3079d46eb9a}\label{searchindex_8h_a50d08832d359fc0cce18c3079d46eb9a}} 
+\index{searchindex.h@{searchindex.h}!initSearchIndexer@{initSearchIndexer}}
+\index{initSearchIndexer@{initSearchIndexer}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{initSearchIndexer()}{initSearchIndexer()}}
+{\footnotesize\ttfamily void init\+Search\+Indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the search indexer \mbox{\Hypertarget{searchindex_8h_aa54f20a60167939cce6d5c29815ce318}\label{searchindex_8h_aa54f20a60167939cce6d5c29815ce318}} 
+\index{searchindex.h@{searchindex.h}!writeJavascriptSearchIndex@{writeJavascriptSearchIndex}}
+\index{writeJavascriptSearchIndex@{writeJavascriptSearchIndex}!searchindex.h@{searchindex.h}}
+\doxysubsubsection{\texorpdfstring{writeJavascriptSearchIndex()}{writeJavascriptSearchIndex()}}
+{\footnotesize\ttfamily void write\+Javascript\+Search\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

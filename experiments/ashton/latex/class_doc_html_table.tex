@@ -1,0 +1,140 @@
+\hypertarget{class_doc_html_table}{}\doxysection{Doc\+Html\+Table Class Reference}
+\label{class_doc_html_table}\index{DocHtmlTable@{DocHtmlTable}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Html\+Table\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doc_html_table}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_html_table_a554bdfa1b4ef47b984a15192accd9121}{Doc\+Html\+Table}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&\mbox{\hyperlink{class_doc_html_table_a1298564e7844015c7be73d46826a7430}{attribs}})
+\item 
+\mbox{\hyperlink{class_doc_html_table_a6aae763c3c1cf4377c63896eb5f87283}{$\sim$\+Doc\+Html\+Table}} ()
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_html_table_affb4a9eac5912bbb97720e9f320d5875}{kind}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{class_doc_html_table_aad31d53a3fa7659d56062f913316fe07}{num\+Rows}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_html_table_a4381899d937402a0c96179b3e54398fa}{has\+Caption}} ()
+\item 
+const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \& \mbox{\hyperlink{class_doc_html_table_a1298564e7844015c7be73d46826a7430}{attribs}} () const
+\item 
+int \mbox{\hyperlink{class_doc_html_table_aa8201d7a0646b92c2c590b83e24f59fb}{parse}} ()
+\item 
+int \mbox{\hyperlink{class_doc_html_table_a88a5c329482d1daa237a23da1821f72a}{parse\+Xml}} ()
+\item 
+\mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{class_doc_html_table_a43a629cf3090a180461a7050a888d98c}{num\+Columns}} () const
+\item 
+void \mbox{\hyperlink{class_doc_html_table_a800ecff89a18489af2a256c1a984e60a}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+\mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}} $\ast$ \mbox{\hyperlink{class_doc_html_table_a00268018fdac28ae9f75f7ac75c87f7b}{caption}} () const
+\item 
+\mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}} $\ast$ \mbox{\hyperlink{class_doc_html_table_a5a23ad4deb55ba5dfbffb1b72f827f1a}{first\+Row}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a H\+T\+ML table 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_html_table_a554bdfa1b4ef47b984a15192accd9121}\label{class_doc_html_table_a554bdfa1b4ef47b984a15192accd9121}} 
+\index{DocHtmlTable@{DocHtmlTable}!DocHtmlTable@{DocHtmlTable}}
+\index{DocHtmlTable@{DocHtmlTable}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{DocHtmlTable()}{DocHtmlTable()}}
+{\footnotesize\ttfamily Doc\+Html\+Table\+::\+Doc\+Html\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&}]{attribs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_a6aae763c3c1cf4377c63896eb5f87283}\label{class_doc_html_table_a6aae763c3c1cf4377c63896eb5f87283}} 
+\index{DocHtmlTable@{DocHtmlTable}!````~DocHtmlTable@{$\sim$DocHtmlTable}}
+\index{````~DocHtmlTable@{$\sim$DocHtmlTable}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{$\sim$DocHtmlTable()}{~DocHtmlTable()}}
+{\footnotesize\ttfamily Doc\+Html\+Table\+::$\sim$\+Doc\+Html\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_html_table_a800ecff89a18489af2a256c1a984e60a}\label{class_doc_html_table_a800ecff89a18489af2a256c1a984e60a}} 
+\index{DocHtmlTable@{DocHtmlTable}!accept@{accept}}
+\index{accept@{accept}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Html\+Table\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_html_table_a1298564e7844015c7be73d46826a7430}\label{class_doc_html_table_a1298564e7844015c7be73d46826a7430}} 
+\index{DocHtmlTable@{DocHtmlTable}!attribs@{attribs}}
+\index{attribs@{attribs}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{attribs()}{attribs()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}}\& Doc\+Html\+Table\+::attribs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_a00268018fdac28ae9f75f7ac75c87f7b}\label{class_doc_html_table_a00268018fdac28ae9f75f7ac75c87f7b}} 
+\index{DocHtmlTable@{DocHtmlTable}!caption@{caption}}
+\index{caption@{caption}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{caption()}{caption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}}$\ast$ Doc\+Html\+Table\+::caption (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_a5a23ad4deb55ba5dfbffb1b72f827f1a}\label{class_doc_html_table_a5a23ad4deb55ba5dfbffb1b72f827f1a}} 
+\index{DocHtmlTable@{DocHtmlTable}!firstRow@{firstRow}}
+\index{firstRow@{firstRow}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{firstRow()}{firstRow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}}$\ast$ Doc\+Html\+Table\+::first\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_a4381899d937402a0c96179b3e54398fa}\label{class_doc_html_table_a4381899d937402a0c96179b3e54398fa}} 
+\index{DocHtmlTable@{DocHtmlTable}!hasCaption@{hasCaption}}
+\index{hasCaption@{hasCaption}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{hasCaption()}{hasCaption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Html\+Table\+::has\+Caption (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_affb4a9eac5912bbb97720e9f320d5875}\label{class_doc_html_table_affb4a9eac5912bbb97720e9f320d5875}} 
+\index{DocHtmlTable@{DocHtmlTable}!kind@{kind}}
+\index{kind@{kind}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Html\+Table\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_html_table_a43a629cf3090a180461a7050a888d98c}\label{class_doc_html_table_a43a629cf3090a180461a7050a888d98c}} 
+\index{DocHtmlTable@{DocHtmlTable}!numColumns@{numColumns}}
+\index{numColumns@{numColumns}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{numColumns()}{numColumns()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} Doc\+Html\+Table\+::num\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_aad31d53a3fa7659d56062f913316fe07}\label{class_doc_html_table_aad31d53a3fa7659d56062f913316fe07}} 
+\index{DocHtmlTable@{DocHtmlTable}!numRows@{numRows}}
+\index{numRows@{numRows}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{numRows()}{numRows()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} Doc\+Html\+Table\+::num\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_html_table_aa8201d7a0646b92c2c590b83e24f59fb}\label{class_doc_html_table_aa8201d7a0646b92c2c590b83e24f59fb}} 
+\index{DocHtmlTable@{DocHtmlTable}!parse@{parse}}
+\index{parse@{parse}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int Doc\+Html\+Table\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_html_table_a88a5c329482d1daa237a23da1821f72a}\label{class_doc_html_table_a88a5c329482d1daa237a23da1821f72a}} 
+\index{DocHtmlTable@{DocHtmlTable}!parseXml@{parseXml}}
+\index{parseXml@{parseXml}!DocHtmlTable@{DocHtmlTable}}
+\doxysubsubsection{\texorpdfstring{parseXml()}{parseXml()}}
+{\footnotesize\ttfamily int Doc\+Html\+Table\+::parse\+Xml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\hypertarget{class_highlight_handler}{}\doxysection{Highlight\+Handler Class Reference}
+\label{class_highlight_handler}\index{HighlightHandler@{HighlightHandler}}
+
+
+Node representing a highlighted text fragment.  
+
+
+
+
+{\ttfamily \#include $<$dochandler.\+h$>$}
+
+Inheritance diagram for Highlight\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.415929cm]{class_highlight_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_highlight_handler_ae00bea7c9612d3f242cb30b60b5c35c1}{Highlight\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{class_highlight_handler_aa4b4cfb0233d2f46ed5d39ec6066831d}{$\sim$\+Highlight\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_highlight_handler_a66b287f9ec5fc6d251595e97cff0d6cf}{start\+Highlight}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+void \mbox{\hyperlink{class_highlight_handler_aaac89f347545f88c79857234065ec9d9}{end\+Highlight}} ()
+\item 
+virtual void \mbox{\hyperlink{class_highlight_handler_a5c42568fc0ad6b0666cb7c3e24182c5c}{start\+Ref}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_highlight_handler_a4d4afb71d7af981477f582c3692cae56}{start\+Space}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+virtual Kind \mbox{\hyperlink{class_highlight_handler_ab0729f8d742ad1478402ead6aada20ff}{kind}} () const
+\item 
+virtual Highlight\+Kind \mbox{\hyperlink{class_highlight_handler_a21632f38588cb436973942e8ded35bbe}{highlight\+Kind}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ \mbox{\hyperlink{class_highlight_handler_af08c7e2592d8e0caa0748255e78ddde7}{code\+Elements}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_highlight_handler_a7aed790946df29e2ccac4eaa47911412}{Highlight\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a highlighted text fragment. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_highlight_handler_ae00bea7c9612d3f242cb30b60b5c35c1}\label{class_highlight_handler_ae00bea7c9612d3f242cb30b60b5c35c1}} 
+\index{HighlightHandler@{HighlightHandler}!HighlightHandler@{HighlightHandler}}
+\index{HighlightHandler@{HighlightHandler}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{HighlightHandler()}{HighlightHandler()}}
+{\footnotesize\ttfamily Highlight\+Handler\+::\+Highlight\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_highlight_handler_aa4b4cfb0233d2f46ed5d39ec6066831d}\label{class_highlight_handler_aa4b4cfb0233d2f46ed5d39ec6066831d}} 
+\index{HighlightHandler@{HighlightHandler}!````~HighlightHandler@{$\sim$HighlightHandler}}
+\index{````~HighlightHandler@{$\sim$HighlightHandler}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$HighlightHandler()}{~HighlightHandler()}}
+{\footnotesize\ttfamily Highlight\+Handler\+::$\sim$\+Highlight\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_highlight_handler_af08c7e2592d8e0caa0748255e78ddde7}\label{class_highlight_handler_af08c7e2592d8e0caa0748255e78ddde7}} 
+\index{HighlightHandler@{HighlightHandler}!codeElements@{codeElements}}
+\index{codeElements@{codeElements}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{codeElements()}{codeElements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ Highlight\+Handler\+::code\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_highlight_handler_aaac89f347545f88c79857234065ec9d9}\label{class_highlight_handler_aaac89f347545f88c79857234065ec9d9}} 
+\index{HighlightHandler@{HighlightHandler}!endHighlight@{endHighlight}}
+\index{endHighlight@{endHighlight}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{endHighlight()}{endHighlight()}}
+{\footnotesize\ttfamily void Highlight\+Handler\+::end\+Highlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_highlight_handler_a21632f38588cb436973942e8ded35bbe}\label{class_highlight_handler_a21632f38588cb436973942e8ded35bbe}} 
+\index{HighlightHandler@{HighlightHandler}!highlightKind@{highlightKind}}
+\index{highlightKind@{highlightKind}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{highlightKind()}{highlightKind()}}
+{\footnotesize\ttfamily virtual Highlight\+Kind Highlight\+Handler\+::highlight\+Kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_highlight_handler_ab0729f8d742ad1478402ead6aada20ff}\label{class_highlight_handler_ab0729f8d742ad1478402ead6aada20ff}} 
+\index{HighlightHandler@{HighlightHandler}!kind@{kind}}
+\index{kind@{kind}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual Kind Highlight\+Handler\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_highlight_handler_a66b287f9ec5fc6d251595e97cff0d6cf}\label{class_highlight_handler_a66b287f9ec5fc6d251595e97cff0d6cf}} 
+\index{HighlightHandler@{HighlightHandler}!startHighlight@{startHighlight}}
+\index{startHighlight@{startHighlight}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{startHighlight()}{startHighlight()}}
+{\footnotesize\ttfamily void Highlight\+Handler\+::start\+Highlight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_highlight_handler_a5c42568fc0ad6b0666cb7c3e24182c5c}\label{class_highlight_handler_a5c42568fc0ad6b0666cb7c3e24182c5c}} 
+\index{HighlightHandler@{HighlightHandler}!startRef@{startRef}}
+\index{startRef@{startRef}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{startRef()}{startRef()}}
+{\footnotesize\ttfamily void Highlight\+Handler\+::start\+Ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_highlight_handler_a4d4afb71d7af981477f582c3692cae56}\label{class_highlight_handler_a4d4afb71d7af981477f582c3692cae56}} 
+\index{HighlightHandler@{HighlightHandler}!startSpace@{startSpace}}
+\index{startSpace@{startSpace}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{startSpace()}{startSpace()}}
+{\footnotesize\ttfamily void Highlight\+Handler\+::start\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_highlight_handler_a7aed790946df29e2ccac4eaa47911412}\label{class_highlight_handler_a7aed790946df29e2ccac4eaa47911412}} 
+\index{HighlightHandler@{HighlightHandler}!HighlightIterator@{HighlightIterator}}
+\index{HighlightIterator@{HighlightIterator}!HighlightHandler@{HighlightHandler}}
+\doxysubsubsection{\texorpdfstring{HighlightIterator}{HighlightIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_highlight_iterator}{Highlight\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8h}{dochandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8cpp}{dochandler.\+cpp}}\end{DoxyCompactItemize}

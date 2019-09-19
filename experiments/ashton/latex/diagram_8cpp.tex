@@ -1,0 +1,121 @@
+\hypertarget{diagram_8cpp}{}\doxysection{doxygen/src/diagram.cpp File Reference}
+\label{diagram_8cpp}\index{doxygen/src/diagram.cpp@{doxygen/src/diagram.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qarray.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ftextstream.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$qfile.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}diagram.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doxygen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}index.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classlist.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_diagram_item}{Diagram\+Item}}
+\item 
+class \mbox{\hyperlink{class_diagram_item_list}{Diagram\+Item\+List}}
+\item 
+class \mbox{\hyperlink{class_diagram_row}{Diagram\+Row}}
+\item 
+class \mbox{\hyperlink{class_diagram_row_iterator}{Diagram\+Row\+Iterator}}
+\item 
+class \mbox{\hyperlink{class_tree_diagram}{Tree\+Diagram}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{diagram_8cpp_addf4ae1173df3a2d96b5862df8960117}{I\+M\+A\+G\+E\+\_\+\+E\+XT}}~\char`\"{}.png\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{diagram_8cpp_a74577aa0173415ca04955ce082eadde3}{clear\+Visit\+Flags}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{diagram_8cpp_a3aecc8bdec6de29591f6a1cf3577ec52}{max\+Tree\+Width}} = 8
+\item 
+const int \mbox{\hyperlink{diagram_8cpp_aec7478b516427277da6e5ff809be940b}{grid\+Width}} = 100
+\item 
+const int \mbox{\hyperlink{diagram_8cpp_a4108183068e35ea0ff409e4fc3086956}{grid\+Height}} = 100
+\item 
+const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{diagram_8cpp_a9a383dc0400438268b6bc495ddd1ac0a}{label\+Hor\+Spacing}} = 10
+\item 
+const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{diagram_8cpp_a798b8cc660cdf609063e37c80cea00f5}{label\+Vert\+Spacing}} = 32
+\item 
+const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{diagram_8cpp_a4472ee050b00dbb631b9f80fd578af27}{label\+Hor\+Margin}} = 6
+\item 
+const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} \mbox{\hyperlink{diagram_8cpp_a2028b5b9a983ed4a8e4fed382c97a3fe}{font\+Height}} = 12
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{diagram_8cpp_addf4ae1173df3a2d96b5862df8960117}\label{diagram_8cpp_addf4ae1173df3a2d96b5862df8960117}} 
+\index{diagram.cpp@{diagram.cpp}!IMAGE\_EXT@{IMAGE\_EXT}}
+\index{IMAGE\_EXT@{IMAGE\_EXT}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_EXT}{IMAGE\_EXT}}
+{\footnotesize\ttfamily \#define I\+M\+A\+G\+E\+\_\+\+E\+XT~\char`\"{}.png\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{diagram_8cpp_a74577aa0173415ca04955ce082eadde3}\label{diagram_8cpp_a74577aa0173415ca04955ce082eadde3}} 
+\index{diagram.cpp@{diagram.cpp}!clearVisitFlags@{clearVisitFlags}}
+\index{clearVisitFlags@{clearVisitFlags}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{clearVisitFlags()}{clearVisitFlags()}}
+{\footnotesize\ttfamily void clear\+Visit\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{diagram_8cpp_a2028b5b9a983ed4a8e4fed382c97a3fe}\label{diagram_8cpp_a2028b5b9a983ed4a8e4fed382c97a3fe}} 
+\index{diagram.cpp@{diagram.cpp}!fontHeight@{fontHeight}}
+\index{fontHeight@{fontHeight}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{fontHeight}{fontHeight}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} font\+Height = 12}
+
+\mbox{\Hypertarget{diagram_8cpp_a4108183068e35ea0ff409e4fc3086956}\label{diagram_8cpp_a4108183068e35ea0ff409e4fc3086956}} 
+\index{diagram.cpp@{diagram.cpp}!gridHeight@{gridHeight}}
+\index{gridHeight@{gridHeight}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{gridHeight}{gridHeight}}
+{\footnotesize\ttfamily const int grid\+Height = 100}
+
+\mbox{\Hypertarget{diagram_8cpp_aec7478b516427277da6e5ff809be940b}\label{diagram_8cpp_aec7478b516427277da6e5ff809be940b}} 
+\index{diagram.cpp@{diagram.cpp}!gridWidth@{gridWidth}}
+\index{gridWidth@{gridWidth}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{gridWidth}{gridWidth}}
+{\footnotesize\ttfamily const int grid\+Width = 100}
+
+\mbox{\Hypertarget{diagram_8cpp_a4472ee050b00dbb631b9f80fd578af27}\label{diagram_8cpp_a4472ee050b00dbb631b9f80fd578af27}} 
+\index{diagram.cpp@{diagram.cpp}!labelHorMargin@{labelHorMargin}}
+\index{labelHorMargin@{labelHorMargin}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{labelHorMargin}{labelHorMargin}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} label\+Hor\+Margin = 6}
+
+\mbox{\Hypertarget{diagram_8cpp_a9a383dc0400438268b6bc495ddd1ac0a}\label{diagram_8cpp_a9a383dc0400438268b6bc495ddd1ac0a}} 
+\index{diagram.cpp@{diagram.cpp}!labelHorSpacing@{labelHorSpacing}}
+\index{labelHorSpacing@{labelHorSpacing}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{labelHorSpacing}{labelHorSpacing}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} label\+Hor\+Spacing = 10}
+
+\mbox{\Hypertarget{diagram_8cpp_a798b8cc660cdf609063e37c80cea00f5}\label{diagram_8cpp_a798b8cc660cdf609063e37c80cea00f5}} 
+\index{diagram.cpp@{diagram.cpp}!labelVertSpacing@{labelVertSpacing}}
+\index{labelVertSpacing@{labelVertSpacing}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{labelVertSpacing}{labelVertSpacing}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} label\+Vert\+Spacing = 32}
+
+\mbox{\Hypertarget{diagram_8cpp_a3aecc8bdec6de29591f6a1cf3577ec52}\label{diagram_8cpp_a3aecc8bdec6de29591f6a1cf3577ec52}} 
+\index{diagram.cpp@{diagram.cpp}!maxTreeWidth@{maxTreeWidth}}
+\index{maxTreeWidth@{maxTreeWidth}!diagram.cpp@{diagram.cpp}}
+\doxysubsubsection{\texorpdfstring{maxTreeWidth}{maxTreeWidth}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{qglobal_8h_a4d3943ddea65db7163a58e6c7e8df95a}{uint}} max\+Tree\+Width = 8}
+

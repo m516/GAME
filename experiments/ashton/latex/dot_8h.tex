@@ -1,0 +1,53 @@
+\hypertarget{dot_8h}{}\doxysection{doxygen/src/dot.h File Reference}
+\label{dot_8h}\index{doxygen/src/dot.h@{doxygen/src/dot.h}}
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qdict.\+h$>$}\newline
+{\ttfamily \#include $<$qcstring.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sortdict.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotfilepatcher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotrunner.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dot_manager}{Dot\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dot_8h_a1b2f4344b046af1f671141d2645c8cef}{write\+Dot\+Graph\+From\+File}} (const char $\ast$in\+File, const char $\ast$out\+Dir, const char $\ast$\mbox{\hyperlink{gd_8h_a9af8a34a1d63fa9ed984b7cdd97daee1}{out\+File}}, \mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}} format)
+\item 
+void \mbox{\hyperlink{dot_8h_a5eb5110772e0b2495a7cddbd181bac06}{write\+Dot\+Image\+Map\+From\+File}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&in\+File, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&out\+Dir, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context, int graph\+Id=-\/1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dot_8h_a1b2f4344b046af1f671141d2645c8cef}\label{dot_8h_a1b2f4344b046af1f671141d2645c8cef}} 
+\index{dot.h@{dot.h}!writeDotGraphFromFile@{writeDotGraphFromFile}}
+\index{writeDotGraphFromFile@{writeDotGraphFromFile}!dot.h@{dot.h}}
+\doxysubsubsection{\texorpdfstring{writeDotGraphFromFile()}{writeDotGraphFromFile()}}
+{\footnotesize\ttfamily void write\+Dot\+Graph\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in\+File,  }\item[{const char $\ast$}]{out\+Dir,  }\item[{const char $\ast$}]{out\+File,  }\item[{\mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}}}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dot_8h_a5eb5110772e0b2495a7cddbd181bac06}\label{dot_8h_a5eb5110772e0b2495a7cddbd181bac06}} 
+\index{dot.h@{dot.h}!writeDotImageMapFromFile@{writeDotImageMapFromFile}}
+\index{writeDotImageMapFromFile@{writeDotImageMapFromFile}!dot.h@{dot.h}}
+\doxysubsubsection{\texorpdfstring{writeDotImageMapFromFile()}{writeDotImageMapFromFile()}}
+{\footnotesize\ttfamily void write\+Dot\+Image\+Map\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{in\+File,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{out\+Dir,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context,  }\item[{int}]{graph\+Id }\end{DoxyParamCaption})}
+
+Writes user defined image map to the output. 
+\begin{DoxyParams}{Parameters}
+{\em t} & text stream to write to \\
+\hline
+{\em in\+File} & just the basename part of the filename \\
+\hline
+{\em out\+Dir} & output directory \\
+\hline
+{\em rel\+Path} & relative path the to root of the output dir \\
+\hline
+{\em base\+Name} & the base name of the output files \\
+\hline
+{\em context} & the scope in which this graph is found (for resolving links) \\
+\hline
+{\em graph\+Id} & a unique id for this graph, use for dynamic sections \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,41 @@
+\hypertarget{memberdef_8h}{}\doxysection{doxygen/src/memberdef.h File Reference}
+\label{memberdef_8h}\index{doxygen/src/memberdef.h@{doxygen/src/memberdef.h}}
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definition.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_member_def}{Member\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$ \mbox{\hyperlink{memberdef_8h_afff064e6cd8b59d99e3c21a46d5c6658}{create\+Member\+Def}} (const char $\ast$def\+File\+Name, int def\+Line, int def\+Column, const char $\ast$type, const char $\ast$name, const char $\ast$args, const char $\ast$excp, \mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}} prot, \mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}} virt, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} stat, \mbox{\hyperlink{types_8h_a9d625fe894d9313ec78df1d78553f32e}{Relationship}} related, \mbox{\hyperlink{types_8h_a63e3de542c5d38de617ab78c8c8f5a41}{Member\+Type}} \mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$tal, const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$al, const char $\ast$meta\+Data)
+\item 
+\mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$ \mbox{\hyperlink{memberdef_8h_ada86050602e7cfd8d12242604c7ba233}{create\+Member\+Def\+Alias}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$new\+Scope, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$alias\+Md)
+\item 
+void \mbox{\hyperlink{memberdef_8h_a2d7b2e78ef187cdb77522ed843535d8f}{combine\+Declaration\+And\+Definition}} (\mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$mdec, \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$mdef)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{memberdef_8h_a2d7b2e78ef187cdb77522ed843535d8f}\label{memberdef_8h_a2d7b2e78ef187cdb77522ed843535d8f}} 
+\index{memberdef.h@{memberdef.h}!combineDeclarationAndDefinition@{combineDeclarationAndDefinition}}
+\index{combineDeclarationAndDefinition@{combineDeclarationAndDefinition}!memberdef.h@{memberdef.h}}
+\doxysubsubsection{\texorpdfstring{combineDeclarationAndDefinition()}{combineDeclarationAndDefinition()}}
+{\footnotesize\ttfamily void combine\+Declaration\+And\+Definition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{mdec,  }\item[{\mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{mdef }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memberdef_8h_afff064e6cd8b59d99e3c21a46d5c6658}\label{memberdef_8h_afff064e6cd8b59d99e3c21a46d5c6658}} 
+\index{memberdef.h@{memberdef.h}!createMemberDef@{createMemberDef}}
+\index{createMemberDef@{createMemberDef}!memberdef.h@{memberdef.h}}
+\doxysubsubsection{\texorpdfstring{createMemberDef()}{createMemberDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_member_def}{Member\+Def}}$\ast$ create\+Member\+Def (\begin{DoxyParamCaption}\item[{const char $\ast$}]{def\+File\+Name,  }\item[{int}]{def\+Line,  }\item[{int}]{def\+Column,  }\item[{const char $\ast$}]{type,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{args,  }\item[{const char $\ast$}]{excp,  }\item[{\mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}}}]{prot,  }\item[{\mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}}}]{virt,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{stat,  }\item[{\mbox{\hyperlink{types_8h_a9d625fe894d9313ec78df1d78553f32e}{Relationship}}}]{related,  }\item[{\mbox{\hyperlink{types_8h_a63e3de542c5d38de617ab78c8c8f5a41}{Member\+Type}}}]{t,  }\item[{const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$}]{tal,  }\item[{const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$}]{al,  }\item[{const char $\ast$}]{meta\+Data }\end{DoxyParamCaption})}
+
+Factory method to create a new instance of a \mbox{\hyperlink{class_member_def}{Member\+Def}} \mbox{\Hypertarget{memberdef_8h_ada86050602e7cfd8d12242604c7ba233}\label{memberdef_8h_ada86050602e7cfd8d12242604c7ba233}} 
+\index{memberdef.h@{memberdef.h}!createMemberDefAlias@{createMemberDefAlias}}
+\index{createMemberDefAlias@{createMemberDefAlias}!memberdef.h@{memberdef.h}}
+\doxysubsubsection{\texorpdfstring{createMemberDefAlias()}{createMemberDefAlias()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_member_def}{Member\+Def}}$\ast$ create\+Member\+Def\+Alias (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{new\+Scope,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{alias\+Md }\end{DoxyParamCaption})}
+

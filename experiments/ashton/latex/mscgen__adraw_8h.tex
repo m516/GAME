@@ -1,0 +1,276 @@
+\hypertarget{mscgen__adraw_8h}{}\doxysection{doxygen/libmscgen/mscgen\+\_\+adraw.h File Reference}
+\label{mscgen__adraw_8h}\index{doxygen/libmscgen/mscgen\_adraw.h@{doxygen/libmscgen/mscgen\_adraw.h}}
+{\ttfamily \#include \char`\"{}mscgen\+\_\+bool.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}} \mbox{\hyperlink{mscgen__adraw_8h_aa61fcfb4d9c89af3fc44d8b2de4b1f46}{A\+Draw}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}} \{ \mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1abacd124fa3f2f7e5530ffa60e1ffb3b3d1}{A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+N\+U\+LL}} = 0, 
+\mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba78c6324ce693c09ee87fbc649dcfddd8}{A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+P\+NG}}, 
+\mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ababe7c6605195b6b4d727877b64649e021}{A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+E\+PS}}, 
+\mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba4d5ffc0f18ecee714b016a72016a3aa5}{A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+S\+VG}}
+ \}
+\item 
+enum \mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} \{ \newline
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac035176cb36711208c683b3cd1b95594}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+W\+H\+I\+TE}} = 0x00ffffff, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa87883e3ac4b08c3b4c355161b16de58}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+B\+L\+A\+CK}} = 0x00000000, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac4e7cdb18d49b9489a5396045987ede2}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+R\+ED}} = 0x00ff0000, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a5664bca607e9612d16284a21bb96f128}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+O\+R\+A\+N\+GE}} = 0x00ffb000, 
+\newline
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa3513dca07a522edfb07f16120d660c1}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+Y\+E\+L\+L\+OW}} = 0x00ffff00, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a321a08d57d2645335c967c86c31b5319}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+G\+R\+E\+EN}} = 0x0000ff00, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a174a97c0798feedca020388731b254d2}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+B\+L\+UE}} = 0x000000ff, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1af6d82517f3416cf32442070ba9d9ab4c}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+I\+N\+D\+I\+GO}} = 0x00440088, 
+\newline
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa1bc40c85788fd34e8cde338bf5290ea}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+V\+I\+O\+L\+ET}} = 0x00d02090, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a681e893b956bc159f7a35bec26cdbec2}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+S\+I\+L\+V\+ER}} = 0x00\+C0\+C0\+C0, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1afc0f84dbc835ac382568516b6be41597}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+L\+I\+ME}} = 0x0000\+F\+F00, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a4344519af695a6ccd40195e2dbb7740e}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+G\+R\+AY}} = 0x00808080, 
+\newline
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a7001a1580aa637a0d5b05fb2806fa97d}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+O\+L\+I\+VE}} = 0x00808000, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a8f399fd341614f478c024f122d20db8d}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+M\+A\+R\+O\+ON}} = 0x00800000, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aee7601367a84dcd29b0925530153f7a5}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+N\+A\+VY}} = 0x00000080, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a04f0cf550e206665db4b8da13a60f871}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+P\+U\+R\+P\+LE}} = 0x00800080, 
+\newline
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a93050d36340f0f94cd4384d384a3d5b3}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+T\+E\+AL}} = 0x00008080, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a2da49c6217889eae2984afdf691b8d06}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+F\+U\+C\+H\+S\+IA}} = 0x00\+F\+F00\+FF, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a6aa6abbe81c45d9066709d8f5f692ec8}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+A\+Q\+UA}} = 0x0000\+F\+F\+FF, 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ad511d2ee86635aaf48f9dae42207cce7}{A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+I\+N\+V\+A\+L\+ID}} = 0xff000000
+ \}
+\item 
+enum \mbox{\hyperlink{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088}{A\+Draw\+Font\+Size}} \{ \mbox{\hyperlink{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088a17cee9438b72507cb790ad77580c25ad}{A\+D\+R\+A\+W\+\_\+\+F\+O\+N\+T\+\_\+\+T\+I\+NY}} = 0, 
+\mbox{\hyperlink{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088aad72a0ec51788dfdc0bb4ccb02b9a174}{A\+D\+R\+A\+W\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} \mbox{\hyperlink{mscgen__adraw_8h_a52b8f24e981052c7a0ac61b493d3a6bc}{A\+Draw\+Open}} (unsigned int \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}, unsigned int \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$font\+Name, \mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}} type, struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}} $\ast$out\+Context)
+\item 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} \mbox{\hyperlink{mscgen__adraw_8h_a0156bf03ca0db741fc0d048da07dc291}{A\+Draw\+Get\+Colour}} (const char $\ast$colour)
+\item 
+void \mbox{\hyperlink{mscgen__adraw_8h_a578c9287411976da4f4fe05e578be53a}{A\+Draw\+Compute\+Arc\+Point}} (float \mbox{\hyperlink{gd_8h_af905a9989361d094908ad04e08f6429d}{cx}}, float \mbox{\hyperlink{gd_8h_a1e047c0b5d614dc04a5b8a5142611e4d}{cy}}, float \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}, float \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}, float degrees, unsigned int $\ast$\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}, unsigned int $\ast$\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{mscgen__adraw_8h_aa61fcfb4d9c89af3fc44d8b2de4b1f46}\label{mscgen__adraw_8h_aa61fcfb4d9c89af3fc44d8b2de4b1f46}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADraw@{ADraw}}
+\index{ADraw@{ADraw}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADraw}{ADraw}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}}
+ \mbox{\hyperlink{mscgen__adraw_8h_aa61fcfb4d9c89af3fc44d8b2de4b1f46}{A\+Draw}}}
+
+An A\+Draw context. This is the main structure used for accessing A\+Draw functions. \mbox{\hyperlink{mscgen__adraw_8c_a52b8f24e981052c7a0ac61b493d3a6bc}{A\+Draw\+Open()}} returns an instance of this structure that can then be used to render to some device. Once drawing is complete, A\+Draw\+Close() should be called to reclaim resources and finalise any output.
+
+All the functions assume that 0,0 is in the top-\/left corner of the image, and that the dimensions grow towards w,y at the bottom-\/right corner. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawColour@{ADrawColour}}
+\index{ADrawColour@{ADrawColour}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawColour}{ADrawColour}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}}}
+
+Supported colours. Enumerated type to describe colours.
+
+The 16 basic H\+T\+ML colours at \href{http://www.w3.org/TR/html4/types.html\#h-6.5}{\texttt{ http\+://www.\+w3.\+org/\+T\+R/html4/types.\+html\#h-\/6.\+5}} are defined as well as a few other common colour names. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_WHITE@{ADRAW\_COL\_WHITE}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_WHITE@{ADRAW\_COL\_WHITE}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac035176cb36711208c683b3cd1b95594}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac035176cb36711208c683b3cd1b95594}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+W\+H\+I\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_BLACK@{ADRAW\_COL\_BLACK}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_BLACK@{ADRAW\_COL\_BLACK}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa87883e3ac4b08c3b4c355161b16de58}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa87883e3ac4b08c3b4c355161b16de58}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+B\+L\+A\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_RED@{ADRAW\_COL\_RED}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_RED@{ADRAW\_COL\_RED}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac4e7cdb18d49b9489a5396045987ede2}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ac4e7cdb18d49b9489a5396045987ede2}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_ORANGE@{ADRAW\_COL\_ORANGE}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_ORANGE@{ADRAW\_COL\_ORANGE}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a5664bca607e9612d16284a21bb96f128}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a5664bca607e9612d16284a21bb96f128}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+O\+R\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_YELLOW@{ADRAW\_COL\_YELLOW}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_YELLOW@{ADRAW\_COL\_YELLOW}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa3513dca07a522edfb07f16120d660c1}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa3513dca07a522edfb07f16120d660c1}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+Y\+E\+L\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_GREEN@{ADRAW\_COL\_GREEN}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_GREEN@{ADRAW\_COL\_GREEN}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a321a08d57d2645335c967c86c31b5319}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a321a08d57d2645335c967c86c31b5319}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_BLUE@{ADRAW\_COL\_BLUE}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_BLUE@{ADRAW\_COL\_BLUE}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a174a97c0798feedca020388731b254d2}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a174a97c0798feedca020388731b254d2}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_INDIGO@{ADRAW\_COL\_INDIGO}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_INDIGO@{ADRAW\_COL\_INDIGO}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1af6d82517f3416cf32442070ba9d9ab4c}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1af6d82517f3416cf32442070ba9d9ab4c}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+I\+N\+D\+I\+GO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_VIOLET@{ADRAW\_COL\_VIOLET}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_VIOLET@{ADRAW\_COL\_VIOLET}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa1bc40c85788fd34e8cde338bf5290ea}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aa1bc40c85788fd34e8cde338bf5290ea}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+V\+I\+O\+L\+ET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_SILVER@{ADRAW\_COL\_SILVER}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_SILVER@{ADRAW\_COL\_SILVER}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a681e893b956bc159f7a35bec26cdbec2}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a681e893b956bc159f7a35bec26cdbec2}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+S\+I\+L\+V\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_LIME@{ADRAW\_COL\_LIME}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_LIME@{ADRAW\_COL\_LIME}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1afc0f84dbc835ac382568516b6be41597}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1afc0f84dbc835ac382568516b6be41597}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+L\+I\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_GRAY@{ADRAW\_COL\_GRAY}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_GRAY@{ADRAW\_COL\_GRAY}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a4344519af695a6ccd40195e2dbb7740e}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a4344519af695a6ccd40195e2dbb7740e}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+G\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_OLIVE@{ADRAW\_COL\_OLIVE}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_OLIVE@{ADRAW\_COL\_OLIVE}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a7001a1580aa637a0d5b05fb2806fa97d}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a7001a1580aa637a0d5b05fb2806fa97d}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+O\+L\+I\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_MAROON@{ADRAW\_COL\_MAROON}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_MAROON@{ADRAW\_COL\_MAROON}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a8f399fd341614f478c024f122d20db8d}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a8f399fd341614f478c024f122d20db8d}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+M\+A\+R\+O\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_NAVY@{ADRAW\_COL\_NAVY}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_NAVY@{ADRAW\_COL\_NAVY}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aee7601367a84dcd29b0925530153f7a5}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1aee7601367a84dcd29b0925530153f7a5}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+N\+A\+VY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_PURPLE@{ADRAW\_COL\_PURPLE}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_PURPLE@{ADRAW\_COL\_PURPLE}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a04f0cf550e206665db4b8da13a60f871}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a04f0cf550e206665db4b8da13a60f871}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+P\+U\+R\+P\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_TEAL@{ADRAW\_COL\_TEAL}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_TEAL@{ADRAW\_COL\_TEAL}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a93050d36340f0f94cd4384d384a3d5b3}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a93050d36340f0f94cd4384d384a3d5b3}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+T\+E\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_FUCHSIA@{ADRAW\_COL\_FUCHSIA}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_FUCHSIA@{ADRAW\_COL\_FUCHSIA}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a2da49c6217889eae2984afdf691b8d06}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a2da49c6217889eae2984afdf691b8d06}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+F\+U\+C\+H\+S\+IA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_AQUA@{ADRAW\_COL\_AQUA}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_AQUA@{ADRAW\_COL\_AQUA}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a6aa6abbe81c45d9066709d8f5f692ec8}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1a6aa6abbe81c45d9066709d8f5f692ec8}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+A\+Q\+UA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_COL\_INVALID@{ADRAW\_COL\_INVALID}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_COL\_INVALID@{ADRAW\_COL\_INVALID}}}\mbox{\Hypertarget{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ad511d2ee86635aaf48f9dae42207cce7}\label{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1ad511d2ee86635aaf48f9dae42207cce7}} 
+A\+D\+R\+A\+W\+\_\+\+C\+O\+L\+\_\+\+I\+N\+V\+A\+L\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088}\label{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawFontSize@{ADrawFontSize}}
+\index{ADrawFontSize@{ADrawFontSize}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawFontSize}{ADrawFontSize}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088}{A\+Draw\+Font\+Size}}}
+
+Basic font sizes. Enumerated type for different font sizes. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FONT\_TINY@{ADRAW\_FONT\_TINY}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FONT\_TINY@{ADRAW\_FONT\_TINY}}}\mbox{\Hypertarget{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088a17cee9438b72507cb790ad77580c25ad}\label{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088a17cee9438b72507cb790ad77580c25ad}} 
+A\+D\+R\+A\+W\+\_\+\+F\+O\+N\+T\+\_\+\+T\+I\+NY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FONT\_SMALL@{ADRAW\_FONT\_SMALL}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FONT\_SMALL@{ADRAW\_FONT\_SMALL}}}\mbox{\Hypertarget{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088aad72a0ec51788dfdc0bb4ccb02b9a174}\label{mscgen__adraw_8h_ab3f752acc68ff344054d69377204a088aad72a0ec51788dfdc0bb4ccb02b9a174}} 
+A\+D\+R\+A\+W\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}\label{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawOutputType@{ADrawOutputType}}
+\index{ADrawOutputType@{ADrawOutputType}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawOutputType}{ADrawOutputType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}}}
+
+Output format types. Enumerated types for output formats. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FMT\_NULL@{ADRAW\_FMT\_NULL}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FMT\_NULL@{ADRAW\_FMT\_NULL}}}\mbox{\Hypertarget{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1abacd124fa3f2f7e5530ffa60e1ffb3b3d1}\label{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1abacd124fa3f2f7e5530ffa60e1ffb3b3d1}} 
+A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+N\+U\+LL&Null output format. This allows all the graphics commands to be called, but does nothing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FMT\_PNG@{ADRAW\_FMT\_PNG}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FMT\_PNG@{ADRAW\_FMT\_PNG}}}\mbox{\Hypertarget{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba78c6324ce693c09ee87fbc649dcfddd8}\label{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba78c6324ce693c09ee87fbc649dcfddd8}} 
+A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+P\+NG&Generate a P\+NG. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FMT\_EPS@{ADRAW\_FMT\_EPS}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FMT\_EPS@{ADRAW\_FMT\_EPS}}}\mbox{\Hypertarget{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ababe7c6605195b6b4d727877b64649e021}\label{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ababe7c6605195b6b4d727877b64649e021}} 
+A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+E\+PS&Generate Encapsulated Postscript. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADRAW\_FMT\_SVG@{ADRAW\_FMT\_SVG}!mscgen\_adraw.h@{mscgen\_adraw.h}}\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADRAW\_FMT\_SVG@{ADRAW\_FMT\_SVG}}}\mbox{\Hypertarget{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba4d5ffc0f18ecee714b016a72016a3aa5}\label{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1aba4d5ffc0f18ecee714b016a72016a3aa5}} 
+A\+D\+R\+A\+W\+\_\+\+F\+M\+T\+\_\+\+S\+VG&Scalable Vector Graphics. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mscgen__adraw_8h_a578c9287411976da4f4fe05e578be53a}\label{mscgen__adraw_8h_a578c9287411976da4f4fe05e578be53a}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawComputeArcPoint@{ADrawComputeArcPoint}}
+\index{ADrawComputeArcPoint@{ADrawComputeArcPoint}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawComputeArcPoint()}{ADrawComputeArcPoint()}}
+{\footnotesize\ttfamily void A\+Draw\+Compute\+Arc\+Point (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{w,  }\item[{float}]{h,  }\item[{float}]{degrees,  }\item[{unsigned int $\ast$}]{x,  }\item[{unsigned int $\ast$}]{y }\end{DoxyParamCaption})}
+
+Compute the position of a point on an arc. This allows co-\/ordinates on arc drawn using arc() or dotted\+Arc() to be computed. The centre and bounding box for the arc are supplied as well as an angular offset.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cx} & Center of the arc. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cy} & Center of the arc. \\
+\hline
+\mbox{\texttt{ in}}  & {\em w} & Arc x-\/diameter (width). \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & Arc y-\/diameter (height). \\
+\hline
+\mbox{\texttt{ in}}  & {\em degrees} & Position on the arc to be returned. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em x} & Pointer to fill with x coordinate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & Pointer to fill with y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mscgen__adraw_8h_a0156bf03ca0db741fc0d048da07dc291}\label{mscgen__adraw_8h_a0156bf03ca0db741fc0d048da07dc291}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawGetColour@{ADrawGetColour}}
+\index{ADrawGetColour@{ADrawGetColour}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawGetColour()}{ADrawGetColour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} A\+Draw\+Get\+Colour (\begin{DoxyParamCaption}\item[{const char $\ast$}]{colour }\end{DoxyParamCaption})}
+
+Given a string name for a colour, return the corresponding A\+Draw\+Colour.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em colour} & The string representation of the colour that is sought. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mscgen__adraw_8h_a52b8f24e981052c7a0ac61b493d3a6bc}\label{mscgen__adraw_8h_a52b8f24e981052c7a0ac61b493d3a6bc}} 
+\index{mscgen\_adraw.h@{mscgen\_adraw.h}!ADrawOpen@{ADrawOpen}}
+\index{ADrawOpen@{ADrawOpen}!mscgen\_adraw.h@{mscgen\_adraw.h}}
+\doxysubsubsection{\texorpdfstring{ADrawOpen()}{ADrawOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} A\+Draw\+Open (\begin{DoxyParamCaption}\item[{unsigned int}]{w,  }\item[{unsigned int}]{h,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{font\+Name,  }\item[{\mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}}}]{type,  }\item[{struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}} $\ast$}]{out\+Context }\end{DoxyParamCaption})}
+
+Create a new drawing context. This will create a drawing context with some dimensions, and some format. After this has been called, the function pointers in the returned structure can be called together with a pointer to the structure itself to cause image functions to be executed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & The width of the output image. \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & The height of the ouput image. \\
+\hline
+\mbox{\texttt{ in}}  & {\em file} & The file to which the image should be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em font\+Name} & The name of the font to use for rendering. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & The output type to generate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$out\+Context} & Pointer to an {\itshape A\+Draw} structure to populate with values. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Boolean} & On error, \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}} will be returned. \\
+\hline
+\end{DoxyRetVals}

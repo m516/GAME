@@ -1,0 +1,83 @@
+\hypertarget{class_doc_h_ref}{}\doxysection{Doc\+H\+Ref Class Reference}
+\label{class_doc_h_ref}\index{DocHRef@{DocHRef}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+H\+Ref\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doc_h_ref}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_h_ref_a0817d8cdaaa3d691fc5b55f24db0798d}{Doc\+H\+Ref}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&\mbox{\hyperlink{class_doc_h_ref_a3f92cdf74be59a48a79f1fbd5dac40d6}{attribs}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{class_doc_h_ref_a5413d17bd302ad2e43057488bdd96175}{url}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{class_doc_h_ref_a874e1b84a9041c4b4801a7a586045cda}{rel\+Path}})
+\item 
+int \mbox{\hyperlink{class_doc_h_ref_a07934cfcbc2cfb3709b90915cf087135}{parse}} ()
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_h_ref_a5413d17bd302ad2e43057488bdd96175}{url}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_h_ref_a874e1b84a9041c4b4801a7a586045cda}{rel\+Path}} () const
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_h_ref_a19a1050d1b9c755f3d76dce4f8d5a4df}{kind}} () const
+\item 
+const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \& \mbox{\hyperlink{class_doc_h_ref_a3f92cdf74be59a48a79f1fbd5dac40d6}{attribs}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a Hypertext reference 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_h_ref_a0817d8cdaaa3d691fc5b55f24db0798d}\label{class_doc_h_ref_a0817d8cdaaa3d691fc5b55f24db0798d}} 
+\index{DocHRef@{DocHRef}!DocHRef@{DocHRef}}
+\index{DocHRef@{DocHRef}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{DocHRef()}{DocHRef()}}
+{\footnotesize\ttfamily Doc\+H\+Ref\+::\+Doc\+H\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \&}]{attribs,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{url,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_h_ref_a3f92cdf74be59a48a79f1fbd5dac40d6}\label{class_doc_h_ref_a3f92cdf74be59a48a79f1fbd5dac40d6}} 
+\index{DocHRef@{DocHRef}!attribs@{attribs}}
+\index{attribs@{attribs}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{attribs()}{attribs()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}}\& Doc\+H\+Ref\+::attribs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_h_ref_a19a1050d1b9c755f3d76dce4f8d5a4df}\label{class_doc_h_ref_a19a1050d1b9c755f3d76dce4f8d5a4df}} 
+\index{DocHRef@{DocHRef}!kind@{kind}}
+\index{kind@{kind}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+H\+Ref\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_h_ref_a07934cfcbc2cfb3709b90915cf087135}\label{class_doc_h_ref_a07934cfcbc2cfb3709b90915cf087135}} 
+\index{DocHRef@{DocHRef}!parse@{parse}}
+\index{parse@{parse}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int Doc\+H\+Ref\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_h_ref_a874e1b84a9041c4b4801a7a586045cda}\label{class_doc_h_ref_a874e1b84a9041c4b4801a7a586045cda}} 
+\index{DocHRef@{DocHRef}!relPath@{relPath}}
+\index{relPath@{relPath}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{relPath()}{relPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+H\+Ref\+::rel\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_h_ref_a5413d17bd302ad2e43057488bdd96175}\label{class_doc_h_ref_a5413d17bd302ad2e43057488bdd96175}} 
+\index{DocHRef@{DocHRef}!url@{url}}
+\index{url@{url}!DocHRef@{DocHRef}}
+\doxysubsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+H\+Ref\+::url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

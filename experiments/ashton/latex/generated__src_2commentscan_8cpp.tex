@@ -1,0 +1,2238 @@
+\hypertarget{generated__src_2commentscan_8cpp}{}\doxysection{doxygen/generated\+\_\+src/commentscan.cpp File Reference}
+\label{generated__src_2commentscan_8cpp}\index{doxygen/generated\_src/commentscan.cpp@{doxygen/generated\_src/commentscan.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$qarray.\+h$>$}\newline
+{\ttfamily \#include $<$qstack.\+h$>$}\newline
+{\ttfamily \#include $<$qregexp.\+h$>$}\newline
+{\ttfamily \#include $<$qfile.\+h$>$}\newline
+{\ttfamily \#include $<$qcstringlist.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}scanner.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doxygen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}index.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defargs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}outputlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}membergroup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reflist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parserintf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}markdown.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}condparser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}formula.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}commentscan.\+l.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structyy__buffer__state}{yy\+\_\+buffer\+\_\+state}}
+\item 
+struct \mbox{\hyperlink{structyy__trans__info}{yy\+\_\+trans\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{struct_doc_cmd_map}{Doc\+Cmd\+Map}}
+\item 
+class \mbox{\hyperlink{class_doc_cmd_mapper}{Doc\+Cmd\+Mapper}}
+\begin{DoxyCompactList}\small\item\em Command mapper. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_doc_cmd_mapper_1_1_cmd}{Doc\+Cmd\+Mapper\+::\+Cmd}}
+\item 
+class \mbox{\hyperlink{class_guarded_section}{Guarded\+Section}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a1ae16e642a197fa4948998525813c6f5}{Y\+Y\+\_\+\+I\+N\+T\+\_\+\+A\+L\+I\+G\+N\+ED}}~short int
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac86ea8173dfcfc5c989d3295a77e2f95}{yy\+\_\+create\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+create\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad1868c6b38b45af25a4a0f449912a808}{yy\+\_\+delete\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+delete\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6849452203fd033f103556fdf858fd33}{yy\+\_\+scan\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+scan\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6c5cf8c3b7a69bf60a87dd6eb00fe579}{yy\+\_\+scan\+\_\+string}}~commentscan\+Y\+Y\+\_\+scan\+\_\+string
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3b70699ea880c5d25a1c75f4ad96c315}{yy\+\_\+scan\+\_\+bytes}}~commentscan\+Y\+Y\+\_\+scan\+\_\+bytes
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa14efad9f9c24106a3e3398a4f6621c2}{yy\+\_\+init\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+init\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab01a4c7245136f22a63acac7c0ceb343}{yy\+\_\+flush\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+flush\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a039fc377fd4784139d8706ba0ae229fa}{yy\+\_\+load\+\_\+buffer\+\_\+state}}~commentscan\+Y\+Y\+\_\+load\+\_\+buffer\+\_\+state
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a968d5b9e7e06a38bfca977b343d47d5c}{yy\+\_\+switch\+\_\+to\+\_\+buffer}}~commentscan\+Y\+Y\+\_\+switch\+\_\+to\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a498ea96bb65e39b1eab5c51cf16ead13}{yypush\+\_\+buffer\+\_\+state}}~commentscan\+Y\+Ypush\+\_\+buffer\+\_\+state
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a809c7349e79233964051745348944cfc}{yypop\+\_\+buffer\+\_\+state}}~commentscan\+Y\+Ypop\+\_\+buffer\+\_\+state
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a64d16067d4399dd64d107354e847e05e}{yyensure\+\_\+buffer\+\_\+stack}}~commentscan\+Y\+Yensure\+\_\+buffer\+\_\+stack
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a301f4439c9b191c80db45f5b1a8c7269}{yy\+\_\+flex\+\_\+debug}}~commentscan\+Y\+Y\+\_\+flex\+\_\+debug
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa789f4617e33fb99594cb04a3688a0c1}{yyin}}~commentscan\+Y\+Yin
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}{yyleng}}~commentscan\+Y\+Yleng
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5611300548b2030d86b6ab9168132b88}{yylex}}~commentscan\+Y\+Ylex
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad71cf0fddcfe4f61de0929105b33226c}{yylineno}}~commentscan\+Y\+Ylineno
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4fd44867d448dcb6fc32ea004a15de54}{yyout}}~commentscan\+Y\+Yout
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a2259355ac49295f72feab070a34a9b11}{yyrestart}}~commentscan\+Y\+Yrestart
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}}~commentscan\+Y\+Ytext
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5be541efdb129f7cefb2437f52fe7359}{yywrap}}~\mbox{\hyperlink{generated__src_2commentscan_8cpp_a8e8012c7d063e24ebbd0ff390f4de5c2}{commentscan\+Y\+Ywrap}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a803397ab738ee8630166680646a2d913}{yyalloc}}~commentscan\+Y\+Yalloc
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab1eba250555ca003eb39387bb1a41d39}{yyrealloc}}~commentscan\+Y\+Yrealloc
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4fa4368d47620ea80150b516e8884f6b}{yyfree}}~commentscan\+Y\+Yfree
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3c3d1ef92e93b0bc81d7760a73d5c3b6}{F\+L\+E\+X\+\_\+\+S\+C\+A\+N\+N\+ER}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a243ca1d30872935faf05ea5118ed6fdc}{Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}~2
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a90f9d458829400869e47efb68a865677}{Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}~6
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac676bd06869180ea493e9b6d7c078dbb}{Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+S\+U\+B\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}~4
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a9465c9986fdda27730c9dff8d16a0887}{F\+L\+E\+X\+\_\+\+B\+E\+TA}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa7264081fa74776aeb30c8fb9e6a7b7e}{commentscan\+Y\+Y\+\_\+create\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a615e1e712bdc14e1c73e31536aa90f6d}{commentscan\+Y\+Y\+\_\+delete\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a79e85c06f0b66da73008f1a26356eccb}{commentscan\+Y\+Y\+\_\+scan\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad880a407a9fbfa0b3aa3b5746fea1f6f}{commentscan\+Y\+Y\+\_\+scan\+\_\+string\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad62a29c06f214e65591160932ec1bc44}{commentscan\+Y\+Y\+\_\+scan\+\_\+bytes\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4c4e6ba79128003e93e94595e07fe568}{commentscan\+Y\+Y\+\_\+init\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_adae3f065c91e7e3755b9e48bc7756230}{commentscan\+Y\+Y\+\_\+flush\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a44966e501113d5caf5cbbe4011eb87c1}{commentscan\+Y\+Y\+\_\+load\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aea01e40e6e6239462f4f88eb8080c209}{commentscan\+Y\+Y\+\_\+switch\+\_\+to\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0a89e3fa72d8843d2576fbf03a6503d4}{commentscan\+Y\+Ypush\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5d0e665bcebd621b700fd9bb05e026cc}{commentscan\+Y\+Ypop\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a000c6f77e26dcbf036bb64c5b8481814}{commentscan\+Y\+Yensure\+\_\+buffer\+\_\+stack\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa3ed9b166d6a0099a214b23fa2752319}{commentscan\+Y\+Ylex\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac6ba13a37df9d239874bdaab7bd90457}{commentscan\+Y\+Yrestart\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a1abe53179d3512124a969f758a7e8008}{yylex\+\_\+init}}~commentscan\+Y\+Ylex\+\_\+init
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3e35658077c5654d17265289032c8911}{yylex\+\_\+init\+\_\+extra}}~commentscan\+Y\+Ylex\+\_\+init\+\_\+extra
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a85fde2139b237ab704313f3b29a1958b}{yylex\+\_\+destroy}}~commentscan\+Y\+Ylex\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a47f8646b5738a8e92fc58b34c7a37547}{yyget\+\_\+debug}}~commentscan\+Y\+Yget\+\_\+debug
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a254eae02eef471e53fba6c926f9ea9af}{yyset\+\_\+debug}}~commentscan\+Y\+Yset\+\_\+debug
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa4a517fb57acfaebb9c3e370d10241a5}{yyget\+\_\+extra}}~commentscan\+Y\+Yget\+\_\+extra
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a04fd4c8badc07e7080dbd371b6bc4811}{yyset\+\_\+extra}}~commentscan\+Y\+Yset\+\_\+extra
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad5413ef97e3739ed34f0e92e42e406dc}{yyget\+\_\+in}}~commentscan\+Y\+Yget\+\_\+in
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_afca8968a4317529bdbdc6ed77cd1e479}{yyset\+\_\+in}}~commentscan\+Y\+Yset\+\_\+in
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a32e4c779fce50dece5fb491bc7670232}{yyget\+\_\+out}}~commentscan\+Y\+Yget\+\_\+out
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_add96a0e9a95289d7fc2a45adfaf0f9ef}{yyset\+\_\+out}}~commentscan\+Y\+Yset\+\_\+out
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7cb898e18e05bca3c0a27e6eb6ca5ddf}{yyget\+\_\+leng}}~commentscan\+Y\+Yget\+\_\+leng
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5fe86cd527d104d44684c7194f88253e}{yyget\+\_\+text}}~commentscan\+Y\+Yget\+\_\+text
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5550407f398ea5a087676f73b3a5c5f5}{yyget\+\_\+lineno}}~commentscan\+Y\+Yget\+\_\+lineno
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a10055b24aa335a47aec5deaac1a47603}{yyset\+\_\+lineno}}~commentscan\+Y\+Yset\+\_\+lineno
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0ee8db4fc0a638c75e16d08f02038f17}{commentscan\+Y\+Ywrap\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad1142949ad5513705cf085fa5bc4d950}{commentscan\+Y\+Yalloc\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4cdb591a578025fb2d1275adc899312f}{commentscan\+Y\+Yrealloc\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a41bf8b4fb919fe9233f57657e6b5cfd9}{commentscan\+Y\+Yfree\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aad76cebc00bcaad5c194f8a041f19f10}{commentscan\+Y\+Ytext\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a77ec47392c2911d0615481ffd0ff937d}{commentscan\+Y\+Yleng\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a83615ce2a65d0070586255feb17c7898}{commentscan\+Y\+Yin\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a51b56320f3b6e9fcf0eacb9ae8ab7311}{commentscan\+Y\+Yout\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad2ef9e85902b6b3255e28d8e0ddf43f9}{commentscan\+Y\+Y\+\_\+flex\+\_\+debug\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac5421a70a2fb26783fa00d67e51ecec0}{commentscan\+Y\+Ylineno\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aec980b5a71bbe6d67931df20f0ebaec4}{F\+L\+E\+X\+I\+N\+T\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aadcf2a81af243df333b31efa6461ab8e}{I\+N\+T8\+\_\+\+M\+IN}}~(-\/128)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad4e9955955b27624963643eac448118a}{I\+N\+T16\+\_\+\+M\+IN}}~(-\/32767-\/1)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a688eb21a22db27c2b2bd5836943cdcbe}{I\+N\+T32\+\_\+\+M\+IN}}~(-\/2147483647-\/1)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aaf7f29f45f1a513b4748a4e5014ddf6a}{I\+N\+T8\+\_\+\+M\+AX}}~(127)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac58f2c111cc9989c86db2a7dc4fd84ca}{I\+N\+T16\+\_\+\+M\+AX}}~(32767)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a181807730d4a375f848ba139813ce04f}{I\+N\+T32\+\_\+\+M\+AX}}~(2147483647)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aeb4e270a084ee26fe73e799861bd0252}{U\+I\+N\+T8\+\_\+\+M\+AX}}~(255U)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3ea490c9b3617d4479bd80ef93cd5602}{U\+I\+N\+T16\+\_\+\+M\+AX}}~(65535U)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+AX}}~(4294967295U)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3c75bb398badb69c7577b21486f9963f}{S\+I\+Z\+E\+\_\+\+M\+AX}}~($\sim$(size\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst}}~const
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a452d0647f1848fea42589793f3e2d1f4}{yynoreturn}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8e0bcf8f8a5b613ea583347f8bc31cbf}{Y\+Y\+\_\+\+N\+U\+LL}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_af1185350b7a92cf8aa5324c68850c8a6}{Y\+Y\+\_\+\+S\+C\+\_\+\+T\+O\+\_\+\+UI}}(\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~((\mbox{\hyperlink{build_2generated__src_2code_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}{Y\+Y\+\_\+\+C\+H\+AR}}) (\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab766bbbee08d04b67e3fe599d6900873}{B\+E\+G\+IN}}~(yy\+\_\+start) = 1 + 2 $\ast$
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8e14785f9eab7a997d659b25af9584c5}{Y\+Y\+\_\+\+S\+T\+A\+RT}}~(((yy\+\_\+start) -\/ 1) / 2)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a32b5b960944f946b192d54f672569cd9}{Y\+Y\+S\+T\+A\+TE}}~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a8e14785f9eab7a997d659b25af9584c5}{Y\+Y\+\_\+\+S\+T\+A\+RT}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab3077e60914fc54dcc55ecae1ce9700b}{Y\+Y\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+OF}}(state)~(\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ab2708fd42cff29ce6a0a52b91bea40d1}{Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+ER}} + state + 1)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0406739e64fb5750cf995d2ae68ce69d}{Y\+Y\+\_\+\+N\+E\+W\+\_\+\+F\+I\+LE}}~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ab657ddef65d43cc3ab8dfc2cad0ac5b8}{yyrestart}}( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a46af646807e0797e72b6e8945e7ea88b}{yyin}}  )
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab866a64da164ed2d4d444df1ef1fc9b3}{Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+AR}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae7e51116e747d3390e7a6cfc6532834c}{Y\+Y\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}}~16384
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac2f8b6fccdc516d96b02ac09a4dc01bd}{Y\+Y\+\_\+\+S\+T\+A\+T\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}}~((\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ae7e51116e747d3390e7a6cfc6532834c}{Y\+Y\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}} + 2) $\ast$ sizeof(\mbox{\hyperlink{build_2generated__src_2code_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}{yy\+\_\+state\+\_\+type}}))
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa79d63ed3ff8d2249baf1732a73089f5}{Y\+Y\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae0f2b0b5f04b2338367826b5670774f9}{Y\+Y\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+Y\+Y\+\_\+\+S\+I\+Z\+E\+\_\+T}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_adf4b0db227e07782e28ade353a7ba7a1}{E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+C\+O\+N\+T\+I\+N\+U\+E\+\_\+\+S\+C\+AN}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7f71d7fa2c403eb4b2f38cb9536f3c63}{E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+I\+LE}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad1a0b5ebcabffe388e9e9ebb2619c1fb}{E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+T\+CH}}~2
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a12e5f3a76911433480bca7f4edba6119}{Y\+Y\+\_\+\+L\+E\+S\+S\+\_\+\+L\+I\+N\+E\+NO}}(\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}})
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5206f64af3a299a0dc820c385cf0c489}{Y\+Y\+\_\+\+L\+I\+N\+E\+N\+O\+\_\+\+R\+E\+W\+I\+N\+D\+\_\+\+TO}}(ptr)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}{yyless}}(\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}})
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a448a4e9041a09588332733c6846c770c}{unput}}(\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~yyunput( \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}, (\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\+\_\+ptr}})  )
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8aaa9e1fa7f13d6954d045ef973a9c84}{Y\+Y\+\_\+\+S\+T\+R\+U\+C\+T\+\_\+\+Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a53579db42834b88199458993912c646d}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+EW}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a609d19f40900ecc2a5f812d9388c21fb}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+R\+M\+AL}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad689d97c15e807a6116ace7a420cea57}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+E\+O\+F\+\_\+\+P\+E\+N\+D\+I\+NG}}~2
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa093d500a6330d06d8e4760c494fac33}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+ER}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a817a6a24af62508b5a35f4bed5f56a2e}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+V\+A\+L\+UE}}~(yy\+\_\+buffer\+\_\+stack)\mbox{[}(yy\+\_\+buffer\+\_\+stack\+\_\+top)\mbox{]}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac5d478d90ea9a2ecd43d579067a2e89d}{Y\+Y\+\_\+\+F\+L\+U\+S\+H\+\_\+\+B\+U\+F\+F\+ER}}~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a2f59cc88e85e5455c62e4ef7ce095ea8}{yy\+\_\+flush\+\_\+buffer}}( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_aa093d500a6330d06d8e4760c494fac33}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+ER}} )
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab7eb911e18655f2f78e63afe5a8a4a12}{yy\+\_\+new\+\_\+buffer}}~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a5bc6f1a5f7812508f425b08283f13ae8}{yy\+\_\+create\+\_\+buffer}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac56eb96366c08862bf0efe5d83d1fc4c}{yy\+\_\+set\+\_\+interactive}}(is\+\_\+interactive)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a12e30d13a76a94e78010db9996d39c50}{yy\+\_\+set\+\_\+bol}}(at\+\_\+bol)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a71ca89b3656acd0552f14949a571560b}{Y\+Y\+\_\+\+A\+T\+\_\+\+B\+OL}}()~(\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a817a6a24af62508b5a35f4bed5f56a2e}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+V\+A\+L\+UE}}-\/$>$yy\+\_\+at\+\_\+bol)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8e8012c7d063e24ebbd0ff390f4de5c2}{commentscan\+Y\+Ywrap}}()~(/$\ast$C\+O\+N\+S\+T\+C\+O\+ND$\ast$/1)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae1ef5933028cbc587d31328e53d11a99}{Y\+Y\+\_\+\+S\+K\+I\+P\+\_\+\+Y\+Y\+W\+R\+AP}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\+\_\+ptr}}~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad9264b77d56b6971f29739e2bda77f51}{yytext}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_acc3486d769af4e4b2820346a0093cc79}{Y\+Y\+\_\+\+D\+O\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+A\+C\+T\+I\+ON}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae558785bb896e090901c2b905f6790c6}{Y\+Y\+\_\+\+N\+U\+M\+\_\+\+R\+U\+L\+ES}}~222
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab2708fd42cff29ce6a0a52b91bea40d1}{Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+ER}}~223
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a76482842cdcaadf1dbdaf43df38765a2}{Y\+Y\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+M\+A\+SK}}~0x2000
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7fce78ee876950ded902364014c917e6}{Y\+Y\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+H\+E\+A\+D\+\_\+\+M\+A\+SK}}~0x4000
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a835f10dd1ab4bf9a80c4cd80ee6e3058}{R\+E\+J\+E\+CT}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a745d37b5e002b2e5f93ad42ea7b554be}{yymore}}()~yymore\+\_\+used\+\_\+but\+\_\+not\+\_\+detected
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a68792d73820bc46a71d3d4e613f0b977}{Y\+Y\+\_\+\+M\+O\+R\+E\+\_\+\+A\+DJ}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a56858d18c7eda4f53664496ef566f651}{Y\+Y\+\_\+\+R\+E\+S\+T\+O\+R\+E\+\_\+\+Y\+Y\+\_\+\+M\+O\+R\+E\+\_\+\+O\+F\+F\+S\+ET}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a85523a0c7d95c059d251b4e9829947aa}{Y\+Y\+\_\+\+N\+O\+\_\+\+I\+N\+P\+UT}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae78ac56cd1f29572e967ed7636952d15}{Y\+Y\+\_\+\+N\+O\+\_\+\+U\+N\+I\+S\+T\+D\+\_\+H}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a15b85de192a189d5a31cdd518e001e6e}{Y\+Y\+\_\+\+N\+E\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+A\+C\+T\+I\+VE}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aacfdca45fa4beb8b06172525a53c424a}{Y\+Y\+\_\+\+I\+N\+P\+UT}}(buf,  result,  max\+\_\+size)~result=yyread(buf,max\+\_\+size);
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa3d063564f6ab16f6d408b8369d0e9ff}{I\+N\+I\+T\+I\+AL}}~0
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a734aadda90260df254153f157981235e}{Comment}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4b75d4fb40012575cc5801e6fdfd4c71}{Page\+Doc\+Arg1}}~2
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a556185f7e3b6e31ba51b904ceb35ce2c}{Page\+Doc\+Arg2}}~3
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7d092b48520bd401a16f678f44960750}{Relates\+Param1}}~4
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad26bc2999ae6d9ed59d33222666e0c4e}{Class\+Doc\+Arg1}}~5
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aaa6ab7aab5e9fe738059d55bf2745538}{Class\+Doc\+Arg2}}~6
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_af82c803a176b58b8c7b2161e0d45f863}{Class\+Doc\+Arg3}}~7
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a2fd95ad7fe250b182b5e8c3b5be5e5a1}{Category\+Doc\+Arg1}}~8
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad87649a7ca7839a94202f6abaffd34ff}{X\+Ref\+Item\+Param1}}~9
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6047c6026dab95a568d7c935455d9d42}{X\+Ref\+Item\+Param2}}~10
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6a5acbff22abc91b30344d3f8b818c79}{X\+Ref\+Item\+Param3}}~11
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7b97c722dcf987b3b8449cc7b77dc4b7}{File\+Doc\+Arg1}}~12
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab7deadd089a1126eac97e5ec19bb7660}{Param\+Arg1}}~13
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae98f80d9e830027e10ddbb1555893f12}{Enum\+Doc\+Arg1}}~14
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad3d05404cfe3ab80360dc0c99bf47992}{Name\+Space\+Doc\+Arg1}}~15
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a149c60e3b928736ea6135672c005f38d}{Package\+Doc\+Arg1}}~16
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a21aaef1423970e0a5b0e99b797c46c11}{Group\+Doc\+Arg1}}~17
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4e99feaa0fa185f8395c457d77faba6e}{Group\+Doc\+Arg2}}~18
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5e5bb13f9c930225a8a1e398f42d06ee}{Section\+Label}}~19
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_adde762d13f1deade7d86d069d1e2154f}{Section\+Title}}~20
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad4657774a9567d8d103a17ac26273e1a}{Subpage\+Label}}~21
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a28e46f03d9809e805697fafec472204c}{Subpage\+Title}}~22
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_abdbc3aa040a56327a772b695248da6a6}{Format\+Block}}~23
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4d3fbe185edb32fc00c05cc8834467a5}{Line\+Param}}~24
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_abe826dd18015731385b3b315ffcab769}{Guard\+Param}}~25
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a50e40dad2f4d3b994a8046467600fdc6}{Guard\+Param\+End}}~26
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_afe1cd769c8dfabc884e430ff380f21a5}{Skip\+Guarded\+Section}}~27
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a88833f04084cdb2655a94c13ceb9c428}{Skip\+Internal}}~28
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3607247c443690320905dc672e724579}{Name\+Param}}~29
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_adad60616f0ef86b37777fc90d2531409}{In\+Group\+Param}}~30
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aaf9cab5fe76d04223774349104640308}{Fn\+Param}}~31
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a55828b283815e56c30df40523ce23d0f}{Overload\+Param}}~32
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae408464f40de29f19241772911187d59}{Inherit\+Param}}~33
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a10f1cda986886d145fcc4a5dc5d7a916}{Extends\+Param}}~34
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a943f10a904784ce2f1d5b45ac8e52284}{Read\+Formula\+Short}}~35
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a9df360e2561bd0b757d12a5804ba3afe}{Read\+Formula\+Long}}~36
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a56b056c7dc9a4ed0979becc879c02809}{Anchor\+Label}}~37
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8eea6ff31efb007c2dfac0f91bc32e09}{Html\+Comment}}~38
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a973694076279c935fe23b9e25bd6600d}{Skip\+Lang}}~39
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aaa6108f805ab463c4a3aa106db3fbbec}{Cite\+Label}}~40
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a8c99a07bd7ad077f3fa92bb8bed9438e}{Copy\+Doc}}~41
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3d285019fe87d60be1a4eb8524bb33b8}{Guard\+Expr}}~42
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad871e3deb2ce558668d1b5ccdc98b647}{Cdata\+Section}}~43
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a540e6e5e26c0976151544109a5c03bfc}{Noop}}~44
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a26938d921de835f6183c02e54cf08828}{Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE}}~void $\ast$
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aab1491ceccb1c95c14320b2903773a1c}{Y\+Y\+\_\+\+R\+E\+A\+D\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}}~8192
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_aad1dc60a04a1d8cfc8b3ded13601e361}{E\+C\+HO}}~do \{ \mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad4a65b873df5c05570846b5413b41dfd}{if}} (fwrite( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad9264b77d56b6971f29739e2bda77f51}{yytext}}, (size\+\_\+t) \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a1b5865350b5ca5c1d69f429c2a652953}{yyleng}}, 1, \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a296847b42b0baa62e2af36cb79f3c0eb}{yyout}} )) \{\} \} while (0)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac3286b18a2e91b4571b97df96a118e84}{yyterminate}}()~return \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a8e0bcf8f8a5b613ea583347f8bc31cbf}{Y\+Y\+\_\+\+N\+U\+LL}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a227e75c43b9e0cd41529974230be7e75}{Y\+Y\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+C\+K\+\_\+\+I\+N\+CR}}~25
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac0586b8b0b092d02f4ba7d45abe328f2}{Y\+Y\+\_\+\+F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+OR}}(\mbox{\hyperlink{message_8h_aba549a028419cd48a3f373037c2c57eb}{msg}})~yy\+\_\+fatal\+\_\+error( \mbox{\hyperlink{message_8h_aba549a028419cd48a3f373037c2c57eb}{msg}} )
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7682c8d9cec0859408d2421fbe4a5570}{Y\+Y\+\_\+\+D\+E\+C\+L\+\_\+\+I\+S\+\_\+\+O\+U\+RS}}~1
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}{Y\+Y\+\_\+\+D\+E\+CL}}~int \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a9a7bd1b3d14701eb97c03f3ef34deff1}{yylex}} (void)
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6198b2fcf96178b24ad4efff2a3debb0}{Y\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+A\+C\+T\+I\+ON}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3cc40a460ad7df816678bcc05241e84c}{Y\+Y\+\_\+\+B\+R\+E\+AK}}~/$\ast$L\+I\+N\+T\+ED$\ast$/break;
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a690504b662e4281515bf12722df178ba}{Y\+Y\+\_\+\+R\+U\+L\+E\+\_\+\+S\+E\+T\+UP}}
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae93e67b85c44f6bd31ead14a552a35c8}{Y\+Y\+\_\+\+E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE}}~2
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}{yyless}}(\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}})
+\item 
+\#define \mbox{\hyperlink{generated__src_2commentscan_8cpp_a828cc83270f8f5bb1688e14dd4e28128}{Y\+Y\+T\+A\+B\+L\+E\+S\+\_\+\+N\+A\+ME}}~\char`\"{}yytables\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef signed char \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7b0840dff4a2ef1702118aa12264b2a7}{flex\+\_\+int8\+\_\+t}}
+\item 
+typedef short int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a2e73b2c75126814585525fb2e9d51159}{flex\+\_\+int16\+\_\+t}}
+\item 
+typedef int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a838ce943cf44ef7769480714fc6c3ba9}{flex\+\_\+int32\+\_\+t}}
+\item 
+typedef unsigned char \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}{flex\+\_\+uint8\+\_\+t}}
+\item 
+typedef unsigned short int \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac50cdb9eefbef83a1cec89e3a7f6e1d2}{flex\+\_\+uint16\+\_\+t}}
+\item 
+typedef unsigned int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a36869712de12820c73aae736762e8e88}{flex\+\_\+uint32\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structyy__buffer__state}{yy\+\_\+buffer\+\_\+state}} $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}
+\item 
+typedef size\+\_\+t \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{build_2generated__src_2code_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}{flex\+\_\+uint8\+\_\+t}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}{Y\+Y\+\_\+\+C\+H\+AR}}
+\item 
+typedef int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}{yy\+\_\+state\+\_\+type}}
+\item 
+typedef \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}($\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7aae62468024d06d64c03a73e6ed5e56}{Doc\+Cmd\+Func}}) (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&name, const \mbox{\hyperlink{class_q_c_string_list}{Q\+C\+String\+List}} \&opt\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186}{X\+Ref\+Kind}} \{ \newline
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}{X\+Ref\+\_\+\+Item}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}{X\+Ref\+\_\+\+Todo}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}{X\+Ref\+\_\+\+Test}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}{X\+Ref\+\_\+\+Bug}}, 
+\newline
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}{X\+Ref\+\_\+\+Deprecated}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}{X\+Ref\+\_\+\+None}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}{X\+Ref\+\_\+\+Item}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}{X\+Ref\+\_\+\+Todo}}, 
+\newline
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}{X\+Ref\+\_\+\+Test}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}{X\+Ref\+\_\+\+Bug}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}{X\+Ref\+\_\+\+Deprecated}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}{X\+Ref\+\_\+\+None}}
+ \}
+\item 
+enum \mbox{\hyperlink{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45}{Output\+Context}} \{ \newline
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}{Output\+Doc}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}{Output\+Brief}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}{Output\+X\+Ref}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}{Output\+Inbody}}, 
+\newline
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}{Output\+Doc}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}{Output\+Brief}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}{Output\+X\+Ref}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}{Output\+Inbody}}
+ \}
+\item 
+enum \mbox{\hyperlink{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7f}{Guard\+Type}} \{ \newline
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}{Guard\+\_\+\+If}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}{Guard\+\_\+\+If\+Not}}, 
+\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}{Guard\+\_\+\+Skip}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}{Guard\+\_\+\+If}}, 
+\newline
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}{Guard\+\_\+\+If\+Not}}, 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}{Guard\+\_\+\+Skip}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab657ddef65d43cc3ab8dfc2cad0ac5b8}{yyrestart}} (F\+I\+LE $\ast$input\+\_\+file)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3098c48a74ef8fd852f7dd4b3331cbce}{yy\+\_\+switch\+\_\+to\+\_\+buffer}} (\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} new\+\_\+buffer)
+\item 
+\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5bc6f1a5f7812508f425b08283f13ae8}{yy\+\_\+create\+\_\+buffer}} (F\+I\+LE $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, int \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae6ac796aa6c45d433a4b89bf45e6e9dc}{yy\+\_\+delete\+\_\+buffer}} (\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a2f59cc88e85e5455c62e4ef7ce095ea8}{yy\+\_\+flush\+\_\+buffer}} (\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4bf8969e5234aef8b46cce9a67a62724}{yypush\+\_\+buffer\+\_\+state}} (\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} new\+\_\+buffer)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a6201ab6be4687a1ebc3120602d05e35a}{yypop\+\_\+buffer\+\_\+state}} (void)
+\item 
+\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_af81595b30c0da73f9034ffb511db6388}{yy\+\_\+scan\+\_\+buffer}} (char $\ast$base, \mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}} \mbox{\hyperlink{gd_8h_a1e79fade784ffb450b103ad42e120fa0}{size}})
+\item 
+\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_aaba3a8c0a4caad352ee68b5742c4a9d1}{yy\+\_\+scan\+\_\+string}} (const char $\ast$yy\+\_\+str)
+\item 
+\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_acbf193b612e891a3fca6a810daa18c66}{yy\+\_\+scan\+\_\+bytes}} (const char $\ast$bytes, int \mbox{\hyperlink{gd_8h_afed088663f8704004425cdae2120b9b3}{len}})
+\item 
+void $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a48e81b6f60f5f21fcaca3cc542e6c9f2}{yyalloc}} (\mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}})
+\item 
+void $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a843d874fed23c395a8f12c2d9c666557}{yyrealloc}} (void $\ast$, \mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}})
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a70f82d43d4797bb2a50f7678ddbfbda5}{yyfree}} (void $\ast$)
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_ab596ae57cdabfb4b298edf3dde7cdf04}{yylex\+\_\+destroy}} (void)
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a4d4e3dd7e6f1d795e01b61794b31ac34}{yyget\+\_\+debug}} (void)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac571eade4cca933e8ccdf6759c527fe7}{yyset\+\_\+debug}} (int debug\+\_\+flag)
+\item 
+\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a26938d921de835f6183c02e54cf08828}{Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_ada55bcd8fc1379fb4c103886195dd0e8}{yyget\+\_\+extra}} (void)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a2df391b304dadab17608192b116af2a1}{yyset\+\_\+extra}} (\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a26938d921de835f6183c02e54cf08828}{Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE}} user\+\_\+defined)
+\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_aeeecf71423549a8e165cddd5a824160b}{yyget\+\_\+in}} (void)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_a14346b28ae39537ab27caacebfcb31a7}{yyset\+\_\+in}} (F\+I\+LE $\ast$\+\_\+in\+\_\+str)
+\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae2c4c4681bb3d385b213511d0b3b59fd}{yyget\+\_\+out}} (void)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad8174301995e5a61ab330516ec081e35}{yyset\+\_\+out}} (F\+I\+LE $\ast$\+\_\+out\+\_\+str)
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a81867b0419accbe7b3c2d59ffb203da9}{yyget\+\_\+leng}} (void)
+\item 
+char $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac8dd6bf3779328f280aa7f7aa8106514}{yyget\+\_\+text}} (void)
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a3ac85cdab63967ff82c7534d35a42fe6}{yyget\+\_\+lineno}} (void)
+\item 
+void \mbox{\hyperlink{generated__src_2commentscan_8cpp_aca0fe76da7a277561738a9a14ab8cb0a}{yyset\+\_\+lineno}} (int \+\_\+line\+\_\+number)
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a9a7bd1b3d14701eb97c03f3ef34deff1}{yylex}} (void)
+\item 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_ad4a65b873df5c05570846b5413b41dfd}{if}} (!(yy\+\_\+init))
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a1b5865350b5ca5c1d69f429c2a652953}{yyleng}}
+\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a46af646807e0797e72b6e8945e7ea88b}{yyin}} = N\+U\+LL
+\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a296847b42b0baa62e2af36cb79f3c0eb}{yyout}} = N\+U\+LL
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a5e36364965360da7b7cdfc2188e0af84}{yylineno}} = 1
+\item 
+char $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_ad9264b77d56b6971f29739e2bda77f51}{yytext}}
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a7411c3bab9eca1afee90113c2d22da37}{yy\+\_\+flex\+\_\+debug}} = 0
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{generated__src_2commentscan_8cpp_ac51a198488bd60f03dd8a00d64831743}{in\+Internal\+Docs}} = \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}
+\item 
+\mbox{\hyperlink{generated__src_2commentscan_8cpp_abcefb20c54ce0f92452cfbb9cf657670}{Y\+Y\+\_\+\+D\+E\+CL}}
+\item 
+char $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\+\_\+cp}}
+\item 
+char $\ast$ \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}{yy\+\_\+bp}}
+\item 
+int \mbox{\hyperlink{generated__src_2commentscan_8cpp_a483da4c691e92dcb79c40a3514759b6b}{yy\+\_\+act}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a56b056c7dc9a4ed0979becc879c02809}\label{generated__src_2commentscan_8cpp_a56b056c7dc9a4ed0979becc879c02809}} 
+\index{commentscan.cpp@{commentscan.cpp}!AnchorLabel@{AnchorLabel}}
+\index{AnchorLabel@{AnchorLabel}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{AnchorLabel}{AnchorLabel}}
+{\footnotesize\ttfamily \#define Anchor\+Label~37}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab766bbbee08d04b67e3fe599d6900873}\label{generated__src_2commentscan_8cpp_ab766bbbee08d04b67e3fe599d6900873}} 
+\index{commentscan.cpp@{commentscan.cpp}!BEGIN@{BEGIN}}
+\index{BEGIN@{BEGIN}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{BEGIN}{BEGIN}}
+{\footnotesize\ttfamily \#define B\+E\+G\+IN~(yy\+\_\+start) = 1 + 2 $\ast$}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a2fd95ad7fe250b182b5e8c3b5be5e5a1}\label{generated__src_2commentscan_8cpp_a2fd95ad7fe250b182b5e8c3b5be5e5a1}} 
+\index{commentscan.cpp@{commentscan.cpp}!CategoryDocArg1@{CategoryDocArg1}}
+\index{CategoryDocArg1@{CategoryDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{CategoryDocArg1}{CategoryDocArg1}}
+{\footnotesize\ttfamily \#define Category\+Doc\+Arg1~8}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad871e3deb2ce558668d1b5ccdc98b647}\label{generated__src_2commentscan_8cpp_ad871e3deb2ce558668d1b5ccdc98b647}} 
+\index{commentscan.cpp@{commentscan.cpp}!CdataSection@{CdataSection}}
+\index{CdataSection@{CdataSection}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{CdataSection}{CdataSection}}
+{\footnotesize\ttfamily \#define Cdata\+Section~43}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aaa6108f805ab463c4a3aa106db3fbbec}\label{generated__src_2commentscan_8cpp_aaa6108f805ab463c4a3aa106db3fbbec}} 
+\index{commentscan.cpp@{commentscan.cpp}!CiteLabel@{CiteLabel}}
+\index{CiteLabel@{CiteLabel}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{CiteLabel}{CiteLabel}}
+{\footnotesize\ttfamily \#define Cite\+Label~40}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad26bc2999ae6d9ed59d33222666e0c4e}\label{generated__src_2commentscan_8cpp_ad26bc2999ae6d9ed59d33222666e0c4e}} 
+\index{commentscan.cpp@{commentscan.cpp}!ClassDocArg1@{ClassDocArg1}}
+\index{ClassDocArg1@{ClassDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ClassDocArg1}{ClassDocArg1}}
+{\footnotesize\ttfamily \#define Class\+Doc\+Arg1~5}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aaa6ab7aab5e9fe738059d55bf2745538}\label{generated__src_2commentscan_8cpp_aaa6ab7aab5e9fe738059d55bf2745538}} 
+\index{commentscan.cpp@{commentscan.cpp}!ClassDocArg2@{ClassDocArg2}}
+\index{ClassDocArg2@{ClassDocArg2}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ClassDocArg2}{ClassDocArg2}}
+{\footnotesize\ttfamily \#define Class\+Doc\+Arg2~6}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_af82c803a176b58b8c7b2161e0d45f863}\label{generated__src_2commentscan_8cpp_af82c803a176b58b8c7b2161e0d45f863}} 
+\index{commentscan.cpp@{commentscan.cpp}!ClassDocArg3@{ClassDocArg3}}
+\index{ClassDocArg3@{ClassDocArg3}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ClassDocArg3}{ClassDocArg3}}
+{\footnotesize\ttfamily \#define Class\+Doc\+Arg3~7}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a734aadda90260df254153f157981235e}\label{generated__src_2commentscan_8cpp_a734aadda90260df254153f157981235e}} 
+\index{commentscan.cpp@{commentscan.cpp}!Comment@{Comment}}
+\index{Comment@{Comment}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{Comment}{Comment}}
+{\footnotesize\ttfamily \#define Comment~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa7264081fa74776aeb30c8fb9e6a7b7e}\label{generated__src_2commentscan_8cpp_aa7264081fa74776aeb30c8fb9e6a7b7e}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_create\_buffer\_ALREADY\_DEFINED@{commentscanYY\_create\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_create\_buffer\_ALREADY\_DEFINED@{commentscanYY\_create\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_create\_buffer\_ALREADY\_DEFINED}{commentscanYY\_create\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+create\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a615e1e712bdc14e1c73e31536aa90f6d}\label{generated__src_2commentscan_8cpp_a615e1e712bdc14e1c73e31536aa90f6d}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_delete\_buffer\_ALREADY\_DEFINED@{commentscanYY\_delete\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_delete\_buffer\_ALREADY\_DEFINED@{commentscanYY\_delete\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_delete\_buffer\_ALREADY\_DEFINED}{commentscanYY\_delete\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+delete\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad2ef9e85902b6b3255e28d8e0ddf43f9}\label{generated__src_2commentscan_8cpp_ad2ef9e85902b6b3255e28d8e0ddf43f9}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_flex\_debug\_ALREADY\_DEFINED@{commentscanYY\_flex\_debug\_ALREADY\_DEFINED}}
+\index{commentscanYY\_flex\_debug\_ALREADY\_DEFINED@{commentscanYY\_flex\_debug\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_flex\_debug\_ALREADY\_DEFINED}{commentscanYY\_flex\_debug\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+flex\+\_\+debug\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_adae3f065c91e7e3755b9e48bc7756230}\label{generated__src_2commentscan_8cpp_adae3f065c91e7e3755b9e48bc7756230}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_flush\_buffer\_ALREADY\_DEFINED@{commentscanYY\_flush\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_flush\_buffer\_ALREADY\_DEFINED@{commentscanYY\_flush\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_flush\_buffer\_ALREADY\_DEFINED}{commentscanYY\_flush\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+flush\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4c4e6ba79128003e93e94595e07fe568}\label{generated__src_2commentscan_8cpp_a4c4e6ba79128003e93e94595e07fe568}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_init\_buffer\_ALREADY\_DEFINED@{commentscanYY\_init\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_init\_buffer\_ALREADY\_DEFINED@{commentscanYY\_init\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_init\_buffer\_ALREADY\_DEFINED}{commentscanYY\_init\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+init\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a44966e501113d5caf5cbbe4011eb87c1}\label{generated__src_2commentscan_8cpp_a44966e501113d5caf5cbbe4011eb87c1}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED@{commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED}}
+\index{commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED@{commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED}{commentscanYY\_load\_buffer\_state\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+load\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a79e85c06f0b66da73008f1a26356eccb}\label{generated__src_2commentscan_8cpp_a79e85c06f0b66da73008f1a26356eccb}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_scan\_buffer\_ALREADY\_DEFINED@{commentscanYY\_scan\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_scan\_buffer\_ALREADY\_DEFINED@{commentscanYY\_scan\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_scan\_buffer\_ALREADY\_DEFINED}{commentscanYY\_scan\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+scan\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad62a29c06f214e65591160932ec1bc44}\label{generated__src_2commentscan_8cpp_ad62a29c06f214e65591160932ec1bc44}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_scan\_bytes\_ALREADY\_DEFINED@{commentscanYY\_scan\_bytes\_ALREADY\_DEFINED}}
+\index{commentscanYY\_scan\_bytes\_ALREADY\_DEFINED@{commentscanYY\_scan\_bytes\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_scan\_bytes\_ALREADY\_DEFINED}{commentscanYY\_scan\_bytes\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+scan\+\_\+bytes\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad880a407a9fbfa0b3aa3b5746fea1f6f}\label{generated__src_2commentscan_8cpp_ad880a407a9fbfa0b3aa3b5746fea1f6f}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_scan\_string\_ALREADY\_DEFINED@{commentscanYY\_scan\_string\_ALREADY\_DEFINED}}
+\index{commentscanYY\_scan\_string\_ALREADY\_DEFINED@{commentscanYY\_scan\_string\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_scan\_string\_ALREADY\_DEFINED}{commentscanYY\_scan\_string\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+scan\+\_\+string\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aea01e40e6e6239462f4f88eb8080c209}\label{generated__src_2commentscan_8cpp_aea01e40e6e6239462f4f88eb8080c209}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED@{commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED}}
+\index{commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED@{commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED}{commentscanYY\_switch\_to\_buffer\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Y\+\_\+switch\+\_\+to\+\_\+buffer\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad1142949ad5513705cf085fa5bc4d950}\label{generated__src_2commentscan_8cpp_ad1142949ad5513705cf085fa5bc4d950}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYalloc\_ALREADY\_DEFINED@{commentscanYYalloc\_ALREADY\_DEFINED}}
+\index{commentscanYYalloc\_ALREADY\_DEFINED@{commentscanYYalloc\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYalloc\_ALREADY\_DEFINED}{commentscanYYalloc\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yalloc\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a000c6f77e26dcbf036bb64c5b8481814}\label{generated__src_2commentscan_8cpp_a000c6f77e26dcbf036bb64c5b8481814}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED@{commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED}}
+\index{commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED@{commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED}{commentscanYYensure\_buffer\_stack\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yensure\+\_\+buffer\+\_\+stack\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a41bf8b4fb919fe9233f57657e6b5cfd9}\label{generated__src_2commentscan_8cpp_a41bf8b4fb919fe9233f57657e6b5cfd9}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYfree\_ALREADY\_DEFINED@{commentscanYYfree\_ALREADY\_DEFINED}}
+\index{commentscanYYfree\_ALREADY\_DEFINED@{commentscanYYfree\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYfree\_ALREADY\_DEFINED}{commentscanYYfree\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yfree\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83615ce2a65d0070586255feb17c7898}\label{generated__src_2commentscan_8cpp_a83615ce2a65d0070586255feb17c7898}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYin\_ALREADY\_DEFINED@{commentscanYYin\_ALREADY\_DEFINED}}
+\index{commentscanYYin\_ALREADY\_DEFINED@{commentscanYYin\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYin\_ALREADY\_DEFINED}{commentscanYYin\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yin\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a77ec47392c2911d0615481ffd0ff937d}\label{generated__src_2commentscan_8cpp_a77ec47392c2911d0615481ffd0ff937d}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYleng\_ALREADY\_DEFINED@{commentscanYYleng\_ALREADY\_DEFINED}}
+\index{commentscanYYleng\_ALREADY\_DEFINED@{commentscanYYleng\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYleng\_ALREADY\_DEFINED}{commentscanYYleng\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yleng\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa3ed9b166d6a0099a214b23fa2752319}\label{generated__src_2commentscan_8cpp_aa3ed9b166d6a0099a214b23fa2752319}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYlex\_ALREADY\_DEFINED@{commentscanYYlex\_ALREADY\_DEFINED}}
+\index{commentscanYYlex\_ALREADY\_DEFINED@{commentscanYYlex\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYlex\_ALREADY\_DEFINED}{commentscanYYlex\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ylex\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac5421a70a2fb26783fa00d67e51ecec0}\label{generated__src_2commentscan_8cpp_ac5421a70a2fb26783fa00d67e51ecec0}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYlineno\_ALREADY\_DEFINED@{commentscanYYlineno\_ALREADY\_DEFINED}}
+\index{commentscanYYlineno\_ALREADY\_DEFINED@{commentscanYYlineno\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYlineno\_ALREADY\_DEFINED}{commentscanYYlineno\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ylineno\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a51b56320f3b6e9fcf0eacb9ae8ab7311}\label{generated__src_2commentscan_8cpp_a51b56320f3b6e9fcf0eacb9ae8ab7311}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYout\_ALREADY\_DEFINED@{commentscanYYout\_ALREADY\_DEFINED}}
+\index{commentscanYYout\_ALREADY\_DEFINED@{commentscanYYout\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYout\_ALREADY\_DEFINED}{commentscanYYout\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yout\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5d0e665bcebd621b700fd9bb05e026cc}\label{generated__src_2commentscan_8cpp_a5d0e665bcebd621b700fd9bb05e026cc}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED@{commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED}}
+\index{commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED@{commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED}{commentscanYYpop\_buffer\_state\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ypop\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a0a89e3fa72d8843d2576fbf03a6503d4}\label{generated__src_2commentscan_8cpp_a0a89e3fa72d8843d2576fbf03a6503d4}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED@{commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED}}
+\index{commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED@{commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED}{commentscanYYpush\_buffer\_state\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ypush\+\_\+buffer\+\_\+state\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4cdb591a578025fb2d1275adc899312f}\label{generated__src_2commentscan_8cpp_a4cdb591a578025fb2d1275adc899312f}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYrealloc\_ALREADY\_DEFINED@{commentscanYYrealloc\_ALREADY\_DEFINED}}
+\index{commentscanYYrealloc\_ALREADY\_DEFINED@{commentscanYYrealloc\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYrealloc\_ALREADY\_DEFINED}{commentscanYYrealloc\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yrealloc\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac6ba13a37df9d239874bdaab7bd90457}\label{generated__src_2commentscan_8cpp_ac6ba13a37df9d239874bdaab7bd90457}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYrestart\_ALREADY\_DEFINED@{commentscanYYrestart\_ALREADY\_DEFINED}}
+\index{commentscanYYrestart\_ALREADY\_DEFINED@{commentscanYYrestart\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYrestart\_ALREADY\_DEFINED}{commentscanYYrestart\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Yrestart\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aad76cebc00bcaad5c194f8a041f19f10}\label{generated__src_2commentscan_8cpp_aad76cebc00bcaad5c194f8a041f19f10}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYtext\_ALREADY\_DEFINED@{commentscanYYtext\_ALREADY\_DEFINED}}
+\index{commentscanYYtext\_ALREADY\_DEFINED@{commentscanYYtext\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYtext\_ALREADY\_DEFINED}{commentscanYYtext\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ytext\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8e8012c7d063e24ebbd0ff390f4de5c2}\label{generated__src_2commentscan_8cpp_a8e8012c7d063e24ebbd0ff390f4de5c2}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYwrap@{commentscanYYwrap}}
+\index{commentscanYYwrap@{commentscanYYwrap}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYwrap}{commentscanYYwrap}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ywrap(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(/$\ast$C\+O\+N\+S\+T\+C\+O\+ND$\ast$/1)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a0ee8db4fc0a638c75e16d08f02038f17}\label{generated__src_2commentscan_8cpp_a0ee8db4fc0a638c75e16d08f02038f17}} 
+\index{commentscan.cpp@{commentscan.cpp}!commentscanYYwrap\_ALREADY\_DEFINED@{commentscanYYwrap\_ALREADY\_DEFINED}}
+\index{commentscanYYwrap\_ALREADY\_DEFINED@{commentscanYYwrap\_ALREADY\_DEFINED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{commentscanYYwrap\_ALREADY\_DEFINED}{commentscanYYwrap\_ALREADY\_DEFINED}}
+{\footnotesize\ttfamily \#define commentscan\+Y\+Ywrap\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+E\+F\+I\+N\+ED}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8c99a07bd7ad077f3fa92bb8bed9438e}\label{generated__src_2commentscan_8cpp_a8c99a07bd7ad077f3fa92bb8bed9438e}} 
+\index{commentscan.cpp@{commentscan.cpp}!CopyDoc@{CopyDoc}}
+\index{CopyDoc@{CopyDoc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{CopyDoc}{CopyDoc}}
+{\footnotesize\ttfamily \#define Copy\+Doc~41}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aad1dc60a04a1d8cfc8b3ded13601e361}\label{generated__src_2commentscan_8cpp_aad1dc60a04a1d8cfc8b3ded13601e361}} 
+\index{commentscan.cpp@{commentscan.cpp}!ECHO@{ECHO}}
+\index{ECHO@{ECHO}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ECHO}{ECHO}}
+{\footnotesize\ttfamily \#define E\+C\+HO~do \{ \mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad4a65b873df5c05570846b5413b41dfd}{if}} (fwrite( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad9264b77d56b6971f29739e2bda77f51}{yytext}}, (size\+\_\+t) \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a1b5865350b5ca5c1d69f429c2a652953}{yyleng}}, 1, \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a296847b42b0baa62e2af36cb79f3c0eb}{yyout}} )) \{\} \} while (0)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae98f80d9e830027e10ddbb1555893f12}\label{generated__src_2commentscan_8cpp_ae98f80d9e830027e10ddbb1555893f12}} 
+\index{commentscan.cpp@{commentscan.cpp}!EnumDocArg1@{EnumDocArg1}}
+\index{EnumDocArg1@{EnumDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{EnumDocArg1}{EnumDocArg1}}
+{\footnotesize\ttfamily \#define Enum\+Doc\+Arg1~14}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_adf4b0db227e07782e28ade353a7ba7a1}\label{generated__src_2commentscan_8cpp_adf4b0db227e07782e28ade353a7ba7a1}} 
+\index{commentscan.cpp@{commentscan.cpp}!EOB\_ACT\_CONTINUE\_SCAN@{EOB\_ACT\_CONTINUE\_SCAN}}
+\index{EOB\_ACT\_CONTINUE\_SCAN@{EOB\_ACT\_CONTINUE\_SCAN}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{EOB\_ACT\_CONTINUE\_SCAN}{EOB\_ACT\_CONTINUE\_SCAN}}
+{\footnotesize\ttfamily \#define E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+C\+O\+N\+T\+I\+N\+U\+E\+\_\+\+S\+C\+AN~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7f71d7fa2c403eb4b2f38cb9536f3c63}\label{generated__src_2commentscan_8cpp_a7f71d7fa2c403eb4b2f38cb9536f3c63}} 
+\index{commentscan.cpp@{commentscan.cpp}!EOB\_ACT\_END\_OF\_FILE@{EOB\_ACT\_END\_OF\_FILE}}
+\index{EOB\_ACT\_END\_OF\_FILE@{EOB\_ACT\_END\_OF\_FILE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{EOB\_ACT\_END\_OF\_FILE}{EOB\_ACT\_END\_OF\_FILE}}
+{\footnotesize\ttfamily \#define E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+I\+LE~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad1a0b5ebcabffe388e9e9ebb2619c1fb}\label{generated__src_2commentscan_8cpp_ad1a0b5ebcabffe388e9e9ebb2619c1fb}} 
+\index{commentscan.cpp@{commentscan.cpp}!EOB\_ACT\_LAST\_MATCH@{EOB\_ACT\_LAST\_MATCH}}
+\index{EOB\_ACT\_LAST\_MATCH@{EOB\_ACT\_LAST\_MATCH}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{EOB\_ACT\_LAST\_MATCH}{EOB\_ACT\_LAST\_MATCH}}
+{\footnotesize\ttfamily \#define E\+O\+B\+\_\+\+A\+C\+T\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+T\+CH~2}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a10f1cda986886d145fcc4a5dc5d7a916}\label{generated__src_2commentscan_8cpp_a10f1cda986886d145fcc4a5dc5d7a916}} 
+\index{commentscan.cpp@{commentscan.cpp}!ExtendsParam@{ExtendsParam}}
+\index{ExtendsParam@{ExtendsParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ExtendsParam}{ExtendsParam}}
+{\footnotesize\ttfamily \#define Extends\+Param~34}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7b97c722dcf987b3b8449cc7b77dc4b7}\label{generated__src_2commentscan_8cpp_a7b97c722dcf987b3b8449cc7b77dc4b7}} 
+\index{commentscan.cpp@{commentscan.cpp}!FileDocArg1@{FileDocArg1}}
+\index{FileDocArg1@{FileDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FileDocArg1}{FileDocArg1}}
+{\footnotesize\ttfamily \#define File\+Doc\+Arg1~12}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a9465c9986fdda27730c9dff8d16a0887}\label{generated__src_2commentscan_8cpp_a9465c9986fdda27730c9dff8d16a0887}} 
+\index{commentscan.cpp@{commentscan.cpp}!FLEX\_BETA@{FLEX\_BETA}}
+\index{FLEX\_BETA@{FLEX\_BETA}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FLEX\_BETA}{FLEX\_BETA}}
+{\footnotesize\ttfamily \#define F\+L\+E\+X\+\_\+\+B\+E\+TA}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3c3d1ef92e93b0bc81d7760a73d5c3b6}\label{generated__src_2commentscan_8cpp_a3c3d1ef92e93b0bc81d7760a73d5c3b6}} 
+\index{commentscan.cpp@{commentscan.cpp}!FLEX\_SCANNER@{FLEX\_SCANNER}}
+\index{FLEX\_SCANNER@{FLEX\_SCANNER}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FLEX\_SCANNER}{FLEX\_SCANNER}}
+{\footnotesize\ttfamily \#define F\+L\+E\+X\+\_\+\+S\+C\+A\+N\+N\+ER}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aec980b5a71bbe6d67931df20f0ebaec4}\label{generated__src_2commentscan_8cpp_aec980b5a71bbe6d67931df20f0ebaec4}} 
+\index{commentscan.cpp@{commentscan.cpp}!FLEXINT\_H@{FLEXINT\_H}}
+\index{FLEXINT\_H@{FLEXINT\_H}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FLEXINT\_H}{FLEXINT\_H}}
+{\footnotesize\ttfamily \#define F\+L\+E\+X\+I\+N\+T\+\_\+H}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aaf9cab5fe76d04223774349104640308}\label{generated__src_2commentscan_8cpp_aaf9cab5fe76d04223774349104640308}} 
+\index{commentscan.cpp@{commentscan.cpp}!FnParam@{FnParam}}
+\index{FnParam@{FnParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FnParam}{FnParam}}
+{\footnotesize\ttfamily \#define Fn\+Param~31}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_abdbc3aa040a56327a772b695248da6a6}\label{generated__src_2commentscan_8cpp_abdbc3aa040a56327a772b695248da6a6}} 
+\index{commentscan.cpp@{commentscan.cpp}!FormatBlock@{FormatBlock}}
+\index{FormatBlock@{FormatBlock}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{FormatBlock}{FormatBlock}}
+{\footnotesize\ttfamily \#define Format\+Block~23}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a21aaef1423970e0a5b0e99b797c46c11}\label{generated__src_2commentscan_8cpp_a21aaef1423970e0a5b0e99b797c46c11}} 
+\index{commentscan.cpp@{commentscan.cpp}!GroupDocArg1@{GroupDocArg1}}
+\index{GroupDocArg1@{GroupDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GroupDocArg1}{GroupDocArg1}}
+{\footnotesize\ttfamily \#define Group\+Doc\+Arg1~17}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4e99feaa0fa185f8395c457d77faba6e}\label{generated__src_2commentscan_8cpp_a4e99feaa0fa185f8395c457d77faba6e}} 
+\index{commentscan.cpp@{commentscan.cpp}!GroupDocArg2@{GroupDocArg2}}
+\index{GroupDocArg2@{GroupDocArg2}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GroupDocArg2}{GroupDocArg2}}
+{\footnotesize\ttfamily \#define Group\+Doc\+Arg2~18}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3d285019fe87d60be1a4eb8524bb33b8}\label{generated__src_2commentscan_8cpp_a3d285019fe87d60be1a4eb8524bb33b8}} 
+\index{commentscan.cpp@{commentscan.cpp}!GuardExpr@{GuardExpr}}
+\index{GuardExpr@{GuardExpr}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GuardExpr}{GuardExpr}}
+{\footnotesize\ttfamily \#define Guard\+Expr~42}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_abe826dd18015731385b3b315ffcab769}\label{generated__src_2commentscan_8cpp_abe826dd18015731385b3b315ffcab769}} 
+\index{commentscan.cpp@{commentscan.cpp}!GuardParam@{GuardParam}}
+\index{GuardParam@{GuardParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GuardParam}{GuardParam}}
+{\footnotesize\ttfamily \#define Guard\+Param~25}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a50e40dad2f4d3b994a8046467600fdc6}\label{generated__src_2commentscan_8cpp_a50e40dad2f4d3b994a8046467600fdc6}} 
+\index{commentscan.cpp@{commentscan.cpp}!GuardParamEnd@{GuardParamEnd}}
+\index{GuardParamEnd@{GuardParamEnd}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GuardParamEnd}{GuardParamEnd}}
+{\footnotesize\ttfamily \#define Guard\+Param\+End~26}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8eea6ff31efb007c2dfac0f91bc32e09}\label{generated__src_2commentscan_8cpp_a8eea6ff31efb007c2dfac0f91bc32e09}} 
+\index{commentscan.cpp@{commentscan.cpp}!HtmlComment@{HtmlComment}}
+\index{HtmlComment@{HtmlComment}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{HtmlComment}{HtmlComment}}
+{\footnotesize\ttfamily \#define Html\+Comment~38}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_adad60616f0ef86b37777fc90d2531409}\label{generated__src_2commentscan_8cpp_adad60616f0ef86b37777fc90d2531409}} 
+\index{commentscan.cpp@{commentscan.cpp}!InGroupParam@{InGroupParam}}
+\index{InGroupParam@{InGroupParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{InGroupParam}{InGroupParam}}
+{\footnotesize\ttfamily \#define In\+Group\+Param~30}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae408464f40de29f19241772911187d59}\label{generated__src_2commentscan_8cpp_ae408464f40de29f19241772911187d59}} 
+\index{commentscan.cpp@{commentscan.cpp}!InheritParam@{InheritParam}}
+\index{InheritParam@{InheritParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{InheritParam}{InheritParam}}
+{\footnotesize\ttfamily \#define Inherit\+Param~33}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa3d063564f6ab16f6d408b8369d0e9ff}\label{generated__src_2commentscan_8cpp_aa3d063564f6ab16f6d408b8369d0e9ff}} 
+\index{commentscan.cpp@{commentscan.cpp}!INITIAL@{INITIAL}}
+\index{INITIAL@{INITIAL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INITIAL}{INITIAL}}
+{\footnotesize\ttfamily \#define I\+N\+I\+T\+I\+AL~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac58f2c111cc9989c86db2a7dc4fd84ca}\label{generated__src_2commentscan_8cpp_ac58f2c111cc9989c86db2a7dc4fd84ca}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT16\_MAX@{INT16\_MAX}}
+\index{INT16\_MAX@{INT16\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT16\_MAX}{INT16\_MAX}}
+{\footnotesize\ttfamily \#define I\+N\+T16\+\_\+\+M\+AX~(32767)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad4e9955955b27624963643eac448118a}\label{generated__src_2commentscan_8cpp_ad4e9955955b27624963643eac448118a}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT16\_MIN@{INT16\_MIN}}
+\index{INT16\_MIN@{INT16\_MIN}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT16\_MIN}{INT16\_MIN}}
+{\footnotesize\ttfamily \#define I\+N\+T16\+\_\+\+M\+IN~(-\/32767-\/1)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a181807730d4a375f848ba139813ce04f}\label{generated__src_2commentscan_8cpp_a181807730d4a375f848ba139813ce04f}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT32\_MAX@{INT32\_MAX}}
+\index{INT32\_MAX@{INT32\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT32\_MAX}{INT32\_MAX}}
+{\footnotesize\ttfamily \#define I\+N\+T32\+\_\+\+M\+AX~(2147483647)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a688eb21a22db27c2b2bd5836943cdcbe}\label{generated__src_2commentscan_8cpp_a688eb21a22db27c2b2bd5836943cdcbe}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT32\_MIN@{INT32\_MIN}}
+\index{INT32\_MIN@{INT32\_MIN}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT32\_MIN}{INT32\_MIN}}
+{\footnotesize\ttfamily \#define I\+N\+T32\+\_\+\+M\+IN~(-\/2147483647-\/1)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aaf7f29f45f1a513b4748a4e5014ddf6a}\label{generated__src_2commentscan_8cpp_aaf7f29f45f1a513b4748a4e5014ddf6a}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT8\_MAX@{INT8\_MAX}}
+\index{INT8\_MAX@{INT8\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT8\_MAX}{INT8\_MAX}}
+{\footnotesize\ttfamily \#define I\+N\+T8\+\_\+\+M\+AX~(127)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aadcf2a81af243df333b31efa6461ab8e}\label{generated__src_2commentscan_8cpp_aadcf2a81af243df333b31efa6461ab8e}} 
+\index{commentscan.cpp@{commentscan.cpp}!INT8\_MIN@{INT8\_MIN}}
+\index{INT8\_MIN@{INT8\_MIN}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{INT8\_MIN}{INT8\_MIN}}
+{\footnotesize\ttfamily \#define I\+N\+T8\+\_\+\+M\+IN~(-\/128)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4d3fbe185edb32fc00c05cc8834467a5}\label{generated__src_2commentscan_8cpp_a4d3fbe185edb32fc00c05cc8834467a5}} 
+\index{commentscan.cpp@{commentscan.cpp}!LineParam@{LineParam}}
+\index{LineParam@{LineParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{LineParam}{LineParam}}
+{\footnotesize\ttfamily \#define Line\+Param~24}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3607247c443690320905dc672e724579}\label{generated__src_2commentscan_8cpp_a3607247c443690320905dc672e724579}} 
+\index{commentscan.cpp@{commentscan.cpp}!NameParam@{NameParam}}
+\index{NameParam@{NameParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{NameParam}{NameParam}}
+{\footnotesize\ttfamily \#define Name\+Param~29}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad3d05404cfe3ab80360dc0c99bf47992}\label{generated__src_2commentscan_8cpp_ad3d05404cfe3ab80360dc0c99bf47992}} 
+\index{commentscan.cpp@{commentscan.cpp}!NameSpaceDocArg1@{NameSpaceDocArg1}}
+\index{NameSpaceDocArg1@{NameSpaceDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{NameSpaceDocArg1}{NameSpaceDocArg1}}
+{\footnotesize\ttfamily \#define Name\+Space\+Doc\+Arg1~15}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a540e6e5e26c0976151544109a5c03bfc}\label{generated__src_2commentscan_8cpp_a540e6e5e26c0976151544109a5c03bfc}} 
+\index{commentscan.cpp@{commentscan.cpp}!Noop@{Noop}}
+\index{Noop@{Noop}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{Noop}{Noop}}
+{\footnotesize\ttfamily \#define Noop~44}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a55828b283815e56c30df40523ce23d0f}\label{generated__src_2commentscan_8cpp_a55828b283815e56c30df40523ce23d0f}} 
+\index{commentscan.cpp@{commentscan.cpp}!OverloadParam@{OverloadParam}}
+\index{OverloadParam@{OverloadParam}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{OverloadParam}{OverloadParam}}
+{\footnotesize\ttfamily \#define Overload\+Param~32}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a149c60e3b928736ea6135672c005f38d}\label{generated__src_2commentscan_8cpp_a149c60e3b928736ea6135672c005f38d}} 
+\index{commentscan.cpp@{commentscan.cpp}!PackageDocArg1@{PackageDocArg1}}
+\index{PackageDocArg1@{PackageDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{PackageDocArg1}{PackageDocArg1}}
+{\footnotesize\ttfamily \#define Package\+Doc\+Arg1~16}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4b75d4fb40012575cc5801e6fdfd4c71}\label{generated__src_2commentscan_8cpp_a4b75d4fb40012575cc5801e6fdfd4c71}} 
+\index{commentscan.cpp@{commentscan.cpp}!PageDocArg1@{PageDocArg1}}
+\index{PageDocArg1@{PageDocArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{PageDocArg1}{PageDocArg1}}
+{\footnotesize\ttfamily \#define Page\+Doc\+Arg1~2}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a556185f7e3b6e31ba51b904ceb35ce2c}\label{generated__src_2commentscan_8cpp_a556185f7e3b6e31ba51b904ceb35ce2c}} 
+\index{commentscan.cpp@{commentscan.cpp}!PageDocArg2@{PageDocArg2}}
+\index{PageDocArg2@{PageDocArg2}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{PageDocArg2}{PageDocArg2}}
+{\footnotesize\ttfamily \#define Page\+Doc\+Arg2~3}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab7deadd089a1126eac97e5ec19bb7660}\label{generated__src_2commentscan_8cpp_ab7deadd089a1126eac97e5ec19bb7660}} 
+\index{commentscan.cpp@{commentscan.cpp}!ParamArg1@{ParamArg1}}
+\index{ParamArg1@{ParamArg1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ParamArg1}{ParamArg1}}
+{\footnotesize\ttfamily \#define Param\+Arg1~13}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a9df360e2561bd0b757d12a5804ba3afe}\label{generated__src_2commentscan_8cpp_a9df360e2561bd0b757d12a5804ba3afe}} 
+\index{commentscan.cpp@{commentscan.cpp}!ReadFormulaLong@{ReadFormulaLong}}
+\index{ReadFormulaLong@{ReadFormulaLong}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ReadFormulaLong}{ReadFormulaLong}}
+{\footnotesize\ttfamily \#define Read\+Formula\+Long~36}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a943f10a904784ce2f1d5b45ac8e52284}\label{generated__src_2commentscan_8cpp_a943f10a904784ce2f1d5b45ac8e52284}} 
+\index{commentscan.cpp@{commentscan.cpp}!ReadFormulaShort@{ReadFormulaShort}}
+\index{ReadFormulaShort@{ReadFormulaShort}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{ReadFormulaShort}{ReadFormulaShort}}
+{\footnotesize\ttfamily \#define Read\+Formula\+Short~35}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a835f10dd1ab4bf9a80c4cd80ee6e3058}\label{generated__src_2commentscan_8cpp_a835f10dd1ab4bf9a80c4cd80ee6e3058}} 
+\index{commentscan.cpp@{commentscan.cpp}!REJECT@{REJECT}}
+\index{REJECT@{REJECT}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{REJECT}{REJECT}}
+{\footnotesize\ttfamily \#define R\+E\+J\+E\+CT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{*\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}} = (yy\_hold\_char); \textcolor{comment}{/* undo effects of setting up yytext */} \(\backslash\)}
+\DoxyCodeLine{yy\_cp = (yy\_full\_match); \textcolor{comment}{/* restore poss. backed-\/over text */} \(\backslash\)}
+\DoxyCodeLine{(yy\_lp) = (yy\_full\_lp); \textcolor{comment}{/* restore orig. accepting pos. */} \(\backslash\)}
+\DoxyCodeLine{(yy\_state\_ptr) = (yy\_full\_state); \textcolor{comment}{/* restore orig. state */} \(\backslash\)}
+\DoxyCodeLine{yy\_current\_state = *(yy\_state\_ptr); \textcolor{comment}{/* restore curr. state */} \(\backslash\)}
+\DoxyCodeLine{++(yy\_lp); \(\backslash\)}
+\DoxyCodeLine{goto find\_rule; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7d092b48520bd401a16f678f44960750}\label{generated__src_2commentscan_8cpp_a7d092b48520bd401a16f678f44960750}} 
+\index{commentscan.cpp@{commentscan.cpp}!RelatesParam1@{RelatesParam1}}
+\index{RelatesParam1@{RelatesParam1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{RelatesParam1}{RelatesParam1}}
+{\footnotesize\ttfamily \#define Relates\+Param1~4}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5e5bb13f9c930225a8a1e398f42d06ee}\label{generated__src_2commentscan_8cpp_a5e5bb13f9c930225a8a1e398f42d06ee}} 
+\index{commentscan.cpp@{commentscan.cpp}!SectionLabel@{SectionLabel}}
+\index{SectionLabel@{SectionLabel}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SectionLabel}{SectionLabel}}
+{\footnotesize\ttfamily \#define Section\+Label~19}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_adde762d13f1deade7d86d069d1e2154f}\label{generated__src_2commentscan_8cpp_adde762d13f1deade7d86d069d1e2154f}} 
+\index{commentscan.cpp@{commentscan.cpp}!SectionTitle@{SectionTitle}}
+\index{SectionTitle@{SectionTitle}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SectionTitle}{SectionTitle}}
+{\footnotesize\ttfamily \#define Section\+Title~20}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3c75bb398badb69c7577b21486f9963f}\label{generated__src_2commentscan_8cpp_a3c75bb398badb69c7577b21486f9963f}} 
+\index{commentscan.cpp@{commentscan.cpp}!SIZE\_MAX@{SIZE\_MAX}}
+\index{SIZE\_MAX@{SIZE\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SIZE\_MAX}{SIZE\_MAX}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+M\+AX~($\sim$(size\+\_\+t)0)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_afe1cd769c8dfabc884e430ff380f21a5}\label{generated__src_2commentscan_8cpp_afe1cd769c8dfabc884e430ff380f21a5}} 
+\index{commentscan.cpp@{commentscan.cpp}!SkipGuardedSection@{SkipGuardedSection}}
+\index{SkipGuardedSection@{SkipGuardedSection}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SkipGuardedSection}{SkipGuardedSection}}
+{\footnotesize\ttfamily \#define Skip\+Guarded\+Section~27}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a88833f04084cdb2655a94c13ceb9c428}\label{generated__src_2commentscan_8cpp_a88833f04084cdb2655a94c13ceb9c428}} 
+\index{commentscan.cpp@{commentscan.cpp}!SkipInternal@{SkipInternal}}
+\index{SkipInternal@{SkipInternal}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SkipInternal}{SkipInternal}}
+{\footnotesize\ttfamily \#define Skip\+Internal~28}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a973694076279c935fe23b9e25bd6600d}\label{generated__src_2commentscan_8cpp_a973694076279c935fe23b9e25bd6600d}} 
+\index{commentscan.cpp@{commentscan.cpp}!SkipLang@{SkipLang}}
+\index{SkipLang@{SkipLang}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SkipLang}{SkipLang}}
+{\footnotesize\ttfamily \#define Skip\+Lang~39}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad4657774a9567d8d103a17ac26273e1a}\label{generated__src_2commentscan_8cpp_ad4657774a9567d8d103a17ac26273e1a}} 
+\index{commentscan.cpp@{commentscan.cpp}!SubpageLabel@{SubpageLabel}}
+\index{SubpageLabel@{SubpageLabel}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SubpageLabel}{SubpageLabel}}
+{\footnotesize\ttfamily \#define Subpage\+Label~21}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a28e46f03d9809e805697fafec472204c}\label{generated__src_2commentscan_8cpp_a28e46f03d9809e805697fafec472204c}} 
+\index{commentscan.cpp@{commentscan.cpp}!SubpageTitle@{SubpageTitle}}
+\index{SubpageTitle@{SubpageTitle}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{SubpageTitle}{SubpageTitle}}
+{\footnotesize\ttfamily \#define Subpage\+Title~22}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3ea490c9b3617d4479bd80ef93cd5602}\label{generated__src_2commentscan_8cpp_a3ea490c9b3617d4479bd80ef93cd5602}} 
+\index{commentscan.cpp@{commentscan.cpp}!UINT16\_MAX@{UINT16\_MAX}}
+\index{UINT16\_MAX@{UINT16\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{UINT16\_MAX}{UINT16\_MAX}}
+{\footnotesize\ttfamily \#define U\+I\+N\+T16\+\_\+\+M\+AX~(65535U)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab5eb23180f7cc12b7d6c04a8ec067fdd}\label{generated__src_2commentscan_8cpp_ab5eb23180f7cc12b7d6c04a8ec067fdd}} 
+\index{commentscan.cpp@{commentscan.cpp}!UINT32\_MAX@{UINT32\_MAX}}
+\index{UINT32\_MAX@{UINT32\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{UINT32\_MAX}{UINT32\_MAX}}
+{\footnotesize\ttfamily \#define U\+I\+N\+T32\+\_\+\+M\+AX~(4294967295U)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aeb4e270a084ee26fe73e799861bd0252}\label{generated__src_2commentscan_8cpp_aeb4e270a084ee26fe73e799861bd0252}} 
+\index{commentscan.cpp@{commentscan.cpp}!UINT8\_MAX@{UINT8\_MAX}}
+\index{UINT8\_MAX@{UINT8\_MAX}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{UINT8\_MAX}{UINT8\_MAX}}
+{\footnotesize\ttfamily \#define U\+I\+N\+T8\+\_\+\+M\+AX~(255U)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a448a4e9041a09588332733c6846c770c}\label{generated__src_2commentscan_8cpp_a448a4e9041a09588332733c6846c770c}} 
+\index{commentscan.cpp@{commentscan.cpp}!unput@{unput}}
+\index{unput@{unput}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{unput}{unput}}
+{\footnotesize\ttfamily \#define unput(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~yyunput( \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}, (\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\+\_\+ptr}})  )}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad87649a7ca7839a94202f6abaffd34ff}\label{generated__src_2commentscan_8cpp_ad87649a7ca7839a94202f6abaffd34ff}} 
+\index{commentscan.cpp@{commentscan.cpp}!XRefItemParam1@{XRefItemParam1}}
+\index{XRefItemParam1@{XRefItemParam1}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{XRefItemParam1}{XRefItemParam1}}
+{\footnotesize\ttfamily \#define X\+Ref\+Item\+Param1~9}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6047c6026dab95a568d7c935455d9d42}\label{generated__src_2commentscan_8cpp_a6047c6026dab95a568d7c935455d9d42}} 
+\index{commentscan.cpp@{commentscan.cpp}!XRefItemParam2@{XRefItemParam2}}
+\index{XRefItemParam2@{XRefItemParam2}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{XRefItemParam2}{XRefItemParam2}}
+{\footnotesize\ttfamily \#define X\+Ref\+Item\+Param2~10}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6a5acbff22abc91b30344d3f8b818c79}\label{generated__src_2commentscan_8cpp_a6a5acbff22abc91b30344d3f8b818c79}} 
+\index{commentscan.cpp@{commentscan.cpp}!XRefItemParam3@{XRefItemParam3}}
+\index{XRefItemParam3@{XRefItemParam3}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{XRefItemParam3}{XRefItemParam3}}
+{\footnotesize\ttfamily \#define X\+Ref\+Item\+Param3~11}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a71ca89b3656acd0552f14949a571560b}\label{generated__src_2commentscan_8cpp_a71ca89b3656acd0552f14949a571560b}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_AT\_BOL@{YY\_AT\_BOL}}
+\index{YY\_AT\_BOL@{YY\_AT\_BOL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_AT\_BOL}{YY\_AT\_BOL}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+A\+T\+\_\+\+B\+OL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a817a6a24af62508b5a35f4bed5f56a2e}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+V\+A\+L\+UE}}-\/$>$yy\+\_\+at\+\_\+bol)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3cc40a460ad7df816678bcc05241e84c}\label{generated__src_2commentscan_8cpp_a3cc40a460ad7df816678bcc05241e84c}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BREAK@{YY\_BREAK}}
+\index{YY\_BREAK@{YY\_BREAK}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BREAK}{YY\_BREAK}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+B\+R\+E\+AK~/$\ast$L\+I\+N\+T\+ED$\ast$/break;}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae7e51116e747d3390e7a6cfc6532834c}\label{generated__src_2commentscan_8cpp_ae7e51116e747d3390e7a6cfc6532834c}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BUF\_SIZE@{YY\_BUF\_SIZE}}
+\index{YY\_BUF\_SIZE@{YY\_BUF\_SIZE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BUF\_SIZE}{YY\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE~16384}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad689d97c15e807a6116ace7a420cea57}\label{generated__src_2commentscan_8cpp_ad689d97c15e807a6116ace7a420cea57}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BUFFER\_EOF\_PENDING@{YY\_BUFFER\_EOF\_PENDING}}
+\index{YY\_BUFFER\_EOF\_PENDING@{YY\_BUFFER\_EOF\_PENDING}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BUFFER\_EOF\_PENDING}{YY\_BUFFER\_EOF\_PENDING}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+E\+O\+F\+\_\+\+P\+E\+N\+D\+I\+NG~2}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a53579db42834b88199458993912c646d}\label{generated__src_2commentscan_8cpp_a53579db42834b88199458993912c646d}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BUFFER\_NEW@{YY\_BUFFER\_NEW}}
+\index{YY\_BUFFER\_NEW@{YY\_BUFFER\_NEW}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BUFFER\_NEW}{YY\_BUFFER\_NEW}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+EW~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a609d19f40900ecc2a5f812d9388c21fb}\label{generated__src_2commentscan_8cpp_a609d19f40900ecc2a5f812d9388c21fb}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BUFFER\_NORMAL@{YY\_BUFFER\_NORMAL}}
+\index{YY\_BUFFER\_NORMAL@{YY\_BUFFER\_NORMAL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BUFFER\_NORMAL}{YY\_BUFFER\_NORMAL}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+R\+M\+AL~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac86ea8173dfcfc5c989d3295a77e2f95}\label{generated__src_2commentscan_8cpp_ac86ea8173dfcfc5c989d3295a77e2f95}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_create\_buffer@{yy\_create\_buffer}}
+\index{yy\_create\_buffer@{yy\_create\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_create\_buffer}{yy\_create\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+create\+\_\+buffer~commentscan\+Y\+Y\+\_\+create\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa093d500a6330d06d8e4760c494fac33}\label{generated__src_2commentscan_8cpp_aa093d500a6330d06d8e4760c494fac33}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_CURRENT\_BUFFER@{YY\_CURRENT\_BUFFER}}
+\index{YY\_CURRENT\_BUFFER@{YY\_CURRENT\_BUFFER}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_CURRENT\_BUFFER}{YY\_CURRENT\_BUFFER}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+ER}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{( (yy\_buffer\_stack) \(\backslash\)}
+\DoxyCodeLine{                          ? (yy\_buffer\_stack)[(yy\_buffer\_stack\_top)] \(\backslash\)}
+\DoxyCodeLine{                          : NULL)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a817a6a24af62508b5a35f4bed5f56a2e}\label{generated__src_2commentscan_8cpp_a817a6a24af62508b5a35f4bed5f56a2e}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_CURRENT\_BUFFER\_LVALUE@{YY\_CURRENT\_BUFFER\_LVALUE}}
+\index{YY\_CURRENT\_BUFFER\_LVALUE@{YY\_CURRENT\_BUFFER\_LVALUE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_CURRENT\_BUFFER\_LVALUE}{YY\_CURRENT\_BUFFER\_LVALUE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+V\+A\+L\+UE~(yy\+\_\+buffer\+\_\+stack)\mbox{[}(yy\+\_\+buffer\+\_\+stack\+\_\+top)\mbox{]}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}\label{generated__src_2commentscan_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_DECL@{YY\_DECL}}
+\index{YY\_DECL@{YY\_DECL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_DECL}{YY\_DECL}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+D\+E\+CL~int \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a9a7bd1b3d14701eb97c03f3ef34deff1}{yylex}} (void)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7682c8d9cec0859408d2421fbe4a5570}\label{generated__src_2commentscan_8cpp_a7682c8d9cec0859408d2421fbe4a5570}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_DECL\_IS\_OURS@{YY\_DECL\_IS\_OURS}}
+\index{YY\_DECL\_IS\_OURS@{YY\_DECL\_IS\_OURS}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_DECL\_IS\_OURS}{YY\_DECL\_IS\_OURS}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+D\+E\+C\+L\+\_\+\+I\+S\+\_\+\+O\+U\+RS~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad1868c6b38b45af25a4a0f449912a808}\label{generated__src_2commentscan_8cpp_ad1868c6b38b45af25a4a0f449912a808}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_delete\_buffer@{yy\_delete\_buffer}}
+\index{yy\_delete\_buffer@{yy\_delete\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_delete\_buffer}{yy\_delete\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+delete\+\_\+buffer~commentscan\+Y\+Y\+\_\+delete\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc3486d769af4e4b2820346a0093cc79}\label{generated__src_2commentscan_8cpp_acc3486d769af4e4b2820346a0093cc79}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_DO\_BEFORE\_ACTION@{YY\_DO\_BEFORE\_ACTION}}
+\index{YY\_DO\_BEFORE\_ACTION@{YY\_DO\_BEFORE\_ACTION}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_DO\_BEFORE\_ACTION}{YY\_DO\_BEFORE\_ACTION}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+D\+O\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+A\+C\+T\+I\+ON}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\mbox{\hyperlink{generated__src_2commentscan_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\_ptr}}) = \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}{yy\_bp}}; \(\backslash\)}
+\DoxyCodeLine{    yyleng = (int) (\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}} -\/ \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}{yy\_bp}}); \(\backslash\)}
+\DoxyCodeLine{    (yy\_hold\_char) = *\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}}; \(\backslash\)}
+\DoxyCodeLine{    *\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}} = \textcolor{charliteral}{'\(\backslash\)0'}; \(\backslash\)}
+\DoxyCodeLine{    (yy\_c\_buf\_p) = \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab2708fd42cff29ce6a0a52b91bea40d1}\label{generated__src_2commentscan_8cpp_ab2708fd42cff29ce6a0a52b91bea40d1}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_END\_OF\_BUFFER@{YY\_END\_OF\_BUFFER}}
+\index{YY\_END\_OF\_BUFFER@{YY\_END\_OF\_BUFFER}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_END\_OF\_BUFFER}{YY\_END\_OF\_BUFFER}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+ER~223}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab866a64da164ed2d4d444df1ef1fc9b3}\label{generated__src_2commentscan_8cpp_ab866a64da164ed2d4d444df1ef1fc9b3}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_END\_OF\_BUFFER\_CHAR@{YY\_END\_OF\_BUFFER\_CHAR}}
+\index{YY\_END\_OF\_BUFFER\_CHAR@{YY\_END\_OF\_BUFFER\_CHAR}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_END\_OF\_BUFFER\_CHAR}{YY\_END\_OF\_BUFFER\_CHAR}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+AR~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae93e67b85c44f6bd31ead14a552a35c8}\label{generated__src_2commentscan_8cpp_ae93e67b85c44f6bd31ead14a552a35c8}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_EXIT\_FAILURE@{YY\_EXIT\_FAILURE}}
+\index{YY\_EXIT\_FAILURE@{YY\_EXIT\_FAILURE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_EXIT\_FAILURE}{YY\_EXIT\_FAILURE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE~2}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a26938d921de835f6183c02e54cf08828}\label{generated__src_2commentscan_8cpp_a26938d921de835f6183c02e54cf08828}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_EXTRA\_TYPE@{YY\_EXTRA\_TYPE}}
+\index{YY\_EXTRA\_TYPE@{YY\_EXTRA\_TYPE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_EXTRA\_TYPE}{YY\_EXTRA\_TYPE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE~void $\ast$}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac0586b8b0b092d02f4ba7d45abe328f2}\label{generated__src_2commentscan_8cpp_ac0586b8b0b092d02f4ba7d45abe328f2}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_FATAL\_ERROR@{YY\_FATAL\_ERROR}}
+\index{YY\_FATAL\_ERROR@{YY\_FATAL\_ERROR}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_FATAL\_ERROR}{YY\_FATAL\_ERROR}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+OR(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{message_8h_aba549a028419cd48a3f373037c2c57eb}{msg}} }\end{DoxyParamCaption})~yy\+\_\+fatal\+\_\+error( \mbox{\hyperlink{message_8h_aba549a028419cd48a3f373037c2c57eb}{msg}} )}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a301f4439c9b191c80db45f5b1a8c7269}\label{generated__src_2commentscan_8cpp_a301f4439c9b191c80db45f5b1a8c7269}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_flex\_debug@{yy\_flex\_debug}}
+\index{yy\_flex\_debug@{yy\_flex\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_flex\_debug}{yy\_flex\_debug}}
+{\footnotesize\ttfamily \#define yy\+\_\+flex\+\_\+debug~commentscan\+Y\+Y\+\_\+flex\+\_\+debug}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a243ca1d30872935faf05ea5118ed6fdc}\label{generated__src_2commentscan_8cpp_a243ca1d30872935faf05ea5118ed6fdc}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_FLEX\_MAJOR\_VERSION@{YY\_FLEX\_MAJOR\_VERSION}}
+\index{YY\_FLEX\_MAJOR\_VERSION@{YY\_FLEX\_MAJOR\_VERSION}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_FLEX\_MAJOR\_VERSION}{YY\_FLEX\_MAJOR\_VERSION}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON~2}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a90f9d458829400869e47efb68a865677}\label{generated__src_2commentscan_8cpp_a90f9d458829400869e47efb68a865677}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_FLEX\_MINOR\_VERSION@{YY\_FLEX\_MINOR\_VERSION}}
+\index{YY\_FLEX\_MINOR\_VERSION@{YY\_FLEX\_MINOR\_VERSION}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_FLEX\_MINOR\_VERSION}{YY\_FLEX\_MINOR\_VERSION}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON~6}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac676bd06869180ea493e9b6d7c078dbb}\label{generated__src_2commentscan_8cpp_ac676bd06869180ea493e9b6d7c078dbb}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_FLEX\_SUBMINOR\_VERSION@{YY\_FLEX\_SUBMINOR\_VERSION}}
+\index{YY\_FLEX\_SUBMINOR\_VERSION@{YY\_FLEX\_SUBMINOR\_VERSION}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_FLEX\_SUBMINOR\_VERSION}{YY\_FLEX\_SUBMINOR\_VERSION}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+F\+L\+E\+X\+\_\+\+S\+U\+B\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON~4}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab01a4c7245136f22a63acac7c0ceb343}\label{generated__src_2commentscan_8cpp_ab01a4c7245136f22a63acac7c0ceb343}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_flush\_buffer@{yy\_flush\_buffer}}
+\index{yy\_flush\_buffer@{yy\_flush\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_flush\_buffer}{yy\_flush\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+flush\+\_\+buffer~commentscan\+Y\+Y\+\_\+flush\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac5d478d90ea9a2ecd43d579067a2e89d}\label{generated__src_2commentscan_8cpp_ac5d478d90ea9a2ecd43d579067a2e89d}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_FLUSH\_BUFFER@{YY\_FLUSH\_BUFFER}}
+\index{YY\_FLUSH\_BUFFER@{YY\_FLUSH\_BUFFER}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_FLUSH\_BUFFER}{YY\_FLUSH\_BUFFER}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+F\+L\+U\+S\+H\+\_\+\+B\+U\+F\+F\+ER~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a2f59cc88e85e5455c62e4ef7ce095ea8}{yy\+\_\+flush\+\_\+buffer}}( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_aa093d500a6330d06d8e4760c494fac33}{Y\+Y\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+B\+U\+F\+F\+ER}} )}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa14efad9f9c24106a3e3398a4f6621c2}\label{generated__src_2commentscan_8cpp_aa14efad9f9c24106a3e3398a4f6621c2}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_init\_buffer@{yy\_init\_buffer}}
+\index{yy\_init\_buffer@{yy\_init\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_init\_buffer}{yy\_init\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+init\+\_\+buffer~commentscan\+Y\+Y\+\_\+init\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aacfdca45fa4beb8b06172525a53c424a}\label{generated__src_2commentscan_8cpp_aacfdca45fa4beb8b06172525a53c424a}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_INPUT@{YY\_INPUT}}
+\index{YY\_INPUT@{YY\_INPUT}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_INPUT}{YY\_INPUT}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+I\+N\+P\+UT(\begin{DoxyParamCaption}\item[{}]{buf,  }\item[{}]{result,  }\item[{}]{max\+\_\+size }\end{DoxyParamCaption})~result=yyread(buf,max\+\_\+size);}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a1ae16e642a197fa4948998525813c6f5}\label{generated__src_2commentscan_8cpp_a1ae16e642a197fa4948998525813c6f5}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_INT\_ALIGNED@{YY\_INT\_ALIGNED}}
+\index{YY\_INT\_ALIGNED@{YY\_INT\_ALIGNED}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_INT\_ALIGNED}{YY\_INT\_ALIGNED}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+I\+N\+T\+\_\+\+A\+L\+I\+G\+N\+ED~short int}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a12e5f3a76911433480bca7f4edba6119}\label{generated__src_2commentscan_8cpp_a12e5f3a76911433480bca7f4edba6119}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_LESS\_LINENO@{YY\_LESS\_LINENO}}
+\index{YY\_LESS\_LINENO@{YY\_LESS\_LINENO}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_LESS\_LINENO}{YY\_LESS\_LINENO}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+L\+E\+S\+S\+\_\+\+L\+I\+N\+E\+NO(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5206f64af3a299a0dc820c385cf0c489}\label{generated__src_2commentscan_8cpp_a5206f64af3a299a0dc820c385cf0c489}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_LINENO\_REWIND\_TO@{YY\_LINENO\_REWIND\_TO}}
+\index{YY\_LINENO\_REWIND\_TO@{YY\_LINENO\_REWIND\_TO}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_LINENO\_REWIND\_TO}{YY\_LINENO\_REWIND\_TO}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+L\+I\+N\+E\+N\+O\+\_\+\+R\+E\+W\+I\+N\+D\+\_\+\+TO(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a039fc377fd4784139d8706ba0ae229fa}\label{generated__src_2commentscan_8cpp_a039fc377fd4784139d8706ba0ae229fa}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_load\_buffer\_state@{yy\_load\_buffer\_state}}
+\index{yy\_load\_buffer\_state@{yy\_load\_buffer\_state}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_load\_buffer\_state}{yy\_load\_buffer\_state}}
+{\footnotesize\ttfamily \#define yy\+\_\+load\+\_\+buffer\+\_\+state~commentscan\+Y\+Y\+\_\+load\+\_\+buffer\+\_\+state}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a68792d73820bc46a71d3d4e613f0b977}\label{generated__src_2commentscan_8cpp_a68792d73820bc46a71d3d4e613f0b977}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_MORE\_ADJ@{YY\_MORE\_ADJ}}
+\index{YY\_MORE\_ADJ@{YY\_MORE\_ADJ}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_MORE\_ADJ}{YY\_MORE\_ADJ}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+M\+O\+R\+E\+\_\+\+A\+DJ~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a15b85de192a189d5a31cdd518e001e6e}\label{generated__src_2commentscan_8cpp_a15b85de192a189d5a31cdd518e001e6e}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NEVER\_INTERACTIVE@{YY\_NEVER\_INTERACTIVE}}
+\index{YY\_NEVER\_INTERACTIVE@{YY\_NEVER\_INTERACTIVE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NEVER\_INTERACTIVE}{YY\_NEVER\_INTERACTIVE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+E\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+A\+C\+T\+I\+VE~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab7eb911e18655f2f78e63afe5a8a4a12}\label{generated__src_2commentscan_8cpp_ab7eb911e18655f2f78e63afe5a8a4a12}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_new\_buffer@{yy\_new\_buffer}}
+\index{yy\_new\_buffer@{yy\_new\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_new\_buffer}{yy\_new\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+new\+\_\+buffer~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a5bc6f1a5f7812508f425b08283f13ae8}{yy\+\_\+create\+\_\+buffer}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a0406739e64fb5750cf995d2ae68ce69d}\label{generated__src_2commentscan_8cpp_a0406739e64fb5750cf995d2ae68ce69d}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NEW\_FILE@{YY\_NEW\_FILE}}
+\index{YY\_NEW\_FILE@{YY\_NEW\_FILE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NEW\_FILE}{YY\_NEW\_FILE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+E\+W\+\_\+\+F\+I\+LE~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ab657ddef65d43cc3ab8dfc2cad0ac5b8}{yyrestart}}( \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a46af646807e0797e72b6e8945e7ea88b}{yyin}}  )}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a85523a0c7d95c059d251b4e9829947aa}\label{generated__src_2commentscan_8cpp_a85523a0c7d95c059d251b4e9829947aa}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NO\_INPUT@{YY\_NO\_INPUT}}
+\index{YY\_NO\_INPUT@{YY\_NO\_INPUT}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NO\_INPUT}{YY\_NO\_INPUT}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+O\+\_\+\+I\+N\+P\+UT~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae78ac56cd1f29572e967ed7636952d15}\label{generated__src_2commentscan_8cpp_ae78ac56cd1f29572e967ed7636952d15}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NO\_UNISTD\_H@{YY\_NO\_UNISTD\_H}}
+\index{YY\_NO\_UNISTD\_H@{YY\_NO\_UNISTD\_H}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NO\_UNISTD\_H}{YY\_NO\_UNISTD\_H}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+O\+\_\+\+U\+N\+I\+S\+T\+D\+\_\+H~1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8e0bcf8f8a5b613ea583347f8bc31cbf}\label{generated__src_2commentscan_8cpp_a8e0bcf8f8a5b613ea583347f8bc31cbf}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NULL@{YY\_NULL}}
+\index{YY\_NULL@{YY\_NULL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NULL}{YY\_NULL}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+U\+LL~0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae558785bb896e090901c2b905f6790c6}\label{generated__src_2commentscan_8cpp_ae558785bb896e090901c2b905f6790c6}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_NUM\_RULES@{YY\_NUM\_RULES}}
+\index{YY\_NUM\_RULES@{YY\_NUM\_RULES}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_NUM\_RULES}{YY\_NUM\_RULES}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+N\+U\+M\+\_\+\+R\+U\+L\+ES~222}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aab1491ceccb1c95c14320b2903773a1c}\label{generated__src_2commentscan_8cpp_aab1491ceccb1c95c14320b2903773a1c}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_READ\_BUF\_SIZE@{YY\_READ\_BUF\_SIZE}}
+\index{YY\_READ\_BUF\_SIZE@{YY\_READ\_BUF\_SIZE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_READ\_BUF\_SIZE}{YY\_READ\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+R\+E\+A\+D\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE~8192}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a56858d18c7eda4f53664496ef566f651}\label{generated__src_2commentscan_8cpp_a56858d18c7eda4f53664496ef566f651}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_RESTORE\_YY\_MORE\_OFFSET@{YY\_RESTORE\_YY\_MORE\_OFFSET}}
+\index{YY\_RESTORE\_YY\_MORE\_OFFSET@{YY\_RESTORE\_YY\_MORE\_OFFSET}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_RESTORE\_YY\_MORE\_OFFSET}{YY\_RESTORE\_YY\_MORE\_OFFSET}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+R\+E\+S\+T\+O\+R\+E\+\_\+\+Y\+Y\+\_\+\+M\+O\+R\+E\+\_\+\+O\+F\+F\+S\+ET}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a690504b662e4281515bf12722df178ba}\label{generated__src_2commentscan_8cpp_a690504b662e4281515bf12722df178ba}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_RULE\_SETUP@{YY\_RULE\_SETUP}}
+\index{YY\_RULE\_SETUP@{YY\_RULE\_SETUP}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_RULE\_SETUP}{YY\_RULE\_SETUP}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+R\+U\+L\+E\+\_\+\+S\+E\+T\+UP}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} ( \mbox{\hyperlink{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}{yyleng}} > 0 ) \(\backslash\)}
+\DoxyCodeLine{        YY\_CURRENT\_BUFFER\_LVALUE-\/>yy\_at\_bol = \(\backslash\)}
+\DoxyCodeLine{                (\mbox{\hyperlink{generated__src_2commentscan_8cpp_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}}[\mbox{\hyperlink{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}{yyleng}} -\/ 1] == \textcolor{charliteral}{'\(\backslash\)n'}); \(\backslash\)}
+\DoxyCodeLine{    YY\_USER\_ACTION}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_af1185350b7a92cf8aa5324c68850c8a6}\label{generated__src_2commentscan_8cpp_af1185350b7a92cf8aa5324c68850c8a6}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_SC\_TO\_UI@{YY\_SC\_TO\_UI}}
+\index{YY\_SC\_TO\_UI@{YY\_SC\_TO\_UI}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_SC\_TO\_UI}{YY\_SC\_TO\_UI}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+C\+\_\+\+T\+O\+\_\+\+UI(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{build_2generated__src_2code_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}{Y\+Y\+\_\+\+C\+H\+AR}}) (\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6849452203fd033f103556fdf858fd33}\label{generated__src_2commentscan_8cpp_a6849452203fd033f103556fdf858fd33}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_buffer@{yy\_scan\_buffer}}
+\index{yy\_scan\_buffer@{yy\_scan\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_buffer}{yy\_scan\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+scan\+\_\+buffer~commentscan\+Y\+Y\+\_\+scan\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3b70699ea880c5d25a1c75f4ad96c315}\label{generated__src_2commentscan_8cpp_a3b70699ea880c5d25a1c75f4ad96c315}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_bytes@{yy\_scan\_bytes}}
+\index{yy\_scan\_bytes@{yy\_scan\_bytes}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_bytes}{yy\_scan\_bytes}}
+{\footnotesize\ttfamily \#define yy\+\_\+scan\+\_\+bytes~commentscan\+Y\+Y\+\_\+scan\+\_\+bytes}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6c5cf8c3b7a69bf60a87dd6eb00fe579}\label{generated__src_2commentscan_8cpp_a6c5cf8c3b7a69bf60a87dd6eb00fe579}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_string@{yy\_scan\_string}}
+\index{yy\_scan\_string@{yy\_scan\_string}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_string}{yy\_scan\_string}}
+{\footnotesize\ttfamily \#define yy\+\_\+scan\+\_\+string~commentscan\+Y\+Y\+\_\+scan\+\_\+string}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a12e30d13a76a94e78010db9996d39c50}\label{generated__src_2commentscan_8cpp_a12e30d13a76a94e78010db9996d39c50}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_set\_bol@{yy\_set\_bol}}
+\index{yy\_set\_bol@{yy\_set\_bol}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_set\_bol}{yy\_set\_bol}}
+{\footnotesize\ttfamily \#define yy\+\_\+set\+\_\+bol(\begin{DoxyParamCaption}\item[{}]{at\+\_\+bol }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    if ( ! \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa093d500a6330d06d8e4760c494fac33}{YY\_CURRENT\_BUFFER}} )\{\(\backslash\)}
+\DoxyCodeLine{        yyensure\_buffer\_stack (); \(\backslash\)}
+\DoxyCodeLine{        YY\_CURRENT\_BUFFER\_LVALUE =    \(\backslash\)}
+\DoxyCodeLine{            yy\_create\_buffer( \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa789f4617e33fb99594cb04a3688a0c1}{yyin}}, \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae7e51116e747d3390e7a6cfc6532834c}{YY\_BUF\_SIZE}} ); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    YY\_CURRENT\_BUFFER\_LVALUE-\/>yy\_at\_bol = at\_bol; \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac56eb96366c08862bf0efe5d83d1fc4c}\label{generated__src_2commentscan_8cpp_ac56eb96366c08862bf0efe5d83d1fc4c}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_set\_interactive@{yy\_set\_interactive}}
+\index{yy\_set\_interactive@{yy\_set\_interactive}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_set\_interactive}{yy\_set\_interactive}}
+{\footnotesize\ttfamily \#define yy\+\_\+set\+\_\+interactive(\begin{DoxyParamCaption}\item[{}]{is\+\_\+interactive }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    if ( ! \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa093d500a6330d06d8e4760c494fac33}{YY\_CURRENT\_BUFFER}} )\{ \(\backslash\)}
+\DoxyCodeLine{        yyensure\_buffer\_stack (); \(\backslash\)}
+\DoxyCodeLine{        YY\_CURRENT\_BUFFER\_LVALUE =    \(\backslash\)}
+\DoxyCodeLine{            yy\_create\_buffer( \mbox{\hyperlink{generated__src_2commentscan_8cpp_aa789f4617e33fb99594cb04a3688a0c1}{yyin}}, \mbox{\hyperlink{generated__src_2commentscan_8cpp_ae7e51116e747d3390e7a6cfc6532834c}{YY\_BUF\_SIZE}} ); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    YY\_CURRENT\_BUFFER\_LVALUE-\/>yy\_is\_interactive = is\_interactive; \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae1ef5933028cbc587d31328e53d11a99}\label{generated__src_2commentscan_8cpp_ae1ef5933028cbc587d31328e53d11a99}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_SKIP\_YYWRAP@{YY\_SKIP\_YYWRAP}}
+\index{YY\_SKIP\_YYWRAP@{YY\_SKIP\_YYWRAP}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_SKIP\_YYWRAP}{YY\_SKIP\_YYWRAP}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+K\+I\+P\+\_\+\+Y\+Y\+W\+R\+AP}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8e14785f9eab7a997d659b25af9584c5}\label{generated__src_2commentscan_8cpp_a8e14785f9eab7a997d659b25af9584c5}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_START@{YY\_START}}
+\index{YY\_START@{YY\_START}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_START}{YY\_START}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+T\+A\+RT~(((yy\+\_\+start) -\/ 1) / 2)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a227e75c43b9e0cd41529974230be7e75}\label{generated__src_2commentscan_8cpp_a227e75c43b9e0cd41529974230be7e75}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_START\_STACK\_INCR@{YY\_START\_STACK\_INCR}}
+\index{YY\_START\_STACK\_INCR@{YY\_START\_STACK\_INCR}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_START\_STACK\_INCR}{YY\_START\_STACK\_INCR}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+C\+K\+\_\+\+I\+N\+CR~25}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac2f8b6fccdc516d96b02ac09a4dc01bd}\label{generated__src_2commentscan_8cpp_ac2f8b6fccdc516d96b02ac09a4dc01bd}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_STATE\_BUF\_SIZE@{YY\_STATE\_BUF\_SIZE}}
+\index{YY\_STATE\_BUF\_SIZE@{YY\_STATE\_BUF\_SIZE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_STATE\_BUF\_SIZE}{YY\_STATE\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+T\+A\+T\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE~((\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ae7e51116e747d3390e7a6cfc6532834c}{Y\+Y\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}} + 2) $\ast$ sizeof(\mbox{\hyperlink{build_2generated__src_2code_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}{yy\+\_\+state\+\_\+type}}))}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab3077e60914fc54dcc55ecae1ce9700b}\label{generated__src_2commentscan_8cpp_ab3077e60914fc54dcc55ecae1ce9700b}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_STATE\_EOF@{YY\_STATE\_EOF}}
+\index{YY\_STATE\_EOF@{YY\_STATE\_EOF}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_STATE\_EOF}{YY\_STATE\_EOF}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+OF(\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})~(\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ab2708fd42cff29ce6a0a52b91bea40d1}{Y\+Y\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+B\+U\+F\+F\+ER}} + state + 1)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a8aaa9e1fa7f13d6954d045ef973a9c84}\label{generated__src_2commentscan_8cpp_a8aaa9e1fa7f13d6954d045ef973a9c84}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_STRUCT\_YY\_BUFFER\_STATE@{YY\_STRUCT\_YY\_BUFFER\_STATE}}
+\index{YY\_STRUCT\_YY\_BUFFER\_STATE@{YY\_STRUCT\_YY\_BUFFER\_STATE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_STRUCT\_YY\_BUFFER\_STATE}{YY\_STRUCT\_YY\_BUFFER\_STATE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+S\+T\+R\+U\+C\+T\+\_\+\+Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a968d5b9e7e06a38bfca977b343d47d5c}\label{generated__src_2commentscan_8cpp_a968d5b9e7e06a38bfca977b343d47d5c}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_switch\_to\_buffer@{yy\_switch\_to\_buffer}}
+\index{yy\_switch\_to\_buffer@{yy\_switch\_to\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_switch\_to\_buffer}{yy\_switch\_to\_buffer}}
+{\footnotesize\ttfamily \#define yy\+\_\+switch\+\_\+to\+\_\+buffer~commentscan\+Y\+Y\+\_\+switch\+\_\+to\+\_\+buffer}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7fce78ee876950ded902364014c917e6}\label{generated__src_2commentscan_8cpp_a7fce78ee876950ded902364014c917e6}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_TRAILING\_HEAD\_MASK@{YY\_TRAILING\_HEAD\_MASK}}
+\index{YY\_TRAILING\_HEAD\_MASK@{YY\_TRAILING\_HEAD\_MASK}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_TRAILING\_HEAD\_MASK}{YY\_TRAILING\_HEAD\_MASK}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+H\+E\+A\+D\+\_\+\+M\+A\+SK~0x4000}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a76482842cdcaadf1dbdaf43df38765a2}\label{generated__src_2commentscan_8cpp_a76482842cdcaadf1dbdaf43df38765a2}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_TRAILING\_MASK@{YY\_TRAILING\_MASK}}
+\index{YY\_TRAILING\_MASK@{YY\_TRAILING\_MASK}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_TRAILING\_MASK}{YY\_TRAILING\_MASK}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+M\+A\+SK~0x2000}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa79d63ed3ff8d2249baf1732a73089f5}\label{generated__src_2commentscan_8cpp_aa79d63ed3ff8d2249baf1732a73089f5}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_TYPEDEF\_YY\_BUFFER\_STATE@{YY\_TYPEDEF\_YY\_BUFFER\_STATE}}
+\index{YY\_TYPEDEF\_YY\_BUFFER\_STATE@{YY\_TYPEDEF\_YY\_BUFFER\_STATE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_TYPEDEF\_YY\_BUFFER\_STATE}{YY\_TYPEDEF\_YY\_BUFFER\_STATE}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae0f2b0b5f04b2338367826b5670774f9}\label{generated__src_2commentscan_8cpp_ae0f2b0b5f04b2338367826b5670774f9}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_TYPEDEF\_YY\_SIZE\_T@{YY\_TYPEDEF\_YY\_SIZE\_T}}
+\index{YY\_TYPEDEF\_YY\_SIZE\_T@{YY\_TYPEDEF\_YY\_SIZE\_T}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_TYPEDEF\_YY\_SIZE\_T}{YY\_TYPEDEF\_YY\_SIZE\_T}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+Y\+Y\+\_\+\+S\+I\+Z\+E\+\_\+T}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6198b2fcf96178b24ad4efff2a3debb0}\label{generated__src_2commentscan_8cpp_a6198b2fcf96178b24ad4efff2a3debb0}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_USER\_ACTION@{YY\_USER\_ACTION}}
+\index{YY\_USER\_ACTION@{YY\_USER\_ACTION}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_USER\_ACTION}{YY\_USER\_ACTION}}
+{\footnotesize\ttfamily \#define Y\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+A\+C\+T\+I\+ON}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a803397ab738ee8630166680646a2d913}\label{generated__src_2commentscan_8cpp_a803397ab738ee8630166680646a2d913}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyalloc@{yyalloc}}
+\index{yyalloc@{yyalloc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyalloc}{yyalloc}}
+{\footnotesize\ttfamily \#define \mbox{\hyperlink{unionyyalloc}{yyalloc}}~commentscan\+Y\+Yalloc}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa2f1a918be586b44bf08126bde2d7cc9}\label{generated__src_2commentscan_8cpp_aa2f1a918be586b44bf08126bde2d7cc9}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyconst@{yyconst}}
+\index{yyconst@{yyconst}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyconst}{yyconst}}
+{\footnotesize\ttfamily \#define yyconst~const}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a64d16067d4399dd64d107354e847e05e}\label{generated__src_2commentscan_8cpp_a64d16067d4399dd64d107354e847e05e}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyensure\_buffer\_stack@{yyensure\_buffer\_stack}}
+\index{yyensure\_buffer\_stack@{yyensure\_buffer\_stack}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyensure\_buffer\_stack}{yyensure\_buffer\_stack}}
+{\footnotesize\ttfamily \#define yyensure\+\_\+buffer\+\_\+stack~commentscan\+Y\+Yensure\+\_\+buffer\+\_\+stack}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4fa4368d47620ea80150b516e8884f6b}\label{generated__src_2commentscan_8cpp_a4fa4368d47620ea80150b516e8884f6b}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyfree@{yyfree}}
+\index{yyfree@{yyfree}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyfree}{yyfree}}
+{\footnotesize\ttfamily \#define yyfree~commentscan\+Y\+Yfree}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a47f8646b5738a8e92fc58b34c7a37547}\label{generated__src_2commentscan_8cpp_a47f8646b5738a8e92fc58b34c7a37547}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_debug@{yyget\_debug}}
+\index{yyget\_debug@{yyget\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_debug}{yyget\_debug}}
+{\footnotesize\ttfamily \#define yyget\+\_\+debug~commentscan\+Y\+Yget\+\_\+debug}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa4a517fb57acfaebb9c3e370d10241a5}\label{generated__src_2commentscan_8cpp_aa4a517fb57acfaebb9c3e370d10241a5}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_extra@{yyget\_extra}}
+\index{yyget\_extra@{yyget\_extra}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_extra}{yyget\_extra}}
+{\footnotesize\ttfamily \#define yyget\+\_\+extra~commentscan\+Y\+Yget\+\_\+extra}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad5413ef97e3739ed34f0e92e42e406dc}\label{generated__src_2commentscan_8cpp_ad5413ef97e3739ed34f0e92e42e406dc}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_in@{yyget\_in}}
+\index{yyget\_in@{yyget\_in}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_in}{yyget\_in}}
+{\footnotesize\ttfamily \#define yyget\+\_\+in~commentscan\+Y\+Yget\+\_\+in}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7cb898e18e05bca3c0a27e6eb6ca5ddf}\label{generated__src_2commentscan_8cpp_a7cb898e18e05bca3c0a27e6eb6ca5ddf}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_leng@{yyget\_leng}}
+\index{yyget\_leng@{yyget\_leng}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_leng}{yyget\_leng}}
+{\footnotesize\ttfamily \#define yyget\+\_\+leng~commentscan\+Y\+Yget\+\_\+leng}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5550407f398ea5a087676f73b3a5c5f5}\label{generated__src_2commentscan_8cpp_a5550407f398ea5a087676f73b3a5c5f5}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_lineno@{yyget\_lineno}}
+\index{yyget\_lineno@{yyget\_lineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_lineno}{yyget\_lineno}}
+{\footnotesize\ttfamily \#define yyget\+\_\+lineno~commentscan\+Y\+Yget\+\_\+lineno}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a32e4c779fce50dece5fb491bc7670232}\label{generated__src_2commentscan_8cpp_a32e4c779fce50dece5fb491bc7670232}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_out@{yyget\_out}}
+\index{yyget\_out@{yyget\_out}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_out}{yyget\_out}}
+{\footnotesize\ttfamily \#define yyget\+\_\+out~commentscan\+Y\+Yget\+\_\+out}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5fe86cd527d104d44684c7194f88253e}\label{generated__src_2commentscan_8cpp_a5fe86cd527d104d44684c7194f88253e}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_text@{yyget\_text}}
+\index{yyget\_text@{yyget\_text}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_text}{yyget\_text}}
+{\footnotesize\ttfamily \#define yyget\+\_\+text~commentscan\+Y\+Yget\+\_\+text}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa789f4617e33fb99594cb04a3688a0c1}\label{generated__src_2commentscan_8cpp_aa789f4617e33fb99594cb04a3688a0c1}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyin@{yyin}}
+\index{yyin@{yyin}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyin}{yyin}}
+{\footnotesize\ttfamily \#define yyin~commentscan\+Y\+Yin}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}\label{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyleng@{yyleng}}
+\index{yyleng@{yyleng}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyleng}{yyleng}}
+{\footnotesize\ttfamily \#define yyleng~commentscan\+Y\+Yleng}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}\label{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyless@{yyless}}
+\index{yyless@{yyless}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyless}{yyless}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define yyless(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* Undo effects of setting up yytext. */} \(\backslash\)}
+\DoxyCodeLine{        int yyless\_macro\_arg = (\mbox{\hyperlink{commands_8doc_a8ef4377a30bce9268290ef06c7f501f8}{n}}); \(\backslash\)}
+\DoxyCodeLine{        YY\_LESS\_LINENO(yyless\_macro\_arg);\(\backslash\)}
+\DoxyCodeLine{        *\mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}} = (yy\_hold\_char); \(\backslash\)}
+\DoxyCodeLine{        YY\_RESTORE\_YY\_MORE\_OFFSET \(\backslash\)}
+\DoxyCodeLine{        (yy\_c\_buf\_p) = \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}{yy\_cp}} = \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}{yy\_bp}} + yyless\_macro\_arg -\/ \mbox{\hyperlink{generated__src_2commentscan_8cpp_a68792d73820bc46a71d3d4e613f0b977}{YY\_MORE\_ADJ}}; \(\backslash\)}
+\DoxyCodeLine{        YY\_DO\_BEFORE\_ACTION; \textcolor{comment}{/* set up yytext again */} \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    while ( 0 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}\label{generated__src_2commentscan_8cpp_ae65cb72d09db0abdc4b8e8c4d533ab14}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyless@{yyless}}
+\index{yyless@{yyless}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyless}{yyless}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define yyless(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* Undo effects of setting up yytext. */} \(\backslash\)}
+\DoxyCodeLine{        int yyless\_macro\_arg = (\mbox{\hyperlink{commands_8doc_a8ef4377a30bce9268290ef06c7f501f8}{n}}); \(\backslash\)}
+\DoxyCodeLine{        YY\_LESS\_LINENO(yyless\_macro\_arg);\(\backslash\)}
+\DoxyCodeLine{        yytext[\mbox{\hyperlink{generated__src_2commentscan_8cpp_afa07a629486cb790560bb95713ec7794}{yyleng}}] = (yy\_hold\_char); \(\backslash\)}
+\DoxyCodeLine{        (yy\_c\_buf\_p) = \mbox{\hyperlink{generated__src_2commentscan_8cpp_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}} + yyless\_macro\_arg; \(\backslash\)}
+\DoxyCodeLine{        (yy\_hold\_char) = *(yy\_c\_buf\_p); \(\backslash\)}
+\DoxyCodeLine{        *(yy\_c\_buf\_p) = \textcolor{charliteral}{'\(\backslash\)0'}; \(\backslash\)}
+\DoxyCodeLine{        yyleng = yyless\_macro\_arg; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    while ( 0 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5611300548b2030d86b6ab9168132b88}\label{generated__src_2commentscan_8cpp_a5611300548b2030d86b6ab9168132b88}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex@{yylex}}
+\index{yylex@{yylex}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex}{yylex}}
+{\footnotesize\ttfamily \#define yylex~commentscan\+Y\+Ylex}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a85fde2139b237ab704313f3b29a1958b}\label{generated__src_2commentscan_8cpp_a85fde2139b237ab704313f3b29a1958b}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex\_destroy@{yylex\_destroy}}
+\index{yylex\_destroy@{yylex\_destroy}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex\_destroy}{yylex\_destroy}}
+{\footnotesize\ttfamily \#define yylex\+\_\+destroy~commentscan\+Y\+Ylex\+\_\+destroy}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a1abe53179d3512124a969f758a7e8008}\label{generated__src_2commentscan_8cpp_a1abe53179d3512124a969f758a7e8008}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex\_init@{yylex\_init}}
+\index{yylex\_init@{yylex\_init}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex\_init}{yylex\_init}}
+{\footnotesize\ttfamily \#define yylex\+\_\+init~commentscan\+Y\+Ylex\+\_\+init}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3e35658077c5654d17265289032c8911}\label{generated__src_2commentscan_8cpp_a3e35658077c5654d17265289032c8911}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex\_init\_extra@{yylex\_init\_extra}}
+\index{yylex\_init\_extra@{yylex\_init\_extra}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex\_init\_extra}{yylex\_init\_extra}}
+{\footnotesize\ttfamily \#define yylex\+\_\+init\+\_\+extra~commentscan\+Y\+Ylex\+\_\+init\+\_\+extra}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad71cf0fddcfe4f61de0929105b33226c}\label{generated__src_2commentscan_8cpp_ad71cf0fddcfe4f61de0929105b33226c}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylineno@{yylineno}}
+\index{yylineno@{yylineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylineno}{yylineno}}
+{\footnotesize\ttfamily \#define yylineno~commentscan\+Y\+Ylineno}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a745d37b5e002b2e5f93ad42ea7b554be}\label{generated__src_2commentscan_8cpp_a745d37b5e002b2e5f93ad42ea7b554be}} 
+\index{commentscan.cpp@{commentscan.cpp}!yymore@{yymore}}
+\index{yymore@{yymore}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yymore}{yymore}}
+{\footnotesize\ttfamily \#define yymore(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~yymore\+\_\+used\+\_\+but\+\_\+not\+\_\+detected}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a452d0647f1848fea42589793f3e2d1f4}\label{generated__src_2commentscan_8cpp_a452d0647f1848fea42589793f3e2d1f4}} 
+\index{commentscan.cpp@{commentscan.cpp}!yynoreturn@{yynoreturn}}
+\index{yynoreturn@{yynoreturn}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yynoreturn}{yynoreturn}}
+{\footnotesize\ttfamily \#define yynoreturn}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4fd44867d448dcb6fc32ea004a15de54}\label{generated__src_2commentscan_8cpp_a4fd44867d448dcb6fc32ea004a15de54}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyout@{yyout}}
+\index{yyout@{yyout}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyout}{yyout}}
+{\footnotesize\ttfamily \#define yyout~commentscan\+Y\+Yout}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a809c7349e79233964051745348944cfc}\label{generated__src_2commentscan_8cpp_a809c7349e79233964051745348944cfc}} 
+\index{commentscan.cpp@{commentscan.cpp}!yypop\_buffer\_state@{yypop\_buffer\_state}}
+\index{yypop\_buffer\_state@{yypop\_buffer\_state}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yypop\_buffer\_state}{yypop\_buffer\_state}}
+{\footnotesize\ttfamily \#define yypop\+\_\+buffer\+\_\+state~commentscan\+Y\+Ypop\+\_\+buffer\+\_\+state}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a498ea96bb65e39b1eab5c51cf16ead13}\label{generated__src_2commentscan_8cpp_a498ea96bb65e39b1eab5c51cf16ead13}} 
+\index{commentscan.cpp@{commentscan.cpp}!yypush\_buffer\_state@{yypush\_buffer\_state}}
+\index{yypush\_buffer\_state@{yypush\_buffer\_state}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yypush\_buffer\_state}{yypush\_buffer\_state}}
+{\footnotesize\ttfamily \#define yypush\+\_\+buffer\+\_\+state~commentscan\+Y\+Ypush\+\_\+buffer\+\_\+state}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab1eba250555ca003eb39387bb1a41d39}\label{generated__src_2commentscan_8cpp_ab1eba250555ca003eb39387bb1a41d39}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyrealloc@{yyrealloc}}
+\index{yyrealloc@{yyrealloc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyrealloc}{yyrealloc}}
+{\footnotesize\ttfamily \#define yyrealloc~commentscan\+Y\+Yrealloc}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a2259355ac49295f72feab070a34a9b11}\label{generated__src_2commentscan_8cpp_a2259355ac49295f72feab070a34a9b11}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyrestart@{yyrestart}}
+\index{yyrestart@{yyrestart}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyrestart}{yyrestart}}
+{\footnotesize\ttfamily \#define yyrestart~commentscan\+Y\+Yrestart}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a254eae02eef471e53fba6c926f9ea9af}\label{generated__src_2commentscan_8cpp_a254eae02eef471e53fba6c926f9ea9af}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_debug@{yyset\_debug}}
+\index{yyset\_debug@{yyset\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_debug}{yyset\_debug}}
+{\footnotesize\ttfamily \#define yyset\+\_\+debug~commentscan\+Y\+Yset\+\_\+debug}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a04fd4c8badc07e7080dbd371b6bc4811}\label{generated__src_2commentscan_8cpp_a04fd4c8badc07e7080dbd371b6bc4811}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_extra@{yyset\_extra}}
+\index{yyset\_extra@{yyset\_extra}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_extra}{yyset\_extra}}
+{\footnotesize\ttfamily \#define yyset\+\_\+extra~commentscan\+Y\+Yset\+\_\+extra}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_afca8968a4317529bdbdc6ed77cd1e479}\label{generated__src_2commentscan_8cpp_afca8968a4317529bdbdc6ed77cd1e479}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_in@{yyset\_in}}
+\index{yyset\_in@{yyset\_in}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_in}{yyset\_in}}
+{\footnotesize\ttfamily \#define yyset\+\_\+in~commentscan\+Y\+Yset\+\_\+in}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a10055b24aa335a47aec5deaac1a47603}\label{generated__src_2commentscan_8cpp_a10055b24aa335a47aec5deaac1a47603}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_lineno@{yyset\_lineno}}
+\index{yyset\_lineno@{yyset\_lineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_lineno}{yyset\_lineno}}
+{\footnotesize\ttfamily \#define yyset\+\_\+lineno~commentscan\+Y\+Yset\+\_\+lineno}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_add96a0e9a95289d7fc2a45adfaf0f9ef}\label{generated__src_2commentscan_8cpp_add96a0e9a95289d7fc2a45adfaf0f9ef}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_out@{yyset\_out}}
+\index{yyset\_out@{yyset\_out}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_out}{yyset\_out}}
+{\footnotesize\ttfamily \#define yyset\+\_\+out~commentscan\+Y\+Yset\+\_\+out}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a32b5b960944f946b192d54f672569cd9}\label{generated__src_2commentscan_8cpp_a32b5b960944f946b192d54f672569cd9}} 
+\index{commentscan.cpp@{commentscan.cpp}!YYSTATE@{YYSTATE}}
+\index{YYSTATE@{YYSTATE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YYSTATE}{YYSTATE}}
+{\footnotesize\ttfamily \#define Y\+Y\+S\+T\+A\+TE~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a8e14785f9eab7a997d659b25af9584c5}{Y\+Y\+\_\+\+S\+T\+A\+RT}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a828cc83270f8f5bb1688e14dd4e28128}\label{generated__src_2commentscan_8cpp_a828cc83270f8f5bb1688e14dd4e28128}} 
+\index{commentscan.cpp@{commentscan.cpp}!YYTABLES\_NAME@{YYTABLES\_NAME}}
+\index{YYTABLES\_NAME@{YYTABLES\_NAME}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YYTABLES\_NAME}{YYTABLES\_NAME}}
+{\footnotesize\ttfamily \#define Y\+Y\+T\+A\+B\+L\+E\+S\+\_\+\+N\+A\+ME~\char`\"{}yytables\char`\"{}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac3286b18a2e91b4571b97df96a118e84}\label{generated__src_2commentscan_8cpp_ac3286b18a2e91b4571b97df96a118e84}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyterminate@{yyterminate}}
+\index{yyterminate@{yyterminate}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyterminate}{yyterminate}}
+{\footnotesize\ttfamily \#define yyterminate(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~return \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a8e0bcf8f8a5b613ea583347f8bc31cbf}{Y\+Y\+\_\+\+N\+U\+LL}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a0d71f919dbec1ffd74b2460fa7e5ac28}\label{generated__src_2commentscan_8cpp_a0d71f919dbec1ffd74b2460fa7e5ac28}} 
+\index{commentscan.cpp@{commentscan.cpp}!yytext@{yytext}}
+\index{yytext@{yytext}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yytext}{yytext}}
+{\footnotesize\ttfamily \#define yytext~commentscan\+Y\+Ytext}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}\label{generated__src_2commentscan_8cpp_a790a191a93ef4d3b8c0bb43fd7480052}} 
+\index{commentscan.cpp@{commentscan.cpp}!yytext\_ptr@{yytext\_ptr}}
+\index{yytext\_ptr@{yytext\_ptr}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yytext\_ptr}{yytext\_ptr}}
+{\footnotesize\ttfamily \#define yytext\+\_\+ptr~\mbox{\hyperlink{generated__src_2xmlcode_8cpp_ad9264b77d56b6971f29739e2bda77f51}{yytext}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5be541efdb129f7cefb2437f52fe7359}\label{generated__src_2commentscan_8cpp_a5be541efdb129f7cefb2437f52fe7359}} 
+\index{commentscan.cpp@{commentscan.cpp}!yywrap@{yywrap}}
+\index{yywrap@{yywrap}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yywrap}{yywrap}}
+{\footnotesize\ttfamily \#define yywrap~\mbox{\hyperlink{generated__src_2commentscan_8cpp_a8e8012c7d063e24ebbd0ff390f4de5c2}{commentscan\+Y\+Ywrap}}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7aae62468024d06d64c03a73e6ed5e56}\label{generated__src_2commentscan_8cpp_a7aae62468024d06d64c03a73e6ed5e56}} 
+\index{commentscan.cpp@{commentscan.cpp}!DocCmdFunc@{DocCmdFunc}}
+\index{DocCmdFunc@{DocCmdFunc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{DocCmdFunc}{DocCmdFunc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}($\ast$ Doc\+Cmd\+Func) (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&name, const \mbox{\hyperlink{class_q_c_string_list}{Q\+C\+String\+List}} \&opt\+List)}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a2e73b2c75126814585525fb2e9d51159}\label{generated__src_2commentscan_8cpp_a2e73b2c75126814585525fb2e9d51159}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_int16\_t@{flex\_int16\_t}}
+\index{flex\_int16\_t@{flex\_int16\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_int16\_t}{flex\_int16\_t}}
+{\footnotesize\ttfamily typedef short int \mbox{\hyperlink{build_2generated__src_2code_8cpp_a2e73b2c75126814585525fb2e9d51159}{flex\+\_\+int16\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a838ce943cf44ef7769480714fc6c3ba9}\label{generated__src_2commentscan_8cpp_a838ce943cf44ef7769480714fc6c3ba9}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_int32\_t@{flex\_int32\_t}}
+\index{flex\_int32\_t@{flex\_int32\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_int32\_t}{flex\_int32\_t}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{build_2generated__src_2code_8cpp_a838ce943cf44ef7769480714fc6c3ba9}{flex\+\_\+int32\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7b0840dff4a2ef1702118aa12264b2a7}\label{generated__src_2commentscan_8cpp_a7b0840dff4a2ef1702118aa12264b2a7}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_int8\_t@{flex\_int8\_t}}
+\index{flex\_int8\_t@{flex\_int8\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_int8\_t}{flex\_int8\_t}}
+{\footnotesize\ttfamily typedef signed char \mbox{\hyperlink{build_2generated__src_2code_8cpp_a7b0840dff4a2ef1702118aa12264b2a7}{flex\+\_\+int8\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac50cdb9eefbef83a1cec89e3a7f6e1d2}\label{generated__src_2commentscan_8cpp_ac50cdb9eefbef83a1cec89e3a7f6e1d2}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_uint16\_t@{flex\_uint16\_t}}
+\index{flex\_uint16\_t@{flex\_uint16\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_uint16\_t}{flex\_uint16\_t}}
+{\footnotesize\ttfamily typedef unsigned short int \mbox{\hyperlink{build_2generated__src_2code_8cpp_ac50cdb9eefbef83a1cec89e3a7f6e1d2}{flex\+\_\+uint16\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a36869712de12820c73aae736762e8e88}\label{generated__src_2commentscan_8cpp_a36869712de12820c73aae736762e8e88}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_uint32\_t@{flex\_uint32\_t}}
+\index{flex\_uint32\_t@{flex\_uint32\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_uint32\_t}{flex\_uint32\_t}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{build_2generated__src_2code_8cpp_a36869712de12820c73aae736762e8e88}{flex\+\_\+uint32\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}\label{generated__src_2commentscan_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}} 
+\index{commentscan.cpp@{commentscan.cpp}!flex\_uint8\_t@{flex\_uint8\_t}}
+\index{flex\_uint8\_t@{flex\_uint8\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{flex\_uint8\_t}{flex\_uint8\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{build_2generated__src_2code_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}{flex\+\_\+uint8\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}\label{generated__src_2commentscan_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_BUFFER\_STATE@{YY\_BUFFER\_STATE}}
+\index{YY\_BUFFER\_STATE@{YY\_BUFFER\_STATE}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_BUFFER\_STATE}{YY\_BUFFER\_STATE}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structyy__buffer__state}{yy\+\_\+buffer\+\_\+state}}$\ast$ \mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}\label{generated__src_2commentscan_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_CHAR@{YY\_CHAR}}
+\index{YY\_CHAR@{YY\_CHAR}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_CHAR}{YY\_CHAR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{build_2generated__src_2code_8cpp_a0fac5ea484f64e75dbe6eba4aa61750c}{flex\+\_\+uint8\+\_\+t}} \mbox{\hyperlink{build_2generated__src_2code_8cpp_acc1e625a829554ffed5e4307d4a5f6b7}{Y\+Y\+\_\+\+C\+H\+AR}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad557845057f187eec4be07e2717d2afa}\label{generated__src_2commentscan_8cpp_ad557845057f187eec4be07e2717d2afa}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_size\_t@{yy\_size\_t}}
+\index{yy\_size\_t@{yy\_size\_t}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_size\_t}{yy\_size\_t}}
+{\footnotesize\ttfamily typedef size\+\_\+t \mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}\label{generated__src_2commentscan_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_state\_type@{yy\_state\_type}}
+\index{yy\_state\_type@{yy\_state\_type}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_state\_type}{yy\_state\_type}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{build_2generated__src_2code_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}{yy\+\_\+state\+\_\+type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7f}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7f}} 
+\index{commentscan.cpp@{commentscan.cpp}!GuardType@{GuardType}}
+\index{GuardType@{GuardType}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{GuardType}{GuardType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7f}{Guard\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_If@{Guard\_If}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_If@{Guard\_If}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}} 
+Guard\+\_\+\+If&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_IfNot@{Guard\_IfNot}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_IfNot@{Guard\_IfNot}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}} 
+Guard\+\_\+\+If\+Not&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_Skip@{Guard\_Skip}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_Skip@{Guard\_Skip}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}} 
+Guard\+\_\+\+Skip&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_If@{Guard\_If}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_If@{Guard\_If}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa516af97241cebc813e221d2cff34aee3}} 
+Guard\+\_\+\+If&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_IfNot@{Guard\_IfNot}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_IfNot@{Guard\_IfNot}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa81117f2b12c03ae4546521b5bf7c8ac5}} 
+Guard\+\_\+\+If\+Not&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Guard\_Skip@{Guard\_Skip}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!Guard\_Skip@{Guard\_Skip}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}\label{generated__src_2commentscan_8cpp_a83faa6554b2d8d0f095551b84f726c7fa05f0ba790ed71e77b4064fb2b8350e9a}} 
+Guard\+\_\+\+Skip&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45}} 
+\index{commentscan.cpp@{commentscan.cpp}!OutputContext@{OutputContext}}
+\index{OutputContext@{OutputContext}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{OutputContext}{OutputContext}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45}{Output\+Context}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputDoc@{OutputDoc}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputDoc@{OutputDoc}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}} 
+Output\+Doc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputBrief@{OutputBrief}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputBrief@{OutputBrief}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}} 
+Output\+Brief&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputXRef@{OutputXRef}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputXRef@{OutputXRef}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}} 
+Output\+X\+Ref&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputInbody@{OutputInbody}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputInbody@{OutputInbody}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}} 
+Output\+Inbody&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputDoc@{OutputDoc}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputDoc@{OutputDoc}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a7798ee65e8ba26c91dcea378c28347a6}} 
+Output\+Doc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputBrief@{OutputBrief}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputBrief@{OutputBrief}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ab0588c8b5fb2c84034afe1809365f040}} 
+Output\+Brief&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputXRef@{OutputXRef}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputXRef@{OutputXRef}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45a160009fd71296a63860f66209dbcc705}} 
+Output\+X\+Ref&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OutputInbody@{OutputInbody}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!OutputInbody@{OutputInbody}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}\label{generated__src_2commentscan_8cpp_acc0f0d2f60038c5acff5f6480bc80e45ae2467e74f0b442984f8de771f0e8b5d0}} 
+Output\+Inbody&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186}} 
+\index{commentscan.cpp@{commentscan.cpp}!XRefKind@{XRefKind}}
+\index{XRefKind@{XRefKind}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{XRefKind}{XRefKind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{build_2generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186}{X\+Ref\+Kind}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Item@{XRef\_Item}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Item@{XRef\_Item}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}} 
+X\+Ref\+\_\+\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Todo@{XRef\_Todo}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Todo@{XRef\_Todo}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}} 
+X\+Ref\+\_\+\+Todo&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Test@{XRef\_Test}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Test@{XRef\_Test}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}} 
+X\+Ref\+\_\+\+Test&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Bug@{XRef\_Bug}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Bug@{XRef\_Bug}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}} 
+X\+Ref\+\_\+\+Bug&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Deprecated@{XRef\_Deprecated}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Deprecated@{XRef\_Deprecated}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}} 
+X\+Ref\+\_\+\+Deprecated&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_None@{XRef\_None}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_None@{XRef\_None}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}} 
+X\+Ref\+\_\+\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Item@{XRef\_Item}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Item@{XRef\_Item}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a42ee2c25e3f8d7da014fe8ef030d62dd}} 
+X\+Ref\+\_\+\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Todo@{XRef\_Todo}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Todo@{XRef\_Todo}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5cbe7af7984f6187caabf98d9f63d827}} 
+X\+Ref\+\_\+\+Todo&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Test@{XRef\_Test}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Test@{XRef\_Test}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a6e296b7c7d8b1ef41da86ac5ce6a7fde}} 
+X\+Ref\+\_\+\+Test&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Bug@{XRef\_Bug}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Bug@{XRef\_Bug}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a8496a070226e4b7041f46e5012f8deb7}} 
+X\+Ref\+\_\+\+Bug&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_Deprecated@{XRef\_Deprecated}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_Deprecated@{XRef\_Deprecated}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186a5b64b43dd14f6ef0daa85168b4240917}} 
+X\+Ref\+\_\+\+Deprecated&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XRef\_None@{XRef\_None}!commentscan.cpp@{commentscan.cpp}}\index{commentscan.cpp@{commentscan.cpp}!XRef\_None@{XRef\_None}}}\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}\label{generated__src_2commentscan_8cpp_a30f370adb2525f6629a44ad8fb972186ae309e5d84833a7111c361e657e75bc88}} 
+X\+Ref\+\_\+\+None&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad4a65b873df5c05570846b5413b41dfd}\label{generated__src_2commentscan_8cpp_ad4a65b873df5c05570846b5413b41dfd}} 
+\index{commentscan.cpp@{commentscan.cpp}!if@{if}}
+\index{if@{if}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{!}]{yy\+\_\+init }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5bc6f1a5f7812508f425b08283f13ae8}\label{generated__src_2commentscan_8cpp_a5bc6f1a5f7812508f425b08283f13ae8}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_create\_buffer@{yy\_create\_buffer}}
+\index{yy\_create\_buffer@{yy\_create\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_create\_buffer()}{yy\_create\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} yy\+\_\+create\+\_\+buffer (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae6ac796aa6c45d433a4b89bf45e6e9dc}\label{generated__src_2commentscan_8cpp_ae6ac796aa6c45d433a4b89bf45e6e9dc}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_delete\_buffer@{yy\_delete\_buffer}}
+\index{yy\_delete\_buffer@{yy\_delete\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_delete\_buffer()}{yy\_delete\_buffer()}}
+{\footnotesize\ttfamily void yy\+\_\+delete\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a2f59cc88e85e5455c62e4ef7ce095ea8}\label{generated__src_2commentscan_8cpp_a2f59cc88e85e5455c62e4ef7ce095ea8}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_flush\_buffer@{yy\_flush\_buffer}}
+\index{yy\_flush\_buffer@{yy\_flush\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_flush\_buffer()}{yy\_flush\_buffer()}}
+{\footnotesize\ttfamily void yy\+\_\+flush\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_af81595b30c0da73f9034ffb511db6388}\label{generated__src_2commentscan_8cpp_af81595b30c0da73f9034ffb511db6388}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_buffer@{yy\_scan\_buffer}}
+\index{yy\_scan\_buffer@{yy\_scan\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_buffer()}{yy\_scan\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} yy\+\_\+scan\+\_\+buffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{base,  }\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_acbf193b612e891a3fca6a810daa18c66}\label{generated__src_2commentscan_8cpp_acbf193b612e891a3fca6a810daa18c66}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_bytes@{yy\_scan\_bytes}}
+\index{yy\_scan\_bytes@{yy\_scan\_bytes}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_bytes()}{yy\_scan\_bytes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} yy\+\_\+scan\+\_\+bytes (\begin{DoxyParamCaption}\item[{const char $\ast$}]{bytes,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aaba3a8c0a4caad352ee68b5742c4a9d1}\label{generated__src_2commentscan_8cpp_aaba3a8c0a4caad352ee68b5742c4a9d1}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_scan\_string@{yy\_scan\_string}}
+\index{yy\_scan\_string@{yy\_scan\_string}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_scan\_string()}{yy\_scan\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}} yy\+\_\+scan\+\_\+string (\begin{DoxyParamCaption}\item[{const char $\ast$}]{yy\+\_\+str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3098c48a74ef8fd852f7dd4b3331cbce}\label{generated__src_2commentscan_8cpp_a3098c48a74ef8fd852f7dd4b3331cbce}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_switch\_to\_buffer@{yy\_switch\_to\_buffer}}
+\index{yy\_switch\_to\_buffer@{yy\_switch\_to\_buffer}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_switch\_to\_buffer()}{yy\_switch\_to\_buffer()}}
+{\footnotesize\ttfamily void yy\+\_\+switch\+\_\+to\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}}]{new\+\_\+buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a48e81b6f60f5f21fcaca3cc542e6c9f2}\label{generated__src_2commentscan_8cpp_a48e81b6f60f5f21fcaca3cc542e6c9f2}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyalloc@{yyalloc}}
+\index{yyalloc@{yyalloc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyalloc()}{yyalloc()}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{unionyyalloc}{yyalloc}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a70f82d43d4797bb2a50f7678ddbfbda5}\label{generated__src_2commentscan_8cpp_a70f82d43d4797bb2a50f7678ddbfbda5}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyfree@{yyfree}}
+\index{yyfree@{yyfree}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyfree()}{yyfree()}}
+{\footnotesize\ttfamily void yyfree (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4d4e3dd7e6f1d795e01b61794b31ac34}\label{generated__src_2commentscan_8cpp_a4d4e3dd7e6f1d795e01b61794b31ac34}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_debug@{yyget\_debug}}
+\index{yyget\_debug@{yyget\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_debug()}{yyget\_debug()}}
+{\footnotesize\ttfamily int yyget\+\_\+debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ada55bcd8fc1379fb4c103886195dd0e8}\label{generated__src_2commentscan_8cpp_ada55bcd8fc1379fb4c103886195dd0e8}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_extra@{yyget\_extra}}
+\index{yyget\_extra@{yyget\_extra}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_extra()}{yyget\_extra()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{generated__src_2xmlcode_8cpp_a26938d921de835f6183c02e54cf08828}{Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE}} yyget\+\_\+extra (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aeeecf71423549a8e165cddd5a824160b}\label{generated__src_2commentscan_8cpp_aeeecf71423549a8e165cddd5a824160b}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_in@{yyget\_in}}
+\index{yyget\_in@{yyget\_in}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_in()}{yyget\_in()}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ yyget\+\_\+in (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a81867b0419accbe7b3c2d59ffb203da9}\label{generated__src_2commentscan_8cpp_a81867b0419accbe7b3c2d59ffb203da9}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_leng@{yyget\_leng}}
+\index{yyget\_leng@{yyget\_leng}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_leng()}{yyget\_leng()}}
+{\footnotesize\ttfamily int yyget\+\_\+leng (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a3ac85cdab63967ff82c7534d35a42fe6}\label{generated__src_2commentscan_8cpp_a3ac85cdab63967ff82c7534d35a42fe6}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_lineno@{yyget\_lineno}}
+\index{yyget\_lineno@{yyget\_lineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_lineno()}{yyget\_lineno()}}
+{\footnotesize\ttfamily int yyget\+\_\+lineno (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ae2c4c4681bb3d385b213511d0b3b59fd}\label{generated__src_2commentscan_8cpp_ae2c4c4681bb3d385b213511d0b3b59fd}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_out@{yyget\_out}}
+\index{yyget\_out@{yyget\_out}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_out()}{yyget\_out()}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ yyget\+\_\+out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac8dd6bf3779328f280aa7f7aa8106514}\label{generated__src_2commentscan_8cpp_ac8dd6bf3779328f280aa7f7aa8106514}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyget\_text@{yyget\_text}}
+\index{yyget\_text@{yyget\_text}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyget\_text()}{yyget\_text()}}
+{\footnotesize\ttfamily char$\ast$ yyget\+\_\+text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a9a7bd1b3d14701eb97c03f3ef34deff1}\label{generated__src_2commentscan_8cpp_a9a7bd1b3d14701eb97c03f3ef34deff1}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex@{yylex}}
+\index{yylex@{yylex}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex()}{yylex()}}
+{\footnotesize\ttfamily int yylex (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab596ae57cdabfb4b298edf3dde7cdf04}\label{generated__src_2commentscan_8cpp_ab596ae57cdabfb4b298edf3dde7cdf04}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylex\_destroy@{yylex\_destroy}}
+\index{yylex\_destroy@{yylex\_destroy}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylex\_destroy()}{yylex\_destroy()}}
+{\footnotesize\ttfamily int yylex\+\_\+destroy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a6201ab6be4687a1ebc3120602d05e35a}\label{generated__src_2commentscan_8cpp_a6201ab6be4687a1ebc3120602d05e35a}} 
+\index{commentscan.cpp@{commentscan.cpp}!yypop\_buffer\_state@{yypop\_buffer\_state}}
+\index{yypop\_buffer\_state@{yypop\_buffer\_state}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yypop\_buffer\_state()}{yypop\_buffer\_state()}}
+{\footnotesize\ttfamily void yypop\+\_\+buffer\+\_\+state (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a4bf8969e5234aef8b46cce9a67a62724}\label{generated__src_2commentscan_8cpp_a4bf8969e5234aef8b46cce9a67a62724}} 
+\index{commentscan.cpp@{commentscan.cpp}!yypush\_buffer\_state@{yypush\_buffer\_state}}
+\index{yypush\_buffer\_state@{yypush\_buffer\_state}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yypush\_buffer\_state()}{yypush\_buffer\_state()}}
+{\footnotesize\ttfamily void yypush\+\_\+buffer\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}}}]{new\+\_\+buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a843d874fed23c395a8f12c2d9c666557}\label{generated__src_2commentscan_8cpp_a843d874fed23c395a8f12c2d9c666557}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyrealloc@{yyrealloc}}
+\index{yyrealloc@{yyrealloc}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyrealloc()}{yyrealloc()}}
+{\footnotesize\ttfamily void$\ast$ yyrealloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{\mbox{\hyperlink{build_2generated__src_2code_8cpp_ad557845057f187eec4be07e2717d2afa}{yy\+\_\+size\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ab657ddef65d43cc3ab8dfc2cad0ac5b8}\label{generated__src_2commentscan_8cpp_ab657ddef65d43cc3ab8dfc2cad0ac5b8}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyrestart@{yyrestart}}
+\index{yyrestart@{yyrestart}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyrestart()}{yyrestart()}}
+{\footnotesize\ttfamily void yyrestart (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{input\+\_\+file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac571eade4cca933e8ccdf6759c527fe7}\label{generated__src_2commentscan_8cpp_ac571eade4cca933e8ccdf6759c527fe7}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_debug@{yyset\_debug}}
+\index{yyset\_debug@{yyset\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_debug()}{yyset\_debug()}}
+{\footnotesize\ttfamily void yyset\+\_\+debug (\begin{DoxyParamCaption}\item[{int}]{debug\+\_\+flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a2df391b304dadab17608192b116af2a1}\label{generated__src_2commentscan_8cpp_a2df391b304dadab17608192b116af2a1}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_extra@{yyset\_extra}}
+\index{yyset\_extra@{yyset\_extra}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_extra()}{yyset\_extra()}}
+{\footnotesize\ttfamily void yyset\+\_\+extra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{generated__src_2xmlcode_8cpp_a26938d921de835f6183c02e54cf08828}{Y\+Y\+\_\+\+E\+X\+T\+R\+A\+\_\+\+T\+Y\+PE}}}]{user\+\_\+defined }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a14346b28ae39537ab27caacebfcb31a7}\label{generated__src_2commentscan_8cpp_a14346b28ae39537ab27caacebfcb31a7}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_in@{yyset\_in}}
+\index{yyset\_in@{yyset\_in}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_in()}{yyset\_in()}}
+{\footnotesize\ttfamily void yyset\+\_\+in (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{\+\_\+in\+\_\+str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aca0fe76da7a277561738a9a14ab8cb0a}\label{generated__src_2commentscan_8cpp_aca0fe76da7a277561738a9a14ab8cb0a}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_lineno@{yyset\_lineno}}
+\index{yyset\_lineno@{yyset\_lineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_lineno()}{yyset\_lineno()}}
+{\footnotesize\ttfamily void yyset\+\_\+lineno (\begin{DoxyParamCaption}\item[{int}]{\+\_\+line\+\_\+number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad8174301995e5a61ab330516ec081e35}\label{generated__src_2commentscan_8cpp_ad8174301995e5a61ab330516ec081e35}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyset\_out@{yyset\_out}}
+\index{yyset\_out@{yyset\_out}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyset\_out()}{yyset\_out()}}
+{\footnotesize\ttfamily void yyset\+\_\+out (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{\+\_\+out\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ac51a198488bd60f03dd8a00d64831743}\label{generated__src_2commentscan_8cpp_ac51a198488bd60f03dd8a00d64831743}} 
+\index{commentscan.cpp@{commentscan.cpp}!inInternalDocs@{inInternalDocs}}
+\index{inInternalDocs@{inInternalDocs}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{inInternalDocs}{inInternalDocs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} in\+Internal\+Docs = \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a483da4c691e92dcb79c40a3514759b6b}\label{generated__src_2commentscan_8cpp_a483da4c691e92dcb79c40a3514759b6b}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_act@{yy\_act}}
+\index{yy\_act@{yy\_act}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_act}{yy\_act}}
+{\footnotesize\ttfamily int yy\+\_\+act}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}\label{generated__src_2commentscan_8cpp_aa749693ef7d0c10b137e887638fdc5b2}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_bp@{yy\_bp}}
+\index{yy\_bp@{yy\_bp}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_bp}{yy\_bp}}
+{\footnotesize\ttfamily char $\ast$ yy\+\_\+bp}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}\label{generated__src_2commentscan_8cpp_a61b01b6b236b05090b972f8fd95da539}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_cp@{yy\_cp}}
+\index{yy\_cp@{yy\_cp}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_cp}{yy\_cp}}
+{\footnotesize\ttfamily char$\ast$ yy\+\_\+cp}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_abcefb20c54ce0f92452cfbb9cf657670}\label{generated__src_2commentscan_8cpp_abcefb20c54ce0f92452cfbb9cf657670}} 
+\index{commentscan.cpp@{commentscan.cpp}!YY\_DECL@{YY\_DECL}}
+\index{YY\_DECL@{YY\_DECL}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{YY\_DECL}{YY\_DECL}}
+{\footnotesize\ttfamily Y\+Y\+\_\+\+D\+E\+CL}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{build_2generated__src_2code_8cpp_a9ba7c416f135b0f0c1f4addded4616b5}{yy\_state\_type}} yy\_current\_state}
+
+\end{DoxyCode}
+The main scanner function which does all the work. \mbox{\Hypertarget{generated__src_2commentscan_8cpp_a7411c3bab9eca1afee90113c2d22da37}\label{generated__src_2commentscan_8cpp_a7411c3bab9eca1afee90113c2d22da37}} 
+\index{commentscan.cpp@{commentscan.cpp}!yy\_flex\_debug@{yy\_flex\_debug}}
+\index{yy\_flex\_debug@{yy\_flex\_debug}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yy\_flex\_debug}{yy\_flex\_debug}}
+{\footnotesize\ttfamily int yy\+\_\+flex\+\_\+debug = 0}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a46af646807e0797e72b6e8945e7ea88b}\label{generated__src_2commentscan_8cpp_a46af646807e0797e72b6e8945e7ea88b}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyin@{yyin}}
+\index{yyin@{yyin}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyin}{yyin}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ yyin = N\+U\+LL}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a1b5865350b5ca5c1d69f429c2a652953}\label{generated__src_2commentscan_8cpp_a1b5865350b5ca5c1d69f429c2a652953}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyleng@{yyleng}}
+\index{yyleng@{yyleng}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyleng}{yyleng}}
+{\footnotesize\ttfamily int yyleng}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a5e36364965360da7b7cdfc2188e0af84}\label{generated__src_2commentscan_8cpp_a5e36364965360da7b7cdfc2188e0af84}} 
+\index{commentscan.cpp@{commentscan.cpp}!yylineno@{yylineno}}
+\index{yylineno@{yylineno}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yylineno}{yylineno}}
+{\footnotesize\ttfamily int yylineno = 1}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_a296847b42b0baa62e2af36cb79f3c0eb}\label{generated__src_2commentscan_8cpp_a296847b42b0baa62e2af36cb79f3c0eb}} 
+\index{commentscan.cpp@{commentscan.cpp}!yyout@{yyout}}
+\index{yyout@{yyout}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yyout}{yyout}}
+{\footnotesize\ttfamily F\+I\+LE $\ast$ yyout = N\+U\+LL}
+
+\mbox{\Hypertarget{generated__src_2commentscan_8cpp_ad9264b77d56b6971f29739e2bda77f51}\label{generated__src_2commentscan_8cpp_ad9264b77d56b6971f29739e2bda77f51}} 
+\index{commentscan.cpp@{commentscan.cpp}!yytext@{yytext}}
+\index{yytext@{yytext}!commentscan.cpp@{commentscan.cpp}}
+\doxysubsubsection{\texorpdfstring{yytext}{yytext}}
+{\footnotesize\ttfamily char$\ast$ yytext}
+

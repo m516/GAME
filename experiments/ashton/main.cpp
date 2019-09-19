@@ -194,7 +194,9 @@ void Renderer(sf::RenderWindow &window)
 	}
 }
 
-// Event handler with window passed by -reference-
+/**
+ * This is a doc comment
+ */
 void EventHandler(sf::RenderWindow &window)
 {
 	sf::Event event;

@@ -1,0 +1,119 @@
+\hypertarget{image_8cpp}{}\doxysection{doxygen/src/image.cpp File Reference}
+\label{image_8cpp}\index{doxygen/src/image.cpp@{doxygen/src/image.cpp}}
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$qfile.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lodepng.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_color}{Color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{image_8cpp_ae3a497195d617519e5353ea7b417940f}{Byte}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{image_8cpp_addcb648439e446f4cdc7f81ed8bd7701}{char\+Set\+Width}} =80
+\item 
+const int \mbox{\hyperlink{image_8cpp_ac01e29ec591af8444cb2cb5e9128d130}{char\+Height}} =12
+\item 
+const int \mbox{\hyperlink{image_8cpp_a7039c6d467143b65eee4688f35178297}{num\+Chars}} =96
+\item 
+unsigned short \mbox{\hyperlink{image_8cpp_a3f015eca9b8327e05044743748629ae9}{char\+Pos}} \mbox{[}\mbox{\hyperlink{image_8cpp_a7039c6d467143b65eee4688f35178297}{num\+Chars}}\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{image_8cpp_afdd592511fae7801258a4408091d4342}{char\+Width}} \mbox{[}\mbox{\hyperlink{image_8cpp_a7039c6d467143b65eee4688f35178297}{num\+Chars}}\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{image_8cpp_a54eb9c5e56292b27cc59fca445f72f4b}{font\+Raw}} \mbox{[}\mbox{\hyperlink{image_8cpp_addcb648439e446f4cdc7f81ed8bd7701}{char\+Set\+Width}} $\ast$\mbox{\hyperlink{image_8cpp_ac01e29ec591af8444cb2cb5e9128d130}{char\+Height}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{image_8cpp_ae3a497195d617519e5353ea7b417940f}\label{image_8cpp_ae3a497195d617519e5353ea7b417940f}} 
+\index{image.cpp@{image.cpp}!Byte@{Byte}}
+\index{Byte@{Byte}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{Byte}{Byte}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{image_8cpp_ae3a497195d617519e5353ea7b417940f}{Byte}}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{image_8cpp_ac01e29ec591af8444cb2cb5e9128d130}\label{image_8cpp_ac01e29ec591af8444cb2cb5e9128d130}} 
+\index{image.cpp@{image.cpp}!charHeight@{charHeight}}
+\index{charHeight@{charHeight}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{charHeight}{charHeight}}
+{\footnotesize\ttfamily const int char\+Height =12}
+
+\mbox{\Hypertarget{image_8cpp_a3f015eca9b8327e05044743748629ae9}\label{image_8cpp_a3f015eca9b8327e05044743748629ae9}} 
+\index{image.cpp@{image.cpp}!charPos@{charPos}}
+\index{charPos@{charPos}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{charPos}{charPos}}
+{\footnotesize\ttfamily unsigned short char\+Pos\mbox{[}\mbox{\hyperlink{image_8cpp_a7039c6d467143b65eee4688f35178297}{num\+Chars}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= }
+\DoxyCodeLine{  \{   }
+\DoxyCodeLine{      0,  5,  8, 13, 20, 27, 38, 47, }
+\DoxyCodeLine{     50, 54, 58, 65, 72, 76, 83, 87, }
+\DoxyCodeLine{     91, 98,105,112,119,126,133,140,}
+\DoxyCodeLine{    147,154,161,164,167,174,181,188,}
+\DoxyCodeLine{    195,207,216,224,233,242,250,258,}
+\DoxyCodeLine{    267,276,279,286,294,301,312,321,}
+\DoxyCodeLine{    331,339,349,357,365,372,380,389,}
+\DoxyCodeLine{    400,409,418,427,430,434,437,443,}
+\DoxyCodeLine{    450,453,460,467,474,481,488,492,}
+\DoxyCodeLine{    499,506,509,512,518,521,530,537,}
+\DoxyCodeLine{    544,551,557,562,568,571,578,585,}
+\DoxyCodeLine{    594,600,607,613,617,620,624,631}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{image_8cpp_addcb648439e446f4cdc7f81ed8bd7701}\label{image_8cpp_addcb648439e446f4cdc7f81ed8bd7701}} 
+\index{image.cpp@{image.cpp}!charSetWidth@{charSetWidth}}
+\index{charSetWidth@{charSetWidth}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{charSetWidth}{charSetWidth}}
+{\footnotesize\ttfamily const int char\+Set\+Width =80}
+
+\mbox{\Hypertarget{image_8cpp_afdd592511fae7801258a4408091d4342}\label{image_8cpp_afdd592511fae7801258a4408091d4342}} 
+\index{image.cpp@{image.cpp}!charWidth@{charWidth}}
+\index{charWidth@{charWidth}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{charWidth}{charWidth}}
+{\footnotesize\ttfamily unsigned char char\+Width\mbox{[}\mbox{\hyperlink{image_8cpp_a7039c6d467143b65eee4688f35178297}{num\+Chars}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= }
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{     5, 3, 5, 7, 7,11, 9, 3,}
+\DoxyCodeLine{     4, 4, 7, 7, 4, 7, 4, 4,}
+\DoxyCodeLine{}
+\DoxyCodeLine{     7, 7, 7, 7, 7, 7, 7, 7,}
+\DoxyCodeLine{     7, 7, 3, 3, 7, 7, 7, 7,}
+\DoxyCodeLine{    12, 9, 8, 9, 9, 8, 8, 9,}
+\DoxyCodeLine{     9, 3, 7, 8, 7,11, 9,10,}
+\DoxyCodeLine{     8,10, 8, 8, 7, 8, 9,11,}
+\DoxyCodeLine{     9, 9, 9, 3, 4, 3, 6, 7,}
+\DoxyCodeLine{     3, 7, 7, 7, 7, 7, 4, 7,}
+\DoxyCodeLine{     7, 3, 3, 6, 3, 9, 7, 7,}
+\DoxyCodeLine{     7, 6, 5, 6, 3, 7, 7, 9,}
+\DoxyCodeLine{     6, 7, 6, 4, 3, 4, 7, 5   }
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{image_8cpp_a54eb9c5e56292b27cc59fca445f72f4b}\label{image_8cpp_a54eb9c5e56292b27cc59fca445f72f4b}} 
+\index{image.cpp@{image.cpp}!fontRaw@{fontRaw}}
+\index{fontRaw@{fontRaw}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{fontRaw}{fontRaw}}
+{\footnotesize\ttfamily unsigned char font\+Raw\mbox{[}\mbox{\hyperlink{image_8cpp_addcb648439e446f4cdc7f81ed8bd7701}{char\+Set\+Width}} $\ast$\mbox{\hyperlink{image_8cpp_ac01e29ec591af8444cb2cb5e9128d130}{char\+Height}}\mbox{]}}
+
+\mbox{\Hypertarget{image_8cpp_a7039c6d467143b65eee4688f35178297}\label{image_8cpp_a7039c6d467143b65eee4688f35178297}} 
+\index{image.cpp@{image.cpp}!numChars@{numChars}}
+\index{numChars@{numChars}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{numChars}{numChars}}
+{\footnotesize\ttfamily const int num\+Chars =96}
+

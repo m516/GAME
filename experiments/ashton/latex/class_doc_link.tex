@@ -1,0 +1,91 @@
+\hypertarget{class_doc_link}{}\doxysection{Doc\+Link Class Reference}
+\label{class_doc_link}\index{DocLink@{DocLink}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Link\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doc_link}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_link_a3639f07a695c77d818748fe711b37909}{Doc\+Link}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&target)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_link_aeb676914fb893fa31c99b39c1f7bb6d3}{parse}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Xml\+Link=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_link_a320720d7a24889d3cd3d6210bfc526fa}{kind}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_link_a39a863f3f56d0247210911c2381e39f2}{file}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_link_afc299bde1a6e0301feaed4c0de072691}{rel\+Path}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_link_a927a404f81961d4545e5ad41e0c4d35a}{ref}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_link_a12c7fd0cd735e1fb53216fc9fa26bf61}{anchor}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a link to some item 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_link_a3639f07a695c77d818748fe711b37909}\label{class_doc_link_a3639f07a695c77d818748fe711b37909}} 
+\index{DocLink@{DocLink}!DocLink@{DocLink}}
+\index{DocLink@{DocLink}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{DocLink()}{DocLink()}}
+{\footnotesize\ttfamily Doc\+Link\+::\+Doc\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{target }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_link_a12c7fd0cd735e1fb53216fc9fa26bf61}\label{class_doc_link_a12c7fd0cd735e1fb53216fc9fa26bf61}} 
+\index{DocLink@{DocLink}!anchor@{anchor}}
+\index{anchor@{anchor}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{anchor()}{anchor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Link\+::anchor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_link_a39a863f3f56d0247210911c2381e39f2}\label{class_doc_link_a39a863f3f56d0247210911c2381e39f2}} 
+\index{DocLink@{DocLink}!file@{file}}
+\index{file@{file}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Link\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_link_a320720d7a24889d3cd3d6210bfc526fa}\label{class_doc_link_a320720d7a24889d3cd3d6210bfc526fa}} 
+\index{DocLink@{DocLink}!kind@{kind}}
+\index{kind@{kind}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Link\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_link_aeb676914fb893fa31c99b39c1f7bb6d3}\label{class_doc_link_aeb676914fb893fa31c99b39c1f7bb6d3}} 
+\index{DocLink@{DocLink}!parse@{parse}}
+\index{parse@{parse}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Link\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Java\+Link,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Xml\+Link = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_link_a927a404f81961d4545e5ad41e0c4d35a}\label{class_doc_link_a927a404f81961d4545e5ad41e0c4d35a}} 
+\index{DocLink@{DocLink}!ref@{ref}}
+\index{ref@{ref}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Link\+::ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_link_afc299bde1a6e0301feaed4c0de072691}\label{class_doc_link_afc299bde1a6e0301feaed4c0de072691}} 
+\index{DocLink@{DocLink}!relPath@{relPath}}
+\index{relPath@{relPath}!DocLink@{DocLink}}
+\doxysubsubsection{\texorpdfstring{relPath()}{relPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Link\+::rel\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

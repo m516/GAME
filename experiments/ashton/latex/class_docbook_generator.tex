@@ -1,0 +1,2546 @@
+\hypertarget{class_docbook_generator}{}\doxysection{Docbook\+Generator Class Reference}
+\label{class_docbook_generator}\index{DocbookGenerator@{DocbookGenerator}}
+
+
+{\ttfamily \#include $<$docbookgen.\+h$>$}
+
+Inheritance diagram for Docbook\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_docbook_generator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_docbook_generator_a59655593be449f9e01ce953a72233de0}{Docbook\+Generator}} ()
+\item 
+\mbox{\hyperlink{class_docbook_generator_acd2d9e24cb0f45024d1efbfd59cff910}{$\sim$\+Docbook\+Generator}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6b91f4feeade427f5d06a6929c1263b4}{enable}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af193a49b8f46829405ce38e366b33a7c}{disable}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a11a99fd663b1ce791e05fc7a2885cfd9}{enable\+If}} (\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_a495e7a4ede0831107e9d435080a7c268}{o}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a776de0694309647db247b1774aeef8c3}{disable\+If}} (\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_a495e7a4ede0831107e9d435080a7c268}{o}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1d6807ed217a22b413b67ded94a98cb9}{disable\+If\+Not}} (\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_a495e7a4ede0831107e9d435080a7c268}{o}})
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_docbook_generator_a98c3ae22b001065ba251f87d4c706694}{is\+Enabled}} (\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_a495e7a4ede0831107e9d435080a7c268}{o}})
+\item 
+\mbox{\hyperlink{class_output_generator}{Output\+Generator}} $\ast$ \mbox{\hyperlink{class_docbook_generator_a02a480ef4514043f0b1ba80f6f9a6b40}{get}} (\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}} \mbox{\hyperlink{060__command__switch_8tcl_a495e7a4ede0831107e9d435080a7c268}{o}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9e4ccf3b4bf296deabf156225e2d02a1}{codify}} (const char $\ast$text)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6014ad58784a407002499d0d29a00a0a}{write\+Code\+Link}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}}, const char $\ast$anchor, const char $\ast$name, const char $\ast$tooltip)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abacdf042957c11cbcdf2c809758e23fa}{write\+Line\+Number}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}}, const char $\ast$anchor, int line\+Number)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a86c6e83addf31b0c377fbe6ecab97769}{write\+Tooltip}} (const char $\ast$\mbox{\hyperlink{gd_8h_a65841f8ec0ab4e93010736388282aada}{id}}, const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&doc\+Info, const char $\ast$decl, const char $\ast$desc, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&def\+Info, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&decl\+Info)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a08551a6c7ec1d06ec874880a1d10df5b}{start\+Code\+Line}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} has\+Line\+Numbers)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8f7445243e87fede91ba577d5549b907}{end\+Code\+Line}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a899bafb067d2ad8cf7d834e23af83d91}{start\+Font\+Class}} (const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a857d641f5f3894a4053037e842d45a10}{end\+Font\+Class}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7fc22eda4420a580d40a7fa2624209b6}{write\+Code\+Anchor}} (const char $\ast$anchor)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6e93e82c07a40e663b96951c99b421af}{write\+Doc}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$ctx, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$md)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a84bcc7d0ce461e096b42e95f32631a66}{start\+File}} (const char $\ast$name, const char $\ast$man\+Name, const char $\ast$title)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a15970f9de0fede32a614b46f23b2a401}{write\+Search\+Info}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a371c487bb4bfb47558dbd49d6284af53}{write\+Footer}} (const char $\ast$nav\+Path)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a804adfd616ba87edb4a2cbb988601134}{end\+File}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9480c35ad416cf8f5e5024fc666d82f2}{start\+Index\+Section}} (\mbox{\hyperlink{index_8h_aec03800047ada46460eb75113cfee322}{Index\+Sections}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5cd5a531e4b38a90801a4d5577df9ef7}{end\+Index\+Section}} (\mbox{\hyperlink{index_8h_aec03800047ada46460eb75113cfee322}{Index\+Sections}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aacc408198549c392c851a1825fd700c7}{write\+Page\+Link}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a50ce1f94515c49874020c1ad07ff0e5a}{start\+Project\+Number}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ae1453894e89e42261578f657d47f9d52}{end\+Project\+Number}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a99bbec3723074f8b343e9cc7c09f76c2}{write\+Style\+Info}} (int part)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a221a9c15d2b41349a43ec5acae2e017d}{start\+Title\+Head}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8b3fe6b030f4d1a6aac307c54c2e526f}{end\+Title\+Head}} (const char $\ast$\mbox{\hyperlink{class_output_generator_a9bb808101dbeae7732bb0fa66cad9176}{file\+Name}}, const char $\ast$name)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad145679e6d0f1729c54f0de06ddd1440}{start\+Index\+List\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a205e8526c572a3bc41d634bf57dd1e93}{end\+Index\+List\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a925d42f1449375a424ba30f57c11f4f4}{start\+Index\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af69c69875e18eba42abc65d88da3a8a5}{end\+Index\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac5012fc0e24ac8f1d65944ef72208311}{start\+Index\+Key}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af882cc6b2978a2eea0a83c8e59a5f0ee}{end\+Index\+Key}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a495102aee43b7bd5a9ebd4aad9ed9e8a}{start\+Index\+Value}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_acb7e9a3b585b05c467dbedc5c7ce2949}{end\+Index\+Value}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_addaf6b46396259a8bbebe7b1e9716bc0}{start\+Item\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5e463c37de0b0473855605fe5cf44071}{end\+Item\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad9b5a8f2d9c1b9702478b2217fe9860f}{start\+Index\+Item}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa8c673bc2d2f1f1a1ec6f25050d5b6e9}{end\+Index\+Item}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2ee84d2ec43dc1634a71ee3101eab3e4}{start\+Item\+List\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6a0d36a22a9ca268b716cd37a4ab13b0}{end\+Item\+List\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a78cc7c7199538d0f38d2696443ca71bf}{docify}} (const char $\ast$text)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ab075c899a62994272a1f542404ec614d}{write\+Char}} (char)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a0435ece7899e4607115944383f2f1d77}{write\+String}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa9920dace623a31301f5c7b9f5f739b8}{start\+Paragraph}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6f793e8c29984f0ed8d654e9b89110e3}{end\+Paragraph}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8cc7af4fed7938f5e5d81038eba432f0}{write\+Object\+Link}} (const char $\ast$, const char $\ast$, const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_adf4463cfec2c9d8ca083367f2e4afeff}{start\+Html\+Link}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a14123926fa57e6c0e8dbbbac55f368df}{end\+Html\+Link}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad1704a02ae2ba6ab019e0c6e570ce218}{start\+Bold}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a798fe205e0beedacd6c035c865ae354c}{end\+Bold}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a220738e28a4e2939e4da767f0ad33886}{start\+Typewriter}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2b987c6b42a8a5b5cea28f950fefa6cc}{end\+Typewriter}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad3234d4df4f2e6db5e3e7d1c4c5b8382}{start\+Emphasis}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afa388cf9fb6c58601670f40fec5a2eb7}{end\+Emphasis}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a698cf0a67c7e73af0c76cb0cf54e1530}{start\+Code\+Fragment}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5f6585ebe5d203c47bb25cefdd30d8fd}{end\+Code\+Fragment}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a69c4688a7f57b0cd7cc6eec70bf56e4d}{write\+Ruler}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abca64d577a05a2d49a99edfef8e72e72}{start\+Description}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_accbb80f6730221e3396f38cbb07ed7b5}{end\+Description}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a20e9be1323c9378066b4302ec37fa67f}{start\+Desc\+Item}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a627c43929d1dafab5072680128b6375f}{start\+Desc\+For\+Item}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a66376d8ca881d18cb9916c7d903df18e}{end\+Desc\+For\+Item}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ae46437543719a73a35d0202749633c15}{end\+Desc\+Item}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a98fef2b64d63f378b2616d09a679f66b}{start\+Center}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8b7b9b4f6a1876e34300b7f8969fbed9}{end\+Center}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9a32ad8f07c7b3cd0bc8deaf7a0e1597}{start\+Small}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af78c3c3a1e8ab4fd275cc1364f29f96a}{end\+Small}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a07374c2ae688cdf1a9978dbfff2636df}{start\+Examples}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a438f8b5845f838d939b3d72d47b91fb6}{end\+Examples}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5a227d018bac4cff772175b1c604dc78}{start\+Param\+List}} (\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Base\+Output\+Doc\+Interface\+::\+Param\+List\+Types}}, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa50cbefc868b784f670abeefe63a3134}{end\+Param\+List}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a92ec864254dbcfc34f0f7e9bd7425ecf}{start\+Title}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a86fa7cf7c97b19a93216b5819cb9f178}{end\+Title}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a77af6fb2e87620e84ef1cbbcfd04e1fa}{write\+Anchor}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7c35ba06bbf1e151f55c9fa42f786f01}{start\+Section}} (const char $\ast$, const char $\ast$, \mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aebe55441607d88540afdf1131452acb6}{end\+Section}} (const char $\ast$, \mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1d8531f44a63138f5c7ccabcf5b5da0b}{line\+Break}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a310d8299b672cc6d24333129b069f028}{add\+Index\+Item}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a90d3afc310288c35d48787bc84310ec7}{write\+Non\+Breakable\+Space}} (int)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_acaa3fba479216b81c56bf6875f479be1}{start\+Desc\+Table}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abd3af9023fb73fc3332ca625afcc78a6}{end\+Desc\+Table}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1c8a3b36b56840ce70d14b1f220a7d04}{start\+Desc\+Table\+Row}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a191efddbd8402fa939a2302027b1331f}{end\+Desc\+Table\+Row}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9522e58842f09e0062723d5eec483feb}{start\+Desc\+Table\+Title}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abe08e164b411f9fc279fa7db8d29306f}{end\+Desc\+Table\+Title}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5c5b4fe6f2359335c121e9cf940f2b48}{start\+Desc\+Table\+Data}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad5da8dc28569ce5ac4a594175a11eecd}{end\+Desc\+Table\+Data}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_acee52d6675a67267a096b42afd6a0592}{start\+Text\+Link}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abae26f5d00240c52d70a0d9c822563f3}{end\+Text\+Link}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9eb3cc68a03f56e43d7927348f98498a}{start\+Page\+Ref}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afc5f293acdf0264e6703733b7ef92313}{end\+Page\+Ref}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a4d1eeef8da1dd4ba4a2538250a7eff99}{start\+Subsection}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1ef185fbf941e38cb5c398fa1b91cdc1}{end\+Subsection}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af7d9b5e9bf1a7ff6030af837ab574b95}{start\+Subsubsection}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a0c29baba6775a956dc285964e81af254}{end\+Subsubsection}} (void)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a07b8ca92d5e96c8991c0076f5a89f274}{start\+Group\+Header}} (int)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a0e7adc57e7d16e6adc87dce0eb83516b}{end\+Group\+Header}} (int)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a4e3b29c08c2340b5b87b2ef1205414b4}{start\+Member\+Sections}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a742b6c6bf05b83f068339d9cf14dc93b}{end\+Member\+Sections}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a95adf7ec16fbeb183330ecb676a0c177}{start\+Header\+Section}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5fb9718a207e7313bbeac60cac9e32ee}{end\+Header\+Section}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afd617230ccfacc6e34851652e9bab6c2}{start\+Member\+Header}} (const char $\ast$anchor, int typ)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a29959b53028bcdf2e21067a096e3fe77}{end\+Member\+Header}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_accccd27de78cff523391c7a43ca3c7e8}{start\+Member\+Subtitle}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6b1fd9a897f23f264ef17256c44b0bc2}{end\+Member\+Subtitle}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac5af06500d6da1e1f68ab4cb1634140e}{start\+Member\+Doc\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a3b0455657c4009e49af4e003019d5edc}{end\+Member\+Doc\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad341d2ccdf7130f3a08b5d2a963cf111}{start\+Member\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa16fe3c2eaf5e95ecffc0c65f682fd71}{end\+Member\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aebf3161a35b83e00b87e830a7518005e}{start\+Inline\+Header}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9e2548f9784b8fccc4b4236f7207279e}{end\+Inline\+Header}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7979b98c06d0d3d7450d37ca71023246}{start\+Anon\+Type\+Scope}} (int)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_adb7845f3c6ea3b95149c0e6919d3e41f}{end\+Anon\+Type\+Scope}} (int)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7574ab5fa838022782c7ebe20a44423a}{start\+Member\+Item}} (const char $\ast$, int, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a809a668dd4691533bdc9b286bdfc62a1}{end\+Member\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a61fb3da1c36e4cd27a17ad14ed50f0b5}{start\+Member\+Template\+Params}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac4a7a56a80f29aec7acc78597ffda9c4}{end\+Member\+Template\+Params}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a0dbaa41643546a916a005fbaa9015703}{start\+Member\+Group\+Header}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a100a878eeb984b71baf36c69d6867a4c}{end\+Member\+Group\+Header}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ab0f4bdaf7baa049c434eb9267a730939}{start\+Member\+Group\+Docs}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a99393eb2ff7472daebc1505815970586}{end\+Member\+Group\+Docs}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6725795d6f2f697662c57e6fd3bc8739}{start\+Member\+Group}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ab2af18403e2a23fe0deae3b3a7e54a1b}{end\+Member\+Group}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a03fa682034c00f869d6bf24d5c947755}{insert\+Member\+Align}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5b6548041e988bafab0cfa936153157b}{insert\+Member\+Align\+Left}} (int, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_acba8e0286d5d95bf12625b730f3b1390}{start\+Member\+Doc}} (const char $\ast$, const char $\ast$, const char $\ast$, const char $\ast$, int, int, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7bc7a7d5287f42c03dec4aa894594d34}{end\+Member\+Doc}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad77356d6c995140b4874aa673e3a5ead}{start\+Doxy\+Anchor}} (const char $\ast$f\+Name, const char $\ast$man\+Name, const char $\ast$anchor, const char $\ast$name, const char $\ast$args)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a961ba92be55f7046321e2b424496ed61}{end\+Doxy\+Anchor}} (const char $\ast$\mbox{\hyperlink{class_output_generator_a9bb808101dbeae7732bb0fa66cad9176}{file\+Name}}, const char $\ast$anchor)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa22b4e02bb230d1df37dcc7c8b9471e7}{write\+Latex\+Spacing}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a02e9603e70bc6ee4745928e54e53d5e7}{write\+Start\+Anno\+Item}} (const char $\ast$type, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}}, const char $\ast$path, const char $\ast$name)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa58fefff6b840fffb1516fcd0cef9623}{write\+End\+Anno\+Item}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac071f35b16b2259b954402588bc57e60}{start\+Member\+Description}} (const char $\ast$anchor, const char $\ast$inherit\+Id, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} typ)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9d5686c7164e32d3214351c5721f7545}{end\+Member\+Description}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afab958dd26a75104df2c47501621beaf}{start\+Member\+Declaration}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afa825d6add13e2421f0e80114681abf8}{end\+Member\+Declaration}} (const char $\ast$anchor, const char $\ast$inherit\+Id)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5c07d2b117b266a1ca1b3492b6a72fba}{write\+Inherited\+Section\+Title}} (const char $\ast$\mbox{\hyperlink{gd_8h_a65841f8ec0ab4e93010736388282aada}{id}}, const char $\ast$ref, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}}, const char $\ast$anchor, const char $\ast$title, const char $\ast$name)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a41f7e9ce5dde599cb53c50185fb9a9fa}{start\+Indent}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa0dcc186dba954c875d34d2ec19221a9}{end\+Indent}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a4a81e9bb54de45c0691274ff93844bf4}{write\+Synopsis}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad456aa2a144668eb1e8e0f56cbd092ea}{start\+Class\+Diagram}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2663bce20e70dffbeef8ef9827b56de8}{end\+Class\+Diagram}} (const \mbox{\hyperlink{class_class_diagram}{Class\+Diagram}} \&, const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac475d194e8d556cef4e092f1b3f8b5c6}{start\+Dot\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a56bb12099cce1d654c116094f39473dd}{end\+Dot\+Graph}} (\mbox{\hyperlink{class_dot_class_graph}{Dot\+Class\+Graph}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a74046c1b25bac8820975d6500b1b3622}{start\+Incl\+Dep\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a7cf57a31a325a6ac47d02b1b9865836d}{end\+Incl\+Dep\+Graph}} (\mbox{\hyperlink{class_dot_incl_dep_graph}{Dot\+Incl\+Dep\+Graph}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1b52aa2748010155131f9ba8f9b05b73}{start\+Group\+Collaboration}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a27dcfa23cf1c93ede2c6583a32060284}{end\+Group\+Collaboration}} (\mbox{\hyperlink{class_dot_group_collaboration}{Dot\+Group\+Collaboration}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abebde9b381282a54746cf0143d8af512}{start\+Call\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a00db292e0e2c9a7dd0f70c0f0f38407f}{end\+Call\+Graph}} (\mbox{\hyperlink{class_dot_call_graph}{Dot\+Call\+Graph}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a3adadd7bdea505c48ec29a245757acd4}{start\+Dir\+Dep\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ab9f989c2839bf7b314023abf2a667a99}{end\+Dir\+Dep\+Graph}} (\mbox{\hyperlink{class_dot_dir_deps}{Dot\+Dir\+Deps}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa642fb63b70c7609039eb9b0ad015f8c}{write\+Graphical\+Hierarchy}} (\mbox{\hyperlink{class_dot_gfx_hierarchy_table}{Dot\+Gfx\+Hierarchy\+Table}} \&\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad601ba595537a9842927b8d876208450}{start\+Quick\+Indices}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac16f5ac648c949d8431859cebd71ce03}{end\+Quick\+Indices}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aabf42006b7f14083c4d31cc5f761620a}{write\+Split\+Bar}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad4fea50d4e2405700643381ea214fca8}{write\+Navigation\+Path}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2f56a6d8d8d097846ed90ad1af9bd21a}{write\+Logo}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a83835c0d52d94f5f4b9c02d75aaacb43}{write\+Quick\+Links}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} compact, \mbox{\hyperlink{index_8h_a6643b7765422a7eb577f0b2ed8fb2e09}{Highlighted\+Item}} hli, const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ae58e28b7788b52c349d1dbec47de2bcf}{write\+Summary\+Link}} (const char $\ast$\mbox{\hyperlink{class_output_generator_aed5ad11c3844cdf71ec6fee6c1c84286}{file}}, const char $\ast$anchor, const char $\ast$title, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} first)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8dc16a29f77b7ac430cfc96c744209bf}{start\+Contents}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a86f57506d929c0d58e2a7d94539528ad}{end\+Contents}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6dd72e1864255acf337330ede561f3b4}{start\+Page\+Doc}} (const char $\ast$page\+Title)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_abcdc8f3a537785ea0a2da646da1ce46b}{end\+Page\+Doc}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a144f38ae2e1ee232207a62f1a57514b0}{start\+Text\+Block}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a37dd19581a2c9f61a82446e2b066f4ca}{end\+Text\+Block}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a9889919e0ddeb5c8047cedd9e2e2f2e3}{last\+Index\+Page}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a80da16bbc96ed97bfb2a19adaa844246}{start\+Member\+Doc\+Prefix\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a23d3d93e8e6022e07d22e713925e55b8}{end\+Member\+Doc\+Prefix\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a44db5093a052aa888696f9e0e0819dda}{start\+Member\+Doc\+Name}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a0d198a35494e4407f919bcfe38c7b5a2}{end\+Member\+Doc\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa6e679829873cfa8fbdd6a337f12b5a2}{start\+Parameter\+Type}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}, const char $\ast$key)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2be2ebed3e76609535d64c0b81887a87}{end\+Parameter\+Type}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ad0f2cec44f639c4e8683e0ffb19fd7e0}{start\+Parameter\+Name}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ae0ffcd84340eacbe646826f7d4653f45}{end\+Parameter\+Name}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a3d7bbf541c06262c0288db95b721efac}{start\+Parameter\+List}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a67ac3b86e2ff4b93b8056accfdd3bcef}{end\+Parameter\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a2fbdff02460aca14709a540e5fb73106}{exception\+Entry}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a81d3e51346965c41df68850fb5765bbe}{start\+Constraint\+List}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a3678b65f3c0033e23f580375bed38e84}{start\+Constraint\+Param}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a5bc27774c11febedcfc3e5f48c64ffb0}{end\+Constraint\+Param}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a92761d1ec32862a0603f6d1f35ed27b1}{start\+Constraint\+Type}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af4151384ea55bf4c499097a8e77696a3}{end\+Constraint\+Type}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ab05687d39fbcdbbf1c493ab0c0058f4a}{start\+Constraint\+Docs}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a1aeb0a534135788735e3318b4472b5b4}{end\+Constraint\+Docs}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_af2411e3fdc930af726fee9da5270a83f}{end\+Constraint\+List}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a61b77165826379b0ea576addb5a5561a}{start\+Member\+Doc\+Simple}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_afd609de12848e1d8f68b3ff905577b12}{end\+Member\+Doc\+Simple}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a6bdd8f0c4de168f61ce8cbbee470f5bc}{start\+Inline\+Member\+Type}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a78a214d69be5f360d1ebc73bed504907}{end\+Inline\+Member\+Type}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a878b26134b4ca8355580c15d93d6e489}{start\+Inline\+Member\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aed41f5c2996d2c2fd194098e1eb3dc0e}{end\+Inline\+Member\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ae60618298ae71702c75f6433790aa3e4}{start\+Inline\+Member\+Doc}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a8c105c96de7a015a927814327995d757}{end\+Inline\+Member\+Doc}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aea95d234f19699e2aeb49f6bddc17fbf}{start\+Labels}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_a3020b0f82e1790202a2b128b2f0e9475}{write\+Label}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aeea004a622e23c0a4f86c2f911614727}{end\+Labels}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_generator_aa2a7cc66e08e677944684fcbda09a446}{set\+Current\+Doc}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$, const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\item 
+void \mbox{\hyperlink{class_docbook_generator_ac65a0c44513fe2cf52b01f125ea979ef}{add\+Word}} (const char $\ast$, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_docbook_generator_af4363bcfe3875a66c7f2512feb6be13e}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_docbook_generator_a59655593be449f9e01ce953a72233de0}\label{class_docbook_generator_a59655593be449f9e01ce953a72233de0}} 
+\index{DocbookGenerator@{DocbookGenerator}!DocbookGenerator@{DocbookGenerator}}
+\index{DocbookGenerator@{DocbookGenerator}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{DocbookGenerator()}{DocbookGenerator()}}
+{\footnotesize\ttfamily Docbook\+Generator\+::\+Docbook\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_docbook_generator_acd2d9e24cb0f45024d1efbfd59cff910}\label{class_docbook_generator_acd2d9e24cb0f45024d1efbfd59cff910}} 
+\index{DocbookGenerator@{DocbookGenerator}!````~DocbookGenerator@{$\sim$DocbookGenerator}}
+\index{````~DocbookGenerator@{$\sim$DocbookGenerator}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$DocbookGenerator()}{~DocbookGenerator()}}
+{\footnotesize\ttfamily Docbook\+Generator\+::$\sim$\+Docbook\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_docbook_generator_a310d8299b672cc6d24333129b069f028}\label{class_docbook_generator_a310d8299b672cc6d24333129b069f028}} 
+\index{DocbookGenerator@{DocbookGenerator}!addIndexItem@{addIndexItem}}
+\index{addIndexItem@{addIndexItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{addIndexItem()}{addIndexItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::add\+Index\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{prim,  }\item[{const char $\ast$}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_acc5ad4f6230310456380f4db9a407161}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac65a0c44513fe2cf52b01f125ea979ef}\label{class_docbook_generator_ac65a0c44513fe2cf52b01f125ea979ef}} 
+\index{DocbookGenerator@{DocbookGenerator}!addWord@{addWord}}
+\index{addWord@{addWord}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{addWord()}{addWord()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::add\+Word (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a2734a8371d6e710620ad238ed8de118e}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9e4ccf3b4bf296deabf156225e2d02a1}\label{class_docbook_generator_a9e4ccf3b4bf296deabf156225e2d02a1}} 
+\index{DocbookGenerator@{DocbookGenerator}!codify@{codify}}
+\index{codify@{codify}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{codify()}{codify()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::codify (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes an code fragment to the output. This function should keep spaces visible, should break lines at a newline and should convert tabs to the right number of spaces. 
+
+Implements \mbox{\hyperlink{class_code_output_interface_aa29a5eedda08596ace50ed5b59c8ae7f}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af193a49b8f46829405ce38e366b33a7c}\label{class_docbook_generator_af193a49b8f46829405ce38e366b33a7c}} 
+\index{DocbookGenerator@{DocbookGenerator}!disable@{disable}}
+\index{disable@{disable}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a140c11a13a0fbf1c958fac25746a12b7}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a776de0694309647db247b1774aeef8c3}\label{class_docbook_generator_a776de0694309647db247b1774aeef8c3}} 
+\index{DocbookGenerator@{DocbookGenerator}!disableIf@{disableIf}}
+\index{disableIf@{disableIf}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{disableIf()}{disableIf()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::disable\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac41cafbb9ae5b0d32870984e4fabe651}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1d6807ed217a22b413b67ded94a98cb9}\label{class_docbook_generator_a1d6807ed217a22b413b67ded94a98cb9}} 
+\index{DocbookGenerator@{DocbookGenerator}!disableIfNot@{disableIfNot}}
+\index{disableIfNot@{disableIfNot}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{disableIfNot()}{disableIfNot()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::disable\+If\+Not (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ae0d39ce32032866a4394aa5e8942be15}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a78cc7c7199538d0f38d2696443ca71bf}\label{class_docbook_generator_a78cc7c7199538d0f38d2696443ca71bf}} 
+\index{DocbookGenerator@{DocbookGenerator}!docify@{docify}}
+\index{docify@{docify}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{docify()}{docify()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::docify (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes an A\+S\+C\+II string to the output. Converts characters that have \mbox{\hyperlink{class_a}{A}} special meaning, like {\ttfamily \&} in html. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ad7d3f6631bd157739170690e669b3e75}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6b91f4feeade427f5d06a6929c1263b4}\label{class_docbook_generator_a6b91f4feeade427f5d06a6929c1263b4}} 
+\index{DocbookGenerator@{DocbookGenerator}!enable@{enable}}
+\index{enable@{enable}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a393e80a1e7b5ef29f6b9e1990ba615ce}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a11a99fd663b1ce791e05fc7a2885cfd9}\label{class_docbook_generator_a11a99fd663b1ce791e05fc7a2885cfd9}} 
+\index{DocbookGenerator@{DocbookGenerator}!enableIf@{enableIf}}
+\index{enableIf@{enableIf}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{enableIf()}{enableIf()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::enable\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6bd7a39cecc998dd5f743638e835903f}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_adb7845f3c6ea3b95149c0e6919d3e41f}\label{class_docbook_generator_adb7845f3c6ea3b95149c0e6919d3e41f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endAnonTypeScope@{endAnonTypeScope}}
+\index{endAnonTypeScope@{endAnonTypeScope}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endAnonTypeScope()}{endAnonTypeScope()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Anon\+Type\+Scope (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a3cf66346a0594b1987811bc258b598f6}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a798fe205e0beedacd6c035c865ae354c}\label{class_docbook_generator_a798fe205e0beedacd6c035c865ae354c}} 
+\index{DocbookGenerator@{DocbookGenerator}!endBold@{endBold}}
+\index{endBold@{endBold}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endBold()}{endBold()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Bold (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+End a section of text displayed in bold face. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a2a17911ba778f8efac83999fb5d190d9}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a00db292e0e2c9a7dd0f70c0f0f38407f}\label{class_docbook_generator_a00db292e0e2c9a7dd0f70c0f0f38407f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endCallGraph@{endCallGraph}}
+\index{endCallGraph@{endCallGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endCallGraph()}{endCallGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Call\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_call_graph}{Dot\+Call\+Graph}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0b81302d2cef18b5567bacc1d3213787}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8b7b9b4f6a1876e34300b7f8969fbed9}\label{class_docbook_generator_a8b7b9b4f6a1876e34300b7f8969fbed9}} 
+\index{DocbookGenerator@{DocbookGenerator}!endCenter@{endCenter}}
+\index{endCenter@{endCenter}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endCenter()}{endCenter()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Center (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aacbcdb867519fce8db354460566aa4ea}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2663bce20e70dffbeef8ef9827b56de8}\label{class_docbook_generator_a2663bce20e70dffbeef8ef9827b56de8}} 
+\index{DocbookGenerator@{DocbookGenerator}!endClassDiagram@{endClassDiagram}}
+\index{endClassDiagram@{endClassDiagram}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endClassDiagram()}{endClassDiagram()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Class\+Diagram (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_diagram}{Class\+Diagram}} \&}]{d,  }\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a72364e74e0d834f01c2b5f5db5665c77}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5f6585ebe5d203c47bb25cefdd30d8fd}\label{class_docbook_generator_a5f6585ebe5d203c47bb25cefdd30d8fd}} 
+\index{DocbookGenerator@{DocbookGenerator}!endCodeFragment@{endCodeFragment}}
+\index{endCodeFragment@{endCodeFragment}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endCodeFragment()}{endCodeFragment()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Code\+Fragment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Ends a source code fragment 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a08f032482a8f23ac1aab66552db43a81}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8f7445243e87fede91ba577d5549b907}\label{class_docbook_generator_a8f7445243e87fede91ba577d5549b907}} 
+\index{DocbookGenerator@{DocbookGenerator}!endCodeLine@{endCodeLine}}
+\index{endCodeLine@{endCodeLine}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endCodeLine()}{endCodeLine()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Code\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a line of code started with \mbox{\hyperlink{class_docbook_generator_a08551a6c7ec1d06ec874880a1d10df5b}{start\+Code\+Line()}} 
+
+Implements \mbox{\hyperlink{class_code_output_interface_afac5763eafc78f93b82691fb9a6dcff7}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1aeb0a534135788735e3318b4472b5b4}\label{class_docbook_generator_a1aeb0a534135788735e3318b4472b5b4}} 
+\index{DocbookGenerator@{DocbookGenerator}!endConstraintDocs@{endConstraintDocs}}
+\index{endConstraintDocs@{endConstraintDocs}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endConstraintDocs()}{endConstraintDocs()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Constraint\+Docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a079c2400a911349969e61531d72c554e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af2411e3fdc930af726fee9da5270a83f}\label{class_docbook_generator_af2411e3fdc930af726fee9da5270a83f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endConstraintList@{endConstraintList}}
+\index{endConstraintList@{endConstraintList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endConstraintList()}{endConstraintList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Constraint\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0998d070dc2c5d9ba203a8c58b7b1b73}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5bc27774c11febedcfc3e5f48c64ffb0}\label{class_docbook_generator_a5bc27774c11febedcfc3e5f48c64ffb0}} 
+\index{DocbookGenerator@{DocbookGenerator}!endConstraintParam@{endConstraintParam}}
+\index{endConstraintParam@{endConstraintParam}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endConstraintParam()}{endConstraintParam()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Constraint\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_afacff7ea600037f0e6fc29207f06332e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af4151384ea55bf4c499097a8e77696a3}\label{class_docbook_generator_af4151384ea55bf4c499097a8e77696a3}} 
+\index{DocbookGenerator@{DocbookGenerator}!endConstraintType@{endConstraintType}}
+\index{endConstraintType@{endConstraintType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endConstraintType()}{endConstraintType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Constraint\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a7abed59bb311949ab7cae21a009485cf}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a86f57506d929c0d58e2a7d94539528ad}\label{class_docbook_generator_a86f57506d929c0d58e2a7d94539528ad}} 
+\index{DocbookGenerator@{DocbookGenerator}!endContents@{endContents}}
+\index{endContents@{endContents}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endContents()}{endContents()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a62d0b8915ba8cbae0e0703794bcae68a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a66376d8ca881d18cb9916c7d903df18e}\label{class_docbook_generator_a66376d8ca881d18cb9916c7d903df18e}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescForItem@{endDescForItem}}
+\index{endDescForItem@{endDescForItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescForItem()}{endDescForItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+For\+Item (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a1b04c0dc473f245979860c158ea450e7}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ae46437543719a73a35d0202749633c15}\label{class_docbook_generator_ae46437543719a73a35d0202749633c15}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescItem@{endDescItem}}
+\index{endDescItem@{endDescItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescItem()}{endDescItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+Item (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends an item of a description list and starts the description itself\+: e.\+g. {\ttfamily $<$/dt$>$} in H\+T\+ML. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a09e3aa9d3faac55b2cc9290eaa69f55b}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_accbb80f6730221e3396f38cbb07ed7b5}\label{class_docbook_generator_accbb80f6730221e3396f38cbb07ed7b5}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescription@{endDescription}}
+\index{endDescription@{endDescription}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescription()}{endDescription()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Description (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a description list\+: e.\+g. {\ttfamily $<$/dl$>$} in H\+T\+ML 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ac25c565e9fd8aee6c2b0d9b71fcff380}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abd3af9023fb73fc3332ca625afcc78a6}\label{class_docbook_generator_abd3af9023fb73fc3332ca625afcc78a6}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescTable@{endDescTable}}
+\index{endDescTable@{endDescTable}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescTable()}{endDescTable()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+Table (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_acad6dba3f360141250109216856eff38}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad5da8dc28569ce5ac4a594175a11eecd}\label{class_docbook_generator_ad5da8dc28569ce5ac4a594175a11eecd}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescTableData@{endDescTableData}}
+\index{endDescTableData@{endDescTableData}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescTableData()}{endDescTableData()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+Table\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a7448492f455ed3dbff7dbedc00bb7be2}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a191efddbd8402fa939a2302027b1331f}\label{class_docbook_generator_a191efddbd8402fa939a2302027b1331f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescTableRow@{endDescTableRow}}
+\index{endDescTableRow@{endDescTableRow}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescTableRow()}{endDescTableRow()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+Table\+Row (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ab90efab0f38bbced65583c5e1840c545}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abe08e164b411f9fc279fa7db8d29306f}\label{class_docbook_generator_abe08e164b411f9fc279fa7db8d29306f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDescTableTitle@{endDescTableTitle}}
+\index{endDescTableTitle@{endDescTableTitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDescTableTitle()}{endDescTableTitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Desc\+Table\+Title (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a1106996c286d637c873c819adc5072ba}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ab9f989c2839bf7b314023abf2a667a99}\label{class_docbook_generator_ab9f989c2839bf7b314023abf2a667a99}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDirDepGraph@{endDirDepGraph}}
+\index{endDirDepGraph@{endDirDepGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDirDepGraph()}{endDirDepGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Dir\+Dep\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_dir_deps}{Dot\+Dir\+Deps}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_affa3b7942cec8751db1dc6328891f060}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a56bb12099cce1d654c116094f39473dd}\label{class_docbook_generator_a56bb12099cce1d654c116094f39473dd}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDotGraph@{endDotGraph}}
+\index{endDotGraph@{endDotGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDotGraph()}{endDotGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Dot\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_class_graph}{Dot\+Class\+Graph}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_afcffdc42aba2bec8663e4e746b6b7f99}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a961ba92be55f7046321e2b424496ed61}\label{class_docbook_generator_a961ba92be55f7046321e2b424496ed61}} 
+\index{DocbookGenerator@{DocbookGenerator}!endDoxyAnchor@{endDoxyAnchor}}
+\index{endDoxyAnchor@{endDoxyAnchor}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endDoxyAnchor()}{endDoxyAnchor()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Doxy\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{anchor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a59ba4ed87cf4c2bb55f231679d52268a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afa388cf9fb6c58601670f40fec5a2eb7}\label{class_docbook_generator_afa388cf9fb6c58601670f40fec5a2eb7}} 
+\index{DocbookGenerator@{DocbookGenerator}!endEmphasis@{endEmphasis}}
+\index{endEmphasis@{endEmphasis}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endEmphasis()}{endEmphasis()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Emphasis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a section of text displayed in italic. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aed2cf04d82648509f97403bd4ce62590}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a438f8b5845f838d939b3d72d47b91fb6}\label{class_docbook_generator_a438f8b5845f838d939b3d72d47b91fb6}} 
+\index{DocbookGenerator@{DocbookGenerator}!endExamples@{endExamples}}
+\index{endExamples@{endExamples}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endExamples()}{endExamples()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Examples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a1b3eca2ad781699cb342f4e7f389a6d2}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a804adfd616ba87edb4a2cbb988601134}\label{class_docbook_generator_a804adfd616ba87edb4a2cbb988601134}} 
+\index{DocbookGenerator@{DocbookGenerator}!endFile@{endFile}}
+\index{endFile@{endFile}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endFile()}{endFile()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_acdf48180d14b1d720286049195ad1c6a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a857d641f5f3894a4053037e842d45a10}\label{class_docbook_generator_a857d641f5f3894a4053037e842d45a10}} 
+\index{DocbookGenerator@{DocbookGenerator}!endFontClass@{endFontClass}}
+\index{endFontClass@{endFontClass}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endFontClass()}{endFontClass()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Font\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a block started with \mbox{\hyperlink{class_docbook_generator_a899bafb067d2ad8cf7d834e23af83d91}{start\+Font\+Class()}} 
+
+Implements \mbox{\hyperlink{class_code_output_interface_a2b8ac05a391dae36793aa3aa8714a0f6}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a27dcfa23cf1c93ede2c6583a32060284}\label{class_docbook_generator_a27dcfa23cf1c93ede2c6583a32060284}} 
+\index{DocbookGenerator@{DocbookGenerator}!endGroupCollaboration@{endGroupCollaboration}}
+\index{endGroupCollaboration@{endGroupCollaboration}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endGroupCollaboration()}{endGroupCollaboration()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Group\+Collaboration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_group_collaboration}{Dot\+Group\+Collaboration}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6ca92581c08648c6efe9f0a0c5b42aa9}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a0e7adc57e7d16e6adc87dce0eb83516b}\label{class_docbook_generator_a0e7adc57e7d16e6adc87dce0eb83516b}} 
+\index{DocbookGenerator@{DocbookGenerator}!endGroupHeader@{endGroupHeader}}
+\index{endGroupHeader@{endGroupHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endGroupHeader()}{endGroupHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Group\+Header (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a16003f13c40bcbb34bbe04eb13633637}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5fb9718a207e7313bbeac60cac9e32ee}\label{class_docbook_generator_a5fb9718a207e7313bbeac60cac9e32ee}} 
+\index{DocbookGenerator@{DocbookGenerator}!endHeaderSection@{endHeaderSection}}
+\index{endHeaderSection@{endHeaderSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endHeaderSection()}{endHeaderSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Header\+Section (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0be4290a396c38e39361a1a23f331730}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a14123926fa57e6c0e8dbbbac55f368df}\label{class_docbook_generator_a14123926fa57e6c0e8dbbbac55f368df}} 
+\index{DocbookGenerator@{DocbookGenerator}!endHtmlLink@{endHtmlLink}}
+\index{endHtmlLink@{endHtmlLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endHtmlLink()}{endHtmlLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Html\+Link (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a link started by \mbox{\hyperlink{class_docbook_generator_adf4463cfec2c9d8ca083367f2e4afeff}{start\+Html\+Link()}}. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_afb808c1c487135d4fb2156d0675b387e}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7cf57a31a325a6ac47d02b1b9865836d}\label{class_docbook_generator_a7cf57a31a325a6ac47d02b1b9865836d}} 
+\index{DocbookGenerator@{DocbookGenerator}!endInclDepGraph@{endInclDepGraph}}
+\index{endInclDepGraph@{endInclDepGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endInclDepGraph()}{endInclDepGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Incl\+Dep\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_incl_dep_graph}{Dot\+Incl\+Dep\+Graph}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a4d14b52f632e60d5cd25a2c44634cb82}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa0dcc186dba954c875d34d2ec19221a9}\label{class_docbook_generator_aa0dcc186dba954c875d34d2ec19221a9}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndent@{endIndent}}
+\index{endIndent@{endIndent}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndent()}{endIndent()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6d0ae2ff84f31ce7c3d964668dc31154}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa8c673bc2d2f1f1a1ec6f25050d5b6e9}\label{class_docbook_generator_aa8c673bc2d2f1f1a1ec6f25050d5b6e9}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexItem@{endIndexItem}}
+\index{endIndexItem@{endIndexItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexItem()}{endIndexItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ad573d99d60efb03de6afcec74237b89c}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af882cc6b2978a2eea0a83c8e59a5f0ee}\label{class_docbook_generator_af882cc6b2978a2eea0a83c8e59a5f0ee}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexKey@{endIndexKey}}
+\index{endIndexKey@{endIndexKey}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexKey()}{endIndexKey()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a5c036e61acf5fe91e2372b16263fef5c}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af69c69875e18eba42abc65d88da3a8a5}\label{class_docbook_generator_af69c69875e18eba42abc65d88da3a8a5}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexList@{endIndexList}}
+\index{endIndexList@{endIndexList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexList()}{endIndexList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af6f79555b9c01ffcf0d119d483271aa5}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a205e8526c572a3bc41d634bf57dd1e93}\label{class_docbook_generator_a205e8526c572a3bc41d634bf57dd1e93}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexListItem@{endIndexListItem}}
+\index{endIndexListItem@{endIndexListItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexListItem()}{endIndexListItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac4911ae06d09bc207a4e0f9da24516bc}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5cd5a531e4b38a90801a4d5577df9ef7}\label{class_docbook_generator_a5cd5a531e4b38a90801a4d5577df9ef7}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexSection@{endIndexSection}}
+\index{endIndexSection@{endIndexSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexSection()}{endIndexSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+Section (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{index_8h_aec03800047ada46460eb75113cfee322}{Index\+Sections}}}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a04f3624f96d78d2cf07813e7ef759f3f}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_acb7e9a3b585b05c467dbedc5c7ce2949}\label{class_docbook_generator_acb7e9a3b585b05c467dbedc5c7ce2949}} 
+\index{DocbookGenerator@{DocbookGenerator}!endIndexValue@{endIndexValue}}
+\index{endIndexValue@{endIndexValue}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endIndexValue()}{endIndexValue()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Index\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a197393fc4473bb893a83f36369df1552}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9e2548f9784b8fccc4b4236f7207279e}\label{class_docbook_generator_a9e2548f9784b8fccc4b4236f7207279e}} 
+\index{DocbookGenerator@{DocbookGenerator}!endInlineHeader@{endInlineHeader}}
+\index{endInlineHeader@{endInlineHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endInlineHeader()}{endInlineHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Inline\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a02b0b97eaa17e069eda7cc7f3e794a91}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8c105c96de7a015a927814327995d757}\label{class_docbook_generator_a8c105c96de7a015a927814327995d757}} 
+\index{DocbookGenerator@{DocbookGenerator}!endInlineMemberDoc@{endInlineMemberDoc}}
+\index{endInlineMemberDoc@{endInlineMemberDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endInlineMemberDoc()}{endInlineMemberDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Inline\+Member\+Doc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a59987a7b4a41789d80dd788b0f65c434}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aed41f5c2996d2c2fd194098e1eb3dc0e}\label{class_docbook_generator_aed41f5c2996d2c2fd194098e1eb3dc0e}} 
+\index{DocbookGenerator@{DocbookGenerator}!endInlineMemberName@{endInlineMemberName}}
+\index{endInlineMemberName@{endInlineMemberName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endInlineMemberName()}{endInlineMemberName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Inline\+Member\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a64fd29eded2398a03ab98de61423f9be}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a78a214d69be5f360d1ebc73bed504907}\label{class_docbook_generator_a78a214d69be5f360d1ebc73bed504907}} 
+\index{DocbookGenerator@{DocbookGenerator}!endInlineMemberType@{endInlineMemberType}}
+\index{endInlineMemberType@{endInlineMemberType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endInlineMemberType()}{endInlineMemberType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Inline\+Member\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_abae7a78f520dbd4336d093b8580bc5dd}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5e463c37de0b0473855605fe5cf44071}\label{class_docbook_generator_a5e463c37de0b0473855605fe5cf44071}} 
+\index{DocbookGenerator@{DocbookGenerator}!endItemList@{endItemList}}
+\index{endItemList@{endItemList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endItemList()}{endItemList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Item\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ends a bullet list\+: e.\+g. {\ttfamily $<$/ul$>$} in html 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a3493b65672bf134033bd3bb296acdff4}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6a0d36a22a9ca268b716cd37a4ab13b0}\label{class_docbook_generator_a6a0d36a22a9ca268b716cd37a4ab13b0}} 
+\index{DocbookGenerator@{DocbookGenerator}!endItemListItem@{endItemListItem}}
+\index{endItemListItem@{endItemListItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endItemListItem()}{endItemListItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Item\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a list item for a bullet or enumerated list\+: e.\+g. {\ttfamily $<$/li$>$} in html 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a90d290d7a06a9e7ecd968c8da90ed665}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aeea004a622e23c0a4f86c2f911614727}\label{class_docbook_generator_aeea004a622e23c0a4f86c2f911614727}} 
+\index{DocbookGenerator@{DocbookGenerator}!endLabels@{endLabels}}
+\index{endLabels@{endLabels}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endLabels()}{endLabels()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a13875bb6d9d678dac1ae21b3ad97127a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afa825d6add13e2421f0e80114681abf8}\label{class_docbook_generator_afa825d6add13e2421f0e80114681abf8}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDeclaration@{endMemberDeclaration}}
+\index{endMemberDeclaration@{endMemberDeclaration}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDeclaration()}{endMemberDeclaration()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Declaration (\begin{DoxyParamCaption}\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{inherit\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af22783eb794097cdfb783cfb29f60f3e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9d5686c7164e32d3214351c5721f7545}\label{class_docbook_generator_a9d5686c7164e32d3214351c5721f7545}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDescription@{endMemberDescription}}
+\index{endMemberDescription@{endMemberDescription}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDescription()}{endMemberDescription()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af7f56035354567686d15ab77e1f6f31d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7bc7a7d5287f42c03dec4aa894594d34}\label{class_docbook_generator_a7bc7a7d5287f42c03dec4aa894594d34}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDoc@{endMemberDoc}}
+\index{endMemberDoc@{endMemberDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDoc()}{endMemberDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Doc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_adcab4ec924ae47924fdc3492a06d432b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a3b0455657c4009e49af4e003019d5edc}\label{class_docbook_generator_a3b0455657c4009e49af4e003019d5edc}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDocList@{endMemberDocList}}
+\index{endMemberDocList@{endMemberDocList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDocList()}{endMemberDocList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Doc\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_adac2120718344406921dc07cd60c8ead}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a0d198a35494e4407f919bcfe38c7b5a2}\label{class_docbook_generator_a0d198a35494e4407f919bcfe38c7b5a2}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDocName@{endMemberDocName}}
+\index{endMemberDocName@{endMemberDocName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDocName()}{endMemberDocName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Doc\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a02431abad8b2d94216a0530cf08b3dca}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a23d3d93e8e6022e07d22e713925e55b8}\label{class_docbook_generator_a23d3d93e8e6022e07d22e713925e55b8}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDocPrefixItem@{endMemberDocPrefixItem}}
+\index{endMemberDocPrefixItem@{endMemberDocPrefixItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDocPrefixItem()}{endMemberDocPrefixItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Doc\+Prefix\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8fa59aa64d420ced1d1784f7b2ddaa79}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afd609de12848e1d8f68b3ff905577b12}\label{class_docbook_generator_afd609de12848e1d8f68b3ff905577b12}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberDocSimple@{endMemberDocSimple}}
+\index{endMemberDocSimple@{endMemberDocSimple}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberDocSimple()}{endMemberDocSimple()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Doc\+Simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a548f5fa6b3de8f88905d963aebd93676}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ab2af18403e2a23fe0deae3b3a7e54a1b}\label{class_docbook_generator_ab2af18403e2a23fe0deae3b3a7e54a1b}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberGroup@{endMemberGroup}}
+\index{endMemberGroup@{endMemberGroup}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberGroup()}{endMemberGroup()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6b020947c7d4cd3a2d2d8c0993fbb4e3}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a99393eb2ff7472daebc1505815970586}\label{class_docbook_generator_a99393eb2ff7472daebc1505815970586}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberGroupDocs@{endMemberGroupDocs}}
+\index{endMemberGroupDocs@{endMemberGroupDocs}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberGroupDocs()}{endMemberGroupDocs()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Group\+Docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a7debb7a4d6584e8855e7dc9ce0594d99}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a100a878eeb984b71baf36c69d6867a4c}\label{class_docbook_generator_a100a878eeb984b71baf36c69d6867a4c}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberGroupHeader@{endMemberGroupHeader}}
+\index{endMemberGroupHeader@{endMemberGroupHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberGroupHeader()}{endMemberGroupHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Group\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a585ab0b649dad9edf7b78e8f1ec20885}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a29959b53028bcdf2e21067a096e3fe77}\label{class_docbook_generator_a29959b53028bcdf2e21067a096e3fe77}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberHeader@{endMemberHeader}}
+\index{endMemberHeader@{endMemberHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberHeader()}{endMemberHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a59dd3993aedf7baf7465b67d4327335e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a809a668dd4691533bdc9b286bdfc62a1}\label{class_docbook_generator_a809a668dd4691533bdc9b286bdfc62a1}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberItem@{endMemberItem}}
+\index{endMemberItem@{endMemberItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberItem()}{endMemberItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aac81201cfd0dedc7635bc81913906335}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa16fe3c2eaf5e95ecffc0c65f682fd71}\label{class_docbook_generator_aa16fe3c2eaf5e95ecffc0c65f682fd71}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberList@{endMemberList}}
+\index{endMemberList@{endMemberList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberList()}{endMemberList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af3e875ff86510c53f355c024cc3a574d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a742b6c6bf05b83f068339d9cf14dc93b}\label{class_docbook_generator_a742b6c6bf05b83f068339d9cf14dc93b}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberSections@{endMemberSections}}
+\index{endMemberSections@{endMemberSections}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberSections()}{endMemberSections()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Sections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a68c7d0afc95708807a5e623a7e9bb9db}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6b1fd9a897f23f264ef17256c44b0bc2}\label{class_docbook_generator_a6b1fd9a897f23f264ef17256c44b0bc2}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberSubtitle@{endMemberSubtitle}}
+\index{endMemberSubtitle@{endMemberSubtitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberSubtitle()}{endMemberSubtitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Subtitle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0c56a25591efb4a9b38da70757dfe46c}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac4a7a56a80f29aec7acc78597ffda9c4}\label{class_docbook_generator_ac4a7a56a80f29aec7acc78597ffda9c4}} 
+\index{DocbookGenerator@{DocbookGenerator}!endMemberTemplateParams@{endMemberTemplateParams}}
+\index{endMemberTemplateParams@{endMemberTemplateParams}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endMemberTemplateParams()}{endMemberTemplateParams()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Member\+Template\+Params (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0175d6eb2630de31743136c083d0cb84}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abcdc8f3a537785ea0a2da646da1ce46b}\label{class_docbook_generator_abcdc8f3a537785ea0a2da646da1ce46b}} 
+\index{DocbookGenerator@{DocbookGenerator}!endPageDoc@{endPageDoc}}
+\index{endPageDoc@{endPageDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endPageDoc()}{endPageDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Page\+Doc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_output_generator_a3a1428cad9acebb7720ff09ce1488957}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afc5f293acdf0264e6703733b7ef92313}\label{class_docbook_generator_afc5f293acdf0264e6703733b7ef92313}} 
+\index{DocbookGenerator@{DocbookGenerator}!endPageRef@{endPageRef}}
+\index{endPageRef@{endPageRef}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endPageRef()}{endPageRef()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Page\+Ref (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a292c5c481f4ba85ab7957bb4b8979d97}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6f793e8c29984f0ed8d654e9b89110e3}\label{class_docbook_generator_a6f793e8c29984f0ed8d654e9b89110e3}} 
+\index{DocbookGenerator@{DocbookGenerator}!endParagraph@{endParagraph}}
+\index{endParagraph@{endParagraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endParagraph()}{endParagraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Paragraph (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Ends a paragraph 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ab76280c2eb451ad160991707206b6c95}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a67ac3b86e2ff4b93b8056accfdd3bcef}\label{class_docbook_generator_a67ac3b86e2ff4b93b8056accfdd3bcef}} 
+\index{DocbookGenerator@{DocbookGenerator}!endParameterList@{endParameterList}}
+\index{endParameterList@{endParameterList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endParameterList()}{endParameterList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Parameter\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_acc2f021cf85b5cb83716c51e3dc7d44f}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ae0ffcd84340eacbe646826f7d4653f45}\label{class_docbook_generator_ae0ffcd84340eacbe646826f7d4653f45}} 
+\index{DocbookGenerator@{DocbookGenerator}!endParameterName@{endParameterName}}
+\index{endParameterName@{endParameterName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endParameterName()}{endParameterName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Parameter\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{last,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{close\+Bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a69b117731ab42b3985713760b270a1a5}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2be2ebed3e76609535d64c0b81887a87}\label{class_docbook_generator_a2be2ebed3e76609535d64c0b81887a87}} 
+\index{DocbookGenerator@{DocbookGenerator}!endParameterType@{endParameterType}}
+\index{endParameterType@{endParameterType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endParameterType()}{endParameterType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Parameter\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8c701cf1050103eee69d57b409640dea}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa50cbefc868b784f670abeefe63a3134}\label{class_docbook_generator_aa50cbefc868b784f670abeefe63a3134}} 
+\index{DocbookGenerator@{DocbookGenerator}!endParamList@{endParamList}}
+\index{endParamList@{endParamList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endParamList()}{endParamList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Param\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a2e18469ef7e3f144e05d7713efaa9aac}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ae1453894e89e42261578f657d47f9d52}\label{class_docbook_generator_ae1453894e89e42261578f657d47f9d52}} 
+\index{DocbookGenerator@{DocbookGenerator}!endProjectNumber@{endProjectNumber}}
+\index{endProjectNumber@{endProjectNumber}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endProjectNumber()}{endProjectNumber()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Project\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_abb659e1d0c5d99f3a85751a321bca262}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac16f5ac648c949d8431859cebd71ce03}\label{class_docbook_generator_ac16f5ac648c949d8431859cebd71ce03}} 
+\index{DocbookGenerator@{DocbookGenerator}!endQuickIndices@{endQuickIndices}}
+\index{endQuickIndices@{endQuickIndices}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endQuickIndices()}{endQuickIndices()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Quick\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac772c3fa9b9fb938598b67b8251a1787}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aebe55441607d88540afdf1131452acb6}\label{class_docbook_generator_aebe55441607d88540afdf1131452acb6}} 
+\index{DocbookGenerator@{DocbookGenerator}!endSection@{endSection}}
+\index{endSection@{endSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endSection()}{endSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Section (\begin{DoxyParamCaption}\item[{const char $\ast$}]{lab,  }\item[{\mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a754ab1bd2b1a2cf82ac1207822e76f59}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af78c3c3a1e8ab4fd275cc1364f29f96a}\label{class_docbook_generator_af78c3c3a1e8ab4fd275cc1364f29f96a}} 
+\index{DocbookGenerator@{DocbookGenerator}!endSmall@{endSmall}}
+\index{endSmall@{endSmall}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endSmall()}{endSmall()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Small (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aece1c56c3a382b5e7228f034e600b43f}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1ef185fbf941e38cb5c398fa1b91cdc1}\label{class_docbook_generator_a1ef185fbf941e38cb5c398fa1b91cdc1}} 
+\index{DocbookGenerator@{DocbookGenerator}!endSubsection@{endSubsection}}
+\index{endSubsection@{endSubsection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endSubsection()}{endSubsection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Subsection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a3e403e27b8284843a8f3cf7e30e32d2c}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a0c29baba6775a956dc285964e81af254}\label{class_docbook_generator_a0c29baba6775a956dc285964e81af254}} 
+\index{DocbookGenerator@{DocbookGenerator}!endSubsubsection@{endSubsubsection}}
+\index{endSubsubsection@{endSubsubsection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endSubsubsection()}{endSubsubsection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Subsubsection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a760a6b33b261dafc6625b3cf49ba2124}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a37dd19581a2c9f61a82446e2b066f4ca}\label{class_docbook_generator_a37dd19581a2c9f61a82446e2b066f4ca}} 
+\index{DocbookGenerator@{DocbookGenerator}!endTextBlock@{endTextBlock}}
+\index{endTextBlock@{endTextBlock}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endTextBlock()}{endTextBlock()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Text\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{dense }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a53f79d9816008132480d3d454e14251b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abae26f5d00240c52d70a0d9c822563f3}\label{class_docbook_generator_abae26f5d00240c52d70a0d9c822563f3}} 
+\index{DocbookGenerator@{DocbookGenerator}!endTextLink@{endTextLink}}
+\index{endTextLink@{endTextLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endTextLink()}{endTextLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Text\+Link (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a5b584fb5f7e3d9747c78a4e13715340a}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a86fa7cf7c97b19a93216b5819cb9f178}\label{class_docbook_generator_a86fa7cf7c97b19a93216b5819cb9f178}} 
+\index{DocbookGenerator@{DocbookGenerator}!endTitle@{endTitle}}
+\index{endTitle@{endTitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endTitle()}{endTitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Title (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a5dee56a3a18bafb23c30f42e6575210f}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8b3fe6b030f4d1a6aac307c54c2e526f}\label{class_docbook_generator_a8b3fe6b030f4d1a6aac307c54c2e526f}} 
+\index{DocbookGenerator@{DocbookGenerator}!endTitleHead@{endTitleHead}}
+\index{endTitleHead@{endTitleHead}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endTitleHead()}{endTitleHead()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Title\+Head (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a77b6fef939339086beec891ac1769781}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2b987c6b42a8a5b5cea28f950fefa6cc}\label{class_docbook_generator_a2b987c6b42a8a5b5cea28f950fefa6cc}} 
+\index{DocbookGenerator@{DocbookGenerator}!endTypewriter@{endTypewriter}}
+\index{endTypewriter@{endTypewriter}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{endTypewriter()}{endTypewriter()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::end\+Typewriter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+End a section of text displayed in typewriter style. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a9e987baf8aed76f0e5e6676b3238d2c8}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2fbdff02460aca14709a540e5fb73106}\label{class_docbook_generator_a2fbdff02460aca14709a540e5fb73106}} 
+\index{DocbookGenerator@{DocbookGenerator}!exceptionEntry@{exceptionEntry}}
+\index{exceptionEntry@{exceptionEntry}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{exceptionEntry()}{exceptionEntry()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::exception\+Entry (\begin{DoxyParamCaption}\item[{const char $\ast$}]{prefix,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{close\+Bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a4c4d0ff79434d93b42b8e0c7c42fa5d1}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a02a480ef4514043f0b1ba80f6f9a6b40}\label{class_docbook_generator_a02a480ef4514043f0b1ba80f6f9a6b40}} 
+\index{DocbookGenerator@{DocbookGenerator}!get@{get}}
+\index{get@{get}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_output_generator}{Output\+Generator}}$\ast$ Docbook\+Generator\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ad366efdcaa9df2638110e5ce50efc71d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af4363bcfe3875a66c7f2512feb6be13e}\label{class_docbook_generator_af4363bcfe3875a66c7f2512feb6be13e}} 
+\index{DocbookGenerator@{DocbookGenerator}!init@{init}}
+\index{init@{init}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_docbook_generator_a03fa682034c00f869d6bf24d5c947755}\label{class_docbook_generator_a03fa682034c00f869d6bf24d5c947755}} 
+\index{DocbookGenerator@{DocbookGenerator}!insertMemberAlign@{insertMemberAlign}}
+\index{insertMemberAlign@{insertMemberAlign}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{insertMemberAlign()}{insertMemberAlign()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::insert\+Member\+Align (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0df59cf6b0b238b48b139c7bfe5fb901}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5b6548041e988bafab0cfa936153157b}\label{class_docbook_generator_a5b6548041e988bafab0cfa936153157b}} 
+\index{DocbookGenerator@{DocbookGenerator}!insertMemberAlignLeft@{insertMemberAlignLeft}}
+\index{insertMemberAlignLeft@{insertMemberAlignLeft}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{insertMemberAlignLeft()}{insertMemberAlignLeft()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::insert\+Member\+Align\+Left (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aa5b3dd4d04afcedc0109f7a21f05216c}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a98c3ae22b001065ba251f87d4c706694}\label{class_docbook_generator_a98c3ae22b001065ba251f87d4c706694}} 
+\index{DocbookGenerator@{DocbookGenerator}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Docbook\+Generator\+::is\+Enabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_output_generator_ab79b5d3c19d95c8a5929c07f5b2918cf}{Output\+Type}}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a802995a552743934a30dd82aae42694b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9889919e0ddeb5c8047cedd9e2e2f2e3}\label{class_docbook_generator_a9889919e0ddeb5c8047cedd9e2e2f2e3}} 
+\index{DocbookGenerator@{DocbookGenerator}!lastIndexPage@{lastIndexPage}}
+\index{lastIndexPage@{lastIndexPage}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{lastIndexPage()}{lastIndexPage()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::last\+Index\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a12d53790300c52b68bc0715ab05507d2}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1d8531f44a63138f5c7ccabcf5b5da0b}\label{class_docbook_generator_a1d8531f44a63138f5c7ccabcf5b5da0b}} 
+\index{DocbookGenerator@{DocbookGenerator}!lineBreak@{lineBreak}}
+\index{lineBreak@{lineBreak}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{lineBreak()}{lineBreak()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::line\+Break (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ada61ce97bb848a4e73f60c351e217391}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa2a7cc66e08e677944684fcbda09a446}\label{class_docbook_generator_aa2a7cc66e08e677944684fcbda09a446}} 
+\index{DocbookGenerator@{DocbookGenerator}!setCurrentDoc@{setCurrentDoc}}
+\index{setCurrentDoc@{setCurrentDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{setCurrentDoc()}{setCurrentDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::set\+Current\+Doc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_ac6c4cc087f351242ee92e5f042cf09df}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7979b98c06d0d3d7450d37ca71023246}\label{class_docbook_generator_a7979b98c06d0d3d7450d37ca71023246}} 
+\index{DocbookGenerator@{DocbookGenerator}!startAnonTypeScope@{startAnonTypeScope}}
+\index{startAnonTypeScope@{startAnonTypeScope}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startAnonTypeScope()}{startAnonTypeScope()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Anon\+Type\+Scope (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a13587c69b6272779d38b6bc2a45fbfd5}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad1704a02ae2ba6ab019e0c6e570ce218}\label{class_docbook_generator_ad1704a02ae2ba6ab019e0c6e570ce218}} 
+\index{DocbookGenerator@{DocbookGenerator}!startBold@{startBold}}
+\index{startBold@{startBold}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startBold()}{startBold()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Bold (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Changes the text font to bold face. The bold section ends with \mbox{\hyperlink{class_docbook_generator_a798fe205e0beedacd6c035c865ae354c}{end\+Bold()}} 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aa0bfe5ef08077a7191ba4666f47c441b}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abebde9b381282a54746cf0143d8af512}\label{class_docbook_generator_abebde9b381282a54746cf0143d8af512}} 
+\index{DocbookGenerator@{DocbookGenerator}!startCallGraph@{startCallGraph}}
+\index{startCallGraph@{startCallGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startCallGraph()}{startCallGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Call\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ace8e9a8d3c193fe5b50f19d07882a51a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a98fef2b64d63f378b2616d09a679f66b}\label{class_docbook_generator_a98fef2b64d63f378b2616d09a679f66b}} 
+\index{DocbookGenerator@{DocbookGenerator}!startCenter@{startCenter}}
+\index{startCenter@{startCenter}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startCenter()}{startCenter()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Center (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_af7740896d897da2924e8d8818858edd1}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad456aa2a144668eb1e8e0f56cbd092ea}\label{class_docbook_generator_ad456aa2a144668eb1e8e0f56cbd092ea}} 
+\index{DocbookGenerator@{DocbookGenerator}!startClassDiagram@{startClassDiagram}}
+\index{startClassDiagram@{startClassDiagram}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startClassDiagram()}{startClassDiagram()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Class\+Diagram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af4dbb13368da9a7fee2c7ed3bb4bd8ea}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a698cf0a67c7e73af0c76cb0cf54e1530}\label{class_docbook_generator_a698cf0a67c7e73af0c76cb0cf54e1530}} 
+\index{DocbookGenerator@{DocbookGenerator}!startCodeFragment@{startCodeFragment}}
+\index{startCodeFragment@{startCodeFragment}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startCodeFragment()}{startCodeFragment()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Code\+Fragment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts a source code fragment. The fragment will be fed to the code parser (see code.\+h) for syntax highlighting and cross-\/referencing. The fragment ends by a call to \mbox{\hyperlink{class_docbook_generator_a5f6585ebe5d203c47bb25cefdd30d8fd}{end\+Code\+Fragment()}} 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ab19fc767b08c25b0ca7c976d24799bda}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a08551a6c7ec1d06ec874880a1d10df5b}\label{class_docbook_generator_a08551a6c7ec1d06ec874880a1d10df5b}} 
+\index{DocbookGenerator@{DocbookGenerator}!startCodeLine@{startCodeLine}}
+\index{startCodeLine@{startCodeLine}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startCodeLine()}{startCodeLine()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Code\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{has\+Line\+Numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ab05687d39fbcdbbf1c493ab0c0058f4a}\label{class_docbook_generator_ab05687d39fbcdbbf1c493ab0c0058f4a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startConstraintDocs@{startConstraintDocs}}
+\index{startConstraintDocs@{startConstraintDocs}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startConstraintDocs()}{startConstraintDocs()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Constraint\+Docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a81ade540356d6c7669c6c701bde02e10}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a81d3e51346965c41df68850fb5765bbe}\label{class_docbook_generator_a81d3e51346965c41df68850fb5765bbe}} 
+\index{DocbookGenerator@{DocbookGenerator}!startConstraintList@{startConstraintList}}
+\index{startConstraintList@{startConstraintList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startConstraintList()}{startConstraintList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Constraint\+List (\begin{DoxyParamCaption}\item[{const char $\ast$}]{header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a745e4b1d9843812a09c4410aa43084b0}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a3678b65f3c0033e23f580375bed38e84}\label{class_docbook_generator_a3678b65f3c0033e23f580375bed38e84}} 
+\index{DocbookGenerator@{DocbookGenerator}!startConstraintParam@{startConstraintParam}}
+\index{startConstraintParam@{startConstraintParam}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startConstraintParam()}{startConstraintParam()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Constraint\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_abce5f3b4a1104ca8cea00f19f0d803c0}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a92761d1ec32862a0603f6d1f35ed27b1}\label{class_docbook_generator_a92761d1ec32862a0603f6d1f35ed27b1}} 
+\index{DocbookGenerator@{DocbookGenerator}!startConstraintType@{startConstraintType}}
+\index{startConstraintType@{startConstraintType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startConstraintType()}{startConstraintType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Constraint\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6f24ed1e9572bbc6de4c533129a4d28a}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8dc16a29f77b7ac430cfc96c744209bf}\label{class_docbook_generator_a8dc16a29f77b7ac430cfc96c744209bf}} 
+\index{DocbookGenerator@{DocbookGenerator}!startContents@{startContents}}
+\index{startContents@{startContents}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startContents()}{startContents()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a21231e6bba1594e5327e8e150e39355c}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a627c43929d1dafab5072680128b6375f}\label{class_docbook_generator_a627c43929d1dafab5072680128b6375f}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescForItem@{startDescForItem}}
+\index{startDescForItem@{startDescForItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescForItem()}{startDescForItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+For\+Item (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a4bd0d53fa5bd37ab551b462fa1935cff}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a20e9be1323c9378066b4302ec37fa67f}\label{class_docbook_generator_a20e9be1323c9378066b4302ec37fa67f}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescItem@{startDescItem}}
+\index{startDescItem@{startDescItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescItem()}{startDescItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+Item (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Starts an item of a description list\+: e.\+g. {\ttfamily $<$dt$>$} in H\+T\+ML. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a5d1cc59d94c3f529c90e0a06704be181}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abca64d577a05a2d49a99edfef8e72e72}\label{class_docbook_generator_abca64d577a05a2d49a99edfef8e72e72}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescription@{startDescription}}
+\index{startDescription@{startDescription}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescription()}{startDescription()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Description (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Starts a description list\+: e.\+g. {\ttfamily $<$dl$>$} in H\+T\+ML Items are surrounded by \mbox{\hyperlink{class_docbook_generator_a20e9be1323c9378066b4302ec37fa67f}{start\+Desc\+Item()}} and \mbox{\hyperlink{class_docbook_generator_ae46437543719a73a35d0202749633c15}{end\+Desc\+Item()}} 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ac9c801c3ad0b50e3e69be184b50c2fef}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_acaa3fba479216b81c56bf6875f479be1}\label{class_docbook_generator_acaa3fba479216b81c56bf6875f479be1}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescTable@{startDescTable}}
+\index{startDescTable@{startDescTable}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescTable()}{startDescTable()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+Table (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ae8d272c529f66d55e23b63a8cbb1abd7}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5c5b4fe6f2359335c121e9cf940f2b48}\label{class_docbook_generator_a5c5b4fe6f2359335c121e9cf940f2b48}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescTableData@{startDescTableData}}
+\index{startDescTableData@{startDescTableData}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescTableData()}{startDescTableData()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+Table\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ae9e8390997be56f776e966c0f906483d}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1c8a3b36b56840ce70d14b1f220a7d04}\label{class_docbook_generator_a1c8a3b36b56840ce70d14b1f220a7d04}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescTableRow@{startDescTableRow}}
+\index{startDescTableRow@{startDescTableRow}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescTableRow()}{startDescTableRow()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+Table\+Row (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a86e5f61be7418b8b398e7e9a8863a13d}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9522e58842f09e0062723d5eec483feb}\label{class_docbook_generator_a9522e58842f09e0062723d5eec483feb}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDescTableTitle@{startDescTableTitle}}
+\index{startDescTableTitle@{startDescTableTitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDescTableTitle()}{startDescTableTitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Desc\+Table\+Title (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a2a026821caecc0397f2c21fd1a1de095}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a3adadd7bdea505c48ec29a245757acd4}\label{class_docbook_generator_a3adadd7bdea505c48ec29a245757acd4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDirDepGraph@{startDirDepGraph}}
+\index{startDirDepGraph@{startDirDepGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDirDepGraph()}{startDirDepGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Dir\+Dep\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a02c3701bf94326612c1b4fcaf16c4011}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac475d194e8d556cef4e092f1b3f8b5c6}\label{class_docbook_generator_ac475d194e8d556cef4e092f1b3f8b5c6}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDotGraph@{startDotGraph}}
+\index{startDotGraph@{startDotGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDotGraph()}{startDotGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Dot\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a60efbd7467b31058030731fe084a9db5}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad77356d6c995140b4874aa673e3a5ead}\label{class_docbook_generator_ad77356d6c995140b4874aa673e3a5ead}} 
+\index{DocbookGenerator@{DocbookGenerator}!startDoxyAnchor@{startDoxyAnchor}}
+\index{startDoxyAnchor@{startDoxyAnchor}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startDoxyAnchor()}{startDoxyAnchor()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Doxy\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{f\+Name,  }\item[{const char $\ast$}]{man\+Name,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ace0718073cbb95ce1908405e6eda095b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad3234d4df4f2e6db5e3e7d1c4c5b8382}\label{class_docbook_generator_ad3234d4df4f2e6db5e3e7d1c4c5b8382}} 
+\index{DocbookGenerator@{DocbookGenerator}!startEmphasis@{startEmphasis}}
+\index{startEmphasis@{startEmphasis}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startEmphasis()}{startEmphasis()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Emphasis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Changes the text font to italic. The italic section ends with \mbox{\hyperlink{class_docbook_generator_afa388cf9fb6c58601670f40fec5a2eb7}{end\+Emphasis()}} 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a21debc3a6c4c58791a41e715dc78f4ab}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a07374c2ae688cdf1a9978dbfff2636df}\label{class_docbook_generator_a07374c2ae688cdf1a9978dbfff2636df}} 
+\index{DocbookGenerator@{DocbookGenerator}!startExamples@{startExamples}}
+\index{startExamples@{startExamples}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startExamples()}{startExamples()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Examples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aa61b180f670584de7e584d0e54bc85f3}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a84bcc7d0ce461e096b42e95f32631a66}\label{class_docbook_generator_a84bcc7d0ce461e096b42e95f32631a66}} 
+\index{DocbookGenerator@{DocbookGenerator}!startFile@{startFile}}
+\index{startFile@{startFile}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startFile()}{startFile()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{man\+Name,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8c04cb480935a4f94b5391b97d01d5fb}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a899bafb067d2ad8cf7d834e23af83d91}\label{class_docbook_generator_a899bafb067d2ad8cf7d834e23af83d91}} 
+\index{DocbookGenerator@{DocbookGenerator}!startFontClass@{startFontClass}}
+\index{startFontClass@{startFontClass}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startFontClass()}{startFontClass()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Font\+Class (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cls\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Starts a block with a certain meaning. Used for syntax highlighting, which elements of the same type are rendered using the same \textquotesingle{}font class\textquotesingle{}. 
+\begin{DoxyParams}{Parameters}
+{\em cls\+Name} & The category name. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a1b52aa2748010155131f9ba8f9b05b73}\label{class_docbook_generator_a1b52aa2748010155131f9ba8f9b05b73}} 
+\index{DocbookGenerator@{DocbookGenerator}!startGroupCollaboration@{startGroupCollaboration}}
+\index{startGroupCollaboration@{startGroupCollaboration}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startGroupCollaboration()}{startGroupCollaboration()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Group\+Collaboration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a5c001113ef669b2043a9abbf1326f286}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a07b8ca92d5e96c8991c0076f5a89f274}\label{class_docbook_generator_a07b8ca92d5e96c8991c0076f5a89f274}} 
+\index{DocbookGenerator@{DocbookGenerator}!startGroupHeader@{startGroupHeader}}
+\index{startGroupHeader@{startGroupHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startGroupHeader()}{startGroupHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Group\+Header (\begin{DoxyParamCaption}\item[{int}]{extra\+Indent\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a567cedbeeb6ffa8f65893976e4c246d9}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a95adf7ec16fbeb183330ecb676a0c177}\label{class_docbook_generator_a95adf7ec16fbeb183330ecb676a0c177}} 
+\index{DocbookGenerator@{DocbookGenerator}!startHeaderSection@{startHeaderSection}}
+\index{startHeaderSection@{startHeaderSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startHeaderSection()}{startHeaderSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Header\+Section (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a60a86f83cd8878a315820831c66f7e55}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_adf4463cfec2c9d8ca083367f2e4afeff}\label{class_docbook_generator_adf4463cfec2c9d8ca083367f2e4afeff}} 
+\index{DocbookGenerator@{DocbookGenerator}!startHtmlLink@{startHtmlLink}}
+\index{startHtmlLink@{startHtmlLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startHtmlLink()}{startHtmlLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Html\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Starts a (link to an) \mbox{\hyperlink{struct_u_r_l}{U\+RL}} found in the documentation. 
+\begin{DoxyParams}{Parameters}
+{\em url} & The \mbox{\hyperlink{struct_u_r_l}{U\+RL}} to link to. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ab52dbf41ce337c701f9cd1e7794f80e7}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a74046c1b25bac8820975d6500b1b3622}\label{class_docbook_generator_a74046c1b25bac8820975d6500b1b3622}} 
+\index{DocbookGenerator@{DocbookGenerator}!startInclDepGraph@{startInclDepGraph}}
+\index{startInclDepGraph@{startInclDepGraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startInclDepGraph()}{startInclDepGraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Incl\+Dep\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8f015b38b836904858cc1cd34f44363f}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a41f7e9ce5dde599cb53c50185fb9a9fa}\label{class_docbook_generator_a41f7e9ce5dde599cb53c50185fb9a9fa}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndent@{startIndent}}
+\index{startIndent@{startIndent}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndent()}{startIndent()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a1fe795813bf725fb63b19a1cf463bdfa}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad9b5a8f2d9c1b9702478b2217fe9860f}\label{class_docbook_generator_ad9b5a8f2d9c1b9702478b2217fe9860f}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexItem@{startIndexItem}}
+\index{startIndexItem@{startIndexItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexItem()}{startIndexItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_afbc31c1a5eaecbcf45e16c4a16d747f7}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac5012fc0e24ac8f1d65944ef72208311}\label{class_docbook_generator_ac5012fc0e24ac8f1d65944ef72208311}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexKey@{startIndexKey}}
+\index{startIndexKey@{startIndexKey}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexKey()}{startIndexKey()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6db4df81706e050d26df7083977e5da9}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a925d42f1449375a424ba30f57c11f4f4}\label{class_docbook_generator_a925d42f1449375a424ba30f57c11f4f4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexList@{startIndexList}}
+\index{startIndexList@{startIndexList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexList()}{startIndexList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_adc617e6eaee65cfad74e0b8c07aab27d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad145679e6d0f1729c54f0de06ddd1440}\label{class_docbook_generator_ad145679e6d0f1729c54f0de06ddd1440}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexListItem@{startIndexListItem}}
+\index{startIndexListItem@{startIndexListItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexListItem()}{startIndexListItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a620605e68ebc9176a544eda7073bf039}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9480c35ad416cf8f5e5024fc666d82f2}\label{class_docbook_generator_a9480c35ad416cf8f5e5024fc666d82f2}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexSection@{startIndexSection}}
+\index{startIndexSection@{startIndexSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexSection()}{startIndexSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+Section (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{index_8h_aec03800047ada46460eb75113cfee322}{Index\+Sections}}}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ab8164b995688984ec7613485758a1af3}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a495102aee43b7bd5a9ebd4aad9ed9e8a}\label{class_docbook_generator_a495102aee43b7bd5a9ebd4aad9ed9e8a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startIndexValue@{startIndexValue}}
+\index{startIndexValue@{startIndexValue}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startIndexValue()}{startIndexValue()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Index\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8b7df4e8d1c8c35c96ed72a1dd88dfc3}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aebf3161a35b83e00b87e830a7518005e}\label{class_docbook_generator_aebf3161a35b83e00b87e830a7518005e}} 
+\index{DocbookGenerator@{DocbookGenerator}!startInlineHeader@{startInlineHeader}}
+\index{startInlineHeader@{startInlineHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startInlineHeader()}{startInlineHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Inline\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a75c7b7e0e20ce30957ed49fd1d1d246d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ae60618298ae71702c75f6433790aa3e4}\label{class_docbook_generator_ae60618298ae71702c75f6433790aa3e4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startInlineMemberDoc@{startInlineMemberDoc}}
+\index{startInlineMemberDoc@{startInlineMemberDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startInlineMemberDoc()}{startInlineMemberDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Inline\+Member\+Doc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6f40ca8e90e8167136b678efbe6bf131}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a878b26134b4ca8355580c15d93d6e489}\label{class_docbook_generator_a878b26134b4ca8355580c15d93d6e489}} 
+\index{DocbookGenerator@{DocbookGenerator}!startInlineMemberName@{startInlineMemberName}}
+\index{startInlineMemberName@{startInlineMemberName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startInlineMemberName()}{startInlineMemberName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Inline\+Member\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0a3424e053c9ce5e63f5c8f3805aa940}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6bdd8f0c4de168f61ce8cbbee470f5bc}\label{class_docbook_generator_a6bdd8f0c4de168f61ce8cbbee470f5bc}} 
+\index{DocbookGenerator@{DocbookGenerator}!startInlineMemberType@{startInlineMemberType}}
+\index{startInlineMemberType@{startInlineMemberType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startInlineMemberType()}{startInlineMemberType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Inline\+Member\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a590cf1aa2c7061dd15916a1459690445}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_addaf6b46396259a8bbebe7b1e9716bc0}\label{class_docbook_generator_addaf6b46396259a8bbebe7b1e9716bc0}} 
+\index{DocbookGenerator@{DocbookGenerator}!startItemList@{startItemList}}
+\index{startItemList@{startItemList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startItemList()}{startItemList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Item\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Start of a bullet list\+: e.\+g. {\ttfamily $<$ul$>$} in html. \mbox{\hyperlink{class_docbook_generator_a2ee84d2ec43dc1634a71ee3101eab3e4}{start\+Item\+List\+Item()}} is Used for the bullet items. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a54b169393594b6cf113977ccccaeb9ee}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2ee84d2ec43dc1634a71ee3101eab3e4}\label{class_docbook_generator_a2ee84d2ec43dc1634a71ee3101eab3e4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startItemListItem@{startItemListItem}}
+\index{startItemListItem@{startItemListItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startItemListItem()}{startItemListItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Item\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a list item for a bullet or enumerated list\+: e.\+g. {\ttfamily $<$li$>$} in html 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aa1cbcadfedf8e6d52029d17526b5fa3f}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aea95d234f19699e2aeb49f6bddc17fbf}\label{class_docbook_generator_aea95d234f19699e2aeb49f6bddc17fbf}} 
+\index{DocbookGenerator@{DocbookGenerator}!startLabels@{startLabels}}
+\index{startLabels@{startLabels}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startLabels()}{startLabels()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af317d904e65624244c58368deabcba55}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afab958dd26a75104df2c47501621beaf}\label{class_docbook_generator_afab958dd26a75104df2c47501621beaf}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDeclaration@{startMemberDeclaration}}
+\index{startMemberDeclaration@{startMemberDeclaration}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDeclaration()}{startMemberDeclaration()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Declaration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aeb5b5670178926771b6a649239f15444}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac071f35b16b2259b954402588bc57e60}\label{class_docbook_generator_ac071f35b16b2259b954402588bc57e60}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDescription@{startMemberDescription}}
+\index{startMemberDescription@{startMemberDescription}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDescription()}{startMemberDescription()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Description (\begin{DoxyParamCaption}\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{inherit\+Id,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{typ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a787d70201a816f00853f2fd3e23a1321}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_acba8e0286d5d95bf12625b730f3b1390}\label{class_docbook_generator_acba8e0286d5d95bf12625b730f3b1390}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDoc@{startMemberDoc}}
+\index{startMemberDoc@{startMemberDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDoc()}{startMemberDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Doc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{clname,  }\item[{const char $\ast$}]{memname,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{title,  }\item[{int}]{mem\+Count,  }\item[{int}]{mem\+Total,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{show\+Inline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a7610e3caf9ac099156dbc016259b24b3}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ac5af06500d6da1e1f68ab4cb1634140e}\label{class_docbook_generator_ac5af06500d6da1e1f68ab4cb1634140e}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDocList@{startMemberDocList}}
+\index{startMemberDocList@{startMemberDocList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDocList()}{startMemberDocList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Doc\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a79d92b273b6678f0484f507f9aeed930}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a44db5093a052aa888696f9e0e0819dda}\label{class_docbook_generator_a44db5093a052aa888696f9e0e0819dda}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDocName@{startMemberDocName}}
+\index{startMemberDocName@{startMemberDocName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDocName()}{startMemberDocName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Doc\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a8646f44dc5c56ef3f6d5fa3f667cd223}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a80da16bbc96ed97bfb2a19adaa844246}\label{class_docbook_generator_a80da16bbc96ed97bfb2a19adaa844246}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDocPrefixItem@{startMemberDocPrefixItem}}
+\index{startMemberDocPrefixItem@{startMemberDocPrefixItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDocPrefixItem()}{startMemberDocPrefixItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Doc\+Prefix\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_acbb6ecd186cadcea8526b54e2ba7d166}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a61b77165826379b0ea576addb5a5561a}\label{class_docbook_generator_a61b77165826379b0ea576addb5a5561a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberDocSimple@{startMemberDocSimple}}
+\index{startMemberDocSimple@{startMemberDocSimple}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberDocSimple()}{startMemberDocSimple()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Doc\+Simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a5ede23d1cdc58d5a532d515f0383a295}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6725795d6f2f697662c57e6fd3bc8739}\label{class_docbook_generator_a6725795d6f2f697662c57e6fd3bc8739}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberGroup@{startMemberGroup}}
+\index{startMemberGroup@{startMemberGroup}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberGroup()}{startMemberGroup()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a1cc976995007c64aa044d98da900d09f}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ab0f4bdaf7baa049c434eb9267a730939}\label{class_docbook_generator_ab0f4bdaf7baa049c434eb9267a730939}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberGroupDocs@{startMemberGroupDocs}}
+\index{startMemberGroupDocs@{startMemberGroupDocs}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberGroupDocs()}{startMemberGroupDocs()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Group\+Docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a0b3d9ddaa7d63cea43081ac17ce5e96b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a0dbaa41643546a916a005fbaa9015703}\label{class_docbook_generator_a0dbaa41643546a916a005fbaa9015703}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberGroupHeader@{startMemberGroupHeader}}
+\index{startMemberGroupHeader@{startMemberGroupHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberGroupHeader()}{startMemberGroupHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Group\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{has\+Header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aea2631f3e52efb116a4b3375755024c8}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_afd617230ccfacc6e34851652e9bab6c2}\label{class_docbook_generator_afd617230ccfacc6e34851652e9bab6c2}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberHeader@{startMemberHeader}}
+\index{startMemberHeader@{startMemberHeader}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberHeader()}{startMemberHeader()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Header (\begin{DoxyParamCaption}\item[{const char $\ast$}]{anchor,  }\item[{int}]{typ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a2d94dfdee78dd53535b335b7f5b3c979}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7574ab5fa838022782c7ebe20a44423a}\label{class_docbook_generator_a7574ab5fa838022782c7ebe20a44423a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberItem@{startMemberItem}}
+\index{startMemberItem@{startMemberItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberItem()}{startMemberItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{int}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a626142e0dd357e23058573aff5299eb6}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad341d2ccdf7130f3a08b5d2a963cf111}\label{class_docbook_generator_ad341d2ccdf7130f3a08b5d2a963cf111}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberList@{startMemberList}}
+\index{startMemberList@{startMemberList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberList()}{startMemberList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a55bfc9535965545c98a07fd5e94ccfde}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a4e3b29c08c2340b5b87b2ef1205414b4}\label{class_docbook_generator_a4e3b29c08c2340b5b87b2ef1205414b4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberSections@{startMemberSections}}
+\index{startMemberSections@{startMemberSections}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberSections()}{startMemberSections()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Sections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a3dcfbf917012cf7e133f6876750ca29b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_accccd27de78cff523391c7a43ca3c7e8}\label{class_docbook_generator_accccd27de78cff523391c7a43ca3c7e8}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberSubtitle@{startMemberSubtitle}}
+\index{startMemberSubtitle@{startMemberSubtitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberSubtitle()}{startMemberSubtitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Subtitle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6c10a744bfe79da169794579d92c6f38}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a61fb3da1c36e4cd27a17ad14ed50f0b5}\label{class_docbook_generator_a61fb3da1c36e4cd27a17ad14ed50f0b5}} 
+\index{DocbookGenerator@{DocbookGenerator}!startMemberTemplateParams@{startMemberTemplateParams}}
+\index{startMemberTemplateParams@{startMemberTemplateParams}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startMemberTemplateParams()}{startMemberTemplateParams()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Member\+Template\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_af221e843bf8828e9dcb45faea48c8af2}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6dd72e1864255acf337330ede561f3b4}\label{class_docbook_generator_a6dd72e1864255acf337330ede561f3b4}} 
+\index{DocbookGenerator@{DocbookGenerator}!startPageDoc@{startPageDoc}}
+\index{startPageDoc@{startPageDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startPageDoc()}{startPageDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Page\+Doc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{page\+Title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_output_generator_a0d77f64cb69172617565d1b0c5313ab7}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9eb3cc68a03f56e43d7927348f98498a}\label{class_docbook_generator_a9eb3cc68a03f56e43d7927348f98498a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startPageRef@{startPageRef}}
+\index{startPageRef@{startPageRef}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startPageRef()}{startPageRef()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Page\+Ref (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_add686ba33132cc455a70356c77416994}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa9920dace623a31301f5c7b9f5f739b8}\label{class_docbook_generator_aa9920dace623a31301f5c7b9f5f739b8}} 
+\index{DocbookGenerator@{DocbookGenerator}!startParagraph@{startParagraph}}
+\index{startParagraph@{startParagraph}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startParagraph()}{startParagraph()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Paragraph (\begin{DoxyParamCaption}\item[{const char $\ast$}]{class\+Def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts a new paragraph
+
+Starts a new paragraph 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a9f711f4ef8f48b9c7b1cae625578e7ff}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a3d7bbf541c06262c0288db95b721efac}\label{class_docbook_generator_a3d7bbf541c06262c0288db95b721efac}} 
+\index{DocbookGenerator@{DocbookGenerator}!startParameterList@{startParameterList}}
+\index{startParameterList@{startParameterList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startParameterList()}{startParameterList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Parameter\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{open\+Bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a92e7646944e62d50ede52caa18c39266}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad0f2cec44f639c4e8683e0ffb19fd7e0}\label{class_docbook_generator_ad0f2cec44f639c4e8683e0ffb19fd7e0}} 
+\index{DocbookGenerator@{DocbookGenerator}!startParameterName@{startParameterName}}
+\index{startParameterName@{startParameterName}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startParameterName()}{startParameterName()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Parameter\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac56057350d3b14b63238bf4325792f82}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa6e679829873cfa8fbdd6a337f12b5a2}\label{class_docbook_generator_aa6e679829873cfa8fbdd6a337f12b5a2}} 
+\index{DocbookGenerator@{DocbookGenerator}!startParameterType@{startParameterType}}
+\index{startParameterType@{startParameterType}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startParameterType()}{startParameterType()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Parameter\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a76af87c960b045eafa035b77307aaf75}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5a227d018bac4cff772175b1c604dc78}\label{class_docbook_generator_a5a227d018bac4cff772175b1c604dc78}} 
+\index{DocbookGenerator@{DocbookGenerator}!startParamList@{startParamList}}
+\index{startParamList@{startParamList}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startParamList()}{startParamList()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Param\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Base\+Output\+Doc\+Interface\+::\+Param\+List\+Types}}}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a0fe360d170bf70af8455d521ecad8cab}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a50ce1f94515c49874020c1ad07ff0e5a}\label{class_docbook_generator_a50ce1f94515c49874020c1ad07ff0e5a}} 
+\index{DocbookGenerator@{DocbookGenerator}!startProjectNumber@{startProjectNumber}}
+\index{startProjectNumber@{startProjectNumber}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startProjectNumber()}{startProjectNumber()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Project\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aca2e001836d8cf6ae5e6d98bd9467b5b}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad601ba595537a9842927b8d876208450}\label{class_docbook_generator_ad601ba595537a9842927b8d876208450}} 
+\index{DocbookGenerator@{DocbookGenerator}!startQuickIndices@{startQuickIndices}}
+\index{startQuickIndices@{startQuickIndices}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startQuickIndices()}{startQuickIndices()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Quick\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac1235b655cd828140b9c76f4ca1f4040}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7c35ba06bbf1e151f55c9fa42f786f01}\label{class_docbook_generator_a7c35ba06bbf1e151f55c9fa42f786f01}} 
+\index{DocbookGenerator@{DocbookGenerator}!startSection@{startSection}}
+\index{startSection@{startSection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startSection()}{startSection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Section (\begin{DoxyParamCaption}\item[{const char $\ast$}]{lab,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a820f65539d9328cfafe23a2542375853}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a9a32ad8f07c7b3cd0bc8deaf7a0e1597}\label{class_docbook_generator_a9a32ad8f07c7b3cd0bc8deaf7a0e1597}} 
+\index{DocbookGenerator@{DocbookGenerator}!startSmall@{startSmall}}
+\index{startSmall@{startSmall}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startSmall()}{startSmall()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Small (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_aa48fb5d720aabf2dc67d866b9861f733}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a4d1eeef8da1dd4ba4a2538250a7eff99}\label{class_docbook_generator_a4d1eeef8da1dd4ba4a2538250a7eff99}} 
+\index{DocbookGenerator@{DocbookGenerator}!startSubsection@{startSubsection}}
+\index{startSubsection@{startSubsection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startSubsection()}{startSubsection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Subsection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ab2c4106db654fb639aaca243d3f4a686}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_af7d9b5e9bf1a7ff6030af837ab574b95}\label{class_docbook_generator_af7d9b5e9bf1a7ff6030af837ab574b95}} 
+\index{DocbookGenerator@{DocbookGenerator}!startSubsubsection@{startSubsubsection}}
+\index{startSubsubsection@{startSubsubsection}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startSubsubsection()}{startSubsubsection()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Subsubsection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a7f923f13c625fccde495debb5e31eb35}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a144f38ae2e1ee232207a62f1a57514b0}\label{class_docbook_generator_a144f38ae2e1ee232207a62f1a57514b0}} 
+\index{DocbookGenerator@{DocbookGenerator}!startTextBlock@{startTextBlock}}
+\index{startTextBlock@{startTextBlock}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startTextBlock()}{startTextBlock()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Text\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{dense }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ae06da65c60fe1508152999a76c3b8d80}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_acee52d6675a67267a096b42afd6a0592}\label{class_docbook_generator_acee52d6675a67267a096b42afd6a0592}} 
+\index{DocbookGenerator@{DocbookGenerator}!startTextLink@{startTextLink}}
+\index{startTextLink@{startTextLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startTextLink()}{startTextLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Text\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_af3e8e537c3a2379071c3573d25a64d03}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a92ec864254dbcfc34f0f7e9bd7425ecf}\label{class_docbook_generator_a92ec864254dbcfc34f0f7e9bd7425ecf}} 
+\index{DocbookGenerator@{DocbookGenerator}!startTitle@{startTitle}}
+\index{startTitle@{startTitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startTitle()}{startTitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Title (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a52507f4f611800062e6776704d3c0eaf}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a221a9c15d2b41349a43ec5acae2e017d}\label{class_docbook_generator_a221a9c15d2b41349a43ec5acae2e017d}} 
+\index{DocbookGenerator@{DocbookGenerator}!startTitleHead@{startTitleHead}}
+\index{startTitleHead@{startTitleHead}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startTitleHead()}{startTitleHead()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Title\+Head (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a2a88fa84eb821cbc46ebe77293db0564}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a220738e28a4e2939e4da767f0ad33886}\label{class_docbook_generator_a220738e28a4e2939e4da767f0ad33886}} 
+\index{DocbookGenerator@{DocbookGenerator}!startTypewriter@{startTypewriter}}
+\index{startTypewriter@{startTypewriter}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{startTypewriter()}{startTypewriter()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::start\+Typewriter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Changes the text font to fixed size. The section ends with \mbox{\hyperlink{class_docbook_generator_a2b987c6b42a8a5b5cea28f950fefa6cc}{end\+Typewriter()}} 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_abde41a60b900d35b0b198f43731c1cd0}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a77af6fb2e87620e84ef1cbbcfd04e1fa}\label{class_docbook_generator_a77af6fb2e87620e84ef1cbbcfd04e1fa}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeAnchor@{writeAnchor}}
+\index{writeAnchor@{writeAnchor}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeAnchor()}{writeAnchor()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a02ec04af87e175323ad789347884c896}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ab075c899a62994272a1f542404ec614d}\label{class_docbook_generator_ab075c899a62994272a1f542404ec614d}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeChar@{writeChar}}
+\index{writeChar@{writeChar}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeChar()}{writeChar()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes a single A\+S\+C\+II character to the output. Converts characters that have a special meaning. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a1577324720c1c71142dff84ae80b058d}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a7fc22eda4420a580d40a7fa2624209b6}\label{class_docbook_generator_a7fc22eda4420a580d40a7fa2624209b6}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeCodeAnchor@{writeCodeAnchor}}
+\index{writeCodeAnchor@{writeCodeAnchor}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeCodeAnchor()}{writeCodeAnchor()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Code\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Write an anchor to a source listing. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the anchor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a1f6394c4ef7c4143de90bcaf3a65c0b4}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6014ad58784a407002499d0d29a00a0a}\label{class_docbook_generator_a6014ad58784a407002499d0d29a00a0a}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeCodeLink@{writeCodeLink}}
+\index{writeCodeLink@{writeCodeLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeCodeLink()}{writeCodeLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Code\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{tooltip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a link to an object in a code fragment. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & If this is non-\/zero, the object is to be found in an external documentation file. \\
+\hline
+{\em file} & The file in which the object is located. \\
+\hline
+{\em anchor} & The anchor uniquely identifying the object within the file. \\
+\hline
+{\em name} & The text to display as a placeholder for the link. \\
+\hline
+{\em tooltip} & The tooltip to display when the mouse is on the link. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a102e2b7f40916c75b79871307f5bb674}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a6e93e82c07a40e663b96951c99b421af}\label{class_docbook_generator_a6e93e82c07a40e663b96951c99b421af}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeDoc@{writeDoc}}
+\index{writeDoc@{writeDoc}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeDoc()}{writeDoc()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Doc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{n,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{ctx,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{md }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a3ccaa059c73917298e3f1ea26f1859ca}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa58fefff6b840fffb1516fcd0cef9623}\label{class_docbook_generator_aa58fefff6b840fffb1516fcd0cef9623}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeEndAnnoItem@{writeEndAnnoItem}}
+\index{writeEndAnnoItem@{writeEndAnnoItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeEndAnnoItem()}{writeEndAnnoItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+End\+Anno\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a29c6763f7d6f708fc5d3e7dc2c0ce1f4}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a371c487bb4bfb47558dbd49d6284af53}\label{class_docbook_generator_a371c487bb4bfb47558dbd49d6284af53}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeFooter@{writeFooter}}
+\index{writeFooter@{writeFooter}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeFooter()}{writeFooter()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Footer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nav\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ac8f9e609b1f2633a07c5560cc1eb4dc9}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa642fb63b70c7609039eb9b0ad015f8c}\label{class_docbook_generator_aa642fb63b70c7609039eb9b0ad015f8c}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeGraphicalHierarchy@{writeGraphicalHierarchy}}
+\index{writeGraphicalHierarchy@{writeGraphicalHierarchy}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeGraphicalHierarchy()}{writeGraphicalHierarchy()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Graphical\+Hierarchy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot_gfx_hierarchy_table}{Dot\+Gfx\+Hierarchy\+Table}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a813b7d253db1bd8f3287ef20a52dd4a8}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a5c07d2b117b266a1ca1b3492b6a72fba}\label{class_docbook_generator_a5c07d2b117b266a1ca1b3492b6a72fba}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeInheritedSectionTitle@{writeInheritedSectionTitle}}
+\index{writeInheritedSectionTitle@{writeInheritedSectionTitle}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeInheritedSectionTitle()}{writeInheritedSectionTitle()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Inherited\+Section\+Title (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{title,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a272f99f415b7e8b6ead453cd9e714b8e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a3020b0f82e1790202a2b128b2f0e9475}\label{class_docbook_generator_a3020b0f82e1790202a2b128b2f0e9475}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeLabel@{writeLabel}}
+\index{writeLabel@{writeLabel}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeLabel()}{writeLabel()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{l,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a40864f2cdb9de3605965ec2912c3709d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aa22b4e02bb230d1df37dcc7c8b9471e7}\label{class_docbook_generator_aa22b4e02bb230d1df37dcc7c8b9471e7}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeLatexSpacing@{writeLatexSpacing}}
+\index{writeLatexSpacing@{writeLatexSpacing}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeLatexSpacing()}{writeLatexSpacing()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Latex\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_afcb9acfea2d7a6f0a340287632aea4e8}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_abacdf042957c11cbcdf2c809758e23fa}\label{class_docbook_generator_abacdf042957c11cbcdf2c809758e23fa}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeLineNumber@{writeLineNumber}}
+\index{writeLineNumber@{writeLineNumber}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeLineNumber()}{writeLineNumber()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Line\+Number (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{int}]{line\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes the line number of a source listing 
+\begin{DoxyParams}{Parameters}
+{\em ref} & External reference (when imported from a tag file) \\
+\hline
+{\em file} & The file part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em anchor} & The anchor part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em line\+Number} & The line number to write \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a8115646785b65e292480c2e4e969b389}{Code\+Output\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a2f56a6d8d8d097846ed90ad1af9bd21a}\label{class_docbook_generator_a2f56a6d8d8d097846ed90ad1af9bd21a}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeLogo@{writeLogo}}
+\index{writeLogo@{writeLogo}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeLogo()}{writeLogo()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Logo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a4a253e01f787c22716b14709344535ab}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ad4fea50d4e2405700643381ea214fca8}\label{class_docbook_generator_ad4fea50d4e2405700643381ea214fca8}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeNavigationPath@{writeNavigationPath}}
+\index{writeNavigationPath@{writeNavigationPath}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeNavigationPath()}{writeNavigationPath()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Navigation\+Path (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a782d69569d902413c0029b12cd4ea2d6}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a90d3afc310288c35d48787bc84310ec7}\label{class_docbook_generator_a90d3afc310288c35d48787bc84310ec7}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeNonBreakableSpace@{writeNonBreakableSpace}}
+\index{writeNonBreakableSpace@{writeNonBreakableSpace}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeNonBreakableSpace()}{writeNonBreakableSpace()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Non\+Breakable\+Space (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a7a6903af564a1de397adb0887e7e419a}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a8cc7af4fed7938f5e5d81038eba432f0}\label{class_docbook_generator_a8cc7af4fed7938f5e5d81038eba432f0}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeObjectLink@{writeObjectLink}}
+\index{writeObjectLink@{writeObjectLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeObjectLink()}{writeObjectLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Object\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes a link to an object in the documentation. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & If this is non-\/zero, the object is to be found in an external documentation file. \\
+\hline
+{\em file} & The file in which the object is located. \\
+\hline
+{\em anchor} & The anchor uniquely identifying the object within the file. \\
+\hline
+{\em name} & The text to display as a placeholder for the link. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a3537423635807fe140ec5be1a2198060}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aacc408198549c392c851a1825fd700c7}\label{class_docbook_generator_aacc408198549c392c851a1825fd700c7}} 
+\index{DocbookGenerator@{DocbookGenerator}!writePageLink@{writePageLink}}
+\index{writePageLink@{writePageLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writePageLink()}{writePageLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Page\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a92ddc60cab560b9e4a65bcd504cb779d}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a83835c0d52d94f5f4b9c02d75aaacb43}\label{class_docbook_generator_a83835c0d52d94f5f4b9c02d75aaacb43}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeQuickLinks@{writeQuickLinks}}
+\index{writeQuickLinks@{writeQuickLinks}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeQuickLinks()}{writeQuickLinks()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Quick\+Links (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{compact,  }\item[{\mbox{\hyperlink{index_8h_a6643b7765422a7eb577f0b2ed8fb2e09}{Highlighted\+Item}}}]{hli,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ade0bf7d098652c8592a8790d6de80a7e}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a69c4688a7f57b0cd7cc6eec70bf56e4d}\label{class_docbook_generator_a69c4688a7f57b0cd7cc6eec70bf56e4d}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeRuler@{writeRuler}}
+\index{writeRuler@{writeRuler}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeRuler()}{writeRuler()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Ruler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes a horizontal ruler to the output 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_ade0d004fb6e8641c92f2f144d7242f0b}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a15970f9de0fede32a614b46f23b2a401}\label{class_docbook_generator_a15970f9de0fede32a614b46f23b2a401}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeSearchInfo@{writeSearchInfo}}
+\index{writeSearchInfo@{writeSearchInfo}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeSearchInfo()}{writeSearchInfo()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Search\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a6f93852b3d43ab8a63be1e46f10eb8fd}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_aabf42006b7f14083c4d31cc5f761620a}\label{class_docbook_generator_aabf42006b7f14083c4d31cc5f761620a}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeSplitBar@{writeSplitBar}}
+\index{writeSplitBar@{writeSplitBar}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeSplitBar()}{writeSplitBar()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Split\+Bar (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a7ca68513534b42f774af0615039298af}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a02e9603e70bc6ee4745928e54e53d5e7}\label{class_docbook_generator_a02e9603e70bc6ee4745928e54e53d5e7}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeStartAnnoItem@{writeStartAnnoItem}}
+\index{writeStartAnnoItem@{writeStartAnnoItem}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeStartAnnoItem()}{writeStartAnnoItem()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Start\+Anno\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{type,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_a2b0f7e8400fa8bfa7b973ed25f2c4366}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a0435ece7899e4607115944383f2f1d77}\label{class_docbook_generator_a0435ece7899e4607115944383f2f1d77}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeString@{writeString}}
+\index{writeString@{writeString}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeString()}{writeString()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes an A\+S\+C\+II string to the output, {\itshape without} converting special characters. 
+
+Implements \mbox{\hyperlink{class_base_output_doc_interface_a5737513ddf260787b5b79c84ae1059af}{Base\+Output\+Doc\+Interface}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a99bbec3723074f8b343e9cc7c09f76c2}\label{class_docbook_generator_a99bbec3723074f8b343e9cc7c09f76c2}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeStyleInfo@{writeStyleInfo}}
+\index{writeStyleInfo@{writeStyleInfo}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeStyleInfo()}{writeStyleInfo()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Style\+Info (\begin{DoxyParamCaption}\item[{int}]{part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_ab3319043929bc785eeb2edfbeadc5088}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_ae58e28b7788b52c349d1dbec47de2bcf}\label{class_docbook_generator_ae58e28b7788b52c349d1dbec47de2bcf}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeSummaryLink@{writeSummaryLink}}
+\index{writeSummaryLink@{writeSummaryLink}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeSummaryLink()}{writeSummaryLink()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Summary\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{title,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{first }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aa27b1e7554ca5a8f4d80bf82bc1666d6}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a4a81e9bb54de45c0691274ff93844bf4}\label{class_docbook_generator_a4a81e9bb54de45c0691274ff93844bf4}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeSynopsis@{writeSynopsis}}
+\index{writeSynopsis@{writeSynopsis}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeSynopsis()}{writeSynopsis()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Synopsis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_output_generator_aa0d18fb8ce1251b97619c90061a697d8}{Output\+Generator}}.
+
+\mbox{\Hypertarget{class_docbook_generator_a86c6e83addf31b0c377fbe6ecab97769}\label{class_docbook_generator_a86c6e83addf31b0c377fbe6ecab97769}} 
+\index{DocbookGenerator@{DocbookGenerator}!writeTooltip@{writeTooltip}}
+\index{writeTooltip@{writeTooltip}!DocbookGenerator@{DocbookGenerator}}
+\doxysubsubsection{\texorpdfstring{writeTooltip()}{writeTooltip()}}
+{\footnotesize\ttfamily void Docbook\+Generator\+::write\+Tooltip (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&}]{doc\+Info,  }\item[{const char $\ast$}]{decl,  }\item[{const char $\ast$}]{desc,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{def\+Info,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{decl\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Writes a tool tip definition 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique identifier for the tooltip \\
+\hline
+{\em doc\+Info} & Info about the symbol\textquotesingle{}s documentation. \\
+\hline
+{\em decl} & full declaration of the symbol (for functions) \\
+\hline
+{\em desc} & brief description for the symbol \\
+\hline
+{\em def\+Info} & Info about the symbol\textquotesingle{}s definition in the source code \\
+\hline
+{\em decl\+Info} & Info about the symbol\textquotesingle{}s declaration in the source code \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_code_output_interface_a4326ca642f6ec228466ae310622f73ad}{Code\+Output\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docbookgen_8h}{docbookgen.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docbookgen_8cpp}{docbookgen.\+cpp}}\end{DoxyCompactItemize}

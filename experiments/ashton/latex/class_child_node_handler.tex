@@ -1,0 +1,130 @@
+\hypertarget{class_child_node_handler}{}\doxysection{Child\+Node\+Handler Class Reference}
+\label{class_child_node_handler}\index{ChildNodeHandler@{ChildNodeHandler}}
+
+
+{\ttfamily \#include $<$graphhandler.\+h$>$}
+
+Inheritance diagram for Child\+Node\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.355932cm]{class_child_node_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_child_node_handler_ab09cef5eb1b68692b52e79c80026596f}{Child\+Node\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent, \mbox{\hyperlink{class_graph_handler}{Graph\+Handler}} $\ast$gh)
+\item 
+virtual \mbox{\hyperlink{class_child_node_handler_a06a51dcc7763caf3730a0e0a16de9ff3}{$\sim$\+Child\+Node\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_child_node_handler_a37c31310f83099c2e499571dedd84bc8}{start\+Child\+Node}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+void \mbox{\hyperlink{class_child_node_handler_a4ff67af9ddcfe64aeceb34ded13f7752}{end\+Child\+Node}} ()
+\item 
+void \mbox{\hyperlink{class_child_node_handler_ae6f1e090610d905f6ddd751fdb4f3605}{start\+Edge\+Label}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+virtual \mbox{\hyperlink{class_i_node}{I\+Node}} $\ast$ \mbox{\hyperlink{class_child_node_handler_a32e794c291c564231f6fddd22f747ab3}{node}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_child_node_a8f1206e7dd6aba7e62a7e50e2edf8ee2}{Node\+Relation}} \mbox{\hyperlink{class_child_node_handler_a89f65cbd3554adcb3e183fd8d0fed523}{relation}} () const
+\item 
+virtual const \mbox{\hyperlink{class_i_string}{I\+String}} $\ast$ \mbox{\hyperlink{class_child_node_handler_a00ee85d776fab0ddd9320555fd6f13c9}{relation\+String}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_edge_label_iterator}{I\+Edge\+Label\+Iterator}} $\ast$ \mbox{\hyperlink{class_child_node_handler_aaf9dd9716e47a1dd7c2c4953b64525f8}{edge\+Labels}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_child_node_handler_af04914e6743dfa65bd97548d5db241fc}{Edge\+Label\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_child_node_handler_ab09cef5eb1b68692b52e79c80026596f}\label{class_child_node_handler_ab09cef5eb1b68692b52e79c80026596f}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!ChildNodeHandler@{ChildNodeHandler}}
+\index{ChildNodeHandler@{ChildNodeHandler}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{ChildNodeHandler()}{ChildNodeHandler()}}
+{\footnotesize\ttfamily Child\+Node\+Handler\+::\+Child\+Node\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{class_graph_handler}{Graph\+Handler}} $\ast$}]{gh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_child_node_handler_a06a51dcc7763caf3730a0e0a16de9ff3}\label{class_child_node_handler_a06a51dcc7763caf3730a0e0a16de9ff3}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!````~ChildNodeHandler@{$\sim$ChildNodeHandler}}
+\index{````~ChildNodeHandler@{$\sim$ChildNodeHandler}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$ChildNodeHandler()}{~ChildNodeHandler()}}
+{\footnotesize\ttfamily Child\+Node\+Handler\+::$\sim$\+Child\+Node\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_child_node_handler_aaf9dd9716e47a1dd7c2c4953b64525f8}\label{class_child_node_handler_aaf9dd9716e47a1dd7c2c4953b64525f8}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!edgeLabels@{edgeLabels}}
+\index{edgeLabels@{edgeLabels}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{edgeLabels()}{edgeLabels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_edge_label_iterator}{I\+Edge\+Label\+Iterator}} $\ast$ Child\+Node\+Handler\+::edge\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_child_node_afff75cb6461def5241bc2f1bd96d9385}{I\+Child\+Node}}.
+
+\mbox{\Hypertarget{class_child_node_handler_a4ff67af9ddcfe64aeceb34ded13f7752}\label{class_child_node_handler_a4ff67af9ddcfe64aeceb34ded13f7752}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!endChildNode@{endChildNode}}
+\index{endChildNode@{endChildNode}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{endChildNode()}{endChildNode()}}
+{\footnotesize\ttfamily void Child\+Node\+Handler\+::end\+Child\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_child_node_handler_a32e794c291c564231f6fddd22f747ab3}\label{class_child_node_handler_a32e794c291c564231f6fddd22f747ab3}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!node@{node}}
+\index{node@{node}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{node()}{node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_node}{I\+Node}} $\ast$ Child\+Node\+Handler\+::node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_child_node_a287bf2f26b3db29d00513ed4cee5141d}{I\+Child\+Node}}.
+
+\mbox{\Hypertarget{class_child_node_handler_a89f65cbd3554adcb3e183fd8d0fed523}\label{class_child_node_handler_a89f65cbd3554adcb3e183fd8d0fed523}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!relation@{relation}}
+\index{relation@{relation}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{relation()}{relation()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_child_node_a8f1206e7dd6aba7e62a7e50e2edf8ee2}{Node\+Relation}} Child\+Node\+Handler\+::relation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_child_node_a045cfcd9bd158c969d3bca2e61b6ddbc}{I\+Child\+Node}}.
+
+\mbox{\Hypertarget{class_child_node_handler_a00ee85d776fab0ddd9320555fd6f13c9}\label{class_child_node_handler_a00ee85d776fab0ddd9320555fd6f13c9}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!relationString@{relationString}}
+\index{relationString@{relationString}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{relationString()}{relationString()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_i_string}{I\+String}}$\ast$ Child\+Node\+Handler\+::relation\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_child_node_ade6412f9a9f1913a661b91eb710fb3a9}{I\+Child\+Node}}.
+
+\mbox{\Hypertarget{class_child_node_handler_a37c31310f83099c2e499571dedd84bc8}\label{class_child_node_handler_a37c31310f83099c2e499571dedd84bc8}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!startChildNode@{startChildNode}}
+\index{startChildNode@{startChildNode}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{startChildNode()}{startChildNode()}}
+{\footnotesize\ttfamily void Child\+Node\+Handler\+::start\+Child\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_child_node_handler_ae6f1e090610d905f6ddd751fdb4f3605}\label{class_child_node_handler_ae6f1e090610d905f6ddd751fdb4f3605}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!startEdgeLabel@{startEdgeLabel}}
+\index{startEdgeLabel@{startEdgeLabel}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{startEdgeLabel()}{startEdgeLabel()}}
+{\footnotesize\ttfamily void Child\+Node\+Handler\+::start\+Edge\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_child_node_handler_af04914e6743dfa65bd97548d5db241fc}\label{class_child_node_handler_af04914e6743dfa65bd97548d5db241fc}} 
+\index{ChildNodeHandler@{ChildNodeHandler}!EdgeLabelIterator@{EdgeLabelIterator}}
+\index{EdgeLabelIterator@{EdgeLabelIterator}!ChildNodeHandler@{ChildNodeHandler}}
+\doxysubsubsection{\texorpdfstring{EdgeLabelIterator}{EdgeLabelIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_edge_label_iterator}{Edge\+Label\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{graphhandler_8h}{graphhandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{graphhandler_8cpp}{graphhandler.\+cpp}}\end{DoxyCompactItemize}

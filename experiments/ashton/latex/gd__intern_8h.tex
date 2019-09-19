@@ -1,0 +1,107 @@
+\hypertarget{gd__intern_8h}{}\doxysection{doxygen/libmscgen/gd\+\_\+intern.h File Reference}
+\label{gd__intern_8h}\index{doxygen/libmscgen/gd\_intern.h@{doxygen/libmscgen/gd\_intern.h}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gd.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gd__intern_8h_addfa831c1473e710d2b71b72fd7fcfa5}{M\+A\+X\+P\+A\+T\+H\+L\+EN}}~256    /$\ast$ Should \mbox{\hyperlink{commands_8doc_af0bf8322edf25090b1a3ef7e10cc30d1}{be}} safe for any weird systems that do not define it $\ast$/
+\item 
+\#define \mbox{\hyperlink{gd__intern_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}))
+\item 
+\#define \mbox{\hyperlink{gd__intern_8h_a4887ceeae88266064841cbbc11ef8b53}{M\+I\+N3}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))
+\item 
+\#define \mbox{\hyperlink{gd__intern_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}))
+\item 
+\#define \mbox{\hyperlink{gd__intern_8h_a37c6d7fcb9c177c308ef38e1d51d35e3}{M\+A\+X3}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580}{gd\+Axis}} \{ \mbox{\hyperlink{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a4dd51ad73508d6fc83a502966779e48e}{H\+O\+R\+I\+Z\+O\+N\+T\+AL}}, 
+\mbox{\hyperlink{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a1a88641fcd39f2ed3e58a18526e97138}{V\+E\+R\+T\+I\+C\+AL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd__intern_8h_a5eed9ba5b2da7cb3d35ae025bac2cb6b}{gd\+Image\+Rotate90}} (\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd_8h_ada8bec5c7106984a97eeabb95cae4731}{src}}, int ignoretransparent)
+\item 
+\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd__intern_8h_a41259a5e4bdf4bb33c1200c88c17b051}{gd\+Image\+Rotate180}} (\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd_8h_ada8bec5c7106984a97eeabb95cae4731}{src}}, int ignoretransparent)
+\item 
+\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd__intern_8h_a85edb0aa92a28de6a48383b246b0a245}{gd\+Image\+Rotate270}} (\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{gd_8h_ada8bec5c7106984a97eeabb95cae4731}{src}}, int ignoretransparent)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gd__intern_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{gd__intern_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{gd\_intern.h@{gd\_intern.h}!MAX@{MAX}}
+\index{MAX@{MAX}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}))}
+
+\mbox{\Hypertarget{gd__intern_8h_a37c6d7fcb9c177c308ef38e1d51d35e3}\label{gd__intern_8h_a37c6d7fcb9c177c308ef38e1d51d35e3}} 
+\index{gd\_intern.h@{gd\_intern.h}!MAX3@{MAX3}}
+\index{MAX3@{MAX3}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{MAX3}{MAX3}}
+{\footnotesize\ttfamily \#define M\+A\+X3(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))}
+
+\mbox{\Hypertarget{gd__intern_8h_addfa831c1473e710d2b71b72fd7fcfa5}\label{gd__intern_8h_addfa831c1473e710d2b71b72fd7fcfa5}} 
+\index{gd\_intern.h@{gd\_intern.h}!MAXPATHLEN@{MAXPATHLEN}}
+\index{MAXPATHLEN@{MAXPATHLEN}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{MAXPATHLEN}{MAXPATHLEN}}
+{\footnotesize\ttfamily \#define M\+A\+X\+P\+A\+T\+H\+L\+EN~256    /$\ast$ Should \mbox{\hyperlink{commands_8doc_af0bf8322edf25090b1a3ef7e10cc30d1}{be}} safe for any weird systems that do not define it $\ast$/}
+
+\mbox{\Hypertarget{gd__intern_8h_a3acffbd305ee72dcd4593c0d8af64a4f}\label{gd__intern_8h_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{gd\_intern.h@{gd\_intern.h}!MIN@{MIN}}
+\index{MIN@{MIN}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define M\+IN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}))}
+
+\mbox{\Hypertarget{gd__intern_8h_a4887ceeae88266064841cbbc11ef8b53}\label{gd__intern_8h_a4887ceeae88266064841cbbc11ef8b53}} 
+\index{gd\_intern.h@{gd\_intern.h}!MIN3@{MIN3}}
+\index{MIN3@{MIN3}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{MIN3}{MIN3}}
+{\footnotesize\ttfamily \#define M\+I\+N3(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580}\label{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580}} 
+\index{gd\_intern.h@{gd\_intern.h}!gdAxis@{gdAxis}}
+\index{gdAxis@{gdAxis}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{gdAxis}{gdAxis}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580}{gd\+Axis}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HORIZONTAL@{HORIZONTAL}!gd\_intern.h@{gd\_intern.h}}\index{gd\_intern.h@{gd\_intern.h}!HORIZONTAL@{HORIZONTAL}}}\mbox{\Hypertarget{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a4dd51ad73508d6fc83a502966779e48e}\label{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a4dd51ad73508d6fc83a502966779e48e}} 
+H\+O\+R\+I\+Z\+O\+N\+T\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTICAL@{VERTICAL}!gd\_intern.h@{gd\_intern.h}}\index{gd\_intern.h@{gd\_intern.h}!VERTICAL@{VERTICAL}}}\mbox{\Hypertarget{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a1a88641fcd39f2ed3e58a18526e97138}\label{gd__intern_8h_a199f7d4e7dc83ede2bcb16d35731b580a1a88641fcd39f2ed3e58a18526e97138}} 
+V\+E\+R\+T\+I\+C\+AL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gd__intern_8h_a41259a5e4bdf4bb33c1200c88c17b051}\label{gd__intern_8h_a41259a5e4bdf4bb33c1200c88c17b051}} 
+\index{gd\_intern.h@{gd\_intern.h}!gdImageRotate180@{gdImageRotate180}}
+\index{gdImageRotate180@{gdImageRotate180}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{gdImageRotate180()}{gdImageRotate180()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} gd\+Image\+Rotate180 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}}}]{src,  }\item[{int}]{ignoretransparent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gd__intern_8h_a85edb0aa92a28de6a48383b246b0a245}\label{gd__intern_8h_a85edb0aa92a28de6a48383b246b0a245}} 
+\index{gd\_intern.h@{gd\_intern.h}!gdImageRotate270@{gdImageRotate270}}
+\index{gdImageRotate270@{gdImageRotate270}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{gdImageRotate270()}{gdImageRotate270()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} gd\+Image\+Rotate270 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}}}]{src,  }\item[{int}]{ignoretransparent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gd__intern_8h_a5eed9ba5b2da7cb3d35ae025bac2cb6b}\label{gd__intern_8h_a5eed9ba5b2da7cb3d35ae025bac2cb6b}} 
+\index{gd\_intern.h@{gd\_intern.h}!gdImageRotate90@{gdImageRotate90}}
+\index{gdImageRotate90@{gdImageRotate90}!gd\_intern.h@{gd\_intern.h}}
+\doxysubsubsection{\texorpdfstring{gdImageRotate90()}{gdImageRotate90()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} gd\+Image\+Rotate90 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}}}]{src,  }\item[{int}]{ignoretransparent }\end{DoxyParamCaption})}
+

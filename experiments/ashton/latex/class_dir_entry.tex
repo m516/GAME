@@ -1,0 +1,157 @@
+\hypertarget{class_dir_entry}{}\doxysection{Dir\+Entry Class Reference}
+\label{class_dir_entry}\index{DirEntry@{DirEntry}}
+
+
+{\ttfamily \#include $<$filedef.\+h$>$}
+
+Inheritance diagram for Dir\+Entry\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dir_entry}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}{Entry\+Kind}} \{ \mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0adb72b865ffffd17624eaac9e129e81e7}{Dir}}, 
+\mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0a275016310e0fac0f6fea318363c17fab}{File}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dir_entry_a04dfc1cc4766297488f75f58ea999ea3}{Dir\+Entry}} (\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$\mbox{\hyperlink{class_dir_entry_a4fc3f450cb8c57275a576899489233cf}{parent}}, \mbox{\hyperlink{class_file_def}{File\+Def}} $\ast$fd)
+\item 
+\mbox{\hyperlink{class_dir_entry_aca2fc76af0b968b01bc465bf22da4f19}{Dir\+Entry}} (\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$\mbox{\hyperlink{class_dir_entry_a4fc3f450cb8c57275a576899489233cf}{parent}}, \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dir_entry_a0c9adc1d60c0c04a270456c3517b6f81}{name}})
+\item 
+virtual \mbox{\hyperlink{class_dir_entry_a97026a1420cd2421b2ab3426848058f7}{$\sim$\+Dir\+Entry}} ()
+\item 
+\mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}{Entry\+Kind}} \mbox{\hyperlink{class_dir_entry_ad90535bd922234007d55c5aeecacd4c2}{kind}} () const
+\item 
+\mbox{\hyperlink{class_file_def}{File\+Def}} $\ast$ \mbox{\hyperlink{class_dir_entry_a066c1571da499e877d59c0817b593d91}{file}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dir_entry_af12f7f39e982fa37e9003ebcbf85a234}{is\+Last}} () const
+\item 
+void \mbox{\hyperlink{class_dir_entry_afe7c7ba2399a45fff693a00c8390510f}{set\+Last}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})
+\item 
+\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$ \mbox{\hyperlink{class_dir_entry_a4fc3f450cb8c57275a576899489233cf}{parent}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dir_entry_a0c9adc1d60c0c04a270456c3517b6f81}{name}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dir_entry_a106d84dd4fac3cb3d34959ddaf2c9323}{path}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$ \mbox{\hyperlink{class_dir_entry_ac43bb4a66667c2dc67c40152b6c17975}{m\+\_\+parent}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dir_entry_a6d177d497073ab12cbc88611027f62e9}{m\+\_\+name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing an entry (file or sub directory) in a directory 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}\label{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}} 
+\index{DirEntry@{DirEntry}!EntryKind@{EntryKind}}
+\index{EntryKind@{EntryKind}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{EntryKind}{EntryKind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}{Dir\+Entry\+::\+Entry\+Kind}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dir@{Dir}!DirEntry@{DirEntry}}\index{DirEntry@{DirEntry}!Dir@{Dir}}}\mbox{\Hypertarget{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0adb72b865ffffd17624eaac9e129e81e7}\label{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0adb72b865ffffd17624eaac9e129e81e7}} 
+Dir&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{File@{File}!DirEntry@{DirEntry}}\index{DirEntry@{DirEntry}!File@{File}}}\mbox{\Hypertarget{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0a275016310e0fac0f6fea318363c17fab}\label{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0a275016310e0fac0f6fea318363c17fab}} 
+File&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dir_entry_a04dfc1cc4766297488f75f58ea999ea3}\label{class_dir_entry_a04dfc1cc4766297488f75f58ea999ea3}} 
+\index{DirEntry@{DirEntry}!DirEntry@{DirEntry}}
+\index{DirEntry@{DirEntry}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{DirEntry()}{DirEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Dir\+Entry\+::\+Dir\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{class_file_def}{File\+Def}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_aca2fc76af0b968b01bc465bf22da4f19}\label{class_dir_entry_aca2fc76af0b968b01bc465bf22da4f19}} 
+\index{DirEntry@{DirEntry}!DirEntry@{DirEntry}}
+\index{DirEntry@{DirEntry}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{DirEntry()}{DirEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Dir\+Entry\+::\+Dir\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dir_entry}{Dir\+Entry}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_a97026a1420cd2421b2ab3426848058f7}\label{class_dir_entry_a97026a1420cd2421b2ab3426848058f7}} 
+\index{DirEntry@{DirEntry}!````~DirEntry@{$\sim$DirEntry}}
+\index{````~DirEntry@{$\sim$DirEntry}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{$\sim$DirEntry()}{~DirEntry()}}
+{\footnotesize\ttfamily virtual Dir\+Entry\+::$\sim$\+Dir\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dir_entry_a066c1571da499e877d59c0817b593d91}\label{class_dir_entry_a066c1571da499e877d59c0817b593d91}} 
+\index{DirEntry@{DirEntry}!file@{file}}
+\index{file@{file}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_file_def}{File\+Def}}$\ast$ Dir\+Entry\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_af12f7f39e982fa37e9003ebcbf85a234}\label{class_dir_entry_af12f7f39e982fa37e9003ebcbf85a234}} 
+\index{DirEntry@{DirEntry}!isLast@{isLast}}
+\index{isLast@{isLast}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{isLast()}{isLast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dir\+Entry\+::is\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_ad90535bd922234007d55c5aeecacd4c2}\label{class_dir_entry_ad90535bd922234007d55c5aeecacd4c2}} 
+\index{DirEntry@{DirEntry}!kind@{kind}}
+\index{kind@{kind}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dir_entry_a1edafe219ba585326221f2fbe66afaf0}{Entry\+Kind}} Dir\+Entry\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_a0c9adc1d60c0c04a270456c3517b6f81}\label{class_dir_entry_a0c9adc1d60c0c04a270456c3517b6f81}} 
+\index{DirEntry@{DirEntry}!name@{name}}
+\index{name@{name}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dir\+Entry\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_a4fc3f450cb8c57275a576899489233cf}\label{class_dir_entry_a4fc3f450cb8c57275a576899489233cf}} 
+\index{DirEntry@{DirEntry}!parent@{parent}}
+\index{parent@{parent}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dir_entry}{Dir\+Entry}}$\ast$ Dir\+Entry\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_a106d84dd4fac3cb3d34959ddaf2c9323}\label{class_dir_entry_a106d84dd4fac3cb3d34959ddaf2c9323}} 
+\index{DirEntry@{DirEntry}!path@{path}}
+\index{path@{path}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dir\+Entry\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dir_entry_afe7c7ba2399a45fff693a00c8390510f}\label{class_dir_entry_afe7c7ba2399a45fff693a00c8390510f}} 
+\index{DirEntry@{DirEntry}!setLast@{setLast}}
+\index{setLast@{setLast}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{setLast()}{setLast()}}
+{\footnotesize\ttfamily void Dir\+Entry\+::set\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dir_entry_a6d177d497073ab12cbc88611027f62e9}\label{class_dir_entry_a6d177d497073ab12cbc88611027f62e9}} 
+\index{DirEntry@{DirEntry}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dir\+Entry\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dir_entry_ac43bb4a66667c2dc67c40152b6c17975}\label{class_dir_entry_ac43bb4a66667c2dc67c40152b6c17975}} 
+\index{DirEntry@{DirEntry}!m\_parent@{m\_parent}}
+\index{m\_parent@{m\_parent}!DirEntry@{DirEntry}}
+\doxysubsubsection{\texorpdfstring{m\_parent}{m\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dir_entry}{Dir\+Entry}}$\ast$ Dir\+Entry\+::m\+\_\+parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{filedef_8h}{filedef.\+h}}\end{DoxyCompactItemize}

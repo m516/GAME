@@ -1,0 +1,48 @@
+\mbox{\hyperlink{class_doxygen}{Doxygen}} supports most of the X\+ML commands that are typically used in \mbox{\hyperlink{class_c}{C}}\# code comments. The X\+ML tags are defined in Appendix \mbox{\hyperlink{class_e}{E}} of the \href{http://www.ecma-international.org/publications/standards/Ecma-334.htm}{\texttt{ E\+C\+M\+A-\/334}} standard, which defines the \mbox{\hyperlink{class_c}{C}}\# language. Unfortunately, the specification is not very precise and a number of the examples given are of poor quality.
+
+Here is the list of tags supported by doxygen\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily $<$c$>$} Identifies inline text that should be rendered as a piece of code. Similar to using {\ttfamily $<$tt$>$}text{\ttfamily $<$/tt$>$}. 
+\item {\ttfamily $<$code$>$} Set one or more lines of source code or program output. Note that this command behaves like \textbackslash{}code ... \textbackslash{}endcode for \mbox{\hyperlink{class_c}{C}}\# code, but it behaves like the H\+T\+ML equivalent {\ttfamily $<$code$>$...$<$/code$>$} for other languages. 
+\item {\ttfamily $<$description$>$} Part of a {\ttfamily $<$list$>$} command, describes an item. 
+\item {\ttfamily $<$example$>$} Marks a block of text as an example, ignored by doxygen. 
+\item {\ttfamily $<$exception cref=\char`\"{}member\char`\"{}$>$} Identifies the exception a method can throw. 
+\item {\ttfamily $<$include$>$} Can be used to import a piece of X\+ML from an external file. Ignored by doxygen at the moment. 
+\item {\ttfamily $<$inheritdoc$>$} Can be used to insert the documentation of a member of a base class into the documentation of a member of a derived class that reimplements it. 
+\item {\ttfamily $<$item$>$} List item. Can only be used inside a {\ttfamily $<$list$>$} context. 
+\item {\ttfamily $<$list type=\char`\"{}type\char`\"{}$>$} Starts a list, supported types are {\ttfamily bullet} or {\ttfamily number} and {\ttfamily table}. \mbox{\hyperlink{class_a}{A}} list consists of a number of {\ttfamily $<$item$>$} tags. \mbox{\hyperlink{class_a}{A}} list of type table, is a two column table which can have a header. 
+\item {\ttfamily $<$listheader$>$} Starts the header of a list of type \char`\"{}table\char`\"{}. 
+\item {\ttfamily $<$para$>$} Identifies a paragraph of text. 
+\item {\ttfamily $<$param name=\char`\"{}param\+Name\char`\"{}$>$} Marks a piece of text as the documentation for parameter \char`\"{}param\+Name\char`\"{}. Similar to using \textbackslash{}param. 
+\item {\ttfamily $<$paramref name=\char`\"{}param\+Name\char`\"{}$>$} Refers to a parameter with name \char`\"{}param\+Name\char`\"{}. Similar to using \textbackslash{}a. 
+\item {\ttfamily $<$permission$>$} Identifies the security accessibility of a member. Ignored by doxygen. 
+\item {\ttfamily $<$remarks$>$} Identifies the detailed description. 
+\item {\ttfamily $<$returns$>$} Marks a piece of text as the return value of a function or method. Similar to using \textbackslash{}return. 
+\item {\ttfamily $<$see cref=\char`\"{}member\char`\"{}$>$} Refers to a member. Similar to \textbackslash{}ref. 
+\item {\ttfamily $<$seealso cref=\char`\"{}member\char`\"{}$>$} Starts a \char`\"{}\+See also\char`\"{} section referring to \char`\"{}member\char`\"{}. Similar to using \textbackslash{}sa member. 
+\item {\ttfamily $<$summary$>$} Identifies the brief description. Similar to using \textbackslash{}brief. 
+\item {\ttfamily $<$term$>$} Part of a {\ttfamily $<$list$>$} command. 
+\item {\ttfamily $<$typeparam name=\char`\"{}param\+Name\char`\"{}$>$} Marks a piece of text as the documentation for type parameter \char`\"{}param\+Name\char`\"{}. Similar to using \textbackslash{}param. 
+\item {\ttfamily $<$typeparamref name=\char`\"{}param\+Name\char`\"{}$>$} Refers to a parameter with name \char`\"{}param\+Name\char`\"{}. Similar to using \textbackslash{}a. 
+\item {\ttfamily $<$value$>$} Identifies a property. Ignored by doxygen. 
+\item {\ttfamily $<$!\mbox{[}C\+D\+A\+TA\mbox{[}...\mbox{]}\mbox{]}$>$} The text inside this tag (on the ...) is handled as normal doxygen comment except for the X\+ML special characters {\ttfamily $<$}, {\ttfamily $>$} and {\ttfamily \&} that are used as if they were escaped. 
+\end{DoxyItemize}
+
+Here is an example of a typical piece of code using some of the above commands\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }Engine}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{public} DataSet \mbox{\hyperlink{build_2generated__src_2pyscanner_8cpp_a3e84905605bcd66eb6d6acec5ca7ec54}{Search}}(\textcolor{keywordtype}{string} connectionString, \textcolor{keywordtype}{int} maxRows, \textcolor{keywordtype}{int} searchString)}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{    DataSet ds = \textcolor{keyword}{new} DataSet();}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} ds;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+ 

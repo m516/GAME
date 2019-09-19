@@ -1,0 +1,67 @@
+\hypertarget{rtfgen_8cpp}{}\doxysection{doxygen/src/rtfgen.cpp File Reference}
+\label{rtfgen_8cpp}\index{doxygen/src/rtfgen.cpp@{doxygen/src/rtfgen.cpp}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$qdir.\+h$>$}\newline
+{\ttfamily \#include $<$qregexp.\+h$>$}\newline
+{\ttfamily \#include $<$qtextstream.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rtfgen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doxygen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diagram.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotcallgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotclassgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotdirdeps.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotincldepgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}version.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pagedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rtfstyle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rtfdocvisitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}docparser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dirdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vhdldocgen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}groupdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filename.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}namespacedef.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rtfgen_8cpp_a8e937453cd49cd7e753fa4e9d77d3c38}{D\+B\+G\+\_\+\+R\+TF}}(\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{rtfgen_8cpp_abe03bf3096ce8ecd54bd585fced49356}{is\+Lead\+Bytes}} (int \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})
+\item 
+void \mbox{\hyperlink{rtfgen_8cpp_a6c46025b4ad3cde983f30c1a70a10d28}{test\+R\+T\+F\+Output}} (const char $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rtfgen_8cpp_a8e937453cd49cd7e753fa4e9d77d3c38}\label{rtfgen_8cpp_a8e937453cd49cd7e753fa4e9d77d3c38}} 
+\index{rtfgen.cpp@{rtfgen.cpp}!DBG\_RTF@{DBG\_RTF}}
+\index{DBG\_RTF@{DBG\_RTF}!rtfgen.cpp@{rtfgen.cpp}}
+\doxysubsubsection{\texorpdfstring{DBG\_RTF}{DBG\_RTF}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+R\+TF(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtfgen_8cpp_abe03bf3096ce8ecd54bd585fced49356}\label{rtfgen_8cpp_abe03bf3096ce8ecd54bd585fced49356}} 
+\index{rtfgen.cpp@{rtfgen.cpp}!isLeadBytes@{isLeadBytes}}
+\index{isLeadBytes@{isLeadBytes}!rtfgen.cpp@{rtfgen.cpp}}
+\doxysubsubsection{\texorpdfstring{isLeadBytes()}{isLeadBytes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Lead\+Bytes (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtfgen_8cpp_a6c46025b4ad3cde983f30c1a70a10d28}\label{rtfgen_8cpp_a6c46025b4ad3cde983f30c1a70a10d28}} 
+\index{rtfgen.cpp@{rtfgen.cpp}!testRTFOutput@{testRTFOutput}}
+\index{testRTFOutput@{testRTFOutput}!rtfgen.cpp@{rtfgen.cpp}}
+\doxysubsubsection{\texorpdfstring{testRTFOutput()}{testRTFOutput()}}
+{\footnotesize\ttfamily void test\+R\+T\+F\+Output (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Tests the integrity of the result by counting brackets. 

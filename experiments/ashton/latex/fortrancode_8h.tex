@@ -1,0 +1,47 @@
+\hypertarget{fortrancode_8h}{}\doxysection{doxygen/src/fortrancode.h File Reference}
+\label{fortrancode_8h}\index{doxygen/src/fortrancode.h@{doxygen/src/fortrancode.h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fortrancode_8h_a620b334b7c97a071655cf05ba46a8961}{parse\+Fortran\+Code}} (\mbox{\hyperlink{class_code_output_interface}{Code\+Output\+Interface}} \&, const char $\ast$, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}, const char $\ast$, \mbox{\hyperlink{class_file_def}{File\+Def}} $\ast$fd, int start\+Line, int end\+Line, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} inline\+Fragment, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$member\+Def, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} show\+Line\+Numbers, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$search\+Ctx, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} collect\+Refs, \mbox{\hyperlink{types_8h_ad3f2a8c13ceee9c0aaeabf930dd88266}{Fortran\+Format}} format)
+\item 
+void \mbox{\hyperlink{fortrancode_8h_a4d60ec1afc4309e30e686400f692b1b2}{reset\+Fortran\+Code\+Parser\+State}} ()
+\item 
+void \mbox{\hyperlink{fortrancode_8h_a0666b9a0ee82e12765275957502160c7}{code\+Free\+Scanner}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{fortrancode_8h_aa03f3d753568cdfbab5825c0d7cd3547}{fixed\+Comment\+After}} = 72
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fortrancode_8h_a0666b9a0ee82e12765275957502160c7}\label{fortrancode_8h_a0666b9a0ee82e12765275957502160c7}} 
+\index{fortrancode.h@{fortrancode.h}!codeFreeScanner@{codeFreeScanner}}
+\index{codeFreeScanner@{codeFreeScanner}!fortrancode.h@{fortrancode.h}}
+\doxysubsubsection{\texorpdfstring{codeFreeScanner()}{codeFreeScanner()}}
+{\footnotesize\ttfamily void code\+Free\+Scanner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortrancode_8h_a620b334b7c97a071655cf05ba46a8961}\label{fortrancode_8h_a620b334b7c97a071655cf05ba46a8961}} 
+\index{fortrancode.h@{fortrancode.h}!parseFortranCode@{parseFortranCode}}
+\index{parseFortranCode@{parseFortranCode}!fortrancode.h@{fortrancode.h}}
+\doxysubsubsection{\texorpdfstring{parseFortranCode()}{parseFortranCode()}}
+{\footnotesize\ttfamily void parse\+Fortran\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_output_interface}{Code\+Output\+Interface}} \&}]{,  }\item[{const char $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{class_file_def}{File\+Def}} $\ast$}]{fd,  }\item[{int}]{start\+Line,  }\item[{int}]{end\+Line,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{inline\+Fragment,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{member\+Def,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{show\+Line\+Numbers,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{search\+Ctx,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{collect\+Refs,  }\item[{\mbox{\hyperlink{types_8h_ad3f2a8c13ceee9c0aaeabf930dd88266}{Fortran\+Format}}}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortrancode_8h_a4d60ec1afc4309e30e686400f692b1b2}\label{fortrancode_8h_a4d60ec1afc4309e30e686400f692b1b2}} 
+\index{fortrancode.h@{fortrancode.h}!resetFortranCodeParserState@{resetFortranCodeParserState}}
+\index{resetFortranCodeParserState@{resetFortranCodeParserState}!fortrancode.h@{fortrancode.h}}
+\doxysubsubsection{\texorpdfstring{resetFortranCodeParserState()}{resetFortranCodeParserState()}}
+{\footnotesize\ttfamily void reset\+Fortran\+Code\+Parser\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{fortrancode_8h_aa03f3d753568cdfbab5825c0d7cd3547}\label{fortrancode_8h_aa03f3d753568cdfbab5825c0d7cd3547}} 
+\index{fortrancode.h@{fortrancode.h}!fixedCommentAfter@{fixedCommentAfter}}
+\index{fixedCommentAfter@{fixedCommentAfter}!fortrancode.h@{fortrancode.h}}
+\doxysubsubsection{\texorpdfstring{fixedCommentAfter}{fixedCommentAfter}}
+{\footnotesize\ttfamily const int fixed\+Comment\+After = 72}
+

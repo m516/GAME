@@ -1,0 +1,13 @@
+\hypertarget{outputlist_8cpp}{}\doxysection{doxygen/src/outputlist.cpp File Reference}
+\label{outputlist_8cpp}\index{doxygen/src/outputlist.cpp@{doxygen/src/outputlist.cpp}}
+{\ttfamily \#include \char`\"{}outputlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}outputgen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definition.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}docparser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vhdldocgen.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+This class represents a list of output generators that work in \char`\"{}parallel\char`\"{}. The class only knows about the abstract base class Output\+Generators. All output is produced by calling a method of this class, which forwards the call to all output generators. 

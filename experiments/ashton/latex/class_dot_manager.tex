@@ -1,0 +1,56 @@
+\hypertarget{class_dot_manager}{}\doxysection{Dot\+Manager Class Reference}
+\label{class_dot_manager}\index{DotManager@{DotManager}}
+
+
+{\ttfamily \#include $<$dot.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dot_runner}{Dot\+Runner}} $\ast$ \mbox{\hyperlink{class_dot_manager_affaee30a9c348252f29053e3dc53c77f}{create\+Runner}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&abs\+Dot\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&md5\+Hash)
+\item 
+\mbox{\hyperlink{class_dot_file_patcher}{Dot\+File\+Patcher}} $\ast$ \mbox{\hyperlink{class_dot_manager_a250e1025f4793941521d21081df9511f}{create\+File\+Patcher}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&file\+Name)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_manager_a27d0eeafc0748ce44f369faed8f495d9}{run}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_dot_manager}{Dot\+Manager}} $\ast$ \mbox{\hyperlink{class_dot_manager_af6eb5ac505738992f7440e4a5948997f}{instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton that manages parallel dot invocations and patching files for embedding image maps 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dot_manager_a250e1025f4793941521d21081df9511f}\label{class_dot_manager_a250e1025f4793941521d21081df9511f}} 
+\index{DotManager@{DotManager}!createFilePatcher@{createFilePatcher}}
+\index{createFilePatcher@{createFilePatcher}!DotManager@{DotManager}}
+\doxysubsubsection{\texorpdfstring{createFilePatcher()}{createFilePatcher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dot_file_patcher}{Dot\+File\+Patcher}} $\ast$ Dot\+Manager\+::create\+File\+Patcher (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_manager_affaee30a9c348252f29053e3dc53c77f}\label{class_dot_manager_affaee30a9c348252f29053e3dc53c77f}} 
+\index{DotManager@{DotManager}!createRunner@{createRunner}}
+\index{createRunner@{createRunner}!DotManager@{DotManager}}
+\doxysubsubsection{\texorpdfstring{createRunner()}{createRunner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dot_runner}{Dot\+Runner}} $\ast$ Dot\+Manager\+::create\+Runner (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{abs\+Dot\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{md5\+Hash }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_manager_af6eb5ac505738992f7440e4a5948997f}\label{class_dot_manager_af6eb5ac505738992f7440e4a5948997f}} 
+\index{DotManager@{DotManager}!instance@{instance}}
+\index{instance@{instance}!DotManager@{DotManager}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dot_manager}{Dot\+Manager}} $\ast$ Dot\+Manager\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dot_manager_a27d0eeafc0748ce44f369faed8f495d9}\label{class_dot_manager_a27d0eeafc0748ce44f369faed8f495d9}} 
+\index{DotManager@{DotManager}!run@{run}}
+\index{run@{run}!DotManager@{DotManager}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+Manager\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{dot_8h}{dot.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{dot_8cpp}{dot.\+cpp}}\end{DoxyCompactItemize}

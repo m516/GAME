@@ -1,0 +1,122 @@
+\hypertarget{class_doc_internal_handler}{}\doxysection{Doc\+Internal\+Handler Class Reference}
+\label{class_doc_internal_handler}\index{DocInternalHandler@{DocInternalHandler}}
+
+
+{\ttfamily \#include $<$dochandler.\+h$>$}
+
+Inheritance diagram for Doc\+Internal\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.322314cm]{class_doc_internal_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_internal_handler_a427a5ae98fdbbca2c01cd591b8ef0cf4}{Doc\+Internal\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent, int \mbox{\hyperlink{gd_8h_a68fa175816cc25c7c9ea3553ea2aab98}{level}})
+\item 
+virtual \mbox{\hyperlink{class_doc_internal_handler_a129ee61a546aaae4020605d74714972a}{$\sim$\+Doc\+Internal\+Handler}} ()
+\item 
+virtual void \mbox{\hyperlink{class_doc_internal_handler_af41ed4390babd870c4e111544226284c}{start\+Internal}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+virtual void \mbox{\hyperlink{class_doc_internal_handler_aaff500a74479fff6bbbd398b90d69e69}{end\+Internal}} ()
+\item 
+virtual void \mbox{\hyperlink{class_doc_internal_handler_af51a9a54d3d5d53100648239f08aa013}{start\+Sub\+Section}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+virtual void \mbox{\hyperlink{class_doc_internal_handler_a7ed05a39b8e15ed7c73bf9b4d7070146}{start\+Paragraph}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+virtual Kind \mbox{\hyperlink{class_doc_internal_handler_a0b96fb24d952d336cbf5de62f62f851b}{kind}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ \mbox{\hyperlink{class_doc_internal_handler_a77964a7e9934287fdec3f7a5a636c3f4}{paragraphs}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ \mbox{\hyperlink{class_doc_internal_handler_ad91c34db96ac8c77d10f512d5f2c60e5}{sub\+Sections}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_doc_internal_handler_a1fd597f22ffe4116c894d88e4cf681fc}{Doc\+Internal\+Para\+Iterator}}
+\item 
+class \mbox{\hyperlink{class_doc_internal_handler_a36c6a46fa570a2203116c27a992e1c4e}{Doc\+Internal\+Sub\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_internal_handler_a427a5ae98fdbbca2c01cd591b8ef0cf4}\label{class_doc_internal_handler_a427a5ae98fdbbca2c01cd591b8ef0cf4}} 
+\index{DocInternalHandler@{DocInternalHandler}!DocInternalHandler@{DocInternalHandler}}
+\index{DocInternalHandler@{DocInternalHandler}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{DocInternalHandler()}{DocInternalHandler()}}
+{\footnotesize\ttfamily Doc\+Internal\+Handler\+::\+Doc\+Internal\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_internal_handler_a129ee61a546aaae4020605d74714972a}\label{class_doc_internal_handler_a129ee61a546aaae4020605d74714972a}} 
+\index{DocInternalHandler@{DocInternalHandler}!````~DocInternalHandler@{$\sim$DocInternalHandler}}
+\index{````~DocInternalHandler@{$\sim$DocInternalHandler}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$DocInternalHandler()}{~DocInternalHandler()}}
+{\footnotesize\ttfamily Doc\+Internal\+Handler\+::$\sim$\+Doc\+Internal\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_internal_handler_aaff500a74479fff6bbbd398b90d69e69}\label{class_doc_internal_handler_aaff500a74479fff6bbbd398b90d69e69}} 
+\index{DocInternalHandler@{DocInternalHandler}!endInternal@{endInternal}}
+\index{endInternal@{endInternal}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{endInternal()}{endInternal()}}
+{\footnotesize\ttfamily void Doc\+Internal\+Handler\+::end\+Internal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_a0b96fb24d952d336cbf5de62f62f851b}\label{class_doc_internal_handler_a0b96fb24d952d336cbf5de62f62f851b}} 
+\index{DocInternalHandler@{DocInternalHandler}!kind@{kind}}
+\index{kind@{kind}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual Kind Doc\+Internal\+Handler\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_a77964a7e9934287fdec3f7a5a636c3f4}\label{class_doc_internal_handler_a77964a7e9934287fdec3f7a5a636c3f4}} 
+\index{DocInternalHandler@{DocInternalHandler}!paragraphs@{paragraphs}}
+\index{paragraphs@{paragraphs}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{paragraphs()}{paragraphs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ Doc\+Internal\+Handler\+::paragraphs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_af41ed4390babd870c4e111544226284c}\label{class_doc_internal_handler_af41ed4390babd870c4e111544226284c}} 
+\index{DocInternalHandler@{DocInternalHandler}!startInternal@{startInternal}}
+\index{startInternal@{startInternal}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{startInternal()}{startInternal()}}
+{\footnotesize\ttfamily void Doc\+Internal\+Handler\+::start\+Internal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_a7ed05a39b8e15ed7c73bf9b4d7070146}\label{class_doc_internal_handler_a7ed05a39b8e15ed7c73bf9b4d7070146}} 
+\index{DocInternalHandler@{DocInternalHandler}!startParagraph@{startParagraph}}
+\index{startParagraph@{startParagraph}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{startParagraph()}{startParagraph()}}
+{\footnotesize\ttfamily void Doc\+Internal\+Handler\+::start\+Paragraph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_af51a9a54d3d5d53100648239f08aa013}\label{class_doc_internal_handler_af51a9a54d3d5d53100648239f08aa013}} 
+\index{DocInternalHandler@{DocInternalHandler}!startSubSection@{startSubSection}}
+\index{startSubSection@{startSubSection}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{startSubSection()}{startSubSection()}}
+{\footnotesize\ttfamily void Doc\+Internal\+Handler\+::start\+Sub\+Section (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_ad91c34db96ac8c77d10f512d5f2c60e5}\label{class_doc_internal_handler_ad91c34db96ac8c77d10f512d5f2c60e5}} 
+\index{DocInternalHandler@{DocInternalHandler}!subSections@{subSections}}
+\index{subSections@{subSections}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{subSections()}{subSections()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ Doc\+Internal\+Handler\+::sub\+Sections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_doc_internal_handler_a1fd597f22ffe4116c894d88e4cf681fc}\label{class_doc_internal_handler_a1fd597f22ffe4116c894d88e4cf681fc}} 
+\index{DocInternalHandler@{DocInternalHandler}!DocInternalParaIterator@{DocInternalParaIterator}}
+\index{DocInternalParaIterator@{DocInternalParaIterator}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{DocInternalParaIterator}{DocInternalParaIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_doc_internal_para_iterator}{Doc\+Internal\+Para\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_doc_internal_handler_a36c6a46fa570a2203116c27a992e1c4e}\label{class_doc_internal_handler_a36c6a46fa570a2203116c27a992e1c4e}} 
+\index{DocInternalHandler@{DocInternalHandler}!DocInternalSubIterator@{DocInternalSubIterator}}
+\index{DocInternalSubIterator@{DocInternalSubIterator}!DocInternalHandler@{DocInternalHandler}}
+\doxysubsubsection{\texorpdfstring{DocInternalSubIterator}{DocInternalSubIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_doc_internal_sub_iterator}{Doc\+Internal\+Sub\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8h}{dochandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8cpp}{dochandler.\+cpp}}\end{DoxyCompactItemize}

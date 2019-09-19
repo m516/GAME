@@ -1,0 +1,111 @@
+\hypertarget{class_argument_list_context}{}\doxysection{Argument\+List\+Context Class Reference}
+\label{class_argument_list_context}\index{ArgumentListContext@{ArgumentListContext}}
+
+
+{\ttfamily \#include $<$context.\+h$>$}
+
+Inheritance diagram for Argument\+List\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_argument_list_context}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_argument_list_context_1_1_private}{Private}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_argument_list_context_a178ceda7e6b509e85aecc898ebefe1ed}{count}} () const
+\item 
+virtual \mbox{\hyperlink{class_template_variant}{Template\+Variant}} \mbox{\hyperlink{class_argument_list_context_ac3c4acdd80cab2fcbd53eed215034fe1}{at}} (int index) const
+\item 
+virtual \mbox{\hyperlink{class_template_list_intf_1_1_const_iterator}{Template\+List\+Intf\+::\+Const\+Iterator}} $\ast$ \mbox{\hyperlink{class_argument_list_context_aeba72b5aa63d93c1444448170b5c6612}{create\+Iterator}} () const
+\item 
+virtual int \mbox{\hyperlink{class_argument_list_context_a378c354cf154e3505e9d5a706ceaea55}{add\+Ref}} ()
+\item 
+virtual int \mbox{\hyperlink{class_argument_list_context_a7e22b3f45a889508dba94e578c8661f2}{release}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_argument_list_context}{Argument\+List\+Context}} $\ast$ \mbox{\hyperlink{class_argument_list_context_aab36d7194c922796c443095a484d66c2}{alloc}} ()
+\item 
+static \mbox{\hyperlink{class_argument_list_context}{Argument\+List\+Context}} $\ast$ \mbox{\hyperlink{class_argument_list_context_adc48d542716783501ab98e1f47664e88}{alloc}} (const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$al, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$def, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_argument_list_context_a378c354cf154e3505e9d5a706ceaea55}\label{class_argument_list_context_a378c354cf154e3505e9d5a706ceaea55}} 
+\index{ArgumentListContext@{ArgumentListContext}!addRef@{addRef}}
+\index{addRef@{addRef}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily virtual int Argument\+List\+Context\+::add\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Increase object\textquotesingle{}s reference count 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a4b4973e2e15396d10bc4e3085462ca2b}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_argument_list_context_aab36d7194c922796c443095a484d66c2}\label{class_argument_list_context_aab36d7194c922796c443095a484d66c2}} 
+\index{ArgumentListContext@{ArgumentListContext}!alloc@{alloc}}
+\index{alloc@{alloc}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_argument_list_context}{Argument\+List\+Context}}$\ast$ Argument\+List\+Context\+::alloc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_argument_list_context_adc48d542716783501ab98e1f47664e88}\label{class_argument_list_context_adc48d542716783501ab98e1f47664e88}} 
+\index{ArgumentListContext@{ArgumentListContext}!alloc@{alloc}}
+\index{alloc@{alloc}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_argument_list_context}{Argument\+List\+Context}}$\ast$ Argument\+List\+Context\+::alloc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_argument_list}{Argument\+List}} $\ast$}]{al,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{def,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_argument_list_context_ac3c4acdd80cab2fcbd53eed215034fe1}\label{class_argument_list_context_ac3c4acdd80cab2fcbd53eed215034fe1}} 
+\index{ArgumentListContext@{ArgumentListContext}!at@{at}}
+\index{at@{at}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_template_variant}{Template\+Variant}} Argument\+List\+Context\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the element at index position {\itshape index}. 
+
+Implements \mbox{\hyperlink{class_template_list_intf_aa51e57e72eacf4e8ce1055ee30a0f7f8}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_argument_list_context_a178ceda7e6b509e85aecc898ebefe1ed}\label{class_argument_list_context_a178ceda7e6b509e85aecc898ebefe1ed}} 
+\index{ArgumentListContext@{ArgumentListContext}!count@{count}}
+\index{count@{count}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily int Argument\+List\+Context\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of elements in the list 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a329e49e33484c2aa5106aac1bf4e5216}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_argument_list_context_aeba72b5aa63d93c1444448170b5c6612}\label{class_argument_list_context_aeba72b5aa63d93c1444448170b5c6612}} 
+\index{ArgumentListContext@{ArgumentListContext}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_template_list_intf_1_1_const_iterator}{Template\+List\+Intf\+::\+Const\+Iterator}} $\ast$ Argument\+List\+Context\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a new iterator for this list. \begin{DoxyNote}{Note}
+the user should call delete on the returned pointer. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_template_list_intf_a56b82384db24c3e121076a1da046d378}{Template\+List\+Intf}}.
+
+\mbox{\Hypertarget{class_argument_list_context_a7e22b3f45a889508dba94e578c8661f2}\label{class_argument_list_context_a7e22b3f45a889508dba94e578c8661f2}} 
+\index{ArgumentListContext@{ArgumentListContext}!release@{release}}
+\index{release@{release}!ArgumentListContext@{ArgumentListContext}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily virtual int Argument\+List\+Context\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Decreases object\textquotesingle{}s reference count, destroy object if 0 
+
+Implements \mbox{\hyperlink{class_template_list_intf_a0c53169c740c09dac47efc62bbe39674}{Template\+List\+Intf}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{context_8h}{context.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{context_8cpp}{context.\+cpp}}\end{DoxyCompactItemize}

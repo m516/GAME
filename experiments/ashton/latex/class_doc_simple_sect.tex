@@ -1,0 +1,243 @@
+\hypertarget{class_doc_simple_sect}{}\doxysection{Doc\+Simple\+Sect Class Reference}
+\label{class_doc_simple_sect}\index{DocSimpleSect@{DocSimpleSect}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Simple\+Sect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doc_simple_sect}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Type}} \{ \newline
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba9fea43f94c363209267026e3cf9583c6}{Unknown}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3bca11381a4eecb0a155993159e1f471}{See}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bafbc7207cbd14361819ce4f2c8c33595d}{Return}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba93b679802935bef0edcd5d13787c93d7}{Author}}, 
+\newline
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3e7dc72d1c6e9b0fd204ec7db9c47f6a}{Authors}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baf32673a5f516e2100d41b917f37cfdf1}{Version}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9babede06022ff92538707861de74d9fdb5}{Since}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba7ebb3d39104e4023d8f64d46e9166305}{Date}}, 
+\newline
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bada884137c8ff6a93503a9c561d5c35d0}{Note}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba407aa635cc75a80b3e222e307c43c988}{Warning}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba2e0c7884fe9de17cc8ec29cc8c445fa1}{Copyright}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba68b35aae9972a5f2f4b739edb91db575}{Pre}}, 
+\newline
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba10f52cafbfab59b29c286ac5d38251c8}{Post}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baa5d61ff7b823df12aa9a3895342561b8}{Invar}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba71e7bd96894c8ce74ca64456d34d3939}{Remark}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae3e95855fe383d4767691416f122bda8}{Attention}}, 
+\newline
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba0cdc5e6cf3a4156f2e4cb80d267ea87d}{User}}, 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae7ac2742a06bed8be1747d68ec4af980}{Rcs}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_simple_sect_a0ef58433b1e5f366b593d17a9ba4b9e1}{Doc\+Simple\+Sect}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, \mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Type}} \mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\item 
+virtual \mbox{\hyperlink{class_doc_simple_sect_a5b8a0f80776d4071348a14ce769f61f7}{$\sim$\+Doc\+Simple\+Sect}} ()
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_simple_sect_a9a9f612d6101d0accc815394e5d29e34}{kind}} () const
+\item 
+\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Type}} \mbox{\hyperlink{class_doc_simple_sect_a1ea4e7672816ad91cf567b2000f1a65c}{type}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_simple_sect_a151d09b73379f0fcade95af7ce910250}{type\+String}} () const
+\item 
+void \mbox{\hyperlink{class_doc_simple_sect_a83c0f2c289b0d15403d1adf94c98982d}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+int \mbox{\hyperlink{class_doc_simple_sect_a6d4285005170976f90f3aa926a7be8c0}{parse}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} user\+Title, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} needs\+Separator)
+\item 
+int \mbox{\hyperlink{class_doc_simple_sect_a781284e66505901d40fd6d9df8663b3e}{parse\+Rcs}} ()
+\item 
+int \mbox{\hyperlink{class_doc_simple_sect_a5cdcf0db314a3f9721842c3134550ce2}{parse\+Xml}} ()
+\item 
+void \mbox{\hyperlink{class_doc_simple_sect_ae538f74c2d44222c9a45ef304c89e041}{append\+Link\+Word}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&word)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_simple_sect_af7bb6fa3996348dc1e211e32eb358f83}{has\+Title}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a simple section 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}} 
+\index{DocSimpleSect@{DocSimpleSect}!Type@{Type}}
+\index{Type@{Type}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Doc\+Simple\+Sect\+::\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Unknown@{Unknown}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba9fea43f94c363209267026e3cf9583c6}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba9fea43f94c363209267026e3cf9583c6}} 
+Unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{See@{See}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!See@{See}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3bca11381a4eecb0a155993159e1f471}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3bca11381a4eecb0a155993159e1f471}} 
+See&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Return@{Return}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Return@{Return}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bafbc7207cbd14361819ce4f2c8c33595d}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bafbc7207cbd14361819ce4f2c8c33595d}} 
+Return&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Author@{Author}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Author@{Author}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba93b679802935bef0edcd5d13787c93d7}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba93b679802935bef0edcd5d13787c93d7}} 
+Author&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Authors@{Authors}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Authors@{Authors}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3e7dc72d1c6e9b0fd204ec7db9c47f6a}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba3e7dc72d1c6e9b0fd204ec7db9c47f6a}} 
+Authors&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Version@{Version}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Version@{Version}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baf32673a5f516e2100d41b917f37cfdf1}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baf32673a5f516e2100d41b917f37cfdf1}} 
+Version&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Since@{Since}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Since@{Since}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9babede06022ff92538707861de74d9fdb5}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9babede06022ff92538707861de74d9fdb5}} 
+Since&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Date@{Date}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Date@{Date}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba7ebb3d39104e4023d8f64d46e9166305}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba7ebb3d39104e4023d8f64d46e9166305}} 
+Date&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Note@{Note}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Note@{Note}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bada884137c8ff6a93503a9c561d5c35d0}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bada884137c8ff6a93503a9c561d5c35d0}} 
+Note&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Warning@{Warning}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba407aa635cc75a80b3e222e307c43c988}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba407aa635cc75a80b3e222e307c43c988}} 
+Warning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Copyright@{Copyright}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Copyright@{Copyright}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba2e0c7884fe9de17cc8ec29cc8c445fa1}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba2e0c7884fe9de17cc8ec29cc8c445fa1}} 
+Copyright&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pre@{Pre}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Pre@{Pre}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba68b35aae9972a5f2f4b739edb91db575}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba68b35aae9972a5f2f4b739edb91db575}} 
+Pre&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Post@{Post}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Post@{Post}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba10f52cafbfab59b29c286ac5d38251c8}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba10f52cafbfab59b29c286ac5d38251c8}} 
+Post&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Invar@{Invar}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Invar@{Invar}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baa5d61ff7b823df12aa9a3895342561b8}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9baa5d61ff7b823df12aa9a3895342561b8}} 
+Invar&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Remark@{Remark}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Remark@{Remark}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba71e7bd96894c8ce74ca64456d34d3939}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba71e7bd96894c8ce74ca64456d34d3939}} 
+Remark&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Attention@{Attention}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Attention@{Attention}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae3e95855fe383d4767691416f122bda8}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae3e95855fe383d4767691416f122bda8}} 
+Attention&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{User@{User}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!User@{User}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba0cdc5e6cf3a4156f2e4cb80d267ea87d}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9ba0cdc5e6cf3a4156f2e4cb80d267ea87d}} 
+User&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rcs@{Rcs}!DocSimpleSect@{DocSimpleSect}}\index{DocSimpleSect@{DocSimpleSect}!Rcs@{Rcs}}}\mbox{\Hypertarget{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae7ac2742a06bed8be1747d68ec4af980}\label{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9bae7ac2742a06bed8be1747d68ec4af980}} 
+Rcs&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_simple_sect_a0ef58433b1e5f366b593d17a9ba4b9e1}\label{class_doc_simple_sect_a0ef58433b1e5f366b593d17a9ba4b9e1}} 
+\index{DocSimpleSect@{DocSimpleSect}!DocSimpleSect@{DocSimpleSect}}
+\index{DocSimpleSect@{DocSimpleSect}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{DocSimpleSect()}{DocSimpleSect()}}
+{\footnotesize\ttfamily Doc\+Simple\+Sect\+::\+Doc\+Simple\+Sect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Type}}}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a5b8a0f80776d4071348a14ce769f61f7}\label{class_doc_simple_sect_a5b8a0f80776d4071348a14ce769f61f7}} 
+\index{DocSimpleSect@{DocSimpleSect}!````~DocSimpleSect@{$\sim$DocSimpleSect}}
+\index{````~DocSimpleSect@{$\sim$DocSimpleSect}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{$\sim$DocSimpleSect()}{~DocSimpleSect()}}
+{\footnotesize\ttfamily Doc\+Simple\+Sect\+::$\sim$\+Doc\+Simple\+Sect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_simple_sect_a83c0f2c289b0d15403d1adf94c98982d}\label{class_doc_simple_sect_a83c0f2c289b0d15403d1adf94c98982d}} 
+\index{DocSimpleSect@{DocSimpleSect}!accept@{accept}}
+\index{accept@{accept}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Simple\+Sect\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_simple_sect_ae538f74c2d44222c9a45ef304c89e041}\label{class_doc_simple_sect_ae538f74c2d44222c9a45ef304c89e041}} 
+\index{DocSimpleSect@{DocSimpleSect}!appendLinkWord@{appendLinkWord}}
+\index{appendLinkWord@{appendLinkWord}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{appendLinkWord()}{appendLinkWord()}}
+{\footnotesize\ttfamily void Doc\+Simple\+Sect\+::append\+Link\+Word (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{word }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_simple_sect_af7bb6fa3996348dc1e211e32eb358f83}\label{class_doc_simple_sect_af7bb6fa3996348dc1e211e32eb358f83}} 
+\index{DocSimpleSect@{DocSimpleSect}!hasTitle@{hasTitle}}
+\index{hasTitle@{hasTitle}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{hasTitle()}{hasTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+Simple\+Sect\+::has\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a9a9f612d6101d0accc815394e5d29e34}\label{class_doc_simple_sect_a9a9f612d6101d0accc815394e5d29e34}} 
+\index{DocSimpleSect@{DocSimpleSect}!kind@{kind}}
+\index{kind@{kind}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Simple\+Sect\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_simple_sect_a6d4285005170976f90f3aa926a7be8c0}\label{class_doc_simple_sect_a6d4285005170976f90f3aa926a7be8c0}} 
+\index{DocSimpleSect@{DocSimpleSect}!parse@{parse}}
+\index{parse@{parse}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int Doc\+Simple\+Sect\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{user\+Title,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{needs\+Separator }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a781284e66505901d40fd6d9df8663b3e}\label{class_doc_simple_sect_a781284e66505901d40fd6d9df8663b3e}} 
+\index{DocSimpleSect@{DocSimpleSect}!parseRcs@{parseRcs}}
+\index{parseRcs@{parseRcs}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{parseRcs()}{parseRcs()}}
+{\footnotesize\ttfamily int Doc\+Simple\+Sect\+::parse\+Rcs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a5cdcf0db314a3f9721842c3134550ce2}\label{class_doc_simple_sect_a5cdcf0db314a3f9721842c3134550ce2}} 
+\index{DocSimpleSect@{DocSimpleSect}!parseXml@{parseXml}}
+\index{parseXml@{parseXml}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{parseXml()}{parseXml()}}
+{\footnotesize\ttfamily int Doc\+Simple\+Sect\+::parse\+Xml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a1ea4e7672816ad91cf567b2000f1a65c}\label{class_doc_simple_sect_a1ea4e7672816ad91cf567b2000f1a65c}} 
+\index{DocSimpleSect@{DocSimpleSect}!type@{type}}
+\index{type@{type}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_simple_sect_a3b9f9dd4952f3d819b347f74a6769a9b}{Type}} Doc\+Simple\+Sect\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_simple_sect_a151d09b73379f0fcade95af7ce910250}\label{class_doc_simple_sect_a151d09b73379f0fcade95af7ce910250}} 
+\index{DocSimpleSect@{DocSimpleSect}!typeString@{typeString}}
+\index{typeString@{typeString}!DocSimpleSect@{DocSimpleSect}}
+\doxysubsubsection{\texorpdfstring{typeString()}{typeString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Simple\+Sect\+::type\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

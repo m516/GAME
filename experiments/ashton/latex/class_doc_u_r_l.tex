@@ -1,0 +1,107 @@
+\hypertarget{class_doc_u_r_l}{}\doxysection{Doc\+U\+RL Class Reference}
+\label{class_doc_u_r_l}\index{DocURL@{DocURL}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+U\+RL\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_u_r_l}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_u_r_l_ac3f8801a6f7507cbed9a9af5bd8d89be}{Doc\+U\+RL}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{class_doc_u_r_l_a06354fa0923e369dc58da474622528a0}{url}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_u_r_l_ac2e7983ca9569098860da2ce21fa25f6}{is\+Email}})
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_u_r_l_a06354fa0923e369dc58da474622528a0}{url}} () const
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_u_r_l_a030f1583c90947d5fb00be872c094183}{kind}} () const
+\item 
+void \mbox{\hyperlink{class_doc_u_r_l_a15d23d59342d72ebc769947aca10e972}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_doc_u_r_l_ac2e7983ca9569098860da2ce21fa25f6}{is\+Email}} () const
+\item 
+virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{class_doc_u_r_l_a7b2de86b5aa28631e361fc145235cd1f}{get\+Text\+Dir}} () const
+\item 
+virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{class_doc_u_r_l_ab2621ec0b17a43ad0a4f7fa19a8f5e8d}{get\+Text\+Basic\+Dir}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a \mbox{\hyperlink{struct_u_r_l}{U\+RL}} (or email address) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_u_r_l_ac3f8801a6f7507cbed9a9af5bd8d89be}\label{class_doc_u_r_l_ac3f8801a6f7507cbed9a9af5bd8d89be}} 
+\index{DocURL@{DocURL}!DocURL@{DocURL}}
+\index{DocURL@{DocURL}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{DocURL()}{DocURL()}}
+{\footnotesize\ttfamily Doc\+U\+R\+L\+::\+Doc\+U\+RL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{url,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_u_r_l_a15d23d59342d72ebc769947aca10e972}\label{class_doc_u_r_l_a15d23d59342d72ebc769947aca10e972}} 
+\index{DocURL@{DocURL}!accept@{accept}}
+\index{accept@{accept}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+U\+R\+L\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_u_r_l_ab2621ec0b17a43ad0a4f7fa19a8f5e8d}\label{class_doc_u_r_l_ab2621ec0b17a43ad0a4f7fa19a8f5e8d}} 
+\index{DocURL@{DocURL}!getTextBasicDir@{getTextBasicDir}}
+\index{getTextBasicDir@{getTextBasicDir}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{getTextBasicDir()}{getTextBasicDir()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} Doc\+U\+R\+L\+::get\+Text\+Basic\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_doc_node_ac2bfc174fc1a34cc8eacf51e318a329b}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_u_r_l_a7b2de86b5aa28631e361fc145235cd1f}\label{class_doc_u_r_l_a7b2de86b5aa28631e361fc145235cd1f}} 
+\index{DocURL@{DocURL}!getTextDir@{getTextDir}}
+\index{getTextDir@{getTextDir}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{getTextDir()}{getTextDir()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} Doc\+U\+R\+L\+::get\+Text\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_doc_node_a5a9cb1f89177537eafca7bbb2159df06}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_u_r_l_ac2e7983ca9569098860da2ce21fa25f6}\label{class_doc_u_r_l_ac2e7983ca9569098860da2ce21fa25f6}} 
+\index{DocURL@{DocURL}!isEmail@{isEmail}}
+\index{isEmail@{isEmail}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{isEmail()}{isEmail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Doc\+U\+R\+L\+::is\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_u_r_l_a030f1583c90947d5fb00be872c094183}\label{class_doc_u_r_l_a030f1583c90947d5fb00be872c094183}} 
+\index{DocURL@{DocURL}!kind@{kind}}
+\index{kind@{kind}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+U\+R\+L\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_u_r_l_a06354fa0923e369dc58da474622528a0}\label{class_doc_u_r_l_a06354fa0923e369dc58da474622528a0}} 
+\index{DocURL@{DocURL}!url@{url}}
+\index{url@{url}!DocURL@{DocURL}}
+\doxysubsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+U\+R\+L\+::url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\end{DoxyCompactItemize}

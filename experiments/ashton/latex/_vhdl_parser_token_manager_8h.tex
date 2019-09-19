@@ -1,0 +1,96 @@
+\hypertarget{_vhdl_parser_token_manager_8h}{}\doxysection{doxygen/vhdlparser/\+Vhdl\+Parser\+Token\+Manager.h File Reference}
+\label{_vhdl_parser_token_manager_8h}\index{doxygen/vhdlparser/VhdlParserTokenManager.h@{doxygen/vhdlparser/VhdlParserTokenManager.h}}
+{\ttfamily \#include \char`\"{}Java\+C\+C.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Char\+Stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Token.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Error\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Token\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vhdl\+Parser\+Constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vhdl\+Parser.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classvhdl_1_1parser_1_1_vhdl_parser_token_manager}{vhdl\+::parser\+::\+Vhdl\+Parser\+Token\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacevhdl}{vhdl}}
+\item 
+ \mbox{\hyperlink{namespacevhdl_1_1parser}{vhdl\+::parser}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_vhdl_parser_token_manager_8h_a001c4feea657cf8f87bdfa1ba634d903}{jj\+Check\+N\+Add}}(state)
+\item 
+\#define \mbox{\hyperlink{_vhdl_parser_token_manager_8h_ae29e4eeaebc760a0db8ff362fd5c04da}{jj\+Add\+States}}(start,  end)
+\item 
+\#define \mbox{\hyperlink{_vhdl_parser_token_manager_8h_a3060e5c9431b27a30958ee20caf16a88}{jj\+Check\+N\+Add\+Two\+States}}(state1,  state2)
+\item 
+\#define \mbox{\hyperlink{_vhdl_parser_token_manager_8h_ad9d46166825cfbc7cad6c6fc6c88fa98}{jj\+Check\+N\+Add\+States}}(start,  end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_vhdl_parser_token_manager_8h_ae29e4eeaebc760a0db8ff362fd5c04da}\label{_vhdl_parser_token_manager_8h_ae29e4eeaebc760a0db8ff362fd5c04da}} 
+\index{VhdlParserTokenManager.h@{VhdlParserTokenManager.h}!jjAddStates@{jjAddStates}}
+\index{jjAddStates@{jjAddStates}!VhdlParserTokenManager.h@{VhdlParserTokenManager.h}}
+\doxysubsubsection{\texorpdfstring{jjAddStates}{jjAddStates}}
+{\footnotesize\ttfamily \#define jj\+Add\+States(\begin{DoxyParamCaption}\item[{}]{start,  }\item[{}]{end }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{   for (\textcolor{keywordtype}{int} \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} = start; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} <= end; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}++) \{\(\backslash\)}
+\DoxyCodeLine{      jjstateSet[jjnewStateCnt++] = jjnextStates[\mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}];\(\backslash\)}
+\DoxyCodeLine{   \} \textcolor{comment}{/*while (start++ != end);*/}\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_vhdl_parser_token_manager_8h_a001c4feea657cf8f87bdfa1ba634d903}\label{_vhdl_parser_token_manager_8h_a001c4feea657cf8f87bdfa1ba634d903}} 
+\index{VhdlParserTokenManager.h@{VhdlParserTokenManager.h}!jjCheckNAdd@{jjCheckNAdd}}
+\index{jjCheckNAdd@{jjCheckNAdd}!VhdlParserTokenManager.h@{VhdlParserTokenManager.h}}
+\doxysubsubsection{\texorpdfstring{jjCheckNAdd}{jjCheckNAdd}}
+{\footnotesize\ttfamily \#define jj\+Check\+N\+Add(\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{   if (jjrounds[state] != jjround)\(\backslash\)}
+\DoxyCodeLine{   \{\(\backslash\)}
+\DoxyCodeLine{      jjstateSet[jjnewStateCnt++] = state;\(\backslash\)}
+\DoxyCodeLine{      jjrounds[state] = jjround;\(\backslash\)}
+\DoxyCodeLine{   \}\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_vhdl_parser_token_manager_8h_ad9d46166825cfbc7cad6c6fc6c88fa98}\label{_vhdl_parser_token_manager_8h_ad9d46166825cfbc7cad6c6fc6c88fa98}} 
+\index{VhdlParserTokenManager.h@{VhdlParserTokenManager.h}!jjCheckNAddStates@{jjCheckNAddStates}}
+\index{jjCheckNAddStates@{jjCheckNAddStates}!VhdlParserTokenManager.h@{VhdlParserTokenManager.h}}
+\doxysubsubsection{\texorpdfstring{jjCheckNAddStates}{jjCheckNAddStates}}
+{\footnotesize\ttfamily \#define jj\+Check\+N\+Add\+States(\begin{DoxyParamCaption}\item[{}]{start,  }\item[{}]{end }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{   for (\textcolor{keywordtype}{int} \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} = start; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} <= end; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}++) \{\(\backslash\)}
+\DoxyCodeLine{      jjCheckNAdd(jjnextStates[\mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}]);\(\backslash\)}
+\DoxyCodeLine{   \} \textcolor{comment}{/*while (start++ != end);*/}\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_vhdl_parser_token_manager_8h_a3060e5c9431b27a30958ee20caf16a88}\label{_vhdl_parser_token_manager_8h_a3060e5c9431b27a30958ee20caf16a88}} 
+\index{VhdlParserTokenManager.h@{VhdlParserTokenManager.h}!jjCheckNAddTwoStates@{jjCheckNAddTwoStates}}
+\index{jjCheckNAddTwoStates@{jjCheckNAddTwoStates}!VhdlParserTokenManager.h@{VhdlParserTokenManager.h}}
+\doxysubsubsection{\texorpdfstring{jjCheckNAddTwoStates}{jjCheckNAddTwoStates}}
+{\footnotesize\ttfamily \#define jj\+Check\+N\+Add\+Two\+States(\begin{DoxyParamCaption}\item[{}]{state1,  }\item[{}]{state2 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{   jjCheckNAdd(state1);\(\backslash\)}
+\DoxyCodeLine{   jjCheckNAdd(state2);\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

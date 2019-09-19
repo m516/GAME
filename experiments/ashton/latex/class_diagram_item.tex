@@ -1,0 +1,163 @@
+\hypertarget{class_diagram_item}{}\doxysection{Diagram\+Item Class Reference}
+\label{class_diagram_item}\index{DiagramItem@{DiagramItem}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diagram_item_af0e82d7d93e78a6d6074c524a6e93e14}{Diagram\+Item}} (\mbox{\hyperlink{class_diagram_item}{Diagram\+Item}} $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, int \mbox{\hyperlink{class_diagram_item_a1244c82851a233d35ffbb9cae8923933}{number}}, const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$cd, \mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}} prot, \mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}} virt, const char $\ast$ts)
+\item 
+\mbox{\hyperlink{class_diagram_item_a28a42a62623db060c81d1c1f20062980}{$\sim$\+Diagram\+Item}} ()
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_diagram_item_ab0d5760c4d7ff79eb2ed90652a825b54}{label}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_diagram_item_a34be8e5248b077c87e60b541ecaad327}{file\+Name}} () const
+\item 
+\mbox{\hyperlink{class_diagram_item}{Diagram\+Item}} $\ast$ \mbox{\hyperlink{class_diagram_item_ab2289efb497a6181accc11324b2007bb}{parent\+Item}} ()
+\item 
+\mbox{\hyperlink{class_diagram_item_list}{Diagram\+Item\+List}} $\ast$ \mbox{\hyperlink{class_diagram_item_a30aa024181c7ddd574492cfce67cc19e}{get\+Children}} ()
+\item 
+void \mbox{\hyperlink{class_diagram_item_aca2295801c4b08a1565e86da1c04c242}{move}} (int dx, int dy)
+\item 
+int \mbox{\hyperlink{class_diagram_item_a52e55a18b0b5892a58aa699962418612}{x\+Pos}} () const
+\item 
+int \mbox{\hyperlink{class_diagram_item_ae193d7615423fc085db00b7de6619fc1}{y\+Pos}} () const
+\item 
+int \mbox{\hyperlink{class_diagram_item_a4c30f183e25a88cc8e8281cfe2f4be34}{avg\+Child\+Pos}} () const
+\item 
+int \mbox{\hyperlink{class_diagram_item_a24dbf05089f29d51ae4c0b797e593260}{num\+Children}} () const
+\item 
+void \mbox{\hyperlink{class_diagram_item_a32ecbe11566dd5ede121ae0bbaf70945}{add\+Child}} (\mbox{\hyperlink{class_diagram_item}{Diagram\+Item}} $\ast$di)
+\item 
+int \mbox{\hyperlink{class_diagram_item_a1244c82851a233d35ffbb9cae8923933}{number}} () const
+\item 
+\mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}} \mbox{\hyperlink{class_diagram_item_aaca11d38f246c2a3f673d29720cc0426}{protection}} () const
+\item 
+\mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}} \mbox{\hyperlink{class_diagram_item_a11ec77d7b8a9920793793ead700627e1}{virtualness}} () const
+\item 
+void \mbox{\hyperlink{class_diagram_item_ad27e4ec4bbcf59eb0c8bf33571fec70d}{put\+In\+List}} ()
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_diagram_item_ac41f2e7b5f1de27cec87bc9a366dc687}{is\+In\+List}} () const
+\item 
+const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$ \mbox{\hyperlink{class_diagram_item_a2225004b94ee681adfe3ffdae32e4dd6}{get\+Class\+Def}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a single node in the built-\/in class diagram 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_diagram_item_af0e82d7d93e78a6d6074c524a6e93e14}\label{class_diagram_item_af0e82d7d93e78a6d6074c524a6e93e14}} 
+\index{DiagramItem@{DiagramItem}!DiagramItem@{DiagramItem}}
+\index{DiagramItem@{DiagramItem}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{DiagramItem()}{DiagramItem()}}
+{\footnotesize\ttfamily Diagram\+Item\+::\+Diagram\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_diagram_item}{Diagram\+Item}} $\ast$}]{p,  }\item[{int}]{number,  }\item[{const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$}]{cd,  }\item[{\mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}}}]{prot,  }\item[{\mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}}}]{virt,  }\item[{const char $\ast$}]{ts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_diagram_item_a28a42a62623db060c81d1c1f20062980}\label{class_diagram_item_a28a42a62623db060c81d1c1f20062980}} 
+\index{DiagramItem@{DiagramItem}!````~DiagramItem@{$\sim$DiagramItem}}
+\index{````~DiagramItem@{$\sim$DiagramItem}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$DiagramItem()}{~DiagramItem()}}
+{\footnotesize\ttfamily Diagram\+Item\+::$\sim$\+Diagram\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_diagram_item_a32ecbe11566dd5ede121ae0bbaf70945}\label{class_diagram_item_a32ecbe11566dd5ede121ae0bbaf70945}} 
+\index{DiagramItem@{DiagramItem}!addChild@{addChild}}
+\index{addChild@{addChild}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily void Diagram\+Item\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_diagram_item}{Diagram\+Item}} $\ast$}]{di }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_diagram_item_a4c30f183e25a88cc8e8281cfe2f4be34}\label{class_diagram_item_a4c30f183e25a88cc8e8281cfe2f4be34}} 
+\index{DiagramItem@{DiagramItem}!avgChildPos@{avgChildPos}}
+\index{avgChildPos@{avgChildPos}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{avgChildPos()}{avgChildPos()}}
+{\footnotesize\ttfamily int Diagram\+Item\+::avg\+Child\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_diagram_item_a34be8e5248b077c87e60b541ecaad327}\label{class_diagram_item_a34be8e5248b077c87e60b541ecaad327}} 
+\index{DiagramItem@{DiagramItem}!fileName@{fileName}}
+\index{fileName@{fileName}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{fileName()}{fileName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Diagram\+Item\+::file\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_diagram_item_a30aa024181c7ddd574492cfce67cc19e}\label{class_diagram_item_a30aa024181c7ddd574492cfce67cc19e}} 
+\index{DiagramItem@{DiagramItem}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_diagram_item_list}{Diagram\+Item\+List}}$\ast$ Diagram\+Item\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_a2225004b94ee681adfe3ffdae32e4dd6}\label{class_diagram_item_a2225004b94ee681adfe3ffdae32e4dd6}} 
+\index{DiagramItem@{DiagramItem}!getClassDef@{getClassDef}}
+\index{getClassDef@{getClassDef}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{getClassDef()}{getClassDef()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_class_def}{Class\+Def}}$\ast$ Diagram\+Item\+::get\+Class\+Def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_ac41f2e7b5f1de27cec87bc9a366dc687}\label{class_diagram_item_ac41f2e7b5f1de27cec87bc9a366dc687}} 
+\index{DiagramItem@{DiagramItem}!isInList@{isInList}}
+\index{isInList@{isInList}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{isInList()}{isInList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Diagram\+Item\+::is\+In\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_ab0d5760c4d7ff79eb2ed90652a825b54}\label{class_diagram_item_ab0d5760c4d7ff79eb2ed90652a825b54}} 
+\index{DiagramItem@{DiagramItem}!label@{label}}
+\index{label@{label}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Diagram\+Item\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_diagram_item_aca2295801c4b08a1565e86da1c04c242}\label{class_diagram_item_aca2295801c4b08a1565e86da1c04c242}} 
+\index{DiagramItem@{DiagramItem}!move@{move}}
+\index{move@{move}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Diagram\+Item\+::move (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_a1244c82851a233d35ffbb9cae8923933}\label{class_diagram_item_a1244c82851a233d35ffbb9cae8923933}} 
+\index{DiagramItem@{DiagramItem}!number@{number}}
+\index{number@{number}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{number()}{number()}}
+{\footnotesize\ttfamily int Diagram\+Item\+::number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_a24dbf05089f29d51ae4c0b797e593260}\label{class_diagram_item_a24dbf05089f29d51ae4c0b797e593260}} 
+\index{DiagramItem@{DiagramItem}!numChildren@{numChildren}}
+\index{numChildren@{numChildren}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{numChildren()}{numChildren()}}
+{\footnotesize\ttfamily int Diagram\+Item\+::num\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_diagram_item_ab2289efb497a6181accc11324b2007bb}\label{class_diagram_item_ab2289efb497a6181accc11324b2007bb}} 
+\index{DiagramItem@{DiagramItem}!parentItem@{parentItem}}
+\index{parentItem@{parentItem}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{parentItem()}{parentItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_diagram_item}{Diagram\+Item}}$\ast$ Diagram\+Item\+::parent\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_aaca11d38f246c2a3f673d29720cc0426}\label{class_diagram_item_aaca11d38f246c2a3f673d29720cc0426}} 
+\index{DiagramItem@{DiagramItem}!protection@{protection}}
+\index{protection@{protection}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{protection()}{protection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a90e352184df58cd09455fe9996cd4ded}{Protection}} Diagram\+Item\+::protection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_ad27e4ec4bbcf59eb0c8bf33571fec70d}\label{class_diagram_item_ad27e4ec4bbcf59eb0c8bf33571fec70d}} 
+\index{DiagramItem@{DiagramItem}!putInList@{putInList}}
+\index{putInList@{putInList}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{putInList()}{putInList()}}
+{\footnotesize\ttfamily void Diagram\+Item\+::put\+In\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_a11ec77d7b8a9920793793ead700627e1}\label{class_diagram_item_a11ec77d7b8a9920793793ead700627e1}} 
+\index{DiagramItem@{DiagramItem}!virtualness@{virtualness}}
+\index{virtualness@{virtualness}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{virtualness()}{virtualness()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_ab16236bdd10ddf4d73a9847350f0017e}{Specifier}} Diagram\+Item\+::virtualness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_a52e55a18b0b5892a58aa699962418612}\label{class_diagram_item_a52e55a18b0b5892a58aa699962418612}} 
+\index{DiagramItem@{DiagramItem}!xPos@{xPos}}
+\index{xPos@{xPos}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{xPos()}{xPos()}}
+{\footnotesize\ttfamily int Diagram\+Item\+::x\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_diagram_item_ae193d7615423fc085db00b7de6619fc1}\label{class_diagram_item_ae193d7615423fc085db00b7de6619fc1}} 
+\index{DiagramItem@{DiagramItem}!yPos@{yPos}}
+\index{yPos@{yPos}!DiagramItem@{DiagramItem}}
+\doxysubsubsection{\texorpdfstring{yPos()}{yPos()}}
+{\footnotesize\ttfamily int Diagram\+Item\+::y\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{diagram_8cpp}{diagram.\+cpp}}\end{DoxyCompactItemize}

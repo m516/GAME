@@ -1,0 +1,202 @@
+\hypertarget{lodepng_8cpp}{}\doxysection{doxygen/liblodepng/lodepng.cpp File Reference}
+\label{lodepng_8cpp}\index{doxygen/liblodepng/lodepng.cpp@{doxygen/liblodepng/lodepng.cpp}}
+{\ttfamily \#include \char`\"{}lodepng.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvector}{vector}}
+\item 
+struct \mbox{\hyperlink{structuivector}{uivector}}
+\item 
+struct \mbox{\hyperlink{structucvector}{ucvector}}
+\item 
+struct \mbox{\hyperlink{struct_coin}{Coin}}
+\item 
+struct \mbox{\hyperlink{struct_huffman_tree}{Huffman\+Tree}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_ae101a048cc02e184bf38ad2d25650daa}{U\+S\+E\+\_\+\+B\+R\+U\+T\+E\+\_\+\+F\+O\+R\+C\+E\+\_\+\+E\+N\+C\+O\+D\+I\+NG}}~1
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_a698acb89e1bf5837b33c30ef35c30044}{V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}}~\char`\"{}20080927\char`\"{}
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_acfb12caea990f92b3aed7c199f615213}{F\+I\+R\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+EX}}~257
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_adf9597781d7175fdee0b2466e6e462e7}{L\+A\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+EX}}~285
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_a58feace6a0d109fc6bb2161504a3011e}{N\+U\+M\+\_\+\+D\+E\+F\+L\+A\+T\+E\+\_\+\+C\+O\+D\+E\+\_\+\+S\+Y\+M\+B\+O\+LS}}~288 /$\ast$256 literals, the end \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}}, some length codes, \mbox{\hyperlink{commands_8doc_ad4c2a920586fa780cac1476ec08702e1}{and}} 2 unused codes$\ast$/
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_a5b48becc8f2653ba2bb90858d38fc9ec}{N\+U\+M\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+Y\+M\+B\+O\+LS}}~32 /$\ast$the distance codes have their own symbols, 30 used, 2 unused$\ast$/
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_a22ed04d49e008cb4295a8b366c4f2f3b}{N\+U\+M\+\_\+\+C\+O\+D\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+ES}}~19 /$\ast$the \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}} length codes. 0-\/15\+: \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}} lengths, 16\+: copy previous 3-\/6 times, 17\+: 3-\/10 zeros, 18\+: 11-\/138 zeros$\ast$/
+\item 
+\#define \mbox{\hyperlink{lodepng_8cpp_a96367b6d4f2b41539c3584448dea5a80}{encode\+L\+Z77}}~encode\+L\+Z77\+\_\+brute
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structvector}{vector}} \mbox{\hyperlink{lodepng_8cpp_a604ea30e5e116f443a85a821a53402c7}{vector}}
+\item 
+typedef struct \mbox{\hyperlink{structuivector}{uivector}} \mbox{\hyperlink{lodepng_8cpp_a358797f791102c447e2e895e8da46854}{uivector}}
+\item 
+typedef struct \mbox{\hyperlink{structucvector}{ucvector}} \mbox{\hyperlink{lodepng_8cpp_a8ebce7aaef4f64e50d2ad2e3a383a505}{ucvector}}
+\item 
+typedef struct \mbox{\hyperlink{struct_coin}{Coin}} \mbox{\hyperlink{lodepng_8cpp_a4d2cd18166489c9373aad80d9036addb}{Coin}}
+\item 
+typedef struct \mbox{\hyperlink{struct_huffman_tree}{Huffman\+Tree}} \mbox{\hyperlink{lodepng_8cpp_ad705dca4fd163e14e555a6e2e3223af1}{Huffman\+Tree}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{lodepng_8cpp_ab88e597da4e7744daa475f555ffc4cc4}{Lode\+Flate\+\_\+deflate}} (\mbox{\hyperlink{structucvector}{ucvector}} $\ast$\mbox{\hyperlink{gd_8h_a48bc11919b2752df9d14ce89557cfb25}{out}}, const unsigned char $\ast$\mbox{\hyperlink{gd_8h_ac5c5967f62e5c3601479be651a8ed76c}{data}}, size\+\_\+t datasize, const \mbox{\hyperlink{struct_lode_zlib___deflate_settings}{Lode\+Zlib\+\_\+\+Deflate\+Settings}} $\ast$settings)
+\item 
+unsigned \mbox{\hyperlink{lodepng_8cpp_af062c1db1f9e18f47aa2d9a86651dea3}{Lode\+P\+N\+G\+\_\+\+Info\+Color\+\_\+add\+Palette}} (\mbox{\hyperlink{struct_lode_p_n_g___info_color}{Lode\+P\+N\+G\+\_\+\+Info\+Color}} $\ast$info, unsigned char \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}, unsigned char \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}}, unsigned char \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}, unsigned char \mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})
+\item 
+void \mbox{\hyperlink{lodepng_8cpp_aeb8588ff6ad7dae8c5322b1520aa5687}{Lode\+P\+N\+G\+\_\+encode}} (\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$encoder, unsigned char $\ast$$\ast$\mbox{\hyperlink{gd_8h_a48bc11919b2752df9d14ce89557cfb25}{out}}, size\+\_\+t $\ast$outsize, const unsigned char $\ast$image, unsigned \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}, unsigned \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}})
+\item 
+void \mbox{\hyperlink{lodepng_8cpp_a3cd7cc1583795fd14b7fe1179e005ab1}{Lode\+P\+N\+G\+\_\+\+Encode\+Settings\+\_\+init}} (\mbox{\hyperlink{struct_lode_p_n_g___encode_settings}{Lode\+P\+N\+G\+\_\+\+Encode\+Settings}} $\ast$settings)
+\item 
+void \mbox{\hyperlink{lodepng_8cpp_a187956c5e5784f77f5b17181310be304}{Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+init}} (\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$encoder)
+\item 
+void \mbox{\hyperlink{lodepng_8cpp_a7269f380122edb94715d5e2e87eab835}{Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+cleanup}} (\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$encoder)
+\item 
+void \mbox{\hyperlink{lodepng_8cpp_a0c0160b2f998d5966324922a153ee557}{Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+copy}} (\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$dest, const \mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$source)
+\item 
+unsigned \mbox{\hyperlink{lodepng_8cpp_a35604ddb7255afb1526979ca40815987}{Lode\+P\+N\+G\+\_\+save\+File}} (const unsigned char $\ast$buffer, size\+\_\+t buffersize, const char $\ast$\mbox{\hyperlink{gd_8h_a7efa5e9c7494c7d4586359300221aa5d}{filename}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lodepng_8cpp_a96367b6d4f2b41539c3584448dea5a80}\label{lodepng_8cpp_a96367b6d4f2b41539c3584448dea5a80}} 
+\index{lodepng.cpp@{lodepng.cpp}!encodeLZ77@{encodeLZ77}}
+\index{encodeLZ77@{encodeLZ77}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{encodeLZ77}{encodeLZ77}}
+{\footnotesize\ttfamily \#define encode\+L\+Z77~encode\+L\+Z77\+\_\+brute}
+
+\mbox{\Hypertarget{lodepng_8cpp_acfb12caea990f92b3aed7c199f615213}\label{lodepng_8cpp_acfb12caea990f92b3aed7c199f615213}} 
+\index{lodepng.cpp@{lodepng.cpp}!FIRST\_LENGTH\_CODE\_INDEX@{FIRST\_LENGTH\_CODE\_INDEX}}
+\index{FIRST\_LENGTH\_CODE\_INDEX@{FIRST\_LENGTH\_CODE\_INDEX}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{FIRST\_LENGTH\_CODE\_INDEX}{FIRST\_LENGTH\_CODE\_INDEX}}
+{\footnotesize\ttfamily \#define F\+I\+R\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+EX~257}
+
+\mbox{\Hypertarget{lodepng_8cpp_adf9597781d7175fdee0b2466e6e462e7}\label{lodepng_8cpp_adf9597781d7175fdee0b2466e6e462e7}} 
+\index{lodepng.cpp@{lodepng.cpp}!LAST\_LENGTH\_CODE\_INDEX@{LAST\_LENGTH\_CODE\_INDEX}}
+\index{LAST\_LENGTH\_CODE\_INDEX@{LAST\_LENGTH\_CODE\_INDEX}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LAST\_LENGTH\_CODE\_INDEX}{LAST\_LENGTH\_CODE\_INDEX}}
+{\footnotesize\ttfamily \#define L\+A\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+EX~285}
+
+\mbox{\Hypertarget{lodepng_8cpp_a22ed04d49e008cb4295a8b366c4f2f3b}\label{lodepng_8cpp_a22ed04d49e008cb4295a8b366c4f2f3b}} 
+\index{lodepng.cpp@{lodepng.cpp}!NUM\_CODE\_LENGTH\_CODES@{NUM\_CODE\_LENGTH\_CODES}}
+\index{NUM\_CODE\_LENGTH\_CODES@{NUM\_CODE\_LENGTH\_CODES}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_CODE\_LENGTH\_CODES}{NUM\_CODE\_LENGTH\_CODES}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+C\+O\+D\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+C\+O\+D\+ES~19 /$\ast$the \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}} length codes. 0-\/15\+: \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}} lengths, 16\+: copy previous 3-\/6 times, 17\+: 3-\/10 zeros, 18\+: 11-\/138 zeros$\ast$/}
+
+\mbox{\Hypertarget{lodepng_8cpp_a58feace6a0d109fc6bb2161504a3011e}\label{lodepng_8cpp_a58feace6a0d109fc6bb2161504a3011e}} 
+\index{lodepng.cpp@{lodepng.cpp}!NUM\_DEFLATE\_CODE\_SYMBOLS@{NUM\_DEFLATE\_CODE\_SYMBOLS}}
+\index{NUM\_DEFLATE\_CODE\_SYMBOLS@{NUM\_DEFLATE\_CODE\_SYMBOLS}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_DEFLATE\_CODE\_SYMBOLS}{NUM\_DEFLATE\_CODE\_SYMBOLS}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+D\+E\+F\+L\+A\+T\+E\+\_\+\+C\+O\+D\+E\+\_\+\+S\+Y\+M\+B\+O\+LS~288 /$\ast$256 literals, the end \mbox{\hyperlink{generated__src_2tclscanner_8cpp_a7ebb47cd48f4220dc255e5fea2063b89}{code}}, some length codes, \mbox{\hyperlink{commands_8doc_ad4c2a920586fa780cac1476ec08702e1}{and}} 2 unused codes$\ast$/}
+
+\mbox{\Hypertarget{lodepng_8cpp_a5b48becc8f2653ba2bb90858d38fc9ec}\label{lodepng_8cpp_a5b48becc8f2653ba2bb90858d38fc9ec}} 
+\index{lodepng.cpp@{lodepng.cpp}!NUM\_DISTANCE\_SYMBOLS@{NUM\_DISTANCE\_SYMBOLS}}
+\index{NUM\_DISTANCE\_SYMBOLS@{NUM\_DISTANCE\_SYMBOLS}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_DISTANCE\_SYMBOLS}{NUM\_DISTANCE\_SYMBOLS}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+Y\+M\+B\+O\+LS~32 /$\ast$the distance codes have their own symbols, 30 used, 2 unused$\ast$/}
+
+\mbox{\Hypertarget{lodepng_8cpp_ae101a048cc02e184bf38ad2d25650daa}\label{lodepng_8cpp_ae101a048cc02e184bf38ad2d25650daa}} 
+\index{lodepng.cpp@{lodepng.cpp}!USE\_BRUTE\_FORCE\_ENCODING@{USE\_BRUTE\_FORCE\_ENCODING}}
+\index{USE\_BRUTE\_FORCE\_ENCODING@{USE\_BRUTE\_FORCE\_ENCODING}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{USE\_BRUTE\_FORCE\_ENCODING}{USE\_BRUTE\_FORCE\_ENCODING}}
+{\footnotesize\ttfamily \#define U\+S\+E\+\_\+\+B\+R\+U\+T\+E\+\_\+\+F\+O\+R\+C\+E\+\_\+\+E\+N\+C\+O\+D\+I\+NG~1}
+
+\mbox{\Hypertarget{lodepng_8cpp_a698acb89e1bf5837b33c30ef35c30044}\label{lodepng_8cpp_a698acb89e1bf5837b33c30ef35c30044}} 
+\index{lodepng.cpp@{lodepng.cpp}!VERSION\_STRING@{VERSION\_STRING}}
+\index{VERSION\_STRING@{VERSION\_STRING}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{VERSION\_STRING}{VERSION\_STRING}}
+{\footnotesize\ttfamily \#define V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG~\char`\"{}20080927\char`\"{}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lodepng_8cpp_a4d2cd18166489c9373aad80d9036addb}\label{lodepng_8cpp_a4d2cd18166489c9373aad80d9036addb}} 
+\index{lodepng.cpp@{lodepng.cpp}!Coin@{Coin}}
+\index{Coin@{Coin}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{Coin}{Coin}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_coin}{Coin}}  \mbox{\hyperlink{struct_coin}{Coin}}}
+
+\mbox{\Hypertarget{lodepng_8cpp_ad705dca4fd163e14e555a6e2e3223af1}\label{lodepng_8cpp_ad705dca4fd163e14e555a6e2e3223af1}} 
+\index{lodepng.cpp@{lodepng.cpp}!HuffmanTree@{HuffmanTree}}
+\index{HuffmanTree@{HuffmanTree}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{HuffmanTree}{HuffmanTree}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_huffman_tree}{Huffman\+Tree}}  \mbox{\hyperlink{struct_huffman_tree}{Huffman\+Tree}}}
+
+\mbox{\Hypertarget{lodepng_8cpp_a8ebce7aaef4f64e50d2ad2e3a383a505}\label{lodepng_8cpp_a8ebce7aaef4f64e50d2ad2e3a383a505}} 
+\index{lodepng.cpp@{lodepng.cpp}!ucvector@{ucvector}}
+\index{ucvector@{ucvector}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{ucvector}{ucvector}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structucvector}{ucvector}}  \mbox{\hyperlink{structucvector}{ucvector}}}
+
+\mbox{\Hypertarget{lodepng_8cpp_a358797f791102c447e2e895e8da46854}\label{lodepng_8cpp_a358797f791102c447e2e895e8da46854}} 
+\index{lodepng.cpp@{lodepng.cpp}!uivector@{uivector}}
+\index{uivector@{uivector}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{uivector}{uivector}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuivector}{uivector}}  \mbox{\hyperlink{structuivector}{uivector}}}
+
+\mbox{\Hypertarget{lodepng_8cpp_a604ea30e5e116f443a85a821a53402c7}\label{lodepng_8cpp_a604ea30e5e116f443a85a821a53402c7}} 
+\index{lodepng.cpp@{lodepng.cpp}!vector@{vector}}
+\index{vector@{vector}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{vector}{vector}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structvector}{vector}}  \mbox{\hyperlink{structvector}{vector}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lodepng_8cpp_ab88e597da4e7744daa475f555ffc4cc4}\label{lodepng_8cpp_ab88e597da4e7744daa475f555ffc4cc4}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodeFlate\_deflate@{LodeFlate\_deflate}}
+\index{LodeFlate\_deflate@{LodeFlate\_deflate}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodeFlate\_deflate()}{LodeFlate\_deflate()}}
+{\footnotesize\ttfamily unsigned Lode\+Flate\+\_\+deflate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structucvector}{ucvector}} $\ast$}]{out,  }\item[{const unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{datasize,  }\item[{const \mbox{\hyperlink{struct_lode_zlib___deflate_settings}{Lode\+Zlib\+\_\+\+Deflate\+Settings}} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_aeb8588ff6ad7dae8c5322b1520aa5687}\label{lodepng_8cpp_aeb8588ff6ad7dae8c5322b1520aa5687}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_encode@{LodePNG\_encode}}
+\index{LodePNG\_encode@{LodePNG\_encode}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_encode()}{LodePNG\_encode()}}
+{\footnotesize\ttfamily void Lode\+P\+N\+G\+\_\+encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$}]{encoder,  }\item[{unsigned char $\ast$$\ast$}]{out,  }\item[{size\+\_\+t $\ast$}]{outsize,  }\item[{const unsigned char $\ast$}]{image,  }\item[{unsigned}]{w,  }\item[{unsigned}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_a7269f380122edb94715d5e2e87eab835}\label{lodepng_8cpp_a7269f380122edb94715d5e2e87eab835}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_Encoder\_cleanup@{LodePNG\_Encoder\_cleanup}}
+\index{LodePNG\_Encoder\_cleanup@{LodePNG\_Encoder\_cleanup}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_Encoder\_cleanup()}{LodePNG\_Encoder\_cleanup()}}
+{\footnotesize\ttfamily void Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$}]{encoder }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_a0c0160b2f998d5966324922a153ee557}\label{lodepng_8cpp_a0c0160b2f998d5966324922a153ee557}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_Encoder\_copy@{LodePNG\_Encoder\_copy}}
+\index{LodePNG\_Encoder\_copy@{LodePNG\_Encoder\_copy}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_Encoder\_copy()}{LodePNG\_Encoder\_copy()}}
+{\footnotesize\ttfamily void Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_a187956c5e5784f77f5b17181310be304}\label{lodepng_8cpp_a187956c5e5784f77f5b17181310be304}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_Encoder\_init@{LodePNG\_Encoder\_init}}
+\index{LodePNG\_Encoder\_init@{LodePNG\_Encoder\_init}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_Encoder\_init()}{LodePNG\_Encoder\_init()}}
+{\footnotesize\ttfamily void Lode\+P\+N\+G\+\_\+\+Encoder\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___encoder}{Lode\+P\+N\+G\+\_\+\+Encoder}} $\ast$}]{encoder }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_a3cd7cc1583795fd14b7fe1179e005ab1}\label{lodepng_8cpp_a3cd7cc1583795fd14b7fe1179e005ab1}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_EncodeSettings\_init@{LodePNG\_EncodeSettings\_init}}
+\index{LodePNG\_EncodeSettings\_init@{LodePNG\_EncodeSettings\_init}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_EncodeSettings\_init()}{LodePNG\_EncodeSettings\_init()}}
+{\footnotesize\ttfamily void Lode\+P\+N\+G\+\_\+\+Encode\+Settings\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___encode_settings}{Lode\+P\+N\+G\+\_\+\+Encode\+Settings}} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_af062c1db1f9e18f47aa2d9a86651dea3}\label{lodepng_8cpp_af062c1db1f9e18f47aa2d9a86651dea3}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_InfoColor\_addPalette@{LodePNG\_InfoColor\_addPalette}}
+\index{LodePNG\_InfoColor\_addPalette@{LodePNG\_InfoColor\_addPalette}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_InfoColor\_addPalette()}{LodePNG\_InfoColor\_addPalette()}}
+{\footnotesize\ttfamily unsigned Lode\+P\+N\+G\+\_\+\+Info\+Color\+\_\+add\+Palette (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lode_p_n_g___info_color}{Lode\+P\+N\+G\+\_\+\+Info\+Color}} $\ast$}]{info,  }\item[{unsigned char}]{r,  }\item[{unsigned char}]{g,  }\item[{unsigned char}]{b,  }\item[{unsigned char}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lodepng_8cpp_a35604ddb7255afb1526979ca40815987}\label{lodepng_8cpp_a35604ddb7255afb1526979ca40815987}} 
+\index{lodepng.cpp@{lodepng.cpp}!LodePNG\_saveFile@{LodePNG\_saveFile}}
+\index{LodePNG\_saveFile@{LodePNG\_saveFile}!lodepng.cpp@{lodepng.cpp}}
+\doxysubsubsection{\texorpdfstring{LodePNG\_saveFile()}{LodePNG\_saveFile()}}
+{\footnotesize\ttfamily unsigned Lode\+P\+N\+G\+\_\+save\+File (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffersize,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+

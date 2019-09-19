@@ -1,0 +1,32 @@
+\hypertarget{markdown_8h}{}\doxysection{doxygen/src/markdown.h File Reference}
+\label{markdown_8h}\index{doxygen/src/markdown.h@{doxygen/src/markdown.h}}
+{\ttfamily \#include $<$qcstring.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}parserintf.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_markdown_file_parser}{Markdown\+File\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{markdown_8h_a3d746c5eb1c467cdba6d1161cd542732}{process\+Markdown}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&file\+Name, const int line\+Nr, \mbox{\hyperlink{class_entry}{Entry}} $\ast$\mbox{\hyperlink{060__command__switch_8tcl_aff65a51a703804e0ad1adbcfd76c86f8}{e}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{markdown_8h_a0a158f67dd586087dac0e968ea384f09}{markdown\+File\+Name\+To\+Id}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&file\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{markdown_8h_a0a158f67dd586087dac0e968ea384f09}\label{markdown_8h_a0a158f67dd586087dac0e968ea384f09}} 
+\index{markdown.h@{markdown.h}!markdownFileNameToId@{markdownFileNameToId}}
+\index{markdownFileNameToId@{markdownFileNameToId}!markdown.h@{markdown.h}}
+\doxysubsubsection{\texorpdfstring{markdownFileNameToId()}{markdownFileNameToId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} markdown\+File\+Name\+To\+Id (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{markdown_8h_a3d746c5eb1c467cdba6d1161cd542732}\label{markdown_8h_a3d746c5eb1c467cdba6d1161cd542732}} 
+\index{markdown.h@{markdown.h}!processMarkdown@{processMarkdown}}
+\index{processMarkdown@{processMarkdown}!markdown.h@{markdown.h}}
+\doxysubsubsection{\texorpdfstring{processMarkdown()}{processMarkdown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} process\+Markdown (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{file\+Name,  }\item[{const int}]{line\+Nr,  }\item[{\mbox{\hyperlink{class_entry}{Entry}} $\ast$}]{e,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{s }\end{DoxyParamCaption})}
+
+processes string {\itshape s} and converts markdown into doxygen/html commands. 

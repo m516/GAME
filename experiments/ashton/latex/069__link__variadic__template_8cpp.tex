@@ -1,0 +1,127 @@
+\hypertarget{069__link__variadic__template_8cpp}{}\doxysection{doxygen/testing/069\+\_\+link\+\_\+variadic\+\_\+template.cpp File Reference}
+\label{069__link__variadic__template_8cpp}\index{doxygen/testing/069\_link\_variadic\_template.cpp@{doxygen/testing/069\_link\_variadic\_template.cpp}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test}{Test$<$ T, i $>$}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_a}{A}} \mbox{\hyperlink{class_test}{Test}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{069__link__variadic__template_8cpp_affb6da6cff1b57cdf8efc0123dceac9b}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}})
+\begin{DoxyCompactList}\small\item\em Brief description. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_aa7e4936a17759246bce60256cf224e16}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, Args \&... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_ad6fc2d2a6cb8980f3e0eaacbd2ae41fe}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, const Args \&... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_aed64c596fea5f4f5e719006539922f7c}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, const Args \&\&... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_a0ad18d95a1dc2dbacee657c43f719187}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, Args $\ast$... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_a2331eedd0a1db9da5de0ad0faef78a4e}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, Args $\ast$$\ast$... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_a72bd94e61df947347f98a2a6214e9342}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, const Args $\ast$... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_a0bd03c39aa36ae51d2b8d87e04cf7eab}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, const Args $\ast$$\ast$... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{069__link__variadic__template_8cpp_abb1e0338f72ae46a1240ada65d6a397c}{func}} (int \mbox{\hyperlink{060__command__switch_8tcl_a15229b450f26d8fa1c10bea4f3279f4d}{p}}, Args... args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAttention}{Attention}
+At the time of writing, the part between $<$$>$ is totally ignored\+: func$<$Args...$>$(Args... args) is interpreted as func(Args... args).
+
+Beware that a function parameter with either a \& or $\ast$ operator, e.\+g. \textquotesingle{}const Args\&... args\textquotesingle{}, requires \textbackslash{}link and \textbackslash{}ref to specify such parameter as verbatim, i.\+e. \textquotesingle{}const Args\&... args\textquotesingle{}. At the time of writing, the form func(const Args\&...) will fail, unless the function parameter was declared just as \textquotesingle{}const Args\&...\textquotesingle{}. 
+\end{DoxyAttention}
+
+
+\mbox{\hyperlink{class_test_a9c530a92e47e916f87c6eed72057d10a}{variadic template method}}
+
+Links to the variadic template function overloads\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{070__ref__variadic__template_8cpp_aa7e4936a17759246bce60256cf224e16}{First overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_ad6fc2d2a6cb8980f3e0eaacbd2ae41fe}{Second overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}{Third overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_aed64c596fea5f4f5e719006539922f7c}{Fourth overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a0ad18d95a1dc2dbacee657c43f719187}{Fifth overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a2331eedd0a1db9da5de0ad0faef78a4e}{Sixth overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a72bd94e61df947347f98a2a6214e9342}{Seventh overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a0bd03c39aa36ae51d2b8d87e04cf7eab}{Eighth overload}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_abb1e0338f72ae46a1240ada65d6a397c}{Ninth overload}}\end{DoxyItemize}
+The following are interpreted the same\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}{without template argument}} \item \mbox{\hyperlink{070__ref__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}{with template argument}}\end{DoxyItemize}
+See the \mbox{\hyperlink{class_test}{test}} class. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{069__link__variadic__template_8cpp_affb6da6cff1b57cdf8efc0123dceac9b}\label{069__link__variadic__template_8cpp_affb6da6cff1b57cdf8efc0123dceac9b}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void func (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Brief description. 
+
+\mbox{\hyperlink{class_a}{A}} function
+
+Detailed description.
+
+\mbox{\hyperlink{class_a}{A}} function with one parameter. \mbox{\Hypertarget{069__link__variadic__template_8cpp_ad6fc2d2a6cb8980f3e0eaacbd2ae41fe}\label{069__link__variadic__template_8cpp_ad6fc2d2a6cb8980f3e0eaacbd2ae41fe}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_aa7e4936a17759246bce60256cf224e16}\label{069__link__variadic__template_8cpp_aa7e4936a17759246bce60256cf224e16}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{Args \&...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_a2331eedd0a1db9da5de0ad0faef78a4e}\label{069__link__variadic__template_8cpp_a2331eedd0a1db9da5de0ad0faef78a4e}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{Args $\ast$$\ast$...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_a0ad18d95a1dc2dbacee657c43f719187}\label{069__link__variadic__template_8cpp_a0ad18d95a1dc2dbacee657c43f719187}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{Args $\ast$...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_abb1e0338f72ae46a1240ada65d6a397c}\label{069__link__variadic__template_8cpp_abb1e0338f72ae46a1240ada65d6a397c}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{Args...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_aed64c596fea5f4f5e719006539922f7c}\label{069__link__variadic__template_8cpp_aed64c596fea5f4f5e719006539922f7c}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}\label{069__link__variadic__template_8cpp_a708a5bf22646ed7233fe61b83182811a}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_a0bd03c39aa36ae51d2b8d87e04cf7eab}\label{069__link__variadic__template_8cpp_a0bd03c39aa36ae51d2b8d87e04cf7eab}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const Args $\ast$$\ast$...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload \mbox{\Hypertarget{069__link__variadic__template_8cpp_a72bd94e61df947347f98a2a6214e9342}\label{069__link__variadic__template_8cpp_a72bd94e61df947347f98a2a6214e9342}} 
+\index{069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}!func@{func}}
+\index{func@{func}!069\_link\_variadic\_template.cpp@{069\_link\_variadic\_template.cpp}}
+\doxysubsubsection{\texorpdfstring{func()}{func()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void func (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const Args $\ast$...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_a}{A}} variadic template function overload 

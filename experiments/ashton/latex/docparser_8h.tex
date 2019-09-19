@@ -1,0 +1,239 @@
+\hypertarget{docparser_8h}{}\doxysection{doxygen/src/docparser.h File Reference}
+\label{docparser_8h}\index{doxygen/src/docparser.h@{doxygen/src/docparser.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qcstring.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}docvisitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}htmlattrib.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_doc_node}{Doc\+Node}}
+\item 
+class \mbox{\hyperlink{class_comp_accept}{Comp\+Accept$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_doc_word}{Doc\+Word}}
+\item 
+class \mbox{\hyperlink{class_doc_linked_word}{Doc\+Linked\+Word}}
+\item 
+class \mbox{\hyperlink{class_doc_u_r_l}{Doc\+U\+RL}}
+\item 
+class \mbox{\hyperlink{class_doc_line_break}{Doc\+Line\+Break}}
+\item 
+class \mbox{\hyperlink{class_doc_hor_ruler}{Doc\+Hor\+Ruler}}
+\item 
+class \mbox{\hyperlink{class_doc_anchor}{Doc\+Anchor}}
+\item 
+class \mbox{\hyperlink{class_doc_cite}{Doc\+Cite}}
+\item 
+class \mbox{\hyperlink{class_doc_style_change}{Doc\+Style\+Change}}
+\item 
+class \mbox{\hyperlink{class_doc_symbol}{Doc\+Symbol}}
+\item 
+struct \mbox{\hyperlink{struct_doc_symbol_1_1_perl_symb}{Doc\+Symbol\+::\+Perl\+Symb}}
+\item 
+class \mbox{\hyperlink{class_doc_emoji}{Doc\+Emoji}}
+\item 
+class \mbox{\hyperlink{class_doc_white_space}{Doc\+White\+Space}}
+\item 
+class \mbox{\hyperlink{class_doc_separator}{Doc\+Separator}}
+\item 
+class \mbox{\hyperlink{class_doc_verbatim}{Doc\+Verbatim}}
+\item 
+class \mbox{\hyperlink{class_doc_include}{Doc\+Include}}
+\item 
+class \mbox{\hyperlink{class_doc_inc_operator}{Doc\+Inc\+Operator}}
+\item 
+class \mbox{\hyperlink{class_doc_formula}{Doc\+Formula}}
+\item 
+class \mbox{\hyperlink{class_doc_index_entry}{Doc\+Index\+Entry}}
+\item 
+class \mbox{\hyperlink{class_doc_auto_list}{Doc\+Auto\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_auto_list_item}{Doc\+Auto\+List\+Item}}
+\item 
+class \mbox{\hyperlink{class_doc_title}{Doc\+Title}}
+\item 
+class \mbox{\hyperlink{class_doc_x_ref_item}{Doc\+X\+Ref\+Item}}
+\item 
+class \mbox{\hyperlink{class_doc_image}{Doc\+Image}}
+\item 
+class \mbox{\hyperlink{class_doc_dot_file}{Doc\+Dot\+File}}
+\item 
+class \mbox{\hyperlink{class_doc_msc_file}{Doc\+Msc\+File}}
+\item 
+class \mbox{\hyperlink{class_doc_dia_file}{Doc\+Dia\+File}}
+\item 
+class \mbox{\hyperlink{class_doc_vhdl_flow}{Doc\+Vhdl\+Flow}}
+\item 
+class \mbox{\hyperlink{class_doc_link}{Doc\+Link}}
+\item 
+class \mbox{\hyperlink{class_doc_ref}{Doc\+Ref}}
+\item 
+class \mbox{\hyperlink{class_doc_internal_ref}{Doc\+Internal\+Ref}}
+\item 
+class \mbox{\hyperlink{class_doc_h_ref}{Doc\+H\+Ref}}
+\item 
+class \mbox{\hyperlink{class_doc_html_header}{Doc\+Html\+Header}}
+\item 
+class \mbox{\hyperlink{class_doc_html_desc_title}{Doc\+Html\+Desc\+Title}}
+\item 
+class \mbox{\hyperlink{class_doc_html_desc_list}{Doc\+Html\+Desc\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_section}{Doc\+Section}}
+\item 
+class \mbox{\hyperlink{class_doc_sec_ref_item}{Doc\+Sec\+Ref\+Item}}
+\item 
+class \mbox{\hyperlink{class_doc_sec_ref_list}{Doc\+Sec\+Ref\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_internal}{Doc\+Internal}}
+\item 
+class \mbox{\hyperlink{class_doc_par_block}{Doc\+Par\+Block}}
+\item 
+class \mbox{\hyperlink{class_doc_simple_list}{Doc\+Simple\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_html_list}{Doc\+Html\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_simple_sect}{Doc\+Simple\+Sect}}
+\item 
+class \mbox{\hyperlink{class_doc_simple_sect_sep}{Doc\+Simple\+Sect\+Sep}}
+\item 
+class \mbox{\hyperlink{class_doc_param_sect}{Doc\+Param\+Sect}}
+\item 
+class \mbox{\hyperlink{class_doc_para}{Doc\+Para}}
+\item 
+class \mbox{\hyperlink{class_doc_param_list}{Doc\+Param\+List}}
+\item 
+class \mbox{\hyperlink{class_doc_simple_list_item}{Doc\+Simple\+List\+Item}}
+\item 
+class \mbox{\hyperlink{class_doc_html_list_item}{Doc\+Html\+List\+Item}}
+\item 
+class \mbox{\hyperlink{class_doc_html_desc_data}{Doc\+Html\+Desc\+Data}}
+\item 
+class \mbox{\hyperlink{class_doc_html_cell}{Doc\+Html\+Cell}}
+\item 
+class \mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}}
+\item 
+class \mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}}
+\item 
+class \mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}}
+\item 
+class \mbox{\hyperlink{class_doc_html_block_quote}{Doc\+Html\+Block\+Quote}}
+\item 
+class \mbox{\hyperlink{class_doc_text}{Doc\+Text}}
+\item 
+class \mbox{\hyperlink{class_doc_root}{Doc\+Root}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{docparser_8h_a823fa08c0326339da0a95f43b100d9f9}{get\+Text\+Dir\+By\+Config}} (const \mbox{\hyperlink{class_q_string}{Q\+String}} \&text)
+\item 
+\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{docparser_8h_ab9556848c1f06b78a5930cb62cf7887c}{get\+Text\+Dir\+By\+Config}} (const \mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$node)
+\item 
+\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} \mbox{\hyperlink{docparser_8h_a4cf93a93b8eec7d5aa0db8d167a2e4ca}{get\+Text\+Dir\+By\+Config}} (const \mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$para, int node\+Index)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{docparser_8h_a7ac77be3d9a88206e3350428088752a0}{get\+Dir\+Html\+Class\+Of\+Node}} (\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} text\+Dir, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&init\+Value=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{docparser_8h_a126d09a2995a7e9d6d795ad453443227}{get\+Dir\+Html\+Class\+Of\+Page}} (\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} page\+Title)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{docparser_8h_ae682ca75f77a9170ffcdbf3ad84ee32d}{get\+Html\+Dir\+Embeding\+Char}} (\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} text\+Dir)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{docparser_8h_afaa3f155a9dc46fb4f61ac82a2231f8a}{get\+Js\+Dir\+Embeding\+Char}} (\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} text\+Dir)
+\item 
+\mbox{\hyperlink{class_doc_root}{Doc\+Root}} $\ast$ \mbox{\hyperlink{docparser_8h_aa7ecbd7608848af7df68a4c322c71ce1}{validating\+Parse\+Doc}} (const char $\ast$file\+Name, int start\+Line, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$context, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$md, const char $\ast$input, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} index\+Words, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Example, const char $\ast$example\+Name=0, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} single\+Line=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} link\+From\+Index=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+\mbox{\hyperlink{class_doc_text}{Doc\+Text}} $\ast$ \mbox{\hyperlink{docparser_8h_ab262357e441414087d286c794d228c8b}{validating\+Parse\+Text}} (const char $\ast$input)
+\item 
+void \mbox{\hyperlink{docparser_8h_a4f27210f5fa0a0eca4cc9142d3398074}{doc\+Find\+Sections}} (const char $\ast$input, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$\mbox{\hyperlink{060__command__switch_8tcl_af43f4b1f0064a33b2d662af9f06d3a00}{d}}, const char $\ast$file\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{docparser_8h_a4f27210f5fa0a0eca4cc9142d3398074}\label{docparser_8h_a4f27210f5fa0a0eca4cc9142d3398074}} 
+\index{docparser.h@{docparser.h}!docFindSections@{docFindSections}}
+\index{docFindSections@{docFindSections}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{docFindSections()}{docFindSections()}}
+{\footnotesize\ttfamily void doc\+Find\+Sections (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{d,  }\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+Searches for section and anchor commands in the input \mbox{\Hypertarget{docparser_8h_a7ac77be3d9a88206e3350428088752a0}\label{docparser_8h_a7ac77be3d9a88206e3350428088752a0}} 
+\index{docparser.h@{docparser.h}!getDirHtmlClassOfNode@{getDirHtmlClassOfNode}}
+\index{getDirHtmlClassOfNode@{getDirHtmlClassOfNode}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getDirHtmlClassOfNode()}{getDirHtmlClassOfNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} get\+Dir\+Html\+Class\+Of\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}}}]{text\+Dir,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{init\+Value = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_a126d09a2995a7e9d6d795ad453443227}\label{docparser_8h_a126d09a2995a7e9d6d795ad453443227}} 
+\index{docparser.h@{docparser.h}!getDirHtmlClassOfPage@{getDirHtmlClassOfPage}}
+\index{getDirHtmlClassOfPage@{getDirHtmlClassOfPage}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getDirHtmlClassOfPage()}{getDirHtmlClassOfPage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} get\+Dir\+Html\+Class\+Of\+Page (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}}]{page\+Title }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_ae682ca75f77a9170ffcdbf3ad84ee32d}\label{docparser_8h_ae682ca75f77a9170ffcdbf3ad84ee32d}} 
+\index{docparser.h@{docparser.h}!getHtmlDirEmbedingChar@{getHtmlDirEmbedingChar}}
+\index{getHtmlDirEmbedingChar@{getHtmlDirEmbedingChar}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getHtmlDirEmbedingChar()}{getHtmlDirEmbedingChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} get\+Html\+Dir\+Embeding\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}}}]{text\+Dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_afaa3f155a9dc46fb4f61ac82a2231f8a}\label{docparser_8h_afaa3f155a9dc46fb4f61ac82a2231f8a}} 
+\index{docparser.h@{docparser.h}!getJsDirEmbedingChar@{getJsDirEmbedingChar}}
+\index{getJsDirEmbedingChar@{getJsDirEmbedingChar}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getJsDirEmbedingChar()}{getJsDirEmbedingChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} get\+Js\+Dir\+Embeding\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}}}]{text\+Dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_ab9556848c1f06b78a5930cb62cf7887c}\label{docparser_8h_ab9556848c1f06b78a5930cb62cf7887c}} 
+\index{docparser.h@{docparser.h}!getTextDirByConfig@{getTextDirByConfig}}
+\index{getTextDirByConfig@{getTextDirByConfig}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getTextDirByConfig()}{getTextDirByConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} get\+Text\+Dir\+By\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_a4cf93a93b8eec7d5aa0db8d167a2e4ca}\label{docparser_8h_a4cf93a93b8eec7d5aa0db8d167a2e4ca}} 
+\index{docparser.h@{docparser.h}!getTextDirByConfig@{getTextDirByConfig}}
+\index{getTextDirByConfig@{getTextDirByConfig}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getTextDirByConfig()}{getTextDirByConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} get\+Text\+Dir\+By\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$}]{para,  }\item[{int}]{node\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_a823fa08c0326339da0a95f43b100d9f9}\label{docparser_8h_a823fa08c0326339da0a95f43b100d9f9}} 
+\index{docparser.h@{docparser.h}!getTextDirByConfig@{getTextDirByConfig}}
+\index{getTextDirByConfig@{getTextDirByConfig}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{getTextDirByConfig()}{getTextDirByConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_string_acaff43b133319ea651f19aac6b967406}{Q\+String\+::\+Direction}} get\+Text\+Dir\+By\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_string}{Q\+String}} \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{docparser_8h_aa7ecbd7608848af7df68a4c322c71ce1}\label{docparser_8h_aa7ecbd7608848af7df68a4c322c71ce1}} 
+\index{docparser.h@{docparser.h}!validatingParseDoc@{validatingParseDoc}}
+\index{validatingParseDoc@{validatingParseDoc}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{validatingParseDoc()}{validatingParseDoc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_root}{Doc\+Root}}$\ast$ validating\+Parse\+Doc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{start\+Line,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{context,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{md,  }\item[{const char $\ast$}]{input,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{index\+Words,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Example,  }\item[{const char $\ast$}]{example\+Name = {\ttfamily 0},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{single\+Line = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{link\+From\+Index = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}} }\end{DoxyParamCaption})}
+
+Main entry point for the documentation parser. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & File in which the documentation block is found (or the name of the example file in case is\+Example is T\+R\+UE). \\
+\hline
+{\em start\+Line} & Line at which the documentation block is found. \\
+\hline
+{\em context} & Class or namespace to which this block belongs. \\
+\hline
+{\em md} & Member definition to which the documentation belongs. Can be 0. \\
+\hline
+{\em input} & \mbox{\hyperlink{class_string}{String}} representation of the documentation block. \\
+\hline
+{\em index\+Words} & Indicates whether or not words should be put in the search index. \\
+\hline
+{\em is\+Example} & T\+R\+UE if the documentation belongs to an example. \\
+\hline
+{\em example\+Name} & Base name of the example file (0 if is\+Example is F\+A\+L\+SE). \\
+\hline
+{\em single\+Line} & Output should be presented on a single line, so without starting a new paragraph at the end. \\
+\hline
+{\em link\+From\+Index} & T\+R\+UE if the documentation is generated from an index page. In this case context is not used to determine the relative path when making a link. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Root node of the abstract syntax tree. Ownership of the pointer is handed over to the caller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{docparser_8h_ab262357e441414087d286c794d228c8b}\label{docparser_8h_ab262357e441414087d286c794d228c8b}} 
+\index{docparser.h@{docparser.h}!validatingParseText@{validatingParseText}}
+\index{validatingParseText@{validatingParseText}!docparser.h@{docparser.h}}
+\doxysubsubsection{\texorpdfstring{validatingParseText()}{validatingParseText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_text}{Doc\+Text}}$\ast$ validating\+Parse\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input }\end{DoxyParamCaption})}
+
+Main entry point for parsing simple text fragments. These fragments are limited to words, whitespace and symbols. 

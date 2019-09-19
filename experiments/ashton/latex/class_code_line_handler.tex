@@ -1,0 +1,148 @@
+\hypertarget{class_code_line_handler}{}\doxysection{Code\+Line\+Handler Class Reference}
+\label{class_code_line_handler}\index{CodeLineHandler@{CodeLineHandler}}
+
+
+Node representing a line of code.  
+
+
+
+
+{\ttfamily \#include $<$dochandler.\+h$>$}
+
+Inheritance diagram for Code\+Line\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.385281cm]{class_code_line_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_a2058ba1d5e36e4c51d18769dad6a44c0}{start\+Code\+Line}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_aafc6b130565fa56b0ac71c2ad8feb078}{end\+Code\+Line}} ()
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_a8ec1bda327736e0bd25dbe031e3acf33}{start\+Line\+Number}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_a53c77185915b3f2a7f77cbfbaf4d4e9a}{end\+Line\+Number}} ()
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_a89f7af02258b7e149b0073ab078f6623}{start\+Highlight}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_code_line_handler_ab016c28ed0bf6c0c967b371e9cd58057}{start\+Ref}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&)
+\item 
+\mbox{\hyperlink{class_code_line_handler_a53b6144527ba57d79e99ee3c84044aa9}{Code\+Line\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{class_code_line_handler_afffc4f4c1669bb8db325a46a8f3904ab}{$\sim$\+Code\+Line\+Handler}} ()
+\item 
+virtual Kind \mbox{\hyperlink{class_code_line_handler_a961383ba55dc3b5b1369c14b4c018336}{kind}} () const
+\item 
+virtual int \mbox{\hyperlink{class_code_line_handler_acff1450c9811308d2a594301c65760ec}{line\+Number}} () const
+\item 
+virtual const \mbox{\hyperlink{class_i_string}{I\+String}} $\ast$ \mbox{\hyperlink{class_code_line_handler_a43684a9fded12389f47fbd931286ad0c}{ref\+Id}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ \mbox{\hyperlink{class_code_line_handler_ac1eb9e2004965bed60a9ed705c9d2514}{code\+Elements}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_code_line_handler_a58edddfb3f15948fd8e3e8c67db55d01}{Code\+Line\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a line of code. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_code_line_handler_a53b6144527ba57d79e99ee3c84044aa9}\label{class_code_line_handler_a53b6144527ba57d79e99ee3c84044aa9}} 
+\index{CodeLineHandler@{CodeLineHandler}!CodeLineHandler@{CodeLineHandler}}
+\index{CodeLineHandler@{CodeLineHandler}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{CodeLineHandler()}{CodeLineHandler()}}
+{\footnotesize\ttfamily Code\+Line\+Handler\+::\+Code\+Line\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_code_line_handler_afffc4f4c1669bb8db325a46a8f3904ab}\label{class_code_line_handler_afffc4f4c1669bb8db325a46a8f3904ab}} 
+\index{CodeLineHandler@{CodeLineHandler}!````~CodeLineHandler@{$\sim$CodeLineHandler}}
+\index{````~CodeLineHandler@{$\sim$CodeLineHandler}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$CodeLineHandler()}{~CodeLineHandler()}}
+{\footnotesize\ttfamily Code\+Line\+Handler\+::$\sim$\+Code\+Line\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_code_line_handler_ac1eb9e2004965bed60a9ed705c9d2514}\label{class_code_line_handler_ac1eb9e2004965bed60a9ed705c9d2514}} 
+\index{CodeLineHandler@{CodeLineHandler}!codeElements@{codeElements}}
+\index{codeElements@{codeElements}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{codeElements()}{codeElements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ Code\+Line\+Handler\+::code\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_aafc6b130565fa56b0ac71c2ad8feb078}\label{class_code_line_handler_aafc6b130565fa56b0ac71c2ad8feb078}} 
+\index{CodeLineHandler@{CodeLineHandler}!endCodeLine@{endCodeLine}}
+\index{endCodeLine@{endCodeLine}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{endCodeLine()}{endCodeLine()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::end\+Code\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a53c77185915b3f2a7f77cbfbaf4d4e9a}\label{class_code_line_handler_a53c77185915b3f2a7f77cbfbaf4d4e9a}} 
+\index{CodeLineHandler@{CodeLineHandler}!endLineNumber@{endLineNumber}}
+\index{endLineNumber@{endLineNumber}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{endLineNumber()}{endLineNumber()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::end\+Line\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a961383ba55dc3b5b1369c14b4c018336}\label{class_code_line_handler_a961383ba55dc3b5b1369c14b4c018336}} 
+\index{CodeLineHandler@{CodeLineHandler}!kind@{kind}}
+\index{kind@{kind}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual Kind Code\+Line\+Handler\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_acff1450c9811308d2a594301c65760ec}\label{class_code_line_handler_acff1450c9811308d2a594301c65760ec}} 
+\index{CodeLineHandler@{CodeLineHandler}!lineNumber@{lineNumber}}
+\index{lineNumber@{lineNumber}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{lineNumber()}{lineNumber()}}
+{\footnotesize\ttfamily virtual int Code\+Line\+Handler\+::line\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a43684a9fded12389f47fbd931286ad0c}\label{class_code_line_handler_a43684a9fded12389f47fbd931286ad0c}} 
+\index{CodeLineHandler@{CodeLineHandler}!refId@{refId}}
+\index{refId@{refId}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{refId()}{refId()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_i_string}{I\+String}}$\ast$ Code\+Line\+Handler\+::ref\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a2058ba1d5e36e4c51d18769dad6a44c0}\label{class_code_line_handler_a2058ba1d5e36e4c51d18769dad6a44c0}} 
+\index{CodeLineHandler@{CodeLineHandler}!startCodeLine@{startCodeLine}}
+\index{startCodeLine@{startCodeLine}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{startCodeLine()}{startCodeLine()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::start\+Code\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a89f7af02258b7e149b0073ab078f6623}\label{class_code_line_handler_a89f7af02258b7e149b0073ab078f6623}} 
+\index{CodeLineHandler@{CodeLineHandler}!startHighlight@{startHighlight}}
+\index{startHighlight@{startHighlight}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{startHighlight()}{startHighlight()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::start\+Highlight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_a8ec1bda327736e0bd25dbe031e3acf33}\label{class_code_line_handler_a8ec1bda327736e0bd25dbe031e3acf33}} 
+\index{CodeLineHandler@{CodeLineHandler}!startLineNumber@{startLineNumber}}
+\index{startLineNumber@{startLineNumber}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{startLineNumber()}{startLineNumber()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::start\+Line\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_code_line_handler_ab016c28ed0bf6c0c967b371e9cd58057}\label{class_code_line_handler_ab016c28ed0bf6c0c967b371e9cd58057}} 
+\index{CodeLineHandler@{CodeLineHandler}!startRef@{startRef}}
+\index{startRef@{startRef}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{startRef()}{startRef()}}
+{\footnotesize\ttfamily void Code\+Line\+Handler\+::start\+Ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_code_line_handler_a58edddfb3f15948fd8e3e8c67db55d01}\label{class_code_line_handler_a58edddfb3f15948fd8e3e8c67db55d01}} 
+\index{CodeLineHandler@{CodeLineHandler}!CodeLineIterator@{CodeLineIterator}}
+\index{CodeLineIterator@{CodeLineIterator}!CodeLineHandler@{CodeLineHandler}}
+\doxysubsubsection{\texorpdfstring{CodeLineIterator}{CodeLineIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_code_line_iterator}{Code\+Line\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8h}{dochandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8cpp}{dochandler.\+cpp}}\end{DoxyCompactItemize}

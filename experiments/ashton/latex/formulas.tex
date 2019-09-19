@@ -1,0 +1,42 @@
+\mbox{\hyperlink{class_doxygen}{Doxygen}} allows you to put \textbackslash{}\+La\+TeX formulas in the output (this works only for the H\+T\+ML, \textbackslash{}\+La\+TeX and R\+TF output. To be able to include formulas (as images) in the H\+T\+ML and R\+TF documentation, you will also need to have the following tools installed 
+\begin{DoxyItemize}
+\item {\ttfamily latex\+:} the \textbackslash{}\+La\+TeX compiler, needed to parse the formulas. To test I have used the te\+TeX 1.\+0 distribution. 
+\item {\ttfamily dvips\+:} a tool to convert D\+VI files to Post\+Script files I have used version 5.\+92b from Radical Eye software for testing. 
+\item {\ttfamily gs\+:} the Ghost\+Script interpreter for converting Post\+Script files to bitmaps. I have used Aladdin Ghost\+Script 8.\+0 for testing. 
+\end{DoxyItemize}For the H\+T\+ML output there is also an alternative solution using \href{https://www.mathjax.org}{\texttt{ Math\+Jax}} which does not require the above tools. If you enable \mbox{\hyperlink{config_cfg_use_mathjax}{U\+S\+E\+\_\+\+M\+A\+T\+H\+J\+AX}} in the configuration then the latex formulas will be copied to the H\+T\+ML \char`\"{}as is\char`\"{} and a client side javascript will parse them and turn them into (interactive) images.
+
+There are three ways to include formulas in the documentation. 
+\begin{DoxyEnumerate}
+\item Using in-\/text formulas that appear in the running text. These formulas should be put between a pair of \textbackslash{}f\$ commands, so \begin{DoxyVerb}  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
+  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
+\end{DoxyVerb}
+ results in\+:
+
+The distance between $(x_1,y_1)$ and $(x_2,y_2)$ is $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. ~\newline
+ 
+\item Unnumbered displayed formulas that are centered on a separate line. These formulas should be put between \textbackslash{}f\mbox{[} and \textbackslash{}f\mbox{]} commands. An example\+: \begin{DoxyVerb}  \f[
+    |I_2|=\left| \int_{0}^T \psi(t) 
+             \left\{ 
+                u(a,t)-
+                \int_{\gamma(t)}^a 
+                \frac{d\theta}{k(\theta,t)}
+                \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi
+             \right\} dt
+          \right|
+  \f]
+\end{DoxyVerb}
+ results in\+: \[ |I_2|=\left| \int_{0}^T \psi(t) \left\{ u(a,t)- \int_{\gamma(t)}^a \frac{d\theta}{k(\theta,t)} \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi \right\} dt \right| \] 
+\item Formulas or other latex elements that are not in a math environment can be specified using \textbackslash{}f\{environment\}, where {\ttfamily environment} is the name of the \textbackslash{}\+La\+TeX environment, the corresponding end command is \textbackslash{}f\}. Here is an example for an equation array \begin{DoxyVerb}   \f{eqnarray*}{
+        g &=& \frac{Gm_2}{r^2} \\ 
+          &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\,
+              \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ 
+          &=& 9.82066032\,\mbox{m/s}^2
+   \f}
+\end{DoxyVerb}
+ which results in\+: \begin{eqnarray*} g &=& \frac{Gm_2}{r^2} \\ &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\, \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ &=& 9.82066032\,\mbox{m/s}^2 \end{eqnarray*} 
+\end{DoxyEnumerate}For the first two commands one should make sure formulas contain valid commands in \textbackslash{}\+La\+TeX\textquotesingle{}s math-\/mode. For the third command the section should contain valid command for the specific environment.
+
+\begin{DoxyWarning}{Warning}
+Currently, doxygen is not very fault tolerant in recovering from typos in formulas. It may be necessary to remove the files {\ttfamily formula.\+repository} that are written to the html and rtf directories to get rid of an incorrect formula as well as the {\ttfamily form\+\_\+$\ast$} files.
+\end{DoxyWarning}
+ 

@@ -1,0 +1,51 @@
+\hypertarget{classdef_8h}{}\doxysection{doxygen/src/classdef.h File Reference}
+\label{classdef_8h}\index{doxygen/src/classdef.h@{doxygen/src/classdef.h}}
+{\ttfamily \#include $<$qlist.\+h$>$}\newline
+{\ttfamily \#include $<$qdict.\+h$>$}\newline
+{\ttfamily \#include $<$qptrdict.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}definition.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_class_def}{Class\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_uses_class_def}{Uses\+Class\+Def}}
+\item 
+class \mbox{\hyperlink{class_uses_class_dict}{Uses\+Class\+Dict}}
+\item 
+class \mbox{\hyperlink{class_uses_class_dict_iterator}{Uses\+Class\+Dict\+Iterator}}
+\item 
+struct \mbox{\hyperlink{struct_base_class_def}{Base\+Class\+Def}}
+\item 
+class \mbox{\hyperlink{class_base_class_list}{Base\+Class\+List}}
+\item 
+class \mbox{\hyperlink{class_base_class_list_iterator}{Base\+Class\+List\+Iterator}}
+\item 
+struct \mbox{\hyperlink{struct_constraint_class_def}{Constraint\+Class\+Def}}
+\item 
+class \mbox{\hyperlink{class_constraint_class_dict}{Constraint\+Class\+Dict}}
+\item 
+class \mbox{\hyperlink{class_constraint_class_dict_iterator}{Constraint\+Class\+Dict\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$ \mbox{\hyperlink{classdef_8h_aca4b755b365317dbd6552f713e731ca0}{create\+Class\+Def}} (const char $\ast$file\+Name, int start\+Line, int start\+Column, const char $\ast$name, \mbox{\hyperlink{class_class_def_ae70cf86d35fe954a94c566fbcfc87939}{Class\+Def\+::\+Compound\+Type}} ct, const char $\ast$ref=0, const char $\ast$f\+Name=0, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Symbol=\mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Java\+Enum=\mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}})
+\item 
+\mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$ \mbox{\hyperlink{classdef_8h_afe77e6516ec1e2349cc1508ac9469757}{create\+Class\+Def\+Alias}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$new\+Scope, const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$cd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{classdef_8h_aca4b755b365317dbd6552f713e731ca0}\label{classdef_8h_aca4b755b365317dbd6552f713e731ca0}} 
+\index{classdef.h@{classdef.h}!createClassDef@{createClassDef}}
+\index{createClassDef@{createClassDef}!classdef.h@{classdef.h}}
+\doxysubsubsection{\texorpdfstring{createClassDef()}{createClassDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_def}{Class\+Def}}$\ast$ create\+Class\+Def (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{start\+Line,  }\item[{int}]{start\+Column,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{class_class_def_ae70cf86d35fe954a94c566fbcfc87939}{Class\+Def\+::\+Compound\+Type}}}]{ct,  }\item[{const char $\ast$}]{ref = {\ttfamily 0},  }\item[{const char $\ast$}]{f\+Name = {\ttfamily 0},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Symbol = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Java\+Enum = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}} }\end{DoxyParamCaption})}
+
+Factory method to create a new \mbox{\hyperlink{class_class_def}{Class\+Def}} object \mbox{\Hypertarget{classdef_8h_afe77e6516ec1e2349cc1508ac9469757}\label{classdef_8h_afe77e6516ec1e2349cc1508ac9469757}} 
+\index{classdef.h@{classdef.h}!createClassDefAlias@{createClassDefAlias}}
+\index{createClassDefAlias@{createClassDefAlias}!classdef.h@{classdef.h}}
+\doxysubsubsection{\texorpdfstring{createClassDefAlias()}{createClassDefAlias()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_def}{Class\+Def}}$\ast$ create\+Class\+Def\+Alias (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{new\+Scope,  }\item[{const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$}]{cd }\end{DoxyParamCaption})}
+

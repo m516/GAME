@@ -1,0 +1,117 @@
+\hypertarget{class_emoji_entity_mapper}{}\doxysection{Emoji\+Entity\+Mapper Class Reference}
+\label{class_emoji_entity_mapper}\index{EmojiEntityMapper@{EmojiEntityMapper}}
+
+
+Singleton helper class to map emoji entities to other formats.  
+
+
+
+
+{\ttfamily \#include $<$emoji.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{class_emoji_entity_mapper_a33137ef11c5d63f6f7d7a27c01db943e}{name}} (int index) const
+\begin{DoxyCompactList}\small\item\em Access routine to the name of the Emoji entity. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{class_emoji_entity_mapper_a1b6d7e3d1f82adf44c46fdd82d11b2f8}{unicode}} (int index) const
+\begin{DoxyCompactList}\small\item\em Access routine to the unicode sequence for the Emoji entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_emoji_entity_mapper_a0f8ca7e7e237deb36fedf301bb84551c}{write\+Emoji\+File}} (\mbox{\hyperlink{class_q_file}{Q\+File}} \&\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}})
+\begin{DoxyCompactList}\small\item\em Writes the list of supported emojis to the given file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_emoji_entity_mapper_a48541059ca5ed1d155c65e4b6b69fe24}{symbol2index}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&sym\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns a code for the requested Emoji entity name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_emoji_entity_mapper}{Emoji\+Entity\+Mapper}} $\ast$ \mbox{\hyperlink{class_emoji_entity_mapper_afbf245f030b4c8bd5b6e4b5fa460804f}{instance}} ()
+\item 
+static void \mbox{\hyperlink{class_emoji_entity_mapper_ab9aab069bfc06478322bf60994778a64}{delete\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton helper class to map emoji entities to other formats. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_emoji_entity_mapper_ab9aab069bfc06478322bf60994778a64}\label{class_emoji_entity_mapper_ab9aab069bfc06478322bf60994778a64}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!deleteInstance@{deleteInstance}}
+\index{deleteInstance@{deleteInstance}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{deleteInstance()}{deleteInstance()}}
+{\footnotesize\ttfamily void Emoji\+Entity\+Mapper\+::delete\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Deletes the one and only instance of the Emoji entity mapper \mbox{\Hypertarget{class_emoji_entity_mapper_afbf245f030b4c8bd5b6e4b5fa460804f}\label{class_emoji_entity_mapper_afbf245f030b4c8bd5b6e4b5fa460804f}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!instance@{instance}}
+\index{instance@{instance}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_emoji_entity_mapper}{Emoji\+Entity\+Mapper}} $\ast$ Emoji\+Entity\+Mapper\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the one and only instance of the Emoji entity mapper \mbox{\Hypertarget{class_emoji_entity_mapper_a33137ef11c5d63f6f7d7a27c01db943e}\label{class_emoji_entity_mapper_a33137ef11c5d63f6f7d7a27c01db943e}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!name@{name}}
+\index{name@{name}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char $\ast$ Emoji\+Entity\+Mapper\+::name (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Access routine to the name of the Emoji entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & code of the requested Emoji entity returned by \mbox{\hyperlink{class_emoji_entity_mapper_a48541059ca5ed1d155c65e4b6b69fe24}{symbol2index()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the Emoji entity in Git\+Hub format (i.\+e. \+:smile\+:) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_emoji_entity_mapper_a48541059ca5ed1d155c65e4b6b69fe24}\label{class_emoji_entity_mapper_a48541059ca5ed1d155c65e4b6b69fe24}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!symbol2index@{symbol2index}}
+\index{symbol2index@{symbol2index}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{symbol2index()}{symbol2index()}}
+{\footnotesize\ttfamily int Emoji\+Entity\+Mapper\+::symbol2index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{sym\+Name }\end{DoxyParamCaption}) const}
+
+
+
+Returns a code for the requested Emoji entity name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym\+Name} & Emoji entity name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the code for the requested Emoji entity name, in case the requested Emoji item does not exist {\ttfamily -\/1} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_emoji_entity_mapper_a1b6d7e3d1f82adf44c46fdd82d11b2f8}\label{class_emoji_entity_mapper_a1b6d7e3d1f82adf44c46fdd82d11b2f8}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!unicode@{unicode}}
+\index{unicode@{unicode}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{unicode()}{unicode()}}
+{\footnotesize\ttfamily const char $\ast$ Emoji\+Entity\+Mapper\+::unicode (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Access routine to the unicode sequence for the Emoji entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & code of the requested Emoji entity returned by \mbox{\hyperlink{class_emoji_entity_mapper_a48541059ca5ed1d155c65e4b6b69fe24}{symbol2index()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the unicode sequence of the Emoji entity, 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_emoji_entity_mapper_a0f8ca7e7e237deb36fedf301bb84551c}\label{class_emoji_entity_mapper_a0f8ca7e7e237deb36fedf301bb84551c}} 
+\index{EmojiEntityMapper@{EmojiEntityMapper}!writeEmojiFile@{writeEmojiFile}}
+\index{writeEmojiFile@{writeEmojiFile}!EmojiEntityMapper@{EmojiEntityMapper}}
+\doxysubsubsection{\texorpdfstring{writeEmojiFile()}{writeEmojiFile()}}
+{\footnotesize\ttfamily void Emoji\+Entity\+Mapper\+::write\+Emoji\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_file}{Q\+File}} \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Writes the list of supported emojis to the given file. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{emoji_8h}{emoji.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{emoji_8cpp}{emoji.\+cpp}}\end{DoxyCompactItemize}

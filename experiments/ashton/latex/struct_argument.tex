@@ -1,0 +1,132 @@
+\hypertarget{struct_argument}{}\doxysection{Argument Struct Reference}
+\label{struct_argument}\index{Argument@{Argument}}
+
+
+This class contains the information about the argument of a function or template.  
+
+
+
+
+{\ttfamily \#include $<$arguments.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_argument_a21f78c9b347967aa8bf77e5d3f35592f}{Argument}} ()
+\item 
+\mbox{\hyperlink{struct_argument_a87adc78036a4e04a05692bd13f90d91a}{Argument}} (const \mbox{\hyperlink{struct_argument}{Argument}} \&\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})
+\item 
+\mbox{\hyperlink{struct_argument}{Argument}} \& \mbox{\hyperlink{struct_argument_aeb2dc827f4c8a7f597f714b3995c20e4}{operator=}} (const \mbox{\hyperlink{struct_argument}{Argument}} \&\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{struct_argument_aca66c2b989361c43f7e1adfe9d7f125d}{has\+Documentation}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_aff930f2a4cb85b5616be79b81db2341f}{attrib}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_a1ad588d2b3cc71fe3f74c8272b4ec32e}{type}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_ac20b3c80630f773cf72f13c6e44b235a}{can\+Type}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_a334668ce5d1f650c804e69f1bc941a3b}{name}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_a9e33101befb3a977ac863d8a595ed210}{array}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_a4fe1d9319dede52f7551f59297772efa}{defval}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_a5d6cd35aa392b1703acf14104b19c589}{docs}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_argument_aef7bdd7c7d69ebad70624bfebdfa7404}{type\+Constraint}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains the information about the argument of a function or template. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_argument_a21f78c9b347967aa8bf77e5d3f35592f}\label{struct_argument_a21f78c9b347967aa8bf77e5d3f35592f}} 
+\index{Argument@{Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Argument\+::\+Argument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a new argument. \mbox{\Hypertarget{struct_argument_a87adc78036a4e04a05692bd13f90d91a}\label{struct_argument_a87adc78036a4e04a05692bd13f90d91a}} 
+\index{Argument@{Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Argument\+::\+Argument (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_argument}{Argument}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy an argument (does a deep copy of all strings). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_argument_aca66c2b989361c43f7e1adfe9d7f125d}\label{struct_argument_aca66c2b989361c43f7e1adfe9d7f125d}} 
+\index{Argument@{Argument}!hasDocumentation@{hasDocumentation}}
+\index{hasDocumentation@{hasDocumentation}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{hasDocumentation()}{hasDocumentation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Argument\+::has\+Documentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return T\+R\+UE if this argument is documentation and the argument has a non empty name. \mbox{\Hypertarget{struct_argument_aeb2dc827f4c8a7f597f714b3995c20e4}\label{struct_argument_aeb2dc827f4c8a7f597f714b3995c20e4}} 
+\index{Argument@{Argument}!operator=@{operator=}}
+\index{operator=@{operator=}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_argument}{Argument}}\& Argument\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_argument}{Argument}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment of an argument (does a deep copy of all strings). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_argument_a9e33101befb3a977ac863d8a595ed210}\label{struct_argument_a9e33101befb3a977ac863d8a595ed210}} 
+\index{Argument@{Argument}!array@{array}}
+\index{array@{array}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::array}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s array specifier (may be empty) \mbox{\Hypertarget{struct_argument_aff930f2a4cb85b5616be79b81db2341f}\label{struct_argument_aff930f2a4cb85b5616be79b81db2341f}} 
+\index{Argument@{Argument}!attrib@{attrib}}
+\index{attrib@{attrib}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{attrib}{attrib}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::attrib}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s attribute (I\+DL only) \mbox{\Hypertarget{struct_argument_ac20b3c80630f773cf72f13c6e44b235a}\label{struct_argument_ac20b3c80630f773cf72f13c6e44b235a}} 
+\index{Argument@{Argument}!canType@{canType}}
+\index{canType@{canType}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{canType}{canType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::can\+Type}
+
+Cached value of canonical type (after type resolution). Empty initially. \mbox{\Hypertarget{struct_argument_a4fe1d9319dede52f7551f59297772efa}\label{struct_argument_a4fe1d9319dede52f7551f59297772efa}} 
+\index{Argument@{Argument}!defval@{defval}}
+\index{defval@{defval}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{defval}{defval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::defval}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s default value (may be empty) \mbox{\Hypertarget{struct_argument_a5d6cd35aa392b1703acf14104b19c589}\label{struct_argument_a5d6cd35aa392b1703acf14104b19c589}} 
+\index{Argument@{Argument}!docs@{docs}}
+\index{docs@{docs}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{docs}{docs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::docs}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s documentation (may be empty) \mbox{\Hypertarget{struct_argument_a334668ce5d1f650c804e69f1bc941a3b}\label{struct_argument_a334668ce5d1f650c804e69f1bc941a3b}} 
+\index{Argument@{Argument}!name@{name}}
+\index{name@{name}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::name}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s name (may be empty) \mbox{\Hypertarget{struct_argument_a1ad588d2b3cc71fe3f74c8272b4ec32e}\label{struct_argument_a1ad588d2b3cc71fe3f74c8272b4ec32e}} 
+\index{Argument@{Argument}!type@{type}}
+\index{type@{type}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::type}
+
+\mbox{\hyperlink{struct_argument}{Argument}}\textquotesingle{}s type \mbox{\Hypertarget{struct_argument_aef7bdd7c7d69ebad70624bfebdfa7404}\label{struct_argument_aef7bdd7c7d69ebad70624bfebdfa7404}} 
+\index{Argument@{Argument}!typeConstraint@{typeConstraint}}
+\index{typeConstraint@{typeConstraint}!Argument@{Argument}}
+\doxysubsubsection{\texorpdfstring{typeConstraint}{typeConstraint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Argument\+::type\+Constraint}
+
+Used for Java generics\+: $<$T extends \mbox{\hyperlink{class_c}{C}}$>$ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{arguments_8h}{arguments.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\hypertarget{msc_8h}{}\doxysection{doxygen/src/msc.h File Reference}
+\label{msc_8h}\index{doxygen/src/msc.h@{doxygen/src/msc.h}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}} \{ \mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656a764c2d4059b2c0b3664ae4f9ed7767d2}{M\+S\+C\+\_\+\+B\+I\+T\+M\+AP}}, 
+\mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656a5a7675b3e0f913e8f788cd7e7ba52a9d}{M\+S\+C\+\_\+\+E\+PS}}, 
+\mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656a2911e5f83d59bea3c9cbe886b93bd22c}{M\+S\+C\+\_\+\+S\+VG}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{msc_8h_a2dc985bf21fc53f7970295c09a181acf}{write\+Msc\+Graph\+From\+File}} (const char $\ast$in\+File, const char $\ast$out\+Dir, const char $\ast$\mbox{\hyperlink{gd_8h_a9af8a34a1d63fa9ed984b7cdd97daee1}{out\+File}}, \mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}} format)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{msc_8h_aa6f84611cd60b3980cdeec63b2e1ffbc}{get\+Msc\+Image\+Map\+From\+File}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&in\+File, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&out\+Dir, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context)
+\item 
+void \mbox{\hyperlink{msc_8h_a01a42e6ebd34f414ffc77ddf70f61f3d}{write\+Msc\+Image\+Map\+From\+File}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&in\+File, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&out\+Dir, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&rel\+Path, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&base\+Name, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&context, \mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}} format)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{msc_8h_a6cf71dda84c5602c6239cca31028f656}\label{msc_8h_a6cf71dda84c5602c6239cca31028f656}} 
+\index{msc.h@{msc.h}!MscOutputFormat@{MscOutputFormat}}
+\index{MscOutputFormat@{MscOutputFormat}!msc.h@{msc.h}}
+\doxysubsubsection{\texorpdfstring{MscOutputFormat}{MscOutputFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSC\_BITMAP@{MSC\_BITMAP}!msc.h@{msc.h}}\index{msc.h@{msc.h}!MSC\_BITMAP@{MSC\_BITMAP}}}\mbox{\Hypertarget{msc_8h_a6cf71dda84c5602c6239cca31028f656a764c2d4059b2c0b3664ae4f9ed7767d2}\label{msc_8h_a6cf71dda84c5602c6239cca31028f656a764c2d4059b2c0b3664ae4f9ed7767d2}} 
+M\+S\+C\+\_\+\+B\+I\+T\+M\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSC\_EPS@{MSC\_EPS}!msc.h@{msc.h}}\index{msc.h@{msc.h}!MSC\_EPS@{MSC\_EPS}}}\mbox{\Hypertarget{msc_8h_a6cf71dda84c5602c6239cca31028f656a5a7675b3e0f913e8f788cd7e7ba52a9d}\label{msc_8h_a6cf71dda84c5602c6239cca31028f656a5a7675b3e0f913e8f788cd7e7ba52a9d}} 
+M\+S\+C\+\_\+\+E\+PS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSC\_SVG@{MSC\_SVG}!msc.h@{msc.h}}\index{msc.h@{msc.h}!MSC\_SVG@{MSC\_SVG}}}\mbox{\Hypertarget{msc_8h_a6cf71dda84c5602c6239cca31028f656a2911e5f83d59bea3c9cbe886b93bd22c}\label{msc_8h_a6cf71dda84c5602c6239cca31028f656a2911e5f83d59bea3c9cbe886b93bd22c}} 
+M\+S\+C\+\_\+\+S\+VG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{msc_8h_aa6f84611cd60b3980cdeec63b2e1ffbc}\label{msc_8h_aa6f84611cd60b3980cdeec63b2e1ffbc}} 
+\index{msc.h@{msc.h}!getMscImageMapFromFile@{getMscImageMapFromFile}}
+\index{getMscImageMapFromFile@{getMscImageMapFromFile}!msc.h@{msc.h}}
+\doxysubsubsection{\texorpdfstring{getMscImageMapFromFile()}{getMscImageMapFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} get\+Msc\+Image\+Map\+From\+File (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{in\+File,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{out\+Dir,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{msc_8h_a2dc985bf21fc53f7970295c09a181acf}\label{msc_8h_a2dc985bf21fc53f7970295c09a181acf}} 
+\index{msc.h@{msc.h}!writeMscGraphFromFile@{writeMscGraphFromFile}}
+\index{writeMscGraphFromFile@{writeMscGraphFromFile}!msc.h@{msc.h}}
+\doxysubsubsection{\texorpdfstring{writeMscGraphFromFile()}{writeMscGraphFromFile()}}
+{\footnotesize\ttfamily void write\+Msc\+Graph\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in\+File,  }\item[{const char $\ast$}]{out\+Dir,  }\item[{const char $\ast$}]{out\+File,  }\item[{\mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}}}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{msc_8h_a01a42e6ebd34f414ffc77ddf70f61f3d}\label{msc_8h_a01a42e6ebd34f414ffc77ddf70f61f3d}} 
+\index{msc.h@{msc.h}!writeMscImageMapFromFile@{writeMscImageMapFromFile}}
+\index{writeMscImageMapFromFile@{writeMscImageMapFromFile}!msc.h@{msc.h}}
+\doxysubsubsection{\texorpdfstring{writeMscImageMapFromFile()}{writeMscImageMapFromFile()}}
+{\footnotesize\ttfamily void write\+Msc\+Image\+Map\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{in\+File,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{out\+Dir,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{rel\+Path,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{base\+Name,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{context,  }\item[{\mbox{\hyperlink{msc_8h_a6cf71dda84c5602c6239cca31028f656}{Msc\+Output\+Format}}}]{format }\end{DoxyParamCaption})}
+

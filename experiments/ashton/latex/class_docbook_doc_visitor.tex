@@ -1,0 +1,1143 @@
+\hypertarget{class_docbook_doc_visitor}{}\doxysection{Docbook\+Doc\+Visitor Class Reference}
+\label{class_docbook_doc_visitor}\index{DocbookDocVisitor@{DocbookDocVisitor}}
+
+
+Concrete visitor implementation for Docbook output.  
+
+
+
+
+{\ttfamily \#include $<$docbookvisitor.\+h$>$}
+
+Inheritance diagram for Docbook\+Doc\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_docbook_doc_visitor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_docbook_doc_visitor_a559b9cfe0badf00f1756eaeb991d4509}{Docbook\+Doc\+Visitor}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, \mbox{\hyperlink{class_code_output_interface}{Code\+Output\+Interface}} \&ci)
+\item 
+\mbox{\hyperlink{class_docbook_doc_visitor_a700d7d8533764cb3652f706eec84fac5}{$\sim$\+Docbook\+Doc\+Visitor}} ()
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a61416a9e72acfd363c870dde3e349153}{visit}} (\mbox{\hyperlink{class_doc_word}{Doc\+Word}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ab8b99deb92d1e79e4ed88c6952a3535a}{visit}} (\mbox{\hyperlink{class_doc_linked_word}{Doc\+Linked\+Word}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a8e86ebc50dece60a1037979f9122b0e5}{visit}} (\mbox{\hyperlink{class_doc_white_space}{Doc\+White\+Space}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_afb3421227804418869f484261f0a7a13}{visit}} (\mbox{\hyperlink{class_doc_symbol}{Doc\+Symbol}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a643cac7676075d5fcbeb27f47a8bb5c6}{visit}} (\mbox{\hyperlink{class_doc_emoji}{Doc\+Emoji}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a93d7ea7e679f0579269706b25d0bff04}{visit}} (\mbox{\hyperlink{class_doc_u_r_l}{Doc\+U\+RL}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0561024b6dd9eb0703e7d904d0bdec25}{visit}} (\mbox{\hyperlink{class_doc_line_break}{Doc\+Line\+Break}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_abbab05288f1e850e62ef03619e0e8bcb}{visit}} (\mbox{\hyperlink{class_doc_hor_ruler}{Doc\+Hor\+Ruler}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a4e5738bf7c89783b6e45ee99ba8808bc}{visit}} (\mbox{\hyperlink{class_doc_style_change}{Doc\+Style\+Change}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0420f2ae4e6d901e6e58bb78a3b8d401}{visit}} (\mbox{\hyperlink{class_doc_verbatim}{Doc\+Verbatim}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ab2de0ff5a15d1122e6a173d89c0ce3d6}{visit}} (\mbox{\hyperlink{class_doc_anchor}{Doc\+Anchor}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a47f57ffa435cb8b067c2ea0c63351da3}{visit}} (\mbox{\hyperlink{class_doc_include}{Doc\+Include}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac7903ba6393708222b10a35379c1fd8c}{visit}} (\mbox{\hyperlink{class_doc_inc_operator}{Doc\+Inc\+Operator}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_afff1f4272724292f0989fdad566bd34f}{visit}} (\mbox{\hyperlink{class_doc_formula}{Doc\+Formula}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_af32304eb5d5d87a77ad0a40b944c4b07}{visit}} (\mbox{\hyperlink{class_doc_index_entry}{Doc\+Index\+Entry}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a410891019bb245272d41c233bd721895}{visit}} (\mbox{\hyperlink{class_doc_simple_sect_sep}{Doc\+Simple\+Sect\+Sep}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_afda17721b312bf4a38790a8db71b63d1}{visit}} (\mbox{\hyperlink{class_doc_cite}{Doc\+Cite}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a51c50f79a36ab6ed4d2eba87b59f816e}{visit\+Pre}} (\mbox{\hyperlink{class_doc_auto_list}{Doc\+Auto\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a70eba7b113b89d3f7534f20a95ec75db}{visit\+Post}} (\mbox{\hyperlink{class_doc_auto_list}{Doc\+Auto\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_adf55b82163233781b6b15d69c8bae60c}{visit\+Pre}} (\mbox{\hyperlink{class_doc_auto_list_item}{Doc\+Auto\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a079d569829a4e2fcd244106547e0405c}{visit\+Post}} (\mbox{\hyperlink{class_doc_auto_list_item}{Doc\+Auto\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac81a10da97a988a36a3bef5aa94b2a93}{visit\+Pre}} (\mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a1f400d28785f1bb73eae6cbef9b58ad6}{visit\+Post}} (\mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a9a53674d436fa10d59ff7f92decb78f9}{visit\+Pre}} (\mbox{\hyperlink{class_doc_root}{Doc\+Root}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a53c5022572e08578b9ccf2ca15dd45cc}{visit\+Post}} (\mbox{\hyperlink{class_doc_root}{Doc\+Root}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a554bb5fa8b84e648a8303f646c9d4fe9}{visit\+Pre}} (\mbox{\hyperlink{class_doc_simple_sect}{Doc\+Simple\+Sect}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a5d5da278a3d2dadbaa6b4e47c95d6a97}{visit\+Post}} (\mbox{\hyperlink{class_doc_simple_sect}{Doc\+Simple\+Sect}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac7f30451366ae3f849f04a70594f107a}{visit\+Pre}} (\mbox{\hyperlink{class_doc_title}{Doc\+Title}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aa7fbff6b62698211edb15058ac2e361d}{visit\+Post}} (\mbox{\hyperlink{class_doc_title}{Doc\+Title}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aab4c02211f9ac901bb2860dbb0e81558}{visit\+Pre}} (\mbox{\hyperlink{class_doc_simple_list}{Doc\+Simple\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_acfea9937da583aa0ab29c3770acf58a5}{visit\+Post}} (\mbox{\hyperlink{class_doc_simple_list}{Doc\+Simple\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ad55f15d7eeb028539b1c72d9dd01a20d}{visit\+Pre}} (\mbox{\hyperlink{class_doc_simple_list_item}{Doc\+Simple\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a9942931a55fae39c0eb930611d9022b1}{visit\+Post}} (\mbox{\hyperlink{class_doc_simple_list_item}{Doc\+Simple\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac9ce379e3769a5fba4233f116b5b91fe}{visit\+Pre}} (\mbox{\hyperlink{class_doc_section}{Doc\+Section}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a8562831310481738e09213611d0a888c}{visit\+Post}} (\mbox{\hyperlink{class_doc_section}{Doc\+Section}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a8c7d0fe4210ce1e321a4d9d2c0294f2e}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_list}{Doc\+Html\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac130923e3eaeec0cb84e4e54ae515ed5}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_list}{Doc\+Html\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a502abaac790e529f665705f715828004}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_list_item}{Doc\+Html\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_af486272ad37fc48c21cb74951257ccf8}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_list_item}{Doc\+Html\+List\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ae617c326de9187a92ba3926dd6c4ec95}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_desc_list}{Doc\+Html\+Desc\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a8ba240f9c81311f3088b83d96a118f3d}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_desc_list}{Doc\+Html\+Desc\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a265e860f05c360f7533c28cfcc6784db}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_desc_title}{Doc\+Html\+Desc\+Title}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a527390301617a1361ed214e1e3587935}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_desc_title}{Doc\+Html\+Desc\+Title}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a4e278cb27372839e11255d05cf94f71d}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_desc_data}{Doc\+Html\+Desc\+Data}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0227203288437195ac9a683834163233}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_desc_data}{Doc\+Html\+Desc\+Data}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a32e77da8f522c9b6281eaa2faf8008ce}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_af59d689d992c1c411a77a67cc6befaa7}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a1b3cf11c925bd59582b049efd594f81e}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ac7d05d89781480adeaed750359bca81a}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0905c48a1ff04ba0b03cd1d4d3dc8e4c}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_cell}{Doc\+Html\+Cell}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a7d6b2dbb9dc8e74e4bd34d831ce1dd46}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_cell}{Doc\+Html\+Cell}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ad7cf0b1e85fb3d5f9779cdb95ee341ec}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ab9cab2d743e9f7dbfbcf2cfc9a192c91}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a9e26ec2a4599725869f69c3d20be80b8}{visit\+Pre}} (\mbox{\hyperlink{class_doc_internal}{Doc\+Internal}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a1be5573f32e80d5c14d57a6abb0e688e}{visit\+Post}} (\mbox{\hyperlink{class_doc_internal}{Doc\+Internal}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a542ea60585c240618babf24389dd5327}{visit\+Pre}} (\mbox{\hyperlink{class_doc_h_ref}{Doc\+H\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aa8aa2fb1fffb5673634321432d47ffc1}{visit\+Post}} (\mbox{\hyperlink{class_doc_h_ref}{Doc\+H\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a1edc5c55a863a7c952886e21339b6d26}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_header}{Doc\+Html\+Header}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aa5b7538c8b75775a1b73ffc35d7f5777}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_header}{Doc\+Html\+Header}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0e15a0d2b08248bc0449a1a69c97ef7e}{visit\+Pre}} (\mbox{\hyperlink{class_doc_image}{Doc\+Image}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aaa86d21cadc355bf8f3b4a6084da25ba}{visit\+Post}} (\mbox{\hyperlink{class_doc_image}{Doc\+Image}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a61c3c96e6a23be961c52b258bbe6b675}{visit\+Pre}} (\mbox{\hyperlink{class_doc_dot_file}{Doc\+Dot\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a678e346cfb17e18f3254ecaf05913f46}{visit\+Post}} (\mbox{\hyperlink{class_doc_dot_file}{Doc\+Dot\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a140c346853a8f3da57bc02cde6055c35}{visit\+Pre}} (\mbox{\hyperlink{class_doc_msc_file}{Doc\+Msc\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a6cc94b918cbe224dbda6596b56785926}{visit\+Post}} (\mbox{\hyperlink{class_doc_msc_file}{Doc\+Msc\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ad65e639b1f04504c80255d9dc2a6fe96}{visit\+Pre}} (\mbox{\hyperlink{class_doc_dia_file}{Doc\+Dia\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0481642ca47ae8824544bdb264927d88}{visit\+Post}} (\mbox{\hyperlink{class_doc_dia_file}{Doc\+Dia\+File}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ae9ddf45aa0fd1bf22c392edf4b7119b8}{visit\+Pre}} (\mbox{\hyperlink{class_doc_link}{Doc\+Link}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_aeb9db5474ef1f50186f004b49db3c387}{visit\+Post}} (\mbox{\hyperlink{class_doc_link}{Doc\+Link}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a7089c4570d826f5ea11003d7a90d7d1b}{visit\+Pre}} (\mbox{\hyperlink{class_doc_ref}{Doc\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a06d50e3cd208a020f66fc589ddfd45ed}{visit\+Post}} (\mbox{\hyperlink{class_doc_ref}{Doc\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a228463940e13aba47acd32f25838d121}{visit\+Pre}} (\mbox{\hyperlink{class_doc_sec_ref_item}{Doc\+Sec\+Ref\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a08eb7b9592cb81e7920f4ae6a1369408}{visit\+Post}} (\mbox{\hyperlink{class_doc_sec_ref_item}{Doc\+Sec\+Ref\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_acd2ec9072fbf7abb46ab77b0cb29be48}{visit\+Pre}} (\mbox{\hyperlink{class_doc_sec_ref_list}{Doc\+Sec\+Ref\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ad49b546ea068863c54461eabf6adb5e8}{visit\+Post}} (\mbox{\hyperlink{class_doc_sec_ref_list}{Doc\+Sec\+Ref\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ae896d743a5c3df1f4c36c2038ea1878c}{visit\+Pre}} (\mbox{\hyperlink{class_doc_param_sect}{Doc\+Param\+Sect}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ada803d6e8c554c1c1e05e3e8f96c1534}{visit\+Post}} (\mbox{\hyperlink{class_doc_param_sect}{Doc\+Param\+Sect}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_adaeab406ff1629259fce8ffb2195dcfe}{visit\+Pre}} (\mbox{\hyperlink{class_doc_param_list}{Doc\+Param\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a6747f583e3e6d3cf92b6f89058c3b0f9}{visit\+Post}} (\mbox{\hyperlink{class_doc_param_list}{Doc\+Param\+List}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_afdbd7c8b4835c52ebb83da1633c2bce3}{visit\+Pre}} (\mbox{\hyperlink{class_doc_x_ref_item}{Doc\+X\+Ref\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ae9a1b24b1069a0427f0b39a8b41bc32d}{visit\+Post}} (\mbox{\hyperlink{class_doc_x_ref_item}{Doc\+X\+Ref\+Item}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a992c92b8099a14a91d81b7cbfafc523c}{visit\+Pre}} (\mbox{\hyperlink{class_doc_internal_ref}{Doc\+Internal\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_abf985a633b062cf2b37785a2a32b84ae}{visit\+Post}} (\mbox{\hyperlink{class_doc_internal_ref}{Doc\+Internal\+Ref}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a3f864c1da99a406e5444f8de4884f868}{visit\+Pre}} (\mbox{\hyperlink{class_doc_text}{Doc\+Text}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a2fef52f5bd199a2e15b12a10ef79e5dc}{visit\+Post}} (\mbox{\hyperlink{class_doc_text}{Doc\+Text}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a4ccc3f4bf84c2675233a8787efdee93e}{visit\+Pre}} (\mbox{\hyperlink{class_doc_html_block_quote}{Doc\+Html\+Block\+Quote}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a3a34e10eee1b9900a5dea554a910aa0b}{visit\+Post}} (\mbox{\hyperlink{class_doc_html_block_quote}{Doc\+Html\+Block\+Quote}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a0bd8b8b70ddf7c187c40057af5469835}{visit\+Pre}} (\mbox{\hyperlink{class_doc_vhdl_flow}{Doc\+Vhdl\+Flow}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_ae66ac181ae326487c4a3dee972acd1f5}{visit\+Post}} (\mbox{\hyperlink{class_doc_vhdl_flow}{Doc\+Vhdl\+Flow}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a1c3dbcaf7903491fc49aeae4e0b0a64b}{visit\+Pre}} (\mbox{\hyperlink{class_doc_par_block}{Doc\+Par\+Block}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_docbook_doc_visitor_a9f0567de266ad5486fa5db610059ae34}{visit\+Post}} (\mbox{\hyperlink{class_doc_par_block}{Doc\+Par\+Block}} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete visitor implementation for Docbook output. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_docbook_doc_visitor_a559b9cfe0badf00f1756eaeb991d4509}\label{class_docbook_doc_visitor_a559b9cfe0badf00f1756eaeb991d4509}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!DocbookDocVisitor@{DocbookDocVisitor}}
+\index{DocbookDocVisitor@{DocbookDocVisitor}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{DocbookDocVisitor()}{DocbookDocVisitor()}}
+{\footnotesize\ttfamily Docbook\+Doc\+Visitor\+::\+Docbook\+Doc\+Visitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t,  }\item[{\mbox{\hyperlink{class_code_output_interface}{Code\+Output\+Interface}} \&}]{ci }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a700d7d8533764cb3652f706eec84fac5}\label{class_docbook_doc_visitor_a700d7d8533764cb3652f706eec84fac5}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!````~DocbookDocVisitor@{$\sim$DocbookDocVisitor}}
+\index{````~DocbookDocVisitor@{$\sim$DocbookDocVisitor}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$DocbookDocVisitor()}{~DocbookDocVisitor()}}
+{\footnotesize\ttfamily Docbook\+Doc\+Visitor\+::$\sim$\+Docbook\+Doc\+Visitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_docbook_doc_visitor_ab2de0ff5a15d1122e6a173d89c0ce3d6}\label{class_docbook_doc_visitor_ab2de0ff5a15d1122e6a173d89c0ce3d6}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_anchor}{Doc\+Anchor}} $\ast$}]{anc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a6b50d6c801a96480fe5d696257204b5b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_afda17721b312bf4a38790a8db71b63d1}\label{class_docbook_doc_visitor_afda17721b312bf4a38790a8db71b63d1}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_cite}{Doc\+Cite}} $\ast$}]{cite }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a493e4a1f2cd6e1d0ad5f9eb5b56089b1}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a643cac7676075d5fcbeb27f47a8bb5c6}\label{class_docbook_doc_visitor_a643cac7676075d5fcbeb27f47a8bb5c6}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_emoji}{Doc\+Emoji}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ace2ecf37cf22c954209ec4febc8eb26e}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_afff1f4272724292f0989fdad566bd34f}\label{class_docbook_doc_visitor_afff1f4272724292f0989fdad566bd34f}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_formula}{Doc\+Formula}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a4e27e470f439b296099f15e167fefdc7}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_abbab05288f1e850e62ef03619e0e8bcb}\label{class_docbook_doc_visitor_abbab05288f1e850e62ef03619e0e8bcb}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_hor_ruler}{Doc\+Hor\+Ruler}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_acb3e01375bf30212b9c9a320a338d998}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a47f57ffa435cb8b067c2ea0c63351da3}\label{class_docbook_doc_visitor_a47f57ffa435cb8b067c2ea0c63351da3}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_include}{Doc\+Include}} $\ast$}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a983ff26fa96114015198c2f2b9cc9659}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac7903ba6393708222b10a35379c1fd8c}\label{class_docbook_doc_visitor_ac7903ba6393708222b10a35379c1fd8c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_inc_operator}{Doc\+Inc\+Operator}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_acbd34843d9ac571f53484d80666553d6}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_af32304eb5d5d87a77ad0a40b944c4b07}\label{class_docbook_doc_visitor_af32304eb5d5d87a77ad0a40b944c4b07}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_index_entry}{Doc\+Index\+Entry}} $\ast$}]{ie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a592d9b903b43b55af79a9511c2e4af76}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0561024b6dd9eb0703e7d904d0bdec25}\label{class_docbook_doc_visitor_a0561024b6dd9eb0703e7d904d0bdec25}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_line_break}{Doc\+Line\+Break}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a907478f5e152ccfcd898bbbfb86e8a62}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ab8b99deb92d1e79e4ed88c6952a3535a}\label{class_docbook_doc_visitor_ab8b99deb92d1e79e4ed88c6952a3535a}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_linked_word}{Doc\+Linked\+Word}} $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a02271e36b8c31ceddaa9a6cfe265866c}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a410891019bb245272d41c233bd721895}\label{class_docbook_doc_visitor_a410891019bb245272d41c233bd721895}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [11/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_sect_sep}{Doc\+Simple\+Sect\+Sep}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_acb552de85678adcae6deaebeba33daec}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a4e5738bf7c89783b6e45ee99ba8808bc}\label{class_docbook_doc_visitor_a4e5738bf7c89783b6e45ee99ba8808bc}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [12/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_style_change}{Doc\+Style\+Change}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae76aedd65bb04607b0b1475cc24720b1}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_afb3421227804418869f484261f0a7a13}\label{class_docbook_doc_visitor_afb3421227804418869f484261f0a7a13}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [13/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_symbol}{Doc\+Symbol}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aff53bb2afd8f7dd963397eca8f53775d}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a93d7ea7e679f0579269706b25d0bff04}\label{class_docbook_doc_visitor_a93d7ea7e679f0579269706b25d0bff04}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [14/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_u_r_l}{Doc\+U\+RL}} $\ast$}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ad4b4715c1f30e5b7f2492f61f58eb41e}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0420f2ae4e6d901e6e58bb78a3b8d401}\label{class_docbook_doc_visitor_a0420f2ae4e6d901e6e58bb78a3b8d401}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [15/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_verbatim}{Doc\+Verbatim}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a1deb88f4f8320362379dfdb3259bcf5b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a8e86ebc50dece60a1037979f9122b0e5}\label{class_docbook_doc_visitor_a8e86ebc50dece60a1037979f9122b0e5}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [16/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_white_space}{Doc\+White\+Space}} $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a68f7be9249997380d4ee39f608b21e28}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a61416a9e72acfd363c870dde3e349153}\label{class_docbook_doc_visitor_a61416a9e72acfd363c870dde3e349153}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visit@{visit}}
+\index{visit@{visit}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [17/17]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_word}{Doc\+Word}} $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aec59d1c93f82aad3569fb303f1e4d3f4}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a70eba7b113b89d3f7534f20a95ec75db}\label{class_docbook_doc_visitor_a70eba7b113b89d3f7534f20a95ec75db}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_auto_list}{Doc\+Auto\+List}} $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_afc37187eb3ca61b7bb0b730636324966}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a079d569829a4e2fcd244106547e0405c}\label{class_docbook_doc_visitor_a079d569829a4e2fcd244106547e0405c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_auto_list_item}{Doc\+Auto\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a2d28f1aba8f013fbf165492bc0b4cf32}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0481642ca47ae8824544bdb264927d88}\label{class_docbook_doc_visitor_a0481642ca47ae8824544bdb264927d88}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [3/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_dia_file}{Doc\+Dia\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a06fa8cc6ea121c2397bebaccc0cc98da}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a678e346cfb17e18f3254ecaf05913f46}\label{class_docbook_doc_visitor_a678e346cfb17e18f3254ecaf05913f46}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [4/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_dot_file}{Doc\+Dot\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_af6c25aa497869c540a03576f2bc69c6f}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aa8aa2fb1fffb5673634321432d47ffc1}\label{class_docbook_doc_visitor_aa8aa2fb1fffb5673634321432d47ffc1}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [5/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_h_ref}{Doc\+H\+Ref}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae8652f7fe31aa1f870b178326dbd4dfd}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a3a34e10eee1b9900a5dea554a910aa0b}\label{class_docbook_doc_visitor_a3a34e10eee1b9900a5dea554a910aa0b}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [6/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_block_quote}{Doc\+Html\+Block\+Quote}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a3057cb11ccd5ad3a108049a27c51ce94}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ab9cab2d743e9f7dbfbcf2cfc9a192c91}\label{class_docbook_doc_visitor_ab9cab2d743e9f7dbfbcf2cfc9a192c91}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [7/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a1fd56b83af1bfc8fcf28633a6b15968f}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a7d6b2dbb9dc8e74e4bd34d831ce1dd46}\label{class_docbook_doc_visitor_a7d6b2dbb9dc8e74e4bd34d831ce1dd46}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [8/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_cell}{Doc\+Html\+Cell}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ab3a1da26976855321849d7d9f14a0b92}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0227203288437195ac9a683834163233}\label{class_docbook_doc_visitor_a0227203288437195ac9a683834163233}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [9/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_data}{Doc\+Html\+Desc\+Data}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a1d6c104ead1e410666853eeca1348222}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a8ba240f9c81311f3088b83d96a118f3d}\label{class_docbook_doc_visitor_a8ba240f9c81311f3088b83d96a118f3d}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [10/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_list}{Doc\+Html\+Desc\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a32e4c8689a7e005bdb882c3a167767c3}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a527390301617a1361ed214e1e3587935}\label{class_docbook_doc_visitor_a527390301617a1361ed214e1e3587935}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [11/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_title}{Doc\+Html\+Desc\+Title}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aea00af70d99f90581cb07c126a819688}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aa5b7538c8b75775a1b73ffc35d7f5777}\label{class_docbook_doc_visitor_aa5b7538c8b75775a1b73ffc35d7f5777}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [12/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_header}{Doc\+Html\+Header}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a2b5ea9275e789307ba60a9f140f4d24a}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac130923e3eaeec0cb84e4e54ae515ed5}\label{class_docbook_doc_visitor_ac130923e3eaeec0cb84e4e54ae515ed5}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [13/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_list}{Doc\+Html\+List}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a94c4bf557fa59bfa262d4b1fcb064b79}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_af486272ad37fc48c21cb74951257ccf8}\label{class_docbook_doc_visitor_af486272ad37fc48c21cb74951257ccf8}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [14/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_list_item}{Doc\+Html\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a213f7b6711dcde03c51487eabd229c43}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac7d05d89781480adeaed750359bca81a}\label{class_docbook_doc_visitor_ac7d05d89781480adeaed750359bca81a}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [15/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}} $\ast$}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a288d4ff0974bd107ff9b8bb130ffca4b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_af59d689d992c1c411a77a67cc6befaa7}\label{class_docbook_doc_visitor_af59d689d992c1c411a77a67cc6befaa7}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [16/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_af01861d096fb0cff4c7f6d0ea6954fda}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aaa86d21cadc355bf8f3b4a6084da25ba}\label{class_docbook_doc_visitor_aaa86d21cadc355bf8f3b4a6084da25ba}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [17/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_image}{Doc\+Image}} $\ast$}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aeb44708901d64a8399d2d4ae694b36fb}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a1be5573f32e80d5c14d57a6abb0e688e}\label{class_docbook_doc_visitor_a1be5573f32e80d5c14d57a6abb0e688e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [18/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_internal}{Doc\+Internal}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae1078286760f256a6b1423048ab4efe0}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_abf985a633b062cf2b37785a2a32b84ae}\label{class_docbook_doc_visitor_abf985a633b062cf2b37785a2a32b84ae}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [19/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_internal_ref}{Doc\+Internal\+Ref}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a6327b76bf49466890f8be949dbf38c9e}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aeb9db5474ef1f50186f004b49db3c387}\label{class_docbook_doc_visitor_aeb9db5474ef1f50186f004b49db3c387}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [20/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_link}{Doc\+Link}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aa061673a2f6a5800460de7ee1939fd26}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a6cc94b918cbe224dbda6596b56785926}\label{class_docbook_doc_visitor_a6cc94b918cbe224dbda6596b56785926}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [21/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_msc_file}{Doc\+Msc\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_af0ee053f7a73bee4279dbb0ef904091b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a1f400d28785f1bb73eae6cbef9b58ad6}\label{class_docbook_doc_visitor_a1f400d28785f1bb73eae6cbef9b58ad6}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [22/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ad6f2864a77c4ee94e3864ca7359e8e44}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a6747f583e3e6d3cf92b6f89058c3b0f9}\label{class_docbook_doc_visitor_a6747f583e3e6d3cf92b6f89058c3b0f9}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [23/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_param_list}{Doc\+Param\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a957c7b7854102aed146f3af8d75bb117}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ada803d6e8c554c1c1e05e3e8f96c1534}\label{class_docbook_doc_visitor_ada803d6e8c554c1c1e05e3e8f96c1534}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [24/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_param_sect}{Doc\+Param\+Sect}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a99c29894be00f3b556ba1e6bf6088768}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a9f0567de266ad5486fa5db610059ae34}\label{class_docbook_doc_visitor_a9f0567de266ad5486fa5db610059ae34}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [25/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_par_block}{Doc\+Par\+Block}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a3c24f63acb77c3b728ee668067899b7d}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a06d50e3cd208a020f66fc589ddfd45ed}\label{class_docbook_doc_visitor_a06d50e3cd208a020f66fc589ddfd45ed}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [26/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_ref}{Doc\+Ref}} $\ast$}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a94dc480549e1cba2cdbb6185fb0415e3}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a53c5022572e08578b9ccf2ca15dd45cc}\label{class_docbook_doc_visitor_a53c5022572e08578b9ccf2ca15dd45cc}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [27/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_root}{Doc\+Root}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a36cee35f6be334919905f0afd04a6fa5}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a08eb7b9592cb81e7920f4ae6a1369408}\label{class_docbook_doc_visitor_a08eb7b9592cb81e7920f4ae6a1369408}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [28/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_sec_ref_item}{Doc\+Sec\+Ref\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ac84c8321aebb6766504bd7edc42bbb2f}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ad49b546ea068863c54461eabf6adb5e8}\label{class_docbook_doc_visitor_ad49b546ea068863c54461eabf6adb5e8}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [29/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_sec_ref_list}{Doc\+Sec\+Ref\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a9044bae893e45b52b19580b2a28e559c}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a8562831310481738e09213611d0a888c}\label{class_docbook_doc_visitor_a8562831310481738e09213611d0a888c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [30/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_section}{Doc\+Section}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a083957bd79581ce312e7e3ad9e3f6102}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_acfea9937da583aa0ab29c3770acf58a5}\label{class_docbook_doc_visitor_acfea9937da583aa0ab29c3770acf58a5}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [31/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_list}{Doc\+Simple\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a01330622b0795145dc662c2c32965e7d}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a9942931a55fae39c0eb930611d9022b1}\label{class_docbook_doc_visitor_a9942931a55fae39c0eb930611d9022b1}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [32/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_list_item}{Doc\+Simple\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a59ee419b5f54332cb88dca97e78d1fea}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a5d5da278a3d2dadbaa6b4e47c95d6a97}\label{class_docbook_doc_visitor_a5d5da278a3d2dadbaa6b4e47c95d6a97}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [33/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_sect}{Doc\+Simple\+Sect}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a27dd28a0cd024947d0fa5fb4c2420d4b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a2fef52f5bd199a2e15b12a10ef79e5dc}\label{class_docbook_doc_visitor_a2fef52f5bd199a2e15b12a10ef79e5dc}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [34/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_text}{Doc\+Text}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae8d32bfb6aedfcd8145075762fc1818a}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aa7fbff6b62698211edb15058ac2e361d}\label{class_docbook_doc_visitor_aa7fbff6b62698211edb15058ac2e361d}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [35/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_title}{Doc\+Title}} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a9164730bf7b367e75b9288b0497e1966}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ae66ac181ae326487c4a3dee972acd1f5}\label{class_docbook_doc_visitor_ae66ac181ae326487c4a3dee972acd1f5}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [36/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_vhdl_flow}{Doc\+Vhdl\+Flow}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a201c6a9e58c9edbd48867c861cdb13d1}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ae9a1b24b1069a0427f0b39a8b41bc32d}\label{class_docbook_doc_visitor_ae9a1b24b1069a0427f0b39a8b41bc32d}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPost@{visitPost}}
+\index{visitPost@{visitPost}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPost()}{visitPost()}\hspace{0.1cm}{\footnotesize\ttfamily [37/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_x_ref_item}{Doc\+X\+Ref\+Item}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_af1c08e371fec0b927fa23c0ebd64cd20}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a51c50f79a36ab6ed4d2eba87b59f816e}\label{class_docbook_doc_visitor_a51c50f79a36ab6ed4d2eba87b59f816e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [1/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_auto_list}{Doc\+Auto\+List}} $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ad19af23c9a793e7b224df2a9e63f8abb}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_adf55b82163233781b6b15d69c8bae60c}\label{class_docbook_doc_visitor_adf55b82163233781b6b15d69c8bae60c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [2/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_auto_list_item}{Doc\+Auto\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a8401a2388c52c4dacbe9121b3e24bbe5}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ad65e639b1f04504c80255d9dc2a6fe96}\label{class_docbook_doc_visitor_ad65e639b1f04504c80255d9dc2a6fe96}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [3/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_dia_file}{Doc\+Dia\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a893bc2887cfc0a2b45347bc286eb9f36}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a61c3c96e6a23be961c52b258bbe6b675}\label{class_docbook_doc_visitor_a61c3c96e6a23be961c52b258bbe6b675}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [4/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_dot_file}{Doc\+Dot\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aea8fe773544d038a30989c416d507ccf}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a542ea60585c240618babf24389dd5327}\label{class_docbook_doc_visitor_a542ea60585c240618babf24389dd5327}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [5/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_h_ref}{Doc\+H\+Ref}} $\ast$}]{href }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a98077b191b4d115565261f4077319f17}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a4ccc3f4bf84c2675233a8787efdee93e}\label{class_docbook_doc_visitor_a4ccc3f4bf84c2675233a8787efdee93e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [6/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_block_quote}{Doc\+Html\+Block\+Quote}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae815fab40efb7e03356009ec05f4c8e0}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ad7cf0b1e85fb3d5f9779cdb95ee341ec}\label{class_docbook_doc_visitor_ad7cf0b1e85fb3d5f9779cdb95ee341ec}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [7/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_caption}{Doc\+Html\+Caption}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a6bf4ac1265c14f57b338c17fa02a28bc}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0905c48a1ff04ba0b03cd1d4d3dc8e4c}\label{class_docbook_doc_visitor_a0905c48a1ff04ba0b03cd1d4d3dc8e4c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [8/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_cell}{Doc\+Html\+Cell}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a32086fbe57451f6a8a68a89615048318}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a4e278cb27372839e11255d05cf94f71d}\label{class_docbook_doc_visitor_a4e278cb27372839e11255d05cf94f71d}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [9/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_data}{Doc\+Html\+Desc\+Data}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ab777ab10aa8444e911c26ffa5a13dd80}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ae617c326de9187a92ba3926dd6c4ec95}\label{class_docbook_doc_visitor_ae617c326de9187a92ba3926dd6c4ec95}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [10/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_list}{Doc\+Html\+Desc\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ad342a149c6ce394db59da0436e051d9b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a265e860f05c360f7533c28cfcc6784db}\label{class_docbook_doc_visitor_a265e860f05c360f7533c28cfcc6784db}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [11/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_desc_title}{Doc\+Html\+Desc\+Title}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a7807d986121da267abcd3b4bf334fe57}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a1edc5c55a863a7c952886e21339b6d26}\label{class_docbook_doc_visitor_a1edc5c55a863a7c952886e21339b6d26}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [12/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_header}{Doc\+Html\+Header}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a7b89efb508cdf43eac73cab93a31e981}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a8c7d0fe4210ce1e321a4d9d2c0294f2e}\label{class_docbook_doc_visitor_a8c7d0fe4210ce1e321a4d9d2c0294f2e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [13/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_list}{Doc\+Html\+List}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a4bca6fe6f64ea99abafd6b5ab60da885}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a502abaac790e529f665705f715828004}\label{class_docbook_doc_visitor_a502abaac790e529f665705f715828004}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [14/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_list_item}{Doc\+Html\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_af2a2b89f574d5c25112e050338886255}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a1b3cf11c925bd59582b049efd594f81e}\label{class_docbook_doc_visitor_a1b3cf11c925bd59582b049efd594f81e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [15/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_row}{Doc\+Html\+Row}} $\ast$}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a32db2f9305e92594b3014c600e428c43}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a32e77da8f522c9b6281eaa2faf8008ce}\label{class_docbook_doc_visitor_a32e77da8f522c9b6281eaa2faf8008ce}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [16/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_html_table}{Doc\+Html\+Table}} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a46be97002c15e24d3c0a0b0b28123d4c}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0e15a0d2b08248bc0449a1a69c97ef7e}\label{class_docbook_doc_visitor_a0e15a0d2b08248bc0449a1a69c97ef7e}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [17/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_image}{Doc\+Image}} $\ast$}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a92215b3643f949cb8afa3c8a052696ba}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a9e26ec2a4599725869f69c3d20be80b8}\label{class_docbook_doc_visitor_a9e26ec2a4599725869f69c3d20be80b8}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [18/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_internal}{Doc\+Internal}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a1f02d37635148eaa50ca604413b2b473}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a992c92b8099a14a91d81b7cbfafc523c}\label{class_docbook_doc_visitor_a992c92b8099a14a91d81b7cbfafc523c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [19/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_internal_ref}{Doc\+Internal\+Ref}} $\ast$}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a23526fe607d116ecdf0b3b6786d88754}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ae9ddf45aa0fd1bf22c392edf4b7119b8}\label{class_docbook_doc_visitor_ae9ddf45aa0fd1bf22c392edf4b7119b8}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [20/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_link}{Doc\+Link}} $\ast$}]{lnk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a17ed8049abe49ff3fe15be4a3767492c}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a140c346853a8f3da57bc02cde6055c35}\label{class_docbook_doc_visitor_a140c346853a8f3da57bc02cde6055c35}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [21/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_msc_file}{Doc\+Msc\+File}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ab670b96996bca180a50ca0b8049afb74}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac81a10da97a988a36a3bef5aa94b2a93}\label{class_docbook_doc_visitor_ac81a10da97a988a36a3bef5aa94b2a93}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [22/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_para}{Doc\+Para}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aadca3f9fde4584c4776c8e96c6381f2b}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_adaeab406ff1629259fce8ffb2195dcfe}\label{class_docbook_doc_visitor_adaeab406ff1629259fce8ffb2195dcfe}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [23/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_param_list}{Doc\+Param\+List}} $\ast$}]{pl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ace499f22ad300ce1313f858a591d53ee}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ae896d743a5c3df1f4c36c2038ea1878c}\label{class_docbook_doc_visitor_ae896d743a5c3df1f4c36c2038ea1878c}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [24/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_param_sect}{Doc\+Param\+Sect}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_aa6d880a9d15c8616fe9b8f7925faef89}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a1c3dbcaf7903491fc49aeae4e0b0a64b}\label{class_docbook_doc_visitor_a1c3dbcaf7903491fc49aeae4e0b0a64b}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [25/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_par_block}{Doc\+Par\+Block}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a3545acbb5cf745cb1cb49aa237b53ead}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a7089c4570d826f5ea11003d7a90d7d1b}\label{class_docbook_doc_visitor_a7089c4570d826f5ea11003d7a90d7d1b}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [26/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_ref}{Doc\+Ref}} $\ast$}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a60cd2b69d01085d2390f5cd5353346e8}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a9a53674d436fa10d59ff7f92decb78f9}\label{class_docbook_doc_visitor_a9a53674d436fa10d59ff7f92decb78f9}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [27/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_root}{Doc\+Root}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a3eaf72c546eb9c7b7721f2be0f9e0bec}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a228463940e13aba47acd32f25838d121}\label{class_docbook_doc_visitor_a228463940e13aba47acd32f25838d121}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [28/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_sec_ref_item}{Doc\+Sec\+Ref\+Item}} $\ast$}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a7c8e4f5703c35adb516e9061fa7d79fc}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_acd2ec9072fbf7abb46ab77b0cb29be48}\label{class_docbook_doc_visitor_acd2ec9072fbf7abb46ab77b0cb29be48}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [29/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_sec_ref_list}{Doc\+Sec\+Ref\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a3a65706be79641bbe4814420eaa75d94}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac9ce379e3769a5fba4233f116b5b91fe}\label{class_docbook_doc_visitor_ac9ce379e3769a5fba4233f116b5b91fe}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [30/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_section}{Doc\+Section}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a78190d964b165c0f8589ed1a6faa989a}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_aab4c02211f9ac901bb2860dbb0e81558}\label{class_docbook_doc_visitor_aab4c02211f9ac901bb2860dbb0e81558}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [31/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_list}{Doc\+Simple\+List}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a383cc026d701e1447c1ada6cc566b328}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ad55f15d7eeb028539b1c72d9dd01a20d}\label{class_docbook_doc_visitor_ad55f15d7eeb028539b1c72d9dd01a20d}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [32/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_list_item}{Doc\+Simple\+List\+Item}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae23ed0ebf60d58c7d7821083ad4fc283}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a554bb5fa8b84e648a8303f646c9d4fe9}\label{class_docbook_doc_visitor_a554bb5fa8b84e648a8303f646c9d4fe9}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [33/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_simple_sect}{Doc\+Simple\+Sect}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a906a10ecd102203e2a8121f7d08a37dc}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a3f864c1da99a406e5444f8de4884f868}\label{class_docbook_doc_visitor_a3f864c1da99a406e5444f8de4884f868}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [34/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_text}{Doc\+Text}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ac80ffc5a1c2a5d4e83e9583d5b46fba5}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_ac7f30451366ae3f849f04a70594f107a}\label{class_docbook_doc_visitor_ac7f30451366ae3f849f04a70594f107a}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [35/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_title}{Doc\+Title}} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a4f3edcfaa1f39b8e385f5fc6ad07a1fa}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_a0bd8b8b70ddf7c187c40057af5469835}\label{class_docbook_doc_visitor_a0bd8b8b70ddf7c187c40057af5469835}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [36/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_vhdl_flow}{Doc\+Vhdl\+Flow}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_a2799c24ae52e00acca96bc5484b96c85}{Doc\+Visitor}}.
+
+\mbox{\Hypertarget{class_docbook_doc_visitor_afdbd7c8b4835c52ebb83da1633c2bce3}\label{class_docbook_doc_visitor_afdbd7c8b4835c52ebb83da1633c2bce3}} 
+\index{DocbookDocVisitor@{DocbookDocVisitor}!visitPre@{visitPre}}
+\index{visitPre@{visitPre}!DocbookDocVisitor@{DocbookDocVisitor}}
+\doxysubsubsection{\texorpdfstring{visitPre()}{visitPre()}\hspace{0.1cm}{\footnotesize\ttfamily [37/37]}}
+{\footnotesize\ttfamily void Docbook\+Doc\+Visitor\+::visit\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_x_ref_item}{Doc\+X\+Ref\+Item}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_doc_visitor_ae3054c66ebab48aa4fef883fdb6712a1}{Doc\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docbookvisitor_8h}{docbookvisitor.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docbookvisitor_8cpp}{docbookvisitor.\+cpp}}\end{DoxyCompactItemize}

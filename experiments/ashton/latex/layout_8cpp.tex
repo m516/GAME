@@ -1,0 +1,102 @@
+\hypertarget{layout_8cpp}{}\doxysection{doxygen/src/layout.cpp File Reference}
+\label{layout_8cpp}\index{doxygen/src/layout.cpp@{doxygen/src/layout.cpp}}
+{\ttfamily \#include \char`\"{}layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vhdldocgen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doxygen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}version.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$qxml.\+h$>$}\newline
+{\ttfamily \#include $<$qfile.\+h$>$}\newline
+{\ttfamily \#include $<$qstring.\+h$>$}\newline
+{\ttfamily \#include $<$qfileinfo.\+h$>$}\newline
+{\ttfamily \#include $<$qtextstream.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}layout\+\_\+default.\+xml.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_layout_parser}{Layout\+Parser}}
+\item 
+class \mbox{\hyperlink{class_layout_error_handler}{Layout\+Error\+Handler}}
+\item 
+class \mbox{\hyperlink{class_layout_doc_manager_1_1_private}{Layout\+Doc\+Manager\+::\+Private}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id,  text)~\char`\"{}$\vert$\char`\"{}+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}().set\+Num(lang\+Id)+\char`\"{}=\char`\"{}+text
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_a4d407e593030bf10184513591190ccd7}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+1\+\_\+\+O\+P\+T\+I\+ON}}(def,  lang\+Id1,  text1)~def+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id1,text1)
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_acc6c6f36519aad0c4957508e3dbae52b}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+2\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,  lang\+Id1,  text1,  lang\+Id2,  text2)~\mbox{\hyperlink{layout_8cpp_a4d407e593030bf10184513591190ccd7}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+1\+\_\+\+O\+P\+T\+I\+ON}}(def,lang\+Id1,text1)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id2,text2)
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_a1fc8f2b0a4c5691f1c75fa9c8c9bf507}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+3\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,  lang\+Id1,  text1,  lang\+Id2,  text2,  lang\+Id3,  text3)~\mbox{\hyperlink{layout_8cpp_acc6c6f36519aad0c4957508e3dbae52b}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+2\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id3,text3)
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_ae129a522592780da277b682c27adeb7e}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+4\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,  lang\+Id1,  text1,  lang\+Id2,  text2,  lang\+Id3,  text3,  lang\+Id4,  text4)~\mbox{\hyperlink{layout_8cpp_a1fc8f2b0a4c5691f1c75fa9c8c9bf507}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+3\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2,lang\+Id3,text3)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id4,text4)
+\item 
+\#define \mbox{\hyperlink{layout_8cpp_abb2ef9afa51d529932faecf4fa490fc5}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+5\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,  lang\+Id1,  text1,  lang\+Id2,  text2,  lang\+Id3,  text3,  lang\+Id4,  text4,  lang\+Id5,  text5)~\mbox{\hyperlink{layout_8cpp_ae129a522592780da277b682c27adeb7e}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+4\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2,lang\+Id3,text3,lang\+Id4,text4)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id5,text5)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{layout_8cpp_a4a068ddae0b7c753f7b1c3cb109518cd}{write\+Default\+Layout\+File}} (const char $\ast$file\+Name)
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{layout_8cpp_af079449c7fca1ffd687c7b964cceb15c}{extract\+Language\+Specific\+Title}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&input, \mbox{\hyperlink{types_8h_a9974623ce72fc23df5d64426b9178bf2}{Src\+Lang\+Ext}} lang)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}\label{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}} 
+\index{layout.cpp@{layout.cpp}!ADD\_OPTION@{ADD\_OPTION}}
+\index{ADD\_OPTION@{ADD\_OPTION}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{ADD\_OPTION}{ADD\_OPTION}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+O\+P\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{lang\+Id,  }\item[{}]{text }\end{DoxyParamCaption})~\char`\"{}$\vert$\char`\"{}+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}}().set\+Num(lang\+Id)+\char`\"{}=\char`\"{}+text}
+
+\mbox{\Hypertarget{layout_8cpp_a4d407e593030bf10184513591190ccd7}\label{layout_8cpp_a4d407e593030bf10184513591190ccd7}} 
+\index{layout.cpp@{layout.cpp}!COMPILE\_FOR\_1\_OPTION@{COMPILE\_FOR\_1\_OPTION}}
+\index{COMPILE\_FOR\_1\_OPTION@{COMPILE\_FOR\_1\_OPTION}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_FOR\_1\_OPTION}{COMPILE\_FOR\_1\_OPTION}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+1\+\_\+\+O\+P\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{def,  }\item[{}]{lang\+Id1,  }\item[{}]{text1 }\end{DoxyParamCaption})~def+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id1,text1)}
+
+\mbox{\Hypertarget{layout_8cpp_acc6c6f36519aad0c4957508e3dbae52b}\label{layout_8cpp_acc6c6f36519aad0c4957508e3dbae52b}} 
+\index{layout.cpp@{layout.cpp}!COMPILE\_FOR\_2\_OPTIONS@{COMPILE\_FOR\_2\_OPTIONS}}
+\index{COMPILE\_FOR\_2\_OPTIONS@{COMPILE\_FOR\_2\_OPTIONS}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_FOR\_2\_OPTIONS}{COMPILE\_FOR\_2\_OPTIONS}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+2\+\_\+\+O\+P\+T\+I\+O\+NS(\begin{DoxyParamCaption}\item[{}]{def,  }\item[{}]{lang\+Id1,  }\item[{}]{text1,  }\item[{}]{lang\+Id2,  }\item[{}]{text2 }\end{DoxyParamCaption})~\mbox{\hyperlink{layout_8cpp_a4d407e593030bf10184513591190ccd7}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+1\+\_\+\+O\+P\+T\+I\+ON}}(def,lang\+Id1,text1)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id2,text2)}
+
+\mbox{\Hypertarget{layout_8cpp_a1fc8f2b0a4c5691f1c75fa9c8c9bf507}\label{layout_8cpp_a1fc8f2b0a4c5691f1c75fa9c8c9bf507}} 
+\index{layout.cpp@{layout.cpp}!COMPILE\_FOR\_3\_OPTIONS@{COMPILE\_FOR\_3\_OPTIONS}}
+\index{COMPILE\_FOR\_3\_OPTIONS@{COMPILE\_FOR\_3\_OPTIONS}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_FOR\_3\_OPTIONS}{COMPILE\_FOR\_3\_OPTIONS}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+3\+\_\+\+O\+P\+T\+I\+O\+NS(\begin{DoxyParamCaption}\item[{}]{def,  }\item[{}]{lang\+Id1,  }\item[{}]{text1,  }\item[{}]{lang\+Id2,  }\item[{}]{text2,  }\item[{}]{lang\+Id3,  }\item[{}]{text3 }\end{DoxyParamCaption})~\mbox{\hyperlink{layout_8cpp_acc6c6f36519aad0c4957508e3dbae52b}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+2\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id3,text3)}
+
+\mbox{\Hypertarget{layout_8cpp_ae129a522592780da277b682c27adeb7e}\label{layout_8cpp_ae129a522592780da277b682c27adeb7e}} 
+\index{layout.cpp@{layout.cpp}!COMPILE\_FOR\_4\_OPTIONS@{COMPILE\_FOR\_4\_OPTIONS}}
+\index{COMPILE\_FOR\_4\_OPTIONS@{COMPILE\_FOR\_4\_OPTIONS}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_FOR\_4\_OPTIONS}{COMPILE\_FOR\_4\_OPTIONS}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+4\+\_\+\+O\+P\+T\+I\+O\+NS(\begin{DoxyParamCaption}\item[{}]{def,  }\item[{}]{lang\+Id1,  }\item[{}]{text1,  }\item[{}]{lang\+Id2,  }\item[{}]{text2,  }\item[{}]{lang\+Id3,  }\item[{}]{text3,  }\item[{}]{lang\+Id4,  }\item[{}]{text4 }\end{DoxyParamCaption})~\mbox{\hyperlink{layout_8cpp_a1fc8f2b0a4c5691f1c75fa9c8c9bf507}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+3\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2,lang\+Id3,text3)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id4,text4)}
+
+\mbox{\Hypertarget{layout_8cpp_abb2ef9afa51d529932faecf4fa490fc5}\label{layout_8cpp_abb2ef9afa51d529932faecf4fa490fc5}} 
+\index{layout.cpp@{layout.cpp}!COMPILE\_FOR\_5\_OPTIONS@{COMPILE\_FOR\_5\_OPTIONS}}
+\index{COMPILE\_FOR\_5\_OPTIONS@{COMPILE\_FOR\_5\_OPTIONS}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_FOR\_5\_OPTIONS}{COMPILE\_FOR\_5\_OPTIONS}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+5\+\_\+\+O\+P\+T\+I\+O\+NS(\begin{DoxyParamCaption}\item[{}]{def,  }\item[{}]{lang\+Id1,  }\item[{}]{text1,  }\item[{}]{lang\+Id2,  }\item[{}]{text2,  }\item[{}]{lang\+Id3,  }\item[{}]{text3,  }\item[{}]{lang\+Id4,  }\item[{}]{text4,  }\item[{}]{lang\+Id5,  }\item[{}]{text5 }\end{DoxyParamCaption})~\mbox{\hyperlink{layout_8cpp_ae129a522592780da277b682c27adeb7e}{C\+O\+M\+P\+I\+L\+E\+\_\+\+F\+O\+R\+\_\+4\+\_\+\+O\+P\+T\+I\+O\+NS}}(def,lang\+Id1,text1,lang\+Id2,text2,lang\+Id3,text3,lang\+Id4,text4)+\mbox{\hyperlink{layout_8cpp_a135f7a8ddc49e8a0a902a2a471e9576f}{A\+D\+D\+\_\+\+O\+P\+T\+I\+ON}}(lang\+Id5,text5)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{layout_8cpp_af079449c7fca1ffd687c7b964cceb15c}\label{layout_8cpp_af079449c7fca1ffd687c7b964cceb15c}} 
+\index{layout.cpp@{layout.cpp}!extractLanguageSpecificTitle@{extractLanguageSpecificTitle}}
+\index{extractLanguageSpecificTitle@{extractLanguageSpecificTitle}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{extractLanguageSpecificTitle()}{extractLanguageSpecificTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} extract\+Language\+Specific\+Title (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{input,  }\item[{\mbox{\hyperlink{types_8h_a9974623ce72fc23df5d64426b9178bf2}{Src\+Lang\+Ext}}}]{lang }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{layout_8cpp_a4a068ddae0b7c753f7b1c3cb109518cd}\label{layout_8cpp_a4a068ddae0b7c753f7b1c3cb109518cd}} 
+\index{layout.cpp@{layout.cpp}!writeDefaultLayoutFile@{writeDefaultLayoutFile}}
+\index{writeDefaultLayoutFile@{writeDefaultLayoutFile}!layout.cpp@{layout.cpp}}
+\doxysubsubsection{\texorpdfstring{writeDefaultLayoutFile()}{writeDefaultLayoutFile()}}
+{\footnotesize\ttfamily void write\+Default\+Layout\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+

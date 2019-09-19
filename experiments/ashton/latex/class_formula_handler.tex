@@ -1,0 +1,94 @@
+\hypertarget{class_formula_handler}{}\doxysection{Formula\+Handler Class Reference}
+\label{class_formula_handler}\index{FormulaHandler@{FormulaHandler}}
+
+
+Node representing a formula.  
+
+
+
+
+{\ttfamily \#include $<$dochandler.\+h$>$}
+
+Inheritance diagram for Formula\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.434978cm]{class_formula_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_formula_handler_aeed3112a4426209d365fe302355f41b8}{Formula\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{class_formula_handler_aa7b0ce2a376b37b60bff708fb2fea022}{$\sim$\+Formula\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_formula_handler_ab8ab33296c90303b9c5b385d6e59d6cf}{start\+Formula}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+void \mbox{\hyperlink{class_formula_handler_a7f738ffb7f704d3a13a5f6d4e1a2a6be}{end\+Formula}} ()
+\item 
+virtual Kind \mbox{\hyperlink{class_formula_handler_a214871b830e8c94d18285b9f92ad7aaf}{kind}} () const
+\item 
+virtual const \mbox{\hyperlink{class_i_string}{I\+String}} $\ast$ \mbox{\hyperlink{class_formula_handler_ac6fd5cecbbc78566fe9ebf4bdc093f32}{id}} () const
+\item 
+virtual const \mbox{\hyperlink{class_i_string}{I\+String}} $\ast$ \mbox{\hyperlink{class_formula_handler_a41ca589cefbf702c06d9598da182e59b}{text}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing a formula. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_formula_handler_aeed3112a4426209d365fe302355f41b8}\label{class_formula_handler_aeed3112a4426209d365fe302355f41b8}} 
+\index{FormulaHandler@{FormulaHandler}!FormulaHandler@{FormulaHandler}}
+\index{FormulaHandler@{FormulaHandler}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{FormulaHandler()}{FormulaHandler()}}
+{\footnotesize\ttfamily Formula\+Handler\+::\+Formula\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formula_handler_aa7b0ce2a376b37b60bff708fb2fea022}\label{class_formula_handler_aa7b0ce2a376b37b60bff708fb2fea022}} 
+\index{FormulaHandler@{FormulaHandler}!````~FormulaHandler@{$\sim$FormulaHandler}}
+\index{````~FormulaHandler@{$\sim$FormulaHandler}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$FormulaHandler()}{~FormulaHandler()}}
+{\footnotesize\ttfamily Formula\+Handler\+::$\sim$\+Formula\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_formula_handler_a7f738ffb7f704d3a13a5f6d4e1a2a6be}\label{class_formula_handler_a7f738ffb7f704d3a13a5f6d4e1a2a6be}} 
+\index{FormulaHandler@{FormulaHandler}!endFormula@{endFormula}}
+\index{endFormula@{endFormula}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{endFormula()}{endFormula()}}
+{\footnotesize\ttfamily void Formula\+Handler\+::end\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formula_handler_ac6fd5cecbbc78566fe9ebf4bdc093f32}\label{class_formula_handler_ac6fd5cecbbc78566fe9ebf4bdc093f32}} 
+\index{FormulaHandler@{FormulaHandler}!id@{id}}
+\index{id@{id}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_i_string}{I\+String}}$\ast$ Formula\+Handler\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_formula_handler_a214871b830e8c94d18285b9f92ad7aaf}\label{class_formula_handler_a214871b830e8c94d18285b9f92ad7aaf}} 
+\index{FormulaHandler@{FormulaHandler}!kind@{kind}}
+\index{kind@{kind}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual Kind Formula\+Handler\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_formula_handler_ab8ab33296c90303b9c5b385d6e59d6cf}\label{class_formula_handler_ab8ab33296c90303b9c5b385d6e59d6cf}} 
+\index{FormulaHandler@{FormulaHandler}!startFormula@{startFormula}}
+\index{startFormula@{startFormula}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{startFormula()}{startFormula()}}
+{\footnotesize\ttfamily void Formula\+Handler\+::start\+Formula (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formula_handler_a41ca589cefbf702c06d9598da182e59b}\label{class_formula_handler_a41ca589cefbf702c06d9598da182e59b}} 
+\index{FormulaHandler@{FormulaHandler}!text@{text}}
+\index{text@{text}!FormulaHandler@{FormulaHandler}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_i_string}{I\+String}}$\ast$ Formula\+Handler\+::text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8h}{dochandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8cpp}{dochandler.\+cpp}}\end{DoxyCompactItemize}

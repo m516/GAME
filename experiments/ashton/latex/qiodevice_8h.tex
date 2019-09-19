@@ -1,0 +1,215 @@
+\hypertarget{qiodevice_8h}{}\doxysection{doxygen/qtools/qiodevice.h File Reference}
+\label{qiodevice_8h}\index{doxygen/qtools/qiodevice.h@{doxygen/qtools/qiodevice.h}}
+{\ttfamily \#include \char`\"{}qglobal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qcstring.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_q_i_o_device}{Q\+I\+O\+Device}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_q_i_o_device}{Q\+I\+O\+Device}} class is the base class of I/O devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a787889a39917b45639f7bf26b465780c}{I\+O\+\_\+\+Direct}}~0x0100
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_ac3253082499cd86612c3b90c2a7e4711}{I\+O\+\_\+\+Sequential}}~0x0200
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aab6033d80286fb4e3642e9815a82a0a8}{I\+O\+\_\+\+Combined}}~0x0300
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a48980c037b300a33e3d3617f475c3d91}{I\+O\+\_\+\+Type\+Mask}}~0x0f00
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aa3c5084b903562dc4fb8613ec5148148}{I\+O\+\_\+\+Raw}}~0x0040
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a640bdca42c43bc05492c10aa8eb83f20}{I\+O\+\_\+\+Async}}~0x0080
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_ab5766c5e147f3dfced5890741f22063a}{I\+O\+\_\+\+Read\+Only}}~0x0001
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aee87f60968e118b038a637b83ccc4017}{I\+O\+\_\+\+Write\+Only}}~0x0002
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a69bfa1f7d1434237360ca27f7205dc48}{I\+O\+\_\+\+Read\+Write}}~0x0003
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aa11e3a79f9f0d77a201d7f6cd9bb31ee}{I\+O\+\_\+\+Append}}~0x0004
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aa52bf38d5dac2406fe8e71cb83e2a493}{I\+O\+\_\+\+Truncate}}~0x0008
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a466fd293b2caad191a67f8b182ea2bf6}{I\+O\+\_\+\+Translate}}~0x0010
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a450b7b931fe80b8bf64721b97effa760}{I\+O\+\_\+\+Mode\+Mask}}~0x00ff
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a7f7012d74e88f37012e4c74384785a45}{I\+O\+\_\+\+Open}}~0x1000
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a48c9e23da3cbdbf314fe48bcc847ed2a}{I\+O\+\_\+\+State\+Mask}}~0xf000
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a51429250c121024cf25bbfb9d2a63558}{I\+O\+\_\+\+Ok}}~0
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a5da46f0700a3d00af9bd4a8d1002f871}{I\+O\+\_\+\+Read\+Error}}~1
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a5505dfea39eef035331e2f30f3159a1a}{I\+O\+\_\+\+Write\+Error}}~2
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_aa8f34bbab4230bf781eecaf38607427d}{I\+O\+\_\+\+Fatal\+Error}}~3
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a87ba61bc041e3c7458a063993b4a1aa7}{I\+O\+\_\+\+Resource\+Error}}~4
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a5acae636f045d19bc2d9baf151984b2b}{I\+O\+\_\+\+Open\+Error}}~5
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a44f08fa80ccd95d4c72de40f7d61f644}{I\+O\+\_\+\+Connect\+Error}}~5
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a6c06090a0ee55152ecf2363a46e310d9}{I\+O\+\_\+\+Abort\+Error}}~6
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a45e4f7258cb30f205c2a4a5748e20eb9}{I\+O\+\_\+\+Time\+Out\+Error}}~7
+\item 
+\#define \mbox{\hyperlink{qiodevice_8h_a9044962021c24c17b4692337b0c82464}{I\+O\+\_\+\+Unspecified\+Error}}~8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qiodevice_8h_a6c06090a0ee55152ecf2363a46e310d9}\label{qiodevice_8h_a6c06090a0ee55152ecf2363a46e310d9}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_AbortError@{IO\_AbortError}}
+\index{IO\_AbortError@{IO\_AbortError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_AbortError}{IO\_AbortError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Abort\+Error~6}
+
+\mbox{\Hypertarget{qiodevice_8h_aa11e3a79f9f0d77a201d7f6cd9bb31ee}\label{qiodevice_8h_aa11e3a79f9f0d77a201d7f6cd9bb31ee}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Append@{IO\_Append}}
+\index{IO\_Append@{IO\_Append}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Append}{IO\_Append}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Append~0x0004}
+
+\mbox{\Hypertarget{qiodevice_8h_a640bdca42c43bc05492c10aa8eb83f20}\label{qiodevice_8h_a640bdca42c43bc05492c10aa8eb83f20}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Async@{IO\_Async}}
+\index{IO\_Async@{IO\_Async}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Async}{IO\_Async}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Async~0x0080}
+
+\mbox{\Hypertarget{qiodevice_8h_aab6033d80286fb4e3642e9815a82a0a8}\label{qiodevice_8h_aab6033d80286fb4e3642e9815a82a0a8}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Combined@{IO\_Combined}}
+\index{IO\_Combined@{IO\_Combined}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Combined}{IO\_Combined}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Combined~0x0300}
+
+\mbox{\Hypertarget{qiodevice_8h_a44f08fa80ccd95d4c72de40f7d61f644}\label{qiodevice_8h_a44f08fa80ccd95d4c72de40f7d61f644}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ConnectError@{IO\_ConnectError}}
+\index{IO\_ConnectError@{IO\_ConnectError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ConnectError}{IO\_ConnectError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Connect\+Error~5}
+
+\mbox{\Hypertarget{qiodevice_8h_a787889a39917b45639f7bf26b465780c}\label{qiodevice_8h_a787889a39917b45639f7bf26b465780c}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Direct@{IO\_Direct}}
+\index{IO\_Direct@{IO\_Direct}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Direct}{IO\_Direct}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Direct~0x0100}
+
+\mbox{\Hypertarget{qiodevice_8h_aa8f34bbab4230bf781eecaf38607427d}\label{qiodevice_8h_aa8f34bbab4230bf781eecaf38607427d}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_FatalError@{IO\_FatalError}}
+\index{IO\_FatalError@{IO\_FatalError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_FatalError}{IO\_FatalError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Fatal\+Error~3}
+
+\mbox{\Hypertarget{qiodevice_8h_a450b7b931fe80b8bf64721b97effa760}\label{qiodevice_8h_a450b7b931fe80b8bf64721b97effa760}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ModeMask@{IO\_ModeMask}}
+\index{IO\_ModeMask@{IO\_ModeMask}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ModeMask}{IO\_ModeMask}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Mode\+Mask~0x00ff}
+
+\mbox{\Hypertarget{qiodevice_8h_a51429250c121024cf25bbfb9d2a63558}\label{qiodevice_8h_a51429250c121024cf25bbfb9d2a63558}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Ok@{IO\_Ok}}
+\index{IO\_Ok@{IO\_Ok}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Ok}{IO\_Ok}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Ok~0}
+
+\mbox{\Hypertarget{qiodevice_8h_a7f7012d74e88f37012e4c74384785a45}\label{qiodevice_8h_a7f7012d74e88f37012e4c74384785a45}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Open@{IO\_Open}}
+\index{IO\_Open@{IO\_Open}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Open}{IO\_Open}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Open~0x1000}
+
+\mbox{\Hypertarget{qiodevice_8h_a5acae636f045d19bc2d9baf151984b2b}\label{qiodevice_8h_a5acae636f045d19bc2d9baf151984b2b}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_OpenError@{IO\_OpenError}}
+\index{IO\_OpenError@{IO\_OpenError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_OpenError}{IO\_OpenError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Open\+Error~5}
+
+\mbox{\Hypertarget{qiodevice_8h_aa3c5084b903562dc4fb8613ec5148148}\label{qiodevice_8h_aa3c5084b903562dc4fb8613ec5148148}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Raw@{IO\_Raw}}
+\index{IO\_Raw@{IO\_Raw}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Raw}{IO\_Raw}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Raw~0x0040}
+
+\mbox{\Hypertarget{qiodevice_8h_a5da46f0700a3d00af9bd4a8d1002f871}\label{qiodevice_8h_a5da46f0700a3d00af9bd4a8d1002f871}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ReadError@{IO\_ReadError}}
+\index{IO\_ReadError@{IO\_ReadError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ReadError}{IO\_ReadError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Read\+Error~1}
+
+\mbox{\Hypertarget{qiodevice_8h_ab5766c5e147f3dfced5890741f22063a}\label{qiodevice_8h_ab5766c5e147f3dfced5890741f22063a}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ReadOnly@{IO\_ReadOnly}}
+\index{IO\_ReadOnly@{IO\_ReadOnly}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ReadOnly}{IO\_ReadOnly}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Read\+Only~0x0001}
+
+\mbox{\Hypertarget{qiodevice_8h_a69bfa1f7d1434237360ca27f7205dc48}\label{qiodevice_8h_a69bfa1f7d1434237360ca27f7205dc48}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ReadWrite@{IO\_ReadWrite}}
+\index{IO\_ReadWrite@{IO\_ReadWrite}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ReadWrite}{IO\_ReadWrite}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Read\+Write~0x0003}
+
+\mbox{\Hypertarget{qiodevice_8h_a87ba61bc041e3c7458a063993b4a1aa7}\label{qiodevice_8h_a87ba61bc041e3c7458a063993b4a1aa7}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_ResourceError@{IO\_ResourceError}}
+\index{IO\_ResourceError@{IO\_ResourceError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_ResourceError}{IO\_ResourceError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Resource\+Error~4}
+
+\mbox{\Hypertarget{qiodevice_8h_ac3253082499cd86612c3b90c2a7e4711}\label{qiodevice_8h_ac3253082499cd86612c3b90c2a7e4711}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Sequential@{IO\_Sequential}}
+\index{IO\_Sequential@{IO\_Sequential}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Sequential}{IO\_Sequential}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Sequential~0x0200}
+
+\mbox{\Hypertarget{qiodevice_8h_a48c9e23da3cbdbf314fe48bcc847ed2a}\label{qiodevice_8h_a48c9e23da3cbdbf314fe48bcc847ed2a}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_StateMask@{IO\_StateMask}}
+\index{IO\_StateMask@{IO\_StateMask}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_StateMask}{IO\_StateMask}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+State\+Mask~0xf000}
+
+\mbox{\Hypertarget{qiodevice_8h_a45e4f7258cb30f205c2a4a5748e20eb9}\label{qiodevice_8h_a45e4f7258cb30f205c2a4a5748e20eb9}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_TimeOutError@{IO\_TimeOutError}}
+\index{IO\_TimeOutError@{IO\_TimeOutError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_TimeOutError}{IO\_TimeOutError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Time\+Out\+Error~7}
+
+\mbox{\Hypertarget{qiodevice_8h_a466fd293b2caad191a67f8b182ea2bf6}\label{qiodevice_8h_a466fd293b2caad191a67f8b182ea2bf6}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Translate@{IO\_Translate}}
+\index{IO\_Translate@{IO\_Translate}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Translate}{IO\_Translate}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Translate~0x0010}
+
+\mbox{\Hypertarget{qiodevice_8h_aa52bf38d5dac2406fe8e71cb83e2a493}\label{qiodevice_8h_aa52bf38d5dac2406fe8e71cb83e2a493}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_Truncate@{IO\_Truncate}}
+\index{IO\_Truncate@{IO\_Truncate}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_Truncate}{IO\_Truncate}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Truncate~0x0008}
+
+\mbox{\Hypertarget{qiodevice_8h_a48980c037b300a33e3d3617f475c3d91}\label{qiodevice_8h_a48980c037b300a33e3d3617f475c3d91}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_TypeMask@{IO\_TypeMask}}
+\index{IO\_TypeMask@{IO\_TypeMask}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_TypeMask}{IO\_TypeMask}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Type\+Mask~0x0f00}
+
+\mbox{\Hypertarget{qiodevice_8h_a9044962021c24c17b4692337b0c82464}\label{qiodevice_8h_a9044962021c24c17b4692337b0c82464}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_UnspecifiedError@{IO\_UnspecifiedError}}
+\index{IO\_UnspecifiedError@{IO\_UnspecifiedError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_UnspecifiedError}{IO\_UnspecifiedError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Unspecified\+Error~8}
+
+\mbox{\Hypertarget{qiodevice_8h_a5505dfea39eef035331e2f30f3159a1a}\label{qiodevice_8h_a5505dfea39eef035331e2f30f3159a1a}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_WriteError@{IO\_WriteError}}
+\index{IO\_WriteError@{IO\_WriteError}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_WriteError}{IO\_WriteError}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Write\+Error~2}
+
+\mbox{\Hypertarget{qiodevice_8h_aee87f60968e118b038a637b83ccc4017}\label{qiodevice_8h_aee87f60968e118b038a637b83ccc4017}} 
+\index{qiodevice.h@{qiodevice.h}!IO\_WriteOnly@{IO\_WriteOnly}}
+\index{IO\_WriteOnly@{IO\_WriteOnly}!qiodevice.h@{qiodevice.h}}
+\doxysubsubsection{\texorpdfstring{IO\_WriteOnly}{IO\_WriteOnly}}
+{\footnotesize\ttfamily \#define I\+O\+\_\+\+Write\+Only~0x0002}
+

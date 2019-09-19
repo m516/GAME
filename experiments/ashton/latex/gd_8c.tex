@@ -1,0 +1,795 @@
+\hypertarget{gd_8c}{}\doxysection{doxygen/libmscgen/gd.c File Reference}
+\label{gd_8c}\index{doxygen/libmscgen/gd.c@{doxygen/libmscgen/gd.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gd\+\_\+intern.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gdhelpers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gd\+\_\+color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gd\+\_\+errors.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b_type}{R\+G\+B\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_h_w_b_type}{H\+W\+B\+Type}}
+\item 
+struct \mbox{\hyperlink{structseg}{seg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gd_8c_a1f934544299bfdab95fd351e255c8660}{gd\+Image\+Bounds\+Safe\+Macro}}(im,  \mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}},  \mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}})~(!((((\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}) $<$ (im)-\/$>$cy1) $\vert$$\vert$ ((\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}) $>$ (im)-\/$>$cy2)) $\vert$$\vert$ (((\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}) $<$ (im)-\/$>$cx1) $\vert$$\vert$ ((\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}) $>$ (im)-\/$>$cx2))))
+\item 
+\#define \mbox{\hyperlink{gd_8c_a4a28335efdff6d60f06fa8b46fc5338b}{A\+SC}}(ch)~ch
+\item 
+\#define \mbox{\hyperlink{gd_8c_a645304c0444e1cfd7b6afbdd38754c6e}{R\+E\+T\+U\+R\+N\+\_\+\+H\+WB}}(\mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}},  \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~\{H\+WB-\/$>$H = \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}; H\+WB-\/$>$W = \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}; H\+WB-\/$>$\mbox{\hyperlink{class_b}{B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}; return H\+WB;\}
+\item 
+\#define \mbox{\hyperlink{gd_8c_adbe4e26d71cc6bd3879abed7bdd443da}{R\+E\+T\+U\+R\+N\+\_\+\+R\+GB}}(\mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}},  \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~\{R\+GB-\/$>$R = \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}; R\+GB-\/$>$G = \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}}; R\+GB-\/$>$\mbox{\hyperlink{class_b}{B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}; return R\+GB;\}
+\item 
+\#define \mbox{\hyperlink{gd_8c_a610dc3e7db3c61b3c42cd5c92b0e4146}{H\+W\+B\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}}~-\/1
+\item 
+\#define \mbox{\hyperlink{gd_8c_add380f717f8a2f3744affe86a4440fc5}{S\+E\+T\+U\+P\+\_\+\+R\+GB}}(\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}},  \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}},  \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~\{s.\+R = \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}/255.\+0f; s.\+G = \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}}/255.\+0f; \mbox{\hyperlink{autolink_8cpp_a7ddc550b157ed6f8db58e462b504ab0f}{s.\+B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}/255.\+0f;\}
+\item 
+\#define \mbox{\hyperlink{gd_8c_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}))
+\item 
+\#define \mbox{\hyperlink{gd_8c_a4887ceeae88266064841cbbc11ef8b53}{M\+I\+N3}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))
+\item 
+\#define \mbox{\hyperlink{gd_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}))
+\item 
+\#define \mbox{\hyperlink{gd_8c_a37c6d7fcb9c177c308ef38e1d51d35e3}{M\+A\+X3}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))
+\item 
+\#define \mbox{\hyperlink{gd_8c_acb31922492025a070232c6d900cb5f16}{R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP}}(pixel)
+\item 
+\#define \mbox{\hyperlink{gd_8c_acb31922492025a070232c6d900cb5f16}{R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP}}(pixel)
+\item 
+\#define \mbox{\hyperlink{gd_8c_acb31922492025a070232c6d900cb5f16}{R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP}}(pixel)
+\item 
+\#define \mbox{\hyperlink{gd_8c_a6872709e1a4dbf58b844c3fcd5c2f6ee}{F\+I\+L\+L\+\_\+\+M\+AX}}~((int)(im-\/$>$\mbox{\hyperlink{gd_8h_affcd3fe43d73220dd7b3e6bde969e65c}{sy}}$\ast$im-\/$>$sx)/4)
+\item 
+\#define \mbox{\hyperlink{gd_8c_a75b9978b904b74664c266bf756fad9db}{F\+I\+L\+L\+\_\+\+P\+U\+SH}}(Y,  XL,  XR,  DY)
+\item 
+\#define \mbox{\hyperlink{gd_8c_a4e8c51a8df975f56d484dcf2babb26ea}{F\+I\+L\+L\+\_\+\+P\+OP}}(Y,  XL,  XR,  DY)~\{sp-\/-\/; Y = sp-\/$>$\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}+(DY = sp-\/$>$dy); XL = sp-\/$>$xl; XR = sp-\/$>$xr;\}
+\item 
+\#define \mbox{\hyperlink{gd_8c_ae6a3e78469ac639310c852292866bce6}{floor2}}(exp)~((long) exp)
+\item 
+\#define \mbox{\hyperlink{gd_8c_abaedb285ac538aaf562342cbf2742e21}{B\+L\+E\+N\+D\+\_\+\+C\+O\+L\+OR}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  nc,  \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}},  cc)~nc = (cc) + (((((\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}) -\/ (cc)) $\ast$ (\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})) + ((((\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}) -\/ (cc)) $\ast$ (\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})) $>$$>$ 8) + 0x80) $>$$>$ 8);
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gd_8c_af5304a81ef400f0e16565d07ba12ce09}{gd\+\_\+stderr\+\_\+error}} (int priority, const char $\ast$format, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{gd_8c_a6d8cf2c5b53ef17bbc5da9daea5d7a2a}{gd\+\_\+error}} (const char $\ast$format,...)
+\item 
+void \mbox{\hyperlink{gd_8c_ac8d60eda6a526c4e12933edc150e8010}{gd\+\_\+error\+\_\+ex}} (int priority, const char $\ast$format,...)
+\item 
+\mbox{\hyperlink{gd_8c_a90662a8202ea56741002e364c3f9d771}{B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE}} (void)
+\item 
+\mbox{\hyperlink{gd_8c_aed9e653576220d33645d3c39994c5302}{B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE}} (int)
+\item 
+\mbox{\hyperlink{gd_8c_a4fda0364dfbd992e1f9aac786bc86625}{B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE}} (\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}})
+\item 
+long \mbox{\hyperlink{gd_8c_a27e4cf3de7127c849132286cf7857cca}{lsqrt}} (long \mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{gd_8c_a8f8523e78e83caea27704ded934242b5}{gd\+CosT}} \mbox{[}$\,$\mbox{]}
+\item 
+const int \mbox{\hyperlink{gd_8c_afdc32f5bb6fdb20e60abbddd14d6cdcf}{gd\+SinT}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gd_8c_a4a28335efdff6d60f06fa8b46fc5338b}\label{gd_8c_a4a28335efdff6d60f06fa8b46fc5338b}} 
+\index{gd.c@{gd.c}!ASC@{ASC}}
+\index{ASC@{ASC}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{ASC}{ASC}}
+{\footnotesize\ttfamily \#define A\+SC(\begin{DoxyParamCaption}\item[{}]{ch }\end{DoxyParamCaption})~ch}
+
+\mbox{\Hypertarget{gd_8c_abaedb285ac538aaf562342cbf2742e21}\label{gd_8c_abaedb285ac538aaf562342cbf2742e21}} 
+\index{gd.c@{gd.c}!BLEND\_COLOR@{BLEND\_COLOR}}
+\index{BLEND\_COLOR@{BLEND\_COLOR}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{BLEND\_COLOR}{BLEND\_COLOR}}
+{\footnotesize\ttfamily \#define B\+L\+E\+N\+D\+\_\+\+C\+O\+L\+OR(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{nc,  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}},  }\item[{}]{cc }\end{DoxyParamCaption})~nc = (cc) + (((((\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}) -\/ (cc)) $\ast$ (\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})) + ((((\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}) -\/ (cc)) $\ast$ (\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})) $>$$>$ 8) + 0x80) $>$$>$ 8);}
+
+\mbox{\Hypertarget{gd_8c_a6872709e1a4dbf58b844c3fcd5c2f6ee}\label{gd_8c_a6872709e1a4dbf58b844c3fcd5c2f6ee}} 
+\index{gd.c@{gd.c}!FILL\_MAX@{FILL\_MAX}}
+\index{FILL\_MAX@{FILL\_MAX}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{FILL\_MAX}{FILL\_MAX}}
+{\footnotesize\ttfamily \#define F\+I\+L\+L\+\_\+\+M\+AX~((int)(im-\/$>$\mbox{\hyperlink{gd_8h_affcd3fe43d73220dd7b3e6bde969e65c}{sy}}$\ast$im-\/$>$sx)/4)}
+
+\mbox{\Hypertarget{gd_8c_a4e8c51a8df975f56d484dcf2babb26ea}\label{gd_8c_a4e8c51a8df975f56d484dcf2babb26ea}} 
+\index{gd.c@{gd.c}!FILL\_POP@{FILL\_POP}}
+\index{FILL\_POP@{FILL\_POP}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{FILL\_POP}{FILL\_POP}}
+{\footnotesize\ttfamily \#define F\+I\+L\+L\+\_\+\+P\+OP(\begin{DoxyParamCaption}\item[{}]{Y,  }\item[{}]{XL,  }\item[{}]{XR,  }\item[{}]{DY }\end{DoxyParamCaption})~\{sp-\/-\/; Y = sp-\/$>$\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}+(DY = sp-\/$>$dy); XL = sp-\/$>$xl; XR = sp-\/$>$xr;\}}
+
+\mbox{\Hypertarget{gd_8c_a75b9978b904b74664c266bf756fad9db}\label{gd_8c_a75b9978b904b74664c266bf756fad9db}} 
+\index{gd.c@{gd.c}!FILL\_PUSH@{FILL\_PUSH}}
+\index{FILL\_PUSH@{FILL\_PUSH}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{FILL\_PUSH}{FILL\_PUSH}}
+{\footnotesize\ttfamily \#define F\+I\+L\+L\+\_\+\+P\+U\+SH(\begin{DoxyParamCaption}\item[{}]{Y,  }\item[{}]{XL,  }\item[{}]{XR,  }\item[{}]{DY }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (sp<stack+\mbox{\hyperlink{gd_8c_a6872709e1a4dbf58b844c3fcd5c2f6ee}{FILL\_MAX}} \&\& Y+(DY)>=0 \&\& Y+(DY)<wy2) \(\backslash\)}
+\DoxyCodeLine{    \{sp-\/>y = Y; sp-\/>xl = XL; sp-\/>xr = XR; sp-\/>dy = DY; sp++;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gd_8c_ae6a3e78469ac639310c852292866bce6}\label{gd_8c_ae6a3e78469ac639310c852292866bce6}} 
+\index{gd.c@{gd.c}!floor2@{floor2}}
+\index{floor2@{floor2}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{floor2}{floor2}}
+{\footnotesize\ttfamily \#define floor2(\begin{DoxyParamCaption}\item[{}]{exp }\end{DoxyParamCaption})~((long) exp)}
+
+\mbox{\Hypertarget{gd_8c_a1f934544299bfdab95fd351e255c8660}\label{gd_8c_a1f934544299bfdab95fd351e255c8660}} 
+\index{gd.c@{gd.c}!gdImageBoundsSafeMacro@{gdImageBoundsSafeMacro}}
+\index{gdImageBoundsSafeMacro@{gdImageBoundsSafeMacro}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gdImageBoundsSafeMacro}{gdImageBoundsSafeMacro}}
+{\footnotesize\ttfamily \#define gd\+Image\+Bounds\+Safe\+Macro(\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}},  }\item[{}]{\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}} }\end{DoxyParamCaption})~(!((((\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}) $<$ (im)-\/$>$cy1) $\vert$$\vert$ ((\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}) $>$ (im)-\/$>$cy2)) $\vert$$\vert$ (((\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}) $<$ (im)-\/$>$cx1) $\vert$$\vert$ ((\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}) $>$ (im)-\/$>$cx2))))}
+
+\mbox{\Hypertarget{gd_8c_a610dc3e7db3c61b3c42cd5c92b0e4146}\label{gd_8c_a610dc3e7db3c61b3c42cd5c92b0e4146}} 
+\index{gd.c@{gd.c}!HWB\_UNDEFINED@{HWB\_UNDEFINED}}
+\index{HWB\_UNDEFINED@{HWB\_UNDEFINED}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{HWB\_UNDEFINED}{HWB\_UNDEFINED}}
+{\footnotesize\ttfamily \#define H\+W\+B\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED~-\/1}
+
+\mbox{\Hypertarget{gd_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{gd_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{gd.c@{gd.c}!MAX@{MAX}}
+\index{MAX@{MAX}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}))}
+
+\mbox{\Hypertarget{gd_8c_a37c6d7fcb9c177c308ef38e1d51d35e3}\label{gd_8c_a37c6d7fcb9c177c308ef38e1d51d35e3}} 
+\index{gd.c@{gd.c}!MAX3@{MAX3}}
+\index{MAX3@{MAX3}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{MAX3}{MAX3}}
+{\footnotesize\ttfamily \#define M\+A\+X3(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))}
+
+\mbox{\Hypertarget{gd_8c_a3acffbd305ee72dcd4593c0d8af64a4f}\label{gd_8c_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{gd.c@{gd.c}!MIN@{MIN}}
+\index{MIN@{MIN}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define M\+IN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})\+:(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}))}
+
+\mbox{\Hypertarget{gd_8c_a4887ceeae88266064841cbbc11ef8b53}\label{gd_8c_a4887ceeae88266064841cbbc11ef8b53}} 
+\index{gd.c@{gd.c}!MIN3@{MIN3}}
+\index{MIN3@{MIN3}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{MIN3}{MIN3}}
+{\footnotesize\ttfamily \#define M\+I\+N3(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}})$<$(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}})?(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}}))\+:(\mbox{\hyperlink{_java_c_c_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}},\mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})))}
+
+\mbox{\Hypertarget{gd_8c_acb31922492025a070232c6d900cb5f16}\label{gd_8c_acb31922492025a070232c6d900cb5f16}} 
+\index{gd.c@{gd.c}!REPLACING\_LOOP@{REPLACING\_LOOP}}
+\index{REPLACING\_LOOP@{REPLACING\_LOOP}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{REPLACING\_LOOP}{REPLACING\_LOOP}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \#define R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP(\begin{DoxyParamCaption}\item[{}]{pixel }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{                                \(\backslash\)}
+\DoxyCodeLine{        for (\mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}} = im-\/>cy1; y <= im-\/>cy2; \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}++) \{                    \(\backslash\)}
+\DoxyCodeLine{            for (\mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} = im-\/>cx1; x <= im-\/>cx2; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}++) \{                \(\backslash\)}
+\DoxyCodeLine{                if (pixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}) == \mbox{\hyperlink{commands_8doc_ada8bec5c7106984a97eeabb95cae4731}{src}}) \{                  \(\backslash\)}
+\DoxyCodeLine{                    gdImageSetPixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}, \mbox{\hyperlink{gd_8h_aa934ae9b4bbaeff58ab404af75f5cf6e}{dst}});                \(\backslash\)}
+\DoxyCodeLine{                    n++;                                        \(\backslash\)}
+\DoxyCodeLine{                \}                                               \(\backslash\)}
+\DoxyCodeLine{            \}                                                   \(\backslash\)}
+\DoxyCodeLine{        \}                                                       \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gd_8c_acb31922492025a070232c6d900cb5f16}\label{gd_8c_acb31922492025a070232c6d900cb5f16}} 
+\index{gd.c@{gd.c}!REPLACING\_LOOP@{REPLACING\_LOOP}}
+\index{REPLACING\_LOOP@{REPLACING\_LOOP}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{REPLACING\_LOOP}{REPLACING\_LOOP}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \#define R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP(\begin{DoxyParamCaption}\item[{}]{pixel }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{                                        \(\backslash\)}
+\DoxyCodeLine{        for (\mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}} = im-\/>cy1; y <= im-\/>cy2; \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}++) \{                            \(\backslash\)}
+\DoxyCodeLine{            for (\mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} = im-\/>cx1; x <= im-\/>cx2; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}++) \{                        \(\backslash\)}
+\DoxyCodeLine{                if (\mbox{\hyperlink{gd__color_8c_a83aedb8f5e04c9297fa46b5d5954ab26}{gdColorMatch}}(im, \mbox{\hyperlink{commands_8doc_ada8bec5c7106984a97eeabb95cae4731}{src}}, pixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}), \mbox{\hyperlink{gd_8h_ae3fe3c1aa562504a107743c2068f29be}{threshold}})) \{ \(\backslash\)}
+\DoxyCodeLine{                    gdImageSetPixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}, \mbox{\hyperlink{gd_8h_aa934ae9b4bbaeff58ab404af75f5cf6e}{dst}});                        \(\backslash\)}
+\DoxyCodeLine{                    n++;                                                \(\backslash\)}
+\DoxyCodeLine{                \}                                                       \(\backslash\)}
+\DoxyCodeLine{            \}                                                           \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gd_8c_acb31922492025a070232c6d900cb5f16}\label{gd_8c_acb31922492025a070232c6d900cb5f16}} 
+\index{gd.c@{gd.c}!REPLACING\_LOOP@{REPLACING\_LOOP}}
+\index{REPLACING\_LOOP@{REPLACING\_LOOP}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{REPLACING\_LOOP}{REPLACING\_LOOP}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \#define R\+E\+P\+L\+A\+C\+I\+N\+G\+\_\+\+L\+O\+OP(\begin{DoxyParamCaption}\item[{}]{pixel }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{                                        \(\backslash\)}
+\DoxyCodeLine{        for (\mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}} = im-\/>cy1; y <= im-\/>cy2; \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}++) \{                            \(\backslash\)}
+\DoxyCodeLine{            for (\mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}} = im-\/>cx1; x <= im-\/>cx2; \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}++) \{                        \(\backslash\)}
+\DoxyCodeLine{                c = pixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}});                                  \(\backslash\)}
+\DoxyCodeLine{                if ( (\mbox{\hyperlink{058__bracket__recursion_8tcl_af43f4b1f0064a33b2d662af9f06d3a00}{d}} = (\textcolor{keywordtype}{int} *)bsearch(\&\mbox{\hyperlink{gd_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}}, base, \mbox{\hyperlink{gd_8h_afed088663f8704004425cdae2120b9b3}{len}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})<<1, colorCmp)) ) \{ \(\backslash\)}
+\DoxyCodeLine{                    gdImageSetPixel(im, \mbox{\hyperlink{gd_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}, \mbox{\hyperlink{gd_8h_af1202c02b14870c18fb3a1da73e9e7c7}{y}}, \mbox{\hyperlink{058__bracket__recursion_8tcl_af43f4b1f0064a33b2d662af9f06d3a00}{d}}[1]);                 \(\backslash\)}
+\DoxyCodeLine{                    n++;                                                \(\backslash\)}
+\DoxyCodeLine{                \}                                                       \(\backslash\)}
+\DoxyCodeLine{            \}                                                           \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gd_8c_a645304c0444e1cfd7b6afbdd38754c6e}\label{gd_8c_a645304c0444e1cfd7b6afbdd38754c6e}} 
+\index{gd.c@{gd.c}!RETURN\_HWB@{RETURN\_HWB}}
+\index{RETURN\_HWB@{RETURN\_HWB}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{RETURN\_HWB}{RETURN\_HWB}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+H\+WB(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}},  }\item[{}]{\mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~\{H\+WB-\/$>$H = \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}; H\+WB-\/$>$W = \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}; H\+WB-\/$>$\mbox{\hyperlink{class_b}{B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}; return H\+WB;\}}
+
+\mbox{\Hypertarget{gd_8c_adbe4e26d71cc6bd3879abed7bdd443da}\label{gd_8c_adbe4e26d71cc6bd3879abed7bdd443da}} 
+\index{gd.c@{gd.c}!RETURN\_RGB@{RETURN\_RGB}}
+\index{RETURN\_RGB@{RETURN\_RGB}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{RETURN\_RGB}{RETURN\_RGB}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+R\+GB(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~\{R\+GB-\/$>$R = \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}; R\+GB-\/$>$G = \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}}; R\+GB-\/$>$\mbox{\hyperlink{class_b}{B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}; return R\+GB;\}}
+
+\mbox{\Hypertarget{gd_8c_add380f717f8a2f3744affe86a4440fc5}\label{gd_8c_add380f717f8a2f3744affe86a4440fc5}} 
+\index{gd.c@{gd.c}!SETUP\_RGB@{SETUP\_RGB}}
+\index{SETUP\_RGB@{SETUP\_RGB}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{SETUP\_RGB}{SETUP\_RGB}}
+{\footnotesize\ttfamily \#define S\+E\+T\+U\+P\+\_\+\+R\+GB(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}},  }\item[{}]{\mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}} }\end{DoxyParamCaption})~\{s.\+R = \mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}/255.\+0f; s.\+G = \mbox{\hyperlink{060__command__switch_8tcl_af08b4b5bfa9edf0b0a7dee1c2b2c29e0}{g}}/255.\+0f; \mbox{\hyperlink{autolink_8cpp_a7ddc550b157ed6f8db58e462b504ab0f}{s.\+B}} = \mbox{\hyperlink{060__command__switch_8tcl_a68bdb74c144118d936931c46f75d4b3e}{b}}/255.\+0f;\}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gd_8c_a4fda0364dfbd992e1f9aac786bc86625}\label{gd_8c_a4fda0364dfbd992e1f9aac786bc86625}} 
+\index{gd.c@{gd.c}!BGD\_DECLARE@{BGD\_DECLARE}}
+\index{BGD\_DECLARE@{BGD\_DECLARE}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{BGD\_DECLARE()}{BGD\_DECLARE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}}}]{ }\end{DoxyParamCaption})}
+
+Group\+: Cloning and Copying Function\+: gd\+Image\+Clone
+
+Clones an image
+
+Creates an exact duplicate of the given image.
+
+Parameters\+: src -\/ The source image.
+
+Returns\+: The cloned image on success, N\+U\+LL on failure. \mbox{\Hypertarget{gd_8c_aed9e653576220d33645d3c39994c5302}\label{gd_8c_aed9e653576220d33645d3c39994c5302}} 
+\index{gd.c@{gd.c}!BGD\_DECLARE@{BGD\_DECLARE}}
+\index{BGD\_DECLARE@{BGD\_DECLARE}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{BGD\_DECLARE()}{BGD\_DECLARE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+Group\+: \mbox{\hyperlink{struct_color}{Color}} Function\+: gd\+Image\+Color\+Closest
+
+Gets the closest color of the image
+
+This is a simplified variant of $<$gd\+Image\+Color\+Closest\+Alpha$>$ where the alpha channel is always opaque.
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component.
+
+Returns\+: The closest color already available in the palette for palette images; the color value of the given components for truecolor images.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Exact$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Closest\+Alpha
+
+Gets the closest color of the image
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component. a -\/ The value of the alpha component.
+
+Returns\+: The closest color already available in the palette for palette images; the color value of the given components for truecolor images.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Exact\+Alpha$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Exact
+
+Gets the exact color of the image
+
+This is a simplified variant of $<$gd\+Image\+Color\+Exact\+Alpha$>$ where the alpha channel is always opaque.
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component.
+
+Returns\+: The exact color already available in the palette for palette images; if there is no exact color, -\/1 is returned. For truecolor images the color value of the given components is returned.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Closest$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Exact\+Alpha
+
+Gets the exact color of the image
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component. a -\/ The value of the alpha component.
+
+Returns\+: The exact color already available in the palette for palette images; if there is no exact color, -\/1 is returned. For truecolor images the color value of the given components is returned.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Closest\+Alpha$>$
+\item $<$gd\+True\+Color\+Alpha$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Allocate
+
+Allocates a color
+
+This is a simplified variant of $<$gd\+Image\+Color\+Allocate\+Alpha$>$ where the alpha channel is always opaque.
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component.
+
+Returns\+: The color value.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Deallocate$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Allocate\+Alpha
+
+Allocates a color
+
+This is typically used for palette images, but can be used for truecolor images as well.
+
+Parameters\+: im -\/ The image. r -\/ The value of the red component. g -\/ The value of the green component. b -\/ The value of the blue component.
+
+Returns\+: The color value.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Deallocate$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Get\+Pixel
+
+Gets a pixel color as stored in the image.
+
+Parameters\+: im -\/ The image. x -\/ The x-\/coordinate. y -\/ The y-\/coordinate.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Get\+True\+Color\+Pixel$>$
+\item $<$gd\+Image\+Palette\+Pixel$>$
+\item $<$gd\+Image\+True\+Color\+Pixel$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Get\+True\+Color\+Pixel
+
+Gets a pixel color always as truecolor value.
+
+Parameters\+: im -\/ The image. x -\/ The x-\/coordinate. y -\/ The y-\/coordinate.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Get\+Pixel$>$
+\item $<$gd\+Image\+True\+Color\+Pixel$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Compare
+
+Compare two images
+
+Parameters\+: im1 -\/ An image. im2 -\/ Another image.
+
+Returns\+: \mbox{\hyperlink{class_a}{A}} bitmask of $<$\+Image comparison=\char`\"{}\char`\"{}$>$ flags where each set flag signals which attributes of the images are different.
+
+Function\+: gd\+Alpha\+Blend
+
+Blend two colors
+
+Parameters\+: dst -\/ The color to blend onto. src -\/ The color to blend.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Alpha\+Blending$>$
+\item $<$gd\+Layer\+Overlay$>$
+\item $<$gd\+Layer\+Multiply$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Layer\+Overlay
+
+Overlay two colors
+
+Parameters\+: dst -\/ The color to overlay onto. src -\/ The color to overlay.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Alpha\+Blending$>$
+\item $<$gd\+Alpha\+Blend$>$
+\item $<$gd\+Layer\+Multiply$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Layer\+Multiply
+
+Overlay two colors with multiply effect
+
+Parameters\+: dst -\/ The color to overlay onto. src -\/ The color to overlay.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Alpha\+Blending$>$
+\item $<$gd\+Alpha\+Blend$>$
+\item $<$gd\+Layer\+Overlay$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Palette\+To\+True\+Color
+
+Convert a palette image to true color
+
+Parameters\+: src -\/ The image.
+
+Returns\+: Non-\/zero if the conversion succeeded, zero otherwise.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+True\+Color\+To\+Palette$>$ 
+\end{DoxyItemize}\mbox{\Hypertarget{gd_8c_a90662a8202ea56741002e364c3f9d771}\label{gd_8c_a90662a8202ea56741002e364c3f9d771}} 
+\index{gd.c@{gd.c}!BGD\_DECLARE@{BGD\_DECLARE}}
+\index{BGD\_DECLARE@{BGD\_DECLARE}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{BGD\_DECLARE()}{BGD\_DECLARE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily B\+G\+D\+\_\+\+D\+E\+C\+L\+A\+RE (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function\+: gd\+Image\+Color\+Deallocate
+
+Removes a palette entry
+
+This is a no-\/op for truecolor images.
+
+Parameters\+: im -\/ The image. color -\/ The palette index.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Color\+Allocate$>$
+\item $<$gd\+Image\+Color\+Allocate\+Alpha$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Color\+Transparent
+
+Sets the transparent color of the image
+
+Parameter\+: im -\/ The image. color -\/ The color.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Get\+Transparent$>$
+\end{DoxyItemize}
+
+Group\+: Pixels
+
+Group\+: Primitives
+
+Function\+: gd\+Image\+Char
+
+Draws a single character.
+
+Parameters\+: im -\/ The image to draw onto. f -\/ The raster font. x -\/ The x coordinate of the upper left pixel. y -\/ The y coordinate of the upper left pixel. c -\/ The character. color -\/ The color.
+
+Variants\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Char\+Up$>$
+\end{DoxyItemize}
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Font\+Ptr$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Char\+Up
+
+Function\+: gd\+Image\+String
+
+Draws a character string.
+
+Parameters\+: im -\/ The image to draw onto. f -\/ The raster font. x -\/ The x coordinate of the upper left pixel. y -\/ The y coordinate of the upper left pixel. c -\/ The character string. color -\/ The color.
+
+Variants\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+String\+Up$>$
+\item $<$gd\+Image\+String16$>$
+\item $<$gd\+Image\+String\+Up16$>$
+\end{DoxyItemize}
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Font\+Ptr$>$
+\item $<$gd\+Image\+String\+T\+T\+F$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+String\+Up
+
+Function\+: gd\+Image\+String16
+
+Function\+: gd\+Image\+String\+Up16
+
+Function\+: gd\+Image\+Rectangle
+
+Draws a rectangle.
+
+Parameters\+: im -\/ The image. x1 -\/ The x-\/coordinate of the upper left corner. y1 -\/ The y-\/coordinate of the upper left corner. x2 -\/ The x-\/coordinate of the lower right corner. y2 -\/ The y-\/coordinate of the lower right corner. color -\/ The color.
+
+Note that x1,y1 and x2,y2 may be swapped, i.\+e. the former may designate the lower right corner and the latter the upper left corner. The behavior for specifying other corners is undefined.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Filled\+Rectangle$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy
+
+Copy an area of an image to another image
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the upper left corner to copy to. dstY -\/ The y-\/coordinate of the upper left corner to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. w -\/ The width of the area to copy. h -\/ The height of the area to copy.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Copy\+Merge$>$
+\item $<$gd\+Image\+Copy\+Merge\+Gray$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy\+Merge
+
+Copy an area of an image to another image ignoring alpha
+
+The source area will be copied to the destination are by merging the pixels.
+
+Note\+: This function is a substitute for real alpha channel operations, so it doesn\textquotesingle{}t pay attention to the alpha channel.
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the upper left corner to copy to. dstY -\/ The y-\/coordinate of the upper left corner to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. w -\/ The width of the area to copy. h -\/ The height of the area to copy. pct -\/ The percentage in range 0..100.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Copy$>$
+\item $<$gd\+Image\+Copy\+Merge\+Gray$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy\+Merge\+Gray
+
+Copy an area of an image to another image ignoring alpha
+
+The source area will be copied to the grayscaled destination area by merging the pixels.
+
+Note\+: This function is a substitute for real alpha channel operations, so it doesn\textquotesingle{}t pay attention to the alpha channel.
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the upper left corner to copy to. dstY -\/ The y-\/coordinate of the upper left corner to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. w -\/ The width of the area to copy. h -\/ The height of the area to copy. pct -\/ The percentage of the source color intensity in range 0..100.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Copy$>$
+\item $<$gd\+Image\+Copy\+Merge$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy\+Resized
+
+Copy a resized area from an image to another image
+
+If the source and destination area differ in size, the area will be resized using nearest-\/neighbor interpolation.
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the upper left corner to copy to. dstY -\/ The y-\/coordinate of the upper left corner to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. dstW -\/ The width of the area to copy to. dstH -\/ The height of the area to copy to. srcW -\/ The width of the area to copy from. srcH -\/ The height of the area to copy from.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Copy\+Resampled$>$
+\item $<$gd\+Image\+Scale$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy\+Rotated
+
+Copy a rotated area from an image to another image
+
+The area is counter-\/clockwise rotated using nearest-\/neighbor interpolation.
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the center of the area to copy to. dstY -\/ The y-\/coordinate of the center of the area to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. srcW -\/ The width of the area to copy from. srcH -\/ The height of the area to copy from. angle -\/ The angle in degrees.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Rotate\+Interpolated$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Copy\+Resampled
+
+Copy a resampled area from an image to another image
+
+If the source and destination area differ in size, the area will be resized using bilinear interpolation for truecolor images, and nearest-\/neighbor interpolation for palette images.
+
+Parameters\+: dst -\/ The destination image. src -\/ The source image. dstX -\/ The x-\/coordinate of the upper left corner to copy to. dstY -\/ The y-\/coordinate of the upper left corner to copy to. srcX -\/ The x-\/coordinate of the upper left corner to copy from. srcY -\/ The y-\/coordinate of the upper left corner to copy from. dstW -\/ The width of the area to copy to. dstH -\/ The height of the area to copy to. srcW -\/ The width of the area to copy from. srcH -\/ The height of the area to copy from.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Copy\+Resized$>$
+\item $<$gd\+Image\+Scale$>$
+\end{DoxyItemize}
+
+Group\+: Polygons Function\+: gd\+Image\+Polygon
+
+Draws a closed polygon
+
+Parameters\+: im -\/ The image. p -\/ The vertices as array of $<$gd\+Point$>$s. n -\/ The number of vertices. c -\/ The color.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Open\+Polygon$>$
+\item $<$gd\+Image\+Filled\+Polygon$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Open\+Polygon
+
+Draws an open polygon
+
+Parameters\+: im -\/ The image. p -\/ The vertices as array of $<$gd\+Point$>$s. n -\/ The number of vertices. c -\/ The color
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Polygon$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Filled\+Polygon
+
+Draws a filled polygon
+
+The polygon is filled using the even-\/odd fillrule what can leave unfilled regions inside of self-\/intersecting polygons. This behavior might change in a future version.
+
+Parameters\+: im -\/ The image. p -\/ The vertices as array of $<$gd\+Point$>$s. n -\/ The number of vertices. c -\/ The color
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Polygon$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Set\+Style
+
+Sets the style for following drawing operations
+
+Parameters\+: im -\/ The image. style -\/ An array of color values. no\+Of\+Pixel -\/ The number of color values.
+
+Function\+: gd\+Image\+Set\+Thickness
+
+Sets the thickness for following drawing operations
+
+Parameters\+: im -\/ The image. thickness -\/ The thickness in pixels.
+
+Function\+: gd\+Image\+Set\+Brush
+
+Sets the brush for following drawing operations
+
+Parameters\+: im -\/ The image. brush -\/ The brush image.
+
+Function\+: gd\+Image\+Set\+Anti\+Aliased
+
+Set the color for subsequent anti-\/aliased drawing
+
+If $<$gd\+Anti\+Aliased$>$ is passed as color to drawing operations that support anti-\/aliased drawing (such as $<$gd\+Image\+Line$>$ and $<$gd\+Image\+Polygon$>$), the actual color to be used can be set with this function.
+
+\mbox{\hyperlink{struct_example}{Example}}\+: draw an anti-\/aliased blue line\+: $\vert$ gd\+Image\+Set\+Anti\+Aliased(im, gd\+True\+Color\+Alpha(0, 0, gd\+Blue\+Max, gd\+Alpha\+Opaque)); $\vert$ gd\+Image\+Line(im, 10,10, 20,20, gd\+Anti\+Aliased);
+
+Parameters\+: im -\/ The image. c -\/ The color.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Set\+Anti\+Aliased\+Dont\+Blend$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Set\+Anti\+Aliased\+Dont\+Blend
+
+Set the color and \char`\"{}dont\+\_\+blend\char`\"{} color for subsequent anti-\/aliased drawing
+
+This extended variant of $<$gd\+Image\+Set\+Anti\+Aliased$>$ allows to also specify a (background) color that will not be blended in anti-\/aliased drawing operations.
+
+Parameters\+: im -\/ The image. c -\/ The color. dont\+\_\+blend -\/ Whether to blend.
+
+Function\+: gd\+Image\+Interlace
+
+Sets whether an image is interlaced
+
+This is relevant only when saving the image in a format that supports interlacing.
+
+Parameters\+: im -\/ The image. interlace\+Arg -\/ Whether the image is interlaced.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Get\+Interlaced$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Alpha\+Blending
+
+Set the effect for subsequent drawing operations
+
+Note that the effect is used for truecolor images only.
+
+Parameters\+: im -\/ The image. alpha\+Blending\+Arg -\/ The effect.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$\+Effects$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Save\+Alpha
+
+Sets the save alpha flag
+
+The save alpha flag specifies whether the alpha channel of the pixels should be saved. This is supported only for image formats that support full alpha transparency, e.\+g. P\+NG.
+
+Function\+: gd\+Image\+Set\+Clip
+
+Sets the clipping rectangle
+
+The clipping rectangle restricts the drawing area for following drawing operations.
+
+Parameters\+: im -\/ The image. x1 -\/ The x-\/coordinate of the upper left corner. y1 -\/ The y-\/coordinate of the upper left corner. x2 -\/ The x-\/coordinate of the lower right corner. y2 -\/ The y-\/coordinate of the lower right corner.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Get\+Clip$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Get\+Clip
+
+Gets the current clipping rectangle
+
+Parameters\+: im -\/ The image. x1P -\/ (out) The x-\/coordinate of the upper left corner. y1P -\/ (out) The y-\/coordinate of the upper left corner. x2P -\/ (out) The x-\/coordinate of the lower right corner. y2P -\/ (out) The y-\/coordinate of the lower right corner.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Set\+Clip$>$
+\end{DoxyItemize}
+
+Function\+: gd\+Image\+Set\+Resolution
+
+Sets the resolution of an image.
+
+Parameters\+: im -\/ The image. res\+\_\+x -\/ The horizontal resolution in D\+PI. res\+\_\+y -\/ The vertical resolution in D\+PI.
+
+See also\+:
+\begin{DoxyItemize}
+\item $<$gd\+Image\+Resolution\+X$>$
+\item $<$gd\+Image\+Resolution\+Y$>$ 
+\end{DoxyItemize}\mbox{\Hypertarget{gd_8c_a6d8cf2c5b53ef17bbc5da9daea5d7a2a}\label{gd_8c_a6d8cf2c5b53ef17bbc5da9daea5d7a2a}} 
+\index{gd.c@{gd.c}!gd\_error@{gd\_error}}
+\index{gd\_error@{gd\_error}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gd\_error()}{gd\_error()}}
+{\footnotesize\ttfamily void gd\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gd_8c_ac8d60eda6a526c4e12933edc150e8010}\label{gd_8c_ac8d60eda6a526c4e12933edc150e8010}} 
+\index{gd.c@{gd.c}!gd\_error\_ex@{gd\_error\_ex}}
+\index{gd\_error\_ex@{gd\_error\_ex}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gd\_error\_ex()}{gd\_error\_ex()}}
+{\footnotesize\ttfamily void gd\+\_\+error\+\_\+ex (\begin{DoxyParamCaption}\item[{int}]{priority,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gd_8c_af5304a81ef400f0e16565d07ba12ce09}\label{gd_8c_af5304a81ef400f0e16565d07ba12ce09}} 
+\index{gd.c@{gd.c}!gd\_stderr\_error@{gd\_stderr\_error}}
+\index{gd\_stderr\_error@{gd\_stderr\_error}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gd\_stderr\_error()}{gd\_stderr\_error()}}
+{\footnotesize\ttfamily void gd\+\_\+stderr\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{priority,  }\item[{const char $\ast$}]{format,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Group\+: Error Handling \mbox{\Hypertarget{gd_8c_a27e4cf3de7127c849132286cf7857cca}\label{gd_8c_a27e4cf3de7127c849132286cf7857cca}} 
+\index{gd.c@{gd.c}!lsqrt@{lsqrt}}
+\index{lsqrt@{lsqrt}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{lsqrt()}{lsqrt()}}
+{\footnotesize\ttfamily long lsqrt (\begin{DoxyParamCaption}\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{gd_8c_a8f8523e78e83caea27704ded934242b5}\label{gd_8c_a8f8523e78e83caea27704ded934242b5}} 
+\index{gd.c@{gd.c}!gdCosT@{gdCosT}}
+\index{gdCosT@{gdCosT}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gdCosT}{gdCosT}}
+{\footnotesize\ttfamily const int gd\+CosT\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{gd_8c_afdc32f5bb6fdb20e60abbddd14d6cdcf}\label{gd_8c_afdc32f5bb6fdb20e60abbddd14d6cdcf}} 
+\index{gd.c@{gd.c}!gdSinT@{gdSinT}}
+\index{gdSinT@{gdSinT}!gd.c@{gd.c}}
+\doxysubsubsection{\texorpdfstring{gdSinT}{gdSinT}}
+{\footnotesize\ttfamily const int gd\+SinT\mbox{[}$\,$\mbox{]}}
+

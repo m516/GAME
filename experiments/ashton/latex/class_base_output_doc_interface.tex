@@ -1,0 +1,828 @@
+\hypertarget{class_base_output_doc_interface}{}\doxysection{Base\+Output\+Doc\+Interface Class Reference}
+\label{class_base_output_doc_interface}\index{BaseOutputDocInterface@{BaseOutputDocInterface}}
+
+
+{\ttfamily \#include $<$outputgen.\+h$>$}
+
+Inheritance diagram for Base\+Output\+Doc\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.362869cm]{class_base_output_doc_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Param\+List\+Types}} \{ \mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca2f12909be9be736f564ef1bccd8bc981}{Param}}, 
+\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca7dbac297ebba84b706efa2afb8e5e609}{Ret\+Val}}, 
+\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca013f47562e6f852189ce39404b2c83ce}{Exception}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886}{Section\+Types}} \{ \mbox{\hyperlink{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a14899d1909b84ceff4b564f2c5cdd5c8}{Enum\+Values}}, 
+\mbox{\hyperlink{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a8e76c29b11f7bc42235f145253d37661}{Examples}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_base_output_doc_interface_ac23dcf3208e5199e2b562c2643536beb}{$\sim$\+Base\+Output\+Doc\+Interface}} ()
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aa38d7d019705a2d8565c85173ed826e5}{parse\+Text}} (const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a54b169393594b6cf113977ccccaeb9ee}{start\+Item\+List}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aa1cbcadfedf8e6d52029d17526b5fa3f}{start\+Item\+List\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a90d290d7a06a9e7ecd968c8da90ed665}{end\+Item\+List\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a3493b65672bf134033bd3bb296acdff4}{end\+Item\+List}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ad7d3f6631bd157739170690e669b3e75}{docify}} (const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a1577324720c1c71142dff84ae80b058d}{write\+Char}} (char \mbox{\hyperlink{060__command__switch_8tcl_ab14f56bc3bd7680490ece4ad7815465f}{c}})=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a5737513ddf260787b5b79c84ae1059af}{write\+String}} (const char $\ast$text)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a9f711f4ef8f48b9c7b1cae625578e7ff}{start\+Paragraph}} (const char $\ast$class\+Def)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ab76280c2eb451ad160991707206b6c95}{end\+Paragraph}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a3537423635807fe140ec5be1a2198060}{write\+Object\+Link}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$anchor, const char $\ast$name)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ab52dbf41ce337c701f9cd1e7794f80e7}{start\+Html\+Link}} (const char $\ast$url)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_afb808c1c487135d4fb2156d0675b387e}{end\+Html\+Link}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aa0bfe5ef08077a7191ba4666f47c441b}{start\+Bold}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a2a17911ba778f8efac83999fb5d190d9}{end\+Bold}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_abde41a60b900d35b0b198f43731c1cd0}{start\+Typewriter}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a9e987baf8aed76f0e5e6676b3238d2c8}{end\+Typewriter}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a21debc3a6c4c58791a41e715dc78f4ab}{start\+Emphasis}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aed2cf04d82648509f97403bd4ce62590}{end\+Emphasis}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ab19fc767b08c25b0ca7c976d24799bda}{start\+Code\+Fragment}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a08f032482a8f23ac1aab66552db43a81}{end\+Code\+Fragment}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ade0d004fb6e8641c92f2f144d7242f0b}{write\+Ruler}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ac9c801c3ad0b50e3e69be184b50c2fef}{start\+Description}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ac25c565e9fd8aee6c2b0d9b71fcff380}{end\+Description}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a5d1cc59d94c3f529c90e0a06704be181}{start\+Desc\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a4bd0d53fa5bd37ab551b462fa1935cff}{start\+Desc\+For\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a1b04c0dc473f245979860c158ea450e7}{end\+Desc\+For\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a09e3aa9d3faac55b2cc9290eaa69f55b}{end\+Desc\+Item}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_af7740896d897da2924e8d8818858edd1}{start\+Center}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aacbcdb867519fce8db354460566aa4ea}{end\+Center}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aa48fb5d720aabf2dc67d866b9861f733}{start\+Small}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aece1c56c3a382b5e7228f034e600b43f}{end\+Small}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_aa61b180f670584de7e584d0e54bc85f3}{start\+Examples}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a1b3eca2ad781699cb342f4e7f389a6d2}{end\+Examples}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a0fe360d170bf70af8455d521ecad8cab}{start\+Param\+List}} (\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Param\+List\+Types}} \mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, const char $\ast$title)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a2e18469ef7e3f144e05d7713efaa9aac}{end\+Param\+List}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a52507f4f611800062e6776704d3c0eaf}{start\+Title}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a5dee56a3a18bafb23c30f42e6575210f}{end\+Title}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a02ec04af87e175323ad789347884c896}{write\+Anchor}} (const char $\ast$file\+Name, const char $\ast$name)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a820f65539d9328cfafe23a2542375853}{start\+Section}} (const char $\ast$, const char $\ast$, \mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}})=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a754ab1bd2b1a2cf82ac1207822e76f59}{end\+Section}} (const char $\ast$, \mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}})=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ada61ce97bb848a4e73f60c351e217391}{line\+Break}} (const char $\ast$\mbox{\hyperlink{gd_8h_a83adb69d9f54bfc92ceb3ceb6d965eb7}{style}})=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_acc5ad4f6230310456380f4db9a407161}{add\+Index\+Item}} (const char $\ast$s1, const char $\ast$s2)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a7a6903af564a1de397adb0887e7e419a}{write\+Non\+Breakable\+Space}} (int)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ae8d272c529f66d55e23b63a8cbb1abd7}{start\+Desc\+Table}} (const char $\ast$title)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_acad6dba3f360141250109216856eff38}{end\+Desc\+Table}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a86e5f61be7418b8b398e7e9a8863a13d}{start\+Desc\+Table\+Row}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ab90efab0f38bbced65583c5e1840c545}{end\+Desc\+Table\+Row}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a2a026821caecc0397f2c21fd1a1de095}{start\+Desc\+Table\+Title}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a1106996c286d637c873c819adc5072ba}{end\+Desc\+Table\+Title}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ae9e8390997be56f776e966c0f906483d}{start\+Desc\+Table\+Data}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a7448492f455ed3dbff7dbedc00bb7be2}{end\+Desc\+Table\+Data}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_af3e8e537c3a2379071c3573d25a64d03}{start\+Text\+Link}} (const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$anchor)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a5b584fb5f7e3d9747c78a4e13715340a}{end\+Text\+Link}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_add686ba33132cc455a70356c77416994}{start\+Page\+Ref}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a292c5c481f4ba85ab7957bb4b8979d97}{end\+Page\+Ref}} (const char $\ast$, const char $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_ab2c4106db654fb639aaca243d3f4a686}{start\+Subsection}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a3e403e27b8284843a8f3cf7e30e32d2c}{end\+Subsection}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a7f923f13c625fccde495debb5e31eb35}{start\+Subsubsection}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_base_output_doc_interface_a760a6b33b261dafc6625b3cf49ba2124}{end\+Subsubsection}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base \mbox{\hyperlink{class_interface}{Interface}} used for generating output outside of the comment blocks.
+
+This abstract class is used by output generation functions to generate the output for a specific format, or a list of formats (see \mbox{\hyperlink{class_output_list}{Output\+List}}). This interface contains functions that generate fragments of the output. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}\label{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!ParamListTypes@{ParamListTypes}}
+\index{ParamListTypes@{ParamListTypes}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{ParamListTypes}{ParamListTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Base\+Output\+Doc\+Interface\+::\+Param\+List\+Types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Param@{Param}!BaseOutputDocInterface@{BaseOutputDocInterface}}\index{BaseOutputDocInterface@{BaseOutputDocInterface}!Param@{Param}}}\mbox{\Hypertarget{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca2f12909be9be736f564ef1bccd8bc981}\label{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca2f12909be9be736f564ef1bccd8bc981}} 
+Param&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RetVal@{RetVal}!BaseOutputDocInterface@{BaseOutputDocInterface}}\index{BaseOutputDocInterface@{BaseOutputDocInterface}!RetVal@{RetVal}}}\mbox{\Hypertarget{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca7dbac297ebba84b706efa2afb8e5e609}\label{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca7dbac297ebba84b706efa2afb8e5e609}} 
+Ret\+Val&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Exception@{Exception}!BaseOutputDocInterface@{BaseOutputDocInterface}}\index{BaseOutputDocInterface@{BaseOutputDocInterface}!Exception@{Exception}}}\mbox{\Hypertarget{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca013f47562e6f852189ce39404b2c83ce}\label{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8ca013f47562e6f852189ce39404b2c83ce}} 
+Exception&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886}\label{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!SectionTypes@{SectionTypes}}
+\index{SectionTypes@{SectionTypes}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{SectionTypes}{SectionTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886}{Base\+Output\+Doc\+Interface\+::\+Section\+Types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnumValues@{EnumValues}!BaseOutputDocInterface@{BaseOutputDocInterface}}\index{BaseOutputDocInterface@{BaseOutputDocInterface}!EnumValues@{EnumValues}}}\mbox{\Hypertarget{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a14899d1909b84ceff4b564f2c5cdd5c8}\label{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a14899d1909b84ceff4b564f2c5cdd5c8}} 
+Enum\+Values&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Examples@{Examples}!BaseOutputDocInterface@{BaseOutputDocInterface}}\index{BaseOutputDocInterface@{BaseOutputDocInterface}!Examples@{Examples}}}\mbox{\Hypertarget{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a8e76c29b11f7bc42235f145253d37661}\label{class_base_output_doc_interface_a07a3d5df76a714674e070e5e236fe886a8e76c29b11f7bc42235f145253d37661}} 
+Examples&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_output_doc_interface_ac23dcf3208e5199e2b562c2643536beb}\label{class_base_output_doc_interface_ac23dcf3208e5199e2b562c2643536beb}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!````~BaseOutputDocInterface@{$\sim$BaseOutputDocInterface}}
+\index{````~BaseOutputDocInterface@{$\sim$BaseOutputDocInterface}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{$\sim$BaseOutputDocInterface()}{~BaseOutputDocInterface()}}
+{\footnotesize\ttfamily virtual Base\+Output\+Doc\+Interface\+::$\sim$\+Base\+Output\+Doc\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_output_doc_interface_acc5ad4f6230310456380f4db9a407161}\label{class_base_output_doc_interface_acc5ad4f6230310456380f4db9a407161}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!addIndexItem@{addIndexItem}}
+\index{addIndexItem@{addIndexItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{addIndexItem()}{addIndexItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::add\+Index\+Item (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a4d682e57f5f0365a943aeb116ccbfc45}{Output\+List}}, \mbox{\hyperlink{class_html_generator_aa966249e9239eff3631f57211f314504}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_aabbdce121f41f32494aa03a28863840d}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a310d8299b672cc6d24333129b069f028}{Docbook\+Generator}}, \mbox{\hyperlink{class_man_generator_a290636c8090c771e5fd94e35cce35248}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af35b41bf3bcf9a94af08ba6d68d2df23}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ad7d3f6631bd157739170690e669b3e75}\label{class_base_output_doc_interface_ad7d3f6631bd157739170690e669b3e75}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!docify@{docify}}
+\index{docify@{docify}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{docify()}{docify()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::docify (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes an A\+S\+C\+II string to the output. Converts characters that have \mbox{\hyperlink{class_a}{A}} special meaning, like {\ttfamily \&} in html. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a78cc7c7199538d0f38d2696443ca71bf}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a1f33982a4ce6eac13224197e91f057d8}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ad6786a95e819d8af4dbfa717207cc674}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_aae62a687e228c0f3c5b698570c603022}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a0e292cd3d60599a4ddfad4036c0b6d46}{R\+T\+F\+Generator}}, and \mbox{\hyperlink{class_output_list_a3335d926bd59e1c9e3912c4352ca5bc6}{Output\+List}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a2a17911ba778f8efac83999fb5d190d9}\label{class_base_output_doc_interface_a2a17911ba778f8efac83999fb5d190d9}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endBold@{endBold}}
+\index{endBold@{endBold}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endBold()}{endBold()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Bold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+End a section of text displayed in bold face. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a798fe205e0beedacd6c035c865ae354c}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_aa3f855a4e60d2a7c6769b66d43c69b23}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a8e60c605c5db7577e2e0256c0431dcb1}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ae2336bd8bc8ca0802fb94ff6953e7779}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_acc9e3c928bd473ce079e323f19948dc7}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a430a7df863505527d0b1da4c70116a05}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aacbcdb867519fce8db354460566aa4ea}\label{class_base_output_doc_interface_aacbcdb867519fce8db354460566aa4ea}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endCenter@{endCenter}}
+\index{endCenter@{endCenter}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endCenter()}{endCenter()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a8b7b9b4f6a1876e34300b7f8969fbed9}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_ad71b2d5a74052d9539968a25e7d86bb0}{Output\+List}}, \mbox{\hyperlink{class_html_generator_abc11851ba8f0b133e5c664ecd9504496}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a8c5c4da427d30d6ef2756c036e0e88d1}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ac97abbbcd519a1c77f62516634feff3f}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ad5b630364443ea63a67af9166b9cbaad}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a08f032482a8f23ac1aab66552db43a81}\label{class_base_output_doc_interface_a08f032482a8f23ac1aab66552db43a81}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endCodeFragment@{endCodeFragment}}
+\index{endCodeFragment@{endCodeFragment}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endCodeFragment()}{endCodeFragment()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Code\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a source code fragment 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a5f6585ebe5d203c47bb25cefdd30d8fd}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a9fccddf083f487654f6e6ce261fafff8}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a6df6ede2137490c79228b9825df3b263}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a761292f353178bad45e21ca40cbe6115}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a4e825c27561ebb51c155840d9101725a}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ae75111adf81a1179b924ab7656d8c74c}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a1b04c0dc473f245979860c158ea450e7}\label{class_base_output_doc_interface_a1b04c0dc473f245979860c158ea450e7}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescForItem@{endDescForItem}}
+\index{endDescForItem@{endDescForItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescForItem()}{endDescForItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+For\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a66376d8ca881d18cb9916c7d903df18e}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a5e1d56ddf6a6238a4e1b8733d057c782}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a435efc951be4e6d166b4658a34d8b810}{Latex\+Generator}}, \mbox{\hyperlink{class_html_generator_a67179d9c17833aacd71619f5046859b3}{Html\+Generator}}, \mbox{\hyperlink{class_man_generator_a0729f8d1cc066dd6629a0c7bd765bc81}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ad60deab094f7a994b685e0b55639839c}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a09e3aa9d3faac55b2cc9290eaa69f55b}\label{class_base_output_doc_interface_a09e3aa9d3faac55b2cc9290eaa69f55b}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescItem@{endDescItem}}
+\index{endDescItem@{endDescItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescItem()}{endDescItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends an item of a description list and starts the description itself\+: e.\+g. {\ttfamily $<$/dt$>$} in H\+T\+ML. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_ae46437543719a73a35d0202749633c15}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_aca7c1dd564ed727ce77f9f2bc43a74ea}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a0354681e6d39ae7da41d33f88656e335}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_aa675b530ccd61f9c4784efc2abcedbaa}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ab86f06d399e075e2b6855319bf26e1ec}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_aaeb8cbfab437b4198548c4f06dc12847}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ac25c565e9fd8aee6c2b0d9b71fcff380}\label{class_base_output_doc_interface_ac25c565e9fd8aee6c2b0d9b71fcff380}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescription@{endDescription}}
+\index{endDescription@{endDescription}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescription()}{endDescription()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a description list\+: e.\+g. {\ttfamily $<$/dl$>$} in H\+T\+ML 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_accbb80f6730221e3396f38cbb07ed7b5}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a231f2150bf8b3d9823cb1f201ecc6774}{Output\+List}}, \mbox{\hyperlink{class_html_generator_aff598e78fc1ebaefb21fe94fda564e4d}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a3da64ef2d6cfe58facd7a35ad736ea83}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a04db9176fd114182d5aab2a48346621d}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a4c9b42e803206c575f464d82eec460d9}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_acad6dba3f360141250109216856eff38}\label{class_base_output_doc_interface_acad6dba3f360141250109216856eff38}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescTable@{endDescTable}}
+\index{endDescTable@{endDescTable}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescTable()}{endDescTable()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_abd3af9023fb73fc3332ca625afcc78a6}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a223fb4453aeeaf8270e8bd5f875ed9c9}{Output\+List}}, \mbox{\hyperlink{class_html_generator_adc3d1eed2818cdd2a01eb1eacc0ad08d}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a93e92fa0f35e8f3da32b0f08597a0285}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a0d3eea58e70d7213f199e3ed11d490dc}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ae98972ee6670de733f0ec0fa00cb1a67}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a7448492f455ed3dbff7dbedc00bb7be2}\label{class_base_output_doc_interface_a7448492f455ed3dbff7dbedc00bb7be2}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescTableData@{endDescTableData}}
+\index{endDescTableData@{endDescTableData}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescTableData()}{endDescTableData()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+Table\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_ad5da8dc28569ce5ac4a594175a11eecd}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a66b7fd1338764cbe47b66d3f9e77bb07}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a20750bdcf48a3104469275333d41f942}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_aa3830e8ae350a66bbec769c2a9337305}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a98fcb779ebc649bc817dc7ce7fd53caf}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ab98bd7772c1a72bf4d2cac4c00aa90a2}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ab90efab0f38bbced65583c5e1840c545}\label{class_base_output_doc_interface_ab90efab0f38bbced65583c5e1840c545}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescTableRow@{endDescTableRow}}
+\index{endDescTableRow@{endDescTableRow}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescTableRow()}{endDescTableRow()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+Table\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a191efddbd8402fa939a2302027b1331f}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a0b3d38267387585eb41163745d8c364f}{Output\+List}}, \mbox{\hyperlink{class_html_generator_af9ae96be3611a28b217f788f2e111d63}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a510d0747644edc3deeca0873ed5c3817}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ac08decc953a056c4753a9762f5ecf797}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a4c67b128a4b22e19b98e9225ae9cc1dc}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a1106996c286d637c873c819adc5072ba}\label{class_base_output_doc_interface_a1106996c286d637c873c819adc5072ba}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endDescTableTitle@{endDescTableTitle}}
+\index{endDescTableTitle@{endDescTableTitle}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endDescTableTitle()}{endDescTableTitle()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Desc\+Table\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_abe08e164b411f9fc279fa7db8d29306f}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a51b3d439827ec272ecc6e8c2e108eac0}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ac070a0a291e13f63c3d17294244960d6}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a3481549b50ac3745a5de40a590bf1fb5}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a27152804f9384ad60557157f5e5be5da}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a9c091d5c54d49a0eebac04726a8c0f39}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aed2cf04d82648509f97403bd4ce62590}\label{class_base_output_doc_interface_aed2cf04d82648509f97403bd4ce62590}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endEmphasis@{endEmphasis}}
+\index{endEmphasis@{endEmphasis}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endEmphasis()}{endEmphasis()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Emphasis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a section of text displayed in italic. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_afa388cf9fb6c58601670f40fec5a2eb7}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a5674d5d9336eb1f7f6cb83c058f5ad8f}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a88c2f4c34f00161d34e4c1059d747381}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a5837f5169fd6b05b088a4d9182756711}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a3e158ae587148e66ad6f3d4df509ca35}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a283896a8d13cd017f4b765d82ba1e132}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a1b3eca2ad781699cb342f4e7f389a6d2}\label{class_base_output_doc_interface_a1b3eca2ad781699cb342f4e7f389a6d2}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endExamples@{endExamples}}
+\index{endExamples@{endExamples}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endExamples()}{endExamples()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Examples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a438f8b5845f838d939b3d72d47b91fb6}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a5ee61a2f622e01eb1aa47f22faafd3b9}{Output\+List}}, \mbox{\hyperlink{class_html_generator_acc716c5b5ae303c1348eeaa39e872a58}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a31d82295f3be69fea7e599ab7c337ea4}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a560e1a3d4a48b04d9f214051c9bb680c}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a3b922b80ee9cea8451bb53d712adbe8a}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_afb808c1c487135d4fb2156d0675b387e}\label{class_base_output_doc_interface_afb808c1c487135d4fb2156d0675b387e}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endHtmlLink@{endHtmlLink}}
+\index{endHtmlLink@{endHtmlLink}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endHtmlLink()}{endHtmlLink()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Html\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a link started by \mbox{\hyperlink{class_base_output_doc_interface_ab52dbf41ce337c701f9cd1e7794f80e7}{start\+Html\+Link()}}. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a14123926fa57e6c0e8dbbbac55f368df}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_af6ca967739e45755318c78058115c27a}{Html\+Generator}}, \mbox{\hyperlink{class_output_list_a14c59e71b1bb4cb6a6366a09ea62545f}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a28854e0713249d4ee70a0544b0ebfed5}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a7323695cedb872064ddb450875b2baea}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a73a4ea59114077ea461ff16757c8429b}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a3493b65672bf134033bd3bb296acdff4}\label{class_base_output_doc_interface_a3493b65672bf134033bd3bb296acdff4}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endItemList@{endItemList}}
+\index{endItemList@{endItemList}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endItemList()}{endItemList()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Item\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a bullet list\+: e.\+g. {\ttfamily $<$/ul$>$} in html 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a5e463c37de0b0473855605fe5cf44071}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_aa5dc9b6c49ebf68dd54942d258716206}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ad126330bd7b18c670464599fdfc262ab}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_ac6efca5985597bb6e51427c51d40732f}{Output\+List}}, \mbox{\hyperlink{class_man_generator_abb7aa578a49c62b103f85e0f5d3c9e2a}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a530e2868f7db6b92a4423cdee7fc9f75}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a90d290d7a06a9e7ecd968c8da90ed665}\label{class_base_output_doc_interface_a90d290d7a06a9e7ecd968c8da90ed665}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endItemListItem@{endItemListItem}}
+\index{endItemListItem@{endItemListItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endItemListItem()}{endItemListItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Item\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a list item for a bullet or enumerated list\+: e.\+g. {\ttfamily $<$/li$>$} in html 
+
+Implemented in \mbox{\hyperlink{class_output_list_a784d921c1961db570e1b12905fe97c05}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a6a0d36a22a9ca268b716cd37a4ab13b0}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a91f6100cb025e52c1cef35b8749761b2}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a32c196e3b968d56ed445bb3bc090ca6b}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a87a722d58e6364660622ab086f20edc8}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a4d3cc3baac4adda9ef5da4c9e470871b}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a292c5c481f4ba85ab7957bb4b8979d97}\label{class_base_output_doc_interface_a292c5c481f4ba85ab7957bb4b8979d97}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endPageRef@{endPageRef}}
+\index{endPageRef@{endPageRef}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endPageRef()}{endPageRef()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Page\+Ref (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_ab6eef37e9e241eeb7a53709f338be0a7}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a0d8ff1d418517388be08b4cb8f63ef6e}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ad2f1a929d3e6a97c1e521184f03961c9}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_generator_afc5f293acdf0264e6703733b7ef92313}{Docbook\+Generator}}, \mbox{\hyperlink{class_man_generator_aedfd0c9012aa4bab7db46b5388552342}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af6443e553d28dc4b34cfed6567c530c7}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ab76280c2eb451ad160991707206b6c95}\label{class_base_output_doc_interface_ab76280c2eb451ad160991707206b6c95}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endParagraph@{endParagraph}}
+\index{endParagraph@{endParagraph}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endParagraph()}{endParagraph()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Paragraph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a paragraph 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a6f793e8c29984f0ed8d654e9b89110e3}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a48e5516f348a9ec6ed456a6a3b003af3}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a725c87d183be3801d4ceecb793ecb458}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a6523eb013a6f759d505650de41855085}{Output\+List}}, \mbox{\hyperlink{class_man_generator_a7c4c2315a23018eb35413776b36b29e7}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_aefcb5d16655eae184dcacecfd27c0068}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a2e18469ef7e3f144e05d7713efaa9aac}\label{class_base_output_doc_interface_a2e18469ef7e3f144e05d7713efaa9aac}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endParamList@{endParamList}}
+\index{endParamList@{endParamList}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endParamList()}{endParamList()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Param\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_aa50cbefc868b784f670abeefe63a3134}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a9f7355d80e1d26ae3c1daec5c156bbfb}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a540b07cf18af5217bac8603e32c8586a}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ac4add448cd45bd24b9055e59ca16c0e1}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a08de61d7842d7920e0cffe03213f31fb}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ac34fa07c0453017057bf8d6b9863c8d4}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a754ab1bd2b1a2cf82ac1207822e76f59}\label{class_base_output_doc_interface_a754ab1bd2b1a2cf82ac1207822e76f59}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endSection@{endSection}}
+\index{endSection@{endSection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endSection()}{endSection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Section (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_ae50a2aac014352256bd3772f4e98237e}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a0f92a2fa1124ae02396ed560aa925b0f}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_aec87e4e5a2e5f72924316fb20005903b}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_generator_aebe55441607d88540afdf1131452acb6}{Docbook\+Generator}}, \mbox{\hyperlink{class_man_generator_a08b9cad6ac2d759823224b4580c77fd3}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af33a34d8ccdbda134053ca89eeeacf5a}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aece1c56c3a382b5e7228f034e600b43f}\label{class_base_output_doc_interface_aece1c56c3a382b5e7228f034e600b43f}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endSmall@{endSmall}}
+\index{endSmall@{endSmall}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endSmall()}{endSmall()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Small (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_af78c3c3a1e8ab4fd275cc1364f29f96a}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a8142de5d17dd16fce39b80c0dfc3dfe2}{Output\+List}}, \mbox{\hyperlink{class_html_generator_aae94afd45fc65086afdc6c3204e67a1f}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_aa0f89ab599109d222204ed70531feb84}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a1e934fe458d046107d45ab389ea645d8}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a2ac789ba16b4fa9f8c64fe59041e9699}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a3e403e27b8284843a8f3cf7e30e32d2c}\label{class_base_output_doc_interface_a3e403e27b8284843a8f3cf7e30e32d2c}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endSubsection@{endSubsection}}
+\index{endSubsection@{endSubsection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endSubsection()}{endSubsection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Subsection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a1ef185fbf941e38cb5c398fa1b91cdc1}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a23eb35221592612198b556c577ffe619}{Output\+List}}, \mbox{\hyperlink{class_html_generator_abc4bc4379bbff6450b129ac605dc9416}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a076423c36308d68eaa4ae934909960ea}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a4ae427e8787652bcc456f58f729079a3}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ae8b39bb99367d13410a574ef93cae773}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a760a6b33b261dafc6625b3cf49ba2124}\label{class_base_output_doc_interface_a760a6b33b261dafc6625b3cf49ba2124}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endSubsubsection@{endSubsubsection}}
+\index{endSubsubsection@{endSubsubsection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endSubsubsection()}{endSubsubsection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Subsubsection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a0c29baba6775a956dc285964e81af254}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a828e83dee7bf45ee04493942d9dd803b}{Output\+List}}, \mbox{\hyperlink{class_html_generator_af08ae4e64ba09f0e0d4afbf496011243}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a4eb7f9f80bf4407d5b23c1b13d0a560b}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ab4ab218011dee86fa1e5f7938567aefb}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a15b343f2ae0d87433bfb28a92b02d502}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a5b584fb5f7e3d9747c78a4e13715340a}\label{class_base_output_doc_interface_a5b584fb5f7e3d9747c78a4e13715340a}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endTextLink@{endTextLink}}
+\index{endTextLink@{endTextLink}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endTextLink()}{endTextLink()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Text\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_abae26f5d00240c52d70a0d9c822563f3}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_ab2b0bff4d5587ad095832783fdba8064}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a99844d76a29239103359ea6690a37efe}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a74e89e9bcca41e9203ca080fc127a004}{Output\+List}}, \mbox{\hyperlink{class_man_generator_ae0b59e20362769f00731c90f0e3fdc00}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a6e7091e1279e20ea431ddd36a6984e77}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a5dee56a3a18bafb23c30f42e6575210f}\label{class_base_output_doc_interface_a5dee56a3a18bafb23c30f42e6575210f}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endTitle@{endTitle}}
+\index{endTitle@{endTitle}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endTitle()}{endTitle()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a86fa7cf7c97b19a93216b5819cb9f178}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_ae1337adbb5ad6cea03fcee0d5a7cdfce}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a39f79e928a962730a332e6d9dd9b251e}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a6b1d6b4e89edaebfe3291b24505e80c5}{Output\+List}}, \mbox{\hyperlink{class_man_generator_a5f10174e0eec5ab53365aad27ad48f22}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a9cc9028ce4b47900b45798c2d2006eca}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a9e987baf8aed76f0e5e6676b3238d2c8}\label{class_base_output_doc_interface_a9e987baf8aed76f0e5e6676b3238d2c8}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!endTypewriter@{endTypewriter}}
+\index{endTypewriter@{endTypewriter}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{endTypewriter()}{endTypewriter()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::end\+Typewriter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+End a section of text displayed in typewriter style. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a2b987c6b42a8a5b5cea28f950fefa6cc}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_ad83302c45e73f387c9dc13789df012f7}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a574b29296b93ffa4c3b119cbee70269c}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a40c84d4660b7514fb336c18544005b52}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a918922201985cac387c671a9767021d1}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af9e17986de22ddd0b3a4afe4449b4a2c}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ada61ce97bb848a4e73f60c351e217391}\label{class_base_output_doc_interface_ada61ce97bb848a4e73f60c351e217391}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!lineBreak@{lineBreak}}
+\index{lineBreak@{lineBreak}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{lineBreak()}{lineBreak()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::line\+Break (\begin{DoxyParamCaption}\item[{const char $\ast$}]{style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a492a56a47cd88f46dfc05279a692159e}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a91b269c8334ab9dffaf5d07d4c34ae69}{Latex\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_aac2aff06973207c6c7e5b2e5f1984482}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_html_generator_a0931c48e06fde3d6fca0940261ea8e4f}{Html\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a1d8531f44a63138f5c7ccabcf5b5da0b}{Docbook\+Generator}}, and \mbox{\hyperlink{class_man_generator_a3c7ce366b7915a1c3dc6129182f0f9e8}{Man\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aa38d7d019705a2d8565c85173ed826e5}\label{class_base_output_doc_interface_aa38d7d019705a2d8565c85173ed826e5}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!parseText@{parseText}}
+\index{parseText@{parseText}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{parseText()}{parseText()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::parse\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_output_list_adfdcf2ba925f05be8beb8cf43deb168a}{Output\+List}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aa0bfe5ef08077a7191ba4666f47c441b}\label{class_base_output_doc_interface_aa0bfe5ef08077a7191ba4666f47c441b}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startBold@{startBold}}
+\index{startBold@{startBold}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startBold()}{startBold()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Bold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Changes the text font to bold face. The bold section ends with \mbox{\hyperlink{class_base_output_doc_interface_a2a17911ba778f8efac83999fb5d190d9}{end\+Bold()}} 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_ad1704a02ae2ba6ab019e0c6e570ce218}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a796018ee85949771252f36fea9a288d0}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a4785d0f1ac1828284aa1f21dbb1e3773}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a48859c667b43515483f4adb04f46cf0e}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a93a20331a8e073df653ed1df9834361b}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_acb774060df0aaad9be8f91018503b20b}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_af7740896d897da2924e8d8818858edd1}\label{class_base_output_doc_interface_af7740896d897da2924e8d8818858edd1}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startCenter@{startCenter}}
+\index{startCenter@{startCenter}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startCenter()}{startCenter()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a98fef2b64d63f378b2616d09a679f66b}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_acc709b251fc97e9e5c7d3d205ffb0a5e}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a233402f133de12862b43bfdd202fd050}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a9ee4283738dc975f9b31b554a0de945e}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a0779e3309c5b48fef8be36d066e51879}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_aeaaadb26bd52241ae6a838608f30652b}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ab19fc767b08c25b0ca7c976d24799bda}\label{class_base_output_doc_interface_ab19fc767b08c25b0ca7c976d24799bda}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startCodeFragment@{startCodeFragment}}
+\index{startCodeFragment@{startCodeFragment}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startCodeFragment()}{startCodeFragment()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Code\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts a source code fragment. The fragment will be fed to the code parser (see code.\+h) for syntax highlighting and cross-\/referencing. The fragment ends by a call to \mbox{\hyperlink{class_base_output_doc_interface_a08f032482a8f23ac1aab66552db43a81}{end\+Code\+Fragment()}} 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a698cf0a67c7e73af0c76cb0cf54e1530}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_ae9d700d50e148d13422052cd58243624}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ac071e1f57eb6e4b2d4baeae1723186bd}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a4fc23629424d5f2bb82f87d2d0311361}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a23377579a34bc5cee9a43885888dd5d4}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ac7783a014fb21a8688b4f334aea2cc30}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a4bd0d53fa5bd37ab551b462fa1935cff}\label{class_base_output_doc_interface_a4bd0d53fa5bd37ab551b462fa1935cff}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescForItem@{startDescForItem}}
+\index{startDescForItem@{startDescForItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescForItem()}{startDescForItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+For\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a627c43929d1dafab5072680128b6375f}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a8ac4a6e52094643a093fcdeedf1ae0bc}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a423a4c8f0d6b49352edcfa7261fdb1c0}{Latex\+Generator}}, \mbox{\hyperlink{class_html_generator_a760684d94139338dc683a816a6d59e3d}{Html\+Generator}}, \mbox{\hyperlink{class_man_generator_ae826d6dc94da45c9b35bb715ab316656}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af015080aa4a53dc119385ed520258a93}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a5d1cc59d94c3f529c90e0a06704be181}\label{class_base_output_doc_interface_a5d1cc59d94c3f529c90e0a06704be181}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescItem@{startDescItem}}
+\index{startDescItem@{startDescItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescItem()}{startDescItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts an item of a description list\+: e.\+g. {\ttfamily $<$dt$>$} in H\+T\+ML. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a20e9be1323c9378066b4302ec37fa67f}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a021752b31f2577c15d6cef3e858c84d8}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a7a4d4ef015bc9d8298a6c023f85737c5}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a92603047f2bff0fef3c2bd5ed1be73d9}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a3230aa59d50e8bdbbfb94e56bd956f56}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a39ef721382a2a25ef0a41463a34f1b02}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ac9c801c3ad0b50e3e69be184b50c2fef}\label{class_base_output_doc_interface_ac9c801c3ad0b50e3e69be184b50c2fef}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescription@{startDescription}}
+\index{startDescription@{startDescription}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescription()}{startDescription()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts a description list\+: e.\+g. {\ttfamily $<$dl$>$} in H\+T\+ML Items are surrounded by \mbox{\hyperlink{class_base_output_doc_interface_a5d1cc59d94c3f529c90e0a06704be181}{start\+Desc\+Item()}} and \mbox{\hyperlink{class_base_output_doc_interface_a09e3aa9d3faac55b2cc9290eaa69f55b}{end\+Desc\+Item()}} 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_abca64d577a05a2d49a99edfef8e72e72}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a63dfb00b7d99d58acfb89473ab8ac7d8}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a8ae03ee5e64d705aeebbe605d3c05b0f}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a32a518fb74711bc0e791c03e95c666cb}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a40c97f2dcd8827c13a9d1eedb96701b5}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a9c6c7896f2bd09fb5e6ce53b9e6cee5c}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ae8d272c529f66d55e23b63a8cbb1abd7}\label{class_base_output_doc_interface_ae8d272c529f66d55e23b63a8cbb1abd7}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescTable@{startDescTable}}
+\index{startDescTable@{startDescTable}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescTable()}{startDescTable()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+Table (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_afbb3ffe228e3d50508ee7161194344fc}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ad238943ff33bd9b0ea5e566f0be9a168}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a6cedf5f253f92b21a660f5014988866a}{Latex\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_ac5e98d54b526e7f2356dfb673bef4119}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_a7af24abd8f1dc66da50b6e515e12ed68}{Man\+Generator}}, and \mbox{\hyperlink{class_docbook_generator_acaa3fba479216b81c56bf6875f479be1}{Docbook\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ae9e8390997be56f776e966c0f906483d}\label{class_base_output_doc_interface_ae9e8390997be56f776e966c0f906483d}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescTableData@{startDescTableData}}
+\index{startDescTableData@{startDescTableData}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescTableData()}{startDescTableData()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+Table\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a5c5b4fe6f2359335c121e9cf940f2b48}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a8823d3ed58554ae3eeb9169ff920ba00}{Output\+List}}, \mbox{\hyperlink{class_html_generator_acf27d538b5edea06a1ec91813ca059fd}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a2fca61002fe342c603e112cc4e99921f}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a1a7710a1e0c3c53a8729bda81863addc}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ac79979b6bd1ccc052698058158d2f1e6}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a86e5f61be7418b8b398e7e9a8863a13d}\label{class_base_output_doc_interface_a86e5f61be7418b8b398e7e9a8863a13d}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescTableRow@{startDescTableRow}}
+\index{startDescTableRow@{startDescTableRow}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescTableRow()}{startDescTableRow()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+Table\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a1c8a3b36b56840ce70d14b1f220a7d04}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_af4b472918891fdf268e7f13ccdc4e88a}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a203e0dab89c356bf2afdd13ee368e893}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_af79ef99d8e2f28c069857b796e6b7390}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ab708ee610915ba3e49dda52bce9bf445}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a554501002b4b1f6bd6f6ab2051cbf9b8}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a2a026821caecc0397f2c21fd1a1de095}\label{class_base_output_doc_interface_a2a026821caecc0397f2c21fd1a1de095}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startDescTableTitle@{startDescTableTitle}}
+\index{startDescTableTitle@{startDescTableTitle}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startDescTableTitle()}{startDescTableTitle()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Desc\+Table\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a9522e58842f09e0062723d5eec483feb}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a6b984edbfa21eecfe20b2a7a3ef0fc97}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a3513b8c53063d076b85ffb8e0608cd9d}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a229466fe4c9fa9251c0bfb514600feaf}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a43e02986b96420b036ba2204db980994}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_afa65fd09520391f8db47a98d2ac210c3}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a21debc3a6c4c58791a41e715dc78f4ab}\label{class_base_output_doc_interface_a21debc3a6c4c58791a41e715dc78f4ab}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startEmphasis@{startEmphasis}}
+\index{startEmphasis@{startEmphasis}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startEmphasis()}{startEmphasis()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Emphasis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Changes the text font to italic. The italic section ends with \mbox{\hyperlink{class_base_output_doc_interface_aed2cf04d82648509f97403bd4ce62590}{end\+Emphasis()}} 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_ad3234d4df4f2e6db5e3e7d1c4c5b8382}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_aba5576798309803175cefaedf33b2a28}{Output\+List}}, \mbox{\hyperlink{class_html_generator_afa50b0bc75a1f73eb0e86d4718534d1b}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a247441f3922c912966d8193f578f5c74}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a8a88956b0c96590290287835934344b9}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a235071d9e43bed7dabaec79e88bf43c7}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aa61b180f670584de7e584d0e54bc85f3}\label{class_base_output_doc_interface_aa61b180f670584de7e584d0e54bc85f3}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startExamples@{startExamples}}
+\index{startExamples@{startExamples}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startExamples()}{startExamples()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Examples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a07374c2ae688cdf1a9978dbfff2636df}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a6f81a490c1354748afe7e3b834f1907b}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a5fd46956f97ff9a2fdb3b425229e0488}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_af08feb8dca54294eef6b60f1b7154c4b}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a0de8bc4d17093fbfb77c00bef2a66181}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af78b770d5f1286d6cd152ef61efd8edb}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ab52dbf41ce337c701f9cd1e7794f80e7}\label{class_base_output_doc_interface_ab52dbf41ce337c701f9cd1e7794f80e7}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startHtmlLink@{startHtmlLink}}
+\index{startHtmlLink@{startHtmlLink}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startHtmlLink()}{startHtmlLink()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Html\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts a (link to an) \mbox{\hyperlink{struct_u_r_l}{U\+RL}} found in the documentation. 
+\begin{DoxyParams}{Parameters}
+{\em url} & The \mbox{\hyperlink{struct_u_r_l}{U\+RL}} to link to. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_html_generator_a5fdd7ff7fcabd4e301b8fec2b9c72b85}{Html\+Generator}}, \mbox{\hyperlink{class_output_list_acfe3869e533af42c1446e2fc91a37e5e}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a491cb262e91a3f16b37d5dd2017e2f6a}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a605e678d3be65519e6b94dff6e403e79}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a265ab601396745bb97d5c6cee59329d6}{R\+T\+F\+Generator}}, and \mbox{\hyperlink{class_docbook_generator_adf4463cfec2c9d8ca083367f2e4afeff}{Docbook\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a54b169393594b6cf113977ccccaeb9ee}\label{class_base_output_doc_interface_a54b169393594b6cf113977ccccaeb9ee}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startItemList@{startItemList}}
+\index{startItemList@{startItemList}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startItemList()}{startItemList()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Item\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Start of a bullet list\+: e.\+g. {\ttfamily $<$ul$>$} in html. \mbox{\hyperlink{class_base_output_doc_interface_aa1cbcadfedf8e6d52029d17526b5fa3f}{start\+Item\+List\+Item()}} is Used for the bullet items. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_addaf6b46396259a8bbebe7b1e9716bc0}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_aedec2c1429139e4fd713df22e5636879}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a19bab2ba8d61d4a574805610d1a639e6}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a1677b65eb8f01a10b1d767758338a212}{Output\+List}}, \mbox{\hyperlink{class_man_generator_a5b29aa8c2dd69237fd7470df129fc4e3}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a277db06db2dc29602f3209ca899111c9}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aa1cbcadfedf8e6d52029d17526b5fa3f}\label{class_base_output_doc_interface_aa1cbcadfedf8e6d52029d17526b5fa3f}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startItemListItem@{startItemListItem}}
+\index{startItemListItem@{startItemListItem}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startItemListItem()}{startItemListItem()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Item\+List\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a list item for a bullet or enumerated list\+: e.\+g. {\ttfamily $<$li$>$} in html 
+
+Implemented in \mbox{\hyperlink{class_output_list_a77e30e9a84b48907b886e8231dbbc20b}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a2ee84d2ec43dc1634a71ee3101eab3e4}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_aaa5091e04c77ea310e0c5dee4cc04e94}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_ae7a65542a815c62b5a55283fcc68d774}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a83d776971ea058ea021d49df05f4e563}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ae09155b5cf6fb7457ae598f22d65d045}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_add686ba33132cc455a70356c77416994}\label{class_base_output_doc_interface_add686ba33132cc455a70356c77416994}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startPageRef@{startPageRef}}
+\index{startPageRef@{startPageRef}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startPageRef()}{startPageRef()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Page\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a9eb3cc68a03f56e43d7927348f98498a}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a6f14fd99b68f6df4f9510dbc627f5a43}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a815ab026ba09dceca7ad84157e9eb4dc}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a06e41ed1bb67b71516bed656ea2f2243}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a15352d2d3122b7b9d24e9ea564026d9f}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_acfe100fa82bd9c75629790a719a6f711}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a9f711f4ef8f48b9c7b1cae625578e7ff}\label{class_base_output_doc_interface_a9f711f4ef8f48b9c7b1cae625578e7ff}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startParagraph@{startParagraph}}
+\index{startParagraph@{startParagraph}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startParagraph()}{startParagraph()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Paragraph (\begin{DoxyParamCaption}\item[{const char $\ast$}]{class\+Def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts a new paragraph
+
+Starts a new paragraph 
+
+Implemented in \mbox{\hyperlink{class_output_list_a809351ce4027f4fc083cfb68d5e740eb}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ab00abe0fbb8b668d3f8fd73b7c1216b0}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a467ae3fdba818b4efaefb168455c4796}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a311b0dd8edecddbfa0473c5e43a97e73}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a98ea7dff7770c95c08f7f82dc872881b}{R\+T\+F\+Generator}}, and \mbox{\hyperlink{class_docbook_generator_aa9920dace623a31301f5c7b9f5f739b8}{Docbook\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a0fe360d170bf70af8455d521ecad8cab}\label{class_base_output_doc_interface_a0fe360d170bf70af8455d521ecad8cab}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startParamList@{startParamList}}
+\index{startParamList@{startParamList}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startParamList()}{startParamList()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Param\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_base_output_doc_interface_a944ed4d9fb389999c2724eeb321b8c8c}{Param\+List\+Types}}}]{t,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_latex_generator_a2ee56b14fecf40c894b24bab806fb6b1}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a12ce892150a512ed5803e90ad684dd0a}{Man\+Generator}}, \mbox{\hyperlink{class_html_generator_a65ea430579ba2d902cfb1afbb740f225}{Html\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a009a5bf6c30b65c6aa66d9cd924f0af7}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_output_list_ab981978bf338f7ebf63200533a99d305}{Output\+List}}, and \mbox{\hyperlink{class_docbook_generator_a5a227d018bac4cff772175b1c604dc78}{Docbook\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a820f65539d9328cfafe23a2542375853}\label{class_base_output_doc_interface_a820f65539d9328cfafe23a2542375853}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startSection@{startSection}}
+\index{startSection@{startSection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startSection()}{startSection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Section (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{\mbox{\hyperlink{struct_section_info_a32308f52dd59422b14fb75a92c90ebf1}{Section\+Info\+::\+Section\+Type}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a9a1d1f6dbf37a65e8ebe099e8c3dd5cf}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a8be287f3a8b68b1aaf0ce945a246ef32}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a93e679ac80ca24f50f72fefa51e7d98e}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a7c35ba06bbf1e151f55c9fa42f786f01}{Docbook\+Generator}}, \mbox{\hyperlink{class_man_generator_ad22a90e2eed1e0487fb500674e004e91}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_aa28599035df308890bfb4abfcd322c6d}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_aa48fb5d720aabf2dc67d866b9861f733}\label{class_base_output_doc_interface_aa48fb5d720aabf2dc67d866b9861f733}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startSmall@{startSmall}}
+\index{startSmall@{startSmall}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startSmall()}{startSmall()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Small (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a9a32ad8f07c7b3cd0bc8deaf7a0e1597}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_acf8ce762c6c7838d86ad132f20a2306a}{Output\+List}}, \mbox{\hyperlink{class_html_generator_abfec4f0b6bf47b4bf4635876f094363e}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a1b522f2da59b6ee8f3ac0d10478ea9bd}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a5a3d0de8665d88ae599c1d3d408356d3}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_abef7c0c5864bfb1dfce99d181ae1e51c}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ab2c4106db654fb639aaca243d3f4a686}\label{class_base_output_doc_interface_ab2c4106db654fb639aaca243d3f4a686}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startSubsection@{startSubsection}}
+\index{startSubsection@{startSubsection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startSubsection()}{startSubsection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Subsection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a4d1eeef8da1dd4ba4a2538250a7eff99}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_ad4ec0814711cb2928d9a32aa69d980d1}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ad5672bd4e2cf016436ce21392f366868}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a39d4b6c5ce49e1a2cef9d6046e78ef92}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a8b76bb902110b0df8f020b73207baf0c}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_aee4ce8432c14804a99c4422f97b8ae59}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a7f923f13c625fccde495debb5e31eb35}\label{class_base_output_doc_interface_a7f923f13c625fccde495debb5e31eb35}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startSubsubsection@{startSubsubsection}}
+\index{startSubsubsection@{startSubsubsection}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startSubsubsection()}{startSubsubsection()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Subsubsection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_af7d9b5e9bf1a7ff6030af837ab574b95}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_af8eba8c14941c51616d949a618516ff4}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a36a9752e811198e008617ad624066be0}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a845056c8248cf0662d95aa4b584fe561}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_aedb1d92ae73f0d14dceac0f52eb159d1}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a1b2ed71d67f00e2f067648714393341b}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_af3e8e537c3a2379071c3573d25a64d03}\label{class_base_output_doc_interface_af3e8e537c3a2379071c3573d25a64d03}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startTextLink@{startTextLink}}
+\index{startTextLink@{startTextLink}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startTextLink()}{startTextLink()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Text\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_html_generator_a61a18a9d5cfa300f91af10bd72f4f51b}{Html\+Generator}}, \mbox{\hyperlink{class_output_list_ad4fb4cab0e1a0f5e6e7b56ac820456c9}{Output\+List}}, \mbox{\hyperlink{class_r_t_f_generator_aa92286bf94c590a675ac75f8f5c1671e}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_docbook_generator_acee52d6675a67267a096b42afd6a0592}{Docbook\+Generator}}, \mbox{\hyperlink{class_latex_generator_ae4ec8b6a0997e558994bfb9e6a8a0e79}{Latex\+Generator}}, and \mbox{\hyperlink{class_man_generator_a3c1d7362119d49471f88a39189e63869}{Man\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a52507f4f611800062e6776704d3c0eaf}\label{class_base_output_doc_interface_a52507f4f611800062e6776704d3c0eaf}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startTitle@{startTitle}}
+\index{startTitle@{startTitle}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startTitle()}{startTitle()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a92ec864254dbcfc34f0f7e9bd7425ecf}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a0fd5a2e848ea16b025b1fb07b4b307fc}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a4d1236763a4e5149866e3bae4961b13c}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a0edaede07adae2149d715105433848c9}{Output\+List}}, \mbox{\hyperlink{class_man_generator_ae53c0d4f7905f85069f2e253f97f99a6}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_af0954cd0854f60839004dda1b134f7e3}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_abde41a60b900d35b0b198f43731c1cd0}\label{class_base_output_doc_interface_abde41a60b900d35b0b198f43731c1cd0}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!startTypewriter@{startTypewriter}}
+\index{startTypewriter@{startTypewriter}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{startTypewriter()}{startTypewriter()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::start\+Typewriter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Changes the text font to fixed size. The section ends with \mbox{\hyperlink{class_base_output_doc_interface_a9e987baf8aed76f0e5e6676b3238d2c8}{end\+Typewriter()}} 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a220738e28a4e2939e4da767f0ad33886}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a848e77a8fd7af578497f7ee1ec163b98}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ae3174a7318289e8f7042f2d10345c419}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a72fe56f1f20836344b8fdf003c1a442e}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_aa03f575a82549d2393bb080337769f1c}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_ac3760aa18a5102cd8e8b0a4969f0953d}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a02ec04af87e175323ad789347884c896}\label{class_base_output_doc_interface_a02ec04af87e175323ad789347884c896}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeAnchor@{writeAnchor}}
+\index{writeAnchor@{writeAnchor}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeAnchor()}{writeAnchor()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_af547c76944d466ab7c66ab31b32bde13}{Output\+List}}, \mbox{\hyperlink{class_latex_generator_a158d49cddc6c34aea663fe0726616332}{Latex\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a425368bac3a2fb414b747ae60a1e2301}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_html_generator_a9bc82a247269f9294be37a72460f5ff8}{Html\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a77af6fb2e87620e84ef1cbbcfd04e1fa}{Docbook\+Generator}}, and \mbox{\hyperlink{class_man_generator_a196669b4dd3c70556bf585925ae824fe}{Man\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a1577324720c1c71142dff84ae80b058d}\label{class_base_output_doc_interface_a1577324720c1c71142dff84ae80b058d}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeChar@{writeChar}}
+\index{writeChar@{writeChar}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeChar()}{writeChar()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+Char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a single A\+S\+C\+II character to the output. Converts characters that have a special meaning. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_ab075c899a62994272a1f542404ec614d}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a188c7a8f0a0dc35ec5ea0f8b4a491d33}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a71e6263d7ffef2cc600e289be06c4f33}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a910e0329c0a8c8b54685d2335d22f690}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a5831577a90e226daf7ad892dd8744d33}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a1d1912d4a9d95b54ee88b12b3306e3d2}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a7a6903af564a1de397adb0887e7e419a}\label{class_base_output_doc_interface_a7a6903af564a1de397adb0887e7e419a}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeNonBreakableSpace@{writeNonBreakableSpace}}
+\index{writeNonBreakableSpace@{writeNonBreakableSpace}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeNonBreakableSpace()}{writeNonBreakableSpace()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+Non\+Breakable\+Space (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_html_generator_aca7f1402f6cc3d9efbe9815ab8de3cc5}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a5e671bec2d4436bc8dd7577ac925eaac}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a90d3afc310288c35d48787bc84310ec7}{Docbook\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a0f51f9022b3e8f3d95f154e0d4d5b201}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_output_list_ae6cc078977edd1e2a5ae2cf6ed64ed35}{Output\+List}}, and \mbox{\hyperlink{class_man_generator_ab73e17675d0c5ce30b48c9815c60ba74}{Man\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a3537423635807fe140ec5be1a2198060}\label{class_base_output_doc_interface_a3537423635807fe140ec5be1a2198060}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeObjectLink@{writeObjectLink}}
+\index{writeObjectLink@{writeObjectLink}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeObjectLink()}{writeObjectLink()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+Object\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a link to an object in the documentation. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & If this is non-\/zero, the object is to be found in an external documentation file. \\
+\hline
+{\em file} & The file in which the object is located. \\
+\hline
+{\em anchor} & The anchor uniquely identifying the object within the file. \\
+\hline
+{\em name} & The text to display as a placeholder for the link. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_html_generator_a26b15cf05292634e086ec26cede20f2e}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a882b1439eadf3f6b28ba7ae0f8e22873}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_a8c499e7baca8905c8e057d23f72ff548}{Output\+List}}, \mbox{\hyperlink{class_man_generator_a4bcf9c17c915914aca7b271c85aa08ea}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a5b27737ba89d55761a9908a088631367}{R\+T\+F\+Generator}}, and \mbox{\hyperlink{class_docbook_generator_a8cc7af4fed7938f5e5d81038eba432f0}{Docbook\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_ade0d004fb6e8641c92f2f144d7242f0b}\label{class_base_output_doc_interface_ade0d004fb6e8641c92f2f144d7242f0b}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeRuler@{writeRuler}}
+\index{writeRuler@{writeRuler}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeRuler()}{writeRuler()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+Ruler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a horizontal ruler to the output 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a69c4688a7f57b0cd7cc6eec70bf56e4d}{Docbook\+Generator}}, \mbox{\hyperlink{class_output_list_a2203589f0bc276cb3ba01f529b9536a9}{Output\+List}}, \mbox{\hyperlink{class_html_generator_aa8f5d1eab68eb5fd43f2529c947f0a02}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a3b87ba9aa190c6337db947023df1c0cc}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ab7a5373b1e631879e56bf5699e00cfe2}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a97d0c2260e0642d5b6ac0117b2e91687}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_base_output_doc_interface_a5737513ddf260787b5b79c84ae1059af}\label{class_base_output_doc_interface_a5737513ddf260787b5b79c84ae1059af}} 
+\index{BaseOutputDocInterface@{BaseOutputDocInterface}!writeString@{writeString}}
+\index{writeString@{writeString}!BaseOutputDocInterface@{BaseOutputDocInterface}}
+\doxysubsubsection{\texorpdfstring{writeString()}{writeString()}}
+{\footnotesize\ttfamily virtual void Base\+Output\+Doc\+Interface\+::write\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes an A\+S\+C\+II string to the output, {\itshape without} converting special characters. 
+
+Implemented in \mbox{\hyperlink{class_html_generator_ad54dd4f0dda0e22574149cfb4415ae4a}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a03cd5be16357940ab7d712791fc8949e}{Latex\+Generator}}, \mbox{\hyperlink{class_output_list_adeaf5f7b41eca22a3afbc415a8390767}{Output\+List}}, \mbox{\hyperlink{class_man_generator_a39ca2f1de2bbbe5548f6f03997a84c88}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_ace3fd5e7a703cbae0272372d7e55083b}{R\+T\+F\+Generator}}, and \mbox{\hyperlink{class_docbook_generator_a0435ece7899e4607115944383f2f1d77}{Docbook\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{outputgen_8h}{outputgen.\+h}}\end{DoxyCompactItemize}

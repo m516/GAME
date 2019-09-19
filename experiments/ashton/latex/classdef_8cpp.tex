@@ -1,0 +1,66 @@
+\hypertarget{classdef_8cpp}{}\doxysection{doxygen/src/classdef.cpp File Reference}
+\label{classdef_8cpp}\index{doxygen/src/classdef.cpp@{doxygen/src/classdef.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$qfile.\+h$>$}\newline
+{\ttfamily \#include $<$qfileinfo.\+h$>$}\newline
+{\ttfamily \#include $<$qregexp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}classdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doxygen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}membername.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diagram.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}htmlhelp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}example.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}outputlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotclassgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dotrunner.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defargs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}docparser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}searchindex.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vhdldocgen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arguments.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memberlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}groupdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}namespacedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}membergroup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definitionimpl.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_class_def_impl}{Class\+Def\+Impl}}
+\item 
+class \mbox{\hyperlink{class_class_def_alias_impl}{Class\+Def\+Alias\+Impl}}
+\item 
+class \mbox{\hyperlink{class_class_def_impl_1_1_i_m_p_l}{Class\+Def\+Impl\+::\+I\+M\+PL}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$ \mbox{\hyperlink{classdef_8cpp_ad66349e269a070f042772da0ac958d58}{create\+Class\+Def}} (const char $\ast$file\+Name, int start\+Line, int start\+Column, const char $\ast$name, \mbox{\hyperlink{class_class_def_ae70cf86d35fe954a94c566fbcfc87939}{Class\+Def\+::\+Compound\+Type}} ct, const char $\ast$ref, const char $\ast$f\+Name, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Symbol, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Java\+Enum)
+\item 
+\mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$ \mbox{\hyperlink{classdef_8cpp_afe77e6516ec1e2349cc1508ac9469757}{create\+Class\+Def\+Alias}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$new\+Scope, const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$cd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{classdef_8cpp_ad66349e269a070f042772da0ac958d58}\label{classdef_8cpp_ad66349e269a070f042772da0ac958d58}} 
+\index{classdef.cpp@{classdef.cpp}!createClassDef@{createClassDef}}
+\index{createClassDef@{createClassDef}!classdef.cpp@{classdef.cpp}}
+\doxysubsubsection{\texorpdfstring{createClassDef()}{createClassDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_def}{Class\+Def}}$\ast$ create\+Class\+Def (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{start\+Line,  }\item[{int}]{start\+Column,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{class_class_def_ae70cf86d35fe954a94c566fbcfc87939}{Class\+Def\+::\+Compound\+Type}}}]{ct,  }\item[{const char $\ast$}]{ref = {\ttfamily 0},  }\item[{const char $\ast$}]{f\+Name = {\ttfamily 0},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Symbol = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Java\+Enum = {\ttfamily \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}}} }\end{DoxyParamCaption})}
+
+Factory method to create a new \mbox{\hyperlink{class_class_def}{Class\+Def}} object \mbox{\Hypertarget{classdef_8cpp_afe77e6516ec1e2349cc1508ac9469757}\label{classdef_8cpp_afe77e6516ec1e2349cc1508ac9469757}} 
+\index{classdef.cpp@{classdef.cpp}!createClassDefAlias@{createClassDefAlias}}
+\index{createClassDefAlias@{createClassDefAlias}!classdef.cpp@{classdef.cpp}}
+\doxysubsubsection{\texorpdfstring{createClassDefAlias()}{createClassDefAlias()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_def}{Class\+Def}}$\ast$ create\+Class\+Def\+Alias (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{new\+Scope,  }\item[{const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$}]{cd }\end{DoxyParamCaption})}
+

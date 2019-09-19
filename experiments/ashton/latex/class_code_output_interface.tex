@@ -1,0 +1,218 @@
+\hypertarget{class_code_output_interface}{}\doxysection{Code\+Output\+Interface Class Reference}
+\label{class_code_output_interface}\index{CodeOutputInterface@{CodeOutputInterface}}
+
+
+{\ttfamily \#include $<$outputgen.\+h$>$}
+
+Inheritance diagram for Code\+Output\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_code_output_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_code_output_interface_a09fd2fd0be98227359200de7ab89c7e6}{$\sim$\+Code\+Output\+Interface}} ()
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_aa29a5eedda08596ace50ed5b59c8ae7f}{codify}} (const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a011c73f2dbb87635a3b4206c72355f6e}{s}})=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a102e2b7f40916c75b79871307f5bb674}{write\+Code\+Link}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$anchor, const char $\ast$name, const char $\ast$tooltip)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a8115646785b65e292480c2e4e969b389}{write\+Line\+Number}} (const char $\ast$ref, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$anchor, int line\+Number)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a4326ca642f6ec228466ae310622f73ad}{write\+Tooltip}} (const char $\ast$\mbox{\hyperlink{gd_8h_a65841f8ec0ab4e93010736388282aada}{id}}, const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&doc\+Info, const char $\ast$decl, const char $\ast$desc, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&def\+Info, const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&decl\+Info)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}{start\+Code\+Line}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} has\+Line\+Numbers)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_afac5763eafc78f93b82691fb9a6dcff7}{end\+Code\+Line}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}{start\+Font\+Class}} (const char $\ast$cls\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a2b8ac05a391dae36793aa3aa8714a0f6}{end\+Font\+Class}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a1f6394c4ef7c4143de90bcaf3a65c0b4}{write\+Code\+Anchor}} (const char $\ast$name)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_ac6c4cc087f351242ee92e5f042cf09df}{set\+Current\+Doc}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$context, const char $\ast$anchor, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Source\+File)=0
+\item 
+virtual void \mbox{\hyperlink{class_code_output_interface_a2734a8371d6e710620ad238ed8de118e}{add\+Word}} (const char $\ast$word, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} hi\+Priority)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Output interface for code parser. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_code_output_interface_a09fd2fd0be98227359200de7ab89c7e6}\label{class_code_output_interface_a09fd2fd0be98227359200de7ab89c7e6}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!````~CodeOutputInterface@{$\sim$CodeOutputInterface}}
+\index{````~CodeOutputInterface@{$\sim$CodeOutputInterface}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{$\sim$CodeOutputInterface()}{~CodeOutputInterface()}}
+{\footnotesize\ttfamily virtual Code\+Output\+Interface\+::$\sim$\+Code\+Output\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_code_output_interface_a2734a8371d6e710620ad238ed8de118e}\label{class_code_output_interface_a2734a8371d6e710620ad238ed8de118e}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!addWord@{addWord}}
+\index{addWord@{addWord}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{addWord()}{addWord()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::add\+Word (\begin{DoxyParamCaption}\item[{const char $\ast$}]{word,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{hi\+Priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a909e6711f00132f53f9576ccf4e409be}{Output\+List}}, \mbox{\hyperlink{class_html_generator_ab80e35069bed2aadfd28912897ff59c8}{Html\+Generator}}, \mbox{\hyperlink{class_docbook_generator_ac65a0c44513fe2cf52b01f125ea979ef}{Docbook\+Generator}}, \mbox{\hyperlink{class_latex_generator_a04cf15ca0b9c9a231adbe7e42436a1cf}{Latex\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_af386b517dfdb4b5b5c02cfd2bae5761e}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_af92adee00e581b1275adef04effe1699}{Man\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a8ea71442357b2793532f7bab3a9f6319}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_a91d4f5ee82ad575d9fe311f5dbda231a}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_a3dfe2201a5c05c81151f82c37223ed6b}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_ad935ade67aa122c6a67120d6e401ea78}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a589f4d1ffce901b424bcbc0db0808471}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_ad881d483a68619cc88b9022f85f116ea}{X\+M\+L\+Code\+Generator}}, and \mbox{\hyperlink{class_latex_code_generator_a724f226f6618daa64e37aae29cadeec0}{Latex\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_aa29a5eedda08596ace50ed5b59c8ae7f}\label{class_code_output_interface_aa29a5eedda08596ace50ed5b59c8ae7f}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!codify@{codify}}
+\index{codify@{codify}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{codify()}{codify()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::codify (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes an code fragment to the output. This function should keep spaces visible, should break lines at a newline and should convert tabs to the right number of spaces. 
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a9e4ccf3b4bf296deabf156225e2d02a1}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a574ab87e7aa9b92c11248027912851bc}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a0013e3c0a103883ba879974c92b5a989}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_a6e70bf6444a4e6d5db43f5bbb7b6b125}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a331ca74e622c48bbbcad7e02139a6bfb}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_a7c2c177e3e6e0485e9806a75b45bd7a3}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_a40ff443bfb15f9f862f8bd3ceb50ce89}{X\+M\+L\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_aa482ae62b65a2fd1cc6cda022e88c920}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_a1df8a10f2ab2ef1387d5030e4abd97bb}{Latex\+Code\+Generator}}, \mbox{\hyperlink{class_output_list_a81c7d3f51fa62b85c2699830f7170ccd}{Output\+List}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a75e60fd56c45e70af39b3b926e76d53f}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_aefb4447f5ddd4f26acee9c076f826635}{Doxyparse}}, and \mbox{\hyperlink{class_x_ref_dummy_code_generator_a81331d5775ec9ff49ef03ebc8c0a0dae}{X\+Ref\+Dummy\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_afac5763eafc78f93b82691fb9a6dcff7}\label{class_code_output_interface_afac5763eafc78f93b82691fb9a6dcff7}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!endCodeLine@{endCodeLine}}
+\index{endCodeLine@{endCodeLine}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{endCodeLine()}{endCodeLine()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::end\+Code\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a line of code started with \mbox{\hyperlink{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}{start\+Code\+Line()}} 
+
+Implemented in \mbox{\hyperlink{class_output_list_a0e08c34eb6d9058342d0bd7fdc2a453d}{Output\+List}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a5aeb9fdbb29f60058c55adecefab457a}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_man_generator_a0f0040036147c71754651d0701029f70}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a3f63e2fedfb61f656e35df2054a6d772}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_docbook_generator_a8f7445243e87fede91ba577d5549b907}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a509e9b78f035f58e533cef4f79bf5401}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a87b0106936769e1226310df32ec5e1a6}{Latex\+Generator}}, \mbox{\hyperlink{class_doxyparse_a57e49f80ef4f8765666507c060af4dd2}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_a6b4a0fd7e9d9b39e05bf65f7dcc1021e}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_ab457dd3ab8b99073d9d2cc6f566bb712}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_ab0909b2a97301c8da4fcbf83831c84b3}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_a8e32150386fe38561a0b2c82611fee9d}{Latex\+Code\+Generator}}, and \mbox{\hyperlink{class_x_m_l_code_generator_a47927ff273870cc7713f2d20e8c2beb3}{X\+M\+L\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a2b8ac05a391dae36793aa3aa8714a0f6}\label{class_code_output_interface_a2b8ac05a391dae36793aa3aa8714a0f6}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!endFontClass@{endFontClass}}
+\index{endFontClass@{endFontClass}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{endFontClass()}{endFontClass()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::end\+Font\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ends a block started with \mbox{\hyperlink{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}{start\+Font\+Class()}} 
+
+Implemented in \mbox{\hyperlink{class_output_list_a484c1bcfcffe7a6cb94316ac8df64b61}{Output\+List}}, \mbox{\hyperlink{class_r_t_f_generator_a8753e9a10c126e0f8b9af7ff9783afcd}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_a35a79c6fc4ee7bd9eeadb74181e368d1}{Man\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_adb2939da13563e88a225059de3d767e5}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_docbook_generator_a857d641f5f3894a4053037e842d45a10}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_aca25e58aa19b44b41de489dc966e4b5d}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a553927a6db74aca325fa50bd666b44b0}{Latex\+Generator}}, \mbox{\hyperlink{class_doxyparse_a3c7ba846a59b1aff41ab0395b2e6dd8f}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_a9a502e533ffc65e8db2b84e07a0d468a}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_a06537ef3f7d9c2cb4b9b0293f43d9151}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a8efe5c697dc169b24b5e7da7cf54305e}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_a2b3c977134c51f9775042a0c7f469077}{Latex\+Code\+Generator}}, and \mbox{\hyperlink{class_x_m_l_code_generator_adbf57d4544dc1c27571b472f3990a385}{X\+M\+L\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_ac6c4cc087f351242ee92e5f042cf09df}\label{class_code_output_interface_ac6c4cc087f351242ee92e5f042cf09df}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!setCurrentDoc@{setCurrentDoc}}
+\index{setCurrentDoc@{setCurrentDoc}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{setCurrentDoc()}{setCurrentDoc()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::set\+Current\+Doc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{context,  }\item[{const char $\ast$}]{anchor,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Source\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a18712badbe3a0a292ee44604e3043806}{Output\+List}}, \mbox{\hyperlink{class_html_generator_a4a11b6ebac27353f512f8f0564cad875}{Html\+Generator}}, \mbox{\hyperlink{class_docbook_generator_aa2a7cc66e08e677944684fcbda09a446}{Docbook\+Generator}}, \mbox{\hyperlink{class_latex_generator_ac5f0a1203ef1be97ea6350c42e5ee104}{Latex\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a14a7d5ab4ddc30740ff6aedb99fd0859}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_a304e23f22e6d939da2fbde828980aad6}{Man\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_aa92227375021639cd5d53e47fc6ebdd6}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_a347c0990ea2c3e1fec8bbf383fddf304}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_ace8c7ab2e724bb4d9f547d4721bfcbfc}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_af562a697b366fa9d2a62eaa7d1d57aa0}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_af26f6f9978fe4162f35fa955a2d04f6c}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_a3ec5137e044abcced615a779c1ebc140}{X\+M\+L\+Code\+Generator}}, and \mbox{\hyperlink{class_latex_code_generator_a9307c8044854d76cf860d3f63dab17ba}{Latex\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}\label{class_code_output_interface_a080d71d457de084ce2b3245bca5a0d68}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!startCodeLine@{startCodeLine}}
+\index{startCodeLine@{startCodeLine}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{startCodeLine()}{startCodeLine()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::start\+Code\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{has\+Line\+Numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_dev_null_code_doc_interface_a3a63c468ba7f134f5f5cfc5867a81e3a}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_man_generator_a2690c4b3d068da46f8a6804d43fd34e7}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_abd342f1207b80ca7ef8badcf659a0b58}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_doxyparse_a8c51dc00f12e38a8b98482b72edc5cf2}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_af53c0624cbc5f7a42b8232a3c9255d23}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_aa6af9297cbb2be8c975d0d123cf6d3b1}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_afbc2414a5387b977150b015dfbd16c10}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_abad76eebb986e192639b09878d46ce49}{Latex\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_a44719eff2d9d919cd24aca0f6313b3ea}{X\+M\+L\+Code\+Generator}}, \mbox{\hyperlink{class_output_list_a4676ca4801912753ba2c5af4f38cb951}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a08551a6c7ec1d06ec874880a1d10df5b}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_ab89f82b354a626585bf1ff5a793ad5db}{Html\+Generator}}, and \mbox{\hyperlink{class_latex_generator_a9bfa7242e97eca8f1d795245bb98fa37}{Latex\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}\label{class_code_output_interface_ac90f75968cdcf127e0b02938bdb49d87}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!startFontClass@{startFontClass}}
+\index{startFontClass@{startFontClass}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{startFontClass()}{startFontClass()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::start\+Font\+Class (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cls\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Starts a block with a certain meaning. Used for syntax highlighting, which elements of the same type are rendered using the same \textquotesingle{}font class\textquotesingle{}. 
+\begin{DoxyParams}{Parameters}
+{\em cls\+Name} & The category name. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_docbook_generator_a899bafb067d2ad8cf7d834e23af83d91}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_aa600cc24896060a68612e3db6efb7dbf}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a8dc4dcc8aaa2a591a1fb7f06896cd5af}{Latex\+Generator}}, \mbox{\hyperlink{class_html_code_generator_ae7eaca4c34eeb6bf1aeaf0ac5ce4257b}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_ab39e3a862244d1c8926895d69240ca0d}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_aa6d0288952109fba1efe98d82e863b70}{X\+M\+L\+Code\+Generator}}, \mbox{\hyperlink{class_output_list_ace178947661035b39f4dc9076595c24f}{Output\+List}}, \mbox{\hyperlink{class_r_t_f_generator_a84114371fc0f3865e0321c2df8ce0ae9}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_a4bafda26799458d289c507fad6690de9}{Man\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a8489329a11f50e9d9ab1a3a67d306a51}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_aa74b254b1e80ccf48d17acfa119e7704}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_a5c53cb36c03f583b7b236e482a0a6693}{X\+Ref\+Dummy\+Code\+Generator}}, and \mbox{\hyperlink{class_latex_code_generator_a46db28807c10d4fe78941dd0d907b73a}{Latex\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a1f6394c4ef7c4143de90bcaf3a65c0b4}\label{class_code_output_interface_a1f6394c4ef7c4143de90bcaf3a65c0b4}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!writeCodeAnchor@{writeCodeAnchor}}
+\index{writeCodeAnchor@{writeCodeAnchor}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{writeCodeAnchor()}{writeCodeAnchor()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::write\+Code\+Anchor (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Write an anchor to a source listing. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the anchor. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_output_list_ad40cf8ca8c6289590afa5871b8d5d9a0}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a7fc22eda4420a580d40a7fa2624209b6}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a9e2528347c04b6f07dd9263441dbcf4f}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_af9dc92f8c155f2bb2f5d969ea5ef7cff}{Latex\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a89ec8d4b9eb2b5162b4d9a7cab209b4a}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a01b1cb771ecbdb9da62b21c980d1a5ae}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_man_generator_a15b2642afa851662afe60fb00d4b20fb}{Man\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_abfa6f09f69831c231f0fe7bb095b8fc4}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_a43aa79498085a47fcd0c122898133b20}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_aae68bc8b3e507f39d5613d2840c5f10b}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_ac0f7f4cd4fec98da2855978adf786a04}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_a272d84903dad24a0f8bae1c8d4c8e239}{Latex\+Code\+Generator}}, and \mbox{\hyperlink{class_x_m_l_code_generator_a2c6ae0bc633493d36a2b517c44ebb8f4}{X\+M\+L\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a102e2b7f40916c75b79871307f5bb674}\label{class_code_output_interface_a102e2b7f40916c75b79871307f5bb674}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!writeCodeLink@{writeCodeLink}}
+\index{writeCodeLink@{writeCodeLink}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{writeCodeLink()}{writeCodeLink()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::write\+Code\+Link (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{tooltip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a link to an object in a code fragment. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & If this is non-\/zero, the object is to be found in an external documentation file. \\
+\hline
+{\em file} & The file in which the object is located. \\
+\hline
+{\em anchor} & The anchor uniquely identifying the object within the file. \\
+\hline
+{\em name} & The text to display as a placeholder for the link. \\
+\hline
+{\em tooltip} & The tooltip to display when the mouse is on the link. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_output_list_adebe51dec7320f28fe291d5e1dae740c}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a6014ad58784a407002499d0d29a00a0a}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a91b156be8ac84d8a2a8a88e7adf0869b}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_af7b390d37f164fa8a094541e95be2bd0}{Latex\+Generator}}, \mbox{\hyperlink{class_man_generator_ac4d91e5763d584238139d65d873e9f64}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_ad598f8811fde4d3b1849c2e9b92a6686}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_aecf4ade98ac3d63f22e3632f7dfb987a}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_aa0e45ec4ffd221b96f0af9202a098a29}{X\+M\+L\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a5098b373d91b9674cc399132a321f040}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_adc6118bcab964666e14fd0b7698baba0}{Latex\+Code\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a44ad7fe7fba94cb200fd0d53642b1909}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_adfe22a536eefa84ac8de7dd3492a50b6}{Doxyparse}}, and \mbox{\hyperlink{class_x_ref_dummy_code_generator_a06d3c79e75348534d7fd21ef2ac17137}{X\+Ref\+Dummy\+Code\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a8115646785b65e292480c2e4e969b389}\label{class_code_output_interface_a8115646785b65e292480c2e4e969b389}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!writeLineNumber@{writeLineNumber}}
+\index{writeLineNumber@{writeLineNumber}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{writeLineNumber()}{writeLineNumber()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::write\+Line\+Number (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{int}]{line\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes the line number of a source listing 
+\begin{DoxyParams}{Parameters}
+{\em ref} & External reference (when imported from a tag file) \\
+\hline
+{\em file} & The file part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em anchor} & The anchor part of the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} pointing to the docs. \\
+\hline
+{\em line\+Number} & The line number to write \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a9472c77d09f7049b64dbad0c4ba13ccd}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_abacdf042957c11cbcdf2c809758e23fa}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_a042fed032c729b4a5e44b9a7c86385a7}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a0541a087ce97f66718655486e4aea750}{Latex\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_a0230dcc0e6ee8d3323571df44c5178ba}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_af06c584af323f840eb54a2ab98acd8c2}{X\+M\+L\+Code\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a32188c740a455bab278f9098212b8fec}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_doxyparse_a882b6cff2abddabafbe010c231455c19}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_a512157ca96e7b26f8b6827362a2a3ba0}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a926369daa75db9967dc5c6f818b5b406}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_latex_code_generator_ae516b197acd77b6c3b432498a4ded811}{Latex\+Code\+Generator}}, \mbox{\hyperlink{class_man_generator_a3fe4aad0243fbecd3b746448a9373d3c}{Man\+Generator}}, and \mbox{\hyperlink{class_r_t_f_generator_a4e6a13e14340ff6585c305d3c9b55c4f}{R\+T\+F\+Generator}}.
+
+\mbox{\Hypertarget{class_code_output_interface_a4326ca642f6ec228466ae310622f73ad}\label{class_code_output_interface_a4326ca642f6ec228466ae310622f73ad}} 
+\index{CodeOutputInterface@{CodeOutputInterface}!writeTooltip@{writeTooltip}}
+\index{writeTooltip@{writeTooltip}!CodeOutputInterface@{CodeOutputInterface}}
+\doxysubsubsection{\texorpdfstring{writeTooltip()}{writeTooltip()}}
+{\footnotesize\ttfamily virtual void Code\+Output\+Interface\+::write\+Tooltip (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const \mbox{\hyperlink{struct_doc_link_info}{Doc\+Link\+Info}} \&}]{doc\+Info,  }\item[{const char $\ast$}]{decl,  }\item[{const char $\ast$}]{desc,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{def\+Info,  }\item[{const \mbox{\hyperlink{struct_source_link_info}{Source\+Link\+Info}} \&}]{decl\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes a tool tip definition 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique identifier for the tooltip \\
+\hline
+{\em doc\+Info} & Info about the symbol\textquotesingle{}s documentation. \\
+\hline
+{\em decl} & full declaration of the symbol (for functions) \\
+\hline
+{\em desc} & brief description for the symbol \\
+\hline
+{\em def\+Info} & Info about the symbol\textquotesingle{}s definition in the source code \\
+\hline
+{\em decl\+Info} & Info about the symbol\textquotesingle{}s declaration in the source code \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_output_list_a3cebc68a6a4524ef4b78c4e81d5127eb}{Output\+List}}, \mbox{\hyperlink{class_docbook_generator_a86c6e83addf31b0c377fbe6ecab97769}{Docbook\+Generator}}, \mbox{\hyperlink{class_html_generator_ad21a9b170d8f644619f287a233c6b549}{Html\+Generator}}, \mbox{\hyperlink{class_latex_generator_a0d3d8d57eb16730742b95b4c460cce1f}{Latex\+Generator}}, \mbox{\hyperlink{class_html_code_generator_a6edc5ab4a379a6edfaac4e4c36db4178}{Html\+Code\+Generator}}, \mbox{\hyperlink{class_dev_null_code_doc_interface_a3f251d7e2651aa943adf84c35e27d094}{Dev\+Null\+Code\+Doc\+Interface}}, \mbox{\hyperlink{class_man_generator_a8ec440b278091bf61579f35cd8237a25}{Man\+Generator}}, \mbox{\hyperlink{class_r_t_f_generator_a06e0455dd78d9d79ea51e6d31e6877fe}{R\+T\+F\+Generator}}, \mbox{\hyperlink{class_doxyparse_a1134b46ed49cafec27797aa1dc24fd25}{Doxyparse}}, \mbox{\hyperlink{class_x_ref_dummy_code_generator_ab174d5a290293c32246eb01ccb937645}{X\+Ref\+Dummy\+Code\+Generator}}, \mbox{\hyperlink{class_docbook_code_generator_a5ce309cd68be3ce9eabbd2e522c1c286}{Docbook\+Code\+Generator}}, \mbox{\hyperlink{class_x_m_l_code_generator_afe5258b3e63958ce81ce4895d9ce2334}{X\+M\+L\+Code\+Generator}}, and \mbox{\hyperlink{class_latex_code_generator_a1cda601192d87fe472daccdfbabadfce}{Latex\+Code\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{outputgen_8h}{outputgen.\+h}}\end{DoxyCompactItemize}

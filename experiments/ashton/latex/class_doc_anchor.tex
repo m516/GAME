@@ -1,0 +1,92 @@
+\hypertarget{class_doc_anchor}{}\doxysection{Doc\+Anchor Class Reference}
+\label{class_doc_anchor}\index{DocAnchor@{DocAnchor}}
+
+
+{\ttfamily \#include $<$docparser.\+h$>$}
+
+Inheritance diagram for Doc\+Anchor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doc_anchor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doc_anchor_afed6b91bf689b2ecd14b18bf9f62c3b8}{Doc\+Anchor}} (\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$\mbox{\hyperlink{class_doc_node_a73e8ad29a91cfceb0968eb00db71a23d}{parent}}, const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&\mbox{\hyperlink{gd_8h_a65841f8ec0ab4e93010736388282aada}{id}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} new\+Anchor)
+\item 
+\mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} \mbox{\hyperlink{class_doc_anchor_aec825aa865b67f496e610281f2cf1f51}{kind}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_anchor_aa2b10316da4800824d00ed52d8eee959}{anchor}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_doc_anchor_ae8a62d8e80af9d1cf04561fcbe07c343}{file}} () const
+\item 
+void \mbox{\hyperlink{class_doc_anchor_aab4638b79fb244e363d5d028c7a2cd65}{accept}} (\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$v)
+\item 
+const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}} \& \mbox{\hyperlink{class_doc_anchor_aa7635d85784a4c1a14801f1654cdf2e4}{attribs}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing an anchor 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doc_anchor_afed6b91bf689b2ecd14b18bf9f62c3b8}\label{class_doc_anchor_afed6b91bf689b2ecd14b18bf9f62c3b8}} 
+\index{DocAnchor@{DocAnchor}!DocAnchor@{DocAnchor}}
+\index{DocAnchor@{DocAnchor}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{DocAnchor()}{DocAnchor()}}
+{\footnotesize\ttfamily Doc\+Anchor\+::\+Doc\+Anchor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_node}{Doc\+Node}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \&}]{id,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{new\+Anchor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doc_anchor_aab4638b79fb244e363d5d028c7a2cd65}\label{class_doc_anchor_aab4638b79fb244e363d5d028c7a2cd65}} 
+\index{DocAnchor@{DocAnchor}!accept@{accept}}
+\index{accept@{accept}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Doc\+Anchor\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_doc_visitor}{Doc\+Visitor}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Acceptor function for node visitors. Part of the visitor pattern. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Abstract visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_doc_node_a5303a550cbe6395663bf9b9dad28cbf1}{Doc\+Node}}.
+
+\mbox{\Hypertarget{class_doc_anchor_aa2b10316da4800824d00ed52d8eee959}\label{class_doc_anchor_aa2b10316da4800824d00ed52d8eee959}} 
+\index{DocAnchor@{DocAnchor}!anchor@{anchor}}
+\index{anchor@{anchor}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{anchor()}{anchor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Anchor\+::anchor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_anchor_aa7635d85784a4c1a14801f1654cdf2e4}\label{class_doc_anchor_aa7635d85784a4c1a14801f1654cdf2e4}} 
+\index{DocAnchor@{DocAnchor}!attribs@{attribs}}
+\index{attribs@{attribs}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{attribs()}{attribs()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_html_attrib_list}{Html\+Attrib\+List}}\& Doc\+Anchor\+::attribs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_anchor_ae8a62d8e80af9d1cf04561fcbe07c343}\label{class_doc_anchor_ae8a62d8e80af9d1cf04561fcbe07c343}} 
+\index{DocAnchor@{DocAnchor}!file@{file}}
+\index{file@{file}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Doc\+Anchor\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_doc_anchor_aec825aa865b67f496e610281f2cf1f51}\label{class_doc_anchor_aec825aa865b67f496e610281f2cf1f51}} 
+\index{DocAnchor@{DocAnchor}!kind@{kind}}
+\index{kind@{kind}!DocAnchor@{DocAnchor}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_doc_node_aebd16e89ca590d84cbd40543ea5faadb}{Kind}} Doc\+Anchor\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the kind of node. Provides runtime type information 
+
+Implements \mbox{\hyperlink{class_doc_node_a108ffd214a72ba6e93dac084a8f58049}{Doc\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{docparser_8h}{docparser.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{docparser_8cpp}{docparser.\+cpp}}\end{DoxyCompactItemize}

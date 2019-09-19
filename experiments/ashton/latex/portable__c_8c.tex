@@ -1,0 +1,33 @@
+\hypertarget{portable__c_8c}{}\doxysection{doxygen/src/portable\+\_\+c.c File Reference}
+\label{portable__c_8c}\index{doxygen/src/portable\_c.c@{doxygen/src/portable\_c.c}}
+{\ttfamily \#include $<$iconv.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{portable__c_8c_a265cc0f73ee132a66ce0669949359399}{portable\+\_\+iconv\+\_\+open}} (const char $\ast$tocode, const char $\ast$fromcode)
+\item 
+size\+\_\+t \mbox{\hyperlink{portable__c_8c_a8ca77f1a4e1ca459169752103338ab0c}{portable\+\_\+iconv}} (void $\ast$cd, char $\ast$$\ast$inbuf, size\+\_\+t $\ast$inbytesleft, char $\ast$$\ast$outbuf, size\+\_\+t $\ast$outbytesleft)
+\item 
+int \mbox{\hyperlink{portable__c_8c_a3f98144680118aada1a93d2d4ba6173b}{portable\+\_\+iconv\+\_\+close}} (void $\ast$cd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{portable__c_8c_a8ca77f1a4e1ca459169752103338ab0c}\label{portable__c_8c_a8ca77f1a4e1ca459169752103338ab0c}} 
+\index{portable\_c.c@{portable\_c.c}!portable\_iconv@{portable\_iconv}}
+\index{portable\_iconv@{portable\_iconv}!portable\_c.c@{portable\_c.c}}
+\doxysubsubsection{\texorpdfstring{portable\_iconv()}{portable\_iconv()}}
+{\footnotesize\ttfamily size\+\_\+t portable\+\_\+iconv (\begin{DoxyParamCaption}\item[{void $\ast$}]{cd,  }\item[{char $\ast$$\ast$}]{inbuf,  }\item[{size\+\_\+t $\ast$}]{inbytesleft,  }\item[{char $\ast$$\ast$}]{outbuf,  }\item[{size\+\_\+t $\ast$}]{outbytesleft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{portable__c_8c_a3f98144680118aada1a93d2d4ba6173b}\label{portable__c_8c_a3f98144680118aada1a93d2d4ba6173b}} 
+\index{portable\_c.c@{portable\_c.c}!portable\_iconv\_close@{portable\_iconv\_close}}
+\index{portable\_iconv\_close@{portable\_iconv\_close}!portable\_c.c@{portable\_c.c}}
+\doxysubsubsection{\texorpdfstring{portable\_iconv\_close()}{portable\_iconv\_close()}}
+{\footnotesize\ttfamily int portable\+\_\+iconv\+\_\+close (\begin{DoxyParamCaption}\item[{void $\ast$}]{cd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{portable__c_8c_a265cc0f73ee132a66ce0669949359399}\label{portable__c_8c_a265cc0f73ee132a66ce0669949359399}} 
+\index{portable\_c.c@{portable\_c.c}!portable\_iconv\_open@{portable\_iconv\_open}}
+\index{portable\_iconv\_open@{portable\_iconv\_open}!portable\_c.c@{portable\_c.c}}
+\doxysubsubsection{\texorpdfstring{portable\_iconv\_open()}{portable\_iconv\_open()}}
+{\footnotesize\ttfamily void$\ast$ portable\+\_\+iconv\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{tocode,  }\item[{const char $\ast$}]{fromcode }\end{DoxyParamCaption})}
+

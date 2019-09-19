@@ -1,0 +1,86 @@
+\hypertarget{class_compound_error_handler}{}\doxysection{Compound\+Error\+Handler Class Reference}
+\label{class_compound_error_handler}\index{CompoundErrorHandler@{CompoundErrorHandler}}
+Inheritance diagram for Compound\+Error\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_compound_error_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_compound_error_handler_a24c28bdf29baa390451a138cb835491e}{$\sim$\+Compound\+Error\+Handler}} ()
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_compound_error_handler_a80ccb953cac3ead66ae9c8892d8e3c03}{warning}} (const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_compound_error_handler_a6b83c3c1e17622a7f33a977fc8f146c1}{error}} (const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&)
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_compound_error_handler_a64adb9938c3f3e70a76cc4a224f0d093}{fatal\+Error}} (const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&exception)
+\item 
+\mbox{\hyperlink{class_q_string}{Q\+String}} \mbox{\hyperlink{class_compound_error_handler_aceb61310e8c5649d6390a8dff0992caf}{error\+String}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_compound_error_handler_a24c28bdf29baa390451a138cb835491e}\label{class_compound_error_handler_a24c28bdf29baa390451a138cb835491e}} 
+\index{CompoundErrorHandler@{CompoundErrorHandler}!````~CompoundErrorHandler@{$\sim$CompoundErrorHandler}}
+\index{````~CompoundErrorHandler@{$\sim$CompoundErrorHandler}!CompoundErrorHandler@{CompoundErrorHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$CompoundErrorHandler()}{~CompoundErrorHandler()}}
+{\footnotesize\ttfamily virtual Compound\+Error\+Handler\+::$\sim$\+Compound\+Error\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_compound_error_handler_a6b83c3c1e17622a7f33a977fc8f146c1}\label{class_compound_error_handler_a6b83c3c1e17622a7f33a977fc8f146c1}} 
+\index{CompoundErrorHandler@{CompoundErrorHandler}!error@{error}}
+\index{error@{error}!CompoundErrorHandler@{CompoundErrorHandler}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Compound\+Error\+Handler\+::error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_a}{A}} reader might use this function to report a recoverable error. \mbox{\hyperlink{class_a}{A}} recoverable error corresponds to the definition of \char`\"{}error\char`\"{} in section 1.\+2 of the X\+ML 1.\+0 specification.
+
+The reader must continue to provide normal parsing events after invoking this function.
+
+If this function returns F\+A\+L\+SE the reader will stop parsing and will report an error. The reader will use the function \mbox{\hyperlink{class_compound_error_handler_aceb61310e8c5649d6390a8dff0992caf}{error\+String()}} to get the error message that will be used for reporting the error. 
+
+Implements \mbox{\hyperlink{class_q_xml_error_handler_aa7e25c4198fa16a0312fd48e5718217c}{Q\+Xml\+Error\+Handler}}.
+
+\mbox{\Hypertarget{class_compound_error_handler_aceb61310e8c5649d6390a8dff0992caf}\label{class_compound_error_handler_aceb61310e8c5649d6390a8dff0992caf}} 
+\index{CompoundErrorHandler@{CompoundErrorHandler}!errorString@{errorString}}
+\index{errorString@{errorString}!CompoundErrorHandler@{CompoundErrorHandler}}
+\doxysubsubsection{\texorpdfstring{errorString()}{errorString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_string}{Q\+String}} Compound\+Error\+Handler\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+The reader calls this function to get an error string if any of the handler functions returns F\+A\+L\+SE to him. 
+
+Implements \mbox{\hyperlink{class_q_xml_error_handler_a7b265803d41782e6207b497fe09beff0}{Q\+Xml\+Error\+Handler}}.
+
+\mbox{\Hypertarget{class_compound_error_handler_a64adb9938c3f3e70a76cc4a224f0d093}\label{class_compound_error_handler_a64adb9938c3f3e70a76cc4a224f0d093}} 
+\index{CompoundErrorHandler@{CompoundErrorHandler}!fatalError@{fatalError}}
+\index{fatalError@{fatalError}!CompoundErrorHandler@{CompoundErrorHandler}}
+\doxysubsubsection{\texorpdfstring{fatalError()}{fatalError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Compound\+Error\+Handler\+::fatal\+Error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_a}{A}} reader must use this function to report a non-\/recoverable error.
+
+If this function returns T\+R\+UE the reader might try to go on parsing and reporting further errors; but no regular parsing events are reported. 
+
+Implements \mbox{\hyperlink{class_q_xml_error_handler_aaa8c1ad1b42a5257cf2344c7fe101797}{Q\+Xml\+Error\+Handler}}.
+
+\mbox{\Hypertarget{class_compound_error_handler_a80ccb953cac3ead66ae9c8892d8e3c03}\label{class_compound_error_handler_a80ccb953cac3ead66ae9c8892d8e3c03}} 
+\index{CompoundErrorHandler@{CompoundErrorHandler}!warning@{warning}}
+\index{warning@{warning}!CompoundErrorHandler@{CompoundErrorHandler}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Compound\+Error\+Handler\+::warning (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_parse_exception}{Q\+Xml\+Parse\+Exception}} \&}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_a}{A}} reader might use this function to report a warning. Warnings are conditions that are not errors or fatal errors as defined by the X\+ML 1.\+0 specification.
+
+If this function returns F\+A\+L\+SE the reader will stop parsing and will report an error. The reader will use the function \mbox{\hyperlink{class_compound_error_handler_aceb61310e8c5649d6390a8dff0992caf}{error\+String()}} to get the error message that will be used for reporting the error. 
+
+Implements \mbox{\hyperlink{class_q_xml_error_handler_a79ae0cce3316a76b7777c6e90b101afe}{Q\+Xml\+Error\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{compoundhandler_8cpp}{compoundhandler.\+cpp}}\end{DoxyCompactItemize}

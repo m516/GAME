@@ -1,0 +1,212 @@
+\hypertarget{class_html_help}{}\doxysection{Html\+Help Class Reference}
+\label{class_html_help}\index{HtmlHelp@{HtmlHelp}}
+
+
+{\ttfamily \#include $<$htmlhelp.\+h$>$}
+
+Inheritance diagram for Html\+Help\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_html_help}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_html_help_a0d86f84971a446fc8c61c1a64f8eaaf8}{Html\+Help}} ()
+\item 
+\mbox{\hyperlink{class_html_help_a53ff23898ba7e49de5ce6dba03675f82}{$\sim$\+Html\+Help}} ()
+\item 
+void \mbox{\hyperlink{class_html_help_acf6cb7c477c71f2031b5831f979991d5}{initialize}} ()
+\item 
+void \mbox{\hyperlink{class_html_help_a66375adceef242d73c6554bd7fba6cf7}{finalize}} ()
+\item 
+void \mbox{\hyperlink{class_html_help_aca0008f8813f28f23ca5bcaea25a7bec}{inc\+Contents\+Depth}} ()
+\item 
+void \mbox{\hyperlink{class_html_help_ad76b300748e818d96676f0743738090d}{dec\+Contents\+Depth}} ()
+\item 
+void \mbox{\hyperlink{class_html_help_a4a3979d0d029e0e54ebe9e6020f769ed}{add\+Contents\+Item}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} is\+Dir, const char $\ast$name, const char $\ast$ref, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$anchor, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} separate\+Index, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} add\+To\+Nav\+Index, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$def)
+\item 
+void \mbox{\hyperlink{class_html_help_a6a8899d3196572c5aa187336e43abc8e}{add\+Index\+Item}} (const \mbox{\hyperlink{class_definition}{Definition}} $\ast$context, const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$md, const char $\ast$section\+Anchor, const char $\ast$title)
+\item 
+void \mbox{\hyperlink{class_html_help_a713ba33425a3d63c89322cc513e01414}{add\+Index\+File}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{class_html_help_aba0ad9a05caf2ff7c310aaf751eb22e9}{add\+Image\+File}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{class_html_help_a711b8605fb3b450234299747b5675a0b}{add\+Style\+Sheet\+File}} (const char $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_html_help_abf42fbc4569ef63596a1aa6269d19719}{get\+Language\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_html_help_a6ba39d6a831c897c93a68738d9a721f3}{Html\+Help\+Index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_a}{A}} class that generated the H\+T\+ML Help specific files.
+
+These files can be used with the Microsoft H\+T\+ML Help workshop to generate compressed H\+T\+ML files (.chm). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_html_help_a0d86f84971a446fc8c61c1a64f8eaaf8}\label{class_html_help_a0d86f84971a446fc8c61c1a64f8eaaf8}} 
+\index{HtmlHelp@{HtmlHelp}!HtmlHelp@{HtmlHelp}}
+\index{HtmlHelp@{HtmlHelp}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{HtmlHelp()}{HtmlHelp()}}
+{\footnotesize\ttfamily Html\+Help\+::\+Html\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an html object. The object has to be \mbox{\hyperlink{class_html_help_acf6cb7c477c71f2031b5831f979991d5}{initialized}} before it can be used. \mbox{\Hypertarget{class_html_help_a53ff23898ba7e49de5ce6dba03675f82}\label{class_html_help_a53ff23898ba7e49de5ce6dba03675f82}} 
+\index{HtmlHelp@{HtmlHelp}!````~HtmlHelp@{$\sim$HtmlHelp}}
+\index{````~HtmlHelp@{$\sim$HtmlHelp}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{$\sim$HtmlHelp()}{~HtmlHelp()}}
+{\footnotesize\ttfamily Html\+Help\+::$\sim$\+Html\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_html_help_a4a3979d0d029e0e54ebe9e6020f769ed}\label{class_html_help_a4a3979d0d029e0e54ebe9e6020f769ed}} 
+\index{HtmlHelp@{HtmlHelp}!addContentsItem@{addContentsItem}}
+\index{addContentsItem@{addContentsItem}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{addContentsItem()}{addContentsItem()}}
+{\footnotesize\ttfamily void Html\+Help\+::add\+Contents\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{is\+Dir,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{ref,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{anchor,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{separate\+Index,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{add\+To\+Nav\+Index,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add an list item to the contents file. 
+\begin{DoxyParams}{Parameters}
+{\em is\+Dir} & boolean indicating if this is a dir or file entry \\
+\hline
+{\em name} & the name of the item. \\
+\hline
+{\em ref} & the \mbox{\hyperlink{struct_u_r_l}{U\+RL}} of to the item. \\
+\hline
+{\em file} & the file in which the item is defined. \\
+\hline
+{\em anchor} & the anchor of the item. \\
+\hline
+{\em separate\+Index} & not used. \\
+\hline
+{\em add\+To\+Nav\+Index} & not used. \\
+\hline
+{\em def} & not used. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_index_intf_a61586400de2ef248d0f5e33502ee4c97}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_aba0ad9a05caf2ff7c310aaf751eb22e9}\label{class_html_help_aba0ad9a05caf2ff7c310aaf751eb22e9}} 
+\index{HtmlHelp@{HtmlHelp}!addImageFile@{addImageFile}}
+\index{addImageFile@{addImageFile}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{addImageFile()}{addImageFile()}}
+{\footnotesize\ttfamily void Html\+Help\+::add\+Image\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_index_intf_ac1650d4596d97cdd1de428b06a76daad}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_a713ba33425a3d63c89322cc513e01414}\label{class_html_help_a713ba33425a3d63c89322cc513e01414}} 
+\index{HtmlHelp@{HtmlHelp}!addIndexFile@{addIndexFile}}
+\index{addIndexFile@{addIndexFile}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{addIndexFile()}{addIndexFile()}}
+{\footnotesize\ttfamily void Html\+Help\+::add\+Index\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_index_intf_a153c5c5995155d112c33fed544b44094}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_a6a8899d3196572c5aa187336e43abc8e}\label{class_html_help_a6a8899d3196572c5aa187336e43abc8e}} 
+\index{HtmlHelp@{HtmlHelp}!addIndexItem@{addIndexItem}}
+\index{addIndexItem@{addIndexItem}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{addIndexItem()}{addIndexItem()}}
+{\footnotesize\ttfamily void Html\+Help\+::add\+Index\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{context,  }\item[{const \mbox{\hyperlink{class_member_def}{Member\+Def}} $\ast$}]{md,  }\item[{const char $\ast$}]{section\+Anchor,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_index_intf_a411b3aa9e67181f8afd4de96119733bb}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_a711b8605fb3b450234299747b5675a0b}\label{class_html_help_a711b8605fb3b450234299747b5675a0b}} 
+\index{HtmlHelp@{HtmlHelp}!addStyleSheetFile@{addStyleSheetFile}}
+\index{addStyleSheetFile@{addStyleSheetFile}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{addStyleSheetFile()}{addStyleSheetFile()}}
+{\footnotesize\ttfamily void Html\+Help\+::add\+Style\+Sheet\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_index_intf_a3989fce1306feb90e477cb53fd0daee0}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_ad76b300748e818d96676f0743738090d}\label{class_html_help_ad76b300748e818d96676f0743738090d}} 
+\index{HtmlHelp@{HtmlHelp}!decContentsDepth@{decContentsDepth}}
+\index{decContentsDepth@{decContentsDepth}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{decContentsDepth()}{decContentsDepth()}}
+{\footnotesize\ttfamily void Html\+Help\+::dec\+Contents\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Decrease the level of the contents hierarchy. This will end the unnumber H\+T\+ML list. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_html_help_aca0008f8813f28f23ca5bcaea25a7bec}{inc\+Contents\+Depth()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_index_intf_a920918399556e9afd4d927de3d1f4247}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_a66375adceef242d73c6554bd7fba6cf7}\label{class_html_help_a66375adceef242d73c6554bd7fba6cf7}} 
+\index{HtmlHelp@{HtmlHelp}!finalize@{finalize}}
+\index{finalize@{finalize}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily void Html\+Help\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Finalizes the H\+T\+ML help. This will finish and close the contents file (index.\+hhc) and the index file (index.\+hhk). \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_html_help_acf6cb7c477c71f2031b5831f979991d5}{initialize()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_index_intf_aa5532a767c4ac41167d014209b2ea8d7}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_abf42fbc4569ef63596a1aa6269d19719}\label{class_html_help_abf42fbc4569ef63596a1aa6269d19719}} 
+\index{HtmlHelp@{HtmlHelp}!getLanguageString@{getLanguageString}}
+\index{getLanguageString@{getLanguageString}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{getLanguageString()}{getLanguageString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Html\+Help\+::get\+Language\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_html_help_aca0008f8813f28f23ca5bcaea25a7bec}\label{class_html_help_aca0008f8813f28f23ca5bcaea25a7bec}} 
+\index{HtmlHelp@{HtmlHelp}!incContentsDepth@{incContentsDepth}}
+\index{incContentsDepth@{incContentsDepth}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{incContentsDepth()}{incContentsDepth()}}
+{\footnotesize\ttfamily void Html\+Help\+::inc\+Contents\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Increase the level of the contents hierarchy. This will start a new unnumbered H\+T\+ML list in contents file. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_html_help_ad76b300748e818d96676f0743738090d}{dec\+Contents\+Depth()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_index_intf_ac5ff1647bcf1cc65543258df162a0a7c}{Index\+Intf}}.
+
+\mbox{\Hypertarget{class_html_help_acf6cb7c477c71f2031b5831f979991d5}\label{class_html_help_acf6cb7c477c71f2031b5831f979991d5}} 
+\index{HtmlHelp@{HtmlHelp}!initialize@{initialize}}
+\index{initialize@{initialize}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Html\+Help\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will create a contents file (index.\+hhc) and a index file (index.\+hhk) and write the header of those files. It also creates a project file (index.\+hhp) \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_html_help_a66375adceef242d73c6554bd7fba6cf7}{finalize()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_index_intf_a0e46b4afa0ed269e2d089c8444590515}{Index\+Intf}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_html_help_a6ba39d6a831c897c93a68738d9a721f3}\label{class_html_help_a6ba39d6a831c897c93a68738d9a721f3}} 
+\index{HtmlHelp@{HtmlHelp}!HtmlHelpIndex@{HtmlHelpIndex}}
+\index{HtmlHelpIndex@{HtmlHelpIndex}!HtmlHelp@{HtmlHelp}}
+\doxysubsubsection{\texorpdfstring{HtmlHelpIndex}{HtmlHelpIndex}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_html_help_index}{Html\+Help\+Index}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{htmlhelp_8h}{htmlhelp.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{htmlhelp_8cpp}{htmlhelp.\+cpp}}\end{DoxyCompactItemize}

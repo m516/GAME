@@ -1,0 +1,88 @@
+\hypertarget{struct_gdo_context_tag}{}\doxysection{Gdo\+Context\+Tag Struct Reference}
+\label{struct_gdo_context_tag}\index{GdoContextTag@{GdoContextTag}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} \mbox{\hyperlink{struct_gdo_context_tag_a2973b03be4db0f0f9e6a7e78656b86e7}{img}}
+\item 
+\mbox{\hyperlink{gd_8h_a6c94ac6f254406469cb4a5696f7c25bd}{gd\+Font\+Ptr}} \mbox{\hyperlink{struct_gdo_context_tag_a86f25041979be06613ee0126ebce8c16}{font}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int \mbox{\hyperlink{struct_gdo_context_tag_a2adbdb2d87ec89e398df3224870be222}{ref}}\\
+\>\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{ADrawColour}} \mbox{\hyperlink{struct_gdo_context_tag_ab645ef84e98f9488022828d1be71d99d}{col}}\\
+\} \mbox{\hyperlink{struct_gdo_context_tag_a9f4dbb927ce190fa86fff9eca2e2fab2}{colour}} \mbox{[}\mbox{\hyperlink{mscgen__gd__out_8c_a24fa929a4da4acf9bb3fc3e96533fc03}{MAX\_COLOURS}}\mbox{]}\\
+
+\end{tabbing}\item 
+int \mbox{\hyperlink{struct_gdo_context_tag_a11cb243f129701dbbfc6cb8fdfd10df1}{colour\+Count}}
+\item 
+int \mbox{\hyperlink{struct_gdo_context_tag_a65355e4ea8b8961d75571adbe7cf5fd6}{pen}}
+\item 
+int \mbox{\hyperlink{struct_gdo_context_tag_ae6cbfd075b6bdc71682eb6c99d90ce84}{bgpen}}
+\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{struct_gdo_context_tag_a47713c1eddab2434f2c63d6b6d81e780}{out\+File}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_gdo_context_tag_ae6cbfd075b6bdc71682eb6c99d90ce84}\label{struct_gdo_context_tag_ae6cbfd075b6bdc71682eb6c99d90ce84}} 
+\index{GdoContextTag@{GdoContextTag}!bgpen@{bgpen}}
+\index{bgpen@{bgpen}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{bgpen}{bgpen}}
+{\footnotesize\ttfamily int Gdo\+Context\+Tag\+::bgpen}
+
+Background colour for rendering text. \mbox{\Hypertarget{struct_gdo_context_tag_ab645ef84e98f9488022828d1be71d99d}\label{struct_gdo_context_tag_ab645ef84e98f9488022828d1be71d99d}} 
+\index{GdoContextTag@{GdoContextTag}!col@{col}}
+\index{col@{col}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} Gdo\+Context\+Tag\+::col}
+
+\mbox{\Hypertarget{struct_gdo_context_tag_a9f4dbb927ce190fa86fff9eca2e2fab2}\label{struct_gdo_context_tag_a9f4dbb927ce190fa86fff9eca2e2fab2}} 
+\index{GdoContextTag@{GdoContextTag}!colour@{colour}}
+\index{colour@{colour}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{colour}{colour}}
+{\footnotesize\ttfamily struct \{ ... \} 
+     Gdo\+Context\+Tag\+::colour\mbox{[}\mbox{\hyperlink{mscgen__gd__out_8c_a24fa929a4da4acf9bb3fc3e96533fc03}{M\+A\+X\+\_\+\+C\+O\+L\+O\+U\+RS}}\mbox{]}}
+
+Array of colours and GD references. \mbox{\Hypertarget{struct_gdo_context_tag_a11cb243f129701dbbfc6cb8fdfd10df1}\label{struct_gdo_context_tag_a11cb243f129701dbbfc6cb8fdfd10df1}} 
+\index{GdoContextTag@{GdoContextTag}!colourCount@{colourCount}}
+\index{colourCount@{colourCount}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{colourCount}{colourCount}}
+{\footnotesize\ttfamily int Gdo\+Context\+Tag\+::colour\+Count}
+
+Number of valid references in {\itshape colour\+Ref}\mbox{[}\mbox{]}. \mbox{\Hypertarget{struct_gdo_context_tag_a86f25041979be06613ee0126ebce8c16}\label{struct_gdo_context_tag_a86f25041979be06613ee0126ebce8c16}} 
+\index{GdoContextTag@{GdoContextTag}!font@{font}}
+\index{font@{font}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gd_8h_a6c94ac6f254406469cb4a5696f7c25bd}{gd\+Font\+Ptr}} Gdo\+Context\+Tag\+::font}
+
+\mbox{\Hypertarget{struct_gdo_context_tag_a2973b03be4db0f0f9e6a7e78656b86e7}\label{struct_gdo_context_tag_a2973b03be4db0f0f9e6a7e78656b86e7}} 
+\index{GdoContextTag@{GdoContextTag}!img@{img}}
+\index{img@{img}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gd_8h_afe93bfeeff04d32572cef4b9a7613ec8}{gd\+Image\+Ptr}} Gdo\+Context\+Tag\+::img}
+
+\mbox{\Hypertarget{struct_gdo_context_tag_a47713c1eddab2434f2c63d6b6d81e780}\label{struct_gdo_context_tag_a47713c1eddab2434f2c63d6b6d81e780}} 
+\index{GdoContextTag@{GdoContextTag}!outFile@{outFile}}
+\index{outFile@{outFile}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{outFile}{outFile}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Gdo\+Context\+Tag\+::out\+File}
+
+\mbox{\Hypertarget{struct_gdo_context_tag_a65355e4ea8b8961d75571adbe7cf5fd6}\label{struct_gdo_context_tag_a65355e4ea8b8961d75571adbe7cf5fd6}} 
+\index{GdoContextTag@{GdoContextTag}!pen@{pen}}
+\index{pen@{pen}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{pen}{pen}}
+{\footnotesize\ttfamily int Gdo\+Context\+Tag\+::pen}
+
+The current pen for GD. \mbox{\Hypertarget{struct_gdo_context_tag_a2adbdb2d87ec89e398df3224870be222}\label{struct_gdo_context_tag_a2adbdb2d87ec89e398df3224870be222}} 
+\index{GdoContextTag@{GdoContextTag}!ref@{ref}}
+\index{ref@{ref}!GdoContextTag@{GdoContextTag}}
+\doxysubsubsection{\texorpdfstring{ref}{ref}}
+{\footnotesize\ttfamily int Gdo\+Context\+Tag\+::ref}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/libmscgen/\mbox{\hyperlink{mscgen__gd__out_8c}{mscgen\+\_\+gd\+\_\+out.\+c}}\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\hypertarget{class_dot_class_graph}{}\doxysection{Dot\+Class\+Graph Class Reference}
+\label{class_dot_class_graph}\index{DotClassGraph@{DotClassGraph}}
+
+
+{\ttfamily \#include $<$dotclassgraph.\+h$>$}
+
+Inheritance diagram for Dot\+Class\+Graph\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dot_class_graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dot_class_graph_a53601818c690d945d05a971b506bb5df}{Dot\+Class\+Graph}} (const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$cd, \mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72}{Graph\+Type}} \mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\item 
+\mbox{\hyperlink{class_dot_class_graph_a0b61a10dee46f6b05575aa3d1b6c8800}{$\sim$\+Dot\+Class\+Graph}} ()
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_class_graph_a828e0e888fb52189a320a57a1eb96fe7}{is\+Trivial}} () const
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_dot_class_graph_a4779548a943f89fd72b36b3d3694c135}{is\+Too\+Big}} () const
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dot_class_graph_ab94edc8a4a855ad7b01150ec0476fdba}{write\+Graph}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}}, \mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}} gf, \mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}{Embedded\+Output\+Format}} ef, const char $\ast$path, const char $\ast$file\+Name, const char $\ast$rel\+Path, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} T\+B\+Rank=\mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} image\+Map=\mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}, int graph\+Id=-\/1)
+\item 
+void \mbox{\hyperlink{class_dot_class_graph_ab0c9eaee7ee8abd4ffe7f849dd449da8}{write\+X\+ML}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\item 
+void \mbox{\hyperlink{class_dot_class_graph_a0b0d779c62489f345b60ae041bfbb61b}{write\+Docbook}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\item 
+void \mbox{\hyperlink{class_dot_class_graph_a58ac0d426aa0e05f0624ea0aff1cfb11}{write\+D\+EF}} (\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&\mbox{\hyperlink{058__bracket__recursion_8tcl_a69e959f6901827e4d8271aeaa5fba0fc}{t}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dot_class_graph_a67aaad07e21622b0573da71dce140c07}{get\+Base\+Name}} () const
+\item 
+virtual \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dot_class_graph_a1dae375c9825c64663c8cc4f3a247fc4}{get\+Map\+Label}} () const
+\item 
+virtual void \mbox{\hyperlink{class_dot_class_graph_a57ab62048bac98a787cefe8d46faa035}{compute\+The\+Graph}} ()
+\item 
+virtual \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{class_dot_class_graph_a7f252d174e457ffe86030b43be98f815}{get\+Img\+Alt\+Text}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Representation of a class inheritance or dependency graph 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dot_class_graph_a53601818c690d945d05a971b506bb5df}\label{class_dot_class_graph_a53601818c690d945d05a971b506bb5df}} 
+\index{DotClassGraph@{DotClassGraph}!DotClassGraph@{DotClassGraph}}
+\index{DotClassGraph@{DotClassGraph}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{DotClassGraph()}{DotClassGraph()}}
+{\footnotesize\ttfamily Dot\+Class\+Graph\+::\+Dot\+Class\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_def}{Class\+Def}} $\ast$}]{cd,  }\item[{\mbox{\hyperlink{dotgraph_8h_a0c7c85309652245e03563b127f451f72}{Graph\+Type}}}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_class_graph_a0b61a10dee46f6b05575aa3d1b6c8800}\label{class_dot_class_graph_a0b61a10dee46f6b05575aa3d1b6c8800}} 
+\index{DotClassGraph@{DotClassGraph}!````~DotClassGraph@{$\sim$DotClassGraph}}
+\index{````~DotClassGraph@{$\sim$DotClassGraph}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{$\sim$DotClassGraph()}{~DotClassGraph()}}
+{\footnotesize\ttfamily Dot\+Class\+Graph\+::$\sim$\+Dot\+Class\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dot_class_graph_a57ab62048bac98a787cefe8d46faa035}\label{class_dot_class_graph_a57ab62048bac98a787cefe8d46faa035}} 
+\index{DotClassGraph@{DotClassGraph}!computeTheGraph@{computeTheGraph}}
+\index{computeTheGraph@{computeTheGraph}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{computeTheGraph()}{computeTheGraph()}}
+{\footnotesize\ttfamily void Dot\+Class\+Graph\+::compute\+The\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_dot_graph_ae79ec58a242b807d29c0c71a87e5dfad}{Dot\+Graph}}.
+
+\mbox{\Hypertarget{class_dot_class_graph_a67aaad07e21622b0573da71dce140c07}\label{class_dot_class_graph_a67aaad07e21622b0573da71dce140c07}} 
+\index{DotClassGraph@{DotClassGraph}!getBaseName@{getBaseName}}
+\index{getBaseName@{getBaseName}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{getBaseName()}{getBaseName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dot\+Class\+Graph\+::get\+Base\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_dot_graph_a2f7be5cad20f58313d31aeff025d051f}{Dot\+Graph}}.
+
+\mbox{\Hypertarget{class_dot_class_graph_a7f252d174e457ffe86030b43be98f815}\label{class_dot_class_graph_a7f252d174e457ffe86030b43be98f815}} 
+\index{DotClassGraph@{DotClassGraph}!getImgAltText@{getImgAltText}}
+\index{getImgAltText@{getImgAltText}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{getImgAltText()}{getImgAltText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dot\+Class\+Graph\+::get\+Img\+Alt\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_dot_graph_a573939b174729c51496d841a2dd7c70d}{Dot\+Graph}}.
+
+\mbox{\Hypertarget{class_dot_class_graph_a1dae375c9825c64663c8cc4f3a247fc4}\label{class_dot_class_graph_a1dae375c9825c64663c8cc4f3a247fc4}} 
+\index{DotClassGraph@{DotClassGraph}!getMapLabel@{getMapLabel}}
+\index{getMapLabel@{getMapLabel}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{getMapLabel()}{getMapLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dot\+Class\+Graph\+::get\+Map\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_dot_graph_a72cbb05f87bc1bf2696575ffe20df37e}{Dot\+Graph}}.
+
+\mbox{\Hypertarget{class_dot_class_graph_a4779548a943f89fd72b36b3d3694c135}\label{class_dot_class_graph_a4779548a943f89fd72b36b3d3694c135}} 
+\index{DotClassGraph@{DotClassGraph}!isTooBig@{isTooBig}}
+\index{isTooBig@{isTooBig}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{isTooBig()}{isTooBig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+Class\+Graph\+::is\+Too\+Big (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dot_class_graph_a828e0e888fb52189a320a57a1eb96fe7}\label{class_dot_class_graph_a828e0e888fb52189a320a57a1eb96fe7}} 
+\index{DotClassGraph@{DotClassGraph}!isTrivial@{isTrivial}}
+\index{isTrivial@{isTrivial}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{isTrivial()}{isTrivial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Dot\+Class\+Graph\+::is\+Trivial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dot_class_graph_a58ac0d426aa0e05f0624ea0aff1cfb11}\label{class_dot_class_graph_a58ac0d426aa0e05f0624ea0aff1cfb11}} 
+\index{DotClassGraph@{DotClassGraph}!writeDEF@{writeDEF}}
+\index{writeDEF@{writeDEF}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{writeDEF()}{writeDEF()}}
+{\footnotesize\ttfamily void Dot\+Class\+Graph\+::write\+D\+EF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_class_graph_a0b0d779c62489f345b60ae041bfbb61b}\label{class_dot_class_graph_a0b0d779c62489f345b60ae041bfbb61b}} 
+\index{DotClassGraph@{DotClassGraph}!writeDocbook@{writeDocbook}}
+\index{writeDocbook@{writeDocbook}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{writeDocbook()}{writeDocbook()}}
+{\footnotesize\ttfamily void Dot\+Class\+Graph\+::write\+Docbook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_class_graph_ab94edc8a4a855ad7b01150ec0476fdba}\label{class_dot_class_graph_ab94edc8a4a855ad7b01150ec0476fdba}} 
+\index{DotClassGraph@{DotClassGraph}!writeGraph@{writeGraph}}
+\index{writeGraph@{writeGraph}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{writeGraph()}{writeGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} Dot\+Class\+Graph\+::write\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t,  }\item[{\mbox{\hyperlink{dotgraph_8h_ac60ef98d62b78366a17c9f1bda96523f}{Graph\+Output\+Format}}}]{gf,  }\item[{\mbox{\hyperlink{dotgraph_8h_a8680135da08a5ef57cebe20060912dcc}{Embedded\+Output\+Format}}}]{ef,  }\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{rel\+Path,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{T\+B\+Rank = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}},  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{image\+Map = {\ttfamily \mbox{\hyperlink{qglobal_8h_a04a6422a52070f0dc478693da640242b}{T\+R\+UE}}},  }\item[{int}]{graph\+Id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dot_class_graph_ab0c9eaee7ee8abd4ffe7f849dd449da8}\label{class_dot_class_graph_ab0c9eaee7ee8abd4ffe7f849dd449da8}} 
+\index{DotClassGraph@{DotClassGraph}!writeXML@{writeXML}}
+\index{writeXML@{writeXML}!DotClassGraph@{DotClassGraph}}
+\doxysubsubsection{\texorpdfstring{writeXML()}{writeXML()}}
+{\footnotesize\ttfamily void Dot\+Class\+Graph\+::write\+X\+ML (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_text_stream}{F\+Text\+Stream}} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{dotclassgraph_8h}{dotclassgraph.\+h}}\item 
+doxygen/src/\mbox{\hyperlink{dotclassgraph_8cpp}{dotclassgraph.\+cpp}}\end{DoxyCompactItemize}

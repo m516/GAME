@@ -1,0 +1,86 @@
+\hypertarget{mscgen__adraw_8c}{}\doxysection{doxygen/libmscgen/mscgen\+\_\+adraw.c File Reference}
+\label{mscgen__adraw_8c}\index{doxygen/libmscgen/mscgen\_adraw.c@{doxygen/libmscgen/mscgen\_adraw.c}}
+{\ttfamily \#include \char`\"{}mscgen\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mscgen\+\_\+adraw\+\_\+int.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} \mbox{\hyperlink{mscgen__adraw_8c_a52b8f24e981052c7a0ac61b493d3a6bc}{A\+Draw\+Open}} (unsigned int \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}, unsigned int \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}, const char $\ast$\mbox{\hyperlink{examples_2_c_make_lists_8txt_a23c022ca6bc91151baee0c9eb0907f12}{file}}, const char $\ast$font\+Name, \mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}} type, struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}} $\ast$out\+Context)
+\item 
+\mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} \mbox{\hyperlink{mscgen__adraw_8c_a0156bf03ca0db741fc0d048da07dc291}{A\+Draw\+Get\+Colour}} (const char $\ast$colour)
+\item 
+void \mbox{\hyperlink{mscgen__adraw_8c_a578c9287411976da4f4fe05e578be53a}{A\+Draw\+Compute\+Arc\+Point}} (float \mbox{\hyperlink{gd_8h_af905a9989361d094908ad04e08f6429d}{cx}}, float \mbox{\hyperlink{gd_8h_a1e047c0b5d614dc04a5b8a5142611e4d}{cy}}, float \mbox{\hyperlink{gd_8h_a0133765daeaba536cb40f54e1eaa43c9}{w}}, float \mbox{\hyperlink{060__command__switch_8tcl_af96fd0966e32a310a0778d2e5c357700}{h}}, float degrees, unsigned int $\ast$\mbox{\hyperlink{main_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}, unsigned int $\ast$\mbox{\hyperlink{058__bracket__recursion_8tcl_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mscgen__adraw_8c_a578c9287411976da4f4fe05e578be53a}\label{mscgen__adraw_8c_a578c9287411976da4f4fe05e578be53a}} 
+\index{mscgen\_adraw.c@{mscgen\_adraw.c}!ADrawComputeArcPoint@{ADrawComputeArcPoint}}
+\index{ADrawComputeArcPoint@{ADrawComputeArcPoint}!mscgen\_adraw.c@{mscgen\_adraw.c}}
+\doxysubsubsection{\texorpdfstring{ADrawComputeArcPoint()}{ADrawComputeArcPoint()}}
+{\footnotesize\ttfamily void A\+Draw\+Compute\+Arc\+Point (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{w,  }\item[{float}]{h,  }\item[{float}]{degrees,  }\item[{unsigned int $\ast$}]{x,  }\item[{unsigned int $\ast$}]{y }\end{DoxyParamCaption})}
+
+Compute the position of a point on an arc. This allows co-\/ordinates on arc drawn using arc() or dotted\+Arc() to be computed. The centre and bounding box for the arc are supplied as well as an angular offset.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cx} & Center of the arc. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cy} & Center of the arc. \\
+\hline
+\mbox{\texttt{ in}}  & {\em w} & Arc x-\/diameter (width). \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & Arc y-\/diameter (height). \\
+\hline
+\mbox{\texttt{ in}}  & {\em degrees} & Position on the arc to be returned. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em x} & Pointer to fill with x coordinate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & Pointer to fill with y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mscgen__adraw_8c_a0156bf03ca0db741fc0d048da07dc291}\label{mscgen__adraw_8c_a0156bf03ca0db741fc0d048da07dc291}} 
+\index{mscgen\_adraw.c@{mscgen\_adraw.c}!ADrawGetColour@{ADrawGetColour}}
+\index{ADrawGetColour@{ADrawGetColour}!mscgen\_adraw.c@{mscgen\_adraw.c}}
+\doxysubsubsection{\texorpdfstring{ADrawGetColour()}{ADrawGetColour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__adraw_8h_aaeece236b99530a557134ccceac162c1}{A\+Draw\+Colour}} A\+Draw\+Get\+Colour (\begin{DoxyParamCaption}\item[{const char $\ast$}]{colour }\end{DoxyParamCaption})}
+
+Given a string name for a colour, return the corresponding A\+Draw\+Colour.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em colour} & The string representation of the colour that is sought. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mscgen__adraw_8c_a52b8f24e981052c7a0ac61b493d3a6bc}\label{mscgen__adraw_8c_a52b8f24e981052c7a0ac61b493d3a6bc}} 
+\index{mscgen\_adraw.c@{mscgen\_adraw.c}!ADrawOpen@{ADrawOpen}}
+\index{ADrawOpen@{ADrawOpen}!mscgen\_adraw.c@{mscgen\_adraw.c}}
+\doxysubsubsection{\texorpdfstring{ADrawOpen()}{ADrawOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mscgen__bool_8h_ae7d38601dfbd73adbe5c1b3ec34e0e13}{Boolean}} A\+Draw\+Open (\begin{DoxyParamCaption}\item[{unsigned int}]{w,  }\item[{unsigned int}]{h,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{font\+Name,  }\item[{\mbox{\hyperlink{mscgen__adraw_8h_a8e068ef737176c5caca39a4dad0bf1ab}{A\+Draw\+Output\+Type}}}]{type,  }\item[{struct \mbox{\hyperlink{struct_a_draw_tag}{A\+Draw\+Tag}} $\ast$}]{out\+Context }\end{DoxyParamCaption})}
+
+Create a new drawing context. This will create a drawing context with some dimensions, and some format. After this has been called, the function pointers in the returned structure can be called together with a pointer to the structure itself to cause image functions to be executed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & The width of the output image. \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & The height of the ouput image. \\
+\hline
+\mbox{\texttt{ in}}  & {\em file} & The file to which the image should be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em font\+Name} & The name of the font to use for rendering. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & The output type to generate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$out\+Context} & Pointer to an {\itshape A\+Draw} structure to populate with values. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Boolean} & On error, \mbox{\hyperlink{qglobal_8h_a10e004b6916e78ff4ea8379be80b80cc}{F\+A\+L\+SE}} will be returned. \\
+\hline
+\end{DoxyRetVals}

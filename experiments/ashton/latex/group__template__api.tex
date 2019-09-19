@@ -1,0 +1,79 @@
+\hypertarget{group__template__api}{}\doxysection{Template A\+PI}
+\label{group__template__api}\index{Template API@{Template API}}
+
+
+This is the A\+PI for a \href{https://docs.djangoproject.com/en/1.6/topics/templates/}{\texttt{ Django}} compatible template system written in C++. It is somewhat inspired by Stephen Kelly\textquotesingle{}s \href{http://www.gitorious.org/grantlee/pages/Home}{\texttt{ Grantlee}}.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_template_variant}{Template\+Variant}}
+\begin{DoxyCompactList}\small\item\em Variant type which can hold one value of a fixed set of types. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_auto_ref}{Template\+Auto\+Ref$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_template_list_intf}{Template\+List\+Intf}}
+\begin{DoxyCompactList}\small\item\em Abstract read-\/only interface for a context value of type list. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_list}{Template\+List}}
+\begin{DoxyCompactList}\small\item\em Default implementation of a context value of type list. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_struct_intf}{Template\+Struct\+Intf}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for a context value of type struct. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_struct}{Template\+Struct}}
+\begin{DoxyCompactList}\small\item\em Default implementation of a context value of type struct. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_escape_intf}{Template\+Escape\+Intf}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_interface}{Interface}} used to escape characters in a string. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_spaceless_intf}{Template\+Spaceless\+Intf}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_interface}{Interface}} used to remove redundant spaces inside a spaceless block. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_context}{Template\+Context}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for a template context. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template}{Template}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for a template. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_template_engine}{Template\+Engine}}
+\begin{DoxyCompactList}\small\item\em Engine to create templates and template contexts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the A\+PI for a \href{https://docs.djangoproject.com/en/1.6/topics/templates/}{\texttt{ Django}} compatible template system written in C++. It is somewhat inspired by Stephen Kelly\textquotesingle{}s \href{http://www.gitorious.org/grantlee/pages/Home}{\texttt{ Grantlee}}. 
+
+\mbox{\hyperlink{class_a}{A}} template is simply a text file. \mbox{\hyperlink{class_a}{A}} template contains {\bfseries{variables}}, which get replaced with values when the template is evaluated, and {\bfseries{tags}}, which control the logic of the template.
+
+Variables look like this\+: {\ttfamily \{\{ variable \}\}} When the template engine encounters a variable, it evaluates that variable and replaces it with the result. Variable names consist of any combination of alphanumeric characters and the underscore (\char`\"{}\+\_\+\char`\"{}). Use a dot (.) to access attributes of a structured variable.
+
+One can modify variables for display by using {\bfseries{filters}}, for example\+: {\ttfamily \{\{ value$\vert$default\+:\char`\"{}nothing\char`\"{} \}\}}
+
+Tags look like this\+: {\ttfamily \{\% tag \%\}}. Tags are more complex than variables\+: Some create text in the output, some control flow by performing loops or logic, and some load external information into the template to be used by later variables.
+
+To comment-\/out part of a line in a template, use the comment syntax\+: {\ttfamily \{\# comment text \#\}}.
+
+Supported Django tags\+:
+\begin{DoxyItemize}
+\item {\ttfamily for ... empty ... endfor}
+\item {\ttfamily if ... else ... endif}
+\item {\ttfamily block ... endblock}
+\item {\ttfamily extend}
+\item {\ttfamily include}
+\item {\ttfamily with ... endwith}
+\item {\ttfamily spaceless ... endspaceless}
+\item {\ttfamily cycle}
+\end{DoxyItemize}
+
+Extension tags\+:
+\begin{DoxyItemize}
+\item {\ttfamily create} which instantiates a template and writes the result to a file. The syntax is `\{\% create \textquotesingle{}filename' from \textquotesingle{}template\textquotesingle{} \%\}{\ttfamily . -\/}recursetree{\ttfamily  -\/}markers{\ttfamily  -\/}msg{\ttfamily ...}endmsg{\ttfamily  -\/}set\`{}
+\end{DoxyItemize}
+
+Supported Django filters\+:
+\begin{DoxyItemize}
+\item {\ttfamily default}
+\item {\ttfamily length}
+\item {\ttfamily add}
+\item {\ttfamily divisibleby}
+\end{DoxyItemize}
+
+Extension filters\+:
+\begin{DoxyItemize}
+\item {\ttfamily strip\+Path}
+\item {\ttfamily nowrap}
+\item {\ttfamily prepend}
+\item {\ttfamily append} 
+\end{DoxyItemize}

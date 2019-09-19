@@ -1,0 +1,142 @@
+\hypertarget{struct_f_t_v_node}{}\doxysection{F\+T\+V\+Node Struct Reference}
+\label{struct_f_t_v_node}\index{FTVNode@{FTVNode}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_f_t_v_node_af808dfeec005ea3534220c56c475e4b1}{F\+T\+V\+Node}} (\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{commands_8doc_af18e1003ce4eb8f61f2ba0bcc2cc26bd}{dir}}, const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_a0a0bd3dc69dd06934c4e6362155e0ace}{r}}, const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_af6830d2c644b45088ea8f1f74a46b778}{f}}, const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_ab08ae027fc5777bc4f0629f1b60b35db}{a}}, const char $\ast$\mbox{\hyperlink{060__command__switch_8tcl_acdde3cd86eb2421ce8dbb2e85227d368}{n}}, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} sep\+Index, \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} nav\+Index, const \mbox{\hyperlink{class_definition}{Definition}} $\ast$df)
+\item 
+int \mbox{\hyperlink{struct_f_t_v_node_aa4166ffd2eb641a6ddb5c82f9cb6a142}{compute\+Tree\+Depth}} (int \mbox{\hyperlink{gd_8h_a68fa175816cc25c7c9ea3553ea2aab98}{level}}) const
+\item 
+int \mbox{\hyperlink{struct_f_t_v_node_a909a05c25240d435e54e9ebcc2e24f8f}{num\+Nodes\+At\+Level}} (int \mbox{\hyperlink{gd_8h_a68fa175816cc25c7c9ea3553ea2aab98}{level}}, int max\+Level) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{struct_f_t_v_node_a372062c2fc8595d96798765ae195556d}{is\+Last}}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{struct_f_t_v_node_aa9ffc5909967a0bfe9170e45f6117c64}{is\+Dir}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_f_t_v_node_a71d6d3927c045809ce5fcb6cf15da3d9}{ref}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_f_t_v_node_a9e70cf96146fd5fda79891bdbd45082a}{file}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_f_t_v_node_a9a78c56961b2ea3b97249a149bced5ad}{anchor}}
+\item 
+\mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} \mbox{\hyperlink{struct_f_t_v_node_aa805d89320be25581ff3dcfed7f0c903}{name}}
+\item 
+int \mbox{\hyperlink{struct_f_t_v_node_abc09d6f0f31ec0b09b775da0814ef904}{index}}
+\item 
+\mbox{\hyperlink{class_q_list}{Q\+List}}$<$ \mbox{\hyperlink{struct_f_t_v_node}{F\+T\+V\+Node}} $>$ \mbox{\hyperlink{struct_f_t_v_node_a5e924e9ea4e2d29721bc391b83d5b73a}{children}}
+\item 
+\mbox{\hyperlink{struct_f_t_v_node}{F\+T\+V\+Node}} $\ast$ \mbox{\hyperlink{struct_f_t_v_node_a65ba33768f767c0d634cc94a251f4f9c}{parent}}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{struct_f_t_v_node_a1f979a212a1251b75ec4a06c1ddeafb4}{separate\+Index}}
+\item 
+\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{struct_f_t_v_node_a53c74b2ed0c6f5e54541fcaf086008ed}{add\+To\+Nav\+Index}}
+\item 
+const \mbox{\hyperlink{class_definition}{Definition}} $\ast$ \mbox{\hyperlink{struct_f_t_v_node_a529fbd80e0ccb7f7fa46fd1f0a665e86}{def}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_f_t_v_node_af808dfeec005ea3534220c56c475e4b1}\label{struct_f_t_v_node_af808dfeec005ea3534220c56c475e4b1}} 
+\index{FTVNode@{FTVNode}!FTVNode@{FTVNode}}
+\index{FTVNode@{FTVNode}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{FTVNode()}{FTVNode()}}
+{\footnotesize\ttfamily F\+T\+V\+Node\+::\+F\+T\+V\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{dir,  }\item[{const char $\ast$}]{r,  }\item[{const char $\ast$}]{f,  }\item[{const char $\ast$}]{a,  }\item[{const char $\ast$}]{n,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{sep\+Index,  }\item[{\mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{nav\+Index,  }\item[{const \mbox{\hyperlink{class_definition}{Definition}} $\ast$}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_f_t_v_node_aa4166ffd2eb641a6ddb5c82f9cb6a142}\label{struct_f_t_v_node_aa4166ffd2eb641a6ddb5c82f9cb6a142}} 
+\index{FTVNode@{FTVNode}!computeTreeDepth@{computeTreeDepth}}
+\index{computeTreeDepth@{computeTreeDepth}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{computeTreeDepth()}{computeTreeDepth()}}
+{\footnotesize\ttfamily int F\+T\+V\+Node\+::compute\+Tree\+Depth (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a909a05c25240d435e54e9ebcc2e24f8f}\label{struct_f_t_v_node_a909a05c25240d435e54e9ebcc2e24f8f}} 
+\index{FTVNode@{FTVNode}!numNodesAtLevel@{numNodesAtLevel}}
+\index{numNodesAtLevel@{numNodesAtLevel}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{numNodesAtLevel()}{numNodesAtLevel()}}
+{\footnotesize\ttfamily int F\+T\+V\+Node\+::num\+Nodes\+At\+Level (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{max\+Level }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_f_t_v_node_a53c74b2ed0c6f5e54541fcaf086008ed}\label{struct_f_t_v_node_a53c74b2ed0c6f5e54541fcaf086008ed}} 
+\index{FTVNode@{FTVNode}!addToNavIndex@{addToNavIndex}}
+\index{addToNavIndex@{addToNavIndex}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{addToNavIndex}{addToNavIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} F\+T\+V\+Node\+::add\+To\+Nav\+Index}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a9a78c56961b2ea3b97249a149bced5ad}\label{struct_f_t_v_node_a9a78c56961b2ea3b97249a149bced5ad}} 
+\index{FTVNode@{FTVNode}!anchor@{anchor}}
+\index{anchor@{anchor}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{anchor}{anchor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} F\+T\+V\+Node\+::anchor}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a5e924e9ea4e2d29721bc391b83d5b73a}\label{struct_f_t_v_node_a5e924e9ea4e2d29721bc391b83d5b73a}} 
+\index{FTVNode@{FTVNode}!children@{children}}
+\index{children@{children}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{Q\+List}}$<$\mbox{\hyperlink{struct_f_t_v_node}{F\+T\+V\+Node}}$>$ F\+T\+V\+Node\+::children}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a529fbd80e0ccb7f7fa46fd1f0a665e86}\label{struct_f_t_v_node_a529fbd80e0ccb7f7fa46fd1f0a665e86}} 
+\index{FTVNode@{FTVNode}!def@{def}}
+\index{def@{def}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{def}{def}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_definition}{Definition}}$\ast$ F\+T\+V\+Node\+::def}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a9e70cf96146fd5fda79891bdbd45082a}\label{struct_f_t_v_node_a9e70cf96146fd5fda79891bdbd45082a}} 
+\index{FTVNode@{FTVNode}!file@{file}}
+\index{file@{file}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} F\+T\+V\+Node\+::file}
+
+\mbox{\Hypertarget{struct_f_t_v_node_abc09d6f0f31ec0b09b775da0814ef904}\label{struct_f_t_v_node_abc09d6f0f31ec0b09b775da0814ef904}} 
+\index{FTVNode@{FTVNode}!index@{index}}
+\index{index@{index}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int F\+T\+V\+Node\+::index}
+
+\mbox{\Hypertarget{struct_f_t_v_node_aa9ffc5909967a0bfe9170e45f6117c64}\label{struct_f_t_v_node_aa9ffc5909967a0bfe9170e45f6117c64}} 
+\index{FTVNode@{FTVNode}!isDir@{isDir}}
+\index{isDir@{isDir}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{isDir}{isDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} F\+T\+V\+Node\+::is\+Dir}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a372062c2fc8595d96798765ae195556d}\label{struct_f_t_v_node_a372062c2fc8595d96798765ae195556d}} 
+\index{FTVNode@{FTVNode}!isLast@{isLast}}
+\index{isLast@{isLast}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{isLast}{isLast}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} F\+T\+V\+Node\+::is\+Last}
+
+\mbox{\Hypertarget{struct_f_t_v_node_aa805d89320be25581ff3dcfed7f0c903}\label{struct_f_t_v_node_aa805d89320be25581ff3dcfed7f0c903}} 
+\index{FTVNode@{FTVNode}!name@{name}}
+\index{name@{name}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} F\+T\+V\+Node\+::name}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a65ba33768f767c0d634cc94a251f4f9c}\label{struct_f_t_v_node_a65ba33768f767c0d634cc94a251f4f9c}} 
+\index{FTVNode@{FTVNode}!parent@{parent}}
+\index{parent@{parent}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_t_v_node}{F\+T\+V\+Node}}$\ast$ F\+T\+V\+Node\+::parent}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a71d6d3927c045809ce5fcb6cf15da3d9}\label{struct_f_t_v_node_a71d6d3927c045809ce5fcb6cf15da3d9}} 
+\index{FTVNode@{FTVNode}!ref@{ref}}
+\index{ref@{ref}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{ref}{ref}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_string}{Q\+C\+String}} F\+T\+V\+Node\+::ref}
+
+\mbox{\Hypertarget{struct_f_t_v_node_a1f979a212a1251b75ec4a06c1ddeafb4}\label{struct_f_t_v_node_a1f979a212a1251b75ec4a06c1ddeafb4}} 
+\index{FTVNode@{FTVNode}!separateIndex@{separateIndex}}
+\index{separateIndex@{separateIndex}!FTVNode@{FTVNode}}
+\doxysubsubsection{\texorpdfstring{separateIndex}{separateIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qglobal_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} F\+T\+V\+Node\+::separate\+Index}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/src/\mbox{\hyperlink{ftvhelp_8cpp}{ftvhelp.\+cpp}}\end{DoxyCompactItemize}

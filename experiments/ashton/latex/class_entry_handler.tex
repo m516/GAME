@@ -1,0 +1,108 @@
+\hypertarget{class_entry_handler}{}\doxysection{Entry\+Handler Class Reference}
+\label{class_entry_handler}\index{EntryHandler@{EntryHandler}}
+
+
+Node representing an entry in the table entry.  
+
+
+
+
+{\ttfamily \#include $<$dochandler.\+h$>$}
+
+Inheritance diagram for Entry\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.545894cm]{class_entry_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entry_handler_a41c4849c06cfd1fcbe2b8a2a3a3a696d}{Entry\+Handler}} (\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{class_entry_handler_a439dd97fd68a507da1c371117157e964}{$\sim$\+Entry\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_entry_handler_ac0bbcdb201c9d3afafa0cd346c333b08}{start\+Entry}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+void \mbox{\hyperlink{class_entry_handler_ae4e7fb47298a901beb6435aefecd10e2}{end\+Entry}} ()
+\item 
+void \mbox{\hyperlink{class_entry_handler_abdddf2afd859afbd15aaeb33587de58c}{start\+Paragraph}} (const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&attrib)
+\item 
+virtual Kind \mbox{\hyperlink{class_entry_handler_ad10740267ccd1a18c378e447bb6f297e}{kind}} () const
+\item 
+virtual \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ \mbox{\hyperlink{class_entry_handler_a93de5cfcea45cbef3be35c09c9941985}{contents}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_entry_handler_a9dcc4c9cf395c516267b6a3804c38c76}{Entry\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Node representing an entry in the table entry. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entry_handler_a41c4849c06cfd1fcbe2b8a2a3a3a696d}\label{class_entry_handler_a41c4849c06cfd1fcbe2b8a2a3a3a696d}} 
+\index{EntryHandler@{EntryHandler}!EntryHandler@{EntryHandler}}
+\index{EntryHandler@{EntryHandler}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{EntryHandler()}{EntryHandler()}}
+{\footnotesize\ttfamily Entry\+Handler\+::\+Entry\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_base_handler}{I\+Base\+Handler}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entry_handler_a439dd97fd68a507da1c371117157e964}\label{class_entry_handler_a439dd97fd68a507da1c371117157e964}} 
+\index{EntryHandler@{EntryHandler}!````~EntryHandler@{$\sim$EntryHandler}}
+\index{````~EntryHandler@{$\sim$EntryHandler}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$EntryHandler()}{~EntryHandler()}}
+{\footnotesize\ttfamily Entry\+Handler\+::$\sim$\+Entry\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entry_handler_a93de5cfcea45cbef3be35c09c9941985}\label{class_entry_handler_a93de5cfcea45cbef3be35c09c9941985}} 
+\index{EntryHandler@{EntryHandler}!contents@{contents}}
+\index{contents@{contents}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{contents()}{contents()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_doc_iterator}{I\+Doc\+Iterator}} $\ast$ Entry\+Handler\+::contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_entry_handler_ae4e7fb47298a901beb6435aefecd10e2}\label{class_entry_handler_ae4e7fb47298a901beb6435aefecd10e2}} 
+\index{EntryHandler@{EntryHandler}!endEntry@{endEntry}}
+\index{endEntry@{endEntry}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{endEntry()}{endEntry()}}
+{\footnotesize\ttfamily void Entry\+Handler\+::end\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entry_handler_ad10740267ccd1a18c378e447bb6f297e}\label{class_entry_handler_ad10740267ccd1a18c378e447bb6f297e}} 
+\index{EntryHandler@{EntryHandler}!kind@{kind}}
+\index{kind@{kind}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual Kind Entry\+Handler\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_entry_handler_ac0bbcdb201c9d3afafa0cd346c333b08}\label{class_entry_handler_ac0bbcdb201c9d3afafa0cd346c333b08}} 
+\index{EntryHandler@{EntryHandler}!startEntry@{startEntry}}
+\index{startEntry@{startEntry}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{startEntry()}{startEntry()}}
+{\footnotesize\ttfamily void Entry\+Handler\+::start\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entry_handler_abdddf2afd859afbd15aaeb33587de58c}\label{class_entry_handler_abdddf2afd859afbd15aaeb33587de58c}} 
+\index{EntryHandler@{EntryHandler}!startParagraph@{startParagraph}}
+\index{startParagraph@{startParagraph}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{startParagraph()}{startParagraph()}}
+{\footnotesize\ttfamily void Entry\+Handler\+::start\+Paragraph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_xml_attributes}{Q\+Xml\+Attributes}} \&}]{attrib }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_entry_handler_a9dcc4c9cf395c516267b6a3804c38c76}\label{class_entry_handler_a9dcc4c9cf395c516267b6a3804c38c76}} 
+\index{EntryHandler@{EntryHandler}!EntryIterator@{EntryIterator}}
+\index{EntryIterator@{EntryIterator}!EntryHandler@{EntryHandler}}
+\doxysubsubsection{\texorpdfstring{EntryIterator}{EntryIterator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_entry_iterator}{Entry\+Iterator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8h}{dochandler.\+h}}\item 
+doxygen/addon/doxmlparser/src/\mbox{\hyperlink{dochandler_8cpp}{dochandler.\+cpp}}\end{DoxyCompactItemize}
