@@ -25,7 +25,9 @@ void Rainbow(sf::RectangleShape &, sf::RenderWindow &);
 
 sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
 
-/** Color palette for displaying shapes. */
+/**
+ * Color Palette in the form 0xRRGGBBAA hex
+ */
 uint32_t color_palette[16] = {
 	0xFFffffFF,
 	0xFF6df7FF,
