@@ -1,7 +1,7 @@
 # Ashton's Experiements
 Random experiments including cpp files , SFML, documention, etc.
-# Notes
-## GAME Engine Parts
+## Notes
+### GAME Engine Parts
 - Input
     - Keyboard
     - Mouse
@@ -27,12 +27,16 @@ Random experiments including cpp files , SFML, documention, etc.
     - Login screen
     - Settings screen
     - Main menu
+    - Game search/install/uninstall
     - Game select menu
     - In-game menus
+    - Per-game settings
     - Networking menu
+        - Friends list
+        - "Lobby" Menu
     - Customization menu
 - Scripts
-## Potential Game List
+### Potential Game List
 - Pong
 - Pacman
 - Original Legend of Zelda
