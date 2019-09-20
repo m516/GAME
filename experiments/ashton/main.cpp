@@ -5,11 +5,17 @@
 #include <chrono>
 #include <X11/Xlib.h>
 
+/** Determines which option is displayed */
 bool temp = true;
+/** x location of rect */
 float x = 0;
+/** y location of rect */
 float y = 0;
+/** Delta Time */
 float delta = 0;
+/** Font */
 sf::Font font;
+/** Clock */
 sf::Clock myClock;
 
 void EventHandler(sf::RenderWindow &);
@@ -19,26 +25,27 @@ void Rainbow(sf::RectangleShape &, sf::RenderWindow &);
 
 sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
 
+/** Color palette for displaying shapes. */
 uint32_t color_palette[16] = {
-	0xFFffffff,
-	0xFF6df7c1,
-	0xFF11adc1,
-	0xFF606c81,
-	0xFF393457,
-	0xFF1e8875,
-	0xFF5bb361,
-	0xFFa1e55a,
-	0xFFf7e476,
-	0xFFf99252,
-	0xFFcb4d68,
-	0xFF6a3771,
-	0xFFc92464,
-	0xFFf48cb6,
-	0xFFf7b69e,
-	0xFF9b9c82
+	0xFFffffFF,
+	0xFF6df7FF,
+	0xFF11adFF,
+	0xFF606cFF,
+	0xFF3934FF,
+	0xFF1e88FF,
+	0xFF5bb3FF,
+	0xFFa1e5FF,
+	0xFFf7e4FF,
+	0xFFf992FF,
+	0xFFcb4dFF,
+	0xFF6a37FF,
+	0xFFc924FF,
+	0xFFf48cFF,
+	0xFFf7b6FF,
+	0xFF9b9cFF
 };
 
-// Testing stuff
+/** Main function */
 int main()
 {
 	// Need this to do threading with X
@@ -63,7 +70,7 @@ int main()
 	std::thread thread_obj2(Renderer, std::ref(window));
 	std::thread thread_obj1(Rainbow, std::ref(rect), std::ref(window));
 	// thread_obj.join();
-
+	
 	while (window.isOpen())
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -73,7 +80,7 @@ int main()
 	return 0;
 }
 
-// https://github.com/SFML/SFML/wiki/Source:-Letterbox-effect-using-a-view
+/** https://github.com/SFML/SFML/wiki/Source:-Letterbox-effect-using-a-view */
 sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight) 
 {
 
@@ -115,6 +122,7 @@ sf::View view;
 const sf::Time timePerFrame = sf::milliseconds(1.f); // 1/60 ~ 60FPS
 sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
+/** Cycle colors of input rectangle */
 void Rainbow(sf::RectangleShape &rect, sf::RenderWindow &window)
 {
 	int i = 0;
@@ -132,6 +140,7 @@ void Rainbow(sf::RectangleShape &rect, sf::RenderWindow &window)
 	}
 }
 
+/** Render and display graphics */
 void Renderer(sf::RenderWindow &window)
 {
 	sf::Clock framerate;
@@ -194,13 +203,11 @@ void Renderer(sf::RenderWindow &window)
 	}
 }
 
-/**
- * This is a doc comment
- */
+/** Handles Events */
 void EventHandler(sf::RenderWindow &window)
 {
 	sf::Event event;
-	while (window.pollEvent(event)) /// While events are "queued"
+	while (window.pollEvent(event)) // While events are "queued"
 	{
 		if (event.type == sf::Event::Resized)
 		{
