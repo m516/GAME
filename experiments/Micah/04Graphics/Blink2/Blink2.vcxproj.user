@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
-    <RemoteDebuggerCommand>$(RemoteTargetPath)</RemoteDebuggerCommand>
+    <RemoteTarget>-770713699;192.168.137.8 (username=, port=22, authentication=Password)</RemoteTarget>
     <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
-    <RemoteTarget>387435311;192.168.137.192 (username=, port=22, authentication=Password)</RemoteTarget>
-    <RemoteDebuggingTarget>387435311;192.168.137.192 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <RemoteTarget>-770713699;192.168.137.8 (username=, port=22, authentication=Password)</RemoteTarget>
     <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
     <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
-    <RemoteTarget>387435311;192.168.137.192 (username=, port=22, authentication=Password)</RemoteTarget>
-    <RemoteDebuggingTarget>387435311;192.168.137.192 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
   </PropertyGroup>
 </Project>

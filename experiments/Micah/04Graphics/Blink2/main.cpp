@@ -6,18 +6,18 @@
 #include <chrono>
 
 int x = 0;
-sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!", sf::Style::Fullscreen);
 
 
 int gameThread() {
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
-	
+	printf("%d %d", window.getSize().x, window.getSize().y);
 
 	while (window.isOpen()) {
 		x++;
-		if (x >= 200)x = 0;
+		if (x >= 800)x = 0;
 		std::this_thread::sleep_for(std::chrono::milliseconds(30));
 	}
 }
@@ -45,7 +45,7 @@ int main()
 		
 		shape.setPosition(x, 0);
 
-		window.clear();
+		window.clear(sf::Color::Magenta);
 		window.draw(shape);
 		window.display();
 	}
