@@ -43,6 +43,7 @@ Random experiments including cpp files , SFML, documention, etc.
 - Space Invaders
 - Galaga
 - Tron
+- Asteroids
 - Super Mario
 - Racing game
 - Pokemon
