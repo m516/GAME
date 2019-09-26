@@ -1,0 +1,53 @@
+# Ashton's Experiements
+Random experiments including cpp files , SFML, documention, etc.
+## Notes
+### GAME Engine Parts
+- Input
+    - Keyboard
+    - Mouse
+    - (Future) controller
+- Graphics (Renderer)
+    - Window display
+    - UI
+    - Sprites
+    - Effects
+    - Animations
+- Sound
+    - UI sounds
+    - In-game sounds
+- Networking
+    - Connect to server to access game library
+    - Multiplayer
+    - User login
+- Game "Physics"
+    - Gravity
+    - Movement
+    - Projectiles
+- GUI
+    - Login screen
+    - Settings screen
+    - Main menu
+    - Game search/install/uninstall
+    - Game select menu
+    - In-game menus
+    - Per-game settings
+    - Networking menu
+        - Friends list
+        - "Lobby" Menu
+    - Customization menu
+- Scripts
+### Potential Game List
+- Pong
+- Pacman
+- Original Legend of Zelda
+- Space Invaders
+- Galaga
+- Tron
+- Asteroids
+- Super Mario
+- Racing game
+- Pokemon
+- Super Smash Bro's style game
+- Chess
+- Tic-Tac-Toe
+- Connect Four
