@@ -162,7 +162,7 @@ void Renderer(sf::RenderWindow &window)
 		while (timeSinceLastUpdate > timePerFrame)
 		{
 			delta = timeSinceLastUpdate.asSeconds();
-			window.clear(sf::Color(100, 100, 100));
+			window.clear(sf::Color::Black);
 			window.setView(view);
 
 			sf::Vector2u windowSize = window.getSize();
@@ -215,7 +215,7 @@ void EventHandler(sf::RenderWindow &window)
 		{
 			view = getLetterboxView(view, event.size.width, event.size.height);
 		}
-
+		
 		// Key Down
 		if (event.type == sf::Event::KeyPressed)
 		{
