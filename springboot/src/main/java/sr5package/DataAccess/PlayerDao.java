@@ -1,10 +1,12 @@
 package sr5package.DataAccess;
 
+import org.springframework.stereotype.Repository;
 import sr5package.Entity.Player;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
 
+@Repository
 public class PlayerDao {
     private static Map<Integer, Player> players;
     static {
