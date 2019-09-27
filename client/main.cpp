@@ -6,6 +6,12 @@
 #include <chrono>
 #include <X11/Xlib.h>
 
+/**
+ * Eventually all of this should be in seperate classes and files
+ * but I figured it's easier to think about if its all in one at
+ * first and we can expand and refactor as we go on.
+ */
+
 /** Minimum frame time (1 millisecond)*/
 const sf::Time FRAME_TIME = sf::milliseconds(1.f);
 /** Time since last frame update */
