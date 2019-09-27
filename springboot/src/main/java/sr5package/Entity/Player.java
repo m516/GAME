@@ -19,7 +19,7 @@ public class Player {
         return player_id;
     }
 
-    public void setPlayerId(){
+    public void setPlayerId(int player_id){
         this.player_id = player_id;
     }
 
@@ -27,21 +27,21 @@ public class Player {
         return first_name;
     }
 
-    public void setFirstName(){
+    public void setFirstName(String first_name){
         this.first_name = first_name;
     }
 
     public String getLastName(){
         return last_name;
     }
-    public void setLastName() {
+    public void setLastName(String last_name) {
         this.last_name = last_name;
     }
 
     public String getUsername(){
         return username;
     }
-    public void setUsername(){
+    public void setUsername(String username){
         this.username = username;
     }
 }
