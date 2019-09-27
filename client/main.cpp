@@ -8,9 +8,13 @@
 
 /** Minimum frame time (1 millisecond)*/
 const sf::Time FRAME_TIME = sf::milliseconds(1.f);
+/** Time since last frame update */
 sf::Time timeSinceLastUpdate = sf::Time::Zero;
+/** Map used to create main menu */
 std::map<int, std::string> menu;
+/** Index of currently selected menu item */
 int menuSelection = 0;
+/** Main font */
 sf::Font font;
 
 void EventHandler(sf::RenderWindow &);

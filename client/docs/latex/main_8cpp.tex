@@ -24,13 +24,13 @@ int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 const sf\+::\+Time \mbox{\hyperlink{main_8cpp_a6d23c36da9d205bdc63ebe2f569fa384}{F\+R\+A\+M\+E\+\_\+\+T\+I\+ME}} = sf\+::milliseconds(1.f)
 \begin{DoxyCompactList}\small\item\em Minimum frame time (1 millisecond) \end{DoxyCompactList}\item 
 sf\+::\+Time \mbox{\hyperlink{main_8cpp_ae22722d558a47c312ec8f23670e0a995}{time\+Since\+Last\+Update}} = sf\+::\+Time\+::\+Zero
-\item 
+\begin{DoxyCompactList}\small\item\em Time since last frame update. \end{DoxyCompactList}\item 
 std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{main_8cpp_a39c90fe59a6b603cde85f3bad7fa08d6}{menu}}
-\item 
+\begin{DoxyCompactList}\small\item\em Map used to create main menu. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_a6d8185c16e3a761e43e436a337a46d91}{menu\+Selection}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Index of currently selected menu item. \end{DoxyCompactList}\item 
 sf\+::\+Font \mbox{\hyperlink{main_8cpp_a6d354835cad461f09999bfceea320fc5}{font}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main font. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -83,6 +83,10 @@ Renders current frame.
 \doxysubsubsection{\texorpdfstring{font}{font}}
 {\footnotesize\ttfamily sf\+::\+Font font}
 
+
+
+Main font. 
+
 \mbox{\Hypertarget{main_8cpp_a6d23c36da9d205bdc63ebe2f569fa384}\label{main_8cpp_a6d23c36da9d205bdc63ebe2f569fa384}} 
 \index{main.cpp@{main.cpp}!FRAME\_TIME@{FRAME\_TIME}}
 \index{FRAME\_TIME@{FRAME\_TIME}!main.cpp@{main.cpp}}
@@ -99,15 +103,27 @@ Minimum frame time (1 millisecond)
 \doxysubsubsection{\texorpdfstring{menu}{menu}}
 {\footnotesize\ttfamily std\+::map$<$int, std\+::string$>$ menu}
 
+
+
+Map used to create main menu. 
+
 \mbox{\Hypertarget{main_8cpp_a6d8185c16e3a761e43e436a337a46d91}\label{main_8cpp_a6d8185c16e3a761e43e436a337a46d91}} 
 \index{main.cpp@{main.cpp}!menuSelection@{menuSelection}}
 \index{menuSelection@{menuSelection}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{menuSelection}{menuSelection}}
 {\footnotesize\ttfamily int menu\+Selection = 0}
 
+
+
+Index of currently selected menu item. 
+
 \mbox{\Hypertarget{main_8cpp_ae22722d558a47c312ec8f23670e0a995}\label{main_8cpp_ae22722d558a47c312ec8f23670e0a995}} 
 \index{main.cpp@{main.cpp}!timeSinceLastUpdate@{timeSinceLastUpdate}}
 \index{timeSinceLastUpdate@{timeSinceLastUpdate}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{timeSinceLastUpdate}{timeSinceLastUpdate}}
 {\footnotesize\ttfamily sf\+::\+Time time\+Since\+Last\+Update = sf\+::\+Time\+::\+Zero}
+
+
+
+Time since last frame update. 
 
