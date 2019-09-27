@@ -1,5 +1,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -11,6 +12,8 @@ bool temp = true;
 float x = 0;
 /** y location of rect */
 float y = 0;
+
+float menuSelector = 75;
 /** Delta Time */
 float delta = 0;
 /** Font */
@@ -61,7 +64,8 @@ int main()
 	
 	// window.setFramerateLimit(120);
 	// Load font
-	font.loadFromFile("bitwise.ttf");
+	// font.loadFromFile("bitwise.ttf");
+	font.loadFromFile("alien_encounters/Alien-Encounters-Regular.ttf");
 
 	// Scale window up
 	window.setSize(sf::Vector2u(1920, 1080));
@@ -150,7 +154,11 @@ void Renderer(sf::RenderWindow &window)
 	view.setSize(256, 256);
 	view.setCenter(128, 128);
 	view = getLetterboxView(view, 256, 256);
-
+	sf::RectangleShape border(sf::Vector2f(254, 254));
+	border.setPosition(sf::Vector2f(1.f, 1.f));
+	border.setOutlineColor(sf::Color::White);
+	border.setFillColor(sf::Color::Black);
+	border.setOutlineThickness(1.f);
 	while (window.isOpen())
 	{
 		// Calculate time since last updated frame
@@ -167,38 +175,47 @@ void Renderer(sf::RenderWindow &window)
 
 			sf::Vector2u windowSize = window.getSize();
 			
+			window.draw(border);
+
 			sf::Vector2f movePos(x, y);
-			rect.setPosition(movePos * delta);
 
 			// Draw welcome text
 			sf::Text text;
 			text.setFont(font);
-			text.setString("Welcome to G.A.M.E.");
-			text.setPosition(100, 50);
-			text.setCharacterSize(12); // In Pixels
+			text.setString("Welcome to\nG.A.M.E.");
+			text.setPosition(5, 5);
+			text.setCharacterSize(24 * 2); // In Pixels
+			text.scale(sf::Vector2f(0.5, 0.5));
 			text.setFillColor(sf::Color::White);
 			window.draw(text);
 
-			if (temp)
-			{
-				// Change text and draw
-				text.setString("Option 1");
-				text.setPosition(100, 100);
-				window.draw(text);
-				// Change rectangle color & draw
-				// rect.setFillColor(sf::Color(100, 250, 50));
-				window.draw(rect);
-			}
-			else
-			{
-				text.setString("Option 2");
-				text.setPosition(100, 150);
-				window.draw(text);
-				// rect.setFillColor(sf::Color(250, 100, 50));
-				window.draw(rect);
-			}
+			sf::RectangleShape selector(sf::Vector2f(5, 30));
+			selector.setPosition(5, menuSelector);
+			window.draw(selector);
 
+			text.setString("Play");
+			text.setPosition(15, 75);
+			window.draw(text);
 
+			text.setString("Party");
+			text.setPosition(15, 100);
+			window.draw(text);
+
+			text.setString("Friends");
+			text.setPosition(15, 125);
+			window.draw(text);
+
+			text.setString("Profile");
+			text.setPosition(15, 150);
+			window.draw(text);
+
+			text.setString("Settings");
+			text.setPosition(15, 175);
+			window.draw(text);
+
+			rect.setPosition(movePos * delta);
+			window.draw(rect);
+			
 			// Display the window
 			window.display();
 		}
@@ -208,6 +225,15 @@ void Renderer(sf::RenderWindow &window)
 /** Handles Events */
 void EventHandler(sf::RenderWindow &window)
 {
+	sf::UdpSocket socket;
+	sf::IpAddress server = "10.24.226.130";
+	unsigned short port = 5400;
+
+	if (socket.bind(54000) != sf::Socket::Done)
+	{
+		std::cout << "ERROR" << std::endl;
+	}
+
 	sf::Event event;
 	while (window.pollEvent(event)) // While events are "queued"
 	{
@@ -220,11 +246,18 @@ void EventHandler(sf::RenderWindow &window)
 		if (event.type == sf::Event::KeyPressed)
 		{
 			float speed = 100;
+			char data[6] = "Hello";
+			if (socket.send(data, 6, server, port) != sf::Socket::Done)
+			{
+				std::cout << "SEND ERROR" << std::endl;
+			}
+
 			switch (event.key.code)
 			{
 				// ENTER
 				case sf::Keyboard::Enter:
-					temp = !temp;
+					menuSelector += 25;
+					if (menuSelector > 175) menuSelector = 75;
 					break;
 				// CONTROLS	
 				case sf::Keyboard::Right:
