@@ -44,4 +44,8 @@ public class PlayerDao {
         }
         players.put(id, p);
     }
+
+    public void createPlayer(Player player) {
+        this.players.put(player.getPlayerId(), player);
+    }
 }

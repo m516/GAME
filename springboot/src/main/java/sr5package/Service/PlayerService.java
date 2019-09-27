@@ -29,4 +29,9 @@ public class PlayerService {
 //        System.out.println("Id: " + player.getPlayerId());
         this.playerDao.updatePlayer(player, id);
     }
+
+
+    public void createPlayer(Player player) {
+        this.playerDao.createPlayer(player);
+    }
 }

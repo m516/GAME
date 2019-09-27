@@ -29,4 +29,8 @@ public class PlayerController {
     public void updatePlayer(@RequestBody Player player, @PathVariable int id){
         playerService.updatePlayer(player, id);
     }
+    @RequestMapping(method = RequestMethod.POST)
+    public void createPlayer(@RequestBody Player player){
+        playerService.createPlayer(player);
+    }
 }
