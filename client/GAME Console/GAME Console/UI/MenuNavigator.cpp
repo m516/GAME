@@ -11,7 +11,7 @@ void MenuNavigator::poll() {
 		enter = 1;
 		current_control = Control::NONE;
 	}
-	//TODO finish for up, down, left, right, and enter
+	//TODO finish for up, down, left, right, and exit
 }
 
 void MenuNavigator::clear() {
@@ -31,6 +31,6 @@ void MenuNavigator::setKey(Control keyToSet, sf::Keyboard::Key value) {
 	case Control::ENTER:
 		_keyEnter = value;
 		break;
-		//TODO add cases for up, down, left, right, and enter
+		//TODO add cases for up, down, left, right, and exit
 	}
 }
