@@ -4,9 +4,6 @@
     <list default="true" id="75a46f46-0710-41b8-b446-aa23f9481a1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sr5package/Controller/SnakeHighScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr5package/Controller/SnakeHighScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr5package/DataAccess/PlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr5package/DataAccess/PlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr5package/DataAccess/SnakeHighScoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr5package/DataAccess/SnakeHighScoreDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr5package/Entity/SnakeHighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr5package/Entity/SnakeHighScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sr5package/Service/SnakeHighScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr5package/Service/SnakeHighScoreService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569514357939</updated>
       <workItem from="1569514362688" duration="2295000" />
-      <workItem from="1569533908068" duration="19088000" />
+      <workItem from="1569533908068" duration="21421000" />
     </task>
     <servers />
   </component>

@@ -25,6 +25,7 @@ public class SnakeHighScoreService {
     }
 
     public SnakeHighScore updateSnakeHighScore(SnakeHighScore snakeHighScore, int id) {
+
         return snakeHighScoreDao.updateSnakeHighScore(snakeHighScore, id);
     }
 
