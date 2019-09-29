@@ -229,7 +229,7 @@ void EventHandler(sf::RenderWindow &window)
 	sf::IpAddress server = "10.24.226.130";
 	unsigned short port = 5400;
 
-	if (socket.bind(54000) != sf::Socket::Done)
+	if (socket.bind(5400) != sf::Socket::Done)
 	{
 		std::cout << "ERROR" << std::endl;
 	}
