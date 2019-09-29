@@ -18,6 +18,7 @@ public class SnakeHighScoreController {
     public Collection<SnakeHighScore> getAllSnakeHighScores(){
         return snakeHighScoreService.getAllSnakeHighScores();
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public SnakeHighScore getSnakeHighScoreById(@PathVariable int id){
         return SnakeHighScoreService.getSnakeHighScoreById(id);
