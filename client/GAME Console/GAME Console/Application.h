@@ -1,7 +1,5 @@
 #pragma once
 
-#ifndef APPLICATION_H
-#define APPLICATION_H
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
@@ -15,5 +13,3 @@ public:
 private:
 	sf::CircleShape* shape;
 };
-
-#endif
