@@ -12,6 +12,8 @@
  * first and we can expand and refactor as we go on.
  */
 
+// server/players
+
 /** Minimum frame time (1 millisecond)*/
 const sf::Time FRAME_TIME = sf::milliseconds(1.f);
 /** Time since last frame update */
@@ -39,14 +41,17 @@ int main()
     sf::RenderWindow window(
         sf::VideoMode(256, 256),
         "G.A.M.E.",
-        sf::Style::Fullscreen
+        sf::Style::
     );
     
+    // Create view
     sf::View view;
     view.setSize(256, 256);
     view.setCenter(128, 128);
     view = getLetterboxView(view, 256, 256);
     window.setView(view);
+
+    // Load font
     font.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
 
     // Init menu
@@ -132,6 +137,7 @@ void Renderer(sf::RenderWindow &window)
             border.setOutlineThickness(1.f);
             window.draw(border);
 
+            // Draw title
             sf::Text title;
             title.setFont(font);
             title.setCharacterSize(66 * 2);
@@ -182,6 +188,7 @@ void EventHandler(sf::RenderWindow &window)
         {
             switch (event.key.code)
             {
+                // Menu controls
                 case sf::Keyboard::Up:
                     menuSelection--;
                     if (menuSelection < 0) menuSelection = menu.size() - 1;
@@ -189,6 +196,9 @@ void EventHandler(sf::RenderWindow &window)
                 case sf::Keyboard::Down:
                     menuSelection++;
                     if (menuSelection >= menu.size()) menuSelection = 0;
+                    break;
+                default:
+                    break;
             }
         }
 
