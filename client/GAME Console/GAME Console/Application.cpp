@@ -1,8 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+
 #include "Application.h"
 #include "GUI/Menu/menuItem.h"
+#include "GUI/theme.h"
 
 
 Application::Application(){
@@ -22,13 +24,16 @@ int Application::initialize(){
 	shape = new sf::CircleShape(100.f);
 	shape->setFillColor(sf::Color::Green);
 
+	//Initialize the generic font for the theme
+	theme.loadGenericFont();
+
 	return 0;
 }
 
 
 int Application::run() {
 	//Initial MenuItem test
-	MenuItem menuItem("Pick me!", NULL);
+	MenuItem menuItem(&theme, "Pick me!", NULL);
 	menuItem.setPosition(10, 10);
 	menuItem.setSize(180, 32);
 	menuItem.selected = 0;

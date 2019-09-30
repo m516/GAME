@@ -5,6 +5,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
+#include "../theme.h"
+
 class MenuItem {
 public:
 	/**
@@ -12,7 +14,7 @@ public:
 	@param text the text to display on the menu
 	@param function the function to call when the menu item is activated
 	*/
-	MenuItem(const std::string& description_text, int (*function_when_pressed) ());
+	MenuItem(Theme *theme, const std::string& text, int (*function_when_pressed) ());
 	/**
 	Deconstructor for MenuItem
 	*/
@@ -72,6 +74,9 @@ private:
 	*/
 	sf::Vector2f position;
 	//string of text to display
-	std::string text;
+	sf::Text label;
+	//Instance of rectangle border
 	sf::RectangleShape border;
+	//Reference to current theme
+	Theme* theme;
 };
