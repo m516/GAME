@@ -1,5 +1,10 @@
 #pragma once
 
+#include <string>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+
 class MenuItem {
 public:
 	/**
@@ -7,17 +12,66 @@ public:
 	@param text the text to display on the menu
 	@param function the function to call when the menu item is activated
 	*/
-	MenuItem(char* text, int (*function) ());
+	MenuItem(const std::string& description_text, int (*function_when_pressed) ());
+	/**
+	Deconstructor for MenuItem
+	*/
 	~MenuItem();
-	//true if selected, false if not selected
+	/**
+	true if selected, false if not selected
+	*/
 	int selected = 0;
-	//true if pressed, false if otherwise
+	/**
+	true if pressed, false if otherwise
+	*/
 	int pressed = 0;
-	//string of text to display
-	char *text;
-	//function to call when this menu item is pressed
-	int (*pressedFunction) ();
-	//renders the item as a box with text in it
-	void render(int x, int y, int width, int height);
+	/**
+	function to call when this menu item is pressed
+	*/
+	int (*pressed_function) ();
+	/**
+	Sets the text to display
+	*/
+	void setText(const std::string& description_text);
+
+
+	//Display-oriented code
+	/**
+	Set the size of the menuItem rendered on the screen
+	*/
+	void setSize(float x, float y);
+	void setSize(sf::Vector2f &new_size);
+	/**
+	Get the size of the menuItem rendered on the screen
+	*/
+	sf::Vector2f getSize();
+
+	/**
+	Set the size of the menuItem rendered on the screen
+	*/
+	void setPosition(float x, float y);
+	void setPosition(sf::Vector2f &new_position);
+
+	/**
+	Get the size of the menuItem rendered on the screen
+	*/
+	sf::Vector2f getPosition();
+
+	/**
+	renders the item as a box with text in it
+	@param target the window onto which this MenuItem renders
+	*/
+	void render(sf::RenderWindow *target);
 private:
+	/**
+	The size of the menu item in pixels
+	*/
+	sf::Vector2f size;
+	/**
+	The position of the menu item in pixels
+	*/
+	sf::Vector2f position;
+	//string of text to display
+	std::string text;
+	sf::RectangleShape border;
 };
