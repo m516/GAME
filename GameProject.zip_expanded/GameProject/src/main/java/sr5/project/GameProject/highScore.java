@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "highscore")
+@Table(name = "high_score")
 public class HighScore {
 	private int Id;
 	private String username;

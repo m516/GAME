@@ -1,5 +1,6 @@
 package sr5.project.GameProject;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HighScoreService {
+	
 	@Autowired
 	private HighScoreRepository repo;
 	
