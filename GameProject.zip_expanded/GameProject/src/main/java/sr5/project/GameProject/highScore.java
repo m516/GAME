@@ -4,14 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class highScore {
+@Table(name = "highscore")
+public class HighScore {
 	private int Id;
 	private String username;
 	private int score;
 	
-	public highScore() {
+	public HighScore() {
 	}
 
 	@Id
