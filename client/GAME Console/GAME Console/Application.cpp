@@ -2,9 +2,11 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-#include "Application.h"
 #include "GUI/Menu/menuItem.h"
+#include "GUI/Menu/menuPane.h"
 #include "GUI/theme.h"
+
+#include "application.h"
 
 
 Application::Application(){
@@ -18,7 +20,7 @@ int Application::initialize(){
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
-	window = new sf::RenderWindow(sf::VideoMode(800, 600), "Testing...", sf::Style::Default, settings);
+	window = new sf::RenderWindow(sf::VideoMode(400, 400), "Testing...", sf::Style::Default, settings);
 
 	//Create a test shape
 	shape = new sf::CircleShape(100.f);
@@ -32,11 +34,22 @@ int Application::initialize(){
 
 
 int Application::run() {
-	//Initial MenuItem test
+	//Initial Menu test
+
+	MenuItem menuItem2(&theme, "Don't pick me!", NULL);
+	menuItem2.selected = 1;
+	
 	MenuItem menuItem(&theme, "Pick me!", NULL);
-	menuItem.setPosition(10, 10);
-	menuItem.setSize(180, 32);
 	menuItem.selected = 0;
+
+	MenuPane menu(5);
+	menu.setPosition(100, 100);
+	menu.setSize(200, 32);
+	menu.addItem(menuItem);
+	menu.addItem(menuItem2);
+
+
+	
 
 	while (window->isOpen())
 	{
@@ -49,7 +62,13 @@ int Application::run() {
 
 		window->clear();
 		window->draw(*shape);
-		menuItem.render(window);
+
+		menu.update();
+		menu.render(window);
+		//menuItem.render(window);
+		//menuItem2.render(window);
 		window->display();
 	}
+
+	return 0;
 }

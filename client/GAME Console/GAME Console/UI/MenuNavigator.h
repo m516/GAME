@@ -7,7 +7,7 @@ class MenuNavigator {
 public:
 
 	//The list of controls that go into a menu
-	typedef enum CONTROL
+	typedef enum class CONTROL
 	{
 		UP,
 		DOWN,
@@ -18,6 +18,14 @@ public:
 		NONE
 	} Control;
 
+	typedef enum class STATUS{
+		UP,
+		PRESSED,
+		DOWN,
+		RELEASED,
+		DISABLED
+	} Status;
+
 
 	//Initializes the navigator
 	MenuNavigator();
@@ -26,17 +34,15 @@ public:
 	//Bind a key to a character on the keyboard.
 	//Default WASD controls
 	void setKey(Control controlToSet, sf::Keyboard::Key key);
-	//Disables all controls
-	void clear();
 
 
 	//Controls
-	int up = 0;
-	int down = 0;
-	int left = 0;
-	int right = 0;
-	int enter = 0;
-	int exit = 0;
+	Status up = Status::UP;
+	Status down = Status::UP;
+	Status left = Status::UP;
+	Status right = Status::UP;
+	Status enter = Status::UP;
+	Status exit = Status::UP;
 	Control current_control = Control::NONE;
 
 	//MenuNavigator updates the controls only if 

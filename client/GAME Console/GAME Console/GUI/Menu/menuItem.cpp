@@ -4,6 +4,8 @@
 MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pressed) ()) {
 	//Set description text
 	label.setString(text);
+	label.setFont(theme->font_standard);
+
 	pressed_function = function_when_pressed;
 	//Configure border
 	border.setPosition(position);
@@ -46,7 +48,7 @@ void MenuItem::setSize(float x, float y) {
 	size.x = x;
 	size.y = y;
 	border.setSize(size);
-	label.setCharacterSize(y - 4);
+	label.setCharacterSize((int)(y - 4.0f));
 }
 void MenuItem::setSize(sf::Vector2f &new_size) {
 	setSize(new_size.x, new_size.y);
