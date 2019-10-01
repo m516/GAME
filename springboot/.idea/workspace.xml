@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75a46f46-0710-41b8-b446-aa23f9481a1a" name="Default Changelist" comment="" />
+    <list default="true" id="75a46f46-0710-41b8-b446-aa23f9481a1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="springboot" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,6 +88,9 @@
       <updated>1569514357939</updated>
       <workItem from="1569514362688" duration="2295000" />
       <workItem from="1569533908068" duration="21902000" />
+      <workItem from="1569907968093" duration="40000" />
+      <workItem from="1569908014225" duration="176000" />
+      <workItem from="1569908198128" duration="430000" />
     </task>
     <servers />
   </component>
