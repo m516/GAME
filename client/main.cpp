@@ -22,6 +22,7 @@ sf::Time timeSinceLastUpdate = sf::Time::Zero;
 std::map<int, std::string> menu;
 /** Index of currently selected menu item */
 int menuSelection = 0;
+bool playMenu = false;
 /** Main font */
 sf::Font font;
 
@@ -115,27 +116,19 @@ void Renderer(sf::RenderWindow &window)
 
     // GET
     sf::Http http;
-    http.setHost("http://localhost", 8080);
-    sf::Http::Request request("/players", sf::Http::Request::Get);
+    http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
+    sf::Http::Request request("/highscore", sf::Http::Request::Get);
     sf::Http::Response response = http.sendRequest(request);
     std::string responseStr = response.getBody();
+    // std::cout << responseStr << std::endl;
 
     // POST
-    sf::Http::Request postRequest("/players", sf::Http::Request::Post);
+    sf::Http::Request postRequest("/highscore", sf::Http::Request::Post);
     std::ostringstream stream;
-    stream << "{ \"username\":\"YUH\",\"firstName\":\"Isaac\",\"lastName\":\"Spanier\",\"playerId\":\"6\" }";
+    stream << "{ \"username\":\"Test!\",\"score\":420 }";
     postRequest.setBody(stream.str());
     sf::Http::Response postResponse = http.sendRequest(postRequest);
 
-    if (response.getStatus() == sf::Http::Response::Ok)
-    {
-        std::cout << "SUCCESS" << std::endl;
-    }
-    else
-    {
-        std::cout << "Failure" << std::endl;
-    }
-    
     while (window.isOpen())
     {
         // Calculate time since last updated frame
@@ -156,46 +149,75 @@ void Renderer(sf::RenderWindow &window)
             border.setOutlineThickness(1.f);
             window.draw(border);
 
-            // Draw title
-            sf::Text title;
-            title.setFont(font);
-            title.setCharacterSize(66 * 2);
-            title.scale(sf::Vector2f(0.5, 0.5));
-            title.setString("G.A.M.E.");
-            title.setPosition(5, 5);
-            window.draw(title);
-
-            sf::Text data;
-            data.setFont(font);
-            data.setCharacterSize(12);
-            data.setString("data\n" + responseStr);
-            data.setPosition(150,100);
-            window.draw(data);
-
-            // Draw menu
-            for (int i = 0; i < menu.size(); i++)
+            if (!playMenu)
             {
-                sf::Text text;
-                text.setFont(font);
+                // Draw title
+                sf::Text title;
+                title.setFont(font);
+                title.setCharacterSize(66 * 2);
+                title.scale(sf::Vector2f(0.5, 0.5));
+                title.setString("G.A.M.E.");
+                title.setPosition(5, 5);
+                window.draw(title);
 
-                // Move selector
-                if (i == menuSelection)
+                // Draw menu
+                for (int i = 0; i < menu.size(); i++)
                 {
-                    sf::RectangleShape shape(sf::Vector2f(3, 25));
-                    shape.setPosition(5, 102 + (25 * i));
-                    window.draw(shape);
+                    sf::Text text;
+                    text.setFont(font);
 
-                    text.setStyle(sf::Text::Bold);
+                    // Move selector
+                    if (i == menuSelection)
+                    {
+                        sf::RectangleShape shape(sf::Vector2f(3, 25));
+                        shape.setPosition(5, 102 + (25 * i));
+                        window.draw(shape);
+
+                        text.setStyle(sf::Text::Bold);
+                    }
+
+                    // Draw menu item
+                    text.setCharacterSize(24 * 2);
+                    text.scale(sf::Vector2f(0.5, 0.5));
+                    text.setString(menu[i]);
+                    text.setPosition(10, 100 + (25 * i));
+                    window.draw(text);
+                }
+            }
+            else
+            {
+                // Draw title
+                sf::Text title;
+                title.setFont(font);
+                title.setCharacterSize(38 * 2);
+                title.scale(sf::Vector2f(0.5, 0.5));
+                title.setString("Highscores");
+                title.setPosition(5, 5);
+                window.draw(title);
+
+                sf::Text data;
+                data.setFont(font);
+                data.setCharacterSize(6 * 2);
+                data.scale(sf::Vector2f(0.5, 0.5));
+                
+                for (int i = 0; i < responseStr.length(); i++)
+                {
+                    if (responseStr.at(i) == ':')
+                    {
+                        std::string newString = responseStr.substr(0, i);
+                        newString += "-\n";
+                        newString += responseStr.substr(i + 1, responseStr.length());
+                        responseStr = newString;
+                        std::cout << responseStr << std::endl;
+                    }
                 }
 
-                // Draw menu item
-                text.setCharacterSize(24 * 2);
-                text.scale(sf::Vector2f(0.5, 0.5));
-                text.setString(menu[i]);
-                text.setPosition(10, 100 + (25 * i));
-                window.draw(text);
+                data.setString("data\n" + responseStr);
+                data.setPosition(10, 50);
+                window.draw(data);
             }
-
+            
+            
             // Render objects on window
             window.display();
         }
@@ -229,14 +251,10 @@ void EventHandler(sf::RenderWindow &window)
                     if (menuSelection >= menu.size()) menuSelection = 0;
                     break;
                 case sf::Keyboard::Enter:
-                    char data[6] = "Hello";
-                    sf::IpAddress destinationIP = "10.24.226.130";
-                    unsigned short port = 54000;
-                    if (socket.send(data, 6, destinationIP, port) != sf::Socket::Done)
-                        std::cout << "Data send error" << std::endl;
-                    else
-                        std::cout << "Data sent!" << std::endl;
-                    break;
+                    if (menuSelection == 0)
+                    {
+                        playMenu = true;
+                    }
             }
         }
 
