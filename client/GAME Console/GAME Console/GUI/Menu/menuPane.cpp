@@ -22,7 +22,7 @@ void MenuPane::updateItems() {
 
 	for (unsigned int i = 0; i < items.size(); i++) {
 		items[i].setSize(size.x, desiredHeight);
-		items[i].setPosition(position.x, (float)i * desiredHeight);
+		items[i].setPosition(position.x, position.y+(float)i * desiredHeight);
 	}
 }
 
@@ -71,7 +71,7 @@ void MenuPane::update() {
 	menuNavigator.poll();
 
 	if (menuNavigator.down==MenuNavigator::STATUS::PRESSED) {
-		if (selected < items.size()) selected++;
+		if (selected < items.size()-1) selected++;
 	}
 
 	if (menuNavigator.up == MenuNavigator::STATUS::PRESSED) {
