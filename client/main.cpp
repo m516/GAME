@@ -111,20 +111,19 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight)
  */
 void Renderer(sf::RenderWindow &window)
 {
-    sf::Clock myClock;
+    sf::Clock myClock; // Used to get frame time
 
     // GET
     sf::Http http;
-    // http.setHost("http://localhost:8080");
     http.setHost("http://localhost", 8080);
     sf::Http::Request request("/players", sf::Http::Request::Get);
     sf::Http::Response response = http.sendRequest(request);
     std::string responseStr = response.getBody();
-    
+
     // POST
     sf::Http::Request postRequest("/players", sf::Http::Request::Post);
     std::ostringstream stream;
-    stream << "{ \"username\": \"Chewbacca\",\"firstName\": \"Isaac\",\"lastName\": \"Spanier\",\"playerId\": \"4\" }";
+    stream << "{ \"username\":\"YUH\",\"firstName\":\"Isaac\",\"lastName\":\"Spanier\",\"playerId\":\"6\" }";
     postRequest.setBody(stream.str());
     sf::Http::Response postResponse = http.sendRequest(postRequest);
 
