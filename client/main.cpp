@@ -38,7 +38,7 @@ int main()
     sf::RenderWindow window(
         sf::VideoMode(256, 256),
         "G.A.M.E.",
-        sf::Style::Default
+        sf::Style::Fullscreen
     );
     
     // Create view
@@ -114,21 +114,6 @@ void Renderer(sf::RenderWindow &window)
 {
     sf::Clock myClock; // Used to get frame time
 
-    // GET
-    sf::Http http;
-    http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
-    sf::Http::Request request("/highscore", sf::Http::Request::Get);
-    sf::Http::Response response = http.sendRequest(request);
-    std::string responseStr = response.getBody();
-    // std::cout << responseStr << std::endl;
-
-    // POST
-    sf::Http::Request postRequest("/highscore", sf::Http::Request::Post);
-    std::ostringstream stream;
-    stream << "{ \"username\":\"Test!\",\"score\":420 }";
-    postRequest.setBody(stream.str());
-    sf::Http::Response postResponse = http.sendRequest(postRequest);
-
     while (window.isOpen())
     {
         // Calculate time since last updated frame
@@ -186,6 +171,21 @@ void Renderer(sf::RenderWindow &window)
             }
             else
             {
+                // GET
+                sf::Http http;
+                http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
+                sf::Http::Request request("/highscore", sf::Http::Request::Get);
+                sf::Http::Response response = http.sendRequest(request);
+                std::string responseStr = response.getBody();
+                // std::cout << responseStr << std::endl;
+
+                // POST
+                sf::Http::Request postRequest("/highscore", sf::Http::Request::Post);
+                std::ostringstream stream;
+                stream << "{ \"username\":\"Test!\",\"score\":420 }";
+                postRequest.setBody(stream.str());
+                sf::Http::Response postResponse = http.sendRequest(postRequest);
+
                 // Draw title
                 sf::Text title;
                 title.setFont(font);
@@ -197,26 +197,25 @@ void Renderer(sf::RenderWindow &window)
 
                 sf::Text data;
                 data.setFont(font);
-                data.setCharacterSize(6 * 2);
+                data.setCharacterSize(10 * 2);
                 data.scale(sf::Vector2f(0.5, 0.5));
                 
                 for (int i = 0; i < responseStr.length(); i++)
                 {
-                    if (responseStr.at(i) == ':')
+                    if (responseStr.at(i) == ',')
                     {
                         std::string newString = responseStr.substr(0, i);
                         newString += "-\n";
                         newString += responseStr.substr(i + 1, responseStr.length());
                         responseStr = newString;
-                        std::cout << responseStr << std::endl;
+                        // std::cout << responseStr << std::endl;
                     }
                 }
 
-                data.setString("data\n" + responseStr);
+                data.setString(responseStr);
                 data.setPosition(10, 50);
                 window.draw(data);
             }
-            
             
             // Render objects on window
             window.display();
@@ -253,7 +252,7 @@ void EventHandler(sf::RenderWindow &window)
                 case sf::Keyboard::Enter:
                     if (menuSelection == 0)
                     {
-                        playMenu = true;
+                        playMenu = !playMenu;
                     }
             }
         }
