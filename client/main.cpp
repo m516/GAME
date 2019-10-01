@@ -2,17 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Network.hpp>
 #include <iostream>
+#include <sstream>
 #include <thread>
 #include <chrono>
 #include <X11/Xlib.h>
+#include "main.h"
 
 /**
  * Eventually all of this should be in seperate classes and files
  * but I figured it's easier to think about if its all in one at
  * first and we can expand and refactor as we go on.
  */
-
-// server/players
 
 /** Minimum frame time (1 millisecond)*/
 const sf::Time FRAME_TIME = sf::milliseconds(1.f);
@@ -24,10 +24,6 @@ std::map<int, std::string> menu;
 int menuSelection = 0;
 /** Main font */
 sf::Font font;
-
-void EventHandler(sf::RenderWindow &);
-void Renderer(sf::RenderWindow &);
-sf::View getLetterboxView(sf::View view, int windowWidth, int WindowHeight);
 
 /**
  * First function to be called
@@ -41,7 +37,7 @@ int main()
     sf::RenderWindow window(
         sf::VideoMode(256, 256),
         "G.A.M.E.",
-        sf::Style::
+        sf::Style::Default
     );
     
     // Create view
@@ -115,8 +111,31 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight)
  */
 void Renderer(sf::RenderWindow &window)
 {
-    sf::Clock myClock;
+    sf::Clock myClock; // Used to get frame time
 
+    // GET
+    sf::Http http;
+    http.setHost("http://localhost", 8080);
+    sf::Http::Request request("/players", sf::Http::Request::Get);
+    sf::Http::Response response = http.sendRequest(request);
+    std::string responseStr = response.getBody();
+
+    // POST
+    sf::Http::Request postRequest("/players", sf::Http::Request::Post);
+    std::ostringstream stream;
+    stream << "{ \"username\":\"YUH\",\"firstName\":\"Isaac\",\"lastName\":\"Spanier\",\"playerId\":\"6\" }";
+    postRequest.setBody(stream.str());
+    sf::Http::Response postResponse = http.sendRequest(postRequest);
+
+    if (response.getStatus() == sf::Http::Response::Ok)
+    {
+        std::cout << "SUCCESS" << std::endl;
+    }
+    else
+    {
+        std::cout << "Failure" << std::endl;
+    }
+    
     while (window.isOpen())
     {
         // Calculate time since last updated frame
@@ -145,6 +164,13 @@ void Renderer(sf::RenderWindow &window)
             title.setString("G.A.M.E.");
             title.setPosition(5, 5);
             window.draw(title);
+
+            sf::Text data;
+            data.setFont(font);
+            data.setCharacterSize(12);
+            data.setString("data\n" + responseStr);
+            data.setPosition(150,100);
+            window.draw(data);
 
             // Draw menu
             for (int i = 0; i < menu.size(); i++)
@@ -181,6 +207,11 @@ void Renderer(sf::RenderWindow &window)
  */
 void EventHandler(sf::RenderWindow &window)
 {
+    // Bind socket to port 54000
+    sf::UdpSocket socket;
+    if (socket.bind(54000) != sf::Socket::Done) 
+        std::cout << "Socket error" << std::endl;
+
     sf::Event event;
     while (window.pollEvent(event))
     {
@@ -197,7 +228,14 @@ void EventHandler(sf::RenderWindow &window)
                     menuSelection++;
                     if (menuSelection >= menu.size()) menuSelection = 0;
                     break;
-                default:
+                case sf::Keyboard::Enter:
+                    char data[6] = "Hello";
+                    sf::IpAddress destinationIP = "10.24.226.130";
+                    unsigned short port = 54000;
+                    if (socket.send(data, 6, destinationIP, port) != sf::Socket::Done)
+                        std::cout << "Data send error" << std::endl;
+                    else
+                        std::cout << "Data sent!" << std::endl;
                     break;
             }
         }
