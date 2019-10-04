@@ -23,7 +23,7 @@ MenuItem::~MenuItem() {
 
 
 //renders the item as a box with text in it
-void MenuItem::render(sf::RenderWindow *window) {
+void MenuItem::render(sf::RenderTarget*window) {
 	//Set colors based on whether or not this item is selected
 	if (selected) {
 		border.setFillColor(theme->color_selected);

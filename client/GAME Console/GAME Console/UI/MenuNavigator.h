@@ -56,7 +56,7 @@ private:
 	sf::Keyboard::Key _keyLeft  = sf::Keyboard::A;
 	sf::Keyboard::Key _keyRight = sf::Keyboard::D;
 	sf::Keyboard::Key _keyEnter = sf::Keyboard::Return;
-	sf::Keyboard::Key _keyExit  = sf::Keyboard::Escape;
+	sf::Keyboard::Key _keyExit = sf::Keyboard::Escape;
 };
 
 #endif

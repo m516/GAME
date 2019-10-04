@@ -9,13 +9,14 @@
 
 #include "menuItem.h"
 #include "../../UI/menuNavigator.h"
+#include "../guiElement.h"
 
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<MenuItem> MenuItem_vec_t;
 
 using namespace sf;
 
-class MenuPane {
+class MenuPane : public GUIElement {
 public:
 	/**
 	Constructs a new MenuPane
@@ -39,37 +40,25 @@ public:
 	*/
 	MenuNavigator menuNavigator;
 
-	/**
-	Set the size of the menu rendered on the screen
-	*/
-	void setSize(float x, float y);
-	void setSize(sf::Vector2f& new_size);
-	/**
-	Get the size of the menu rendered on the screen
-	*/
-	sf::Vector2f getSize();
-
-	/**
-	Set the size of the menu rendered on the screen
-	*/
-	void setPosition(float x, float y);
-	void setPosition(sf::Vector2f& new_position);
-
-	/**
-	Get the size of the menu rendered on the screen
-	*/
-	sf::Vector2f getPosition();
 
 	/**
 	Updates the menu
 	*/
 	void update();
 
+
 	/**
-	renders the item as a box with text in it
+	renders the item onto a RenderWindow
 	@param target the window onto which this MenuItem renders
 	*/
-	void render(sf::RenderWindow* target);
+	void render(sf::RenderTarget* target);
+
+	/**
+	Updates how the GUI element looks
+	Called after each time the position or size is reset
+	*/
+	void updateLook();
+	
 	
 private:
 	/**
@@ -77,16 +66,6 @@ private:
 	Contained as std::vector<MenuItem>
 	*/
 	MenuItem_vec_t items;
-
-	/**
-	The position of the menu
-	*/
-	Vector2f position;
-
-	/**
-	The size of the menu
-	*/
-	Vector2f size;
 
 	/**
 	Updates how each item renders

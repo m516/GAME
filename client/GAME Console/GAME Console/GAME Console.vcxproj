@@ -9,14 +9,6 @@
       <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|ARM64">
-      <Configuration>Debug</Configuration>
-      <Platform>ARM64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|ARM64">
-      <Configuration>Release</Configuration>
-      <Platform>ARM64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{84b7330a-847f-4e92-9455-8b1436d101e6}</ProjectGuid>
@@ -35,12 +27,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -73,12 +59,14 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="GUI\Menu\menuItem.cpp" />
     <ClCompile Include="GUI\Menu\menuPane.cpp" />
+    <ClCompile Include="GUI\guiElement.cpp" />
     <ClCompile Include="GUI\theme.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UI\menuNavigator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="GUI\guiElement.h" />
     <ClInclude Include="GUI\theme.h" />
     <ClInclude Include="GUI\Menu\menuItem.h" />
     <ClInclude Include="GUI\Menu\menuPane.h" />

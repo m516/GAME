@@ -5,14 +5,16 @@ C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Men
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Menu|/home/pi/projects/GAMEConsole/GUI/Menu
 @C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Menu|@/home/pi/projects/GAMEConsole/GUI/Menu
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Menu\menuPane.cpp|/home/pi/projects/GAMEConsole/GUI/Menu/menuPane.cpp
-C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\theme.cpp|/home/pi/projects/GAMEConsole/GUI/theme.cpp
+C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\guiElement.cpp|/home/pi/projects/GAMEConsole/GUI/guiElement.cpp
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI|/home/pi/projects/GAMEConsole/GUI
 @C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI|@/home/pi/projects/GAMEConsole/GUI
+C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\theme.cpp|/home/pi/projects/GAMEConsole/GUI/theme.cpp
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\main.cpp|/home/pi/projects/GAMEConsole/main.cpp
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\UI\menuNavigator.cpp|/home/pi/projects/GAMEConsole/UI/menuNavigator.cpp
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\UI|/home/pi/projects/GAMEConsole/UI
 @C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\UI|@/home/pi/projects/GAMEConsole/UI
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\application.h|/home/pi/projects/GAMEConsole/application.h
+C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\guiElement.h|/home/pi/projects/GAMEConsole/GUI/guiElement.h
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\theme.h|/home/pi/projects/GAMEConsole/GUI/theme.h
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Menu\menuItem.h|/home/pi/projects/GAMEConsole/GUI/Menu/menuItem.h
 C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAME Console\GAME Console\GUI\Menu\menuPane.h|/home/pi/projects/GAMEConsole/GUI/Menu/menuPane.h

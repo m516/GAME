@@ -63,7 +63,7 @@ public:
 	renders the item as a box with text in it
 	@param target the window onto which this MenuItem renders
 	*/
-	void render(sf::RenderWindow *target);
+	void render(sf::RenderTarget*target);
 private:
 	/**
 	The size of the menu item in pixels
