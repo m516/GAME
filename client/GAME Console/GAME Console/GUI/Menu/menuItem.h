@@ -6,8 +6,9 @@
 #include <SFML/System.hpp>
 
 #include "../theme.h"
+#include "../guiElement.h"
 
-class MenuItem {
+class MenuItem : public GUIElement{
 public:
 	/**
 	Initializes the MenuItem with the things it needs to have.
@@ -37,16 +38,12 @@ public:
 	void setText(const std::string& description_text);
 
 
-	//Display-oriented code
+	//Overridden from GUIElement
 	/**
 	Set the size of the menuItem rendered on the screen
 	*/
 	void setSize(float x, float y);
 	void setSize(sf::Vector2f &new_size);
-	/**
-	Get the size of the menuItem rendered on the screen
-	*/
-	sf::Vector2f getSize();
 
 	/**
 	Set the size of the menuItem rendered on the screen
@@ -55,24 +52,11 @@ public:
 	void setPosition(sf::Vector2f &new_position);
 
 	/**
-	Get the size of the menuItem rendered on the screen
-	*/
-	sf::Vector2f getPosition();
-
-	/**
 	renders the item as a box with text in it
 	@param target the window onto which this MenuItem renders
 	*/
 	void render(sf::RenderTarget*target);
 private:
-	/**
-	The size of the menu item in pixels
-	*/
-	sf::Vector2f size;
-	/**
-	The position of the menu item in pixels
-	*/
-	sf::Vector2f position;
 	//string of text to display
 	sf::Text label;
 	//Instance of rectangle border

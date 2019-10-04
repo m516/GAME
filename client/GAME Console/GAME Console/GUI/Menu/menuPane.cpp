@@ -52,3 +52,30 @@ void MenuPane::render(sf::RenderTarget* target) {
 		items[i].render(target);
 	}
 }
+
+//Override GUIElement functions to up-date the look
+
+/**
+Set the size of this object rendered on the screen
+*/
+void MenuPane::setSize(float x, float y) {
+	GUIElement::setSize(x, y);
+	updateLook();
+}
+void MenuPane::setSize(sf::Vector2f& new_size) {
+	GUIElement::setSize(new_size);
+	updateLook();
+}
+
+
+/**
+Set the size of this objet rendered on the screen
+*/
+void MenuPane::setPosition(float x, float y) {
+	GUIElement::setPosition(x, y);
+	updateLook();
+}
+void MenuPane::setPosition(sf::Vector2f& new_position) {
+	GUIElement::setPosition(new_position);
+	updateLook();
+}

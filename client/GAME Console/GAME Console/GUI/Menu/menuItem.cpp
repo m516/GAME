@@ -45,39 +45,27 @@ void MenuItem::setText(const std::string& text) {
 Set the size of the menuItem rendered on the screen
 */
 void MenuItem::setSize(float x, float y) {
-	size.x = x;
-	size.y = y;
+	GUIElement::setSize(x, y);
 	border.setSize(size);
 	label.setCharacterSize((int)(y - 4.0f));
 }
 void MenuItem::setSize(sf::Vector2f &new_size) {
-	setSize(new_size.x, new_size.y);
+	GUIElement::setSize(new_size);
+	border.setSize(size);
+	label.setCharacterSize((int)(new_size.y - 4.0f));
 }
 
-/**
-Get the size of the menuItem rendered on the screen
-*/
-sf::Vector2f MenuItem::getSize() {
-	return size;
-}
 
 /**
 Set the size of the menuItem rendered on the screen
 */
 void MenuItem::setPosition(float x, float y) {
-	position.x = x;
-	position.y = y;
+	GUIElement::setPosition(x, y);
 	border.setPosition(position);
 	label.setPosition(position);
-	//TODO center the label
 }
 void MenuItem::setPosition(sf::Vector2f &new_position) {
-	setPosition(new_position.x, new_position.y);
-}
-
-/**
-Get the size of the menuItem rendered on the screen
-*/
-sf::Vector2f MenuItem::getPosition() {
-	return position;
+	GUIElement::setPosition(new_position);
+	border.setPosition(position);
+	label.setPosition(position);
 }
