@@ -26,7 +26,13 @@ LFLAGS = -L../lib
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lm
 
 # define the C source files
-SRCS = main.cpp application.cpp GUI/theme.cpp GUI/guiElement.cpp GUI/Menu/menuItem.cpp GUI/Menu/menuPane.cpp UI/menuNavigator.cpp
+SRCS = main.cpp \
+		application.cpp \
+		GUI/theme.cpp \
+		GUI/guiElement.cpp \
+		GUI/Menu/menuItem.cpp \
+		GUI/Menu/menuPane.cpp \
+		UI/menuNavigator.cpp
 
 # define the C object files 
 #
