@@ -15,49 +15,49 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game console\application.cpp">
+    <ClCompile Include="gameconsole\application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\main.cpp">
+    <ClCompile Include="gameconsole\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\gui\guiElement.cpp">
+    <ClCompile Include="gameconsole\gui\guiElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\gui\theme.cpp">
+    <ClCompile Include="gameconsole\gui\theme.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\gui\menu\menuItem.cpp">
+    <ClCompile Include="gameconsole\gui\menu\menuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\gui\menu\menuPane.cpp">
+    <ClCompile Include="gameconsole\gui\menu\menuPane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game console\ui\menuNavigator.cpp">
+    <ClCompile Include="gameconsole\ui\menuNavigator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game console\application.h">
+    <ClInclude Include="gameconsole\application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game console\gui\guiElement.h">
+    <ClInclude Include="gameconsole\gui\guiElement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game console\gui\theme.h">
+    <ClInclude Include="gameconsole\gui\theme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game console\gui\menu\menuItem.h">
+    <ClInclude Include="gameconsole\gui\menu\menuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game console\gui\menu\menuPane.h">
+    <ClInclude Include="gameconsole\gui\menu\menuPane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game console\ui\menuNavigator.h">
+    <ClInclude Include="gameconsole\ui\menuNavigator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="game console\readme\readme.html" />
+    <None Include="gameconsole\readme\readme.html" />
   </ItemGroup>
 </Project>

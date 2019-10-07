@@ -110,21 +110,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game console\application.cpp" />
-    <ClCompile Include="game console\gui\guiElement.cpp" />
-    <ClCompile Include="game console\gui\menu\menuItem.cpp" />
-    <ClCompile Include="game console\gui\menu\menuPane.cpp" />
-    <ClCompile Include="game console\gui\theme.cpp" />
-    <ClCompile Include="game console\main.cpp" />
-    <ClCompile Include="game console\ui\menuNavigator.cpp" />
+    <ClCompile Include="gameconsole\application.cpp" />
+    <ClCompile Include="gameconsole\gui\guiElement.cpp" />
+    <ClCompile Include="gameconsole\gui\menu\menuItem.cpp" />
+    <ClCompile Include="gameconsole\gui\menu\menuPane.cpp" />
+    <ClCompile Include="gameconsole\gui\theme.cpp" />
+    <ClCompile Include="gameconsole\main.cpp" />
+    <ClCompile Include="gameconsole\ui\menuNavigator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game console\application.h" />
-    <ClInclude Include="game console\gui\guiElement.h" />
-    <ClInclude Include="game console\gui\menu\menuItem.h" />
-    <ClInclude Include="game console\gui\menu\menuPane.h" />
-    <ClInclude Include="game console\gui\theme.h" />
-    <ClInclude Include="game console\ui\menuNavigator.h" />
+    <ClInclude Include="gameconsole\application.h" />
+    <ClInclude Include="gameconsole\gui\guiElement.h" />
+    <ClInclude Include="gameconsole\gui\menu\menuItem.h" />
+    <ClInclude Include="gameconsole\gui\menu\menuPane.h" />
+    <ClInclude Include="gameconsole\gui\theme.h" />
+    <ClInclude Include="gameconsole\ui\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="game console\readme\readme.html" />
