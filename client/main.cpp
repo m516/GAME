@@ -171,12 +171,13 @@ void Renderer(sf::RenderWindow &window)
             }
             else
             {
+                std::string responseStr = "No highscores";
                 // GET
                 sf::Http http;
                 http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
                 sf::Http::Request request("/highscore", sf::Http::Request::Get);
                 sf::Http::Response response = http.sendRequest(request);
-                std::string responseStr = response.getBody();
+                responseStr = response.getBody();
                 // std::cout << responseStr << std::endl;
 
                 // POST
