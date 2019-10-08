@@ -9,16 +9,18 @@
 CXX = g++
 
 # define any compile-time flags
-CFLAGS = -Wall
+# -Wall warnings, errors
+# -Werror errors only
+CFLAGS = -Werror
 
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = -I../include
+INCLUDES = -I include
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
-LFLAGS = -L../lib
+# LFLAGS = -L
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
@@ -58,8 +60,9 @@ MAIN = game
 all: $(MAIN)
 	@echo  Simple compiler named game has been compiled
 
+# $(LFLAGS)
 $(MAIN): $(OBJS) 
-	$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LIBS)
 
 # this is a suffix replacement rule for building .o's from .c's
 # it uses automatic variables $<: the name of the prerequisite of

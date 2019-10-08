@@ -6,6 +6,8 @@
 #include "GUI/Menu/menuPane.h"
 #include "GUI/theme.h"
 
+#include "cereal/archives/json.hpp"
+
 #include "application.h"
 
 
@@ -14,9 +16,9 @@ Application::Application(){
 }
 
 int Application::initialize(){
-	//Establish a new window
+	//Establish a new windowd
 	//window = new sf::RenderWindow(sf::VideoMode(200, 200), "Hello");
-
+	
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
