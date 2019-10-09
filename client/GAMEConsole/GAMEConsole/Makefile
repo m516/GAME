@@ -49,13 +49,16 @@ OBJS = $(SRCS:.cpp=.o)
 # define the executable file 
 MAIN = game
 
+DOCCMD = doxygen
+DOCFILE = Doxyfile
+
 #
 # The following part of the makefile is generic; it can be used to 
 # build any executable just by changing the definitions above and by
 # deleting dependencies appended to the file from 'make depend'
 #
 
-.PHONY: depend clean
+.PHONY: depend clean docs
 
 all: $(MAIN)
 	@echo  Simple compiler named game has been compiled
@@ -73,6 +76,10 @@ $(MAIN): $(OBJS)
 
 clean:
 	$(RM) *.o GUI/*.o UI/*.o GUI/Menu/*.o *~ $(MAIN)
+
+# Creats Doxygen documentation in docs/html
+docs:
+	$(DOCCMD) $(DOCFILE)
 
 depend: $(SRCS)
 	makedepend $(INCLUDES) $^
