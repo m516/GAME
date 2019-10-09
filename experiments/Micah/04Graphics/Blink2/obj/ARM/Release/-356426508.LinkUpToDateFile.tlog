@@ -1,1 +1,0 @@
-g++ -o "/home/pi/projects/Graphics/bin/ARM/Release/Graphics.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/Graphics/../Blink2/obj/ARM/Release/main.o -l"sfml-graphics" -l"sfml-window" -l"sfml-system" -lpthread
