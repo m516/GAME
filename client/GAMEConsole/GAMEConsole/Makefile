@@ -72,7 +72,7 @@ $(MAIN): $(OBJS)
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) *.o *~ $(MAIN)
+	$(RM) *.o GUI/*.o UI/*.o GUI/Menu/*.o *~ $(MAIN)
 
 depend: $(SRCS)
 	makedepend $(INCLUDES) $^

@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include "theme.h"
 
 class GUIElement {
 public:
@@ -33,6 +34,11 @@ public:
 	@param target the window onto which this GUI element renders
 	*/
 	virtual void render(sf::RenderTarget* target) = 0;
+	
+	/**
+	Enabled
+	*/
+	bool selected = 1;
 
 
 
@@ -49,4 +55,9 @@ protected:
 	The size of the item
 	*/
 	sf::Vector2f size;
+	
+	/**
+	A reference to the theme of the item
+	*/
+	Theme* theme;
 };

@@ -21,10 +21,6 @@ public:
 	*/
 	~MenuItem();
 	/**
-	true if selected, false if not selected
-	*/
-	int selected = 0;
-	/**
 	true if pressed, false if otherwise
 	*/
 	int pressed = 0;
@@ -61,6 +57,4 @@ private:
 	sf::Text label;
 	//Instance of rectangle border
 	sf::RectangleShape border;
-	//Reference to current theme
-	Theme* theme;
 };
