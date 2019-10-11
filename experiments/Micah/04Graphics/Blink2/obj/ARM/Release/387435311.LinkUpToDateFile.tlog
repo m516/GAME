@@ -1,1 +1,0 @@
-g++ -o "/home/pi/projects/Blink2/bin/ARM/Release/Blink2.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/Blink2/../Blink2/obj/ARM/Release/main.o -l"sfml-graphics" -l"sfml-window" -l"sfml-system" -lpthread
