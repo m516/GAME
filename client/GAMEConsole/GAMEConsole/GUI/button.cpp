@@ -1,15 +1,16 @@
-#pragma once
 //TODO nowhere near done!
 //TODO make TODOs for the rest of the Button class implementation code!
-
-#include <vector>
 
 #include "button.h"
 
 /**
 Constructs a new Button
 */
-Button::Button(int initial_size)
+Button::Button(){
+	border = sf::RectangleShape();
+	setSize(16, 16);
+	setPosition(8, 8);
+}
 
 
 
@@ -17,28 +18,45 @@ Button::Button(int initial_size)
 Updates the button
 */
 void Button::update(){
-	
+	if (selected) {
+		border.setFillColor(theme->color_selected);
+	}
+	else {
+		border.setFillColor(theme->color_deselected);
+	}
 }
 
 //Overridden from GUIElement
 
 /**
-renders the item onto a RenderTarget
-@param target the window onto which this button renders
+Set the size of the button rendered on the screen
 */
-void Button::render(sf::RenderTarget* target){
-	target->render(circle);
+void Button::setSize(float x, float y) {
+	GUIElement::setSize(x, y);
+	border.setSize(size);
+}
+void Button::setSize(sf::Vector2f& new_size) {
+	GUIElement::setSize(new_size);
+	border.setSize(size);
 }
 
 
 /**
-Set the size of this object rendered on the screen
+Set the size of the button rendered on the screen
 */
-void Button::setSize(float x, float y) //TODO
-void Button::setSize(sf::Vector2f& new_size);
+void Button::setPosition(float x, float y) {
+	GUIElement::setPosition(x, y);
+	border.setPosition(position);
+}
+void Button::setPosition(sf::Vector2f& new_position) {
+	GUIElement::setPosition(new_position);
+	border.setPosition(position);
+}
 
 /**
-Set the position of this object rendered on the screen
+renders the item onto a RenderTarget
+@param target the window onto which this button renders
 */
-void Button::setPosition(float x, float y);
-void Button::setPosition(sf::Vector2f& new_position);
+void Button::render(sf::RenderTarget* target) {
+	target->draw(border);
+}

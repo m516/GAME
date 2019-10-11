@@ -5,6 +5,7 @@
 #include "GUI/Menu/menuItem.h"
 #include "GUI/Menu/menuPane.h"
 #include "GUI/theme.h"
+#include "GUI/button.h"
 
 #include "cereal/archives/json.hpp"
 
@@ -12,27 +13,23 @@
 
 
 Application::Application(){
+	//Create a test shape
+	shape = new sf::CircleShape(100.f);
+	shape->setFillColor(sf::Color::Green);
 
-}
 
-int Application::initialize(){
-	//Establish a new windowd
+	//Establish a new window
 	//window = new sf::RenderWindow(sf::VideoMode(200, 200), "Hello");
-	
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
 	window = new sf::RenderWindow(sf::VideoMode(400, 400), "Testing...", sf::Style::Default, settings);
 
-	//Create a test shape
-	shape = new sf::CircleShape(100.f);
-	shape->setFillColor(sf::Color::Green);
-
 	//Initialize the generic font for the theme
 	theme.loadGenericFont();
-
-	return 0;
 }
+
 
 
 int Application::run() {
@@ -49,6 +46,8 @@ int Application::run() {
 	menu.setSize(200, 32);
 	menu.addItem(menuItem);
 	menu.addItem(menuItem2);
+
+	Button button;
 
 
 	
@@ -67,6 +66,7 @@ int Application::run() {
 
 		menu.update();
 		menu.render(window);
+		button.render(window);
 		//menuItem.render(window);
 		//menuItem2.render(window);
 		window->display();

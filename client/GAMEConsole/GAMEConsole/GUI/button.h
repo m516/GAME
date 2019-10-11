@@ -7,18 +7,16 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-#include "../guiElement.h"
+#include "guiElement.h"
 
-//Shortcut for writing vectors of MenuItems
-typedef std::vector<MenuItem> MenuItem_vec_t;
 
 
 class Button : public GUIElement {
 public:
 	/**
-	Constructs a new MenuPane
+	Constructs a new Button
 	*/
-	Button(int initial_size);
+	Button();
 
 
 	typedef enum STATE {
@@ -44,12 +42,6 @@ public:
 	void render(sf::RenderTarget* target);
 
 	/**
-	Updates how the GUI element looks
-	Called after each time the position or size is reset
-	*/
-	void updateLook();
-
-	/**
 	Set the size of this object rendered on the screen
 	*/
 	void setSize(float x, float y);
@@ -63,5 +55,5 @@ public:
 
 
 private:
-	sf::CircleShape circle;
+	sf::RectangleShape border;
 };

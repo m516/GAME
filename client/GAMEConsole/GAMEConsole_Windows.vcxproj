@@ -116,6 +116,7 @@
     <ClCompile Include="gameconsole\gui\menu\menuItem.cpp" />
     <ClCompile Include="gameconsole\gui\menu\menuPane.cpp" />
     <ClCompile Include="gameconsole\gui\theme.cpp" />
+    <ClCompile Include="gameconsole\gui\button.cpp" />
     <ClCompile Include="gameconsole\main.cpp" />
     <ClCompile Include="gameconsole\ui\menuNavigator.cpp" />
   </ItemGroup>
@@ -125,6 +126,7 @@
     <ClInclude Include="gameconsole\gui\menu\menuItem.h" />
     <ClInclude Include="gameconsole\gui\menu\menuPane.h" />
     <ClInclude Include="gameconsole\gui\theme.h" />
+    <ClInclude Include="gameconsole\gui\button.h" />
     <ClInclude Include="gameconsole\ui\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
