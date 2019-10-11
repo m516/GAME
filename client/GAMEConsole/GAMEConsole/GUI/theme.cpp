@@ -1,6 +1,5 @@
 #include "theme.h"
 
-
 void Theme::loadGenericFont() {
 	font_standard.loadFromFile("/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf");
 }

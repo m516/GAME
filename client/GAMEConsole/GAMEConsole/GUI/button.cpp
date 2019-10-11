@@ -9,6 +9,7 @@
 #include <SFML/System.hpp>
 
 #include "../guiElement.h"
+#include "Menu/menuItem.h"
 
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<MenuItem> MenuItem_vec_t;

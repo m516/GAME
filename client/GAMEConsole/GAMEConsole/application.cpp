@@ -23,7 +23,7 @@ int Application::initialize(){
 	settings.antialiasingLevel = 8;
 
 	window = new sf::RenderWindow(sf::VideoMode(400, 400), "Testing...", sf::Style::Default, settings);
-
+	
 	//Create a test shape
 	shape = new sf::CircleShape(100.f);
 	shape->setFillColor(sf::Color::Green);
