@@ -26,6 +26,10 @@ Application::Application(){
 
 	window = new sf::RenderWindow(sf::VideoMode(400, 400), "Testing...", sf::Style::Default, settings);
 
+	//Create a test shape
+	shape = new sf::CircleShape(100.f);
+	shape->setFillColor(sf::Color::Green);
+
 	//Initialize the generic font for the theme
 	theme.loadGenericFont();
 }
@@ -37,7 +41,7 @@ int Application::run() {
 
 	MenuItem menuItem2(&theme, "Don't pick me!", NULL);
 	menuItem2.selected = 1;
-	
+
 	MenuItem menuItem(&theme, "Pick me!", NULL);
 	menuItem.selected = 0;
 
@@ -50,7 +54,7 @@ int Application::run() {
 	Button button;
 
 
-	
+
 
 	while (window->isOpen())
 	{

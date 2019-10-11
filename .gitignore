@@ -3,6 +3,7 @@
 *.vscode
 *.DS_Store
 .vs/
+Debug/
 
 ## VS Code ##
 .vscode/*
