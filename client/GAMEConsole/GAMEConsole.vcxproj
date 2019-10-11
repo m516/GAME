@@ -56,25 +56,6 @@
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="GUI\button.cpp" />
-    <ClCompile Include="GUI\Menu\menuItem.cpp" />
-    <ClCompile Include="GUI\Menu\menuPane.cpp" />
-    <ClCompile Include="GUI\guiElement.cpp" />
-    <ClCompile Include="GUI\theme.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="UI\menuNavigator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="GUI\button.h" />
-    <ClInclude Include="GUI\guiElement.h" />
-    <ClInclude Include="GUI\theme.h" />
-    <ClInclude Include="GUI\Menu\menuItem.h" />
-    <ClInclude Include="GUI\Menu\menuPane.h" />
-    <ClInclude Include="UI\menuNavigator.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Makefile" />
   </ItemGroup>
   <ItemDefinitionGroup />
