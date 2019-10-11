@@ -1,10 +1,18 @@
 #include "theme.h"
 
-void Theme::loadGenericFont() {
-	font_standard.loadFromFile("GAMEConsole/assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+/**
+ * Set font standard to Alien-Encounters-Regular.ttf
+ */
+void Theme::loadGenericFont()
+{
+	font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
 }
 
-Theme Theme::clone() {
+/**
+ * Returns this theme as a copy
+ */
+Theme Theme::clone() 
+{
 	Theme newTheme;
 	newTheme.border_size = border_size;
 	newTheme.color_border = color_border;
