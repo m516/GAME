@@ -1,7 +1,7 @@
 #include "theme.h"
 
 void Theme::loadGenericFont() {
-	font_standard.loadFromFile("/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf");
+	font_standard.loadFromFile("GAMEConsole/assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
 }
 
 Theme Theme::clone() {

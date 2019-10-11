@@ -12,7 +12,6 @@
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<MenuItem> MenuItem_vec_t;
 
-using namespace sf;
 
 class Button : public GUIElement {
 public:
@@ -64,4 +63,5 @@ public:
 
 
 private:
+	sf::CircleShape circle;
 };

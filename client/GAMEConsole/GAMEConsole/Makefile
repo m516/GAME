@@ -75,7 +75,7 @@ $(MAIN): $(OBJS)
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) *.o *~ $(MAIN)
+	$(RM) *.o GUI/*.o UI/*.o GUI/Menu/*.o *~ $(MAIN)
 
 # Creats Doxygen documentation in docs/html
 docs:

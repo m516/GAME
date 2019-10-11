@@ -58,6 +58,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="gameconsole\readme\readme.html" />
+    <None Include="game console\readme\readme.html" />
   </ItemGroup>
 </Project>
