@@ -24,7 +24,7 @@ Application::Application(){
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
-	window = new sf::RenderWindow(sf::VideoMode(400, 400), "Testing...", sf::Style::Default, settings);
+	window = new sf::RenderWindow(sf::VideoMode(256, 256), "Testing...", sf::Style::Default, settings);
 
 	//Create a test shape
 	//shape = new sf::CircleShape(100.f);
@@ -39,6 +39,7 @@ Application::Application(){
 int Application::run() {
 	//Initial Menu test
 
+	//MenuItem item = new MenuItem(&theme, "Test Item", NULL);
 	MenuItem menuItem2(&theme, "Don't pick me!", NULL);
 	menuItem2.selected = 1;
 
