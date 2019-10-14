@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['schema_805',['Schema',['../classinternal_1_1Schema.html',1,'internal']]],
+  ['schemavalidatingreader_806',['SchemaValidatingReader',['../classSchemaValidatingReader.html',1,'']]],
+  ['schemavalidationcontext_807',['SchemaValidationContext',['../structinternal_1_1SchemaValidationContext.html',1,'internal']]],
+  ['serialize_808',['serialize',['../structcereal_1_1tuple__detail_1_1serialize.html',1,'cereal::tuple_detail']]],
+  ['serialize_3c_200_20_3e_809',['serialize&lt; 0 &gt;',['../structcereal_1_1tuple__detail_1_1serialize_3_010_01_4.html',1,'cereal::tuple_detail']]],
+  ['serializers_810',['Serializers',['../structcereal_1_1detail_1_1OutputBindingMap_1_1Serializers.html',1,'cereal::detail::OutputBindingMap&lt; Archive &gt;::Serializers'],['../structcereal_1_1detail_1_1InputBindingMap_1_1Serializers.html',1,'cereal::detail::InputBindingMap&lt; Archive &gt;::Serializers']]],
+  ['shared_5ffrom_5fthis_5fwrapper_811',['shared_from_this_wrapper',['../structcereal_1_1traits_1_1detail_1_1shared__from__this__wrapper.html',1,'cereal::traits::detail']]],
+  ['shortstring_812',['ShortString',['../structGenericValue_1_1ShortString.html',1,'GenericValue']]],
+  ['sizetag_813',['SizeTag',['../classcereal_1_1SizeTag.html',1,'cereal']]],
+  ['specialize_814',['specialize',['../structcereal_1_1specialize.html',1,'cereal']]],
+  ['stack_815',['Stack',['../classinternal_1_1Stack.html',1,'internal']]],
+  ['stack_3c_20rapidjson_3a_3aallocator_20_3e_816',['Stack&lt; rapidjson::Allocator &gt;',['../classinternal_1_1Stack.html',1,'internal']]],
+  ['stack_3c_20stackallocator_20_3e_817',['Stack&lt; StackAllocator &gt;',['../classinternal_1_1Stack.html',1,'internal']]],
+  ['stack_3c_20stateallocator_20_3e_818',['Stack&lt; StateAllocator &gt;',['../classinternal_1_1Stack.html',1,'internal']]],
+  ['staticobject_819',['StaticObject',['../classcereal_1_1detail_1_1StaticObject.html',1,'cereal::detail']]],
+  ['stream_820',['Stream',['../classrapidjson_1_1Stream.html',1,'']]],
+  ['streamlocalcopy_821',['StreamLocalCopy',['../classinternal_1_1StreamLocalCopy.html',1,'internal']]],
+  ['streamlocalcopy_3c_20stream_2c_200_20_3e_822',['StreamLocalCopy&lt; Stream, 0 &gt;',['../classinternal_1_1StreamLocalCopy_3_01Stream_00_010_01_4.html',1,'internal']]],
+  ['streamlocalcopy_3c_20stream_2c_201_20_3e_823',['StreamLocalCopy&lt; Stream, 1 &gt;',['../classinternal_1_1StreamLocalCopy_3_01Stream_00_011_01_4.html',1,'internal']]],
+  ['streamtraits_824',['StreamTraits',['../structStreamTraits.html',1,'']]],
+  ['streamtraits_3c_20genericinsitustringstream_3c_20encoding_20_3e_20_3e_825',['StreamTraits&lt; GenericInsituStringStream&lt; Encoding &gt; &gt;',['../structStreamTraits_3_01GenericInsituStringStream_3_01Encoding_01_4_01_4.html',1,'']]],
+  ['streamtraits_3c_20genericstringstream_3c_20encoding_20_3e_20_3e_826',['StreamTraits&lt; GenericStringStream&lt; Encoding &gt; &gt;',['../structStreamTraits_3_01GenericStringStream_3_01Encoding_01_4_01_4.html',1,'']]],
+  ['string_827',['String',['../structGenericValue_1_1String.html',1,'GenericValue']]],
+  ['strip_5fminimal_828',['strip_minimal',['../structcereal_1_1traits_1_1strip__minimal.html',1,'cereal::traits']]],
+  ['strip_5fminimal_3c_20t_2c_20true_20_3e_829',['strip_minimal&lt; T, true &gt;',['../structcereal_1_1traits_1_1strip__minimal_3_01T_00_01true_01_4.html',1,'cereal::traits']]]
+];
