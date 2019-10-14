@@ -12,4 +12,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
 </qualifiedTypeNameHistroy>
