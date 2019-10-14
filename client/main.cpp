@@ -2,17 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Network.hpp>
 #include <iostream>
+#include <sstream>
 #include <thread>
 #include <chrono>
 #include <X11/Xlib.h>
+#include "main.h"
 
 /**
  * Eventually all of this should be in seperate classes and files
  * but I figured it's easier to think about if its all in one at
  * first and we can expand and refactor as we go on.
  */
-
-// server/players
 
 /** Minimum frame time (1 millisecond)*/
 const sf::Time FRAME_TIME = sf::milliseconds(1.f);
@@ -22,12 +22,9 @@ sf::Time timeSinceLastUpdate = sf::Time::Zero;
 std::map<int, std::string> menu;
 /** Index of currently selected menu item */
 int menuSelection = 0;
+bool playMenu = false;
 /** Main font */
 sf::Font font;
-
-void EventHandler(sf::RenderWindow &);
-void Renderer(sf::RenderWindow &);
-sf::View getLetterboxView(sf::View view, int windowWidth, int WindowHeight);
 
 /**
  * First function to be called
@@ -41,7 +38,7 @@ int main()
     sf::RenderWindow window(
         sf::VideoMode(256, 256),
         "G.A.M.E.",
-        sf::Style::
+        sf::Style::Fullscreen
     );
     
     // Create view
@@ -115,7 +112,7 @@ sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight)
  */
 void Renderer(sf::RenderWindow &window)
 {
-    sf::Clock myClock;
+    sf::Clock myClock; // Used to get frame time
 
     while (window.isOpen())
     {
@@ -137,39 +134,90 @@ void Renderer(sf::RenderWindow &window)
             border.setOutlineThickness(1.f);
             window.draw(border);
 
-            // Draw title
-            sf::Text title;
-            title.setFont(font);
-            title.setCharacterSize(66 * 2);
-            title.scale(sf::Vector2f(0.5, 0.5));
-            title.setString("G.A.M.E.");
-            title.setPosition(5, 5);
-            window.draw(title);
-
-            // Draw menu
-            for (int i = 0; i < menu.size(); i++)
+            if (!playMenu)
             {
-                sf::Text text;
-                text.setFont(font);
+                // Draw title
+                sf::Text title;
+                title.setFont(font);
+                title.setCharacterSize(66 * 2);
+                title.scale(sf::Vector2f(0.5, 0.5));
+                title.setString("G.A.M.E.");
+                title.setPosition(5, 5);
+                window.draw(title);
 
-                // Move selector
-                if (i == menuSelection)
+                // Draw menu
+                for (int i = 0; i < menu.size(); i++)
                 {
-                    sf::RectangleShape shape(sf::Vector2f(3, 25));
-                    shape.setPosition(5, 102 + (25 * i));
-                    window.draw(shape);
+                    sf::Text text;
+                    text.setFont(font);
 
-                    text.setStyle(sf::Text::Bold);
+                    // Move selector
+                    if (i == menuSelection)
+                    {
+                        sf::RectangleShape shape(sf::Vector2f(3, 25));
+                        shape.setPosition(5, 102 + (25 * i));
+                        window.draw(shape);
+
+                        text.setStyle(sf::Text::Bold);
+                    }
+
+                    // Draw menu item
+                    text.setCharacterSize(24 * 2);
+                    text.scale(sf::Vector2f(0.5, 0.5));
+                    text.setString(menu[i]);
+                    text.setPosition(10, 100 + (25 * i));
+                    window.draw(text);
+                }
+            }
+            else
+            {
+                std::string responseStr = "No highscores";
+                // GET
+                sf::Http http;
+                http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
+                sf::Http::Request request("/highscore", sf::Http::Request::Get);
+                sf::Http::Response response = http.sendRequest(request);
+                responseStr = response.getBody();
+                // std::cout << responseStr << std::endl;
+
+                // POST
+                sf::Http::Request postRequest("/highscore", sf::Http::Request::Post);
+                std::ostringstream stream;
+                stream << "{ \"username\":\"Test!\",\"score\":420 }";
+                postRequest.setBody(stream.str());
+                sf::Http::Response postResponse = http.sendRequest(postRequest);
+
+                // Draw title
+                sf::Text title;
+                title.setFont(font);
+                title.setCharacterSize(38 * 2);
+                title.scale(sf::Vector2f(0.5, 0.5));
+                title.setString("Highscores");
+                title.setPosition(5, 5);
+                window.draw(title);
+
+                sf::Text data;
+                data.setFont(font);
+                data.setCharacterSize(10 * 2);
+                data.scale(sf::Vector2f(0.5, 0.5));
+                
+                for (int i = 0; i < responseStr.length(); i++)
+                {
+                    if (responseStr.at(i) == ',')
+                    {
+                        std::string newString = responseStr.substr(0, i);
+                        newString += "-\n";
+                        newString += responseStr.substr(i + 1, responseStr.length());
+                        responseStr = newString;
+                        // std::cout << responseStr << std::endl;
+                    }
                 }
 
-                // Draw menu item
-                text.setCharacterSize(24 * 2);
-                text.scale(sf::Vector2f(0.5, 0.5));
-                text.setString(menu[i]);
-                text.setPosition(10, 100 + (25 * i));
-                window.draw(text);
+                data.setString(responseStr);
+                data.setPosition(10, 50);
+                window.draw(data);
             }
-
+            
             // Render objects on window
             window.display();
         }
@@ -181,6 +229,11 @@ void Renderer(sf::RenderWindow &window)
  */
 void EventHandler(sf::RenderWindow &window)
 {
+    // Bind socket to port 54000
+    sf::UdpSocket socket;
+    if (socket.bind(54000) != sf::Socket::Done) 
+        std::cout << "Socket error" << std::endl;
+
     sf::Event event;
     while (window.pollEvent(event))
     {
@@ -197,8 +250,11 @@ void EventHandler(sf::RenderWindow &window)
                     menuSelection++;
                     if (menuSelection >= menu.size()) menuSelection = 0;
                     break;
-                default:
-                    break;
+                case sf::Keyboard::Enter:
+                    if (menuSelection == 0)
+                    {
+                        playMenu = !playMenu;
+                    }
             }
         }
 
