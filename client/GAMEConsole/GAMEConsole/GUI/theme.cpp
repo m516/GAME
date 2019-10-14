@@ -5,7 +5,7 @@
  */
 void Theme::loadGenericFont()
 {
-	font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+	font_standard.loadFromFile("GAMEConsole/assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
 }
 
 /**

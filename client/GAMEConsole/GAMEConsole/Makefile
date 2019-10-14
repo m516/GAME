@@ -32,9 +32,10 @@ SRCS = main.cpp \
 		application.cpp \
 		GUI/theme.cpp \
 		GUI/guiElement.cpp \
+		GUI/button.cpp \
 		GUI/Menu/menuItem.cpp \
 		GUI/Menu/menuPane.cpp \
-		UI/menuNavigator.cpp
+		UI/menuNavigator.cpp \
 
 # define the C object files 
 #
@@ -47,7 +48,7 @@ SRCS = main.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 # define the executable file 
-MAIN = game
+MAIN = ../game
 
 DOCCMD = doxygen
 DOCFILE = Doxyfile
