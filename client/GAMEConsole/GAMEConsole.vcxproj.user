@@ -3,14 +3,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
     <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
-    <RemoteTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteTarget>
-    <RemoteDebuggingTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+    <RemoteTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
     <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
-    <RemoteTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteTarget>
-    <RemoteDebuggingTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+    <RemoteTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
   </PropertyGroup>
   <PropertyGroup>
     <ShowAllFiles>true</ShowAllFiles>
