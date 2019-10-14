@@ -1,12 +1,11 @@
 #pragma once
-#pragma once
-#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include "theme.h"
 
-class GUIElement {
+class GUIElement
+{
 public:
 	/**
 	Set the size of this object rendered on the screen
@@ -40,12 +39,10 @@ public:
 	*/
 	bool selected = 1;
 
-
-
-
 protected:
-
-
+	/** Reference to the parent render object that this element is rendered onto */
+	sf::RenderTarget* parent;
+	
 	/**
 	The position of the item
 	*/
