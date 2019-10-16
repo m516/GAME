@@ -80,7 +80,7 @@ $(MAIN): $(OBJS)
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $<  -o $@ 
 
 clean:
-	$(RM) $(addprefix $(SOURCE), *.o GUI/*.o UI/*.o GUI/Menu/*.o *~) $(MAIN)
+	$(RM) $(addprefix $(SOURCE), *~) $(MAIN); find . -type f -name '*.o' -delete
 
 # Creats Doxygen documentation in docs/html
 docs:
