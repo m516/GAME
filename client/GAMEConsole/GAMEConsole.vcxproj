@@ -55,14 +55,14 @@
       </Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAMEConsole\GAMEConsole\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Command>
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>mkdir ~/projects/GAMEConsole/bin/ARM/Debug/GAMEConsole; mv ~/projects/GAMEConsole/GAMEConsole/assets/ ~/projects/GAMEConsole/bin/ARM/Debug/GAMEConsole</Command>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>
@@ -70,181 +70,136 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="GAMEConsole\.gitignore" />
-    <None Include="GAMEConsole\Doxyfile" />
-    <None Include="GAMEConsole\include\cereal\external\rapidxml\manual.html" />
-    <None Include="GAMEConsole\Makefile" />
+    <None Include="install.sh" />
+    <None Include="Makefile" />
+    <None Include="src\Doxyfile" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GAMEConsole\application.cpp" />
-    <ClCompile Include="GAMEConsole\GUI\button.cpp" />
-    <ClCompile Include="GAMEConsole\GUI\guiElement.cpp" />
-    <ClCompile Include="GAMEConsole\GUI\Menu\menuItem.cpp" />
-    <ClCompile Include="GAMEConsole\GUI\Menu\menuPane.cpp" />
-    <ClCompile Include="GAMEConsole\GUI\theme.cpp" />
-    <ClCompile Include="GAMEConsole\main.cpp" />
-    <ClCompile Include="GAMEConsole\UI\menuNavigator.cpp" />
+    <ClInclude Include="include\cereal\access.hpp" />
+    <ClInclude Include="include\cereal\archives\adapters.hpp" />
+    <ClInclude Include="include\cereal\archives\binary.hpp" />
+    <ClInclude Include="include\cereal\archives\json.hpp" />
+    <ClInclude Include="include\cereal\archives\portable_binary.hpp" />
+    <ClInclude Include="include\cereal\archives\xml.hpp" />
+    <ClInclude Include="include\cereal\cereal.hpp" />
+    <ClInclude Include="include\cereal\details\helpers.hpp" />
+    <ClInclude Include="include\cereal\details\polymorphic_impl.hpp" />
+    <ClInclude Include="include\cereal\details\polymorphic_impl_fwd.hpp" />
+    <ClInclude Include="include\cereal\details\static_object.hpp" />
+    <ClInclude Include="include\cereal\details\traits.hpp" />
+    <ClInclude Include="include\cereal\details\util.hpp" />
+    <ClInclude Include="include\cereal\external\base64.hpp" />
+    <ClInclude Include="include\cereal\external\rapidjson\allocators.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\document.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\encodedstream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\encodings.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\error\en.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\error\error.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\filereadstream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\filewritestream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\fwd.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\itoa.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\meta.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\pow10.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\regex.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\stack.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\strtod.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\swap.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\memorybuffer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\memorystream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\pointer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\prettywriter.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\rapidjson.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\reader.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\schema.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\stream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\stringbuffer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\writer.h" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="include\cereal\macros.hpp" />
+    <ClInclude Include="include\cereal\types\array.hpp" />
+    <ClInclude Include="include\cereal\types\base_class.hpp" />
+    <ClInclude Include="include\cereal\types\bitset.hpp" />
+    <ClInclude Include="include\cereal\types\boost_variant.hpp" />
+    <ClInclude Include="include\cereal\types\chrono.hpp" />
+    <ClInclude Include="include\cereal\types\common.hpp" />
+    <ClInclude Include="include\cereal\types\complex.hpp" />
+    <ClInclude Include="include\cereal\types\concepts\pair_associative_container.hpp" />
+    <ClInclude Include="include\cereal\types\deque.hpp" />
+    <ClInclude Include="include\cereal\types\forward_list.hpp" />
+    <ClInclude Include="include\cereal\types\functional.hpp" />
+    <ClInclude Include="include\cereal\types\list.hpp" />
+    <ClInclude Include="include\cereal\types\map.hpp" />
+    <ClInclude Include="include\cereal\types\memory.hpp" />
+    <ClInclude Include="include\cereal\types\polymorphic.hpp" />
+    <ClInclude Include="include\cereal\types\queue.hpp" />
+    <ClInclude Include="include\cereal\types\set.hpp" />
+    <ClInclude Include="include\cereal\types\stack.hpp" />
+    <ClInclude Include="include\cereal\types\string.hpp" />
+    <ClInclude Include="include\cereal\types\tuple.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_map.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_set.hpp" />
+    <ClInclude Include="include\cereal\types\utility.hpp" />
+    <ClInclude Include="include\cereal\types\valarray.hpp" />
+    <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\GUI\button.h" />
+    <ClInclude Include="src\GUI\guiElement.h" />
+    <ClInclude Include="src\GUI\Menu\menuItem.h" />
+    <ClInclude Include="src\GUI\Menu\menuPane.h" />
+    <ClInclude Include="src\GUI\panel.h" />
+    <ClInclude Include="src\GUI\theme.h" />
+    <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GAMEConsole\application.h" />
-    <ClInclude Include="GAMEConsole\GUI\button.h" />
-    <ClInclude Include="GAMEConsole\GUI\guiElement.h" />
-    <ClInclude Include="GAMEConsole\GUI\Menu\menuItem.h" />
-    <ClInclude Include="GAMEConsole\GUI\Menu\menuPane.h" />
-    <ClInclude Include="GAMEConsole\GUI\theme.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\access.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\archives\adapters.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\archives\binary.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\archives\json.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\archives\portable_binary.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\archives\xml.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\cereal.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\helpers.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\polymorphic_impl.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\polymorphic_impl_fwd.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\static_object.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\traits.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\details\util.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\base64.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\allocators.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\document.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\encodedstream.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\encodings.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\error\en.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\error\error.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\filereadstream.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\filewritestream.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\fwd.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\biginteger.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\diyfp.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\dtoa.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\ieee754.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\itoa.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\meta.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\pow10.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\regex.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\stack.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\strfunc.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\strtod.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\internal\swap.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\istreamwrapper.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\memorybuffer.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\memorystream.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\msinttypes\inttypes.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\msinttypes\stdint.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\ostreamwrapper.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\pointer.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\prettywriter.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\rapidjson.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\reader.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\schema.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\stream.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\stringbuffer.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidjson\writer.h" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidxml\rapidxml.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidxml\rapidxml_iterators.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidxml\rapidxml_print.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\external\rapidxml\rapidxml_utils.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\macros.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\array.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\base_class.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\bitset.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\boost_variant.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\chrono.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\common.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\complex.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\concepts\pair_associative_container.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\deque.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\forward_list.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\functional.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\list.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\map.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\memory.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\polymorphic.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\queue.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\set.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\stack.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\string.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\tuple.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\unordered_map.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\unordered_set.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\utility.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\valarray.hpp" />
-    <ClInclude Include="GAMEConsole\include\cereal\types\vector.hpp" />
-    <ClInclude Include="GAMEConsole\UI\menuNavigator.h" />
+    <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\GUI\button.cpp" />
+    <ClCompile Include="src\GUI\guiElement.cpp" />
+    <ClCompile Include="src\GUI\Menu\menuItem.cpp" />
+    <ClCompile Include="src\GUI\Menu\menuPane.cpp" />
+    <ClCompile Include="src\GUI\panel.cpp" />
+    <ClCompile Include="src\GUI\theme.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\UI\menuNavigator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="GAMEConsole\assets\squishy-button-blue.png">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\squishy-button-gray.png">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Regular.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Regular.ttf" />
+    <Font Include="assets\fonts\bitwise.ttf" />
+    <Font Include="assets\fonts\ka1.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Regular.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold-Italic.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Solid-Italic.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\alien_encounters\Alien-Encounters-Solid-Regular.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\bitwise.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
-    <Media Include="GAMEConsole\assets\fonts\ka1.ttf">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
-    </Media>
+    <Image Include="assets\squishy-button-blue.png" />
+    <Image Include="assets\squishy-button-gray.png" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Epsilon\Documents\GitHub\sr_5_\client\GAMEConsole\GAMEConsole\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Command>
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>mkdir ~/projects/GAMEConsole/bin/ARM/Debug/GAMEConsole; mv ~/projects/GAMEConsole/GAMEConsole/assets/ ~/projects/GAMEConsole/bin/ARM/Debug/GAMEConsole</Command>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>
