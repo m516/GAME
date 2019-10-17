@@ -13,7 +13,7 @@ public class HighScore {
 	private String username;
 	private int score;
 	
-	public HighScore() {
+	public HighScore() { 
 	}
 
 	@Id
