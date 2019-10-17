@@ -7,34 +7,33 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users") 
 public class User {
-	private int userId;
-	private String username;
+	private int Id;
+	private String name;
 	private String email;
 	private String password; 
-	private java.util.Date dateCreated; 
-	private int userLevel;
+	private int user_level;
 	
 	public User() {
 	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int getUserId() {
-		return userId; 
+	public int getId() {
+		return Id; 
 	}
 	
-	public void setUserId(int uid) {
-		userId = uid; 
+	public void setId(int uid) {
+		Id = uid; 
 	}
 	
 	public String getUsername() {
-		return username; 
+		return name; 
 	}
 	
 	public void setUsername(String username) {
-		this.username = username;
+		this.name = username;
 	}
 	
 	public String getEmail() {
@@ -53,19 +52,19 @@ public class User {
 		this.password = password; 
 	}
 	
-	public java.util.Date getDateCreated(){
-		return dateCreated;
-	}
-	
-	public void setDateCreated(java.util.Date dateCreated) {
-		this.dateCreated = dateCreated;
-	}
+//	public java.util.Date getDateCreated(){
+//		return dateCreated;
+//	}
+//	
+//	public void setDateCreated(java.util.Date dateCreated) {
+//		this.dateCreated = dateCreated;
+//	}
 	
 	public int getUserLevel() {
-		return userLevel;
+		return user_level;
 	}
 	
 	public void setUserLevel(int userLevel) {
-		this.userLevel = userLevel;
+		this.user_level = userLevel;
 	}
 }

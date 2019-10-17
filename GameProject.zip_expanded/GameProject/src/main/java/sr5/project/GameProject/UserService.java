@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-	@Autowired
+	@Autowired 
 	private UserRepository userRepo;
 	
 	public List<User> getAllUsers(){
