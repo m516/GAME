@@ -6,6 +6,8 @@ image: gcc
 
 build:
   stage: build
+  tags:
+    - cpp_tag
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
@@ -23,6 +25,8 @@ build:
 
 # run tests using the binary built before
 test:
+  tags:
+    - cpp_tag
   stage: test
   script:
     - client/main
