@@ -11,7 +11,9 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-    - apt update && apt upgrade && apt -y install make autoconf git openssh-server cmake libflac-dev libogg-dev libvorbis-dev libopenal-dev libjpeg8-dev libfreetype6-dev libudev-dev
+    - apt update -y
+    - apt upgrade -y
+    - apt -y install make autoconf git openssh-server cmake libsfml-dev
   script:
     - cd client
     - make
