@@ -2,8 +2,14 @@
 <section name="Workbench">
 <<<<<<< HEAD
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\cs309\sr_5_"/>
+	</list>
+=======
+<<<<<<< HEAD
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
 		<item value="C:\cs309\sr_5_\server"/>
 	</list>
 =======
 >>>>>>> f6ff39b227092548735054dffc85cfb5667b2b5f
+>>>>>>> 28f34fe0530c98b4f337816dfcf4ac33ae4a68c1
 </section>
