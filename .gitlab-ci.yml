@@ -2,6 +2,13 @@
 # use the official gcc image, based on debian
 # can use verions as well, like gcc:5.2
 # see https://hub.docker.com/_/gcc/
+
+stages:
+  - build
+  - test
+  - mavenbuild
+  - maventest
+
 image: gcc
 
 build:
@@ -32,3 +39,22 @@ test:
   stage: test
   script:
     - client/main
+
+maven-build: 
+  stage: mavenbuild
+  tags:
+    -shell
+  script:
+    -cd GameProject.zip_expanded/GameProject
+    -mvn package -B
+
+maven-test:
+  stage: maventest
+  tags: 
+    -shell
+  script: 
+    -cd GameProject.zip_expanded/GameProject
+    -mvn test
+  artificats: 
+    path:
+      - GameProject.zip_expanded/GameProject/target/*.jar
