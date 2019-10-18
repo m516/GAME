@@ -21,6 +21,7 @@ build:
     - apt update -y
     - apt upgrade -y
     - apt -y install make autoconf git openssh-server cmake libsfml-dev
+    - ldconfig
   script:
     - cd client
     - make
