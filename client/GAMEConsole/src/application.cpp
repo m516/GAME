@@ -52,7 +52,7 @@ int Application::run() {
 	menu.addItem(menuItem);
 	menu.addItem(menuItem2);
 
-	//Button button;
+	Button button;
 
 	while (window->isOpen())
 	{
@@ -69,7 +69,7 @@ int Application::run() {
 
 		menu.update();
 		menu.render(window);
-		//button.render(window);
+		button.render(window);
 		//menuItem.render(window);
 		//menuItem2.render(window);
 		window->display();
