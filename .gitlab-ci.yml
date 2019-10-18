@@ -21,7 +21,6 @@ build:
     - apt update -y
     - apt upgrade -y
     - apt -y install make autoconf git openssh-server cmake libsfml-dev
-    - ldconfig
   script:
     - cd client
     - make
@@ -39,6 +38,7 @@ test:
     - c++_tag
   stage: test
   script:
+    - export LD_LIBRARY_PATH=/usr/local/lib
     - client/main
 
 maven-build: 
