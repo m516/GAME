@@ -18,6 +18,8 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
+    - echo $LD_LIBRARY_PATH
+    - export LD_LIBRARY_PATH=/usr/local/lib
     - apt update -y
     - apt upgrade -y
     - apt -y install make autoconf git openssh-server cmake libsfml-dev
@@ -38,7 +40,7 @@ test:
     - c++_tag
   stage: test
   script:
-    - export LD_LIBRARY_PATH=/usr/local/lib
+    - echo $LD_LIBRARY_PATH
     - client/main
 
 maven-build: 
