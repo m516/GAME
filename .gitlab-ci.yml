@@ -55,6 +55,6 @@ maven-test:
   script: 
     - cd GameProject.zip_expanded/GameProject
     - mvn test
-  artificats: 
+  artifacts: 
     path:
       - GameProject.zip_expanded/GameProject/target/*.jar
