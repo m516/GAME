@@ -28,10 +28,9 @@ frontend-tests:
     - cd client
     - make
   script:
-    - client/main
+    - main
   artifacts:
     paths:
-      - client/main
       - clinet/*
       - /usr/local/lib
       # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
