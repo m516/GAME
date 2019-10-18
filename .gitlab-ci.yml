@@ -28,7 +28,7 @@ frontend-tests:
     - cd client
     - make
   script:
-    - main
+    - ./main
   artifacts:
     paths:
       - clinet/*
