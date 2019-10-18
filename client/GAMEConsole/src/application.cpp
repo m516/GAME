@@ -43,7 +43,7 @@ int Application::run()
 	sf::UdpSocket socket;
 	sf::IpAddress ip("10.24.226.130");
 	unsigned short port = 54000;
-	if (socket.bind(port) != sf::Socket::Done) std::cout << "NOPE";
+	if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
 	char data[6] = "hello";
 	int i = 0;
 	
