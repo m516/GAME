@@ -22,7 +22,9 @@ build:
     - export LD_LIBRARY_PATH=/usr/local/lib
     - apt update -y
     - apt upgrade -y
-    - apt -y install make autoconf git openssh-server cmake libsfml-dev
+    - apt -y install build-essential make autoconf git openssh-server cmake libsfml-dev
+    - apt-get clean \
+    - rm -rf /var/lib/apt/lists/*
     - ldconfig -v | grep -v ^$'\t'
   script:
     - cd client
