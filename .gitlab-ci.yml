@@ -4,15 +4,14 @@
 # see https://hub.docker.com/_/gcc/
 
 stages:
-  - build
-  - test
+  - frontend-tests
   - mavenbuild
   - maventest
 
 image: gcc
 
-build:
-  stage: build
+frontend-tests:
+  stage: frontend-tests
   tags:
     - c++_tag
   # instead of calling g++ directly you can also use some build toolkit like make
@@ -26,25 +25,19 @@ build:
     - apt-get clean \
     - rm -rf /var/lib/apt/lists/*
     - ldconfig -v | grep -v ^$'\t'
-  script:
     - cd client
     - make
+  script:
+    - client/main
   artifacts:
     paths:
-      - client/main
+      - client/
+      - /usr/local/lib
       # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
       # cache:
       #   paths:
       #     - "*.o"
 
-# run tests using the binary built before
-test:
-  tags:
-    - c++_tag
-  stage: test
-  script:
-    - echo $LD_LIBRARY_PATH
-    - client/main
 
 maven-build: 
   stage: mavenbuild
