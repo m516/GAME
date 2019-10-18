@@ -6,12 +6,16 @@
 
 #include "GUI/theme.h"
 
-class Application {
-public:
-	Application();
-	sf::RenderWindow* window;
-	Theme theme;
-	int run();
-private:
-	// sf::CircleShape* shape;
+class Application 
+{
+	public:
+		sf::RenderWindow* window;
+		Theme theme;
+		// Functions
+		Application();
+		int run();
+		void initEvents(sf::RenderWindow *win);
+		void render(sf::RenderWindow *win);
+	private:
+		sf::CircleShape* shape;
 };
