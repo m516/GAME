@@ -43,18 +43,18 @@ test:
 maven-build: 
   stage: mavenbuild
   tags:
-    -shell
+    - shell
   script:
-    -cd GameProject.zip_expanded/GameProject
-    -mvn package -B
+    - cd GameProject.zip_expanded/GameProject
+    - mvn package -B
 
 maven-test:
   stage: maventest
   tags: 
-    -shell
+    - shell
   script: 
-    -cd GameProject.zip_expanded/GameProject
-    -mvn test
+    - cd GameProject.zip_expanded/GameProject
+    - mvn test
   artificats: 
     path:
       - GameProject.zip_expanded/GameProject/target/*.jar
