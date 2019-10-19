@@ -32,43 +32,18 @@ Application::Application()
 	theme.loadGenericFont();
 }
 
-int Application::run() 
+void Application::run() 
 {
-	// Start render thread
-	//sf::RenderWindow *w = window;
-	std::thread renderThread(&Application::render, this, window);
-	//renderThread.join();
-	initEvents();
-	
-	std::cout << "Running..." << std::endl;
-	sf::UdpSocket socket;
-	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
-	unsigned short port = 8080;
-	//if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
-	char data[6] = "hello";
-	int i = 0;
-	
-	while(true)
-	{
-		if (socket.send(data, sizeof(data), ip, port) != sf::Socket::Done)
-		{
-			std::cout << "Cannot connect" << std::endl;
-		}
-		else
-		{
-			std::cout << "Sent " << i++ << std::endl;
-		}
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	}
-
-	return 0;
+	// Start render and networking threads
+	std::thread renderThread(&Application::initRenderer, this, window);
+	std::thread networkThread(&Application::initNetworks, this, window);
+	initEvents(window); // Event threads exist on the main thread
 }
 
 /**
- * Handles rendering
+ * Init the rendering thread
  */
-void Application::render(sf::RenderWindow *w)
+void Application::initRenderer(sf::RenderWindow *w)
 {
 	//Initial Menu test
 	//MenuItem item = new MenuItem(&theme, "Test Item", NULL);
@@ -97,13 +72,40 @@ void Application::render(sf::RenderWindow *w)
 }
 
 /**
- * Handle events
+ * Init the networking thread
  */
-void Application::initEvents()
+void Application::initNetworks(sf::RenderWindow *w)
+{
+	std::cout << "Running..." << std::endl;
+	sf::UdpSocket socket;
+	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
+	unsigned short port = 8080;
+	//if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
+	char data[6] = "hello";
+	int i = 0;
+
+	while (w->isOpen())
+	{
+		if (socket.send(data, sizeof(data), ip, port) != sf::Socket::Done)
+		{
+			std::cout << "Cannot connect" << std::endl;
+		}
+		else
+		{
+			std::cout << "Sent " << i++ << std::endl;
+		}
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	}
+}
+
+/**
+ * Init the events thread
+ */
+void Application::initEvents(sf::RenderWindow *w)
 {
 	//EventHandler eventHandler(w);
 	//eventHandler.run();
-	sf::RenderWindow *w = window;
 
 	while (w->isOpen())
 	{

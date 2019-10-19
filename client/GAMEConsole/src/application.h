@@ -13,9 +13,10 @@ class Application
 		Theme theme;
 		// Functions
 		Application();
-		int run();
-		void initEvents();
-		void render(sf::RenderWindow *win);
+		void run();
+		void initEvents(sf::RenderWindow *w);
+		void initNetworks(sf::RenderWindow *w);
+		void initRenderer(sf::RenderWindow *w);
 	private:
 		sf::CircleShape* shape;
 };
