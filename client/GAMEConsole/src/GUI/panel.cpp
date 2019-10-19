@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void Panel::TestFunction()
+void Panel::render()
 {
-    std::cout << "Test!" << std::endl;
+
 }
