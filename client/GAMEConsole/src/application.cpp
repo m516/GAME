@@ -84,7 +84,8 @@ void Application::initNetworks(sf::RenderWindow *w)
 	char data[6] = "hello";
 	int i = 0;
 
-	while (w->isOpen())
+	//while (w->isOpen())
+	while (false)
 	{
 		if (socket.send(data, sizeof(data), ip, port) != sf::Socket::Done)
 		{
