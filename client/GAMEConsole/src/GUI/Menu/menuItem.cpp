@@ -23,7 +23,7 @@ MenuItem::~MenuItem() {
 
 
 //renders the item as a box with text in it
-void MenuItem::render(sf::RenderTarget*window) {
+void MenuItem::render() {
 	//Set colors based on whether or not this item is selected
 	if (selected) {
 		border.setFillColor(theme->color_selected);
@@ -33,8 +33,8 @@ void MenuItem::render(sf::RenderTarget*window) {
 		border.setFillColor(theme->color_deselected);
 		label.setFillColor(theme->color_selected);
 	}
-	window->draw(border);
-	window->draw(label); //TODO doesn't check if the text is longer than the border!
+	renderer->draw(border);
+	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
 }
 
 void MenuItem::setText(const std::string& text) {

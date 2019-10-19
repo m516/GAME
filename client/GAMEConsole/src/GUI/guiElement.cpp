@@ -1,4 +1,12 @@
 #include "guiElement.h"
+
+/**
+Sets the RenderTarget to render onto
+*/
+void GUIElement::setRenderer(sf::RenderTarget* new_renderer) {
+	renderer = new_renderer;
+}
+
 /**
 Set the size of the GUI Element rendered on the screen
 */

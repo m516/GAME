@@ -6,21 +6,26 @@
 #include "../UI/menuNavigator.h"
 
 //Shortcut for writing vectors of MenuItems
-typedef std::vector<GUIElement> GUIElement_vec_t;
+typedef std::vector<GUIElement*> GUIElement_vec_t;
 
 class Panel : public GUIElement
 {
 
 public:
 	/**
-	Constructs a new MenuPane
+	Constructs a new Panel
 	*/
 	Panel(int initial_size);
 
 	/**
+	Deconstructs the Panel
+	*/
+	~Panel();
+
+	/**
 	Adds an item to the list of items to display
 	*/
-	void addItem(Panel item);
+	void addElement(GUIElement* item);
 
 
 	/**
@@ -43,9 +48,9 @@ public:
 
 	/**
 	renders the item onto a RenderWindow
-	@param target the window onto which this MenuItem renders
+	@param target the window onto which this Panel renders
 	*/
-	void render(sf::RenderTarget* target);
+	void render();
 
 	/**
 	Updates how the GUI element looks
@@ -73,9 +78,4 @@ private:
 	Contained as std::vector<MenuItem>
 	*/
 	GUIElement_vec_t items;
-
-	/**
-	Updates how each item renders
-	*/
-	void updateItems();
 };

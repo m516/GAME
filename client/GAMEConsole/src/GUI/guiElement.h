@@ -8,6 +8,11 @@ class GUIElement
 {
 public:
 	/**
+	Sets the RenderTarget to render onto
+	*/
+	void setRenderer(sf::RenderTarget* new_renderer);
+
+	/**
 	Set the size of this object rendered on the screen
 	*/
 	void setSize(float x, float y);
@@ -32,7 +37,7 @@ public:
 	renders the item onto a RenderWindow
 	@param target the window onto which this GUI element renders
 	*/
-	virtual void render(sf::RenderTarget* target) = 0;
+	virtual void render()=0;
 	
 	/**
 	Enabled
@@ -41,7 +46,7 @@ public:
 
 protected:
 	/** Reference to the parent render object that this element is rendered onto */
-	sf::RenderTarget* parent;
+	sf::RenderTarget* renderer;
 	
 	/**
 	The position of the item

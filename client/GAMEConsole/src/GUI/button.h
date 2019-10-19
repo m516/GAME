@@ -39,7 +39,7 @@ public:
 	renders the item onto a RenderTarget
 	@param target the window onto which this button renders
 	*/
-	void render(sf::RenderTarget* target);
+	void render();
 
 	/**
 	Set the size of this object rendered on the screen
