@@ -85,7 +85,6 @@ clean:
 # Creats Doxygen documentation in docs/html
 docs:
 	$(DOCCMD) $(DOCFILE)
-	@echo file://$(PWD)/docs/html/index.html
 
 depend: $(SRCS)
 	makedepend $(INCLUDES) $^
