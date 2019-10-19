@@ -5,18 +5,18 @@
 # 'make clean'  removes all .o and executable files
 #
 
+# Source code directory
 SOURCE = src/
 
-# define the C++ compiler to use
+# C++ compiler to use
 CXX = g++
 
-# define any compile-time flags
+# Compiler flags
 # -Wall warnings, errors
 # -Werror errors only
 CFLAGS = -Werror
 
-# define any directories containing header files other than /usr/include
-#
+# Additional includes directories other than /usr/include
 INCLUDES = -I include -I assets
 
 # define library paths in addition to /usr/lib
@@ -27,7 +27,7 @@ INCLUDES = -I include -I assets
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lm
+LIBS = -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
 
 # define the C++ source files
 SRCS = $(addprefix $(SOURCE), main.cpp \
