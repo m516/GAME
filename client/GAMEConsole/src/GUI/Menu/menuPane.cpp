@@ -10,6 +10,7 @@ MenuPane::MenuPane(int initial_size) {
 Adds an item to the list of items to display
 */
 void MenuPane::addItem(MenuItem item) {
+	item.setRenderer(renderer);
 	if (items.capacity() == items.size()) items.reserve(items.capacity() + 5);
 	items.push_back(item);
 	updateLook();
@@ -45,11 +46,11 @@ void MenuPane::update() {
 /**
 Renders all the items
 */
-void MenuPane::render(sf::RenderTarget* target) {
+void MenuPane::render() {
 	for (unsigned int i = 0; i < items.size(); i++) {
 		if (selected == i) items[i].selected = 1;
 		else items[i].selected = 0;
-		items[i].render(target);
+		items[i].render();
 	}
 }
 

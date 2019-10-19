@@ -19,25 +19,48 @@
 
 Application::Application()
 {
+
+	shape = new sf::CircleShape(100., 8);
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
 	window = new sf::RenderWindow(
-		sf::VideoMode(256, 256), 
-		"G.A.M.E.", 
+		sf::VideoMode(256, 256),
+		"G.A.M.E.",
 		sf::Style::Default, settings
 	);
+
+	//Let the hardware synchronize this window to its graphics output
+	window->setVerticalSyncEnabled(true);
+
+	//Deactivate the window so it can be used in the render thread
+	window->setActive(false);
 
 	//Initialize the generic font for the theme
 	theme.loadGenericFont();
 }
 
-void Application::run() 
+void Application::run()
 {
 	// Start render and networking threads
 	std::thread renderThread(&Application::initRenderer, this, window);
 	std::thread networkThread(&Application::initNetworks, this, window);
-	initEvents(window); // Event threads exist on the main thread
+
+	while (window->isOpen())
+	{
+		sf::Event event;
+		while (window->pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				window->close();
+			}
+
+		}
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	}
 }
 
 /**
@@ -56,8 +79,12 @@ void Application::initRenderer(sf::RenderWindow *w)
 	MenuPane menu(5);
 	menu.setPosition(100, 100);
 	menu.setSize(200, 32);
+	menu.setRenderer(w);
 	menu.addItem(menuItem);
 	menu.addItem(menuItem2);
+
+	//Activate the window in this thread
+	w->setActive(true);
 
 	while (w->isOpen())
 	{
@@ -66,7 +93,7 @@ void Application::initRenderer(sf::RenderWindow *w)
 		w->draw(shape);
 
 		menu.update();
-		menu.render(w);
+		menu.render();
 		w->display();
 	}
 }
@@ -97,26 +124,5 @@ void Application::initNetworks(sf::RenderWindow *w)
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	}
-}
-
-/**
- * Init the events thread
- */
-void Application::initEvents(sf::RenderWindow *w)
-{
-	//EventHandler eventHandler(w);
-	//eventHandler.run();
-
-	while (w->isOpen())
-	{
-		sf::Event event;
-		while (w->pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-			{
-				w->close();
-			}
-		}
 	}
 }

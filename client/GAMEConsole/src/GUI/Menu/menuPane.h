@@ -14,7 +14,6 @@
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<MenuItem> MenuItem_vec_t;
 
-using namespace sf;
 
 class MenuPane : public GUIElement {
 public:
@@ -51,7 +50,7 @@ public:
 	renders the item onto a RenderWindow
 	@param target the window onto which this MenuItem renders
 	*/
-	void render(sf::RenderTarget* target);
+	void render();
 
 	/**
 	Updates how the GUI element looks
@@ -79,9 +78,4 @@ private:
 	Contained as std::vector<MenuItem>
 	*/
 	MenuItem_vec_t items;
-
-	/**
-	Updates how each item renders
-	*/
-	void updateItems();
 };

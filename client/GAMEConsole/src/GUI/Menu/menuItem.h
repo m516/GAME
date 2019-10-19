@@ -51,7 +51,7 @@ public:
 	renders the item as a box with text in it
 	@param target the window onto which this MenuItem renders
 	*/
-	void render(sf::RenderTarget*target);
+	void render();
 private:
 	//string of text to display
 	sf::Text label;

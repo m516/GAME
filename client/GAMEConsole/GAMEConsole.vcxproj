@@ -35,7 +35,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <LibraryDependencies>sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network</LibraryDependencies>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -46,7 +46,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <LibraryDependencies>sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network</LibraryDependencies>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -68,12 +68,6 @@
       <Message>Move asset directory into build location</Message>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
-    <None Include="install.sh" />
-    <None Include="Makefile" />
-    <None Include="src\Doxyfile" />
-  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cereal\access.hpp" />
     <ClInclude Include="include\cereal\archives\adapters.hpp" />

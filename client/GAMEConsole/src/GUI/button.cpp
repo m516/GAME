@@ -60,6 +60,6 @@ void Button::setPosition(sf::Vector2f& new_position) {
 renders the item onto a RenderTarget
 @param target the window onto which this button renders
 */
-void Button::render(sf::RenderTarget* target) {
-	target->draw(border);
+void Button::render() {
+	renderer->draw(border);
 }
