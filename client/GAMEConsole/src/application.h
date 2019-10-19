@@ -14,7 +14,7 @@ class Application
 		// Functions
 		Application();
 		int run();
-		void initEvents(sf::RenderWindow *win);
+		void initEvents();
 		void render(sf::RenderWindow *win);
 	private:
 		sf::CircleShape* shape;

@@ -27,7 +27,7 @@ INCLUDES = -I include -I assets
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-LIBS = -lm -pthread -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
+LIBS = -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
 
 # define the C++ source files
 SRCS = $(addprefix $(SOURCE), main.cpp \

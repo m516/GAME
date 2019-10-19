@@ -36,14 +36,15 @@ int Application::run()
 {
 	// Start render thread
 	//sf::RenderWindow *w = window;
-	//std::thread renderThread(&Application::render, this, &window);
-	//initEvents(window);
+	std::thread renderThread(&Application::render, this, window);
+	//renderThread.join();
+	initEvents();
 	
 	std::cout << "Running..." << std::endl;
 	sf::UdpSocket socket;
-	sf::IpAddress ip("10.24.226.130");
-	unsigned short port = 54000;
-	if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
+	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
+	unsigned short port = 8080;
+	//if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
 	char data[6] = "hello";
 	int i = 0;
 	
@@ -55,7 +56,7 @@ int Application::run()
 		}
 		else
 		{
-			std::cout << "Sent" << i++ << std::endl;
+			std::cout << "Sent " << i++ << std::endl;
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -98,10 +99,11 @@ void Application::render(sf::RenderWindow *w)
 /**
  * Handle events
  */
-void Application::initEvents(sf::RenderWindow *w)
+void Application::initEvents()
 {
 	//EventHandler eventHandler(w);
 	//eventHandler.run();
+	sf::RenderWindow *w = window;
 
 	while (w->isOpen())
 	{

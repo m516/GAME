@@ -19,5 +19,7 @@ class Panel : public GUIElement
         /** Set this panel's parent element to given render target */
         void setParent(sf::RenderTarget* parent);
         /** Get this panel's parent render target */
-        sf::RenderTarget getParent();
+        sf::RenderTarget* getParent();
+    private:
+    protected:
 };
