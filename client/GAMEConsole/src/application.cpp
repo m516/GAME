@@ -1,16 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-
-#include "GUI/Menu/menuItem.h"
-#include "GUI/Menu/menuPane.h"
-#include "GUI/theme.h"
-#include "GUI/button.h"
-
-#include <SFML/Network.hpp>
-
-#include "cereal/archives/json.hpp"
-
 #include <thread>
 #include <chrono>
 
@@ -45,12 +32,11 @@ Application::Application()
 
 void Application::run()
 {
+	// Start threads
 	Renderer* renderer = new Renderer(this);
 	renderer->start();
-
 	Network* network = new Network(this);
 	network->start();
-
 	Events* events = new Events(this);
 	events->start();
 }

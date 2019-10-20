@@ -11,6 +11,10 @@ public:
 	Sets the RenderTarget to render onto
 	*/
 	void setRenderer(sf::RenderTarget* new_renderer);
+	/**
+	Gets the RenderTarget to render onto
+	*/
+	sf::RenderTarget* getRenderer();
 
 	/**
 	Set the size of this object rendered on the screen
@@ -42,7 +46,7 @@ public:
 	/**
 	Enabled
 	*/
-	bool selected = 1;
+	bool selected = true;
 
 protected:
 	/** Reference to the parent render object that this element is rendered onto */

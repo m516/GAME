@@ -1,6 +1,6 @@
 #pragma once
-#ifndef MENU_NAVIGATOR_H
-#define MENU_NAVIGATOR_H
+
+
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 class MenuNavigator {
@@ -51,12 +51,11 @@ public:
 
 private:
 	//Key bindings for each control
-	sf::Keyboard::Key _keyUp    = sf::Keyboard::W;
-	sf::Keyboard::Key _keyDown  = sf::Keyboard::S;
-	sf::Keyboard::Key _keyLeft  = sf::Keyboard::A;
-	sf::Keyboard::Key _keyRight = sf::Keyboard::D;
-	sf::Keyboard::Key _keyEnter = sf::Keyboard::Return;
-	sf::Keyboard::Key _keyExit = sf::Keyboard::Escape;
+	sf::Keyboard::Key keyUp    = sf::Keyboard::W;
+	sf::Keyboard::Key keyDown  = sf::Keyboard::S;
+	sf::Keyboard::Key keyLeft  = sf::Keyboard::A;
+	sf::Keyboard::Key keyRight = sf::Keyboard::D;
+	sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
+	sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
 };
 
-#endif

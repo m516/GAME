@@ -8,6 +8,13 @@ void GUIElement::setRenderer(sf::RenderTarget* new_renderer) {
 }
 
 /**
+Gets the RenderTarget to render onto
+*/
+sf::RenderTarget* GUIElement::getRenderer() {
+	return renderer;
+}
+
+/**
 Set the size of the GUI Element rendered on the screen
 */
 void GUIElement::setSize(float x, float y) {

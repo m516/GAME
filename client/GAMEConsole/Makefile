@@ -38,7 +38,10 @@ SRCS = $(addprefix $(SOURCE), main.cpp \
 		GUI/panel.cpp \
 		GUI/Menu/menuItem.cpp \
 		GUI/Menu/menuPane.cpp \
-		UI/menuNavigator.cpp )
+		UI/menuNavigator.cpp \
+		modules/events.cpp \
+		modules/network.cpp \
+		modules/renderer.cpp )
 
 # define the C++ object files 
 #

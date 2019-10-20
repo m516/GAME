@@ -18,6 +18,16 @@ Adds an item to the list of items to display
 */
 void Panel::addElement(GUIElement* item) {
 	item->setRenderer(renderer);
+
+	//Disable MenuPanes
+	if (MenuPane * item = dynamic_cast<MenuPane*>(items[selected])) {
+		item->menuNavigator.keyboard_enabled = false;
+	}
+	if (Button * item = dynamic_cast<Button*>(items[selected])) {
+		item->selected = false;
+	}
+	
+
 	if (items.capacity() == items.size()) items.reserve(items.capacity() + 5);
 	items.push_back(item);
 	updateLook();
@@ -47,6 +57,19 @@ void Panel::update() {
 
 	if (paneNavigator.up == MenuNavigator::STATUS::PRESSED) {
 		if (selected > 0) selected--;
+	}
+
+	if (paneNavigator.enter == MenuNavigator::STATUS::PRESSED) {
+		paneNavigator.keyboard_enabled = false;
+
+		//Enable the navigator for the MenuPane
+		if (MenuPane* item = dynamic_cast<MenuPane*>(items[selected])) {
+			item->menuNavigator.keyboard_enabled = true;
+		}
+
+		if (Button * item = dynamic_cast<Button*>(items[selected])) {
+			item->selected = false;
+		}
 	}
 }
 

@@ -1,13 +1,16 @@
-#include "menuNavigator.h"
+#include "keyboard_controller.h"
 
-//Initializes the navigator
-MenuNavigator::MenuNavigator() {
+//Controls are similar to MenuNavigator
+
+//Initializes the controller
+KeyboardController::KeyboardController() {
 
 }
-//Update the keys being pressed.
-void MenuNavigator::poll() {
 
-	if (keyboard_enabled) {
+//Update the keys being pressed.
+void KeyboardController::update() {
+
+	if (enabled) {
 		//enter
 		if (sf::Keyboard::isKeyPressed(keyEnter)) {
 			current_control = Control::ENTER;
@@ -82,7 +85,7 @@ void MenuNavigator::poll() {
 
 //Bind a key to a character on the keyboard.
 //Default WASD controls
-void MenuNavigator::setKey(Control keyToSet, sf::Keyboard::Key value) {
+void KeyboardController::setKey(Control keyToSet, sf::Keyboard::Key value) {
 	switch (keyToSet) {
 	case Control::ENTER:
 		keyEnter = value;

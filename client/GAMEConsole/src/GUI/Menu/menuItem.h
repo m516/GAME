@@ -23,7 +23,7 @@ public:
 	/**
 	true if pressed, false if otherwise
 	*/
-	int pressed = 0;
+	bool pressed = false;
 	/**
 	function to call when this menu item is pressed
 	*/
