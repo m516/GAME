@@ -30,18 +30,26 @@ INCLUDES = -I include -I assets
 LIBS = -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
 
 # define the C++ source files
-SRCS = $(addprefix $(SOURCE), main.cpp \
+SRCS = $(addprefix $(SOURCE), \
+		main.cpp \
 		application.cpp \
 		GUI/theme.cpp \
 		GUI/guiElement.cpp \
 		GUI/button.cpp \
 		GUI/panel.cpp \
-		GUI/Menu/menuItem.cpp \
-		GUI/Menu/menuPane.cpp \
+		GUI/menu/menuItem.cpp \
+		GUI/menu/menuPane.cpp \
 		UI/menuNavigator.cpp \
 		modules/events.cpp \
 		modules/network.cpp \
-		modules/renderer.cpp )
+		modules/renderer.cpp \
+		games/game.cpp \
+		games/sprite.cpp \
+		games/pong/pong.cpp \
+		games/pong/objects/ball.cpp \
+		games/pong/objects/paddle.cpp \
+		games/pong/controllers/controller.cpp \
+		games/pong/controllers/keyboard_controller.cpp )
 
 # define the C++ object files 
 #

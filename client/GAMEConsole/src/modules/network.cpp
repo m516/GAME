@@ -1,8 +1,5 @@
 #include "network.h"
 
-#include "../GUI/Menu/menuItem.h"
-#include "../GUI/Menu/menuPane.h"
-
 #include <thread>
 #include <iostream>
 

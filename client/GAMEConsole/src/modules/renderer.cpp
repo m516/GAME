@@ -1,7 +1,7 @@
 #include "renderer.h"
 
-#include "../GUI/Menu/menuItem.h"
-#include "../GUI/Menu/menuPane.h"
+#include "../GUI/menu/menuItem.h"
+#include "../GUI/menu/menuPane.h"
 #include "../games/pong/pong.h"
 
 #include <thread>
