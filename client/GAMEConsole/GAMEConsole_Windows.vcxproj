@@ -29,8 +29,8 @@
     <ClCompile Include="src\games\sprite.cpp" />
     <ClCompile Include="src\GUI\button.cpp" />
     <ClCompile Include="src\GUI\guiElement.cpp" />
-    <ClCompile Include="src\GUI\Menu\menuItem.cpp" />
-    <ClCompile Include="src\GUI\Menu\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
+    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
     <ClCompile Include="src\GUI\panel.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -126,8 +126,8 @@
     <ClInclude Include="src\games\sprite.h" />
     <ClInclude Include="src\GUI\button.h" />
     <ClInclude Include="src\GUI\guiElement.h" />
-    <ClInclude Include="src\GUI\Menu\menuItem.h" />
-    <ClInclude Include="src\GUI\Menu\menuPane.h" />
+    <ClInclude Include="src\GUI\menu\menuItem.h" />
+    <ClInclude Include="src\GUI\menu\menuPane.h" />
     <ClInclude Include="src\GUI\panel.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
