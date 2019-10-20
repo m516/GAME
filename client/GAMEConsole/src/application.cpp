@@ -2,8 +2,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-#include "GUI/Menu/menuItem.h"
-#include "GUI/Menu/menuPane.h"
+#include "GUI/menu/menuItem.h"
+#include "GUI/menu/menuPane.h"
 #include "GUI/theme.h"
 #include "GUI/button.h"
 

@@ -150,7 +150,6 @@
     <ClInclude Include="include\cereal\types\vector.hpp" />
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\games\game.h" />
-    <ClInclude Include="src\games\pong\controller.h" />
     <ClInclude Include="src\games\pong\controllers\controller.h" />
     <ClInclude Include="src\games\pong\controllers\keyboard_controller.h" />
     <ClInclude Include="src\games\pong\game.h" />
@@ -161,8 +160,8 @@
     <ClInclude Include="src\games\sprite.h" />
     <ClInclude Include="src\GUI\button.h" />
     <ClInclude Include="src\GUI\guiElement.h" />
-    <ClInclude Include="src\GUI\Menu\menuItem.h" />
-    <ClInclude Include="src\GUI\Menu\menuPane.h" />
+    <ClInclude Include="src\GUI\menu\menuItem.h" />
+    <ClInclude Include="src\GUI\menu\menuPane.h" />
     <ClInclude Include="src\GUI\panel.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
@@ -170,18 +169,16 @@
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\games\game.cpp" />
-    <ClCompile Include="src\games\pong\Controller.cpp" />
     <ClCompile Include="src\games\pong\controllers\controller.cpp" />
     <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp" />
-    <ClCompile Include="src\games\pong\controllers\Source.cpp" />
     <ClCompile Include="src\games\pong\objects\ball.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle.cpp" />
     <ClCompile Include="src\games\pong\pong.cpp" />
     <ClCompile Include="src\games\sprite.cpp" />
     <ClCompile Include="src\GUI\button.cpp" />
     <ClCompile Include="src\GUI\guiElement.cpp" />
-    <ClCompile Include="src\GUI\Menu\menuItem.cpp" />
-    <ClCompile Include="src\GUI\Menu\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
+    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
     <ClCompile Include="src\GUI\panel.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
