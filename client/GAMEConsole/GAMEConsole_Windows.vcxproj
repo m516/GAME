@@ -34,6 +34,9 @@
     <ClCompile Include="src\GUI\panel.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\modules\events.cpp" />
+    <ClCompile Include="src\modules\network.cpp" />
+    <ClCompile Include="src\modules\renderer.cpp" />
     <ClCompile Include="src\UI\menuNavigator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +133,9 @@
     <ClInclude Include="src\GUI\menu\menuPane.h" />
     <ClInclude Include="src\GUI\panel.h" />
     <ClInclude Include="src\GUI\theme.h" />
+    <ClInclude Include="src\modules\events.h" />
+    <ClInclude Include="src\modules\network.h" />
+    <ClInclude Include="src\modules\renderer.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
