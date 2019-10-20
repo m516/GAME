@@ -1,0 +1,59 @@
+# This file is a template, and might need editing before it works on your project.
+# use the official gcc image, based on debian
+# can use verions as well, like gcc:5.2
+# see https://hub.docker.com/_/gcc/
+
+stages:
+  - frontend-tests
+  - mavenbuild
+  - maventest
+
+image: gcc
+
+frontend-tests:
+  stage: frontend-tests
+  tags:
+    - c++_tag
+  # instead of calling g++ directly you can also use some build toolkit like make
+  # install the necessary build tools when needed
+  before_script:
+    - echo $LD_LIBRARY_PATH
+    - export LD_LIBRARY_PATH=/usr/local/lib
+    - apt update -y
+    - apt upgrade -y
+    - apt -y install build-essential make autoconf git openssh-server cmake libsfml-dev
+    - apt-get clean \
+    - rm -rf /var/lib/apt/lists/*
+    - ldconfig -v | grep -v ^$'\t'
+    - cd client
+    - make
+  script:
+    - ./main
+  artifacts:
+    paths:
+      - clinet/*
+      - /usr/local/lib
+      # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
+      # cache:
+      #   paths:
+      #     - "*.o"
+
+
+maven-build: 
+  stage: mavenbuild
+  tags:
+    - shell
+  script:
+    - cd GameProject.zip_expanded/GameProject
+    - mvn package -B
+
+maven-test:
+  stage: maventest
+  tags: 
+    - shell
+  script: 
+    - cd GameProject.zip_expanded/GameProject
+    - mvn test
+  artifacts: 
+    paths:
+      - GameProject.zip_expanded/GameProject/target/*.jar
