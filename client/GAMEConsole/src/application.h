@@ -14,8 +14,6 @@ class Application
 		// Functions
 		Application();
 		void run();
-		void initEvents(sf::RenderWindow *w);
-		void initNetworks(sf::RenderWindow *w);
 	private:
-		sf::CircleShape* shape;
+	protected:
 };

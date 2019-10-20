@@ -22,7 +22,7 @@ void Network::start()
  */
 void Network::networkLoop()
 {
-    std::cout << "Running..." << std::endl;
+    // std::cout << "Running..." << std::endl;
 	sf::UdpSocket socket;
 	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
 	unsigned short port = 8080;

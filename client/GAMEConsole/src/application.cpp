@@ -8,15 +8,13 @@
 
 Application::Application()
 {
-	shape = new sf::CircleShape(100., 8);
-
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
 	window = new sf::RenderWindow(
 		sf::VideoMode(256, 256),
 		"G.A.M.E.",
-		sf::Style::Default, settings
+		sf::Style::Fullscreen, settings
 	);
 
 	//Let the hardware synchronize this window to its graphics output
@@ -30,6 +28,9 @@ Application::Application()
 	theme->loadGenericFont();
 }
 
+/**
+ * Start application threads and run the app
+ */
 void Application::run()
 {
 	// Start threads
