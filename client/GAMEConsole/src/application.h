@@ -10,13 +10,12 @@ class Application
 {
 	public:
 		sf::RenderWindow* window;
-		Theme theme;
+		Theme* theme;
 		// Functions
 		Application();
 		void run();
 		void initEvents(sf::RenderWindow *w);
 		void initNetworks(sf::RenderWindow *w);
-		void initRenderer(sf::RenderWindow *w);
 	private:
 		sf::CircleShape* shape;
 };
