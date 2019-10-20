@@ -4,6 +4,8 @@
 #include <SFML/System.hpp>
 #include "guiElement.h"
 #include "../UI/menuNavigator.h"
+#include "menu/menuPane.h"
+#include "button.h"
 
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<GUIElement*> GUIElement_vec_t;

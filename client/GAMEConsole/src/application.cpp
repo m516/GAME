@@ -9,6 +9,8 @@
 
 #include <SFML/Network.hpp>
 
+#include "games/pong/pong.h"
+
 #include "cereal/archives/json.hpp"
 
 #include <thread>
@@ -68,6 +70,8 @@ void Application::run()
  */
 void Application::initRenderer(sf::RenderWindow *w)
 {
+
+	/*
 	//Initial Menu test
 	//MenuItem item = new MenuItem(&theme, "Test Item", NULL);
 	MenuItem menuItem2(&theme, "Don't pick me!", NULL);
@@ -96,6 +100,37 @@ void Application::initRenderer(sf::RenderWindow *w)
 		menu.render();
 		w->display();
 	}
+
+	*/
+
+
+
+
+	//Activate the window in this thread
+	w->setActive(true);
+
+	Pong pong_game;
+	pong_game.setPosition(0, 0);
+	pong_game.setSize(w->getSize().x, w->getSize().y);
+	pong_game.setRenderer(w);
+	pong_game.initialize();
+
+
+	sf::CircleShape shape(20.f);
+
+	while (w->isOpen())
+	{
+		w->clear();
+		w->draw(shape);
+
+		pong_game.update();
+		pong_game.render();
+
+		w->display();
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(16));
+	}
+
 }
 
 /**
