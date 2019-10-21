@@ -21,6 +21,10 @@ public:
 	Constructs a new MenuPane
 	*/
 	MenuPane(int initial_size);
+	/**
+	 * Prevent seg faults by init with render target
+	 */
+	MenuPane(int initial_size, sf::RenderTarget* renderTarget);
 
 	/**
 	Adds an item to the list of items to display

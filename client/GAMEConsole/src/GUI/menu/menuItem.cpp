@@ -1,5 +1,6 @@
 #include "menuItem.h"
 #include <string>
+#include <iostream>
 
 MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pressed) ()) {
 	//Set description text
@@ -24,6 +25,7 @@ MenuItem::~MenuItem() {
 
 //renders the item as a box with text in it
 void MenuItem::render() {
+	
 	//Set colors based on whether or not this item is selected
 	if (selected) {
 		border.setFillColor(theme->color_selected);
@@ -33,8 +35,10 @@ void MenuItem::render() {
 		border.setFillColor(theme->color_deselected);
 		label.setFillColor(theme->color_selected);
 	}
+	
 	renderer->draw(border);
 	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
+	
 }
 
 void MenuItem::setText(const std::string& text) {

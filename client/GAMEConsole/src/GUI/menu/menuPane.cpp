@@ -6,6 +6,12 @@ MenuPane::MenuPane(int initial_size) {
 	items.reserve(initial_size);
 }
 
+MenuPane::MenuPane(int initial_size, sf::RenderTarget* renderTarget)
+{
+	items.reserve(initial_size);
+	this->setRenderer(renderTarget);
+}
+
 /**
 Adds an item to the list of items to display
 */
