@@ -1,4 +1,10 @@
 #include "theme.h"
+#include <iostream>
+
+Theme::Theme()
+{
+
+}
 
 /**
  * Set font standard to Alien-Encounters-Regular.ttf
@@ -20,4 +26,15 @@ Theme Theme::clone()
 	newTheme.color_deselected = color_deselected;
 	newTheme.color_selected = newTheme.color_selected;
 	return newTheme;
+}
+
+/**
+ * Sharpens text by a factor of `sharpenFactor`
+ * Sets character size to `original * sharpenFactor` and scales down accordingly
+ */
+sf::Text Theme::sharpenText(sf::Text text)
+{
+	text.setCharacterSize(text.getCharacterSize() * sharpenFactor);
+	text.scale(sf::Vector2f(1.f / (float)sharpenFactor, 1.f / (float)sharpenFactor));
+	return text;
 }

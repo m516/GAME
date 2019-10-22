@@ -22,22 +22,24 @@ void Network::start()
  */
 void Network::networkLoop()
 {
-	
-	//std::cout << application->window->getSize().x << std::endl;
+	// TCP TESTING //
 	sf::TcpSocket socket;
 	sf::Socket::Status status = socket.connect(
-		"10.24.226.130", 8080);
+		"10.24.226.130", 
+		54000
+	);
+
 	if (status != sf::Socket::Done)
 	{
 		std::cout << "nah fuck you" << std::endl;
 	}
 	else
 	{
-		char data[8] = "hello";
+		char data[6] = "hello";
 		int numbers = 7;
 		//while (true)
 		{
-			if (socket.send(data, 6) != sf::Socket::Done)
+			if (socket.send(data, sizeof(data)) != sf::Socket::Done)
 			{
 				std::cout << "Could not send" << std::endl;
 			}
@@ -49,6 +51,8 @@ void Network::networkLoop()
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		}
 	}
+
+	// UDP TESTING //
 	/*
     std::cout << "Running..." << std::endl;
 	sf::UdpSocket socket;

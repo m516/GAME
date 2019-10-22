@@ -32,7 +32,7 @@ public:
 	Sets the text to display
 	*/
 	void setText(const std::string& description_text);
-
+	sf::Text getText();
 
 	//Overridden from GUIElement
 	/**

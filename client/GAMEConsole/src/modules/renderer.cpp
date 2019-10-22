@@ -45,8 +45,8 @@ void Renderer::renderLoop()
 	// Create main menu
 	sf::Text title;
 	title.setFont(theme->font_standard);
-	title.setCharacterSize(66 * 2);
-	title.scale(sf::Vector2f(0.5, 0.5));
+	title.setCharacterSize(66);
+	title = theme->sharpenText(title);
 	title.setString("G.A.M.E.");
 	title.setPosition(5, 5);
 
