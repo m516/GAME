@@ -37,8 +37,10 @@ public class WebSocketServer {
     {
         logger.info("Entered into Open");
         
-        //sessionUsernameMap.put(session, username);
-        //usernameSessionMap.put(username, session);
+        String username = "user";
+        
+        sessionUsernameMap.put(session, username);
+        usernameSessionMap.put(username, session);
         
         String message="User:"+ " has Joined the Chat";
         	broadcast(message);
@@ -46,7 +48,7 @@ public class WebSocketServer {
     }
  
     @OnMessage
-    public void onMessage(byte [] i) throws IOException 
+    public void onMessage(Session session, int b) throws IOException 
     {
         // Handle new messages
     	//String message = " " + messageChar[0] + messageChar[1];
