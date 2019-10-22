@@ -6,6 +6,7 @@
 
 class Sprite {
 public:
+	virtual ~Sprite();
 
 	sf::Vector2f position;
 

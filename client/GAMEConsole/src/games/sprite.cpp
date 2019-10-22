@@ -1,5 +1,9 @@
 #include "sprite.h"
 
+Sprite::~Sprite() {
+
+}
+
 void Sprite::updateScreenDimensions() {
 
 	screen_size.x = size.x * game->camera_scale * game->getSize().y; //getSize().y ensures a square image regardless of aspect ratio

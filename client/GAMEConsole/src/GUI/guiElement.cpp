@@ -1,5 +1,10 @@
 #include "guiElement.h"
 
+//Virtual destructor
+GUIElement::~GUIElement() {
+
+}
+
 /**
 Sets the RenderTarget to render onto
 */

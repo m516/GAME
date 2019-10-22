@@ -19,7 +19,7 @@ void Pong::initialize(){
 
 	//Create the right paddle
 	paddle_right = new Paddle(this);
-	paddle_right->position.x = 0.9 - paddle_right->size.x;
+	paddle_right->position.x = 0.9f - paddle_right->size.x;
 
 	KeyboardController* right_controller = new KeyboardController;
 	right_controller->setKey(Controller::Control::UP, sf::Keyboard::I);
@@ -33,10 +33,9 @@ void Pong::initialize(){
 }
 
 void Pong::update(){
-	//TODO stub
-	ball->update();
 	paddle_right->update();
 	paddle_left->update();
+	ball->update();
 }
 
 void Pong::render() {

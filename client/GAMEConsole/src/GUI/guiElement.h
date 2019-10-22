@@ -7,6 +7,9 @@
 class GUIElement
 {
 public:
+	//Virtual destructor
+	virtual ~GUIElement();
+
 	/**
 	Sets the RenderTarget to render onto
 	*/

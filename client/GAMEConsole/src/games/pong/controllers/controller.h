@@ -3,6 +3,9 @@
 class Controller {
 public:
 
+	//Virtual destructor
+	virtual ~Controller();
+
 	//The list of controls that go into a menu
 	typedef enum class CONTROL
 	{

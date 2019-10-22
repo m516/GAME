@@ -40,7 +40,7 @@ void Renderer::renderLoop()
 	
 	Pong pong_game;
 	pong_game.setPosition(0, 0);
-	pong_game.setSize(window->getSize().x, window->getSize().y);
+	pong_game.setSize((float)(window->getSize().x), (float)(window->getSize().y));
 	pong_game.setRenderer(window);
 	pong_game.initialize();
 
@@ -57,11 +57,11 @@ void Renderer::renderLoop()
 	mainMenu.setSize(150, 150);
 
 	std::vector<std::string> menuItems = {"PLAY", "PARTY", "FRIENDS", "PROFILE", "SETTINGS"};
-	for (int i = 0; i < menuItems.size(); i++)
+	for (unsigned int i = 0; i < menuItems.size(); i++)
 	{
 		MenuItem item(theme, menuItems[i], NULL);
 		item.selected = i == 0 ? 1 : 0;
-		item.setPosition(0, 25 * i);
+		item.setPosition(0, (float)(25 * i));
 		mainMenu.addItem(item);
 	}
 
@@ -110,8 +110,8 @@ sf::View Renderer::getLetterboxView(sf::View view, int windowWidth, int windowHe
     // Compares the aspect ratio of the window to the aspect ratio of the view,
     // and sets the view's viewport accordingly in order to archieve a letterbox effect.
     // A new view (with a new viewport set) is returned.
-    float windowRatio = windowWidth / (float) windowHeight;
-    float viewRatio = view.getSize().x / (float) view.getSize().y;
+    float windowRatio = windowWidth / (float) (windowHeight);
+    float viewRatio = view.getSize().x / view.getSize().y;
     float sizeX = 1;
     float sizeY = 1;
     float posX = 0;
