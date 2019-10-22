@@ -4,7 +4,7 @@ Paddle::Paddle(Game* game) {
 	this->game = game;
 
 	//Set initial size and position
-	size = sf::Vector2f(0.05f, 0.2f);
+	size = sf::Vector2f(0.02f, 0.15f);
 	position = sf::Vector2f(0.1f, 0.5f);
 
 	//Update screen dimensions

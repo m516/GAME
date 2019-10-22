@@ -22,7 +22,7 @@ public:
 
 	bool enable_motion = false;
 
-	virtual void update() = 0;
+	virtual void update();
 
 	virtual void render() = 0;
 

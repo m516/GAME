@@ -13,3 +13,10 @@ void Sprite::updateScreenDimensions() {
 	screen_position.x = (position.x + game->camera_location.x + game->getPosition().x)*game->getSize().x;
 	screen_position.y = (position.y + game->camera_location.y + game->getPosition().y)*game->getSize().y;
 }
+
+void Sprite :: update() {
+	if (enable_motion) {
+		velocity += acceleration;
+		position += velocity;
+	}
+}
