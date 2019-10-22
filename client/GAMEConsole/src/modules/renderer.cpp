@@ -4,9 +4,11 @@
 #include "../GUI/menu/menuPane.h"
 #include "../games/pong/pong.h"
 #include "../GUI/panel.h"
+#include "events.h"
 
 #include <thread>
 #include <iostream>
+#include <chrono>
 
 Renderer::Renderer(Application *app)
 {
@@ -62,19 +64,24 @@ void Renderer::renderLoop()
 		item.setPosition(0, 25 * i);
 		mainMenu.addItem(item);
 	}
-	
+
 	while (window->isOpen())
 	{
-		window->draw(title);
-		mainMenu.update();
-		mainMenu.render();
+		sf::Time elapsedTime = frameClock.restart();
+		timeSinceLastFrame += elapsedTime;
+		std::this_thread::sleep_for(std::chrono::milliseconds(FRAME_TIME.asMilliseconds()));
 
-		//pong_game.update();
-		//pong_game.render();
+		while (timeSinceLastFrame > FRAME_TIME)
+		{
+			window->draw(title);
+			mainMenu.update();
+			mainMenu.render();
 
-		window->display();
+			//pong_game.update();
+			//pong_game.render();
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(16));
+			window->display();
+		}
 	}
 }
 
