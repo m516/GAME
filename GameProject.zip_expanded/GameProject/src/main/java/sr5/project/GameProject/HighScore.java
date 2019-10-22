@@ -16,7 +16,14 @@ public class HighScore {
 	public HighScore() {
 	}
 
-	@Id
+    public HighScore(int i, String user, int i1)
+	{
+		setUsername(user);
+		setId(i);
+		setScore(i1);
+    }
+
+    @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
 		return Id;
