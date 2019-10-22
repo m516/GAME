@@ -42,11 +42,6 @@ void Renderer::renderLoop()
 	pong_game.setRenderer(window);
 	pong_game.initialize();
 
-	Panel panel(5);
-	panel.setRenderer(window);
-	panel.setPosition(0, 0);
-	panel.setSize(window->getSize().x, window->getSize().y);
-
 	// Create main menu
 	sf::Text title;
 	title.setFont(theme->font_standard);

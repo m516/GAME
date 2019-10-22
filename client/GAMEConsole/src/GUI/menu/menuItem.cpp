@@ -6,6 +6,8 @@ MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pr
 	//Set description text
 	label.setString(text);
 	label.setFont(theme->font_standard);
+	label.setCharacterSize(label.getCharacterSize() * 2);
+	label.scale(sf::Vector2f(0.5, 0.5));
 
 	pressed_function = function_when_pressed;
 	//Configure border

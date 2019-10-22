@@ -37,15 +37,20 @@ void MenuPane::updateLook() {
 /**
 Updates the MenuPane
 */
-void MenuPane::update() {
+void MenuPane::update() 
+{
 	menuNavigator.poll();
 
-	if (menuNavigator.down==MenuNavigator::STATUS::PRESSED) {
-		if (selected < items.size()-1) selected++;
+	if (menuNavigator.down==MenuNavigator::STATUS::PRESSED) 
+	{
+		if (selected < items.size() - 1) selected++;
+		else selected = 0;
 	}
 
-	if (menuNavigator.up == MenuNavigator::STATUS::PRESSED) {
+	if (menuNavigator.up == MenuNavigator::STATUS::PRESSED) 
+	{
 		if (selected > 0) selected--;
+		else selected = items.size() - 1;
 	}
 }
 
