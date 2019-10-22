@@ -63,16 +63,20 @@ void MenuItem::setSize(float x, float y)
 {
 	GUIElement::setSize(x, y);
 	border.setSize(size);
+	// label.setCharacterSize(y - 4.f);
+	// label.setCharacterSize((int)(y - 4.0f));
 	label = theme->sharpenText(label);
-	//label.setCharacterSize((int)(y - 4.0f));
+	//
 }
 
 void MenuItem::setSize(sf::Vector2f &new_size) 
 {
 	GUIElement::setSize(new_size);
 	border.setSize(size);
+	// label.setCharacterSize(new_size.y - 4.f);
+	// label.setCharacterSize((int)(new_size.y - 4.0f));
 	label = theme->sharpenText(label);
-	//label.setCharacterSize((int)(new_size.y - 4.0f));
+	//
 }
 
 /**

@@ -14,7 +14,7 @@ Application::Application()
 	window = new sf::RenderWindow(
 		sf::VideoMode(256, 256),
 		"G.A.M.E.",
-		sf::Style::Fullscreen, 
+		sf::Style::Default, 
 		settings
 	);
 

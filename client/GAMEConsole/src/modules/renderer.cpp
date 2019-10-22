@@ -65,6 +65,8 @@ void Renderer::renderLoop()
 		mainMenu.addItem(item);
 	}
 
+	application->events->panes.push_back(&mainMenu);
+
 	while (window->isOpen())
 	{
 		sf::Time elapsedTime = frameClock.restart();
@@ -74,17 +76,28 @@ void Renderer::renderLoop()
 		while (timeSinceLastFrame > FRAME_TIME)
 		{
 			timeSinceLastFrame = sf::Time::Zero;
-
-			window->draw(title);
-			mainMenu.update();
-			mainMenu.render();
-
-			//pong_game.update();
-			//pong_game.render();
-
+			window->clear();
+			if (mainMenu.selected == 3)
+			{
+				pong_game.setSize(256, 256);
+				pong_game.update();
+				pong_game.render();
+			}
+			else
+			{
+				window->draw(title);
+				mainMenu.update();
+				mainMenu.render();
+			}
+			
 			window->display();
 		}
 	}
+}
+
+void testFunc()
+{
+	std::cout << "Hey!" << std::endl;
 }
 
 /**

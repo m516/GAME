@@ -26,7 +26,7 @@ void Network::networkLoop()
 	sf::TcpSocket socket;
 	sf::Socket::Status status = socket.connect(
 		"10.24.226.130", 
-		3232
+		8080
 	);
 
 	if (status != sf::Socket::Done)

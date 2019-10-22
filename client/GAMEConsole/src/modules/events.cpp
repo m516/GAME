@@ -36,11 +36,18 @@ void Events::eventLoop()
 
             if (event.type == sf::Event::Resized)
             {
-				Renderer* r = application->renderer;
-				window->setView(r->getLetterboxView(window->getView(), event.size.width, event.size.height));
+				window->setView(application->renderer->getLetterboxView(window->getView(), event.size.width, event.size.height));
             }
-		}
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(16));
+			/*
+			if (event.type == sf::Event::KeyPressed)
+			{
+				for (int i = 0; i < panes.size(); i++)
+				{
+					panes[i]->update();
+				}
+			}
+			*/
+		}
 	}
 }
