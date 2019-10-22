@@ -73,6 +73,8 @@ void Renderer::renderLoop()
 
 		while (timeSinceLastFrame > FRAME_TIME)
 		{
+			timeSinceLastFrame = sf::Time::Zero;
+
 			window->draw(title);
 			mainMenu.update();
 			mainMenu.render();
