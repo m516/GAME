@@ -77,9 +77,10 @@ void Renderer::renderLoop()
 		{
 			timeSinceLastFrame = sf::Time::Zero;
 			window->clear();
+
 			if (mainMenu.selected == 3)
 			{
-				pong_game.setSize(256, 256);
+				pong_game.setSize(window->getView().getSize().x, window->getView().getSize().y);
 				pong_game.update();
 				pong_game.render();
 			}
