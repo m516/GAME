@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{84b7330a-847f-4e92-9455-8b1436d101e6}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>GAME_Console</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Raspberry</TargetLinuxPlatform>
+    <LinuxProjectType>{8748239F-558C-44D1-944B-07B09C35B330}</LinuxProjectType>
+    <ProjectName>GAMEConsole</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Link>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </RemotePostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Move asset directory into build location</Message>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cereal\access.hpp" />
+    <ClInclude Include="include\cereal\archives\adapters.hpp" />
+    <ClInclude Include="include\cereal\archives\binary.hpp" />
+    <ClInclude Include="include\cereal\archives\json.hpp" />
+    <ClInclude Include="include\cereal\archives\portable_binary.hpp" />
+    <ClInclude Include="include\cereal\archives\xml.hpp" />
+    <ClInclude Include="include\cereal\cereal.hpp" />
+    <ClInclude Include="include\cereal\details\helpers.hpp" />
+    <ClInclude Include="include\cereal\details\polymorphic_impl.hpp" />
+    <ClInclude Include="include\cereal\details\polymorphic_impl_fwd.hpp" />
+    <ClInclude Include="include\cereal\details\static_object.hpp" />
+    <ClInclude Include="include\cereal\details\traits.hpp" />
+    <ClInclude Include="include\cereal\details\util.hpp" />
+    <ClInclude Include="include\cereal\external\base64.hpp" />
+    <ClInclude Include="include\cereal\external\rapidjson\allocators.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\document.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\encodedstream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\encodings.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\error\en.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\error\error.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\filereadstream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\filewritestream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\fwd.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\itoa.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\meta.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\pow10.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\regex.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\stack.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\strtod.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\swap.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\memorybuffer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\memorystream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\pointer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\prettywriter.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\rapidjson.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\reader.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\schema.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\stream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\stringbuffer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\writer.h" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="include\cereal\macros.hpp" />
+    <ClInclude Include="include\cereal\types\array.hpp" />
+    <ClInclude Include="include\cereal\types\base_class.hpp" />
+    <ClInclude Include="include\cereal\types\bitset.hpp" />
+    <ClInclude Include="include\cereal\types\boost_variant.hpp" />
+    <ClInclude Include="include\cereal\types\chrono.hpp" />
+    <ClInclude Include="include\cereal\types\common.hpp" />
+    <ClInclude Include="include\cereal\types\complex.hpp" />
+    <ClInclude Include="include\cereal\types\concepts\pair_associative_container.hpp" />
+    <ClInclude Include="include\cereal\types\deque.hpp" />
+    <ClInclude Include="include\cereal\types\forward_list.hpp" />
+    <ClInclude Include="include\cereal\types\functional.hpp" />
+    <ClInclude Include="include\cereal\types\list.hpp" />
+    <ClInclude Include="include\cereal\types\map.hpp" />
+    <ClInclude Include="include\cereal\types\memory.hpp" />
+    <ClInclude Include="include\cereal\types\polymorphic.hpp" />
+    <ClInclude Include="include\cereal\types\queue.hpp" />
+    <ClInclude Include="include\cereal\types\set.hpp" />
+    <ClInclude Include="include\cereal\types\stack.hpp" />
+    <ClInclude Include="include\cereal\types\string.hpp" />
+    <ClInclude Include="include\cereal\types\tuple.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_map.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_set.hpp" />
+    <ClInclude Include="include\cereal\types\utility.hpp" />
+    <ClInclude Include="include\cereal\types\valarray.hpp" />
+    <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\games\game.h" />
+    <ClInclude Include="src\games\pong\controllers\controller.h" />
+    <ClInclude Include="src\games\pong\controllers\keyboard_controller.h" />
+    <ClInclude Include="src\games\pong\objects\ball.h" />
+    <ClInclude Include="src\games\pong\objects\paddle.h" />
+    <ClInclude Include="src\games\pong\paddle.h" />
+    <ClInclude Include="src\games\pong\pong.h" />
+    <ClInclude Include="src\games\sprite.h" />
+    <ClInclude Include="src\GUI\button.h" />
+    <ClInclude Include="src\GUI\guiElement.h" />
+    <ClInclude Include="src\GUI\menu\menuItem.h" />
+    <ClInclude Include="src\GUI\menu\menuPane.h" />
+    <ClInclude Include="src\GUI\panel.h" />
+    <ClInclude Include="src\GUI\theme.h" />
+    <ClInclude Include="src\modules\events.h" />
+    <ClInclude Include="src\modules\network.h" />
+    <ClInclude Include="src\modules\renderer.h" />
+    <ClInclude Include="src\UI\menuNavigator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\games\game.cpp" />
+    <ClCompile Include="src\games\pong\controllers\controller.cpp" />
+    <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp" />
+    <ClCompile Include="src\games\pong\objects\ball.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle.cpp" />
+    <ClCompile Include="src\games\pong\pong.cpp" />
+    <ClCompile Include="src\games\sprite.cpp" />
+    <ClCompile Include="src\GUI\button.cpp" />
+    <ClCompile Include="src\GUI\guiElement.cpp" />
+    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
+    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
+    <ClCompile Include="src\GUI\panel.cpp" />
+    <ClCompile Include="src\GUI\theme.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\modules\events.cpp" />
+    <ClCompile Include="src\modules\network.cpp" />
+    <ClCompile Include="src\modules\renderer.cpp" />
+    <ClCompile Include="src\UI\menuNavigator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Regular.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Regular.ttf" />
+    <Font Include="assets\fonts\bitwise.ttf" />
+    <Font Include="assets\fonts\ka1.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\squishy-button-blue.png" />
+    <Image Include="assets\squishy-button-gray.png" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Move asset directory into build location</Message>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

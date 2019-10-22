@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
+    <RemoteTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <PreLaunchCommand>export DISPLAY=:0</PreLaunchCommand>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
+    <RemoteTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>-111134560;raspberrypi (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ShowAllFiles>true</ShowAllFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RemoteTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>831420745;192.168.0.12 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

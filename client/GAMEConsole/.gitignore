@@ -1,0 +1,11 @@
+docs/
+game
+obj/
+*.code-workspace
+.vs/
+~/
+Debug/
+.vs/
+x64/
+vgcore.*
+*.o
