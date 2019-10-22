@@ -6,7 +6,7 @@
 Network::Network(Application *app)
 {
     application = app;
-    window = application->window;
+	//window = &app->window;
 }
 
 /** 
@@ -22,8 +22,36 @@ void Network::start()
  */
 void Network::networkLoop()
 {
-    // std::cout << "Running..." << std::endl;
+	
+	//std::cout << application->window->getSize().x << std::endl;
+	sf::TcpSocket socket;
+	sf::Socket::Status status = socket.connect(
+		"10.24.226.130", 8080);
+	if (status != sf::Socket::Done)
+	{
+		std::cout << "nah fuck you" << std::endl;
+	}
+	else
+	{
+		char data[8] = "hello";
+		while (true)
+		{
+			if (socket.send(data, 6) != sf::Socket::Done)
+			{
+				std::cout << "Could not send" << std::endl;
+			}
+			else
+			{
+				std::cout << "SENT" << std::endl;
+			}
+
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		}
+	}
+	/*
+    std::cout << "Running..." << std::endl;
 	sf::UdpSocket socket;
+	std::string isaacDoesSuck = "IsaacDoesSuck";
 	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
 	unsigned short port = 8080;
 	//if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
@@ -31,9 +59,10 @@ void Network::networkLoop()
 	int i = 0;
 
 	//while (w->isOpen())
-	while (false)
+	while (true)
 	{
-		if (socket.send(data, sizeof(data), ip, port) != sf::Socket::Done)
+		sf::Socket::Status result = socket.send(data, sizeof(data), ip, port);
+		if (result != sf::Socket::Done)
 		{
 			std::cout << "Cannot connect" << std::endl;
 		}
@@ -43,5 +72,5 @@ void Network::networkLoop()
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	}
+	}*/
 }

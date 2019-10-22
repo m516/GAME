@@ -7,3 +7,5 @@ obj/
 Debug/
 .vs/
 x64/
+vgcore.*
+*.o

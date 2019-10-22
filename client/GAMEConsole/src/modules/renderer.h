@@ -16,6 +16,7 @@ class Renderer
 		Renderer(Application *app);
         void start();
         void renderLoop();
+		sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight);
 	private:
 	protected:
 };

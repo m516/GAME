@@ -6,11 +6,18 @@
 
 #include "GUI/theme.h"
 
+class Renderer;
+class Network;
+class Events;
+
 class Application 
 {
 	public:
 		sf::RenderWindow* window;
-		Theme* theme;
+		Theme theme;
+		Renderer* renderer;
+		Network* network;
+		Events* events;
 		// Functions
 		Application();
 		void run();

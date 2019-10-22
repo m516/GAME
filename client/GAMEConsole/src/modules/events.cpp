@@ -2,11 +2,12 @@
 
 #include <thread>
 #include <iostream>
+#include "renderer.h"
 
 Events::Events(Application *app)
 {
     application = app;
-    window = application->window;
+	window = app->window;
 }
 
 /** 
@@ -14,7 +15,7 @@ Events::Events(Application *app)
  */
 void Events::start()
 {
-	eventLoop();
+	eventLoop(); // Use main thread for events
 }
 
 /** 
@@ -32,6 +33,12 @@ void Events::eventLoop()
 			{
 				window->close();
 			}
+
+            if (event.type == sf::Event::Resized)
+            {
+				Renderer* r = application->renderer;
+				window->setView(r->getLetterboxView(window->getView(), event.size.width, event.size.height));
+            }
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(16));
