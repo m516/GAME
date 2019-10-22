@@ -48,11 +48,11 @@ public class WebSocketServer {
     }
  
     @OnMessage
-    public void onMessage(Session session, int b) throws IOException 
+    public void onMessage(Session session, String message) throws IOException
     {
         // Handle new messages
     	//String message = " " + messageChar[0] + messageChar[1];
-    	String message = " ";
+    	//String message = " ";
     	logger.info("Entered into Message: Got Message:"+message);
     	String username = "user";
     	
