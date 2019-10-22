@@ -48,10 +48,16 @@ void Renderer::renderLoop()
 	panel.setSize(window->getSize().x, window->getSize().y);
 
 	// Create main menu
+	sf::Text title;
+	title.setFont(theme->font_standard);
+	title.setCharacterSize(66 * 2);
+	title.scale(sf::Vector2f(0.5, 0.5));
+	title.setString("G.A.M.E.");
+	title.setPosition(5, 5);
+
 	MenuPane mainMenu(5, window);
-	mainMenu.setPosition(10, 10);
-	mainMenu.setSize(200, 200);
-	mainMenu.setPosition(0, 0);
+	mainMenu.setPosition(5, 90);
+	mainMenu.setSize(150, 150);
 
 	std::vector<std::string> menuItems = {"PLAY", "PARTY", "FRIENDS", "PROFILE", "SETTINGS"};
 	for (int i = 0; i < menuItems.size(); i++)
@@ -64,6 +70,7 @@ void Renderer::renderLoop()
 	
 	while (window->isOpen())
 	{
+		window->draw(title);
 		mainMenu.update();
 		mainMenu.render();
 

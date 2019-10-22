@@ -34,7 +34,8 @@ void Network::networkLoop()
 	else
 	{
 		char data[8] = "hello";
-		while (true)
+		int numbers = 7;
+		//while (true)
 		{
 			if (socket.send(data, 6) != sf::Socket::Done)
 			{
