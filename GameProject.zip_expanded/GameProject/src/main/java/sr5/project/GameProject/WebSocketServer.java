@@ -46,11 +46,13 @@ public class WebSocketServer {
     }
  
     @OnMessage
-    public void onMessage(Session session, String message) throws IOException 
+    public void onMessage(byte [] i) throws IOException 
     {
         // Handle new messages
+    	//String message = " " + messageChar[0] + messageChar[1];
+    	String message = " ";
     	logger.info("Entered into Message: Got Message:"+message);
-    	String username = sessionUsernameMap.get(session);
+    	String username = "user";
     	
     	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
