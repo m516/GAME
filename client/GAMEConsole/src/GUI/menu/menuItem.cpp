@@ -6,8 +6,7 @@ MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pr
 	//Set description text
 	label.setString(text);
 	label.setFont(theme->font_standard);
-	label.setCharacterSize(label.getCharacterSize() * 2);
-	label.scale(sf::Vector2f(0.5, 0.5));
+	
 
 	pressed_function = function_when_pressed;
 	//Configure border
@@ -53,12 +52,16 @@ Set the size of the menuItem rendered on the screen
 void MenuItem::setSize(float x, float y) {
 	GUIElement::setSize(x, y);
 	border.setSize(size);
-	label.setCharacterSize((int)(y - 4.0f));
+	label.setCharacterSize(label.getCharacterSize() * 2);
+	label.scale(sf::Vector2f(0.5, 0.5));
+	//label.setCharacterSize((int)(y - 4.0f));
 }
 void MenuItem::setSize(sf::Vector2f &new_size) {
 	GUIElement::setSize(new_size);
 	border.setSize(size);
-	label.setCharacterSize((int)(new_size.y - 4.0f));
+	label.setCharacterSize(label.getCharacterSize() * 2);
+	label.scale(sf::Vector2f(0.5, 0.5));
+	//label.setCharacterSize((int)(new_size.y - 4.0f));
 }
 
 
