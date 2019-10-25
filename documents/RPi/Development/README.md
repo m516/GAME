@@ -25,6 +25,12 @@ cd build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
 sudo make install
 sudo ldconfig
+sudo apt-get install boost-all-dev libssl1.0-dev
+cd
+git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
+cd socket.io-client-cpp/
+cmake ./
+sudo make install
 ```
 
 ### Initial Pi Setup
@@ -55,6 +61,17 @@ cd build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
 sudo make install
 sudo ldconfig
+```
+
+### Install SocketIO C++
+This project also requires [SocketIO C++](https://socket.io/blog/socket-io-cpp/) to connect to the server. To install it on the Raspberry Pi, use these commands:
+```
+sudo apt-get install boost-all-dev libssl1.0-dev
+cd
+git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
+cd socket.io-client-cpp/
+cmake ./
+sudo make install
 ```
 
 ## 3. Configure Visual Studio
