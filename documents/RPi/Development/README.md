@@ -47,7 +47,7 @@ raspi-config nonint do_ssh 0
 Then install packages for compiling and debugging C++
 
 ```
-sudo apt-get install openssh-server g++ gdb gdbserver
+sudo apt-get install openssh-server g++ gdb gdbserver avahi-daemon
 ```
 
 ### Install SFML
