@@ -48,7 +48,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <LibraryDependencies>wiringPi</LibraryDependencies>
+      <LibraryDependencies>boost_system;boost_thread;pthread</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>gpio export 17 out</Command>
@@ -57,7 +57,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <LibraryDependencies>wiringPi</LibraryDependencies>
+      <LibraryDependencies>boost_system;boost_thread;pthread</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>gpio export 17 out</Command>
@@ -65,9 +65,18 @@
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\socketio\src\internal\sio_client_impl.cpp" />
+    <ClCompile Include="include\socketio\src\internal\sio_packet.cpp" />
+    <ClCompile Include="include\socketio\src\sio_client.cpp" />
+    <ClCompile Include="include\socketio\src\sio_socket.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\socketio\src\internal\sio_client_impl.h" />
+    <ClInclude Include="include\socketio\src\internal\sio_packet.h" />
+    <ClInclude Include="include\socketio\src\sio_client.h" />
+    <ClInclude Include="include\socketio\src\sio_message.h" />
+    <ClInclude Include="include\socketio\src\sio_socket.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
