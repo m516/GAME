@@ -1,0 +1,7 @@
+[submodule "socketio"]
+  path = client/GAMEConsole/include/socketio
+  url = https://github.com/socketio/socket.io-client-cpp.git
+
+[submodule "cereal"]
+  path = client/GAMEConsole/include/cereal
+  url = https://github.com/USCiLab/cereal.git
