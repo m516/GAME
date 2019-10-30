@@ -20,7 +20,7 @@ frontend-build:
     - make
   artifacts:
     paths:
-      - mybinary
+      - client/GAMEConsole/test/console_test
       # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
       # cache:
       #   paths:
