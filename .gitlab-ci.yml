@@ -32,4 +32,5 @@ frontend-test:
     - c++_tag
   stage: test
   script:
+    - cd client/GAMEConsole/test/console_test
     - ./Console_Test
