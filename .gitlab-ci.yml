@@ -4,7 +4,9 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
-build:
+frontend-build:
+  tags:
+    - c++_tag
   stage: build
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
@@ -25,7 +27,9 @@ build:
       #     - "*.o"
 
 # run tests using the binary built before
-test:
+frontend-test:
+  tags:
+    - c++_tag
   stage: test
   script:
     - ./Console_Test
