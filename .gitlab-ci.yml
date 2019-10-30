@@ -13,7 +13,7 @@ frontend-build:
   before_script:
     - apt update -y
     - apt upgrade -y
-    - apt -y install libsfml-dev
+    - apt -y install libsfml-dev cmake make
   script:
     - cd client/GAMEConsole/test/console_test
     - cmake ./
