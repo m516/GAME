@@ -22,6 +22,7 @@ void Network::start()
  */
 void Network::networkLoop()
 {
+	/*
 	// TCP TESTING //
 	sf::TcpSocket socket;
 	sf::Socket::Status status = socket.connect(
@@ -31,7 +32,7 @@ void Network::networkLoop()
 
 	if (status != sf::Socket::Done)
 	{
-		std::cout << "nah fuck you" << std::endl;
+		std::cout << "Cannot connect" << std::endl;
 	}
 	else
 	{
@@ -51,14 +52,14 @@ void Network::networkLoop()
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		}
 	}
+	*/
 
 	// UDP TESTING //
-	/*
+	
     std::cout << "Running..." << std::endl;
 	sf::UdpSocket socket;
-	std::string isaacDoesSuck = "IsaacDoesSuck";
 	sf::IpAddress ip("10.24.226.130"); // 10.24.226.130
-	unsigned short port = 8080;
+	unsigned short port = 12345;
 	//if (socket.bind(port) != sf::Socket::Done) std::cout << "Could not bind." << std::endl;
 	char data[6] = "hello";
 	int i = 0;
@@ -77,5 +78,5 @@ void Network::networkLoop()
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	}*/
+	}
 }
