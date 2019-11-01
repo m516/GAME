@@ -1,0 +1,1 @@
+# Don't use me! I don't work with non-SocketIO servers

@@ -111,7 +111,7 @@ MAIN_FUNC
 	h.set_open_listener(std::bind(&connection_listener::on_connected, &l));
 	h.set_close_listener(std::bind(&connection_listener::on_close, &l,std::placeholders::_1));
 	h.set_fail_listener(std::bind(&connection_listener::on_fail, &l));
-	h.connect("http://coms-309-sr-5.misc.iastate.edu:8080/");
+	h.connect("http://coms-309-sr-5.misc.iastate.edu:8080");
 	_lock.lock();
 	if (!connect_finish)
 	{
