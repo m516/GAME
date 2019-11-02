@@ -31,6 +31,8 @@ git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.
 cd socket.io-client-cpp/
 cmake ./
 sudo make install
+cd
+sudo apt-get install boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
 ```
 
 ### Initial Pi Setup
@@ -63,15 +65,10 @@ sudo make install
 sudo ldconfig
 ```
 
-### Install SocketIO C++
-This project also requires [SocketIO C++](https://socket.io/blog/socket-io-cpp/) to connect to the server. To install it on the Raspberry Pi, use these commands:
+### Install Websocket++
+This project also requires [Websocket++](https://www.zaphoyd.com/websocketpp/) to connect to the server. To install it on the Raspberry Pi, use these commands:
 ```
-sudo apt-get install boost-all-dev libssl1.0-dev
-cd
-git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
-cd socket.io-client-cpp/
-cmake ./
-sudo make install
+sudo apt-get install boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
 ```
 
 ## 3. Configure Visual Studio
