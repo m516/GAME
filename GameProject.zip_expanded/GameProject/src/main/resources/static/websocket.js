@@ -6,7 +6,7 @@ function connect() {
     var host = document.location.host;
     var pathname = document.location.pathname;
     
-    ws = new WebSocket("ws://" +"coms-309-sr-5.misc.iastate.edu:8080");
+    ws = new WebSocket("ws://" +"coms-309-sr-5.misc.iastate.edu:8080/");
 
     ws.onmessage = function(event) {
     var log = document.getElementById("log");

@@ -16,9 +16,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 /**
+ * This class runs the connection between different players while 
+ * completing against each other in real time.
  * 
- * @author Vamsi Krishna Calpakkam
- *
+ * @author Parker Larsen
  */
 @ServerEndpoint("/")
 @Component
@@ -28,47 +29,71 @@ public class WebSocketServer {
     private static Map<Session, String> sessionUsernameMap = new HashMap<>();
     private static Map<String, Session> usernameSessionMap = new HashMap<>();
     
+    String username = "game";
+    String player = "";
+    
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
     @OnOpen
-    public void onOpen(
-    	      Session session) 
-    	       throws IOException 
+    /**
+     * This class is used for the initial connection between the client and websocket
+     * @param session the session for this user
+     * @throws IOException 
+     */
+    public void onOpen(Session session) throws IOException 
     {
         logger.info("Entered into Open");
-        
-        String username = "user";
-        
-        sessionUsernameMap.put(session, username);
-        usernameSessionMap.put(username, session);
-        
-        String message="User:"+ " has Joined the Chat";
-        	broadcast(message);
-		
     }
  
     @OnMessage
+    /**
+     * This class allows the user to join a game, define which player they are, and send
+     * player locations
+     * @param session the session for the user
+     * @param message the message sent from the user
+     * @throws IOException
+     */
     public void onMessage(Session session, String message) throws IOException
     {
-        // Handle new messages
-    	//String message = " " + messageChar[0] + messageChar[1];
-    	//String message = " ";
     	logger.info("Entered into Message: Got Message:"+message);
-    	String username = "user";
     	
+    	//Start with a "!" to join a game and define player number
+    	if(message.startsWith("!"))
+    	{
+    		username = "" + message.charAt(1); //The game number is stored in the first bit
+    		player = "" + message.charAt(2);  //The player number is stored in the second bit
+    		logger.info("Player " + player + " has joined game " + username);
+    		
+            sessionUsernameMap.put(session, username); //Log the session based off the game number
+            usernameSessionMap.put(username, session); 
+            
+            broadcast("Player " + player + " has joined game " + username);
+    	}
+    	//Send movement information using "."
+    	if(message.startsWith("."))
+    	{
+    		logger.info("Player "  + player + " is at location " + message.charAt(1) + ", " + message.charAt(2));
+    		broadcast("Player "  + player + " is at location " + message.charAt(1) + ", " + message.charAt(2));
+    		sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) + "" + message.charAt(2));
+    	}
     	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
-    		String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
-    		sendMessageToPArticularUser(destUsername, "[DM] " + username + ": " + message);
-    		sendMessageToPArticularUser(username, "[DM] " + username + ": " + message);
+    		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
+    		sendMessageToPArticularUser("[DM] " + username + ": " + message);
+    		sendMessageToPArticularUser("[DM] " + username + ": " + message);
     	}
     	else // Message to whole chat
     	{
-	    	broadcast(username + ": " + message);
+	    	//broadcast(username + ": " + message);
     	}
     }
  
     @OnClose
+    /**
+     * This class closes the session after the user is done.
+     * @param session session for the user
+     * @throws IOException
+     */
     public void onClose(Session session) throws IOException
     {
     	logger.info("Entered into Close");
@@ -82,22 +107,37 @@ public class WebSocketServer {
     }
  
     @OnError
+    /**
+     * This class displays an error message in the logger when present
+     * @param session session of the user
+     * @param throwable
+     */
     public void onError(Session session, Throwable throwable) 
     {
         // Do error handling here
     	logger.info("Entered into Error");
     }
-    
-	private void sendMessageToPArticularUser(String username, String message) 
+    /**
+     * Send message to a specific session or game
+     * @param message message to send to the session
+     */
+	private void sendMessageToPArticularUser(String message) 
     {	
+		//String username = "user";
+		
     	try {
     		usernameSessionMap.get(username).getBasicRemote().sendText(message);
+    		logger.info("sending dm to " + usernameSessionMap.get(username));
         } catch (IOException e) {
         	logger.info("Exception: " + e.getMessage().toString());
             e.printStackTrace();
         }
     }
-    
+    /**
+     * Send message to all the sessions that are being used by the websocket
+     * @param message message to be sent
+     * @throws IOException
+     */
     private static void broadcast(String message) 
     	      throws IOException 
     {	  
