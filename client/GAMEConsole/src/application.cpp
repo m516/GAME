@@ -22,7 +22,7 @@ Application::Application()
 	window->setVerticalSyncEnabled(true);
 
 	//Deactivate the window so it can be used in the render thread
-	// window->setActive(false);
+	window->setActive(false);
 
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
@@ -45,10 +45,10 @@ void Application::run()
 	network.start();
 	events.start();*/
 	renderer = new Renderer(this);
-	network = new Network(this);
+	//network = new Network(this);
 	events = new Events(this);
 	
 	renderer->start();
-	network->start();
+	//network->start();
 	events->start();
 }
