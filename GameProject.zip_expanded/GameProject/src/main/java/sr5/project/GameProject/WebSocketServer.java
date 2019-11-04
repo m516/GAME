@@ -72,9 +72,9 @@ public class WebSocketServer {
     	//Send movement information using "."
     	if(message.startsWith("."))
     	{
-    		logger.info("Player "  + player + " is at location " + message.charAt(1) + ", " + message.charAt(2));
-    		broadcast("Player "  + player + " is at location " + message.charAt(1) + ", " + message.charAt(2));
-    		sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) + "" + message.charAt(2));
+    		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     	}
     	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
@@ -84,7 +84,7 @@ public class WebSocketServer {
     	}
     	else // Message to whole chat
     	{
-	    	//broadcast(username + ": " + message);
+	    	broadcast(message + "has been successfully sent");
     	}
     }
  
