@@ -17,7 +17,7 @@ typedef websocketpp::config::asio_client::message_type::ptr message_ptr;
 
 // Handlers
 void on_open(client* c, websocketpp::connection_hdl hdl) {
-	std::string msg = "Hello\n";
+	std::string msg = "!12";
 	c->send(hdl, msg, websocketpp::frame::opcode::text);
 	c->get_alog().write(websocketpp::log::alevel::app, "Sent Message: " + msg);
 }
@@ -38,7 +38,7 @@ void on_close(client* c, websocketpp::connection_hdl hdl) {
 int main(int argc, char* argv[]) {
 	client c;
 
-	std::string uri = "ws://localhost:8080";
+	std::string uri = "ws://coms-309-sr-5.misc.iastate.edu:8080";
 
 	if (argc == 2) {
 		uri = argv[1];
