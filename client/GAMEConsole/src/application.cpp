@@ -37,18 +37,9 @@ Application::Application()
  */
 void Application::run()
 {
-	// Start threads
-	/*Renderer renderer(this);
-	Network network(this);
-	Events events(this);
-	renderer.start();
-	network.start();
-	events.start();*/
 	renderer = new Renderer(this);
-	//network = new Network(this);
 	events = new Events(this);
 	
 	renderer->start();
-	//network->start();
 	events->start();
 }
