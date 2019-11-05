@@ -1,10 +1,6 @@
 #pragma once
 
-#include <vector>
-
-#include "..//..//sprite.h"
-
-typedef std::vector<Sprite> sprite_list;
+#include "..//sprite.h"
 
 class Controller {
 public:
@@ -12,13 +8,16 @@ public:
 	//Virtual destructor
 	virtual ~Controller();
 
+	void enable();
+
+	void disable();
+
+	bool is_enabled();
+
 	//Sets whether or not the controller does anything on update
 	bool enabled = false;
 
 	//Update the keys being pressed.
-	virtual void update() = 0;
-
-	//List of Sprite objects to control
-	sprite_list targets;
+	virtual int update() = 0;
 };
 

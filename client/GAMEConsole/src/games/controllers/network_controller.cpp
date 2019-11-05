@@ -8,7 +8,7 @@ KeyboardController::KeyboardController() {
 }
 
 //Update the keys being pressed.
-void KeyboardController::update() {
+int KeyboardController::update() {
 
 	if (enabled) {
 		//enter

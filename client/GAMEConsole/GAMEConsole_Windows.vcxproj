@@ -21,9 +21,9 @@
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\games\game.cpp" />
-    <ClCompile Include="src\games\pong\controllers\controller.cpp" />
-    <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp" />
-    <ClCompile Include="src\games\pong\controllers\network_controller.cpp" />
+    <ClCompile Include="src\games\controllers\controller.cpp" />
+    <ClCompile Include="src\games\controllers\keyboard_controller.cpp" />
+    <ClCompile Include="src\games\controllers\network_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle.cpp" />
     <ClCompile Include="src\games\pong\objects\ball.cpp" />
     <ClCompile Include="src\games\pong\pong.cpp" />
@@ -120,11 +120,11 @@
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
     <ClInclude Include="src\application.h" />
-    <ClInclude Include="src\games\pong\controllers\keyboard_controller.h" />
-    <ClInclude Include="src\games\pong\controllers\network_controller.h" />
+    <ClInclude Include="src\games\controllers\keyboard_controller.h" />
+    <ClInclude Include="src\games\controllers\network_controller.h" />
     <ClInclude Include="src\games\pong\objects\ball.h" />
     <ClInclude Include="src\games\game.h" />
-    <ClInclude Include="src\games\pong\controllers\controller.h" />
+    <ClInclude Include="src\games\controllers\controller.h" />
     <ClInclude Include="src\games\pong\objects\paddle.h" />
     <ClInclude Include="src\games\pong\pong.h" />
     <ClInclude Include="src\games\sprite.h" />

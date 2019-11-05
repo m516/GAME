@@ -9,7 +9,9 @@ public:
 
 	KeyboardController();
 
-	void update();
+	int update();
+
+	virtual void disable();
 
 	//The list of controls
 	typedef enum class CONTROL
@@ -34,9 +36,6 @@ public:
 	//Bind a key to a character on the keyboard.
 	//Default WASD controls
 	void setKey(Control controlToSet, sf::Keyboard::Key key);
-
-	//Current control
-	Control current_control = Control::NONE;
 
 private:
 

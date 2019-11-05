@@ -3,7 +3,6 @@
 
 #include "application.h"
 #include "modules/renderer.h"
-#include "modules/network.h"
 #include "modules/events.h"
 
 Application::Application()

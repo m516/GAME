@@ -51,12 +51,6 @@
     <ClCompile Include="src\games\pong\objects\paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\games\pong\controllers\controller.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\GUI\menu\menuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -69,7 +63,13 @@
     <ClCompile Include="src\modules\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\games\pong\controllers\network_controller.cpp">
+    <ClCompile Include="src\games\controllers\controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\controllers\keyboard_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\controllers\network_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -344,12 +344,6 @@
     <ClInclude Include="src\games\pong\objects\paddle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\games\pong\controllers\controller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\games\pong\controllers\keyboard_controller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\GUI\menu\menuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -362,7 +356,13 @@
     <ClInclude Include="src\modules\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\games\pong\controllers\network_controller.h">
+    <ClInclude Include="src\games\controllers\controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\controllers\keyboard_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\controllers\network_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
