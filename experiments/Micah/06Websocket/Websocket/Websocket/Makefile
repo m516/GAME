@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o main -pthread
+	g++ main.cpp -o main -pthread -I /usr/include/websocketpp/ -lboost_system
