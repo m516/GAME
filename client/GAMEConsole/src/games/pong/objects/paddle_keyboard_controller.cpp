@@ -14,8 +14,3 @@ int PaddleKeyboardController::update() {
 
 	return 0;
 }
-
-
-void PaddleKeyboardController::setPaddle(Paddle* paddle) {
-	this->paddle = paddle;
-}

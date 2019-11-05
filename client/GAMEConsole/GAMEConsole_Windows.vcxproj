@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\games\pong\objects\controllers\paddle_keyboard_controller.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_controller.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp" />
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\games\game.cpp" />
     <ClCompile Include="src\games\controllers\controller.cpp" />
@@ -120,7 +121,8 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
-    <ClInclude Include="src\games\pong\objects\controllers\paddle_keyboard_controller.h" />
+    <ClInclude Include="src\games\pong\objects\paddle_controller.h" />
+    <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h" />
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\games\controllers\keyboard_controller.h" />
     <ClInclude Include="src\games\controllers\network_controller.h" />

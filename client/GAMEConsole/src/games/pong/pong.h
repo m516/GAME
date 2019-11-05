@@ -3,7 +3,7 @@
 #include "../game.h"
 #include "objects/ball.h"
 #include "objects/paddle.h"
-#include "objects/controllers/paddle_keyboard_controller.h"
+#include "objects/paddle_keyboard_controller.h"
 
 class Pong : public Game {
 public:

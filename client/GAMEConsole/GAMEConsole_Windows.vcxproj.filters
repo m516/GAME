@@ -72,7 +72,10 @@
     <ClCompile Include="src\games\controllers\network_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\games\pong\objects\controllers\paddle_keyboard_controller.cpp">
+    <ClCompile Include="src\games\pong\objects\paddle_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -368,7 +371,10 @@
     <ClInclude Include="src\games\controllers\network_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\games\pong\objects\controllers\paddle_keyboard_controller.h">
+    <ClInclude Include="src\games\pong\objects\paddle_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

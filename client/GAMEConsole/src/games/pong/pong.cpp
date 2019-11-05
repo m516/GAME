@@ -6,6 +6,8 @@ Pong::Pong() {
 	camera_location.y = 0;
 
 	camera_scale = 1.f;
+
+	initialize();
 }
 
 Pong::~Pong() {
