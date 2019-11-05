@@ -23,6 +23,7 @@
     <ClCompile Include="src\games\game.cpp" />
     <ClCompile Include="src\games\pong\controllers\controller.cpp" />
     <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp" />
+    <ClCompile Include="src\games\pong\controllers\network_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle.cpp" />
     <ClCompile Include="src\games\pong\objects\ball.cpp" />
     <ClCompile Include="src\games\pong\pong.cpp" />
@@ -35,7 +36,6 @@
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\modules\events.cpp" />
-    <ClCompile Include="src\modules\network.cpp" />
     <ClCompile Include="src\modules\renderer.cpp" />
     <ClCompile Include="src\UI\menuNavigator.cpp" />
   </ItemGroup>
@@ -121,6 +121,7 @@
     <ClInclude Include="include\cereal\types\vector.hpp" />
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\games\pong\controllers\keyboard_controller.h" />
+    <ClInclude Include="src\games\pong\controllers\network_controller.h" />
     <ClInclude Include="src\games\pong\objects\ball.h" />
     <ClInclude Include="src\games\game.h" />
     <ClInclude Include="src\games\pong\controllers\controller.h" />
@@ -134,12 +135,27 @@
     <ClInclude Include="src\GUI\panel.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
-    <ClInclude Include="src\modules\network.h" />
     <ClInclude Include="src\modules\renderer.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\cereal\external\rapidxml\manual.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Regular.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Regular.ttf" />
+    <Font Include="assets\fonts\bitwise.ttf" />
+    <Font Include="assets\fonts\ka1.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\squishy-button-blue.png" />
+    <Image Include="assets\squishy-button-gray.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
