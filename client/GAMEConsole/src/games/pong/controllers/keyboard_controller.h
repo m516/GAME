@@ -11,6 +11,26 @@ public:
 
 	void update();
 
+	//The list of controls
+	typedef enum class CONTROL
+	{
+		UP,
+		DOWN,
+		LEFT,
+		RIGHT,
+		ENTER,
+		EXIT,
+		NONE
+	} Control;
+
+	typedef enum class STATUS {
+		UP,
+		PRESSED,
+		DOWN,
+		RELEASED,
+		DISABLED
+	} Status;
+
 	//Bind a key to a character on the keyboard.
 	//Default WASD controls
 	void setKey(Control controlToSet, sf::Keyboard::Key key);
@@ -27,4 +47,13 @@ private:
 	sf::Keyboard::Key keyRight = sf::Keyboard::D;
 	sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
 	sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
+
+	//Controls
+	Status up = Status::UP;
+	Status down = Status::UP;
+	Status left = Status::UP;
+	Status right = Status::UP;
+	Status enter = Status::UP;
+	Status exit = Status::UP;
+	Control current_control = Control::NONE;
 };
