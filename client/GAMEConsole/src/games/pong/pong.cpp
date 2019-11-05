@@ -9,30 +9,39 @@ Pong::Pong() {
 }
 
 Pong::~Pong() {
-	delete ball;
-	delete paddle_right;
-	delete paddle_left;
+	deinitialize();
 }
 
 void Pong::initialize(){
+	//Don't initialize twice, that's a memory leak
+	if (initialized) return;
+
 	ball = new Ball(this);
 
 	//Create the right paddle
 	paddle_right = new Paddle(this);
 	paddle_right->position.x = 0.9f - paddle_right->size.x;
 
-	KeyboardController* right_controller = new KeyboardController;
-	right_controller->setKey(Controller::Control::UP, sf::Keyboard::I);
-	right_controller->setKey(Controller::Control::DOWN, sf::Keyboard::K);
-	paddle_right->setController(right_controller);
+	//Create the right paddle controller
+	right_controller = new PaddleKeyboardController;
+	right_controller->setPaddle(paddle_right);
+	right_controller->setKey(KeyboardController::Control::UP, sf::Keyboard::I);
+	right_controller->setKey(KeyboardController::Control::DOWN, sf::Keyboard::K);
+	right_controller->enable();
 
 	//Create the left paddle
 	paddle_left = new Paddle(this);
 	paddle_left->position.x = 0.1f;
-	paddle_left->setController(new KeyboardController);
+
+	//Create the left paddle controller
+	left_controller = new PaddleKeyboardController;
+	left_controller->setPaddle(paddle_left);
+	left_controller->enable();
 }
 
 void Pong::update(){
+	right_controller->update();
+	left_controller->update();
 	paddle_right->update();
 	paddle_left->update();
 	ball->update();
@@ -73,13 +82,16 @@ void Pong::update(){
 }
 
 void Pong::render() {
-	//TODO stub
 	ball->render();
 	paddle_right->render();
 	paddle_left->render();
 }
 
 void Pong::deinitialize() {
-	//TODO stub
-
+	if (!initialized) return;
+	delete ball;
+	delete paddle_right;
+	delete paddle_left;
+	delete right_controller;
+	delete left_controller;
 }

@@ -1,30 +1,41 @@
 #pragma once
 
-#include <SFML/Window/Keyboard.hpp>
+#include <websocketpp/config/asio_no_tls_client.hpp>
+#include <websocketpp/client.hpp>
+#include <iostream>
 
 #include "controller.h"
 
-class KeyboardController :public Controller {
+#define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
+
+//Define websocket client type
+typedef websocketpp::client<websocketpp::config::asio_client> client_t;
+//Define message type
+typedef websocketpp::config::asio_client::message_type::ptr message_ptr;
+
+//Include some networking stuff
+using websocketpp::lib::placeholders::_1;
+using websocketpp::lib::placeholders::_2;
+using websocketpp::lib::bind;
+
+
+class NetworkController : public Controller {
 public:
 
-	KeyboardController();
+	NetworkController();
 
-	void update();
+	int initialize();
 
-	//Bind a key to a character on the keyboard.
-	//Default WASD controls
-	void setKey(Control controlToSet, sf::Keyboard::Key key);
+	void onOpen(client_t* c, websocketpp::connection_hdl hdl);
 
-	//Current control
-	Control current_control = Control::NONE;
+	void onFail(client_t* c, websocketpp::connection_hdl hdl);
 
-private:
+	void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg);
 
-	//Key bindings for each control
-	sf::Keyboard::Key keyUp = sf::Keyboard::W;
-	sf::Keyboard::Key keyDown = sf::Keyboard::S;
-	sf::Keyboard::Key keyLeft = sf::Keyboard::A;
-	sf::Keyboard::Key keyRight = sf::Keyboard::D;
-	sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
-	sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
+	void onClose(client_t* c, websocketpp::connection_hdl hdl);
+
+	virtual int update();
+
+protected:
+	client_t client;
 };

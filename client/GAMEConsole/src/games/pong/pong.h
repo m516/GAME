@@ -3,7 +3,7 @@
 #include "../game.h"
 #include "objects/ball.h"
 #include "objects/paddle.h"
-#include "controllers/keyboard_controller.h"
+#include "objects/controllers/paddle_keyboard_controller.h"
 
 class Pong : public Game {
 public:
@@ -23,4 +23,8 @@ private:
 	Ball* ball;
 	Paddle* paddle_right;
 	Paddle* paddle_left;
+	PaddleKeyboardController* right_controller;
+	PaddleKeyboardController* left_controller;
+
+	bool initialized = false;
 };

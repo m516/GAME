@@ -4,12 +4,12 @@
 
 #include "controller.h"
 
-class KeyboardController :public Controller {
+class KeyboardController : public Controller {
 public:
 
 	KeyboardController();
 
-	int update();
+	virtual int update();
 
 	virtual void disable();
 
@@ -37,7 +37,7 @@ public:
 	//Default WASD controls
 	void setKey(Control controlToSet, sf::Keyboard::Key key);
 
-private:
+protected:
 
 	//Key bindings for each control
 	sf::Keyboard::Key keyUp = sf::Keyboard::W;

@@ -8,9 +8,9 @@ public:
 	//Virtual destructor
 	virtual ~Controller();
 
-	void enable();
+	virtual void enable();
 
-	void disable();
+	virtual void disable();
 
 	bool is_enabled();
 
