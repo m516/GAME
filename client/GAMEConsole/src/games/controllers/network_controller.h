@@ -12,6 +12,8 @@
 typedef websocketpp::client<websocketpp::config::asio_client> client_t;
 //Define message type
 typedef websocketpp::config::asio_client::message_type::ptr message_ptr;
+//Define thread type
+typedef websocketpp::lib::shared_ptr<websocketpp::lib::thread> thread_t;
 
 //Include some networking stuff
 using websocketpp::lib::placeholders::_1;
@@ -40,6 +42,7 @@ public:
 	virtual int update();
 
 protected:
+	thread_t client_thread;
 	client_t client;
 	websocketpp::connection_hdl hdl;
 };

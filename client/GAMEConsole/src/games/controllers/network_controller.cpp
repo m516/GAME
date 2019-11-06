@@ -4,7 +4,19 @@
 
 //Initializes the controller
 NetworkController::NetworkController() {
-	initialize();
+	// set logging policy if needed
+	client.set_access_channels(websocketpp::log::alevel::all);
+	client.set_error_channels(websocketpp::log::elevel::all);
+
+	// Initialize ASIO
+	client.init_asio();
+
+	//Marks the endpoint as perpetual, stopping it from exiting when empty
+	client.start_perpetual();
+
+	// Start the ASIO io_service run loop inside a new thread
+	client_thread.reset(new websocketpp::lib::thread(&client_t::run, &client));
+
 }
 
 NetworkController::~NetworkController()
@@ -16,36 +28,12 @@ int NetworkController::initialize() {
 	std::string uri = SERVER_URI;
 
 	try {
-		// set logging policy if needed
-		client.clear_access_channels(websocketpp::log::alevel::frame_header);
-		client.clear_access_channels(websocketpp::log::alevel::frame_payload);
-		//c.set_error_channels(websocketpp::log::elevel::none);
-
-		// Initialize ASIO
-		client.init_asio();
-
-		// Register our handlers
-		client.set_open_handler(
-			bind(&NetworkController::onOpen, this, &client, ::_1)
-		); 
-		client.set_fail_handler(
-			bind(&NetworkController::onFail, this, &client, ::_1)
-		);
-		client.set_close_handler(
-			bind(&NetworkController::onClose, this, &client, ::_1)
-		);
-		client.set_message_handler(
-			bind(&NetworkController::onMessage, this, &client, ::_1, ::_2)
-		);
 
 		// Create a connection to the given URI and queue it for connection once
 		// the event loop starts
 		websocketpp::lib::error_code ec;
-		client_t::connection_ptr con = client.get_connection(uri, ec);
-		client.connect(con);
-
-		// Start the ASIO io_service run loop
-		client.run();
+		client_t::connection_ptr connection = client.get_connection(uri, ec);
+		client.connect(connection);
 
 		return 0;
 	}
@@ -65,10 +53,19 @@ int NetworkController::initialize() {
 
 // Handlers
 // These are dummy methods that can be implemented by subclasses
+// Note that they need to be bound to the client with client.set_xyz_handler()
+// before they begin listening, and NetworkController can't do that
 
 
 void NetworkController::onOpen(client_t* c, websocketpp::connection_hdl hdl) {
-	if (c == &client) this->hdl = hdl;
+	if (c == &client)
+	{
+		this->hdl = hdl;
+		std::cout << "NetworkController: onOpen called with correct client" << std::endl;
+	}
+	else {
+		std::cout << "NetworkController: onOpen called with INCORRECT client; rejecting" << std::endl;
+	}
 }
 
 void NetworkController::onFail(client_t* c, websocketpp::connection_hdl hdl) {
@@ -82,6 +79,7 @@ void NetworkController::onClose(client_t* c, websocketpp::connection_hdl hdl) {
 
 //Sends a message to the server
 void NetworkController::send(std::string message) {
+	std::cout << "NetworkController: Sending " << message << std::endl;
 	client.send(hdl, message, websocketpp::frame::opcode::text);
 }
 

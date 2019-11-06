@@ -42,10 +42,12 @@ void Pong::initialize(){
 
 	//Create network controller
 	paddle_network_controller = new PaddleNetworkController();
-	paddle_network_controller->enable();
 	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::BROADCAST);
 	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::CONTROL);
-	paddle_network_controller->beginTransmission();
+	paddle_network_controller->initialize();
+	paddle_network_controller->enable();
+
+	initialized = true;
 }
 
 void Pong::update(){
