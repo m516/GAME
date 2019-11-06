@@ -42,7 +42,7 @@ public class WebSocketServer {
      */
     public void onOpen(Session session) throws IOException
     {
-        logger.info("Entered into Open");
+        logger.info("Entered into Open" + sessionUsernameMap.size());
     }
  
     @OnMessage
@@ -66,6 +66,8 @@ public class WebSocketServer {
     		
             sessionUsernameMap.put(session, username); //Log the session based off the game number
             usernameSessionMap.put(username, session); 
+            
+            logger.info("This is user " + sessionUsernameMap.size());
             
             broadcast("Player " + player + " has joined game " + username);
     	}
