@@ -40,7 +40,7 @@ public class WebSocketServer {
      * @param session the session for this user
      * @throws IOException 
      */
-    public void onOpen(Session session) throws IOException 
+    public void onOpen(Session session) throws IOException
     {
         logger.info("Entered into Open");
     }
@@ -81,6 +81,12 @@ public class WebSocketServer {
     		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
     		sendMessageToPArticularUser("[DM] " + username + ": " + message);
     		sendMessageToPArticularUser("[DM] " + username + ": " + message);
+    	}
+    	if(message.startsWith("?"))
+    	{
+    		sendMessageToPArticularUser(
+    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
+    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
     	}
     	else // Message to whole chat
     	{
