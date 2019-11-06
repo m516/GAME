@@ -23,6 +23,7 @@ class NetworkController : public Controller {
 public:
 
 	NetworkController();
+	~NetworkController();
 
 	int initialize();
 
@@ -34,8 +35,11 @@ public:
 
 	void onClose(client_t* c, websocketpp::connection_hdl hdl);
 
+	void send(std::string message);
+
 	virtual int update();
 
 protected:
 	client_t client;
+	websocketpp::connection_hdl hdl;
 };

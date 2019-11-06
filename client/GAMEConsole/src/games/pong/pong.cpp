@@ -39,11 +39,22 @@ void Pong::initialize(){
 	left_controller = new PaddleKeyboardController;
 	left_controller->setPaddle(paddle_left);
 	left_controller->enable();
+
+	//Create network controller
+	paddle_network_controller = new PaddleNetworkController();
+	paddle_network_controller->enable();
+	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::BROADCAST);
+	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::CONTROL);
+	paddle_network_controller->beginTransmission();
 }
 
 void Pong::update(){
+	//Update controllers
 	right_controller->update();
 	left_controller->update();
+	paddle_network_controller->update();
+
+	//Update sprites
 	paddle_right->update();
 	paddle_left->update();
 	ball->update();
@@ -96,4 +107,5 @@ void Pong::deinitialize() {
 	delete paddle_left;
 	delete right_controller;
 	delete left_controller;
+	delete paddle_network_controller;
 }

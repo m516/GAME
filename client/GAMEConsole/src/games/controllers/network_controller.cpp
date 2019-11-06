@@ -7,6 +7,11 @@ NetworkController::NetworkController() {
 	initialize();
 }
 
+NetworkController::~NetworkController()
+{
+	client.close(hdl, websocketpp::close::status::normal, "Closing connection to server as normal");
+}
+
 int NetworkController::initialize() {
 	std::string uri = SERVER_URI;
 
@@ -22,18 +27,16 @@ int NetworkController::initialize() {
 		// Register our handlers
 		client.set_open_handler(
 			bind(&NetworkController::onOpen, this, &client, ::_1)
-		);
-		/*
+		); 
 		client.set_fail_handler(
-			&this->on_fail
-		);
-		client.set_message_handler(
-			&this->on_message
+			bind(&NetworkController::onFail, this, &client, ::_1)
 		);
 		client.set_close_handler(
-			&this->on_close
+			bind(&NetworkController::onClose, this, &client, ::_1)
 		);
-		*/
+		client.set_message_handler(
+			bind(&NetworkController::onMessage, this, &client, ::_1, ::_2)
+		);
 
 		// Create a connection to the given URI and queue it for connection once
 		// the event loop starts
@@ -65,6 +68,7 @@ int NetworkController::initialize() {
 
 
 void NetworkController::onOpen(client_t* c, websocketpp::connection_hdl hdl) {
+	if (c == &client) this->hdl = hdl;
 }
 
 void NetworkController::onFail(client_t* c, websocketpp::connection_hdl hdl) {
@@ -74,6 +78,11 @@ void NetworkController::onMessage(client_t* c, websocketpp::connection_hdl hdl, 
 }
 
 void NetworkController::onClose(client_t* c, websocketpp::connection_hdl hdl) {
+}
+
+//Sends a message to the server
+void NetworkController::send(std::string message) {
+	client.send(hdl, message, websocketpp::frame::opcode::text);
 }
 
 /*

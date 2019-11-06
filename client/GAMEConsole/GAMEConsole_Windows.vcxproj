@@ -28,6 +28,7 @@
     <ClCompile Include="src\games\controllers\network_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle.cpp" />
     <ClCompile Include="src\games\pong\objects\ball.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp" />
     <ClCompile Include="src\games\pong\pong.cpp" />
     <ClCompile Include="src\games\sprite.cpp" />
     <ClCompile Include="src\GUI\button.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\games\pong\objects\paddle_network_controller.h" />
     <ClInclude Include="src\games\pong\objects\paddle_controller.h" />
     <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h" />
     <ClInclude Include="src\application.h" />
