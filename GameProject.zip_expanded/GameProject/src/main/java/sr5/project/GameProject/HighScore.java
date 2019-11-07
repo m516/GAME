@@ -16,14 +16,13 @@ public class HighScore {
 	public HighScore() {
 	}
 
-    public HighScore(int i, String user, int i1)
-	{
-		setUsername(user);
-		setId(i);
-		setScore(i1);
-    }
+	public HighScore(int id, String username, int score){
+		this.Id = id;
+		this.username = username;
+		this.score = score;
+	}
 
-    @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
 		return Id;
