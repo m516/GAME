@@ -1,0 +1,32 @@
+# This file is a template, and might need editing before it works on your project.
+# use the official gcc image, based on debian
+# can use verions as well, like gcc:5.2
+# see https://hub.docker.com/_/gcc/
+image: gcc
+
+frontend-build:
+  tags:
+    - c++_tag
+  stage: build
+  # instead of calling g++ directly you can also use some build toolkit like make
+  # install the necessary build tools when needed
+  before_script:
+    - apt update -y
+    - apt upgrade -y
+    - apt -y install libsfml-dev cmake make
+  script:
+    - cd client/GAMEConsole/test/console_test
+    - cmake ./
+    - make
+  artifacts:
+    paths:
+      - client/GAMEConsole/test/console_test
+
+# run tests using the binary built before
+frontend-test:
+  tags:
+    - c++_tag
+  stage: test
+  script:
+    - cd client/GAMEConsole/test/console_test
+    - ./Console_Test

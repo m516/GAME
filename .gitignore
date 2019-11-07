@@ -2,6 +2,11 @@
 *.tmp
 *.vscode
 *.DS_Store
+.vs/
+Debug/
+.idea
+.metadata
+.vscode
 
 ## MAVEN ##
 target/

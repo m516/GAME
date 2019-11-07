@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{19A2A676-ED7A-4F2A-A4E1-42B305F8AE0C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="socketio\include\socketio\examples\console\main.cpp" />
+    <ClCompile Include="socketio\include\socketio\examples\qt\siochatdemo\main.cpp" />
+    <ClCompile Include="socketio\include\socketio\examples\qt\siochatdemo\mainwindow.cpp" />
+    <ClCompile Include="socketio\include\socketio\examples\qt\siochatdemo\nicknamedialog.cpp" />
+    <ClCompile Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\3.14.19060802-msvc_2\compileridcxx\CMakeCXXCompilerId.cpp" />
+    <ClCompile Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\3.14.19060802-msvc_2\compileridc\CMakeCCompilerId.c" />
+    <ClCompile Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\feature_tests.c" />
+    <ClCompile Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\feature_tests.cxx" />
+    <ClCompile Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\showincludes\main.c" />
+    <ClCompile Include="socketio\include\socketio\src\internal\sio_client_impl.cpp" />
+    <ClCompile Include="socketio\include\socketio\src\internal\sio_packet.cpp" />
+    <ClCompile Include="socketio\include\socketio\src\sio_client.cpp" />
+    <ClCompile Include="socketio\include\socketio\src\sio_socket.cpp" />
+    <ClCompile Include="socketio\include\socketio\test\sio_test.cpp" />
+    <ClCompile Include="socketio\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="socketio\include\socketio\examples\ios\siochatdemo\siochatdemo\AppDelegate.h" />
+    <ClInclude Include="socketio\include\socketio\examples\ios\siochatdemo\siochatdemo\CRViewController.h" />
+    <ClInclude Include="socketio\include\socketio\examples\qt\siochatdemo\mainwindow.h" />
+    <ClInclude Include="socketio\include\socketio\examples\qt\siochatdemo\nicknamedialog.h" />
+    <ClInclude Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\showincludes\foo.h" />
+    <ClInclude Include="socketio\include\socketio\src\internal\sio_client_impl.h" />
+    <ClInclude Include="socketio\include\socketio\src\internal\sio_packet.h" />
+    <ClInclude Include="socketio\include\socketio\src\sio_client.h" />
+    <ClInclude Include="socketio\include\socketio\src\sio_message.h" />
+    <ClInclude Include="socketio\include\socketio\src\sio_socket.h" />
+    <ClInclude Include="socketio\include\socketio\test\json.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\3.14.19060802-msvc_2\CMakeDetermineCompilerABI_C.bin" />
+    <None Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\3.14.19060802-msvc_2\CMakeDetermineCompilerABI_CXX.bin" />
+    <None Include="socketio\include\socketio\out\build\x64-debug\cmakefiles\feature_tests.bin" />
+    <None Include="socketio\readme\readme.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

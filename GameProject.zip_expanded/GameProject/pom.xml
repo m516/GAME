@@ -49,9 +49,15 @@
    			<scope>provided</scope>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+=======
+		 	<groupId>org.springframework.boot</groupId>
+         	<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+>>>>>>> frontend-network-implementation
 	</dependencies>
 
 	<build>

@@ -1,0 +1,4 @@
+docs/*
+obj/
+.vs/
+enc_temp_folder/

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package sr5.project.GameProject;
+=======
+package sr5.project.GameProject; 
+>>>>>>> frontend-network-implementation
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
