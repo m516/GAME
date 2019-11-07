@@ -1,12 +1,20 @@
 #include "network_controller.h"
 
+//#define NETWORK_DEBUG
+
 //Controls are similar to MenuNavigator
 
 //Initializes the controller
 NetworkController::NetworkController() {
 	// set logging policy if needed
+
+#ifdef NETWORK_DEBUG
 	client.set_access_channels(websocketpp::log::alevel::all);
 	client.set_error_channels(websocketpp::log::elevel::all);
+#else
+	client.clear_access_channels(websocketpp::log::alevel::all);
+	client.clear_error_channels(websocketpp::log::elevel::all);
+#endif
 
 	// Initialize ASIO
 	client.init_asio();
@@ -79,7 +87,11 @@ void NetworkController::onClose(client_t* c, websocketpp::connection_hdl hdl) {
 
 //Sends a message to the server
 void NetworkController::send(std::string message) {
+
+#ifdef NETWORK_DEBUG
 	std::cout << "NetworkController: Sending " << message << std::endl;
+#endif // NETWORK_DEBUG
+
 	client.send(hdl, message, websocketpp::frame::opcode::text);
 }
 
