@@ -55,14 +55,14 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
-    	logger.info("Entered into Message: Got Message:"+message);
+    	//logger.info("Entered into Message: Got Message:"+message);
     	
     	//Start with a "!" to join a game and define player number
     	if(message.startsWith("!"))
     	{
     		username = "" + message.charAt(1); //The game number is stored in the first bit
     		player = "" + message.charAt(2);  //The player number is stored in the second bit
-    		logger.info("Player " + player + " has joined game " + username);
+    		//logger.info("Player " + player + " has joined game " + username);
     		
             sessionUsernameMap.put(session, username); //Log the session based off the game number
             usernameSessionMap.put(username, session); 
@@ -74,7 +74,7 @@ public class WebSocketServer {
     	//Send movement information using "."
     	if(message.startsWith("."))
     	{
-    		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     	}
@@ -92,7 +92,6 @@ public class WebSocketServer {
     	}
     	else // Message to whole chat
     	{
-	    	broadcast(message + "has been successfully sent");
     	}
     }
  
