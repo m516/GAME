@@ -35,7 +35,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11</LibraryDependencies>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11;boost_system</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -46,7 +46,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11</LibraryDependencies>
+      <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11;boost_system</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -69,48 +69,6 @@
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\application.h" />
-    <ClInclude Include="src\games\game.h" />
-    <ClInclude Include="src\games\pong\controllers\controller.h" />
-    <ClInclude Include="src\games\pong\controllers\keyboard_controller.h" />
-    <ClInclude Include="src\games\pong\objects\ball.h" />
-    <ClInclude Include="src\games\pong\objects\paddle.h" />
-    <ClInclude Include="src\games\pong\paddle.h" />
-    <ClInclude Include="src\games\pong\pong.h" />
-    <ClInclude Include="src\games\sprite.h" />
-    <ClInclude Include="src\GUI\button.h" />
-    <ClInclude Include="src\GUI\guiElement.h" />
-    <ClInclude Include="src\GUI\menu\menuItem.h" />
-    <ClInclude Include="src\GUI\menu\menuPane.h" />
-    <ClInclude Include="src\GUI\panel.h" />
-    <ClInclude Include="src\GUI\theme.h" />
-    <ClInclude Include="src\modules\events.h" />
-    <ClInclude Include="src\modules\network.h" />
-    <ClInclude Include="src\modules\renderer.h" />
-    <ClInclude Include="src\UI\menuNavigator.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\application.cpp" />
-    <ClCompile Include="src\games\game.cpp" />
-    <ClCompile Include="src\games\pong\controllers\controller.cpp" />
-    <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp" />
-    <ClCompile Include="src\games\pong\objects\ball.cpp" />
-    <ClCompile Include="src\games\pong\objects\paddle.cpp" />
-    <ClCompile Include="src\games\pong\pong.cpp" />
-    <ClCompile Include="src\games\sprite.cpp" />
-    <ClCompile Include="src\GUI\button.cpp" />
-    <ClCompile Include="src\GUI\guiElement.cpp" />
-    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
-    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
-    <ClCompile Include="src\GUI\panel.cpp" />
-    <ClCompile Include="src\GUI\theme.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\modules\events.cpp" />
-    <ClCompile Include="src\modules\network.cpp" />
-    <ClCompile Include="src\modules\renderer.cpp" />
-    <ClCompile Include="src\UI\menuNavigator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
     <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf" />
     <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf" />
@@ -127,8 +85,51 @@
     <Image Include="assets\squishy-button-gray.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\cereal\doc\footer.html" />
-    <None Include="include\cereal\include\cereal\external\rapidxml\manual.html" />
+    <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\games\controllers\controller.cpp" />
+    <ClCompile Include="src\games\controllers\keyboard_controller.cpp" />
+    <ClCompile Include="src\games\controllers\network_controller.cpp" />
+    <ClCompile Include="src\games\game.cpp" />
+    <ClCompile Include="src\games\pong\objects\ball.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_controller.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp" />
+    <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp" />
+    <ClCompile Include="src\games\pong\pong.cpp" />
+    <ClCompile Include="src\games\sprite.cpp" />
+    <ClCompile Include="src\GUI\button.cpp" />
+    <ClCompile Include="src\GUI\guiElement.cpp" />
+    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
+    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
+    <ClCompile Include="src\GUI\panel.cpp" />
+    <ClCompile Include="src\GUI\theme.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\modules\events.cpp" />
+    <ClCompile Include="src\modules\renderer.cpp" />
+    <ClCompile Include="src\UI\menuNavigator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\games\controllers\controller.h" />
+    <ClInclude Include="src\games\controllers\keyboard_controller.h" />
+    <ClInclude Include="src\games\controllers\network_controller.h" />
+    <ClInclude Include="src\games\game.h" />
+    <ClInclude Include="src\games\pong\objects\ball.h" />
+    <ClInclude Include="src\games\pong\objects\paddle.h" />
+    <ClInclude Include="src\games\pong\objects\paddle_controller.h" />
+    <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h" />
+    <ClInclude Include="src\games\pong\objects\paddle_network_controller.h" />
+    <ClInclude Include="src\games\pong\pong.h" />
+    <ClInclude Include="src\games\sprite.h" />
+    <ClInclude Include="src\GUI\button.h" />
+    <ClInclude Include="src\GUI\guiElement.h" />
+    <ClInclude Include="src\GUI\menu\menuItem.h" />
+    <ClInclude Include="src\GUI\menu\menuPane.h" />
+    <ClInclude Include="src\GUI\panel.h" />
+    <ClInclude Include="src\GUI\theme.h" />
+    <ClInclude Include="src\modules\events.h" />
+    <ClInclude Include="src\modules\renderer.h" />
+    <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
