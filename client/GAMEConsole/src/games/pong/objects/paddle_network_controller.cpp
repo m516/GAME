@@ -26,7 +26,7 @@ void PaddleNetworkController::beginTransmission() {
 	if (paddle_left_action == paddle_action_t::BROADCAST) {
 		send("!11");
 	}
-	else if (paddle_right_action == paddle_action_t::BROADCAST) {
+	else {
 		send("!12");
 	}
 }
@@ -36,24 +36,17 @@ int PaddleNetworkController::update()
 	//Don't send anything to a disconnected server
 	if (!connected) return 1;
 
-	int paddle_y;
 
 	if (paddle_left_action == paddle_action_t::BROADCAST) {
-		paddle_y = int(paddle_left->position.y * 9999);
+		int paddle_y = int(paddle_left->position.y * 99);
+		std::string msg = "." + std::to_string(paddle_y);
+		send(msg);
 	}
 	else if (paddle_right_action == paddle_action_t::BROADCAST) {
-		paddle_y = int(paddle_left->position.y * 9999);
+		int paddle_y = int(paddle_left->position.y * 99);
+		std::string msg = "." + std::to_string(paddle_y);
+		send(msg);
 	}
-	else return 0;
-
-	std::string msg;
-
-	if (paddle_y < 10) msg = ".000" + std::to_string(paddle_y);
-	else if (paddle_y < 100) msg = ".00" + std::to_string(paddle_y);
-	else if (paddle_y < 1000) msg = ".0" + std::to_string(paddle_y);
-	else msg = "." + std::to_string(paddle_y);
-
-	send(msg);
 
 	return 0;
 }
@@ -78,19 +71,6 @@ int PaddleNetworkController::initialize() {
 
 void PaddleNetworkController::onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg) {
 	std::cout << "PaddleNetworkController: Message from server: " << msg->get_payload() << std::endl;
-
-	std::string payload = msg->get_payload();
-	if (payload[0] == '.') {
-		payload = payload.substr(1, 4);
-		std::cout << "Received position: " + payload << std::endl;
-		float position = std::stof(payload);
-		if (paddle_left_action == paddle_action_t::CONTROL) {
-			paddle_left->position.y = position / 10000;
-		}
-		else if (paddle_right_action == paddle_action_t::CONTROL) {
-			paddle_right->position.y = position / 10000;
-		}
-	}
 }
 
 void PaddleNetworkController::onFail(client_t* c, websocketpp::connection_hdl hdl) {
