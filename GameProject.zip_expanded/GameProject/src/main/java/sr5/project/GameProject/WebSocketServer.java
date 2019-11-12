@@ -35,7 +35,7 @@ public class WebSocketServer {
     
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
 	public ArrayList<WebGameObject> game = new ArrayList<WebGameObject>();
-	public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
+	//public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
@@ -60,6 +60,14 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     	logger.info("Entered into Message: Got Message:"+message);
     	
     	//Start with a "!" to join a game and define player number
@@ -67,9 +75,10 @@ public class WebSocketServer {
     	{
     		//String playerNum = players.size() + "";
     		WebGameObject  v1 = new WebGameObject(message);
+    		players.add(v1);
     		
     		sessionGameObjectMap.put(session, v1); //Log the session based off the game number
-    		GameObjectSessionMap.put(v1, session); 
+    		GameObjectSessionMap.put(v1, session);
             
             //logger.info("This is user " + sessionUsernameMap.size());
             
@@ -81,9 +90,12 @@ public class WebSocketServer {
     		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		//broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		//sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		sessionGameObjectMap.get(session).setX("" +message.charAt(1)+ message.charAt(2));
+    		sessionGameObjectMap.get(session).setY("" + message.charAt(3) + message.charAt(4));
     	}
     	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
+    		sessionGameObjectMap.get(session).getGameID()
     		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
     		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
     		//sendMessageToPArticularUser("[DM] " + username + ": " + message);

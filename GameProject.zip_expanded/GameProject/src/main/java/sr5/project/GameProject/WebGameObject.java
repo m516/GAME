@@ -13,8 +13,15 @@ public class WebGameObject
 		//TODO Constructor
 		gameID = "" + info.charAt(1) + info.charAt(2);
 		pNum = "" + info.charAt(3) + info.charAt(4);
-		gameID = "" + info.charAt(5) + info.charAt(6);
-		pNum = "" + info.charAt(7) + info.charAt(8);
+		x = "" + info.charAt(5) + info.charAt(6);
+		y = "" + info.charAt(7) + info.charAt(8);
+	}
+	public WebGameObject(WebGameObject object, String nX, String nY)
+	{
+		gameID = "" + object.getGameID();
+		pNum = "" + object.getPNum();
+		x = nX;
+		y = nY;
 	}
 	public void setGameID(String gameIDnew)
 	{

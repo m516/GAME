@@ -1,11 +1,12 @@
 package sr5.project.GameProject;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;mar
 
 public class WebGames 
 {
-	Map<String, Integer> GameIDIndex = HashMap<>();
+	Map<String, Integer> GameIDIndex = new HashMap<>();
 	
 	//Arraylist of objects
 	ArrayList <WebGameObject> objects = new ArrayList<WebGameObject>();
