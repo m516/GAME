@@ -1,6 +1,7 @@
 package sr5.project.GameProject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,11 +27,15 @@ import org.springframework.stereotype.Component;
 public class WebSocketServer {
 	
 	// Store all socket session and their corresponding username.
-    private static Map<Session, String> sessionUsernameMap = new HashMap<>();
-    private static Map<String, Session> usernameSessionMap = new HashMap<>();
+//    private static Map<Session, String> sessionUsernameMap = new HashMap<>();
+//    private static Map<String, Session> usernameSessionMap = new HashMap<>();
+
+	private static Map<Session, WebGameObject> sessionGameObjectMap = new HashMap<>();
+	private static Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
     
-    String username = "game";
-    String player = "";
+	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
+	public ArrayList<WebGameObject> game = new ArrayList<WebGameObject>();
+	public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
@@ -42,7 +47,7 @@ public class WebSocketServer {
      */
     public void onOpen(Session session) throws IOException
     {
-        logger.info("Entered into Open" + sessionUsernameMap.size());
+        logger.info("New Player entered into Open");
     }
  
     @OnMessage
@@ -60,29 +65,28 @@ public class WebSocketServer {
     	//Start with a "!" to join a game and define player number
     	if(message.startsWith("!"))
     	{
-    		username = "" + message.charAt(1); //The game number is stored in the first bit
-    		player = "" + message.charAt(2);  //The player number is stored in the second bit
-    		logger.info("Player " + player + " has joined game " + username);
+    		//String playerNum = players.size() + "";
+    		WebGameObject  v1 = new WebGameObject(message);
     		
-            sessionUsernameMap.put(session, username); //Log the session based off the game number
-            usernameSessionMap.put(username, session); 
+    		sessionGameObjectMap.put(session, v1); //Log the session based off the game number
+    		GameObjectSessionMap.put(v1, session); 
             
-            logger.info("This is user " + sessionUsernameMap.size());
+            //logger.info("This is user " + sessionUsernameMap.size());
             
-            broadcast("Player " + player + " has joined game " + username);
+            broadcast("Player " + v1.getPNum() + " has joined game " + v1.getGameID());
     	}
     	//Send movement information using "."
     	if(message.startsWith("."))
     	{
-    		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		//broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		//sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     	}
     	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
     		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
-    		sendMessageToPArticularUser("[DM] " + username + ": " + message);
-    		sendMessageToPArticularUser("[DM] " + username + ": " + message);
+    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
+    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
     	}
     	if(message.startsWith("?"))
     	{
@@ -106,12 +110,12 @@ public class WebSocketServer {
     {
     	logger.info("Entered into Close");
     	
-    	String username = sessionUsernameMap.get(session);
-    	sessionUsernameMap.remove(session);
-    	usernameSessionMap.remove(username);
+    	//String username = sessionUsernameMap.get(session);
+    	//sessionUsernameMap.remove(session);
+    	//usernameSessionMap.remove(username);
         
-    	String message= username + " disconnected";
-        broadcast(message);
+    	//String message= username + " disconnected";
+        //broadcast(message);
     }
  
     @OnError
