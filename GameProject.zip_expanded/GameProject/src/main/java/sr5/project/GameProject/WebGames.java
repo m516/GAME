@@ -2,7 +2,7 @@ package sr5.project.GameProject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;mar
+import java.util.Map;
 
 public class WebGames 
 {
@@ -17,18 +17,12 @@ public class WebGames
 	String score = "";
 	//State of the game
 	boolean isPlaying = false;
+	String gameType;
 	
-	public WebGames(String message)
+	public WebGames(String nGameType, int maxPlayers)
 	{
-		//TODO
-		//Max players
-		//First player
-		//Initial Score
-		
-		
-		String temp = "" + message.charAt(0) + message.charAt(1);
-		pMax = Integer.parseInt(temp);
-		
+		gameType = nGameType;
+		pMax = maxPlayers;
  	}
 	public String addPlayer(WebGameObject player)
 	{

@@ -34,7 +34,7 @@ public class WebSocketServer {
 	private static Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
     
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
-	public ArrayList<WebGameObject> game = new ArrayList<WebGameObject>();
+	public ArrayList<WebGames> game = new ArrayList<WebGames>();
 	//public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
@@ -60,8 +60,94 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
-    	
-    	
+    	if(message.startsWith("C"))
+    	{
+    		//TODO
+			String gameType = "" + message.charAt(1);
+			int maxP = Integer.parseInt("" + message.charAt(2));
+			int gameID = game.size();
+			WebGames wg = new WebGames(gameType, maxP);
+			broadcast("GID" + gameID +" " +message + "has been built");
+			
+    	}
+    	if(message.startsWith("J"))
+    	{
+    		//TODO
+			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
+			String gameType = "" + message.charAt(4);
+			String x = "" + message.charAt(5) + message.charAt(6);
+			String y = "" + message.charAt(7) + message.charAt(8);
+			
+			if(game.size() > gameID)
+			{
+				WebGameObject go = new WebGameObject(gameID, x, y);
+				if(addPlayer(go).startsWith("Game S"))
+				{
+					broadcast("Game Successfully Joined");
+				}
+				else
+				{
+					broadcast("Game Full, Try again");
+				}
+			}
+			else
+			{
+				broadcast("Game does not exist");
+			}
+				
+    	}
+    	if(message.startsWith("R"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("PL"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("OL"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("BL"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("S"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("T"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("G"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("ST"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("PM"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("OM"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("E"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("?"))
+    	{
+    		//TODO
+    	}
+    	if(message.startsWith("W"))
+    	{
+    		//TODO
+    	}
     	
     	
     	
