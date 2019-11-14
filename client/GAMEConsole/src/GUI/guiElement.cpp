@@ -12,6 +12,7 @@ void GUIElement::setRenderer(sf::RenderTarget* new_renderer) {
 	renderer = new_renderer;
 }
 
+
 /**
 Gets the RenderTarget to render onto
 */
@@ -29,6 +30,15 @@ void GUIElement::setSize(float x, float y) {
 void GUIElement::setSize(sf::Vector2f& new_size) {
 	setSize(new_size.x, new_size.y);
 }
+
+Theme* GUIElement::getTheme() {
+	return theme;
+}
+
+void GUIElement::setTheme(Theme* theme) {
+	this->theme = theme;
+}
+
 
 /**
 Get the size of the GUI Element rendered on the screen

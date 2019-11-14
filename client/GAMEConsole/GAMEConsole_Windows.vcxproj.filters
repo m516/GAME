@@ -81,6 +81,9 @@
     <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\games\pong\objects\score_board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GUI\button.h">
@@ -381,6 +384,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\games\pong\objects\paddle_network_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\score_board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

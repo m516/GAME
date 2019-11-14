@@ -5,6 +5,7 @@
 #include "objects/paddle.h"
 #include "objects/paddle_keyboard_controller.h"
 #include "objects/paddle_network_controller.h"
+#include "objects/score_board.h"
 
 class Pong : public Game {
 public:
@@ -29,4 +30,6 @@ private:
 	PaddleNetworkController* paddle_network_controller;
 
 	bool initialized = false;
+
+	ScoreBoard* scoreboard;
 };

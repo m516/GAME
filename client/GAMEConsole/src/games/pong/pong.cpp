@@ -47,6 +47,11 @@ void Pong::initialize(){
 	paddle_network_controller->initialize();
 	paddle_network_controller->enable();
 
+	//Create the scoreboard
+	scoreboard = new ScoreBoard(this, 2);
+	scoreboard->position.x = 0.1f;
+	scoreboard->position.y = 0.1f;
+
 	initialized = true;
 }
 
@@ -100,6 +105,7 @@ void Pong::render() {
 	ball->render();
 	paddle_right->render();
 	paddle_left->render();
+	scoreboard->render();
 }
 
 void Pong::deinitialize() {
@@ -110,4 +116,5 @@ void Pong::deinitialize() {
 	delete right_controller;
 	delete left_controller;
 	delete paddle_network_controller;
+	delete scoreboard;
 }
