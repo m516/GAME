@@ -17,19 +17,19 @@ public:
 	/*
 	Adds one point to the player's score
 	*/
-	void increment_score(int player);
+	void incrementScore(int player);
 
 	/*
 	Removes all points from a player
 	*/
-	void reset_score(int player);
+	void resetScore(int player);
 
 	/*
 	Resets all scores to 0
 	*/
-	void reset_scores();
+	void resetScores();
 
-	std::string get_score_string();
+	std::string getScoreString();
 
 	class NPE : public std::exception
 	{
@@ -40,7 +40,7 @@ public:
 	} NonexistentPlayerException;
 
 private:
-	void check_player(int player);
+	void checkPlayer(int player);
 	unsigned int* scores;
 	size_t num_players;
 
