@@ -72,28 +72,28 @@ public class WebSocketServer {
     	}
     	if(message.startsWith("J"))
     	{
-    		//TODO
-			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
-			String gameType = "" + message.charAt(4);
-			String x = "" + message.charAt(5) + message.charAt(6);
-			String y = "" + message.charAt(7) + message.charAt(8);
-			
-			if(game.size() > gameID)
-			{
-				WebGameObject go = new WebGameObject(gameID, x, y);
-				if(addPlayer(go).startsWith("Game S"))
-				{
-					broadcast("Game Successfully Joined");
-				}
-				else
-				{
-					broadcast("Game Full, Try again");
-				}
-			}
-			else
-			{
-				broadcast("Game does not exist");
-			}
+//    		//TODO
+//			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
+//			String gameType = "" + message.charAt(4);
+//			String x = "" + message.charAt(5) + message.charAt(6);
+//			String y = "" + message.charAt(7) + message.charAt(8);
+//			
+//			if(game.size() > gameID)
+//			{
+//				WebGameObject go = new WebGameObject(gameID, x, y);
+//				if(addPlayer(go).startsWith("Game S"))
+//				{
+//					broadcast("Game Successfully Joined");
+//				}
+//				else
+//				{
+//					broadcast("Game Full, Try again");
+//				}
+//			}
+//			else
+//			{
+//				broadcast("Game does not exist");
+//			}
 				
     	}
     	if(message.startsWith("R"))
