@@ -1,28 +1,35 @@
 #include "network.h"
 
-#include <SFML/Network.hpp>
-
 #include <thread>
 #include <iostream>
 
-Network::Network(Application *app)
+int network_initialize()
 {
-    application = app;
-	//window = &app->window;
+	return 0;
+	//TODO stub
 }
 
-/** 
- * Start the rendering thread 
- */
-void Network::start()
+void network_onOpen(client_t* c, websocketpp::connection_hdl hdl)
 {
-	std::thread* networkThread = new std::thread(&Network::networkLoop, this);
+	//TODO stub
 }
 
-/** 
- * Main render thread
- */
-void Network::networkLoop()
+void network_onFail(client_t* c, websocketpp::connection_hdl hdl)
 {
+	//TODO stub
+}
 
+void network_onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg)
+{
+	//TODO stub
+}
+
+void network_onClose(client_t* c, websocketpp::connection_hdl hdl)
+{
+	//TODO stub
+}
+
+void network_send(std::string message)
+{
+	//TODO stub
 }
