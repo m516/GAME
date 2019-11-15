@@ -49,7 +49,7 @@ void Pong::initialize(){
 
 	//Create the scoreboard
 	scoreboard = new ScoreBoard(this, 2);
-	scoreboard->position.x = 0.1f;
+	scoreboard->position.x = 0.5f;
 	scoreboard->position.y = 0.1f;
 
 	initialized = true;
@@ -99,13 +99,27 @@ void Pong::update(){
 	//Bounce off of walls
 	if (ball->position.y                < 0.f && ball->velocity.y < 0.0f) ball->velocity.y = -ball->velocity.y;
 	if (ball->position.y + ball->size.y > 1.f && ball->velocity.y > 0.0f) ball->velocity.y = -ball->velocity.y;
+
+
+	if (ball->position.x < 0.f) {
+		ball->position.x = 0.1f;
+		ball->position.y = 1.f- ball->position.y;
+		ball->velocity.x = -ball->velocity.x;
+		scoreboard->incrementScore(0);
+	}
+	if (ball->position.x > 1.f) {
+		ball->position.x = 0.9f;
+		ball->position.y = 1.f - ball->position.y;
+		ball->velocity.x = -ball->velocity.x;
+		scoreboard->incrementScore(1);
+	}
 }
 
 void Pong::render() {
+	scoreboard->render();
 	ball->render();
 	paddle_right->render();
 	paddle_left->render();
-	scoreboard->render();
 }
 
 void Pong::deinitialize() {

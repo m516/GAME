@@ -2,11 +2,14 @@
 
 
 ScoreBoard::ScoreBoard(Game* game, size_t num_players) {
+	//Set the game instance
+	this->game = game;
+
+	//Initialize score counters
 	scores = new unsigned int[num_players];
 	this->num_players = num_players;
-
-	//Set description text
-	label.setFont(game->getTheme()->font_standard);
+	//Reset the scores
+	resetScores();
 }
 ScoreBoard::~ScoreBoard() {
 	delete scores;
@@ -14,52 +17,59 @@ ScoreBoard::~ScoreBoard() {
 
 void ScoreBoard::render() {
 
-	label.setCharacterSize(20);
-	label.setString(get_score_string());
-	label.setFillColor(game->getTheme()->color_selected);
+	//Set text
+	label.setFont(game->getTheme()->font_standard);
+	label.setCharacterSize(game->getSize().y/3.f);
+	label.setString(getScoreString());
+	label.setFillColor(game->getTheme()->color_deselected);
 
+	//Set its position
 	updateScreenDimensions();
+	screen_position.x -= label.getGlobalBounds().width / 2.f;
 	label.setPosition(screen_position);
+	
+
+	//Render it!
 	game->getRenderer()->draw(label);
 }
 
 /*
 Adds one point to the player's score
 */
-void ScoreBoard::increment_score(int player) {
-	check_player(player);
+void ScoreBoard::incrementScore(int player) {
+	checkPlayer(player);
 	scores[player]++;
 }
 
 /*
 Removes all points from a player
 */
-void ScoreBoard::reset_score(int player) {
-	check_player(player);
+void ScoreBoard::resetScore(int player) {
+	checkPlayer(player);
 	scores[player] = 0;
 }
 
 
-std::string ScoreBoard::get_score_string() {
+std::string ScoreBoard::getScoreString() {
 	std::string text;
-	text.append("Score: ");
-	for (int i = 0; i < num_players; i++) {
+	for (int i = 0; i < num_players-1; i++) {
 		text.append(std::to_string(scores[i]));
 		text.append(", ");
 	}
+	if(num_players > 1) text.append(std::to_string(scores[num_players-1]));
 	return text;
 }
 
 /*
 Resets all scores to 0
 */
-void ScoreBoard::reset_scores() {
+void ScoreBoard::resetScores() {
 	for (int i = 0; i < num_players; i++) {
 		scores[i] = 0;
 	}
 }
 
-void ScoreBoard::check_player(int player) {
+void ScoreBoard::checkPlayer(int player) {
 	if (player >= num_players || player < 0) {
 		std::cout << "Attempting to modify player " << player << " when only 0-" << num_players << " exist.";
 		throw NonexistentPlayerException;

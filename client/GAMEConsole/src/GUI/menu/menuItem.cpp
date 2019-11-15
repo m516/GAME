@@ -17,8 +17,6 @@ MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pr
 	//Configure border
 	border.setPosition(position);
 	border.setSize(size);
-	//Set border render attributes
-	border.setOutlineColor(sf::Color::White);
 	border.setOutlineThickness(1.f);
 }
 
@@ -33,15 +31,17 @@ void MenuItem::render()
 	//Set colors based on whether or not this item is selected
 	if (selected) 
 	{
-		border.setFillColor(theme->color_selected);
-		label.setFillColor(theme->color_deselected);
+		label.setFillColor(theme->color_selected);
+		border.setOutlineColor(theme->color_selected);
 	}
 	else 
 	{
-		border.setFillColor(theme->color_deselected);
-		label.setFillColor(theme->color_selected);
+		label.setFillColor(theme->color_deselected);
+		border.setOutlineColor(theme->color_deselected);
 	}
 	
+
+	border.setFillColor(theme->color_background);
 	renderer->draw(border);
 	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
 }

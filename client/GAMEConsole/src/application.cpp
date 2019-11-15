@@ -26,9 +26,6 @@ Application::Application()
 
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
-	theme.color_border = sf::Color::Black;
-	theme.color_deselected = sf::Color::Black;
-	theme.color_selected = sf::Color::White;
 	theme.loadGenericFont();
 }
 

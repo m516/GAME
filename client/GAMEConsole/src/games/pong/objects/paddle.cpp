@@ -13,7 +13,7 @@ Paddle::Paddle(Game* game) {
 	//Create a rectangle to render
 	shape = sf::RectangleShape();
 
-	shape.setFillColor(sf::Color(17, 232, 255));
+
 }
 
 Paddle::~Paddle() {
@@ -28,6 +28,7 @@ void Paddle::render() {
 
 	shape.setPosition(screen_position);
 	shape.setSize(screen_size);
+	shape.setFillColor(game->getTheme()->color_selected);
 
 	game->getRenderer()->draw(shape);
 }
