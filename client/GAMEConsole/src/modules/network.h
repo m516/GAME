@@ -1,20 +1,15 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Network.hpp>
 #include "../application.h"
 
-class Network 
+class Network
 {
-	public:
-        Application* application;
-		sf::RenderWindow* window;
-		// Functions
-		Network(Application *app);
+    public:
+        Network(Application*);
         void start();
+
+    private:
         void networkLoop();
-	private:
-	protected:
+        Application* application;
+    protected:
 };

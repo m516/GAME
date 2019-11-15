@@ -1,5 +1,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -11,6 +12,8 @@ bool temp = true;
 float x = 0;
 /** y location of rect */
 float y = 0;
+
+float menuSelector = 75;
 /** Delta Time */
 float delta = 0;
 /** Font */
@@ -29,22 +32,22 @@ sf::RectangleShape rect(sf::Vector2f(20.f, 20.f));
  * Color Palette in the form 0xRRGGBBAA hex
  */
 uint32_t color_palette[16] = {
-	0xFFffffFF,
-	0xFF6df7FF,
-	0xFF11adFF,
-	0xFF606cFF,
-	0xFF3934FF,
-	0xFF1e88FF,
-	0xFF5bb3FF,
-	0xFFa1e5FF,
-	0xFFf7e4FF,
-	0xFFf992FF,
-	0xFFcb4dFF,
-	0xFF6a37FF,
-	0xFFc924FF,
-	0xFFf48cFF,
-	0xFFf7b6FF,
-	0xFF9b9cFF
+	0xffffffFF,
+	0x6df7c1FF,
+	0x11adc1FF,
+	0x606c81FF,
+	0x393457FF,
+	0x1e8875FF,
+	0x5bb361FF,
+	0xa1e55aFF,
+	0xf7e476FF,
+	0xf99252FF,
+	0xcb4d68FF,
+	0x6a3771FF,
+	0xc92464FF,
+	0xf48cb6FF,
+	0xf7b69eFF,
+	0x9b9c82FF
 };
 
 /** Main function */
@@ -61,7 +64,8 @@ int main()
 	
 	// window.setFramerateLimit(120);
 	// Load font
-	font.loadFromFile("bitwise.ttf");
+	// font.loadFromFile("bitwise.ttf");
+	font.loadFromFile("alien_encounters/Alien-Encounters-Regular.ttf");
 
 	// Scale window up
 	window.setSize(sf::Vector2u(1920, 1080));
@@ -150,7 +154,11 @@ void Renderer(sf::RenderWindow &window)
 	view.setSize(256, 256);
 	view.setCenter(128, 128);
 	view = getLetterboxView(view, 256, 256);
-
+	sf::RectangleShape border(sf::Vector2f(254, 254));
+	border.setPosition(sf::Vector2f(1.f, 1.f));
+	border.setOutlineColor(sf::Color::White);
+	border.setFillColor(sf::Color::Black);
+	border.setOutlineThickness(1.f);
 	while (window.isOpen())
 	{
 		// Calculate time since last updated frame
@@ -162,43 +170,52 @@ void Renderer(sf::RenderWindow &window)
 		while (timeSinceLastUpdate > timePerFrame)
 		{
 			delta = timeSinceLastUpdate.asSeconds();
-			window.clear(sf::Color(100, 100, 100));
+			window.clear(sf::Color::Black);
 			window.setView(view);
 
 			sf::Vector2u windowSize = window.getSize();
 			
+			window.draw(border);
+
 			sf::Vector2f movePos(x, y);
-			rect.setPosition(movePos * delta);
 
 			// Draw welcome text
 			sf::Text text;
 			text.setFont(font);
-			text.setString("Welcome to G.A.M.E.");
-			text.setPosition(100, 50);
-			text.setCharacterSize(12); // In Pixels
+			text.setString("Welcome to\nG.A.M.E.");
+			text.setPosition(5, 5);
+			text.setCharacterSize(24 * 2); // In Pixels
+			text.scale(sf::Vector2f(0.5, 0.5));
 			text.setFillColor(sf::Color::White);
 			window.draw(text);
 
-			if (temp)
-			{
-				// Change text and draw
-				text.setString("Option 1");
-				text.setPosition(100, 100);
-				window.draw(text);
-				// Change rectangle color & draw
-				// rect.setFillColor(sf::Color(100, 250, 50));
-				window.draw(rect);
-			}
-			else
-			{
-				text.setString("Option 2");
-				text.setPosition(100, 150);
-				window.draw(text);
-				// rect.setFillColor(sf::Color(250, 100, 50));
-				window.draw(rect);
-			}
+			sf::RectangleShape selector(sf::Vector2f(5, 30));
+			selector.setPosition(5, menuSelector);
+			window.draw(selector);
 
+			text.setString("Play");
+			text.setPosition(15, 75);
+			window.draw(text);
 
+			text.setString("Party");
+			text.setPosition(15, 100);
+			window.draw(text);
+
+			text.setString("Friends");
+			text.setPosition(15, 125);
+			window.draw(text);
+
+			text.setString("Profile");
+			text.setPosition(15, 150);
+			window.draw(text);
+
+			text.setString("Settings");
+			text.setPosition(15, 175);
+			window.draw(text);
+
+			rect.setPosition(movePos * delta);
+			window.draw(rect);
+			
 			// Display the window
 			window.display();
 		}
@@ -208,6 +225,15 @@ void Renderer(sf::RenderWindow &window)
 /** Handles Events */
 void EventHandler(sf::RenderWindow &window)
 {
+	sf::UdpSocket socket;
+	sf::IpAddress server = "10.24.226.130";
+	unsigned short port = 5400;
+
+	if (socket.bind(5400) != sf::Socket::Done)
+	{
+		std::cout << "ERROR" << std::endl;
+	}
+
 	sf::Event event;
 	while (window.pollEvent(event)) // While events are "queued"
 	{
@@ -215,16 +241,23 @@ void EventHandler(sf::RenderWindow &window)
 		{
 			view = getLetterboxView(view, event.size.width, event.size.height);
 		}
-
+		
 		// Key Down
 		if (event.type == sf::Event::KeyPressed)
 		{
 			float speed = 100;
+			char data[6] = "Hello";
+			if (socket.send(data, 6, server, port) != sf::Socket::Done)
+			{
+				std::cout << "SEND ERROR" << std::endl;
+			}
+
 			switch (event.key.code)
 			{
 				// ENTER
 				case sf::Keyboard::Enter:
-					temp = !temp;
+					menuSelector += 25;
+					if (menuSelector > 175) menuSelector = 75;
 					break;
 				// CONTROLS	
 				case sf::Keyboard::Right:

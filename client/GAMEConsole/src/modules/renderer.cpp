@@ -42,7 +42,7 @@ void Renderer::renderLoop()
 	pong_game.setPosition(0, 0);
 	pong_game.setSize((float)(window->getSize().x), (float)(window->getSize().y));
 	pong_game.setRenderer(window);
-	pong_game.initialize();
+	pong_game.setTheme(theme);
 
 	// Create main menu
 	sf::Text title;

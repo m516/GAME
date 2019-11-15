@@ -41,6 +41,16 @@ public:
 	sf::Vector2f getPosition();
 
 	/**
+	Get the theme of this GUIElement
+	*/
+	Theme* getTheme();
+
+	/**
+	Set the theme of this GUIElement
+	*/
+	void setTheme(Theme* theme);
+
+	/**
 	renders the item onto a RenderWindow
 	@param target the window onto which this GUI element renders
 	*/

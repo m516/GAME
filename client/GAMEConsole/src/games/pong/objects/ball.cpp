@@ -16,13 +16,13 @@ Ball::Ball(Game* game) {
 	//Set the radius of the shape based on its screen size
 	shape.setRadius(50.f);
 
-	shape.setFillColor(sf::Color(0,180,32));
+	shape.setFillColor(sf::Color(17, 232, 255));
 
 	//Make me move!
 	enable_motion = true;
 
-	velocity.x = 0.005f;
-	velocity.y = 0.002f;
+	velocity.x = 0.01f;
+	velocity.y = 0.006f;
 }
 
 void Ball::update() {

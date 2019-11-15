@@ -16,14 +16,23 @@ In a Raspberry Pi terminal type
 sudo raspi-config nonint do_expand_rootfs
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_ssh 0
-sudo apt-get install openssh-server g++ gdb gdbserver
-sudo apt-get install cmake libflac-dev libogg-dev libvorbis-dev libopenal-dev libjpeg8-dev libfreetype6-dev libudev-dev libraspberrypi-dev
+sudo apt-get install make git openssh-server g++ gdb gdbserver cmake libflac-dev libogg-dev libvorbis-dev libopenal-dev libjpeg8-dev libfreetype6-dev libudev-dev libraspberrypi-dev
 cd
+git clone https://github.com/mickelson/sfml-pi.git
+cd sfml-pi
 mkdir build
 cd build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
 sudo make install
 sudo ldconfig
+sudo apt-get install boost-all-dev libssl1.0-dev
+cd
+git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
+cd socket.io-client-cpp/
+cmake ./
+sudo make install
+cd
+sudo apt-get install boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
 ```
 
 ### Initial Pi Setup
@@ -40,7 +49,7 @@ raspi-config nonint do_ssh 0
 Then install packages for compiling and debugging C++
 
 ```
-sudo apt-get install openssh-server g++ gdb gdbserver
+sudo apt-get install openssh-server g++ gdb gdbserver avahi-daemon
 ```
 
 ### Install SFML
@@ -54,6 +63,12 @@ cd build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
 sudo make install
 sudo ldconfig
+```
+
+### Install Websocket++
+This project also requires [Websocket++](https://www.zaphoyd.com/websocketpp/) to connect to the server. To install it on the Raspberry Pi, use these commands:
+```
+sudo apt-get install boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
 ```
 
 ## 3. Configure Visual Studio

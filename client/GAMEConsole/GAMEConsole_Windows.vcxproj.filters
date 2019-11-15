@@ -51,12 +51,6 @@
     <ClCompile Include="src\games\pong\objects\paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\games\pong\controllers\controller.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\games\pong\controllers\keyboard_controller.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\GUI\menu\menuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,10 +60,28 @@
     <ClCompile Include="src\modules\events.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\modules\network.cpp">
+    <ClCompile Include="src\modules\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\modules\renderer.cpp">
+    <ClCompile Include="src\games\controllers\controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\controllers\keyboard_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\controllers\network_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\pong\objects\paddle_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\games\pong\objects\score_board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -344,12 +356,6 @@
     <ClInclude Include="src\games\pong\objects\paddle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\games\pong\controllers\controller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\games\pong\controllers\keyboard_controller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\GUI\menu\menuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -359,14 +365,52 @@
     <ClInclude Include="src\modules\events.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\modules\network.h">
+    <ClInclude Include="src\modules\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\modules\renderer.h">
+    <ClInclude Include="src\games\controllers\controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\controllers\keyboard_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\controllers\network_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\paddle_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\paddle_network_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\games\pong\objects\score_board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\cereal\external\rapidxml\manual.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Regular.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Bold-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Italic.ttf" />
+    <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Solid-Regular.ttf" />
+    <Font Include="assets\fonts\bitwise.ttf" />
+    <Font Include="assets\fonts\ka1.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\squishy-button-blue.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\squishy-button-gray.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

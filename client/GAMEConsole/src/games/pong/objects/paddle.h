@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../sprite.h"
-#include "../controllers/controller.h"
+#include "..//..//sprite.h"
+#include "..//..//controllers/keyboard_controller.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 
 class Paddle : public Sprite {
@@ -14,11 +14,6 @@ public:
 	void update();
 	void render();
 
-	//Sets the current controller
-	void setController(Controller* controller);
-
 private:
 	sf::RectangleShape shape;
-
-	Controller* controller;
 };

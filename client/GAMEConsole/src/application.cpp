@@ -3,8 +3,8 @@
 
 #include "application.h"
 #include "modules/renderer.h"
-#include "modules/network.h"
 #include "modules/events.h"
+#include "modules/network.h"
 
 Application::Application()
 {
@@ -12,9 +12,9 @@ Application::Application()
 	settings.antialiasingLevel = 8;
 	
 	window = new sf::RenderWindow(
-		sf::VideoMode(256, 256),
+		sf::VideoMode(800, 480),
 		"G.A.M.E.",
-		sf::Style::Fullscreen, 
+		sf::Style::Default, 
 		settings
 	);
 
@@ -22,7 +22,7 @@ Application::Application()
 	window->setVerticalSyncEnabled(true);
 
 	//Deactivate the window so it can be used in the render thread
-	// window->setActive(false);
+	window->setActive(false);
 
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
@@ -38,10 +38,10 @@ Application::Application()
 void Application::run()
 {
 	renderer = new Renderer(this);
-	network = new Network(this);
 	events = new Events(this);
-	
+	network = new Network(this);
+
 	renderer->start();
-	network->start();
-	events->start();
+    network->start();
+	events->start(); // Events must start last
 }
