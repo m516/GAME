@@ -38,6 +38,7 @@ void Renderer::renderLoop()
     view = getLetterboxView(view, desktop.width, desktop.height);
     window->setView(view);
 	
+	//Create Pong instance
 	Pong pong_game;
 	pong_game.setPosition(0, 0);
 	pong_game.setSize((float)(window->getSize().x), (float)(window->getSize().y));
@@ -48,6 +49,7 @@ void Renderer::renderLoop()
 	sf::Text title;
 	title.setFont(theme->font_standard);
 	title.setCharacterSize(66);
+	title.setColor(theme->color_selected);
 	title = theme->sharpenText(title);
 	title.setString("G.A.M.E.");
 	title.setPosition(5, 5);
