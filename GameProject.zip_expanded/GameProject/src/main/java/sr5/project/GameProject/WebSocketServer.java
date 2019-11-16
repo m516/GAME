@@ -36,6 +36,14 @@ public class WebSocketServer {
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
 	public ArrayList<WebGames> game = new ArrayList<WebGames>();
 	//public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
+	
+	//***************************************START OLD METHODS****************************************************************
+    private static Map<Session, String> sessionUsernameMap = new HashMap<>();
+    private static Map<String, Session> usernameSessionMap = new HashMap<>();
+
+    String username = "game";
+    String player = "";
+	//***************************************END OLD METHODS******************************************************************
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
@@ -68,7 +76,7 @@ public class WebSocketServer {
     	}
     	if(message.startsWith("C"))
     	{
-    		//TODO
+    		//TODO Test
 			String gameType = "" + message.charAt(1);
 			int maxP = Integer.parseInt("" + message.charAt(2));
 			int gameID = game.size();
@@ -79,7 +87,7 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("J"))
     	{
-    		//TODO
+    		//TODO Test
 			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
 			int gameType = message.charAt(4);
 			sessionGameObjectMap.get(session).setGameType(gameType);
@@ -114,14 +122,14 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("R"))
     	{
-    		//TODO
+    		//TODO Test
     		game.get(sessionGameObjectMap.get(session).getGameID()).removePlayer(sessionGameObjectMap.get(session).getPNum());
     		logger.info("Remove player");
     		
     	}
     	else if(message.startsWith("PL"))
     	{
-    		//TODO
+    		//TODO Test
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get player locations");
@@ -129,28 +137,28 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("OL"))
     	{
-    		//TODO
+    		//TODO Test
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get object locations");
     	}
     	else if(message.startsWith("BL"))
     	{
-    		//TODO
+    		//TODO Test
     		String s = "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get all locations");
     	}
     	else if(message.startsWith("S"))
     	{
-    		//TODO
+    		//TODO Test
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get Score");
     	}
     	else if(message.startsWith("T"))
     	{
-    		//TODO
+    		//TODO Test
     		if(game.get(sessionGameObjectMap.get(session).getGameID()).getState())
     		{
         		sendMessageToPArticularUser(session, "Game has started");
@@ -164,12 +172,12 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("G"))
     	{
-    		//TODO
+    		//TODO Test
     		game.get(sessionGameObjectMap.get(session).getGameID()).setState(true);
     	}
     	else if(message.startsWith("ST"))
     	{
-    		//TODO
+    		//TODO Test
     		StringBuilder sb = new StringBuilder(message);
     		sb.deleteCharAt(0);
     		sb.deleteCharAt(1);
@@ -178,7 +186,7 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("PM"))
     	{
-    		//TODO
+    		//TODO Complete and Test
 //    		String x = "" + message.charAt(4) + message.charAt(5);
 //    		sessionGameObjectMap.get(session).setX("temp");
 //    		sessionGameObjectMap.get(session).setY("temp");
@@ -199,49 +207,46 @@ public class WebSocketServer {
     	{
     		//TODO
     	}
-    	
-//    	logger.info("Entered into Message: Got Message:"+message);
-//    	
-//    	//Start with a "!" to join a game and define player number
-//    	if(message.startsWith("!"))
-//    	{
-//    		//String playerNum = players.size() + "";
-//    		WebGameObject  v1 = new WebGameObject(message);
-//    		players.add(v1);
-//    		
-//    		sessionGameObjectMap.put(session, v1); //Log the session based off the game number
-//    		GameObjectSessionMap.put(v1, session);
-//            
-//            //logger.info("This is user " + sessionUsernameMap.size());
-//            
-//            broadcast("Player " + v1.getPNum() + " has joined game " + v1.getGameID());
-//    	}
-//    	//Send movement information using "."
-//    	if(message.startsWith("."))
-//    	{
-//    		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-//    		//broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-//    		//sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-//    		sessionGameObjectMap.get(session).setX("" +message.charAt(1)+ message.charAt(2));
-//    		sessionGameObjectMap.get(session).setY("" + message.charAt(3) + message.charAt(4));
-//    	}
-//    	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
-//    	{
-//    		sessionGameObjectMap.get(session).getGameID()
-//    		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
-//    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
-//    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
-//    	}
-//    	if(message.startsWith("?"))
-//    	{
-//    		sendMessageToPArticularUser(
-//    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
-//    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
-//    	}
-//    	else // Message to whole chat
-//    	{
-//	    	broadcast(message + "has been successfully sent");
-//    	}
+    	//***************************************START OLD METHODS****************************************************************
+    	//Start with a "!" to join a game and define player number
+    	if(message.startsWith("!"))
+    	{
+    		username = "" + message.charAt(1); //The game number is stored in the first bit
+    		player = "" + message.charAt(2);  //The player number is stored in the second bit
+    		logger.info("Player " + player + " has joined game " + username);
+    		
+            sessionUsernameMap.put(session, username); //Log the session based off the game number
+            usernameSessionMap.put(username, session); 
+            
+            logger.info("This is user " + sessionUsernameMap.size());
+            
+            broadcastOLD("Player " + player + " has joined game " + username);
+    	}
+    	//Send movement information using "."
+    	if(message.startsWith("."))
+    	{
+    		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		broadcastOLD("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		sendMessageToPArticularUserOLD("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    	}
+    	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
+    	{
+    		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
+    		sendMessageToPArticularUserOLD("[DM] " + username + ": " + message);
+    		sendMessageToPArticularUserOLD("[DM] " + username + ": " + message);
+    	}
+    	if(message.startsWith("?"))
+    	{
+    		sendMessageToPArticularUserOLD(
+    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
+    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
+    	}
+    	else // Message to whole chat
+    	{
+	    	broadcastOLD(message + "has been successfully sent");
+    	}
+    	//***************************************END OLD METHODS******************************************************************
+
     }
  
     @OnClose
@@ -301,23 +306,38 @@ public class WebSocketServer {
             e.printStackTrace();
         }
 	}
+	//***************************************START OLD METHODS****************************************************************
+	private void sendMessageToPArticularUserOLD(String message) 
+    {	
+		//String username = "user";
+		
+    	try {
+    		usernameSessionMap.get(username).getBasicRemote().sendText(message);
+    		logger.info("sending dm to " + usernameSessionMap.get(username));
+        } catch (IOException e) {
+        	logger.info("Exception: " + e.getMessage().toString());
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Send message to all the sessions that are being used by the websocket
      * @param message message to be sent
      * @throws IOException
      */
-//    private static void broadcast(String message) 
-//    	      throws IOException 
-//    {	  
-//    	sessionUsernameMap.forEach((session, username) -> {
-//    		synchronized (session) {
-//	            try {
-//	                session.getBasicRemote().sendText(message);
-//	            } catch (IOException e) {
-//	                e.printStackTrace();
-//	            }
-//	        }
-//	    });
-//	}
+    private static void broadcastOLD(String message) 
+    	      throws IOException 
+    {	  
+    	sessionUsernameMap.forEach((session, username) -> {
+    		synchronized (session) {
+	            try {
+	                session.getBasicRemote().sendText(message);
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    });
+	}
+	//***************************************END OLD METHODS******************************************************************
 }
 
