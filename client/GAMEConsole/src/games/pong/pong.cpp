@@ -6,33 +6,66 @@ Pong::Pong() {
 	camera_location.y = 0;
 
 	camera_scale = 1.f;
+
+	initialize();
 }
 
 Pong::~Pong() {
-	delete ball;
-	delete paddle_right;
-	delete paddle_left;
+	deinitialize();
 }
 
 void Pong::initialize(){
+	//Don't initialize twice, that's a memory leak
+	if (initialized) return;
+
 	ball = new Ball(this);
 
 	//Create the right paddle
 	paddle_right = new Paddle(this);
 	paddle_right->position.x = 0.9f - paddle_right->size.x;
 
-	KeyboardController* right_controller = new KeyboardController;
-	right_controller->setKey(Controller::Control::UP, sf::Keyboard::I);
-	right_controller->setKey(Controller::Control::DOWN, sf::Keyboard::K);
-	paddle_right->setController(right_controller);
+	//Create the right paddle controller
+	right_controller = new PaddleKeyboardController;
+	right_controller->setPaddle(paddle_right);
+	right_controller->setKey(KeyboardController::Control::UP, sf::Keyboard::I);
+	right_controller->setKey(KeyboardController::Control::DOWN, sf::Keyboard::K);
+	right_controller->enable();
 
 	//Create the left paddle
 	paddle_left = new Paddle(this);
 	paddle_left->position.x = 0.1f;
-	paddle_left->setController(new KeyboardController);
+
+	//Create the left paddle controller
+	left_controller = new PaddleKeyboardController;
+	left_controller->setPaddle(paddle_left);
+	left_controller->enable();
+
+	//Create network controller
+	paddle_network_controller = new PaddleNetworkController();
+	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::BROADCAST);
+	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::CONTROL);
+	paddle_network_controller->initialize();
+	paddle_network_controller->enable();
+
+	//Create the scoreboard
+	scoreboard = new ScoreBoard(this, 2);
+	scoreboard->position.x = 0.5f;
+	scoreboard->position.y = 0.1f;
+
+	//Tell the lock to call the deinitialize() function when unlocked
+	unlock_function = std::bind(&Pong::deinitialize, this);
+
+	initialized = true;
 }
 
 void Pong::update(){
+
+	//Update controllers
+	right_controller->update();
+	left_controller->update();
+	paddle_network_controller->update();
+
+	//Update sprites
 	paddle_right->update();
 	paddle_left->update();
 	ball->update();
@@ -70,16 +103,38 @@ void Pong::update(){
 	//Bounce off of walls
 	if (ball->position.y                < 0.f && ball->velocity.y < 0.0f) ball->velocity.y = -ball->velocity.y;
 	if (ball->position.y + ball->size.y > 1.f && ball->velocity.y > 0.0f) ball->velocity.y = -ball->velocity.y;
+
+
+	if (ball->position.x < 0.f) {
+		ball->position.x = 0.1f;
+		ball->position.y = 1.f- ball->position.y;
+		ball->velocity.x = -ball->velocity.x;
+		scoreboard->incrementScore(0);
+	}
+	if (ball->position.x > 1.f) {
+		ball->position.x = 0.9f;
+		ball->position.y = 1.f - ball->position.y;
+		ball->velocity.x = -ball->velocity.x;
+		scoreboard->incrementScore(1);
+	}
 }
 
 void Pong::render() {
-	//TODO stub
+	update();
+	scoreboard->render();
 	ball->render();
 	paddle_right->render();
 	paddle_left->render();
 }
 
 void Pong::deinitialize() {
-	//TODO stub
-
+	if (!initialized) return;
+	delete ball;
+	delete paddle_right;
+	delete paddle_left;
+	delete right_controller;
+	delete left_controller;
+	delete paddle_network_controller;
+	delete scoreboard;
+	initialized = false;
 }

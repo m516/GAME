@@ -17,6 +17,14 @@ public class User {
 	
 	public User() {
 	}
+
+	public User(int id, String name, String email, String password, int user_level){
+		this.Id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.user_level = user_level;
+	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

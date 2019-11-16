@@ -9,3 +9,5 @@ Debug/
 x64/
 vgcore.*
 *.o
+*.vcxproj.user
+*.vcxproj.filters

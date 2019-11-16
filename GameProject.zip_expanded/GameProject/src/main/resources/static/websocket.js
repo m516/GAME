@@ -6,7 +6,11 @@ function connect() {
     var host = document.location.host;
     var pathname = document.location.pathname;
     
+<<<<<<< HEAD
+    ws = new WebSocket("ws://" +"coms-309-sr-5.misc.iastate.edu:8080/");
+=======
     ws = new WebSocket("ws://" +"coms-309-sr-5.misc.iastate.edu:8080"+"/websocket" + "/"+username);
+>>>>>>> frontend-network-implementation
 
     ws.onmessage = function(event) {
     var log = document.getElementById("log");

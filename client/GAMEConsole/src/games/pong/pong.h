@@ -3,7 +3,9 @@
 #include "../game.h"
 #include "objects/ball.h"
 #include "objects/paddle.h"
-#include "controllers/keyboard_controller.h"
+#include "objects/paddle_keyboard_controller.h"
+#include "objects/paddle_network_controller.h"
+#include "objects/score_board.h"
 
 class Pong : public Game {
 public:
@@ -23,4 +25,11 @@ private:
 	Ball* ball;
 	Paddle* paddle_right;
 	Paddle* paddle_left;
+	PaddleKeyboardController* right_controller;
+	PaddleKeyboardController* left_controller;
+	PaddleNetworkController* paddle_network_controller;
+
+	bool initialized = false;
+
+	ScoreBoard* scoreboard;
 };

@@ -3,8 +3,8 @@
 
 #include "application.h"
 #include "modules/renderer.h"
-#include "modules/network.h"
 #include "modules/events.h"
+#include "modules/network.h"
 
 Application::Application()
 {
@@ -12,9 +12,9 @@ Application::Application()
 	settings.antialiasingLevel = 8;
 	
 	window = new sf::RenderWindow(
-		sf::VideoMode(256, 256),
+		sf::VideoMode(800, 480),
 		"G.A.M.E.",
-		sf::Style::Fullscreen, 
+		sf::Style::Default, 
 		settings
 	);
 
@@ -26,9 +26,6 @@ Application::Application()
 
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
-	theme.color_border = sf::Color::Black;
-	theme.color_deselected = sf::Color::Black;
-	theme.color_selected = sf::Color::White;
 	theme.loadGenericFont();
 }
 
@@ -37,18 +34,11 @@ Application::Application()
  */
 void Application::run()
 {
-	// Start threads
-	/*Renderer renderer(this);
-	Network network(this);
-	Events events(this);
-	renderer.start();
-	network.start();
-	events.start();*/
 	renderer = new Renderer(this);
-	//network = new Network(this);
 	events = new Events(this);
-	
+	network = new Network(this);
+
 	renderer->start();
-	//network->start();
-	events->start();
+    network->start();
+	events->start(); // Events must start last
 }

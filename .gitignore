@@ -5,7 +5,6 @@
 .vs/
 Debug/
 .idea
-.metadata
 .vscode
 
 ## MAVEN ##
@@ -430,9 +429,15 @@ MigrationBackup/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
 /.metadata/
 
 #The real Eclipse gitignore
+=======
+
+## Eclipse Project Files ##
+
+
 .metadata
 bin/
 tmp/
@@ -488,4 +493,8 @@ local.properties
 # Scala IDE specific (Scala & Java development for Eclipse)
 .cache-main
 .scala_dependencies
+
 .worksheet
+
+.worksheet
+

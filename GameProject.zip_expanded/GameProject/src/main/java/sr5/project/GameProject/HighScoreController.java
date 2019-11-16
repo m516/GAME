@@ -36,8 +36,7 @@ public class HighScoreController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public HighScore updateHighScoreById(@PathVariable int id, @RequestBody HighScore highScore) {
 		service.updateHighScore(id, highScore);
-		HighScore newhs = service.getHighScore(id);
-		return newhs;
+		return service.getHighScore(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
