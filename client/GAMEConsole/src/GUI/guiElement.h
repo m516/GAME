@@ -13,11 +13,11 @@ public:
 	/**
 	Sets the RenderTarget to render onto
 	*/
-	void setRenderer(sf::RenderTarget* new_renderer);
+	void setRenderer(sf::RenderWindow* new_renderer);
 	/**
 	Gets the RenderTarget to render onto
 	*/
-	sf::RenderTarget* getRenderer();
+	sf::RenderWindow* getRenderer();
 
 	/**
 	Set the size of this object rendered on the screen
@@ -63,7 +63,7 @@ public:
 
 protected:
 	/** Reference to the parent render object that this element is rendered onto */
-	sf::RenderTarget* renderer;
+	sf::RenderWindow* renderer;
 	
 	/**
 	The position of the item
