@@ -1,4 +1,5 @@
 #include "network_controller.h"
+#include "../pong/objects/score_board.h"
 
 //#define NETWORK_DEBUG
 
@@ -42,6 +43,9 @@ NetworkController::~NetworkController()
 }
 
 int NetworkController::initialize() {
+	if (is_connected) return 0;
+	
+
 	std::string uri = SERVER_URI;
 
 	try {
@@ -51,6 +55,9 @@ int NetworkController::initialize() {
 		websocketpp::lib::error_code ec;
 		client_t::connection_ptr connection = client.get_connection(uri, ec);
 		client.connect(connection);
+
+
+		is_connected = true;
 
 		return 0;
 	}
@@ -86,22 +93,34 @@ void NetworkController::onOpen(client_t* c, websocketpp::connection_hdl hdl) {
 }
 
 void NetworkController::onFail(client_t* c, websocketpp::connection_hdl hdl) {
+	is_connected = false;
 }
 
 void NetworkController::onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg) {
 }
 
 void NetworkController::onClose(client_t* c, websocketpp::connection_hdl hdl) {
+	is_connected = false;
 }
 
 //Sends a message to the server
 void NetworkController::send(std::string message) {
 
+	if (!is_connected) return;
+
+	try {
+
 #ifdef NETWORK_DEBUG
-	std::cout << "NetworkController: Sending " << message << std::endl;
+		std::cout << "NetworkController: Sending " << message << std::endl;
 #endif // NETWORK_DEBUG
 
-	client.send(hdl, message, websocketpp::frame::opcode::text);
+		client.send(hdl, message, websocketpp::frame::opcode::text);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << '\n';
+		is_connected = false;
+	}
 }
 
 /*
@@ -110,4 +129,9 @@ To be implemented by subclasses if necessary
 */
 int NetworkController::update() {
 	return 0;
+}
+
+bool NetworkController::isConected()
+{
+	return is_connected;
 }

@@ -37,6 +37,7 @@ void Renderer::start()
 void Renderer::renderLoop()
 {
 	main_menu->lockRender();
+	window->close();
 }
 
 /**
