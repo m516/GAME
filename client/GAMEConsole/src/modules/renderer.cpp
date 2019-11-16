@@ -14,7 +14,13 @@ Renderer::Renderer(Application *app)
     application = app;
 	window = app->window;
 	theme = &app->theme;
-	pong_game = 0;
+
+	main_menu = new MainMenu(window, theme);
+}
+
+Renderer::~Renderer()
+{
+	delete main_menu;
 }
 
 /** 
@@ -30,76 +36,7 @@ void Renderer::start()
  */
 void Renderer::renderLoop()
 {
-	// Create main menu
-	sf::Text title;
-	title.setFont(theme->font_standard);
-	title.setCharacterSize(66);
-	title.setColor(theme->color_selected);
-	title = theme->sharpenText(title);
-	title.setString("G.A.M.E.");
-	title.setPosition(5, 5);
-
-	MenuPane mainMenu(5, window);
-	mainMenu.setPosition(5, 90);
-	mainMenu.setSize(150, 150);
-
-	std::vector<std::string> menuItems = {"PLAY", "PARTY", "FRIENDS", "PROFILE", "SETTINGS"};
-
-	MenuItem item(theme, "PLAY", NULL);
-	item.setPressedFunction(std::bind(&Renderer::play, this));
-	mainMenu.addItem(item);
-
-	item = MenuItem(theme, "PARTY", NULL);
-	mainMenu.addItem(item);
-
-	item = MenuItem(theme, "FRIENDS", NULL);
-	mainMenu.addItem(item);
-
-	item = MenuItem(theme, "PROFILE", NULL);
-	mainMenu.addItem(item);
-
-	item = MenuItem(theme, "SETTINGS", NULL);
-	mainMenu.addItem(item);
-
-
-	while (window->isOpen())
-	{
-		sf::Time elapsedTime = frameClock.restart();
-		timeSinceLastFrame += elapsedTime;
-		std::this_thread::sleep_for(std::chrono::milliseconds(FRAME_TIME.asMilliseconds()));
-
-		while (timeSinceLastFrame > FRAME_TIME)
-		{
-			timeSinceLastFrame = sf::Time::Zero;
-			window->clear();
-
-			window->draw(title);
-			mainMenu.update();
-			mainMenu.render();
-			
-			window->display();
-		}
-	}
-}
-
-void Renderer::play() {
-
-	if (pong_game != NULL) delete pong_game;
-
-	//Create Pong instance
-	pong_game = new Pong();
-	pong_game->setPosition(0, 0);
-	pong_game->setSize((float)(window->getSize().x), (float)(window->getSize().y));
-	std::cout << "X: " << window->getSize().x << "\tY: " << window->getSize().y;
-	pong_game->setRenderer(window);
-	pong_game->setTheme(theme);
-
-	pong_game->lockRender();
-}
-
-void testFunc()
-{
-	std::cout << "Hey!" << std::endl;
+	main_menu->lockRender();
 }
 
 /**
