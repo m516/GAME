@@ -59,13 +59,22 @@ void Renderer::renderLoop()
 	mainMenu.setSize(150, 150);
 
 	std::vector<std::string> menuItems = {"PLAY", "PARTY", "FRIENDS", "PROFILE", "SETTINGS"};
-	for (unsigned int i = 0; i < menuItems.size(); i++)
-	{
-		MenuItem item(theme, menuItems[i], NULL);
-		item.selected = i == 0 ? 1 : 0;
-		item.setPosition(0, (float)(25 * i));
-		mainMenu.addItem(item);
-	}
+
+	MenuItem item(theme, "PLAY", NULL);
+	mainMenu.addItem(item);
+	//item.setPressedFunction()
+
+	item = MenuItem(theme, "PARTY", NULL);
+	mainMenu.addItem(item);
+
+	item = MenuItem(theme, "FRIENDS", NULL);
+	mainMenu.addItem(item);
+
+	item = MenuItem(theme, "PROFILE", NULL);
+	mainMenu.addItem(item);
+
+	item = MenuItem(theme, "SETTINGS", NULL);
+	mainMenu.addItem(item);
 
 	application->events->panes.push_back(&mainMenu);
 

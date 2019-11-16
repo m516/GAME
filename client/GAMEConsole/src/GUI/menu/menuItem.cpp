@@ -1,8 +1,9 @@
 #include "menuItem.h"
 #include <string>
 #include <iostream>
+#include <functional>
 
-MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pressed) ()) 
+MenuItem::MenuItem(Theme *theme, const std::string& text, std::function<void()> pressed) 
 {
 	// Set theme
 	this->theme = theme;
@@ -13,7 +14,7 @@ MenuItem::MenuItem(Theme *theme, const std::string& text, int (*function_when_pr
 	label = theme->sharpenText(label);
 	label.setFont(theme->font_standard);
 	
-	pressed_function = function_when_pressed;
+	pressed_function = pressed;
 	//Configure border
 	border.setPosition(position);
 	border.setSize(size);
@@ -94,4 +95,8 @@ void MenuItem::setPosition(sf::Vector2f &new_position)
 	GUIElement::setPosition(new_position);
 	border.setPosition(position);
 	label.setPosition(position);
+}
+
+void MenuItem::setPressedFunction(std::function<void()> pressed) {
+	pressed_function = pressed;
 }

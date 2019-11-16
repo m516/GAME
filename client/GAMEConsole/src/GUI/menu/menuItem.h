@@ -1,12 +1,14 @@
 #pragma once
 
 #include <string>
+#include <functional>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
 #include "../theme.h"
 #include "../guiElement.h"
+
 
 class MenuItem : public GUIElement{
 public:
@@ -15,7 +17,7 @@ public:
 	@param text the text to display on the menu
 	@param function the function to call when the menu item is activated
 	*/
-	MenuItem(Theme *theme, const std::string& text, int (*function_when_pressed) ());
+	MenuItem(Theme *theme, const std::string& text, std::function<void()> pressed = 0);
 	/**
 	Deconstructor for MenuItem
 	*/
@@ -24,10 +26,6 @@ public:
 	true if pressed, false if otherwise
 	*/
 	bool pressed = false;
-	/**
-	function to call when this menu item is pressed
-	*/
-	int (*pressed_function) ();
 	/**
 	Sets the text to display
 	*/
@@ -48,6 +46,11 @@ public:
 	void setPosition(sf::Vector2f &new_position);
 
 	/**
+	Set the Pressed Function after selecting a button 
+	*/
+	void setPressedFunction(std::function<void()> pressed);
+
+	/**
 	renders the item as a box with text in it
 	@param target the window onto which this MenuItem renders
 	*/
@@ -57,4 +60,8 @@ private:
 	sf::Text label;
 	//Instance of rectangle border
 	sf::RectangleShape border;
+	/**
+	function to call when this menu item is pressed
+	*/
+	std::function<void()> pressed_function;
 };
