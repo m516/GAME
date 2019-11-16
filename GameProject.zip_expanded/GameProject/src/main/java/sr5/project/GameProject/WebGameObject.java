@@ -3,7 +3,7 @@ package sr5.project.GameProject;
 public class WebGameObject 
 {
 	int gameID;
-	String pNum;
+	int pNum;
 	String x;
 	String y;
 	
@@ -23,7 +23,7 @@ public class WebGameObject
 	public WebGameObject(WebGameObject object, String nX, String nY)
 	{
 		gameID = object.getGameID();
-		pNum = "" + object.getPNum();
+		pNum = object.getPNum();
 		x = nX;
 		y = nY;
 	}
@@ -31,7 +31,7 @@ public class WebGameObject
 	{
 		gameID = gameIDnew;
 	}
-	public void setpNum(String pNumnew)
+	public void setpNum(int pNumnew)
 	{
 		pNum = pNumnew;
 	}
@@ -47,7 +47,7 @@ public class WebGameObject
 	{
 		return gameID;
 	}
-	public String getPNum()
+	public int getPNum()
 	{
 		return pNum;
 	}
@@ -63,3 +63,4 @@ public class WebGameObject
 
 
 }
+

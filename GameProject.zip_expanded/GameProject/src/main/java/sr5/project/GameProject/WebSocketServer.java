@@ -10,7 +10,7 @@ import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
-import javax.websocket.server.PathParam;
+//import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 import org.slf4j.Logger;
@@ -36,8 +36,6 @@ public class WebSocketServer {
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
 	public ArrayList<WebGames> game = new ArrayList<WebGames>();
 	//public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
-	
-	WebGameObject g;
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
@@ -62,9 +60,9 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
-    	if(g == null)
+    	if(sessionGameObjectMap.get(session) == null)
     	{
-    		g = new WebGameObject(0,"0","0");
+    		WebGameObject g = new WebGameObject(0,"0","0");
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
     	}
@@ -75,35 +73,41 @@ public class WebSocketServer {
 			int maxP = Integer.parseInt("" + message.charAt(2));
 			int gameID = game.size();
 			WebGames wg = new WebGames(gameType, maxP);
-			sendMessageToPArticularUser("GID" + gameID +" " +message + "has been built");
+			game.add(wg);
+			sendMessageToPArticularUser(session, "GID" + gameID +" " + message + "has been built");
 			logger.info("GID" + gameID +" " +message + "has been built");
     	}
     	if(message.startsWith("J"))
     	{
     		//TODO
 			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
-			String gameType = "" + message.charAt(4);
+			int gameType = message.charAt(4);
+			sessionGameObjectMap.get(session).setGameType(gameType);
 			String x = "" + message.charAt(5) + message.charAt(6);
 			String y = "" + message.charAt(7) + message.charAt(8);
 			
 			if(game.size() > gameID)
 			{
-				WebGameObject go = new WebGameObject(gameID, x, y);
-				boolean i = game.get(gameID).addPlayer(go);
+				sessionGameObjectMap.get(session).setX(x);
+				sessionGameObjectMap.get(session).setY(y);
+				sessionGameObjectMap.get(session).setGameID(gameID);
+				
+				boolean i = game.get(gameID).addPlayer(sessionGameObjectMap.get(session));
 				if(i)
 				{
-					sendMessageToPArticularUser("Successfully Joined");
+					game.get(gameID).players.get(game.get(gameID).players.size() - 1).setpNum(game.get(gameID).players.size() - 1);
+					sendMessageToPArticularUser(session, "Successfully Joined");
 					logger.info("Successfully Joined");
 				}
 				else
 				{
-					sendMessageToPArticularUser("Full, Try again");
+					sendMessageToPArticularUser(session, "Full, Try again");
 					logger.info("Full, Try again");
 				}
 			}
 			else
 			{
-				sendMessageToPArticularUser("Game does not exist");
+				sendMessageToPArticularUser(session, "Game does not exist");
 				logger.info("Game does not exist");
 			}
 				
@@ -111,30 +115,57 @@ public class WebSocketServer {
     	if(message.startsWith("R"))
     	{
     		//TODO
+    		game.get(sessionGameObjectMap.get(session).getGameID()).removePlayer(sessionGameObjectMap.get(session).getPNum());
+    		logger.info("Remove player");
+    		
     	}
     	if(message.startsWith("PL"))
     	{
     		//TODO
+    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations();
+    		sendMessageToPArticularUser(session, s);
+    		logger.info("Get player locations");
+    		
     	}
     	if(message.startsWith("OL"))
     	{
     		//TODO
+    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
+    		sendMessageToPArticularUser(session, s);
+    		logger.info("Get object locations");
     	}
     	if(message.startsWith("BL"))
     	{
     		//TODO
+    		String s = "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
+    		sendMessageToPArticularUser(session, s);
+    		logger.info("Get all locations");
     	}
     	if(message.startsWith("S"))
     	{
     		//TODO
+    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
+    		sendMessageToPArticularUser(session, s);
+    		logger.info("Get Score");
     	}
     	if(message.startsWith("T"))
     	{
     		//TODO
+    		if(game.get(sessionGameObjectMap.get(session).getGameID()).getState())
+    		{
+        		sendMessageToPArticularUser(session, "Game has started");
+    		}
+    		else
+    		{
+        		sendMessageToPArticularUser(session, "Game has not started");
+    		}
+
+    		logger.info("Get state");
     	}
     	if(message.startsWith("G"))
     	{
     		//TODO
+    		game.get(sessionGameObjectMap.get(session).getGameID()).
     	}
     	if(message.startsWith("ST"))
     	{
@@ -160,11 +191,6 @@ public class WebSocketServer {
     	{
     		//TODO
     	}
-    	
-    	
-    	
-    	
-    	
     	
 //    	logger.info("Entered into Message: Got Message:"+message);
 //    	
@@ -243,12 +269,12 @@ public class WebSocketServer {
      * Send message to a specific session or game
      * @param message message to send to the session
      */
-	private void sendMessageToPArticularUser(String message) 
+	private void sendMessageToPArticularUser(Session s, String message) 
     {	
 		
     	try {
-    		GameObjectSessionMap.get(g).getBasicRemote().sendText(message);
-    		logger.info("sending dm to " + GameObjectSessionMap.get(g));
+    		GameObjectSessionMap.get(sessionGameObjectMap.get(s)).getBasicRemote().sendText(message);
+    		logger.info("sending dm to " + GameObjectSessionMap.get(sessionGameObjectMap.get(s)));
         } catch (IOException e) {
         	logger.info("Exception: " + e.getMessage().toString());
             e.printStackTrace();
