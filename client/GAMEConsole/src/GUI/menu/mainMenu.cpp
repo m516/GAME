@@ -16,6 +16,10 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 	title->setFont(theme->font_standard);
 	title->setColor(theme->color_selected);
 	title->setString("G.A.M.E.");
+	/*
+	TODO
+	Be Changed Dynamicilly based on the size of the window
+	*/
 	title->setPosition(5, 5);
 
 	menu = new MenuPane(5, window);
@@ -70,3 +74,4 @@ void MainMenu::play() {
 
 	pong_game->lockRender();
 }
+
