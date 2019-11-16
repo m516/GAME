@@ -1,10 +1,10 @@
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
-#include "../GUI/guiElement.h"
+#include "../GUI/lockingElement.h"
 
 
-class Game : public GUIElement {
+class Game : public LockingElement {
 public:
 	sf::Vector2f camera_location;
 	float camera_scale;

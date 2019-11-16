@@ -50,6 +50,8 @@ public:
 	*/
 	void setPressedFunction(std::function<void()> pressed);
 
+	void callPressedFunction();
+
 	/**
 	renders the item as a box with text in it
 	@param target the window onto which this MenuItem renders

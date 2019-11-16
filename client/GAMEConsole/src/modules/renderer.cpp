@@ -2,7 +2,6 @@
 
 #include "../GUI/menu/components/menuItem.h"
 #include "../GUI/menu/components/menuPane.h"
-#include "../games/pong/pong.h"
 #include "../GUI/menu/menu.h"
 #include "events.h"
 
@@ -15,6 +14,7 @@ Renderer::Renderer(Application *app)
     application = app;
 	window = app->window;
 	theme = &app->theme;
+	pong_game = 0;
 }
 
 /** 
@@ -30,21 +30,6 @@ void Renderer::start()
  */
 void Renderer::renderLoop()
 {
-	// Init window
-	sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-	sf::View view;
-    view.setSize(256, 256);
-    view.setCenter(128, 128);
-    view = getLetterboxView(view, desktop.width, desktop.height);
-    window->setView(view);
-	
-	//Create Pong instance
-	Pong pong_game;
-	pong_game.setPosition(0, 0);
-	pong_game.setSize((float)(window->getSize().x), (float)(window->getSize().y));
-	pong_game.setRenderer(window);
-	pong_game.setTheme(theme);
-
 	// Create main menu
 	sf::Text title;
 	title.setFont(theme->font_standard);
@@ -61,8 +46,8 @@ void Renderer::renderLoop()
 	std::vector<std::string> menuItems = {"PLAY", "PARTY", "FRIENDS", "PROFILE", "SETTINGS"};
 
 	MenuItem item(theme, "PLAY", NULL);
+	item.setPressedFunction(std::bind(&Renderer::play, this));
 	mainMenu.addItem(item);
-	//item.setPressedFunction()
 
 	item = MenuItem(theme, "PARTY", NULL);
 	mainMenu.addItem(item);
@@ -88,22 +73,28 @@ void Renderer::renderLoop()
 			timeSinceLastFrame = sf::Time::Zero;
 			window->clear();
 
-			if (mainMenu.selected == 3)
-			{
-				pong_game.setSize(window->getView().getSize().x, window->getView().getSize().y);
-				pong_game.update();
-				pong_game.render();
-			}
-			else
-			{
-				window->draw(title);
-				mainMenu.update();
-				mainMenu.render();
-			}
+			window->draw(title);
+			mainMenu.update();
+			mainMenu.render();
 			
 			window->display();
 		}
 	}
+}
+
+void Renderer::play() {
+
+	if (pong_game != NULL) delete pong_game;
+
+	//Create Pong instance
+	pong_game = new Pong();
+	pong_game->setPosition(0, 0);
+	pong_game->setSize((float)(window->getSize().x), (float)(window->getSize().y));
+	std::cout << "X: " << window->getSize().x << "\tY: " << window->getSize().y;
+	pong_game->setRenderer(window);
+	pong_game->setTheme(theme);
+
+	pong_game->lockRender();
 }
 
 void testFunc()

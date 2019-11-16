@@ -100,3 +100,8 @@ void MenuItem::setPosition(sf::Vector2f &new_position)
 void MenuItem::setPressedFunction(std::function<void()> pressed) {
 	pressed_function = pressed;
 }
+
+void MenuItem::callPressedFunction() {
+	if(pressed_function != NULL) 
+		pressed_function();
+}

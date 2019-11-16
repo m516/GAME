@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GUI\menu\mainMenu.cpp" />
+    <ClCompile Include="src\GUI\lockingElement.cpp" />
     <ClCompile Include="src\games\pong\objects\score_board.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp" />
@@ -124,6 +126,8 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\GUI\menu\mainMenu.h" />
+    <ClInclude Include="src\GUI\lockingElement.h" />
     <ClInclude Include="src\games\pong\objects\score_board.h" />
     <ClInclude Include="src\games\pong\objects\paddle_network_controller.h" />
     <ClInclude Include="src\games\pong\objects\paddle_controller.h" />

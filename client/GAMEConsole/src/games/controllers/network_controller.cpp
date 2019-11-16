@@ -22,14 +22,23 @@ NetworkController::NetworkController() {
 	//Marks the endpoint as perpetual, stopping it from exiting when empty
 	client.start_perpetual();
 
+	websocket_thread = new websocketpp::lib::thread(&client_t::run, &client);
+
 	// Start the ASIO io_service run loop inside a new thread
-	client_thread.reset(new websocketpp::lib::thread(&client_t::run, &client));
+	client_thread.reset(websocket_thread);
 
 }
 
 NetworkController::~NetworkController()
 {
-	client.close(hdl, websocketpp::close::status::normal, "Closing connection to server as normal");
+	client.stop_perpetual();
+	websocketpp::lib::error_code ec;
+	client.close(hdl, websocketpp::close::status::normal, "Closing connection to server as normal", ec);
+	if (ec) {
+		std::cout << "> Error closing connection: "
+			<< ec.message() << std::endl;
+	}
+	client_thread->join();
 }
 
 int NetworkController::initialize() {

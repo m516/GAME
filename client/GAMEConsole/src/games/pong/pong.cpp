@@ -52,10 +52,14 @@ void Pong::initialize(){
 	scoreboard->position.x = 0.5f;
 	scoreboard->position.y = 0.1f;
 
+	//Tell the lock to call the deinitialize() function when unlocked
+	unlock_function = std::bind(&Pong::deinitialize, this);
+
 	initialized = true;
 }
 
 void Pong::update(){
+
 	//Update controllers
 	right_controller->update();
 	left_controller->update();
@@ -116,6 +120,7 @@ void Pong::update(){
 }
 
 void Pong::render() {
+	update();
 	scoreboard->render();
 	ball->render();
 	paddle_right->render();
@@ -131,4 +136,5 @@ void Pong::deinitialize() {
 	delete left_controller;
 	delete paddle_network_controller;
 	delete scoreboard;
+	initialized = false;
 }
