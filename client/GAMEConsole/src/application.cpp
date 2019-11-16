@@ -36,7 +36,7 @@ void Application::run()
 	renderer = new Renderer(this);
 	events = new Events(this);
 
-	//NetworkConnection::connect();
+	NetworkConnection::connect();
 
 	renderer->start();
 	events->start(); // Events must start last

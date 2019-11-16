@@ -57,11 +57,11 @@ namespace NetworkConnection
 	std::string getString();
 
 
-	thread_t network_client_thread;
-	client_t network_client;
-	websocketpp::connection_hdl network_hdl;
-
 	namespace {
+		thread_t network_client_thread;
+		client_t network_client;
+		websocketpp::connection_hdl network_hdl;
+
 		//List of listeners
 		std::vector<std::function<void()>> listeners[num_listeners];
 
