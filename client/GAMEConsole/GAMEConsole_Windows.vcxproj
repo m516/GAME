@@ -149,6 +149,7 @@
     <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="include\cereal\external\rapidxml\manual.html" />
   </ItemGroup>
   <ItemGroup>

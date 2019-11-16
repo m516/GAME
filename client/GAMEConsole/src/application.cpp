@@ -4,7 +4,6 @@
 #include "application.h"
 #include "modules/renderer.h"
 #include "modules/events.h"
-#include "modules/network.h"
 
 Application::Application()
 {
@@ -36,9 +35,7 @@ void Application::run()
 {
 	renderer = new Renderer(this);
 	events = new Events(this);
-	network = new Network(this);
 
 	renderer->start();
-    network->start();
 	events->start(); // Events must start last
 }
