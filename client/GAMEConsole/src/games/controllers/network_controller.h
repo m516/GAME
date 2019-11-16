@@ -42,6 +42,7 @@ public:
 	virtual int update();
 
 protected:
+	websocketpp::lib::thread* websocket_thread;
 	thread_t client_thread;
 	client_t client;
 	websocketpp::connection_hdl hdl;

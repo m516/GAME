@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GUI\menu\mainMenu.cpp" />
+    <ClCompile Include="src\GUI\lockingElement.cpp" />
     <ClCompile Include="src\games\pong\objects\score_board.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle_keyboard_controller.cpp" />
@@ -32,11 +34,11 @@
     <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp" />
     <ClCompile Include="src\games\pong\pong.cpp" />
     <ClCompile Include="src\games\sprite.cpp" />
-    <ClCompile Include="src\GUI\button.cpp" />
+    <ClCompile Include="src\GUI\menu\components\button.cpp" />
     <ClCompile Include="src\GUI\guiElement.cpp" />
-    <ClCompile Include="src\GUI\menu\menuItem.cpp" />
-    <ClCompile Include="src\GUI\menu\menuPane.cpp" />
-    <ClCompile Include="src\GUI\panel.cpp" />
+    <ClCompile Include="src\GUI\menu\components\menuItem.cpp" />
+    <ClCompile Include="src\GUI\menu\components\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\menu.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\modules\events.cpp" />
@@ -124,6 +126,8 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\GUI\menu\mainMenu.h" />
+    <ClInclude Include="src\GUI\lockingElement.h" />
     <ClInclude Include="src\games\pong\objects\score_board.h" />
     <ClInclude Include="src\games\pong\objects\paddle_network_controller.h" />
     <ClInclude Include="src\games\pong\objects\paddle_controller.h" />
@@ -137,11 +141,11 @@
     <ClInclude Include="src\games\pong\objects\paddle.h" />
     <ClInclude Include="src\games\pong\pong.h" />
     <ClInclude Include="src\games\sprite.h" />
-    <ClInclude Include="src\GUI\button.h" />
+    <ClInclude Include="src\GUI\menu\components\button.h" />
     <ClInclude Include="src\GUI\guiElement.h" />
-    <ClInclude Include="src\GUI\menu\menuItem.h" />
-    <ClInclude Include="src\GUI\menu\menuPane.h" />
-    <ClInclude Include="src\GUI\panel.h" />
+    <ClInclude Include="src\GUI\menu\components\menuItem.h" />
+    <ClInclude Include="src\GUI\menu\components\menuPane.h" />
+    <ClInclude Include="src\GUI\menu\menu.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />
