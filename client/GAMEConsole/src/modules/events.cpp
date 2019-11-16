@@ -29,7 +29,7 @@ void Events::eventLoop()
 		while (window->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed ||
-                (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
+                (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::BackSlash))
 			{
 				window->close();
 			}

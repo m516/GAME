@@ -8,7 +8,7 @@ GUIElement::~GUIElement() {
 /**
 Sets the RenderTarget to render onto
 */
-void GUIElement::setRenderer(sf::RenderTarget* new_renderer) {
+void GUIElement::setRenderer(sf::RenderWindow* new_renderer) {
 	renderer = new_renderer;
 }
 
@@ -16,7 +16,7 @@ void GUIElement::setRenderer(sf::RenderTarget* new_renderer) {
 /**
 Gets the RenderTarget to render onto
 */
-sf::RenderTarget* GUIElement::getRenderer() {
+sf::RenderWindow* GUIElement::getRenderer() {
 	return renderer;
 }
 

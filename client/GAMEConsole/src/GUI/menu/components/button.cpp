@@ -3,8 +3,8 @@
 
 #include "button.h"
 
-#include "guiElement.h"
-#include "menu/menuItem.h"
+#include "../../guiElement.h"
+#include "menuItem.h"
 
 /**
 Constructs a new Button

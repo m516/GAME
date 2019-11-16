@@ -1,4 +1,4 @@
-#include "panel.h"
+#include "menu.h"
 
 
 Panel::Panel(int initial_size) {

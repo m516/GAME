@@ -28,7 +28,6 @@ void ScoreBoard::render() {
 	screen_position.x -= label.getGlobalBounds().width / 2.f;
 	label.setPosition(screen_position);
 	
-
 	//Render it!
 	game->getRenderer()->draw(label);
 }

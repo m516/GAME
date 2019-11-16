@@ -8,14 +8,29 @@ MenuNavigator::MenuNavigator() {
 void MenuNavigator::poll() {
 
 	if (keyboard_enabled) {
+		for (int i = 0; i < num_states; i++) {
+			if (sf::Keyboard::isKeyPressed(control_key[i])) {
+				current_control = (CONTROL)i;
+
+				if (*control_status[i] == Status::UP || *control_status[i] == Status::RELEASED) *control_status[i] = Status::PRESSED;
+				else if (*control_status[i] == Status::PRESSED) *control_status[i] = Status::DOWN;
+			}
+			else {
+				if (*control_status[i] == Status::DOWN || *control_status[i] == STATUS::PRESSED) *control_status[i] = Status::RELEASED;
+				else if (*control_status[i] == Status::RELEASED) *control_status[i] = Status::UP;
+			}
+		}
+
+		/*
+
 		//enter
 		if (sf::Keyboard::isKeyPressed(keyEnter)) {
 			current_control = Control::ENTER;
-			if (enter == Status::UP) enter = Status::PRESSED;
+			if (enter == Status::UP || enter == Status::RELEASED) enter = Status::PRESSED;
 			else if (enter == Status::PRESSED) enter = Status::DOWN;
 		}
 		else {
-			if (enter == Status::DOWN) enter = Status::RELEASED;
+			if (enter == Status::DOWN || enter == STATUS::PRESSED) enter = Status::RELEASED;
 			else if (enter == Status::RELEASED) enter = Status::UP;
 		}
 		//exit
@@ -25,7 +40,7 @@ void MenuNavigator::poll() {
 			else if (exit == Status::PRESSED) exit = Status::DOWN;
 		}
 		else {
-			if (exit == Status::DOWN) exit = Status::RELEASED;
+			if (exit == Status::DOWN || exit == STATUS::PRESSED) exit = Status::RELEASED;
 			else if (exit == Status::RELEASED) exit = Status::UP;
 		}
 		//up
@@ -68,6 +83,8 @@ void MenuNavigator::poll() {
 			if (right == Status::DOWN) right = Status::RELEASED;
 			else if (right == Status::RELEASED) right = Status::UP;
 		}
+
+		*/
 	}
 	else {
 		enter = Status::UP;
@@ -83,27 +100,5 @@ void MenuNavigator::poll() {
 //Bind a key to a character on the keyboard.
 //Default WASD controls
 void MenuNavigator::setKey(Control keyToSet, sf::Keyboard::Key value) {
-	switch (keyToSet) {
-	case Control::ENTER:
-		keyEnter = value;
-		break;
-	case Control::EXIT:
-		keyExit = value;
-		break;
-	case Control::UP:
-		keyUp = value;
-		break;
-	case Control::DOWN:
-		keyDown = value;
-		break;
-	case Control::LEFT:
-		keyLeft = value;
-		break;
-	case Control::RIGHT:
-		keyRight = value;
-		break;
-	default:
-		break;
-		//Do nothing
-	}
+	control_key[(int)keyToSet] = value;
 }

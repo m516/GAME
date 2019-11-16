@@ -6,7 +6,7 @@ MenuPane::MenuPane(int initial_size) {
 	items.reserve(initial_size);
 }
 
-MenuPane::MenuPane(int initial_size, sf::RenderTarget* renderTarget)
+MenuPane::MenuPane(int initial_size, sf::RenderWindow* renderTarget)
 {
 	items.reserve(initial_size);
 	this->setRenderer(renderTarget);
@@ -51,6 +51,11 @@ void MenuPane::update()
 	{
 		if (selected > 0) selected--;
 		else selected = items.size() - 1;
+	}
+
+	if (menuNavigator.enter == MenuNavigator::STATUS::PRESSED) {
+		MenuItem current_item = items[selected];
+		current_item.callPressedFunction();
 	}
 }
 
