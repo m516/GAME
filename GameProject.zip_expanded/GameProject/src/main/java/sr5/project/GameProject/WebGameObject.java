@@ -4,6 +4,7 @@ public class WebGameObject
 {
 	int gameID;
 	int pNum;
+	int gameType;
 	String x;
 	String y;
 	
@@ -59,8 +60,13 @@ public class WebGameObject
 	{
 		return y;
 	}
-	
-
-
+	public int getGameType()
+	{
+		return gameType;
+	}
+	public void setGameType(int g)
+	{
+		gameType = g;
+	}
 }
 

@@ -77,7 +77,7 @@ public class WebSocketServer {
 			sendMessageToPArticularUser(session, "GID" + gameID +" " + message + "has been built");
 			logger.info("GID" + gameID +" " +message + "has been built");
     	}
-    	if(message.startsWith("J"))
+    	else if(message.startsWith("J"))
     	{
     		//TODO
 			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
@@ -112,14 +112,14 @@ public class WebSocketServer {
 			}
 				
     	}
-    	if(message.startsWith("R"))
+    	else if(message.startsWith("R"))
     	{
     		//TODO
     		game.get(sessionGameObjectMap.get(session).getGameID()).removePlayer(sessionGameObjectMap.get(session).getPNum());
     		logger.info("Remove player");
     		
     	}
-    	if(message.startsWith("PL"))
+    	else if(message.startsWith("PL"))
     	{
     		//TODO
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations();
@@ -127,28 +127,28 @@ public class WebSocketServer {
     		logger.info("Get player locations");
     		
     	}
-    	if(message.startsWith("OL"))
+    	else if(message.startsWith("OL"))
     	{
     		//TODO
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get object locations");
     	}
-    	if(message.startsWith("BL"))
+    	else if(message.startsWith("BL"))
     	{
     		//TODO
     		String s = "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get all locations");
     	}
-    	if(message.startsWith("S"))
+    	else if(message.startsWith("S"))
     	{
     		//TODO
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get Score");
     	}
-    	if(message.startsWith("T"))
+    	else if(message.startsWith("T"))
     	{
     		//TODO
     		if(game.get(sessionGameObjectMap.get(session).getGameID()).getState())
@@ -162,32 +162,40 @@ public class WebSocketServer {
 
     		logger.info("Get state");
     	}
-    	if(message.startsWith("G"))
+    	else if(message.startsWith("G"))
     	{
     		//TODO
-    		game.get(sessionGameObjectMap.get(session).getGameID()).
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setState(true);
     	}
-    	if(message.startsWith("ST"))
+    	else if(message.startsWith("ST"))
+    	{
+    		//TODO
+    		StringBuilder sb = new StringBuilder(message);
+    		sb.deleteCharAt(0);
+    		sb.deleteCharAt(1);
+    		String s1 = sb.toString();
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(s1);
+    	}
+    	else if(message.startsWith("PM"))
+    	{
+    		//TODO
+//    		String x = "" + message.charAt(4) + message.charAt(5);
+//    		sessionGameObjectMap.get(session).setX("temp");
+//    		sessionGameObjectMap.get(session).setY("temp");
+    	}
+    	else if(message.startsWith("OM"))
     	{
     		//TODO
     	}
-    	if(message.startsWith("PM"))
+    	else if(message.startsWith("E"))
     	{
     		//TODO
     	}
-    	if(message.startsWith("OM"))
+    	else if(message.startsWith("?"))
     	{
     		//TODO
     	}
-    	if(message.startsWith("E"))
-    	{
-    		//TODO
-    	}
-    	if(message.startsWith("?"))
-    	{
-    		//TODO
-    	}
-    	if(message.startsWith("W"))
+    	else if(message.startsWith("W"))
     	{
     		//TODO
     	}

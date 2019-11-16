@@ -87,7 +87,8 @@ public class WebGames
 	{
 		return isPlaying;
 	}
-	
-	
-
+	public void setState(boolean s)
+	{
+		isPlaying = s;
+	}
 }
