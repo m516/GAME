@@ -5,24 +5,24 @@
 #include <SFML/System.hpp>
 #include "../application.h"
 #include "../GUI/theme.h"
+#include "../games/pong/pong.h"
+#include "../GUI/menu/mainMenu.h"
 
 class Renderer 
 {
 	public:
-        Application* application;
-        Theme* theme;
-		sf::RenderWindow* window;
-		// Functions
 		Renderer(Application *app);
+		~Renderer();
+
         void start();
         void renderLoop();
 		sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeight);
+
+		//Graphics-related fields
+		Application* application;
+		Theme* theme;
+		sf::RenderWindow* window;
 	private:
-		/** Minimum frame time (essentially highest fps possible)*/
-		const sf::Time FRAME_TIME = sf::milliseconds(10.f);
-		/** Time since the last time the frame updated */
-		sf::Time timeSinceLastFrame = sf::Time::Zero;
-		/** Frame clock to use for tracking frame time */
-		sf::Clock frameClock;
-	protected:
+
+		MainMenu* main_menu = 0;
 };

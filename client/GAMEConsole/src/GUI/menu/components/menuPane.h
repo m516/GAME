@@ -8,8 +8,8 @@
 #include <SFML/System.hpp>
 
 #include "menuItem.h"
-#include "../../UI/menuNavigator.h"
-#include "../guiElement.h"
+#include "../../../UI/menuNavigator.h"
+#include "../../guiElement.h"
 
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<MenuItem> MenuItem_vec_t;
@@ -24,7 +24,7 @@ public:
 	/**
 	 * Prevent seg faults by init with render target
 	 */
-	MenuPane(int initial_size, sf::RenderTarget* renderTarget);
+	MenuPane(int initial_size, sf::RenderWindow* renderTarget);
 
 	/**
 	Adds an item to the list of items to display

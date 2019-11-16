@@ -2,15 +2,16 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-#include "guiElement.h"
-#include "../UI/menuNavigator.h"
-#include "menu/menuPane.h"
-#include "button.h"
+#include "../guiElement.h"
+#include "../lockingElement.h"
+#include "../../UI/menuNavigator.h"
+#include "components/menuPane.h"
+#include "components/button.h"
 
 //Shortcut for writing vectors of MenuItems
 typedef std::vector<GUIElement*> GUIElement_vec_t;
 
-class Panel : public GUIElement
+class Panel : public LockingElement
 {
 
 public:

@@ -6,25 +6,28 @@
 class MenuNavigator {
 public:
 
+
 	//The list of controls that go into a menu
 	typedef enum class CONTROL
 	{
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-		ENTER,
-		EXIT,
-		NONE
+		UP = 0,
+		DOWN = 1,
+		LEFT = 2,
+		RIGHT = 3,
+		ENTER = 4,
+		EXIT = 5,
+		NONE = 6
 	} Control;
 
 	typedef enum class STATUS{
-		UP,
-		PRESSED,
-		DOWN,
-		RELEASED,
-		DISABLED
+		UP = 0,
+		PRESSED = 1,
+		DOWN = 2,
+		RELEASED = 3,
+		DISABLED = 4
 	} Status;
+
+
 
 
 	//Initializes the navigator
@@ -45,17 +48,31 @@ public:
 	Status exit = Status::UP;
 	Control current_control = Control::NONE;
 
+
+	const int num_states = 6;
+
 	//MenuNavigator updates the controls only if 
 	//keyboard_enabled is true
 	int keyboard_enabled = 1;
 
 private:
-	//Key bindings for each control
-	sf::Keyboard::Key keyUp    = sf::Keyboard::W;
-	sf::Keyboard::Key keyDown  = sf::Keyboard::S;
-	sf::Keyboard::Key keyLeft  = sf::Keyboard::A;
-	sf::Keyboard::Key keyRight = sf::Keyboard::D;
-	sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
-	sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
+	
+	STATUS* control_status[6] = {
+		&up,
+		&down,
+		&left,
+		&right,
+		&enter,
+		&exit
+	};
+	
+	sf::Keyboard::Key control_key[6] = {
+		sf::Keyboard::W,
+		sf::Keyboard::S,
+		sf::Keyboard::A,
+		sf::Keyboard::D,
+		sf::Keyboard::Return,
+		sf::Keyboard::Escape
+	};
 };
 

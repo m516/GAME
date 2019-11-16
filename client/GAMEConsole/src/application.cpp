@@ -4,6 +4,7 @@
 #include "application.h"
 #include "modules/renderer.h"
 #include "modules/events.h"
+#include "modules/network.h"
 
 Application::Application()
 {
@@ -25,9 +26,6 @@ Application::Application()
 
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
-	theme.color_border = sf::Color::Black;
-	theme.color_deselected = sf::Color::Black;
-	theme.color_selected = sf::Color::White;
 	theme.loadGenericFont();
 }
 
@@ -38,7 +36,9 @@ void Application::run()
 {
 	renderer = new Renderer(this);
 	events = new Events(this);
-	
+	network = new Network(this);
+
 	renderer->start();
-	events->start();
+    network->start();
+	events->start(); // Events must start last
 }

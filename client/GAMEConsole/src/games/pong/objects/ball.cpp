@@ -13,10 +13,6 @@ Ball::Ball(Game* game) {
 	//Create a circle to render
 	shape = sf::CircleShape();
 
-	//Set the radius of the shape based on its screen size
-	shape.setRadius(50.f);
-
-	shape.setFillColor(sf::Color(17, 232, 255));
 
 	//Make me move!
 	enable_motion = true;
@@ -27,14 +23,14 @@ Ball::Ball(Game* game) {
 
 void Ball::update() {
 	Sprite::update();
-	if (position.x < 0.f || position.x>1.f) position.x = 0.5f;
 }
 
 void Ball::render() {
 	updateScreenDimensions();
 
 	shape.setPosition(screen_position);
-	shape.setRadius(screen_size.x/2.f);
+	shape.setRadius(screen_size.x/2.f); 
+	shape.setFillColor(game->getTheme()->color_selected);
 
 	game->getRenderer()->draw(shape);
 }
