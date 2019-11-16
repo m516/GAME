@@ -1,12 +1,18 @@
 #pragma once
+
 #include <websocketpp/config/asio_no_tls_client.hpp>
 #include <websocketpp/client.hpp>
 #include <iostream>
 
 #define NETWORK_SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
 
+
+
 namespace NetworkConnection
 {
+
+	
+
 	//Define websocket client type
 	typedef websocketpp::client<websocketpp::config::asio_client> client_t;
 	//Define message type
@@ -14,14 +20,21 @@ namespace NetworkConnection
 	//Define thread type
 	typedef websocketpp::lib::shared_ptr<websocketpp::lib::thread> thread_t;
 
-	//Include some networking stuff
-	using websocketpp::lib::placeholders::_1;
-	using websocketpp::lib::placeholders::_2;
-	using websocketpp::lib::bind;
+	//Number of kinds of listeners
+	const size_t num_listeners = 4;
 
+	//The list of listeners
+	typedef enum class LISTENER
+	{
+		OPEN = 0,
+		MESSAGE = 1,
+		FAIL = 2,
+		CLOSE = 3
+	} Listener;
 
-	int connect();
-	
+	//Add a listener
+	void addListener(Listener listener, std::function<void()> function);
+
 	void onOpen(client_t* c, websocketpp::connection_hdl hdl);
 
 	void onFail(client_t* c, websocketpp::connection_hdl hdl);
@@ -30,10 +43,39 @@ namespace NetworkConnection
 
 	void onClose(client_t* c, websocketpp::connection_hdl hdl);
 
+	int connect();
+
+	void disconnect();
+
+	bool isConnected();
+
 	void send(std::string message);
+
+
+	void runFunctions(std::vector<std::function<void()>> function_list);
+
+	std::string getString();
 
 
 	thread_t network_client_thread;
 	client_t network_client;
 	websocketpp::connection_hdl network_hdl;
+
+	namespace {
+		//List of listeners
+		std::vector<std::function<void()>> listeners[num_listeners];
+
+		//Network status stuff
+		bool network_initialized = false;
+		bool network_connected = false;
+		std::string message = "";
+
+		//Network fields
+		websocketpp::lib::thread* websocket_thread;
+		thread_t client_thread;
+		client_t client;
+		websocketpp::connection_hdl hdl;
+
+
+	}
 }

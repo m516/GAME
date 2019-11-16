@@ -1,12 +1,12 @@
-#include <thread>
-#include <chrono>
-
 #include "application.h"
+
 #include "modules/renderer.h"
 #include "modules/events.h"
+#include "modules/network.h"
 
 Application::Application()
 {
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	
@@ -35,6 +35,8 @@ void Application::run()
 {
 	renderer = new Renderer(this);
 	events = new Events(this);
+
+	//NetworkConnection::connect();
 
 	renderer->start();
 	events->start(); // Events must start last
