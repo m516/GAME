@@ -36,6 +36,8 @@ public class WebSocketServer {
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
 	public ArrayList<WebGames> game = new ArrayList<WebGames>();
 	//public ArrayList<ArrayList<WebGameObject>> gameList = new ArrayList<ArrayList<WebGameObject>>();
+	
+	WebGameObject g;
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
@@ -60,6 +62,12 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
+    	if(g == null)
+    	{
+    		g = new WebGameObject(0,"0","0");
+    		sessionGameObjectMap.put(session, g);
+    		GameObjectSessionMap.put(g, session);
+    	}
     	if(message.startsWith("C"))
     	{
     		//TODO
@@ -67,33 +75,37 @@ public class WebSocketServer {
 			int maxP = Integer.parseInt("" + message.charAt(2));
 			int gameID = game.size();
 			WebGames wg = new WebGames(gameType, maxP);
-			broadcast("GID" + gameID +" " +message + "has been built");
-			
+			sendMessageToPArticularUser("GID" + gameID +" " +message + "has been built");
+			logger.info("GID" + gameID +" " +message + "has been built");
     	}
     	if(message.startsWith("J"))
     	{
-//    		//TODO
-//			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
-//			String gameType = "" + message.charAt(4);
-//			String x = "" + message.charAt(5) + message.charAt(6);
-//			String y = "" + message.charAt(7) + message.charAt(8);
-//			
-//			if(game.size() > gameID)
-//			{
-//				WebGameObject go = new WebGameObject(gameID, x, y);
-//				if(addPlayer(go).startsWith("Game S"))
-//				{
-//					broadcast("Game Successfully Joined");
-//				}
-//				else
-//				{
-//					broadcast("Game Full, Try again");
-//				}
-//			}
-//			else
-//			{
-//				broadcast("Game does not exist");
-//			}
+    		//TODO
+			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
+			String gameType = "" + message.charAt(4);
+			String x = "" + message.charAt(5) + message.charAt(6);
+			String y = "" + message.charAt(7) + message.charAt(8);
+			
+			if(game.size() > gameID)
+			{
+				WebGameObject go = new WebGameObject(gameID, x, y);
+				boolean i = game.get(gameID).addPlayer(go);
+				if(i)
+				{
+					sendMessageToPArticularUser("Successfully Joined");
+					logger.info("Successfully Joined");
+				}
+				else
+				{
+					sendMessageToPArticularUser("Full, Try again");
+					logger.info("Full, Try again");
+				}
+			}
+			else
+			{
+				sendMessageToPArticularUser("Game does not exist");
+				logger.info("Game does not exist");
+			}
 				
     	}
     	if(message.startsWith("R"))
@@ -154,48 +166,48 @@ public class WebSocketServer {
     	
     	
     	
-    	logger.info("Entered into Message: Got Message:"+message);
-    	
-    	//Start with a "!" to join a game and define player number
-    	if(message.startsWith("!"))
-    	{
-    		//String playerNum = players.size() + "";
-    		WebGameObject  v1 = new WebGameObject(message);
-    		players.add(v1);
-    		
-    		sessionGameObjectMap.put(session, v1); //Log the session based off the game number
-    		GameObjectSessionMap.put(v1, session);
-            
-            //logger.info("This is user " + sessionUsernameMap.size());
-            
-            broadcast("Player " + v1.getPNum() + " has joined game " + v1.getGameID());
-    	}
-    	//Send movement information using "."
-    	if(message.startsWith("."))
-    	{
-    		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		//broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		//sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		sessionGameObjectMap.get(session).setX("" +message.charAt(1)+ message.charAt(2));
-    		sessionGameObjectMap.get(session).setY("" + message.charAt(3) + message.charAt(4));
-    	}
-    	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
-    	{
-    		sessionGameObjectMap.get(session).getGameID()
-    		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
-    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
-    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
-    	}
-    	if(message.startsWith("?"))
-    	{
-    		sendMessageToPArticularUser(
-    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
-    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
-    	}
-    	else // Message to whole chat
-    	{
-	    	broadcast(message + "has been successfully sent");
-    	}
+//    	logger.info("Entered into Message: Got Message:"+message);
+//    	
+//    	//Start with a "!" to join a game and define player number
+//    	if(message.startsWith("!"))
+//    	{
+//    		//String playerNum = players.size() + "";
+//    		WebGameObject  v1 = new WebGameObject(message);
+//    		players.add(v1);
+//    		
+//    		sessionGameObjectMap.put(session, v1); //Log the session based off the game number
+//    		GameObjectSessionMap.put(v1, session);
+//            
+//            //logger.info("This is user " + sessionUsernameMap.size());
+//            
+//            broadcast("Player " + v1.getPNum() + " has joined game " + v1.getGameID());
+//    	}
+//    	//Send movement information using "."
+//    	if(message.startsWith("."))
+//    	{
+//    		//logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+//    		//broadcast("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+//    		//sendMessageToPArticularUser("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+//    		sessionGameObjectMap.get(session).setX("" +message.charAt(1)+ message.charAt(2));
+//    		sessionGameObjectMap.get(session).setY("" + message.charAt(3) + message.charAt(4));
+//    	}
+//    	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
+//    	{
+//    		sessionGameObjectMap.get(session).getGameID()
+//    		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
+//    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
+//    		//sendMessageToPArticularUser("[DM] " + username + ": " + message);
+//    	}
+//    	if(message.startsWith("?"))
+//    	{
+//    		sendMessageToPArticularUser(
+//    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
+//    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
+//    	}
+//    	else // Message to whole chat
+//    	{
+//	    	broadcast(message + "has been successfully sent");
+//    	}
     }
  
     @OnClose
@@ -233,33 +245,45 @@ public class WebSocketServer {
      */
 	private void sendMessageToPArticularUser(String message) 
     {	
-		//String username = "user";
 		
     	try {
-    		usernameSessionMap.get(username).getBasicRemote().sendText(message);
-    		logger.info("sending dm to " + usernameSessionMap.get(username));
+    		GameObjectSessionMap.get(g).getBasicRemote().sendText(message);
+    		logger.info("sending dm to " + GameObjectSessionMap.get(g));
         } catch (IOException e) {
         	logger.info("Exception: " + e.getMessage().toString());
             e.printStackTrace();
         }
     }
+	private void sendMessgeToGame(WebGames wg, String message)
+	{
+    	try {
+    		for(int i = 0; i < wg.players.size(); i++)
+    		{
+    			GameObjectSessionMap.get(wg.players.get(i)).getBasicRemote().sendText(message);
+    		}
+    		logger.info("sending dm to " + wg);
+        } catch (IOException e) {
+        	logger.info("Exception: " + e.getMessage().toString());
+            e.printStackTrace();
+        }
+	}
     /**
      * Send message to all the sessions that are being used by the websocket
      * @param message message to be sent
      * @throws IOException
      */
-    private static void broadcast(String message) 
-    	      throws IOException 
-    {	  
-    	sessionUsernameMap.forEach((session, username) -> {
-    		synchronized (session) {
-	            try {
-	                session.getBasicRemote().sendText(message);
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        }
-	    });
-	}
+//    private static void broadcast(String message) 
+//    	      throws IOException 
+//    {	  
+//    	sessionUsernameMap.forEach((session, username) -> {
+//    		synchronized (session) {
+//	            try {
+//	                session.getBasicRemote().sendText(message);
+//	            } catch (IOException e) {
+//	                e.printStackTrace();
+//	            }
+//	        }
+//	    });
+//	}
 }
 

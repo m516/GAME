@@ -24,16 +24,18 @@ public class WebGames
 		gameType = nGameType;
 		pMax = maxPlayers;
  	}
-	public String addPlayer(WebGameObject player)
+	public boolean addPlayer(WebGameObject player)
 	{
 		if(players.size() >= pMax)
 		{
-			return "Game Full, please try again";
+			return false;
+			//If game is already full
 		}
 		else
 		{
 			players.add(player);
-			return "Game successfully joined";
+			return true;
+			//If player successfully joins
 		}
 	}
 	public String removePlayer(int playerNumber)
