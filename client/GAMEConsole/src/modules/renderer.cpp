@@ -1,9 +1,9 @@
 #include "renderer.h"
 
-#include "../GUI/menu/menuItem.h"
-#include "../GUI/menu/menuPane.h"
+#include "../GUI/menu/components/menuItem.h"
+#include "../GUI/menu/components/menuPane.h"
 #include "../games/pong/pong.h"
-#include "../GUI/panel.h"
+#include "../GUI/menu/menu.h"
 #include "events.h"
 
 #include <thread>
@@ -76,7 +76,6 @@ void Renderer::renderLoop()
 	item = MenuItem(theme, "SETTINGS", NULL);
 	mainMenu.addItem(item);
 
-	application->events->panes.push_back(&mainMenu);
 
 	while (window->isOpen())
 	{

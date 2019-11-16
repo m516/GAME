@@ -7,7 +7,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-#include "guiElement.h"
+#include "../../guiElement.h"
 
 
 

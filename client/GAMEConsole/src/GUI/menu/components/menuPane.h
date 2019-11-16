@@ -1,33 +1,35 @@
 #pragma once
 
+
+#include <vector>
+
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include "guiElement.h"
-#include "../UI/menuNavigator.h"
-#include "menu/menuPane.h"
-#include "button.h"
+
+#include "menuItem.h"
+#include "../../../UI/menuNavigator.h"
+#include "../../guiElement.h"
 
 //Shortcut for writing vectors of MenuItems
-typedef std::vector<GUIElement*> GUIElement_vec_t;
+typedef std::vector<MenuItem> MenuItem_vec_t;
 
-class Panel : public GUIElement
-{
 
+class MenuPane : public GUIElement {
 public:
 	/**
-	Constructs a new Panel
+	Constructs a new MenuPane
 	*/
-	Panel(int initial_size);
-
+	MenuPane(int initial_size);
 	/**
-	Deconstructs the Panel
-	*/
-	~Panel();
+	 * Prevent seg faults by init with render target
+	 */
+	MenuPane(int initial_size, sf::RenderTarget* renderTarget);
 
 	/**
 	Adds an item to the list of items to display
 	*/
-	void addElement(GUIElement* item);
+	void addItem(MenuItem item);
 
 
 	/**
@@ -39,18 +41,18 @@ public:
 	/**
 	The MenuNavigator object controlling the menu
 	*/
-	MenuNavigator paneNavigator;
+	MenuNavigator menuNavigator;
 
 
 	/**
-	Updates the panel
+	Updates the menu
 	*/
 	void update();
 
 
 	/**
 	renders the item onto a RenderWindow
-	@param target the window onto which this Panel renders
+	@param target the window onto which this MenuItem renders
 	*/
 	void render();
 
@@ -72,12 +74,12 @@ public:
 	*/
 	void setPosition(float x, float y);
 	void setPosition(sf::Vector2f& new_position);
-
-
+	
+	
 private:
 	/**
 	A collection of Items
 	Contained as std::vector<MenuItem>
 	*/
-	GUIElement_vec_t items;
+	MenuItem_vec_t items;
 };

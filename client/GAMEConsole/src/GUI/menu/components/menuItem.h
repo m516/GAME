@@ -6,8 +6,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-#include "../theme.h"
-#include "../guiElement.h"
+#include "../../theme.h"
+#include "../../guiElement.h"
 
 
 class MenuItem : public GUIElement{
