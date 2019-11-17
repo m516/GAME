@@ -43,6 +43,7 @@
     <ClCompile Include="src\modules\network.cpp" />
     <ClCompile Include="src\modules\renderer.cpp" />
     <ClCompile Include="src\UI\menuNavigator.cpp" />
+    <ClCompile Include="src\GUI\menu\components\textField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cereal\access.hpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\modules\network.h" />
     <ClInclude Include="src\modules\renderer.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
+    <ClInclude Include="src\GUI\menu\components\textField.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\cereal\external\rapidxml\manual.html" />
