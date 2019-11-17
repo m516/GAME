@@ -489,3 +489,7 @@ local.properties
 .scala_dependencies
 .worksheet
 
+#Metadata, why must you do this to me
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi    .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+
+
