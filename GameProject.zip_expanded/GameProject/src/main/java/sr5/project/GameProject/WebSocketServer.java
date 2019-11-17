@@ -293,14 +293,17 @@ public class WebSocketServer {
      */
     public void onClose(Session session) throws IOException
     {
-    	logger.info("Entered into Close");
+    	logger.info("Entered into Close");    	
     	
-    	//String username = sessionUsernameMap.get(session);
-    	//sessionUsernameMap.remove(session);
-    	//usernameSessionMap.remove(username);
-        
-    	//String message= username + " disconnected";
-        //broadcast(message);
+    	//***************************************START OLD METHODS****************************************************************
+    	String username = sessionUsernameMap.get(session);
+    	sessionUsernameMap.remove(session);
+    	usernameSessionMap.remove(username);
+    	//***************************************END OLD METHODS******************************************************************
+    	
+    	WebGameObject wgo = sessionGameObjectMap.get(session);
+    	sessionGameObjectMap.remove(session);
+    	GameObjectSessionMap.remove(wgo);
     }
  
     @OnError
