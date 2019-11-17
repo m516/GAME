@@ -37,25 +37,14 @@ void Renderer::start()
  */
 void Renderer::renderLoop()
 {
-	NetworkConnection::connect();
+	/*
+	It would seem like a good idea to initialize the network
+	connection here, but it's already being initialized the instant
+	the main menu is initialized
+	*/
 
 	
 	main_menu->lockRender();
-	
-	/*
-	for (int i = 0; i < 300; i++) {
-		if (NetworkConnection::isConnected()) break;
-		std::this_thread::sleep_for(std::chrono::milliseconds(10));
-	}
-
-	if (NetworkConnection::isConnected()) {
-		NetworkConnection::send("!11");
-		NetworkConnection::send(".0000");
-		NetworkConnection::send(".9999");
-	}
-
-	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	*/
 
 	NetworkConnection::disconnect();
 

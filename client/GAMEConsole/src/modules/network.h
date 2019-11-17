@@ -67,14 +67,15 @@ namespace NetworkConnection
 		std::vector<std::function<void()>> listeners[num_listeners];
 
 		//Network status stuff
-		bool network_initialized = false;
-		bool network_connected = false;
+		volatile bool network_initialized = false;
+		volatile bool network_connected = false;
+		volatile bool network_connecting = false;
 		std::string message = "";
 
 		//Network fields
 		websocketpp::lib::thread* websocket_thread;
 		thread_t client_thread;
-		client_t client;
+		client_t* client;
 		websocketpp::connection_hdl connection_hdl;
 	}
 }

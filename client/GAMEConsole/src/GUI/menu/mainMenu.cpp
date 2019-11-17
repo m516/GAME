@@ -37,15 +37,12 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 
 	item = MenuItem(theme, "SETTINGS", NULL);
 	menu->addItem(item);
-
-	pong_game = 0;
 }
 
 MainMenu::~MainMenu()
 {
 	delete menu;
 	delete title;
-	delete pong_game;
 }
 
 void MainMenu::render()
@@ -58,10 +55,8 @@ void MainMenu::render()
 }
 
 void MainMenu::play() {
-	if (pong_game != NULL) delete pong_game;
-
 	//Create Pong instance
-	pong_game = new Pong();
+	Pong* pong_game = new Pong();
 	pong_game->setPosition(0, 0);
 	pong_game->setSize((float)(renderer->getSize().x), 
 		(float)(renderer->getSize().y));
@@ -69,4 +64,5 @@ void MainMenu::play() {
 	pong_game->setTheme(theme);
 
 	pong_game->lockRender();
+	delete pong_game;
 }
