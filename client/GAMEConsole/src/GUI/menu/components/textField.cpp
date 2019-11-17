@@ -66,12 +66,27 @@ void TextField::updateKeys() {
 			else if (control_status[i] == Status::RELEASED) control_status[i] = Status::UP;
 		}
 
-		if (control_status[i] == Status::PRESSED) {
-			text += characters[i];
+		bool shift = control_status[sf::Keyboard::LShift] == Status::DOWN ||
+			control_status[sf::Keyboard::RShift] == Status::DOWN;
+
+		char c = characters[i][shift ? 1 : 0];
+		if (control_status[i] == Status::PRESSED && c) {
+			text += c;
 			label.setString(text);
 		}
 	}
+
+	if (control_status[sf::Keyboard::Backspace] == Status::PRESSED) {
+		if(text.size()>0) text.pop_back();
+		label.setString(text);
+	}
+
+	if (control_status[sf::Keyboard::Enter] == Status::PRESSED) {
+		callPressedFunction();
+	}
 }
+
+
 
 void TextField::setText(const std::string& text)
 {
