@@ -2,6 +2,7 @@
 
 #include "../GUI/menu/components/menuItem.h"
 #include "../GUI/menu/components/menuPane.h"
+#include "network.h"
 #include "events.h"
 
 #include <thread>
@@ -28,6 +29,7 @@ Renderer::~Renderer()
 void Renderer::start()
 {
 	std::thread* renderThread = new std::thread(&Renderer::renderLoop, this);
+
 }
 
 /** 
@@ -35,7 +37,28 @@ void Renderer::start()
  */
 void Renderer::renderLoop()
 {
+	NetworkConnection::connect();
+
+	
 	main_menu->lockRender();
+	
+	/*
+	for (int i = 0; i < 300; i++) {
+		if (NetworkConnection::isConnected()) break;
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	}
+
+	if (NetworkConnection::isConnected()) {
+		NetworkConnection::send("!11");
+		NetworkConnection::send(".0000");
+		NetworkConnection::send(".9999");
+	}
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	*/
+
+	NetworkConnection::disconnect();
+
 	window->close();
 }
 

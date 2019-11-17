@@ -28,7 +28,6 @@
     <ClCompile Include="src\games\game.cpp" />
     <ClCompile Include="src\games\controllers\controller.cpp" />
     <ClCompile Include="src\games\controllers\keyboard_controller.cpp" />
-    <ClCompile Include="src\games\controllers\network_controller.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle.cpp" />
     <ClCompile Include="src\games\pong\objects\ball.cpp" />
     <ClCompile Include="src\games\pong\objects\paddle_network_controller.cpp" />
@@ -133,7 +132,6 @@
     <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h" />
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\games\controllers\keyboard_controller.h" />
-    <ClInclude Include="src\games\controllers\network_controller.h" />
     <ClInclude Include="src\games\pong\objects\ball.h" />
     <ClInclude Include="src\games\game.h" />
     <ClInclude Include="src\games\controllers\controller.h" />
