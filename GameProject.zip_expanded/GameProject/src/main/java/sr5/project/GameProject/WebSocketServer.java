@@ -187,9 +187,17 @@ public class WebSocketServer {
     	else if(message.startsWith("PM"))
     	{
     		//TODO Complete and Test
-//    		String x = "" + message.charAt(4) + message.charAt(5);
-//    		sessionGameObjectMap.get(session).setX("temp");
-//    		sessionGameObjectMap.get(session).setY("temp");
+//    		int i = 1;
+//    		String pID = "";
+//    		String pX = "";
+//    		String pY = "";
+//    		while(i < message.length())
+//    		{
+//    			pID = "" + message.charAt(i) + message.charAt(i+1);
+//    			pX = "" + message.charAt(i+2) + message.charAt(i+3);
+//    			pY = "" + message.charAt(i+4) + message.charAt(i+5);
+//    			sessionGameObjectMap.get(session).
+//    		}
     	}
     	else if(message.startsWith("OM"))
     	{
@@ -197,11 +205,39 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("E"))
     	{
-    		//TODO
+    		//TODO Add try catch blocks
     	}
-    	else if(message.startsWith("?"))
+    	else if(message.startsWith("N?"))
     	{
     		//TODO
+    		sendMessageToPArticularUser(session, "Symbols\n");
+    		sendMessageToPArticularUser(session, "# -> Game Type\n");
+    		sendMessageToPArticularUser(session, "##-> Game id\n");
+    		sendMessageToPArticularUser(session, "P -> Max Players\n");
+    		sendMessageToPArticularUser(session, "XX-> X position\n");
+    		sendMessageToPArticularUser(session, "YY-> Y postion\n");
+    		sendMessageToPArticularUser(session, "ii-> Player/Object id\n\n");
+    		
+    		sendMessageToPArticularUser(session, "Commands\n");
+    		sendMessageToPArticularUser(session, "C : C#P : START GAME\n");
+    		sendMessageToPArticularUser(session, "J : J## : JOIN GAME\n");
+    		sendMessageToPArticularUser(session, "R : R   : LEAVE GAME\n\n");
+    		
+    		sendMessageToPArticularUser(session, "PL: PL  : GET PLAYER LOCATIONS\n");
+    		sendMessageToPArticularUser(session, "OL: OL  : GET OBJECT LOCATIONS\n");
+    		sendMessageToPArticularUser(session, "BL: BL  : GET ALL LOCATIONS\n\n");
+    		
+    		sendMessageToPArticularUser(session, "PM: PMXXYY : SET PLAYER LOCATIONS --NEED MORE INFO--\n");
+    		sendMessageToPArticularUser(session, "OM: OMXXYY : SET OBJECT LOCATIONS --NEED MORE INFO--\n\n");
+    		
+    		sendMessageToPArticularUser(session, "S : S  : GET SCORE\n");
+    		sendMessageToPArticularUser(session, "ST: ST#: SET SCORE\n\n");
+
+    		sendMessageToPArticularUser(session, "T : T  : GET STATE\n");
+    		sendMessageToPArticularUser(session, "G : G  : START GAME\n\n");
+
+    		sendMessageToPArticularUser(session, "N?: GET NEW OPCODES\n");
+    		sendMessageToPArticularUser(session, "O?: GET OLD OPCODES\n\n");    		
     	}
     	else if(message.startsWith("W"))
     	{
@@ -209,7 +245,7 @@ public class WebSocketServer {
     	}
     	//***************************************START OLD METHODS****************************************************************
     	//Start with a "!" to join a game and define player number
-    	if(message.startsWith("!"))
+    	else if(message.startsWith("!"))
     	{
     		username = "" + message.charAt(1); //The game number is stored in the first bit
     		player = "" + message.charAt(2);  //The player number is stored in the second bit
@@ -223,27 +259,27 @@ public class WebSocketServer {
             broadcastOLD("Player " + player + " has joined game " + username);
     	}
     	//Send movement information using "."
-    	if(message.startsWith("."))
+    	else if(message.startsWith("."))
     	{
     		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		broadcastOLD("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     		sendMessageToPArticularUserOLD("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
     	}
-    	if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
+    	else if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
     		//String destUsername = message.split(" ")[0].substring(1); // don't do this in your code!
     		sendMessageToPArticularUserOLD("[DM] " + username + ": " + message);
     		sendMessageToPArticularUserOLD("[DM] " + username + ": " + message);
     	}
-    	if(message.startsWith("?"))
+    	else if(message.startsWith("O?"))
     	{
     		sendMessageToPArticularUserOLD(
     				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
     				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
     	}
-    	else // Message to whole chat
+    	else
     	{
-	    	broadcastOLD(message + "has been successfully sent");
+    		broadcastOLD("Invalid Command Please enter N? or O? for instructions");
     	}
     	//***************************************END OLD METHODS******************************************************************
 
