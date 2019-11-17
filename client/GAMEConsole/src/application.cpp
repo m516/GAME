@@ -26,6 +26,9 @@ Application::Application()
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
 	theme.loadGenericFont();
+
+	renderer = new Renderer(this);
+	events = new Events(this);
 }
 
 /**
@@ -33,11 +36,6 @@ Application::Application()
  */
 void Application::run()
 {
-	renderer = new Renderer(this);
-	events = new Events(this);
-
-	NetworkConnection::connect();
-
 	renderer->start();
 	events->start(); // Events must start last
 }

@@ -63,9 +63,8 @@ int PaddleNetworkController::update()
 
 int PaddleNetworkController::initialize() {
 	// Register our handlers
-	NetworkConnection::addListener(NetworkConnection::LISTENER::OPEN, std::bind(&PaddleNetworkController::onOpen, this));
 	NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&PaddleNetworkController::onMessage, this));
-
+	beginTransmission();
 	return 0;
 }
 
@@ -75,10 +74,10 @@ void PaddleNetworkController::onMessage() {
 #endif
 
 	std::string payload = NetworkConnection::getString();
-	if (payload[0] == '.') {
-		payload = payload.substr(1, 4);
+	if (payload[2] == '@') {
+		payload = payload.substr(3, 2);
 		//std::cout << "Received position: " + payload << std::endl;
-		float position = std::stof(payload);
+		float position = std::stof(payload) * 100.f;
 		if (paddle_left_action == paddle_action_t::CONTROL) {
 			paddle_left->position.y = position / 10000;
 		}
@@ -88,8 +87,3 @@ void PaddleNetworkController::onMessage() {
 	}
 }
 
-
-
-void PaddleNetworkController::onOpen() {
-	beginTransmission();
-}

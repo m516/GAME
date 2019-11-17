@@ -29,7 +29,6 @@ public:
 
 	void onMessage();
 
-	void onOpen();
 
 private:
 	paddle_action_t paddle_left_action = paddle_action_t::NONE;

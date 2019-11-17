@@ -52,7 +52,7 @@ namespace NetworkConnection
 	void send(std::string message);
 
 
-	void runFunctions(std::vector<std::function<void()>> function_list);
+	void runFunctions(std::vector<std::function<void()>>* function_list);
 
 	std::string getString();
 
@@ -60,6 +60,7 @@ namespace NetworkConnection
 	namespace {
 		thread_t network_client_thread;
 		client_t network_client;
+		client_t::connection_ptr connection;
 		websocketpp::connection_hdl network_hdl;
 
 		//List of listeners
@@ -74,8 +75,6 @@ namespace NetworkConnection
 		websocketpp::lib::thread* websocket_thread;
 		thread_t client_thread;
 		client_t client;
-		websocketpp::connection_hdl hdl;
-
-
+		websocketpp::connection_hdl connection_hdl;
 	}
 }
