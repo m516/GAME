@@ -4,6 +4,7 @@
 #include "../../games/game.h"
 #include "../../application.h"
 #include "components/menuPane.h"
+#include "joinCreateMenu.h"
 
 class GameMenu : public LockingElement
 {

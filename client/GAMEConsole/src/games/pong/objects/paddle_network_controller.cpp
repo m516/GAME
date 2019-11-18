@@ -26,12 +26,7 @@ void PaddleNetworkController::setLeftPaddleAction(paddle_action_t action)
 }
 
 void PaddleNetworkController::beginTransmission() {
-	if (paddle_left_action == paddle_action_t::BROADCAST) {
-		NetworkConnection::send("!11");
-	}
-	else if (paddle_right_action == paddle_action_t::BROADCAST) {
-		NetworkConnection::send("!12");
-	}
+		NetworkConnection::send("G");
 }
 
 int PaddleNetworkController::update()
@@ -40,21 +35,30 @@ int PaddleNetworkController::update()
 	if (!NetworkConnection::isConnected()) return 1;
 
 	int paddle_y;
+	int paddle_x;
 
 	if (paddle_left_action == paddle_action_t::BROADCAST) {
 		paddle_y = int(paddle_left->position.y * 9999);
+		paddle_x = int(paddle_left->position.x * 9999);
 	}
 	else if (paddle_right_action == paddle_action_t::BROADCAST) {
 		paddle_y = int(paddle_left->position.y * 9999);
+		paddle_x = int(paddle_left->position.x * 9999);
 	}
 	else return 0;
 
+	//Set the movement command
 	std::string msg;
 
-	if (paddle_y < 10) msg = ".000" + std::to_string(paddle_y);
-	else if (paddle_y < 100) msg = ".00" + std::to_string(paddle_y);
-	else if (paddle_y < 1000) msg = ".0" + std::to_string(paddle_y);
-	else msg = "." + std::to_string(paddle_y);
+	if (paddle_x < 10) msg = "PM000" + std::to_string(paddle_x);
+	else if (paddle_x < 100) msg = "PM00" + std::to_string(paddle_x);
+	else if (paddle_x < 1000) msg = "PM0" + std::to_string(paddle_x);
+	else msg = "PM" + std::to_string(paddle_x);
+
+	if (paddle_y < 10) msg += ",000" + std::to_string(paddle_y);
+	else if (paddle_y < 100) msg += ",00" + std::to_string(paddle_y);
+	else if (paddle_y < 1000) msg += ",0" + std::to_string(paddle_y);
+	else msg += "," + std::to_string(paddle_y);
 
 	NetworkConnection::send(msg);
 

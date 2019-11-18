@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\games\playerCounter.cpp" />
     <ClCompile Include="src\GUI\menu\components\textField.cpp" />
     <ClCompile Include="src\GUI\menu\gameMenu.cpp" />
     <ClCompile Include="src\GUI\menu\gameSelectionMenu.cpp" />
