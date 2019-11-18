@@ -1,3 +1,7 @@
+#include <thread>
+#include <chrono>
+#include <iostream>
+
 #include "application.h"
 
 #include "modules/renderer.h"

@@ -25,6 +25,8 @@ void Events::eventLoop()
 {
     while (window->isOpen())
 	{
+        //window->setView(application->renderer->getLetterboxView(window->getView(), window->getSize().x, window->getSize().y));
+
 		sf::Event event;
 		while (window->pollEvent(event))
 		{
@@ -34,10 +36,12 @@ void Events::eventLoop()
 				window->close();
 			}
 
+			/*
             if (event.type == sf::Event::Resized)
             {
 				window->setView(application->renderer->getLetterboxView(window->getView(), event.size.width, event.size.height));
             }
+			*/
 
 			/*
 			if (event.type == sf::Event::KeyPressed)

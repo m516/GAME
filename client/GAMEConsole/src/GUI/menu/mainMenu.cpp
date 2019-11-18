@@ -1,8 +1,10 @@
 #include "mainMenu.h"
 
+#include "profileMenu.h"
+
 MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 {
-	//Set the renderer
+	// set the renderer
 	renderer = window;
 	this->theme = theme;
 
@@ -32,6 +34,7 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 	menu->addItem(item);
 
 	item = MenuItem(theme, "PROFILE", NULL);
+    item.setPressedFunction(std::bind(&MainMenu::profile, this));
 	menu->addItem(item);
 
 	item = MenuItem(theme, "SETTINGS", NULL);
@@ -46,11 +49,16 @@ MainMenu::~MainMenu()
 
 void MainMenu::render()
 {
-	if (renderer != NULL) {
+	if (renderer != NULL) 
+    {
 		renderer->draw(*title);
 		menu->update();
 		menu->render();
 	}
+}
+
+void MainMenu::profile()
+{
 }
 
 void MainMenu::play() {
