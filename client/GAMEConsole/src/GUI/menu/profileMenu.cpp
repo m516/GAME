@@ -24,6 +24,39 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     renderer = window;
     this->theme = theme == NULL ? new Theme() : theme;
 
+
+	//MAKE THE GET REQUEST TO GET ALL THE DATA FROM THE DATABASE
+	sf::Http http;
+	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
+	//TODO UNHARD CODE THIS
+	int id = 4;
+	std::string strId = std::to_string(id);
+	std::string path = ("user/" + strId);
+	sf::Http::Request request(path, sf::Http::Request::Get);
+	sf::Http::Response response = http.sendRequest(request);
+	std::string responseString = response.getBody();
+	std::cout << responseString << std::endl;
+	std::string shortenedString = responseString.substr(1, (responseString.length() - 2));
+	int size = shortenedString.length();
+
+	std::string delimeter = ",";
+
+	size_t pos = 0;
+	std::string token;
+	//ADD USERNAME
+	//ADD WINS 
+	//ADD LOSES 
+	//ADD LEVEL
+
+	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
+
+		token = shortenedString.substr(0, pos);
+		std::cout << token << std::endl;
+		shortenedString.erase(0, pos + delimeter.length());
+	}
+	std::cout << shortenedString << std::endl;
+
+
     levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));
     levelSquare.setPosition(5, 5);
     levelSquare.setFillColor(sf::Color::Blue);
@@ -31,6 +64,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     level.setCharacterSize(24);
     level.setFont(theme->font_standard);
     level.setColor(theme->color_selected);
+	//TODO DON'T HARDCODE THIS
     level.setString("1");
     level.setPosition(32, 24);
     level = theme->sharpenText(level);
@@ -38,6 +72,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 	username.setCharacterSize(18);
 	username.setFont(theme->font_standard);
 	username.setColor(theme->color_selected);
+	//TODO DON'T HARDCODE THIS
 	username.setString("ASTRELION");
 	username.setPosition(78, 5);
     username = theme->sharpenText(username);
@@ -52,6 +87,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     userID.setCharacterSize(8);
     userID.setFont(theme->font_standard);
     userID.setColor(theme->color_selected);
+	//TODO DON'T HARDCODE THIS
     userID.setString("ABCD EFGH");
     userID.setPosition(78, 46);
     userID = theme->sharpenText(userID);
@@ -66,6 +102,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     friends.setCharacterSize(8);
     friends.setFont(theme->font_standard);
     friends.setColor(theme->color_selected);
+	//TODO DON'T HARDCODE THIS
     friends.setString("ASTRELION\nYodaSpock\nmmundy\nParker");
     friends.setPosition(5, 114);
     friends = theme->sharpenText(friends);
@@ -80,7 +117,8 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     games.setCharacterSize(8);
     games.setFont(theme->font_standard);
     games.setColor(theme->color_selected);
-    games.setString("Pong\nGalaga\nSnake");
+	//TODO DON'T HARDCODE THIS
+    games.setString("Pong");
     games.setPosition(164, 114);
     games = theme->sharpenText(games);
 

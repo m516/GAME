@@ -59,6 +59,8 @@ void MainMenu::render()
 
 void MainMenu::profile()
 {
+	ProfileMenu p(renderer, theme);
+	p.lockRender();
 }
 
 void MainMenu::play() {

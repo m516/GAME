@@ -5,6 +5,7 @@
 #include "../../application.h"
 #include "components/menuPane.h"
 #include "gameSelectionMenu.h"
+#include "profileMenu.h"
 
 class MainMenu : public LockingElement
 {
@@ -27,5 +28,7 @@ class MainMenu : public LockingElement
 
         //private menu-specific functions
         void play();
+
+	
 };
 

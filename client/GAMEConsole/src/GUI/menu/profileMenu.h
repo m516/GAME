@@ -2,6 +2,7 @@
 
 #include "../lockingElement.h"
 #include <string>
+#include <SFML/Network.hpp>
 
 class ProfileMenu : public LockingElement
 {
@@ -12,6 +13,7 @@ class ProfileMenu : public LockingElement
         void render(); // Inherits from GUIElement
 
     private:
+		sf::Http http;
         sf::Text username = sf::Text();
         sf::Text usernameLabel = sf::Text();
         sf::Text userID = sf::Text();
