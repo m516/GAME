@@ -23,6 +23,7 @@
     <ClCompile Include="src\GUI\menu\components\textField.cpp" />
     <ClCompile Include="src\GUI\menu\gameMenu.cpp" />
     <ClCompile Include="src\GUI\menu\gameSelectionMenu.cpp" />
+    <ClCompile Include="src\GUI\menu\joinCreateMenu.cpp" />
     <ClCompile Include="src\GUI\menu\mainMenu.cpp" />
     <ClCompile Include="src\GUI\lockingElement.cpp" />
     <ClCompile Include="src\games\pong\objects\score_board.cpp" />
