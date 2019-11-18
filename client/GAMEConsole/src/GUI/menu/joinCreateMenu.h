@@ -5,9 +5,13 @@
 #include "../../application.h"
 #include "components/menuPane.h"
 
+/*This menu is made to call websocket op-codes that tell the server to create a new online game
+or to join an existing one. Note that will only run preexisting games and WILL NOT create 
+and configure new ones*/
 class JoinCreateMenu : public LockingElement
 {
 public:
+
 	JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* theme);
 
 	~JoinCreateMenu();
@@ -25,9 +29,8 @@ private:
 	const sf::Time frame_period = sf::milliseconds(10.f);
 
 	//private menu-specific functions
-	void startOnlineGame();
-	void startOfflineGame();
-	void startSpectateGame();
+	void joinGame();
+	void createGame();
 
 	Game* game;
 };

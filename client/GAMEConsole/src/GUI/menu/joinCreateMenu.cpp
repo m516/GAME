@@ -25,11 +25,11 @@ JoinCreateMenu::JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* them
 	menu->setSize(window->getSize().x - 20, window->getSize().y/4.f);
 
 	MenuItem item(theme, "Create a new game", NULL);
-	item.setPressedFunction(std::bind(&JoinCreateMenu::startOnlineGame, this));
+	item.setPressedFunction(std::bind(&JoinCreateMenu::createGame, this));
 	menu->addItem(item);
 
 	item = MenuItem(theme, "Join an existing game", NULL);
-	item.setPressedFunction(std::bind(&JoinCreateMenu::startOfflineGame, this));
+	item.setPressedFunction(std::bind(&JoinCreateMenu::joinGame, this));
 	menu->addItem(item);
 }
 
@@ -50,30 +50,14 @@ void JoinCreateMenu::render()
 
 void JoinCreateMenu::joinGame()
 {
-	//Create Game instance
-	game->setPosition(0, 0);
-	game->setSize((float)(renderer->getSize().x),
-		(float)(renderer->getSize().y));
-	game->setRenderer(renderer);
-	game->setTheme(theme);
-
-	//Initialize in network mode
-	game->beginNetworkGame();
 	//Begin game
 	game->lockRender();
+	unlockRender();
 }
 
 void JoinCreateMenu::createGame()
 {
-	//Create Game instance
-	game->setPosition(0, 0);
-	game->setSize((float)(renderer->getSize().x),
-		(float)(renderer->getSize().y));
-	game->setRenderer(renderer);
-	game->setTheme(theme);
-
-	//Initialize in network mode
-	game->beginOfflineGame();
 	//Begin game
 	game->lockRender();
+	unlockRender();
 }

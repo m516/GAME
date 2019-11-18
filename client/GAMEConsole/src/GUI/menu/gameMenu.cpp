@@ -63,8 +63,10 @@ void GameMenu::startOnlineGame()
 
 	//Initialize in network mode
 	game->beginNetworkGame();
-	//Begin game
-	game->lockRender();
+
+	//Go to join menu
+	JoinCreateMenu jcm(renderer, game, theme);
+	jcm.lockRender();
 }
 
 void GameMenu::startOfflineGame()
