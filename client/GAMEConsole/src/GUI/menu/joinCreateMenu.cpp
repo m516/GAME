@@ -58,6 +58,7 @@ void JoinCreateMenu::joinGame()
 void JoinCreateMenu::createGame()
 {
 	//Begin game
+	NetworkConnection::send("C" + std::to_string(game->getNumPlayers()) + std::to_string(game->getGameIndex()));
 	game->lockRender();
 	unlockRender();
 }

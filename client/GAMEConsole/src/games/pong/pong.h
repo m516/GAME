@@ -20,6 +20,8 @@ public:
 	void update();
 	void deinitialize();
 	std::string getName();
+	int getNumPlayers(); 
+	int getGameIndex();
 
 	//Inherited from GUIElement class
 	void render();

@@ -12,6 +12,10 @@ public:
 	virtual void beginNetworkGame() = 0;
 	virtual void beginOfflineGame() = 0;
 	virtual void beginSpectateGame() = 0;
+	/*Number of players that can play this game*/
+	virtual int getNumPlayers() = 0;
+	/*Unique index of game (so people don't join games with the wrong rules*/
+	virtual int getGameIndex() = 0;
 
 	virtual std::string getName();
 };

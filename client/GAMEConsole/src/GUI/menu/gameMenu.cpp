@@ -67,6 +67,7 @@ void GameMenu::startOnlineGame()
 	//Go to join menu
 	JoinCreateMenu jcm(renderer, game, theme);
 	jcm.lockRender();
+	unlockRender();
 }
 
 void GameMenu::startOfflineGame()
@@ -82,6 +83,7 @@ void GameMenu::startOfflineGame()
 	game->beginOfflineGame();
 	//Begin game
 	game->lockRender();
+	unlockRender();
 }
 
 void GameMenu::startSpectateGame()
@@ -98,4 +100,5 @@ void GameMenu::startSpectateGame()
 	game->beginSpectateGame();
 	//Begin game
 	game->lockRender();
+	unlockRender();
 }
