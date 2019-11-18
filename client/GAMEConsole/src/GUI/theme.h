@@ -15,4 +15,5 @@ public:
 	void loadGenericFont();
 	sf::Text sharpenText(sf::Text text);
 	Theme clone();
+	static Theme* universal_theme;
 };

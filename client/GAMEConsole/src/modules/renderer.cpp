@@ -2,7 +2,7 @@
 
 #include "../GUI/menu/components/menuItem.h"
 #include "../GUI/menu/components/menuPane.h"
-#include "../GUI/menu/menu.h"
+#include "network.h"
 #include "events.h"
 
 #include <thread>
@@ -29,6 +29,7 @@ Renderer::~Renderer()
 void Renderer::start()
 {
 	std::thread* renderThread = new std::thread(&Renderer::renderLoop, this);
+
 }
 
 /** 
@@ -36,7 +37,17 @@ void Renderer::start()
  */
 void Renderer::renderLoop()
 {
+	/*
+	It would seem like a good idea to initialize the network
+	connection here, but it's already being initialized the instant
+	the main menu is initialized
+	*/
+
+	
 	main_menu->lockRender();
+
+	NetworkConnection::disconnect();
+
 	window->close();
 }
 
