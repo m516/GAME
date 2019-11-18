@@ -18,7 +18,7 @@ namespace NetworkConnection {
 
 
 //Connect to server
-int NetworkConnection::connect()
+int connect()
 {
 
 
@@ -160,7 +160,7 @@ void send(std::string message)
 	}
 }
 
-std::string NetworkConnection::getString()
+std::string getString()
 {
 	return message;
 }
