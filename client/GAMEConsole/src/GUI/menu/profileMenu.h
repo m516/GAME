@@ -13,6 +13,13 @@ class ProfileMenu : public LockingElement
 
     private:
         sf::Text title = sf::Text();
+        sf::Text username = sf::Text();
+        sf::Text level = sf::Text();
+        sf::Text friends = sf::Text();
+        sf::Text games = sf::Text();
+        sf::Text playTime = sf::Text();
+
+        sf::RectangleShape levelSquare = sf::RectangleShape(sf::Vector2f(2, 2));
 
     protected:
 };
