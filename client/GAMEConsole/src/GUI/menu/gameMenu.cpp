@@ -61,9 +61,6 @@ void GameMenu::startOnlineGame()
 	game->setRenderer(renderer);
 	game->setTheme(theme);
 
-	//Initialize in network mode
-	game->beginNetworkGame();
-
 	//Go to join menu
 	JoinCreateMenu jcm(renderer, game, theme);
 	jcm.lockRender();

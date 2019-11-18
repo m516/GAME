@@ -26,12 +26,15 @@ private:
 
 	sf::Text* title = 0;
 
+	volatile int gameID = -1;
+
 	/** Minimum frame time (essentially highest fps possible)*/
 	const sf::Time frame_period = sf::milliseconds(10.f);
 
 	//private menu-specific functions
 	void joinGame();
 	void createGame();
+	void getGameID();
 
 	Game* game;
 };

@@ -62,6 +62,9 @@ void Pong::beginNetworkGame(){
 	paddle_network_controller->initialize();
 	paddle_network_controller->enable();
 
+	//Create the player counter
+	player_counter = new PlayerCounter(renderer, getGameID(), 2, theme);
+	player_counter->lockUntilFull();
 
 	//Tell the lock to call the deinitialize() function when unlocked
 	unlock_function = std::bind(&Pong::deinitialize, this);
@@ -118,6 +121,13 @@ void Pong::beginOfflineGame() {
 }
 
 void Pong::update(){
+
+	if (player_counter != NULL) {
+		if (!player_counter->isFull()) {
+			unlockRender();
+			return;
+		}
+	}
 
 	//Update controllers
 	if(right_controller != NULL) right_controller->update();
@@ -192,6 +202,10 @@ void Pong::deinitialize() {
 	delete left_controller;
 	delete paddle_network_controller;
 	delete scoreboard;
+	if (player_counter != NULL) {
+		delete player_counter;
+		player_counter = 0;
+	}
 	initialized = false;
 }
 
@@ -205,7 +219,7 @@ int Pong::getNumPlayers()
 	return 2;
 }
 
-int Pong::getGameIndex()
+int Pong::getGameType()
 {
 	return 0;
 }
