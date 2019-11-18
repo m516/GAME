@@ -1,14 +1,8 @@
 #include "playerCounter.h"
 
 
-PlayerCounter::PlayerCounter(sf::RenderWindow* window, int gameID, int expectedNumPlayers, Theme* theme)
+PlayerCounter::PlayerCounter(Game* game)
 {
-	//Set the renderer
-	renderer = window;
-	this->gameID = gameID;
-	this->expectedNumPlayers = expectedNumPlayers;
-	this->theme = theme;
-
 	gameIDLabel = new sf::Text();
 	numJoinedLabel = new sf::Text();
 	//gameIDLabel->setCharacterSize(32);
@@ -16,10 +10,12 @@ PlayerCounter::PlayerCounter(sf::RenderWindow* window, int gameID, int expectedN
 	//numJoinedLabel->setCharacterSize(24);
 	//numJoinedLabel->setPosition(5, 48);
 
+	renderer = game->getRenderer();
+	theme = game->getTheme();
+	this->game = game;
 
 	gameIDLabel->setFont(theme->font_standard);
 	numJoinedLabel->setFont(theme->font_standard);
-
 
 
 	numJoinedLabel->setFillColor(theme->color_deselected);
@@ -39,8 +35,8 @@ void PlayerCounter::render()
 	if (renderer != NULL) 
 	{
 
-		gameIDLabel->setString("Waiting for game " + std::to_string(gameID));
-		numJoinedLabel->setString("1 of " + std::to_string(expectedNumPlayers) + " players has joined");
+		gameIDLabel->setString("Waiting for game " + std::to_string(game->getGameID()));
+		numJoinedLabel->setString("1 of " + std::to_string(game->getNumPlayers()) + " players has joined");
 
 
 		gameIDLabel->setCharacterSize(renderer->getSize().y / 8);
@@ -94,6 +90,7 @@ bool PlayerCounter::isFull()
 }
 
 void PlayerCounter::checkGameStatus() {
+	/*
 	std::string response = NetworkConnection::getString();
 	std::string delimiter = ";";
 
@@ -105,4 +102,5 @@ void PlayerCounter::checkGameStatus() {
 		response.erase(0, pos + delimiter.length());
 	}
 	std::cout << response << std::endl;
+	*/
 }

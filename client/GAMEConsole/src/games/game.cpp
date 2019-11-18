@@ -4,7 +4,7 @@
 
 int Game::getGameID()
 {
-	return 0;
+	return gameID;
 }
 
 void Game::setGameID(int id)

@@ -43,6 +43,11 @@ void Pong::beginNetworkGame(){
 	if (initialized) return;
 
 
+	//Create the player counter
+	player_counter = new PlayerCounter(this);
+	//Wait until all the players join to continue
+	player_counter->lockUntilFull();
+
 	//Create the right paddle controller
 	right_controller = new PaddleKeyboardController;
 	right_controller->setPaddle(paddle_right);
@@ -61,10 +66,6 @@ void Pong::beginNetworkGame(){
 	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
 	paddle_network_controller->initialize();
 	paddle_network_controller->enable();
-
-	//Create the player counter
-	player_counter = new PlayerCounter(renderer, getGameID(), 2, theme);
-	player_counter->lockUntilFull();
 
 	//Tell the lock to call the deinitialize() function when unlocked
 	unlock_function = std::bind(&Pong::deinitialize, this);
@@ -121,13 +122,6 @@ void Pong::beginOfflineGame() {
 }
 
 void Pong::update(){
-
-	if (player_counter != NULL) {
-		if (!player_counter->isFull()) {
-			unlockRender();
-			return;
-		}
-	}
 
 	//Update controllers
 	if(right_controller != NULL) right_controller->update();
@@ -189,6 +183,14 @@ void Pong::update(){
 }
 
 void Pong::render() {
+	//Check if the game has been properly configured
+	if (player_counter != NULL) {
+		if (!player_counter->isFull()) {
+			unlockRender();
+			return;
+		}
+	}
+
 	update();
 	scoreboard->render();
 	ball->render();
