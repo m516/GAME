@@ -9,7 +9,9 @@ public:
 	sf::Vector2f camera_location;
 	float camera_scale;
 
-	virtual void initialize() = 0;
-	virtual void update() = 0;
-	virtual void deinitialize() = 0;
+	virtual void beginNetworkGame() = 0;
+	virtual void beginOfflineGame() = 0;
+	virtual void beginSpectateGame() = 0;
+
+	virtual std::string getName();
 };

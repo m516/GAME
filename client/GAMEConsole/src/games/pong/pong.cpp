@@ -7,14 +7,13 @@ Pong::Pong() {
 
 	camera_scale = 1.f;
 
-	initialize();
 }
 
 Pong::~Pong() {
 	deinitialize();
 }
 
-void Pong::initialize(){
+void Pong::beginNetworkGame(){
 	//Don't initialize twice, that's a memory leak
 	if (initialized) return;
 
@@ -58,12 +57,90 @@ void Pong::initialize(){
 	initialized = true;
 }
 
+void Pong::beginSpectateGame() {
+	//Don't initialize twice, that's a memory leak
+	if (initialized) return;
+
+	ball = new Ball(this);
+
+	//Create the right paddle
+	paddle_right = new Paddle(this);
+	paddle_right->position.x = 0.9f - paddle_right->size.x;
+
+	//Create the right paddle controller
+	right_controller = 0;
+
+	//Create the left paddle
+	paddle_left = new Paddle(this);
+	paddle_left->position.x = 0.1f;
+
+	//Create the left paddle controller
+	left_controller = 0;
+
+	//Create network controller
+	paddle_network_controller = new PaddleNetworkController();
+	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::CONTROL);
+	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	paddle_network_controller->initialize();
+	paddle_network_controller->enable();
+
+	//Create the scoreboard
+	scoreboard = new ScoreBoard(this, 2);
+	scoreboard->position.x = 0.5f;
+	scoreboard->position.y = 0.1f;
+
+	//Tell the lock to call the deinitialize() function when unlocked
+	unlock_function = std::bind(&Pong::deinitialize, this);
+
+	initialized = true;
+}
+
+void Pong::beginOfflineGame() {
+	//Don't initialize twice, that's a memory leak
+	if (initialized) return;
+
+	ball = new Ball(this);
+
+	//Create the right paddle
+	paddle_right = new Paddle(this);
+	paddle_right->position.x = 0.9f - paddle_right->size.x;
+
+	//Create the right paddle controller
+	right_controller = new PaddleKeyboardController;
+	right_controller->setPaddle(paddle_right);
+	right_controller->setKey(KeyboardController::Control::UP, sf::Keyboard::I);
+	right_controller->setKey(KeyboardController::Control::DOWN, sf::Keyboard::K);
+	right_controller->enable();
+
+	//Create the left paddle
+	paddle_left = new Paddle(this);
+	paddle_left->position.x = 0.1f;
+
+	//Create the left paddle controller
+	left_controller = new PaddleKeyboardController;
+	left_controller->setPaddle(paddle_left);
+	left_controller->enable();
+
+	//Set the paddle network controller to null
+	paddle_network_controller = 0;
+
+	//Create the scoreboard
+	scoreboard = new ScoreBoard(this, 2);
+	scoreboard->position.x = 0.5f;
+	scoreboard->position.y = 0.1f;
+
+	//Tell the lock to call the deinitialize() function when unlocked
+	unlock_function = std::bind(&Pong::deinitialize, this);
+
+	initialized = true;
+}
+
 void Pong::update(){
 
 	//Update controllers
-	right_controller->update();
-	left_controller->update();
-	paddle_network_controller->update();
+	if(right_controller != NULL) right_controller->update();
+	if(left_controller != NULL) left_controller->update();
+	if(paddle_network_controller != NULL) paddle_network_controller->update();
 
 	//Update sprites
 	paddle_right->update();
@@ -137,4 +214,9 @@ void Pong::deinitialize() {
 	delete paddle_network_controller;
 	delete scoreboard;
 	initialized = false;
+}
+
+std::string Pong::getName()
+{
+	return "Pong";
 }

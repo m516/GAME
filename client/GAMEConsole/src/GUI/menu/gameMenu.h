@@ -1,17 +1,16 @@
 #pragma once
 
 #include "../lockingElement.h"
-#include "../../games/pong/pong.h"
+#include "../../games/game.h"
 #include "../../application.h"
 #include "components/menuPane.h"
-#include "gameSelectionMenu.h"
 
-class MainMenu : public LockingElement
+class GameMenu : public LockingElement
 {
 public:
-	MainMenu(sf::RenderWindow* window, Theme* theme);
+	GameMenu(sf::RenderWindow* window, Game* game, Theme* theme);
 
-	~MainMenu();
+	~GameMenu();
 
 	//Inherited from GUIElement
 	void render();
@@ -26,6 +25,10 @@ private:
 	const sf::Time frame_period = sf::milliseconds(10.f);
 
 	//private menu-specific functions
-	void play();
+	void startOnlineGame();
+	void startOfflineGame();
+	void startSpectateGame();
+
+	Game* game;
 };
 

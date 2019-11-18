@@ -4,14 +4,14 @@
 #include "../../games/pong/pong.h"
 #include "../../application.h"
 #include "components/menuPane.h"
-#include "gameSelectionMenu.h"
+#include "gameMenu.h"
 
-class MainMenu : public LockingElement
+class GameSelectionMenu : public LockingElement
 {
 public:
-	MainMenu(sf::RenderWindow* window, Theme* theme);
+	GameSelectionMenu(sf::RenderWindow* window, Theme* theme);
 
-	~MainMenu();
+	~GameSelectionMenu();
 
 	//Inherited from GUIElement
 	void render();
@@ -26,6 +26,7 @@ private:
 	const sf::Time frame_period = sf::milliseconds(10.f);
 
 	//private menu-specific functions
-	void play();
+	void runPong();
+	void goBack();
 };
 

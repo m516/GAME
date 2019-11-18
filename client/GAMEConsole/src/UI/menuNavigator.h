@@ -40,12 +40,12 @@ public:
 
 
 	//Controls
-	Status up = Status::UP;
-	Status down = Status::UP;
-	Status left = Status::UP;
-	Status right = Status::UP;
-	Status enter = Status::UP;
-	Status exit = Status::UP;
+	Status up = Status::DOWN;
+	Status down = Status::DOWN;
+	Status left = Status::DOWN;
+	Status right = Status::DOWN;
+	Status enter = Status::DOWN;
+	Status exit = Status::DOWN;
 	Control current_control = Control::NONE;
 
 

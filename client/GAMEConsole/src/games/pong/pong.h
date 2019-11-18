@@ -14,12 +14,16 @@ public:
 	~Pong();
 
 	//Inherited from Game class
-	void initialize();
+	void beginNetworkGame();
+	void beginOfflineGame();
+	void beginSpectateGame();
 	void update();
 	void deinitialize();
+	std::string getName();
 
 	//Inherited from GUIElement class
 	void render();
+
 
 private:
 	Ball* ball;

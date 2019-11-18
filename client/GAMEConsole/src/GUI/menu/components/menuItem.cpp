@@ -10,8 +10,6 @@ MenuItem::MenuItem(Theme *theme, const std::string& text, std::function<void()> 
 
 	//Set description text
 	label.setString(text);
-	label.setCharacterSize(25);
-	label = theme->sharpenText(label);
 	label.setFont(theme->font_standard);
 	
 	pressed_function = pressed;
@@ -34,15 +32,16 @@ void MenuItem::render()
 	{
 		label.setFillColor(theme->color_selected);
 		border.setOutlineColor(theme->color_selected);
+		border.setFillColor(theme->color_selected);
 	}
 	else 
 	{
 		label.setFillColor(theme->color_deselected);
 		border.setOutlineColor(theme->color_deselected);
+		border.setFillColor(theme->color_deselected);
 	}
 	
 
-	border.setFillColor(theme->color_background);
 	renderer->draw(border);
 	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
 }
@@ -63,21 +62,15 @@ Set the size of the menuItem rendered on the screen
 void MenuItem::setSize(float x, float y) 
 {
 	GUIElement::setSize(x, y);
-	border.setSize(size);
-	// label.setCharacterSize(y - 4.f);
-	// label.setCharacterSize((int)(y - 4.0f));
-	label = theme->sharpenText(label);
-	//
+	border.setSize(sf::Vector2f(y*.5f, y*.5f));
+	label.setCharacterSize(y - 4.f);
 }
 
 void MenuItem::setSize(sf::Vector2f &new_size) 
 {
 	GUIElement::setSize(new_size);
-	border.setSize(size);
-	// label.setCharacterSize(new_size.y - 4.f);
-	// label.setCharacterSize((int)(new_size.y - 4.0f));
-	label = theme->sharpenText(label);
-	//
+	border.setSize(sf::Vector2f(new_size.y*.5f, new_size.y*.5f));
+	label.setCharacterSize(new_size.y - 4.f);
 }
 
 /**
@@ -86,15 +79,15 @@ Set the size of the menuItem rendered on the screen
 void MenuItem::setPosition(float x, float y) 
 {
 	GUIElement::setPosition(x, y);
-	border.setPosition(position);
-	label.setPosition(position);
+	border.setPosition(position.x + size.y / 4.f, position.y + size.y / 4.f);
+	label.setPosition(position.x + size.y + 10, position.y + 2.f);
 }
 
 void MenuItem::setPosition(sf::Vector2f &new_position) 
 {
 	GUIElement::setPosition(new_position);
-	border.setPosition(position);
-	label.setPosition(position);
+	border.setPosition(position.x + size.y/4.f, position.y + size.y / 4.f);
+	label.setPosition(position.x + size.y + 10, position.y);
 }
 
 void MenuItem::setPressedFunction(std::function<void()> pressed) {

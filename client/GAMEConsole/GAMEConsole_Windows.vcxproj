@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GUI\menu\components\textField.cpp" />
+    <ClCompile Include="src\GUI\menu\gameMenu.cpp" />
+    <ClCompile Include="src\GUI\menu\gameSelectionMenu.cpp" />
     <ClCompile Include="src\GUI\menu\mainMenu.cpp" />
     <ClCompile Include="src\GUI\lockingElement.cpp" />
     <ClCompile Include="src\games\pong\objects\score_board.cpp" />
@@ -43,7 +46,6 @@
     <ClCompile Include="src\modules\network.cpp" />
     <ClCompile Include="src\modules\renderer.cpp" />
     <ClCompile Include="src\UI\menuNavigator.cpp" />
-    <ClCompile Include="src\GUI\menu\components\textField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cereal\access.hpp" />
@@ -125,6 +127,9 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\GUI\menu\components\textField.h" />
+    <ClInclude Include="src\GUI\menu\gameMenu.h" />
+    <ClInclude Include="src\GUI\menu\gameSelectionMenu.h" />
     <ClInclude Include="src\GUI\menu\mainMenu.h" />
     <ClInclude Include="src\GUI\lockingElement.h" />
     <ClInclude Include="src\games\pong\objects\score_board.h" />
@@ -133,6 +138,7 @@
     <ClInclude Include="src\games\pong\objects\paddle_keyboard_controller.h" />
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\games\controllers\keyboard_controller.h" />
+    <ClInclude Include="src\games\controllers\network_controller.h" />
     <ClInclude Include="src\games\pong\objects\ball.h" />
     <ClInclude Include="src\games\game.h" />
     <ClInclude Include="src\games\controllers\controller.h" />
@@ -143,12 +149,12 @@
     <ClInclude Include="src\GUI\guiElement.h" />
     <ClInclude Include="src\GUI\menu\components\menuItem.h" />
     <ClInclude Include="src\GUI\menu\components\menuPane.h" />
+    <ClInclude Include="src\GUI\menu\menu.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />
     <ClInclude Include="src\modules\renderer.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
-    <ClInclude Include="src\GUI\menu\components\textField.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\cereal\external\rapidxml\manual.html" />
