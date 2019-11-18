@@ -2,7 +2,7 @@
 
 #include "../modules/network.h"
 #include "../GUI/lockingElement.h"
-#include <SFML\Graphics\Text.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include "game.h"
 
 /*This menu is made to call websocket op-codes that tell the server to create a new online game
