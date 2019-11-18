@@ -40,6 +40,7 @@
     <ClCompile Include="src\GUI\guiElement.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuItem.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\statMenu.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\modules\events.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\GUI\menu\components\menuItem.h" />
     <ClInclude Include="src\GUI\menu\components\menuPane.h" />
     <ClInclude Include="src\GUI\menu\menu.h" />
+    <ClInclude Include="src\GUI\menu\statMenu.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />

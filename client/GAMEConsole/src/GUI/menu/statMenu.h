@@ -1,10 +1,11 @@
 #pragma once
 
 #include "../lockingElement.h"
+#include <SFML/Network.hpp>
 
 class StatMenu : public LockingElement
 {
-public: 
+public:
 	StatMenu(sf::RenderWindow* window, Theme* theme);
 
 	~StatMenu();
@@ -12,11 +13,12 @@ public:
 	//Inherited from GUIElement
 	void render();
 
-private: 
+private:
+	sf::Http http;
 
-
-
-
-
+	sf::Text* username = 0;
+	sf::Text* wins = 0;
+	sf::Text* losses = 0;
+	sf::Text* level = 0;
 
 };
