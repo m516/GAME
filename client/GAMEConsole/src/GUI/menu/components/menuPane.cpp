@@ -53,7 +53,7 @@ void MenuPane::update()
 		else selected = items.size() - 1;
 	}
 
-	if (menuNavigator.enter == MenuNavigator::STATUS::DOWN) 
+	if (menuNavigator.enter == MenuNavigator::STATUS::PRESSED) 
     {
 		MenuItem current_item = items[selected];
 		current_item.callPressedFunction();
