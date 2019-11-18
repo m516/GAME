@@ -4,6 +4,7 @@
 #include "../../games/pong/pong.h"
 #include "../../application.h"
 #include "components/menuPane.h"
+#include "gameSelectionMenu.h"
 
 class MainMenu : public LockingElement
 {
@@ -24,7 +25,12 @@ class MainMenu : public LockingElement
         /** Minimum frame time (essentially highest fps possible)*/
         const sf::Time frame_period = sf::milliseconds(10.f);
 
-        //private menu-specific functions
-        void play();
+	sf::Text* title = 0;
+
+	/** Minimum frame time (essentially highest fps possible)*/
+	const sf::Time frame_period = sf::milliseconds(10.f);
+
+	//private menu-specific functions
+	void play();
 };
 

@@ -1,6 +1,8 @@
 #include "theme.h"
 #include <iostream>
 
+Theme* Theme::universal_theme = new Theme();
+
 Theme::Theme()
 {
 

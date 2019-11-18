@@ -3,12 +3,14 @@
 #include <iostream>
 
 #include "application.h"
+
 #include "modules/renderer.h"
 #include "modules/events.h"
 #include "modules/network.h"
 
 Application::Application()
 {
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	
@@ -28,6 +30,9 @@ Application::Application()
 	//Initialize the generic font for the theme
 	theme.border_size = 0;
 	theme.loadGenericFont();
+
+	renderer = new Renderer(this);
+	events = new Events(this);
 }
 
 /**
@@ -35,11 +40,6 @@ Application::Application()
  */
 void Application::run()
 {
-	renderer = new Renderer(this);
-	events = new Events(this);
-	network = new Network(this);
-
 	renderer->start();
-    network->start();
 	events->start(); // Events must start last
 }

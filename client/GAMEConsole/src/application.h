@@ -1,8 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
+
 
 #include "GUI/theme.h"
 
@@ -10,17 +9,17 @@ class Renderer;
 class Network;
 class Events;
 
+
 class Application 
 {
 	public:
-		sf::RenderWindow* window;
-		Theme theme;
-		Renderer* renderer;
-		Network* network;
-		Events* events;
-		// Functions
 		Application();
+
+		// Functions
 		void run();
-	private:
-	protected:
+
+		sf::RenderWindow* window = 0;
+		Theme theme;
+		Renderer* renderer = 0;
+		Events* events = 0;
 };

@@ -1,15 +1,16 @@
 #pragma once
 
 #include "paddle.h"
-#include "..//..//controllers/network_controller.h"
+#include "../../controllers/controller.h"
+#include "../../../modules/network.h"
 
-class PaddleNetworkController : public NetworkController
+class PaddleNetworkController : public Controller
 {
 public:
 	Paddle* paddle_left;
 	Paddle* paddle_right;
 
-	typedef enum paddle_action {
+	typedef enum class paddle_action {
 		BROADCAST,
 		CONTROL,
 		NONE
@@ -26,13 +27,8 @@ public:
 
 	int initialize();
 
-	void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg);
+	void onMessage();
 
-	void onFail(client_t* c, websocketpp::connection_hdl hdl);
-
-	void onClose(client_t* c, websocketpp::connection_hdl hdl);
-
-	void onOpen(client_t* c, websocketpp::connection_hdl hdl);
 
 private:
 	paddle_action_t paddle_left_action = paddle_action_t::NONE;

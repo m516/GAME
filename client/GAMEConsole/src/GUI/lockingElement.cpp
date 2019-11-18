@@ -1,4 +1,5 @@
 #include "lockingElement.h"
+#include "../modules/network.h"
 
 #include <thread>
 
@@ -6,6 +7,9 @@ void LockingElement::lockRender()
 {
 	locked = true;
 	escape_pressed = false;
+
+	//Reconnect if necessary
+	if (!NetworkConnection::isConnected()) NetworkConnection::connect();
 
 	while (locked)
 	{
