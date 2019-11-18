@@ -25,12 +25,7 @@ class MainMenu : public LockingElement
         /** Minimum frame time (essentially highest fps possible)*/
         const sf::Time frame_period = sf::milliseconds(10.f);
 
-	sf::Text* title = 0;
-
-	/** Minimum frame time (essentially highest fps possible)*/
-	const sf::Time frame_period = sf::milliseconds(10.f);
-
-	//private menu-specific functions
-	void play();
+        //private menu-specific functions
+        void play();
 };
 
