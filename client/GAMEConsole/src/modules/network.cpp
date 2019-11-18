@@ -8,7 +8,8 @@
 
 #define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
 
-//#define NETWORK_DEBUG
+#define NETWORK_DEBUG
+//#define CONNECTION_DEBUG
 
 
 namespace NetworkConnection {
@@ -40,7 +41,8 @@ int NetworkConnection::connect()
 	client = new client_t();
 
 	// set logging policy if needed
-#ifdef NETWORK_DEBUG
+#ifdef CONNECTION_DEBUG
+
 	client->set_access_channels(websocketpp::log::alevel::all);
 	client->set_error_channels(websocketpp::log::elevel::all);
 #else
