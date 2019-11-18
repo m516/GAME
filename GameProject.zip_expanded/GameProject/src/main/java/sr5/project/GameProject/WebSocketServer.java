@@ -186,22 +186,16 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("PM"))
     	{
-    		//TODO Complete and Test
-//    		int i = 1;
-//    		String pID = "";
-//    		String pX = "";
-//    		String pY = "";
-//    		while(i < message.length())
-//    		{
-//    			pID = "" + message.charAt(i) + message.charAt(i+1);
-//    			pX = "" + message.charAt(i+2) + message.charAt(i+3);
-//    			pY = "" + message.charAt(i+4) + message.charAt(i+5);
-//    			sessionGameObjectMap.get(session).
-//    		}
+    		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
+    		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
+    		sessionGameObjectMap.get(session).setX(x);
+    		sessionGameObjectMap.get(session).setY(y);
     	}
     	else if(message.startsWith("OM"))
     	{
-    		//TODO
+    		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
+    		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, x, y);
     	}
     	else if(message.startsWith("E"))
     	{
@@ -209,39 +203,111 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("N?"))
     	{
-    		//TODO
-    		sendMessageToPArticularUser(session, "Symbols\n");
-    		sendMessageToPArticularUser(session, "# -> Game Type\n");
-    		sendMessageToPArticularUser(session, "##-> Game id\n");
-    		sendMessageToPArticularUser(session, "P -> Max Players\n");
-    		sendMessageToPArticularUser(session, "XX-> X position\n");
-    		sendMessageToPArticularUser(session, "YY-> Y postion\n");
-    		sendMessageToPArticularUser(session, "ii-> Player/Object id\n\n");
-    		
-    		sendMessageToPArticularUser(session, "Commands\n");
-    		sendMessageToPArticularUser(session, "C : C#P : START GAME\n");
-    		sendMessageToPArticularUser(session, "J : J## : JOIN GAME\n");
-    		sendMessageToPArticularUser(session, "R : R   : LEAVE GAME\n\n");
-    		
-    		sendMessageToPArticularUser(session, "PL: PL  : GET PLAYER LOCATIONS\n");
-    		sendMessageToPArticularUser(session, "OL: OL  : GET OBJECT LOCATIONS\n");
-    		sendMessageToPArticularUser(session, "BL: BL  : GET ALL LOCATIONS\n\n");
-    		
-    		sendMessageToPArticularUser(session, "PM: PMXXYY : SET PLAYER LOCATIONS --NEED MORE INFO--\n");
-    		sendMessageToPArticularUser(session, "OM: OMXXYY : SET OBJECT LOCATIONS --NEED MORE INFO--\n\n");
-    		
-    		sendMessageToPArticularUser(session, "S : S  : GET SCORE\n");
-    		sendMessageToPArticularUser(session, "ST: ST#: SET SCORE\n\n");
+    		String s = "";
+    		s += 
 
-    		sendMessageToPArticularUser(session, "T : T  : GET STATE\n");
-    		sendMessageToPArticularUser(session, "G : G  : START GAME\n\n");
+    	    s += "Symbols\n";
+    	    s += "# -> Game Type\n";
+    	    s += "##-> Game id\n";
+    	    s += "P -> Max Players\n";
+    	    s += "XX-> X position\n";
+    	    s += "YY-> Y postion\n";
+    	    s += "ii-> Player/Object id\n\n";
+    		
+    	    s += "Commands\n";
+    	    s += "C : C#P : START GAME\n";
+    	    s += "J : J## : JOIN GAME\n";
+    	    s += "R : R   : LEAVE GAME\n\n";
+    		
+    	    s += "PL: PL  : GET PLAYER LOCATIONS\n";
+    	    s += "OL: OL  : GET OBJECT LOCATIONS\n";
+    	    s += "BL: BL  : GET ALL LOCATIONS\n\n";
+    		
+    	    s += "PM: PMXXYY : SET PLAYER LOCATIONS\n";
+    	    s += "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n";
+    		
+    	    s += "S : S  : GET SCORE\n";
+    	    s += "ST: ST#: SET SCORE\n\n";
 
-    		sendMessageToPArticularUser(session, "N?: GET NEW OPCODES\n");
-    		sendMessageToPArticularUser(session, "O?: GET OLD OPCODES\n\n");    		
+    	    s += "T : T  : GET STATE\n";
+    	    s += "G : G  : START GAME\n\n";
+    		
+    	    s += "GS : GS  : RETURNS THE CURRENT GAMES\n";
+    	    s += "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n";
+    		
+    	    s += "W : W##  : JOINS A GAME AS A SPECTATOR\n\n";
+
+    	    s += "N?: GET NEW OPCODES\n";
+    	    s += "O?: GET OLD OPCODES\n\n"; 
+    	    sendMessageToPArticularUser(session, s);
+    		
+//    		sendMessageToPArticularUser(session, "Symbols\n");
+//    		sendMessageToPArticularUser(session, "# -> Game Type\n");
+//    		sendMessageToPArticularUser(session, "##-> Game id\n");
+//    		sendMessageToPArticularUser(session, "P -> Max Players\n");
+//    		sendMessageToPArticularUser(session, "XX-> X position\n");
+//    		sendMessageToPArticularUser(session, "YY-> Y postion\n");
+//    		sendMessageToPArticularUser(session, "ii-> Player/Object id\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "Commands\n");
+//    		sendMessageToPArticularUser(session, "C : C#P : START GAME\n");
+//    		sendMessageToPArticularUser(session, "J : J## : JOIN GAME\n");
+//    		sendMessageToPArticularUser(session, "R : R   : LEAVE GAME\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "PL: PL  : GET PLAYER LOCATIONS\n");
+//    		sendMessageToPArticularUser(session, "OL: OL  : GET OBJECT LOCATIONS\n");
+//    		sendMessageToPArticularUser(session, "BL: BL  : GET ALL LOCATIONS\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "PM: PMXXYY : SET PLAYER LOCATIONS\n");
+//    		sendMessageToPArticularUser(session, "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "S : S  : GET SCORE\n");
+//    		sendMessageToPArticularUser(session, "ST: ST#: SET SCORE\n\n");
+//
+//    		sendMessageToPArticularUser(session, "T : T  : GET STATE\n");
+//    		sendMessageToPArticularUser(session, "G : G  : START GAME\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "GS : GS  : RETURNS THE CURRENT GAMES\n");
+//    		sendMessageToPArticularUser(session, "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n");
+//    		
+//    		sendMessageToPArticularUser(session, "W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
+//
+//    		sendMessageToPArticularUser(session, "N?: GET NEW OPCODES\n");
+//    		sendMessageToPArticularUser(session, "O?: GET OLD OPCODES\n\n");     		
     	}
     	else if(message.startsWith("W"))
     	{
     		//TODO
+    		int gameID  = Integer.parseInt("" + message.charAt(1) + message.charAt(2));
+    		sessionGameObjectMap.get(session).setGameID(gameID);
+    		game.get(gameID).spectators.add(sessionGameObjectMap.get(session));
+    		game.get(gameID).spectators.get(game.get(gameID).spectators.size() - 1).setpNum(game.get(gameID).spectators.size() - 1);
+    	}
+    	else if(message.startsWith("GS"))
+    	{
+    		String s = "";
+    		for(int i = 0; i < game.size(); i++)
+    		{
+    			if(!game.get(i).getState())
+    			{
+    				s = "O";
+    			}
+    			else
+    			{
+    				s = "P";
+    			}
+    			sendMessageToPArticularUser(session, i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    		}
+    	}
+    	else if(message.startsWith("GSO"))
+    	{
+    		for(int i = 0; i < game.size(); i++)
+    		{
+    			if(!game.get(i).getState())
+    			{
+        			sendMessageToPArticularUser(session, i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    			}
+    		}
     	}
     	//***************************************START OLD METHODS****************************************************************
     	//Start with a "!" to join a game and define player number
@@ -273,9 +339,11 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("O?"))
     	{
-    		sendMessageToPArticularUserOLD(
-    				"\nJoin Game: !12: 1-> game number, 2-> the player number" + 
-    				"\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate");
+    		String s = "";
+    		s+= "\nJoin Game: !12: 1-> game number, 2-> the player number";
+    		s+= "\nPlayer Movement: .XXYY, XX-> X coordinate, YY-> Y coordinate";
+    		sendMessageToPArticularUserOLD(s);
+
     	}
     	else
     	{

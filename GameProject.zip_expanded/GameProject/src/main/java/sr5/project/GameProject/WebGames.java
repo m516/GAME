@@ -11,6 +11,8 @@ public class WebGames
 	//Arraylist of objects
 	ArrayList <WebGameObject> objects = new ArrayList<WebGameObject>();
 	ArrayList <WebGameObject> players = new ArrayList<WebGameObject>();
+	ArrayList <WebGameObject> spectators = new ArrayList<WebGameObject>();
+	
 	//Max number of players
 	int pMax = 0;
 	//Score
@@ -90,5 +92,13 @@ public class WebGames
 	public void setState(boolean s)
 	{
 		isPlaying = s;
+	}
+	public int getMaxPlayers()
+	{
+		return pMax;
+	}
+	public int getNumPlayers()
+	{
+		return players.size();
 	}
 }
