@@ -1,3 +1,7 @@
+#include <thread>
+#include <chrono>
+#include <iostream>
+
 #include "application.h"
 
 #include "modules/renderer.h"
@@ -11,7 +15,7 @@ Application::Application()
 	settings.antialiasingLevel = 8;
 	
 	window = new sf::RenderWindow(
-		sf::VideoMode(800, 480),
+		sf::VideoMode(256, 256),
 		"G.A.M.E.",
 		sf::Style::Default, 
 		settings
