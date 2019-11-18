@@ -80,19 +80,25 @@ public class WebSocketServer {
 			String gameType = "" + message.charAt(1);
 			int maxP = Integer.parseInt("" + message.charAt(2));
 			int gameID = game.size();
+			String s = "";
+			if(gameID < 10)
+			{
+				s = "0";
+			}
 			WebGames wg = new WebGames(gameType, maxP);
 			game.add(wg);
 			sendMessageToPArticularUser(session, "GID" + gameID +" " + message + "has been built");
-			logger.info("GID" + gameID +" " +message + "has been built");
+			logger.info("GID" + s + gameID +" " + message + " has been built");
     	}
     	else if(message.startsWith("J"))
     	{
     		//TODO Test
+    		//J##TXXXXYYYY
 			int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
-			int gameType = message.charAt(4);
+			int gameType = message.charAt(3);
 			sessionGameObjectMap.get(session).setGameType(gameType);
-			String x = "" + message.charAt(5) + message.charAt(6);
-			String y = "" + message.charAt(7) + message.charAt(8);
+			String x = "" + message.charAt(4) + message.charAt(5) + message.charAt(6) + message.charAt(7);
+			String y = "" + message.charAt(8) + message.charAt(9) + message.charAt(10) + message.charAt(11);
 			
 			if(game.size() > gameID)
 			{
@@ -210,21 +216,21 @@ public class WebSocketServer {
     	    s += "# -> Game Type\n";
     	    s += "##-> Game id\n";
     	    s += "P -> Max Players\n";
-    	    s += "XX-> X position\n";
-    	    s += "YY-> Y postion\n";
+    	    s += "XXXX-> X position\n";
+    	    s += "YYYY-> Y postion\n";
     	    s += "ii-> Player/Object id\n\n";
     		
     	    s += "Commands\n";
     	    s += "C : C#P : START GAME\n";
-    	    s += "J : J## : JOIN GAME\n";
+    	    s += "J : J##TXXXXYYYY: JOIN GAME\n";
     	    s += "R : R   : LEAVE GAME\n\n";
     		
     	    s += "PL: PL  : GET PLAYER LOCATIONS\n";
     	    s += "OL: OL  : GET OBJECT LOCATIONS\n";
     	    s += "BL: BL  : GET ALL LOCATIONS\n\n";
     		
-    	    s += "PM: PMXXYY : SET PLAYER LOCATIONS\n";
-    	    s += "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n";
+    	    s += "PM: PMXXXXYYYY : SET PLAYER LOCATIONS\n";
+    	    s += "OM: OMXXXXYYYY : SET OBJECT LOCATIONS --One Object only--\n\n";
     		
     	    s += "S : S  : GET SCORE\n";
     	    s += "ST: ST#: SET SCORE\n\n";
@@ -286,8 +292,17 @@ public class WebSocketServer {
     	else if(message.startsWith("GS"))
     	{
     		String s = "";
+    		String s1 = "";
     		for(int i = 0; i < game.size(); i++)
     		{
+    			if(i < 10)
+    			{
+    				s1 = "0";
+    			}
+    			else
+    			{
+    				s1 = "";
+    			}
     			if(!game.get(i).getState())
     			{
     				s = "O";
@@ -296,16 +311,25 @@ public class WebSocketServer {
     			{
     				s = "P";
     			}
-    			sendMessageToPArticularUser(session, i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    			sendMessageToPArticularUser(session, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
     		}
     	}
     	else if(message.startsWith("GSO"))
     	{
+			String s = "";
     		for(int i = 0; i < game.size(); i++)
     		{
+    			if(i < 10)
+    			{
+    				s = "0";
+    			}
+    			else
+    			{
+    				s = "";
+    			}
     			if(!game.get(i).getState())
     			{
-        			sendMessageToPArticularUser(session, i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+        			sendMessageToPArticularUser(session, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
     			}
     		}
     	}
