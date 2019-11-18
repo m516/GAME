@@ -69,7 +69,52 @@ public class WebSocketServer {
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
     	}
-    	if(message.startsWith("C"))
+    	if(message.startsWith("GSO"))
+    	{
+			String s = "";
+    		for(int i = 0; i < game.size(); i++)
+    		{
+    			if(i < 10)
+    			{
+    				s = "0";
+    			}
+    			else
+    			{
+    				s = "";
+    			}
+    			if(!game.get(i).getState())
+    			{
+        			sendMessageToPArticularUser(session, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    			}
+    		}
+    	}
+    	else if(message.startsWith("GS"))
+    	{
+    		String s = "";
+    		String s1 = "";
+    		sendMessageToPArticularUser(session, "Game size: " + game.size());
+    		for(int i = 0; i < game.size(); i++)
+    		{
+    			if(i < 10)
+    			{
+    				s1 = "0";
+    			}
+    			else
+    			{
+    				s1 = "";
+    			}
+    			if(!game.get(i).getState())
+    			{
+    				s = "O";
+    			}
+    			else
+    			{
+    				s = "P";
+    			}
+    			sendMessageToPArticularUser(session, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    		}
+    	}
+    	else if(message.startsWith("C"))
     	{
     		try {
 				String gameType = "" + message.charAt(1);
@@ -82,7 +127,7 @@ public class WebSocketServer {
 				}
 				WebGames wg = new WebGames(gameType, maxP);
 				game.add(wg);
-				sendMessageToPArticularUser(session, "GID" + gameID +" " + message + "has been built");
+				sendMessageToPArticularUser(session, "GID" + s + gameID +" " + message + " has been built");
 				logger.info("GID" + s + gameID +" " + message + " has been built");
     		}
     		catch(Exception e)
@@ -154,6 +199,14 @@ public class WebSocketServer {
     		sendMessageToPArticularUser(session, s);
     		logger.info("Get all locations");
     	}
+    	else if(message.startsWith("ST"))
+    	{
+    		StringBuilder sb = new StringBuilder(message);
+    		sb.deleteCharAt(0);
+    		sb.deleteCharAt(1);
+    		String s1 = sb.toString();
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(s1);
+    	}
     	else if(message.startsWith("S"))
     	{
     		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
@@ -176,14 +229,6 @@ public class WebSocketServer {
     	else if(message.startsWith("G"))
     	{
     		game.get(sessionGameObjectMap.get(session).getGameID()).setState(true);
-    	}
-    	else if(message.startsWith("ST"))
-    	{
-    		StringBuilder sb = new StringBuilder(message);
-    		sb.deleteCharAt(0);
-    		sb.deleteCharAt(1);
-    		String s1 = sb.toString();
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(s1);
     	}
     	else if(message.startsWith("PM"))
     	{
@@ -283,50 +328,6 @@ public class WebSocketServer {
     		catch(Exception e)
     		{
     			sendMessageToPArticularUser(session,"Invalid Command please use W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
-    		}
-    	}
-    	else if(message.startsWith("GS"))
-    	{
-    		String s = "";
-    		String s1 = "";
-    		for(int i = 0; i < game.size(); i++)
-    		{
-    			if(i < 10)
-    			{
-    				s1 = "0";
-    			}
-    			else
-    			{
-    				s1 = "";
-    			}
-    			if(!game.get(i).getState())
-    			{
-    				s = "O";
-    			}
-    			else
-    			{
-    				s = "P";
-    			}
-    			sendMessageToPArticularUser(session, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
-    		}
-    	}
-    	else if(message.startsWith("GSO"))
-    	{
-			String s = "";
-    		for(int i = 0; i < game.size(); i++)
-    		{
-    			if(i < 10)
-    			{
-    				s = "0";
-    			}
-    			else
-    			{
-    				s = "";
-    			}
-    			if(!game.get(i).getState())
-    			{
-        			sendMessageToPArticularUser(session, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
-    			}
     		}
     	}
     	//***************************************START OLD METHODS****************************************************************
