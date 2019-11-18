@@ -40,6 +40,7 @@
     <ClCompile Include="src\GUI\guiElement.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuItem.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\profileMenu.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\modules\events.cpp" />
@@ -127,9 +128,11 @@
     <ClInclude Include="include\cereal\types\utility.hpp" />
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="src\games\playerCounter.h" />
     <ClInclude Include="src\GUI\menu\components\textField.h" />
     <ClInclude Include="src\GUI\menu\gameMenu.h" />
     <ClInclude Include="src\GUI\menu\gameSelectionMenu.h" />
+    <ClInclude Include="src\GUI\menu\joinCreateMenu.h" />
     <ClInclude Include="src\GUI\menu\mainMenu.h" />
     <ClInclude Include="src\GUI\lockingElement.h" />
     <ClInclude Include="src\games\pong\objects\score_board.h" />
@@ -150,6 +153,7 @@
     <ClInclude Include="src\GUI\menu\components\menuItem.h" />
     <ClInclude Include="src\GUI\menu\components\menuPane.h" />
     <ClInclude Include="src\GUI\menu\menu.h" />
+    <ClInclude Include="src\GUI\menu\profileMenu.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />

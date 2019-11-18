@@ -2,17 +2,22 @@
 
 #include <iostream>
 #include <stdio.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/ioctl.h>
 #include <fcntl.h>
+#include <string>
+
+#if !(defined _WIN32 || defined _WIN64)
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <sys/ioctl.h>
 #include <net/if.h>
 #include <unistd.h>
-#include <string>
+
+#endif
+
 
 ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 {

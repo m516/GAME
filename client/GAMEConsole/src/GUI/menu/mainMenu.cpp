@@ -57,6 +57,10 @@ void MainMenu::render()
 	}
 }
 
+void MainMenu::profile()
+{
+}
+
 void MainMenu::play() {
 	GameSelectionMenu g(renderer, theme);
 	g.lockRender();
