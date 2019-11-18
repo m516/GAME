@@ -1,14 +1,12 @@
 #include "mainMenu.h"
 
+#include "profileMenu.h"
 
 MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 {
-	//Set the renderer
+	// set the renderer
 	renderer = window;
-	this->theme = theme;
-
-	//Initialize a new theme if necessary
-	if (theme == NULL)  theme = new Theme();
+    this->theme = theme == NULL ? new Theme() : theme;
 
 	// Create main menu
 	title = new sf::Text();
@@ -33,6 +31,7 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 	menu->addItem(item);
 
 	item = MenuItem(theme, "PROFILE", NULL);
+    item.setPressedFunction(std::bind(&MainMenu::profile, this));
 	menu->addItem(item);
 
 	item = MenuItem(theme, "SETTINGS", NULL);
@@ -50,14 +49,16 @@ MainMenu::~MainMenu()
 
 void MainMenu::render()
 {
-	if (renderer != NULL) {
+	if (renderer != NULL) 
+    {
 		renderer->draw(*title);
 		menu->update();
 		menu->render();
 	}
 }
 
-void MainMenu::play() {
+void MainMenu::play() 
+{
 	if (pong_game != NULL) delete pong_game;
 
 	//Create Pong instance
@@ -69,4 +70,10 @@ void MainMenu::play() {
 	pong_game->setTheme(theme);
 
 	pong_game->lockRender();
+}
+
+void MainMenu::profile()
+{
+    ProfileMenu* profileMenu = new ProfileMenu(renderer, theme);
+    profileMenu->lockRender();
 }
