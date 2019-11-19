@@ -77,6 +77,8 @@ void PlayerCounter::lockUntilFull()
 		render();
 		renderer->display();
 	}
+
+	NetworkConnection::send("G");
 }
 
 int PlayerCounter::getNumPlayers()
