@@ -1,7 +1,7 @@
 #include "friendsListMenu.h"
 
 #include "iostream"
-#include <SFML\Network\Http.hpp>
+#include <SFML/Network/Http.hpp>
 
 FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
 {
