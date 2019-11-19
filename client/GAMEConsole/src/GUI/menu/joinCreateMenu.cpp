@@ -63,8 +63,7 @@ void JoinCreateMenu::render()
 void JoinCreateMenu::joinGame()
 {
 	//Begin game
-	game->lockRender();
-	unlockRender();
+	gameID = 0;
 }
 
 void JoinCreateMenu::createGame()
