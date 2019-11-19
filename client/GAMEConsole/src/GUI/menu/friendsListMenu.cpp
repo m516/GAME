@@ -1,5 +1,7 @@
 #include "friendsListMenu.h"
 
+#include "iostream"
+
 FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
 {
     renderer = window;
@@ -19,22 +21,23 @@ FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
     friendsMenu->setSize(window->getSize().x - 10, 200);
 
     // TODO: loop through user's friends instead
-    MenuItem friendItem(theme, "ASTRELION", NULL);
-    // friendItem.setPressedFunction(std::bind(NULL, this)); // TODO replace NULL with calling function that displays user profile
-    friendsMenu->addItem(friendItem);
+    char* friends[] = {
+        "ASTRELION", 
+        "YodaSpock", 
+        "mmundy", 
+        "Parker"
+    };
 
-    friendItem = MenuItem(theme, "YodaSpock", NULL);
-    friendsMenu->addItem(friendItem);
+    for (int i = 0; i < sizeof(friends) / sizeof(friends[0]); i++)
+    {
+        MenuItem friendItem(theme, friends[i], NULL);
+        friendItem.setPressedFunction(std::bind(&FriendsListMenu::viewProfile, this, i));
+        friendsMenu->addItem(friendItem);
+    }
 
-    friendItem = MenuItem(theme, "mmundy", NULL);
-    friendsMenu->addItem(friendItem);
-
-    friendItem = MenuItem(theme, "Parker", NULL);
-    friendsMenu->addItem(friendItem);
-
-    friendItem = MenuItem(theme, "Remove Friend", NULL);
-    friendItem.setPressedFunction(std::bind(&FriendsListMenu::toggleFriendRemove, this));
-    friendsMenu->addItem(friendItem);
+    MenuItem removeItem(theme, "Remove Friend", NULL);
+    removeItem.setPressedFunction(std::bind(&FriendsListMenu::toggleFriendRemove, this));
+    friendsMenu->addItem(removeItem);
 }
 
 FriendsListMenu::~FriendsListMenu()
@@ -61,6 +64,28 @@ void FriendsListMenu::render()
         friendsMenu->update();
         friendsMenu->render();
     }
+}
+
+/**
+ * View selected user's profile
+ */
+void FriendsListMenu::viewProfile(int userID)
+{
+    std::cout << "Viewing user with ID " << userID << std::endl;
+
+    // TODO get associated user and display profile
+}
+
+/**
+ * Remove selected friend and switch to normal mode
+ */
+void FriendsListMenu::removeFriend(int userID)
+{
+    std::cout << "Removing user with ID " << userID << std::endl;
+
+    // TODO remove associated user
+
+    toggleFriendRemove();
 }
 
 /** 

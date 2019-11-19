@@ -17,4 +17,6 @@ class FriendsListMenu : public LockingElement
         MenuPane* friendsMenu;
 
         void toggleFriendRemove();
+        void viewProfile(int userID);
+        void removeFriend(int userID);
 };
