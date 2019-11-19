@@ -17,6 +17,8 @@ DOCFILE := Doxyfile
 
 all: $(MAIN)
 
+remake: clean all
+
 $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
