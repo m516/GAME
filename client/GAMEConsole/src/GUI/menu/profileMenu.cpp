@@ -78,7 +78,8 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     level.setColor(theme->color_selected);
     level.setString(user_level);
     level.setPosition(32, 24);
-    level = theme->sharpenText(level);
+
+	level = theme->sharpenText(level);
 
 	username.setCharacterSize(18);
 	username.setFont(theme->font_standard);
