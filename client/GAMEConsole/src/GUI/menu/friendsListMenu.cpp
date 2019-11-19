@@ -1,6 +1,7 @@
 #include "friendsListMenu.h"
 
 #include "iostream"
+#include <SFML\Network\Http.hpp>
 
 FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
 {
@@ -22,10 +23,10 @@ FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
 
     // TODO: loop through user's friends instead
     char* friends[] = {
+		"YodaSpock",
+		"ParkerClimbs",
         "ASTRELION", 
-        "YodaSpock", 
-        "mmundy", 
-        "Parker"
+        "Mmundy"
     };
 
     for (int i = 0; i < sizeof(friends) / sizeof(friends[0]); i++)
@@ -71,9 +72,11 @@ void FriendsListMenu::render()
  */
 void FriendsListMenu::viewProfile(int userID)
 {
-    std::cout << "Viewing user with ID " << userID << std::endl;
-
-    // TODO get associated user and display profile
+	//0 indexing versus 1 indexing
+	int id = userID + 1;
+	ProfileMenu p(renderer, theme, id);
+	p.lockRender();
+    std::cout << "Viewing user with ID " << id << std::endl;
 }
 
 /**
