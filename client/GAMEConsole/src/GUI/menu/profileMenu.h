@@ -2,16 +2,18 @@
 
 #include "../lockingElement.h"
 #include <string>
+#include <SFML/Network.hpp>
 
 class ProfileMenu : public LockingElement
 {
     public:
         /** Menu for user profiles */
-        ProfileMenu(sf::RenderWindow* window, Theme* theme);
+        ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id);
         ~ProfileMenu();
         void render(); // Inherits from GUIElement
 
     private:
+		sf::Http http;
         sf::Text username = sf::Text();
         sf::Text usernameLabel = sf::Text();
         sf::Text userID = sf::Text();
