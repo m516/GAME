@@ -69,6 +69,7 @@ public class WebSocketServer {
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
     	}
+    	
     	if(message.startsWith("GSO"))
     	{
 			String s = "";
@@ -121,6 +122,7 @@ public class WebSocketServer {
 				int maxP = Integer.parseInt("" + message.charAt(2));
 				int gameID = game.size();
 				String s = "";
+	    		broadcastnew("C" + gameType + maxP);
 				if(gameID < 10)
 				{
 					s = "0";
@@ -467,6 +469,45 @@ public class WebSocketServer {
 	        }
 	    });
 	}
+    
 	//***************************************END OLD METHODS******************************************************************
+    /**
+     * Send message to all the sessions that are being used by the websocket
+     * @param message message to be sent
+     * @throws IOException
+     */
+    private static void broadcastNew(String message) 
+    	      throws IOException 
+    {	  
+    	sessionGameObjectMap.forEach((session, username) -> {
+    		synchronized (session) {
+	            try {
+	                session.getBasicRemote().sendText(message);
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    });
+	}
+    private String broadcastHelp(String message) throws IOException
+    {
+    	StringBuilder bs = new StringBuilder(message);
+    	
+    	if(message.startsWith("."))
+    	{
+    		bs.deleteCharAt(0);
+    	}
+    	else
+    	{
+    		message = bs.toString();
+    		message = "." + message;
+    		broadcastNew(message);
+    	}
+    	return message;
+    }
+    private static void sendToOtherPlayers(Session session, String message)
+    {
+    	
+    }
 }
 
