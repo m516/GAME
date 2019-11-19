@@ -10,4 +10,8 @@ class PartyMenu : public LockingElement
         void render();
 
     private:
+        sf::Text title = sf::Text();
+        sf::Text partyMembers = sf::Text();
+        sf::Text partySize = sf::Text();
+        sf::Text partySizeLabel = sf::Text();
 };
