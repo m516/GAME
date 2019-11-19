@@ -76,11 +76,6 @@ void MainMenu::profile()
 	p.lockRender();
 }
 
-void MainMenu::play() {
-	GameSelectionMenu g(renderer, theme);
-	g.lockRender();
-}
-
 void MainMenu::party()
 {
     PartyMenu partyMenu(renderer, theme);

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\games\playerCounter.cpp" />
     <ClCompile Include="src\GUI\menu\components\textField.cpp" />
+    <ClCompile Include="src\GUI\menu\friendsListMenu.cpp" />
     <ClCompile Include="src\GUI\menu\gameMenu.cpp" />
     <ClCompile Include="src\GUI\menu\gameSelectionMenu.cpp" />
     <ClCompile Include="src\GUI\menu\joinCreateMenu.cpp" />
@@ -42,6 +43,8 @@
     <ClCompile Include="src\GUI\guiElement.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuItem.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuPane.cpp" />
+    <ClCompile Include="src\GUI\menu\partyMenu.cpp" />
+    <ClCompile Include="src\GUI\menu\settingsMenu.cpp" />
     <ClCompile Include="src\GUI\menu\statMenu.cpp" />
     <ClCompile Include="src\GUI\menu\profileMenu.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
@@ -133,6 +136,7 @@
     <ClInclude Include="include\cereal\types\vector.hpp" />
     <ClInclude Include="src\games\playerCounter.h" />
     <ClInclude Include="src\GUI\menu\components\textField.h" />
+    <ClInclude Include="src\GUI\menu\friendsListMenu.h" />
     <ClInclude Include="src\GUI\menu\gameMenu.h" />
     <ClInclude Include="src\GUI\menu\gameSelectionMenu.h" />
     <ClInclude Include="src\GUI\menu\joinCreateMenu.h" />
@@ -156,6 +160,8 @@
     <ClInclude Include="src\GUI\menu\components\menuItem.h" />
     <ClInclude Include="src\GUI\menu\components\menuPane.h" />
     <ClInclude Include="src\GUI\menu\menu.h" />
+    <ClInclude Include="src\GUI\menu\partyMenu.h" />
+    <ClInclude Include="src\GUI\menu\settingsMenu.h" />
     <ClInclude Include="src\GUI\menu\statMenu.h" />
     <ClInclude Include="src\GUI\menu\profileMenu.h" />
     <ClInclude Include="src\GUI\theme.h" />
