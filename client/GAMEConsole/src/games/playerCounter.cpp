@@ -56,8 +56,7 @@ void PlayerCounter::render()
 
 void PlayerCounter::ping()
 {
-
-	NetworkConnection::send("GS");
+	Session::updateAvailableGames();
 }
 
 void PlayerCounter::lockUntilFull()
