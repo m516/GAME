@@ -19,20 +19,18 @@
 #endif
 
 
-ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
+ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 {
     renderer = window;
     this->theme = theme == NULL ? new Theme() : theme;
+	int id = user_id;
 
 
 	//MAKE THE GET REQUEST TO GET ALL THE DATA FROM THE DATABASE
 	sf::Http http;
 	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
-	/**
-	TODO UNHARD CODE THIS
-	CHANGE THIS ASAP
-	*/
-	int id = 1;
+	
+	
 	std::string strId = std::to_string(id);
 	std::string path = ("user/" + strId);
 	sf::Http::Request request(path, sf::Http::Request::Get);

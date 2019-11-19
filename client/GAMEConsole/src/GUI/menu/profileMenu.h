@@ -8,7 +8,7 @@ class ProfileMenu : public LockingElement
 {
     public:
         /** Menu for user profiles */
-        ProfileMenu(sf::RenderWindow* window, Theme* theme);
+        ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id);
         ~ProfileMenu();
         void render(); // Inherits from GUIElement
 
