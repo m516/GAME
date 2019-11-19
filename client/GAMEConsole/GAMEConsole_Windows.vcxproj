@@ -47,7 +47,6 @@
     <ClCompile Include="src\GUI\menu\settingsMenu.cpp" />
     <ClCompile Include="src\GUI\menu\statMenu.cpp" />
     <ClCompile Include="src\GUI\menu\profileMenu.cpp" />
-    <ClCompile Include="src\GUI\menu\settingsMenu.cpp" />
     <ClCompile Include="src\GUI\theme.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\modules\events.cpp" />
