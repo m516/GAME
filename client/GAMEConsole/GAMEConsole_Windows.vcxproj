@@ -52,6 +52,7 @@
     <ClCompile Include="src\modules\events.cpp" />
     <ClCompile Include="src\modules\network.cpp" />
     <ClCompile Include="src\modules\renderer.cpp" />
+    <ClCompile Include="src\modules\session.cpp" />
     <ClCompile Include="src\UI\menuNavigator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />
     <ClInclude Include="src\modules\renderer.h" />
+    <ClInclude Include="src\modules\session.h" />
     <ClInclude Include="src\UI\menuNavigator.h" />
   </ItemGroup>
   <ItemGroup>
