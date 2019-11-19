@@ -54,6 +54,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 			case 0: 
 			{//These are the values to extract exaclty the username --DON'T CHANGE
 				token = shortenedString.substr(0, pos);
+				std::cout << token << std::endl;
 				user_name = token.substr(12, pos - 13);
 				count++;
 			}
@@ -67,6 +68,9 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 		shortenedString.erase(0, pos + delimeter.length());
 	}
 	user_level = shortenedString.substr(12, pos);
+	std::cout << user_level << std::endl;
+	std::cout << user_name << std::endl;
+
 
 
     levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));

@@ -1,6 +1,10 @@
 #include "mainMenu.h"
 
 #include "profileMenu.h"
+#include "gameSelectionMenu.h"
+#include "partyMenu.h"
+#include "friendsListMenu.h"
+#include "settingsMenu.h"
 
 MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 {
@@ -28,9 +32,11 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 	menu->addItem(item);
 
 	item = MenuItem(theme, "PARTY", NULL);
+    item.setPressedFunction(std::bind(&MainMenu::party, this));
 	menu->addItem(item);
 
 	item = MenuItem(theme, "FRIENDS", NULL);
+    item.setPressedFunction(std::bind(&MainMenu::friendsList, this));
 	menu->addItem(item);
 
 	item = MenuItem(theme, "PROFILE", NULL);
@@ -38,6 +44,7 @@ MainMenu::MainMenu(sf::RenderWindow* window, Theme* theme = 0)
 	menu->addItem(item);
 
 	item = MenuItem(theme, "SETTINGS", NULL);
+    item.setPressedFunction(std::bind(&MainMenu::settings, this));
 	menu->addItem(item);
 }
 
@@ -57,6 +64,12 @@ void MainMenu::render()
 	}
 }
 
+void MainMenu::play() 
+{
+	GameSelectionMenu g(renderer, theme);
+	g.lockRender();
+}
+
 void MainMenu::profile()
 {
 	ProfileMenu p(renderer, theme);
@@ -66,4 +79,22 @@ void MainMenu::profile()
 void MainMenu::play() {
 	GameSelectionMenu g(renderer, theme);
 	g.lockRender();
+}
+
+void MainMenu::party()
+{
+    PartyMenu partyMenu(renderer, theme);
+    partyMenu.lockRender();
+}
+
+void MainMenu::friendsList()
+{
+    FriendsListMenu friendsListMenu(renderer, theme);
+    friendsListMenu.lockRender();
+}
+
+void MainMenu::settings()
+{
+    SettingsMenu settingsMenu(renderer, theme);
+    settingsMenu.lockRender();
 }

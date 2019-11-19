@@ -63,14 +63,13 @@ void JoinCreateMenu::render()
 void JoinCreateMenu::joinGame()
 {
 	//Begin game
-	game->lockRender();
-	unlockRender();
+	gameID = 0;
 }
 
 void JoinCreateMenu::createGame()
 {
 	//Begin game
-	NetworkConnection::send("C" + std::to_string(game->getNumPlayers()) + std::to_string(game->getGameType()));
+	NetworkConnection::send("C" + std::to_string(game->getGameType()) + std::to_string(game->getNumPlayers()));
 }
 
 void JoinCreateMenu::getGameID()

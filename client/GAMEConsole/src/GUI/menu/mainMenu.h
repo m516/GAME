@@ -14,7 +14,6 @@ class MainMenu : public LockingElement
         ~MainMenu();
 
         void render(); // Inherited from GUIElement
-        void profile();
 
     private:
         MenuPane* menu = 0;
@@ -28,7 +27,9 @@ class MainMenu : public LockingElement
 
         //private menu-specific functions
         void play();
-
-	
+        void profile();
+        void friendsList();
+        void party();
+        void settings();
 };
 
