@@ -46,7 +46,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 	size_t pos = 0;
 	std::string token;
 	std::string user_name;
-	std::string user_level;
+	std::string user_level; 
 	int count = 0;
 
 	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
