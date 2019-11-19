@@ -29,13 +29,12 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 	sf::Http http;
 	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
 	//TODO UNHARD CODE THIS
-	int id = 4;
+	int id = 3;
 	std::string strId = std::to_string(id);
 	std::string path = ("user/" + strId);
 	sf::Http::Request request(path, sf::Http::Request::Get);
 	sf::Http::Response response = http.sendRequest(request);
 	std::string responseString = response.getBody();
-	std::cout << responseString << std::endl;
 	std::string shortenedString = responseString.substr(1, (responseString.length() - 2));
 	int size = shortenedString.length();
 
@@ -43,17 +42,33 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 
 	size_t pos = 0;
 	std::string token;
-	//ADD USERNAME
-	//ADD WINS 
-	//ADD LOSES 
-	//ADD LEVEL
+	std::string user_name;
+	std::string user_level;
+	int count = 0;
 
 	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
+		switch (count) {
+		case 0: {
+			token = shortenedString.substr(0, pos);
+			std::cout << pos << std::endl;
+			//These are the values to extract exaclty the username --DON'T CHANGE
+			user_name = token.substr(12, pos - 13);
+			std::cout << pos << std::endl;
 
-		token = shortenedString.substr(0, pos);
-		std::cout << token << std::endl;
+			count++;
+		}
+		case 1: {
+
+		}
+		default: {
+
+		}
+		}
+		
 		shortenedString.erase(0, pos + delimeter.length());
 	}
+	std::cout << user_name << std::endl;
+	std::cout << user_level << std::endl;
 	std::cout << shortenedString << std::endl;
 
 
