@@ -65,12 +65,34 @@ public class WebSocketServer {
     {
     	if(sessionGameObjectMap.get(session) == null)
     	{
+    		for(int i = 0; i < players.size(); i++)
+    		{
+    			if(players.get(i) != sessionGameObjectMap.get(session))
+    			{
+    				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText("!");
+    			}
+    		}
     		WebGameObject g = new WebGameObject(0,"0","0");
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
-    		//TODO Send broadcast of new players
+    		players.add(g);
+    	}
+    	if(message.startsWith("!"))
+    	{
+    		WebGameObject g = new WebGameObject(0,"0","0");
+    		sessionGameObjectMap.put(session, g);
+    		GameObjectSessionMap.put(g, session);
+    		players.add(g);
     	}
     	//TODO Setup sending to multiple people
+    	if(message.startsWith("."))
+    	{
+    		message = message.substring(1);
+    	}
+    	else
+    	{
+    		sendMessageToAll(session, message);
+    	}
     	
     	if(message.startsWith("GSO"))
     	{
@@ -440,6 +462,7 @@ public class WebSocketServer {
 //	}
 	private void sendMessageToAll(Session session, String message) throws IOException
 	{
+		message = "." + message;
 		for(int i = 0; i < players.size(); i++)
 		{
 			if(players.get(i) != sessionGameObjectMap.get(session))
