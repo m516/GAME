@@ -28,8 +28,11 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 	//MAKE THE GET REQUEST TO GET ALL THE DATA FROM THE DATABASE
 	sf::Http http;
 	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
-	//TODO UNHARD CODE THIS
-	int id = 3;
+	/**
+	TODO UNHARD CODE THIS
+	CHANGE THIS ASAP
+	*/
+	int id = 1;
 	std::string strId = std::to_string(id);
 	std::string path = ("user/" + strId);
 	sf::Http::Request request(path, sf::Http::Request::Get);
@@ -48,28 +51,22 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
 
 	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
 		switch (count) {
-		case 0: {
-			token = shortenedString.substr(0, pos);
-			std::cout << pos << std::endl;
-			//These are the values to extract exaclty the username --DON'T CHANGE
-			user_name = token.substr(12, pos - 13);
-			std::cout << pos << std::endl;
-
-			count++;
+			case 0: 
+			{//These are the values to extract exaclty the username --DON'T CHANGE
+				token = shortenedString.substr(0, pos);
+				user_name = token.substr(12, pos - 13);
+				count++;
+			}
+	
+			default: 
+			{
+				token = shortenedString.substr(0, pos);
+				count++;
+			}
 		}
-		case 1: {
-
-		}
-		default: {
-
-		}
-		}
-		
 		shortenedString.erase(0, pos + delimeter.length());
 	}
-	std::cout << user_name << std::endl;
-	std::cout << user_level << std::endl;
-	std::cout << shortenedString << std::endl;
+	user_level = shortenedString.substr(12, pos);
 
 
     levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));
@@ -79,16 +76,14 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     level.setCharacterSize(24);
     level.setFont(theme->font_standard);
     level.setColor(theme->color_selected);
-	//TODO DON'T HARDCODE THIS
-    level.setString("1");
+    level.setString(user_level);
     level.setPosition(32, 24);
     level = theme->sharpenText(level);
 
 	username.setCharacterSize(18);
 	username.setFont(theme->font_standard);
 	username.setColor(theme->color_selected);
-	//TODO DON'T HARDCODE THIS
-	username.setString("ASTRELION");
+	username.setString(user_name);
 	username.setPosition(78, 5);
     username = theme->sharpenText(username);
 
@@ -102,8 +97,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme)
     userID.setCharacterSize(8);
     userID.setFont(theme->font_standard);
     userID.setColor(theme->color_selected);
-	//TODO DON'T HARDCODE THIS
-    userID.setString("ABCD EFGH");
+    userID.setString(strId);
     userID.setPosition(78, 46);
     userID = theme->sharpenText(userID);
     
