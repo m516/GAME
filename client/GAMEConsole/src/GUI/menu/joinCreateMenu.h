@@ -5,6 +5,7 @@
 #include "../../application.h"
 #include "components/menuPane.h"
 #include "../../modules/network.h"
+#include "../../modules/session.h"
 
 /*This menu is made to call websocket op-codes that tell the server to create a new online game
 or to join an existing one. Note that will only run preexisting games and WILL NOT create 
