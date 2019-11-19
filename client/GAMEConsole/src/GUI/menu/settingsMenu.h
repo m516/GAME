@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../lockingElement.h"
+#include "components/menuPane.h"
 
 class SettingsMenu : public LockingElement
 {
@@ -10,4 +11,6 @@ class SettingsMenu : public LockingElement
         void render();
 
     private:
+        sf::Text title;
+        MenuPane* settingsItems;
 };
