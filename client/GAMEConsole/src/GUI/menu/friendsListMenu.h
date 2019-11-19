@@ -1,5 +1,6 @@
 #pragma once
 
+#include "components/menuPane.h"
 #include "../lockingElement.h"
 
 class FriendsListMenu : public LockingElement
@@ -10,4 +11,10 @@ class FriendsListMenu : public LockingElement
         void render();
 
     private:
+        bool removingFriend;
+        std::string titleString;
+        sf::Text title;
+        MenuPane* friendsMenu;
+
+        void toggleFriendRemove();
 };

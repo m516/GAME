@@ -11,6 +11,6 @@ class SettingsMenu : public LockingElement
         void render();
 
     private:
-        sf::Text title;
+        sf::Text title = sf::Text();
         MenuPane* settingsItems;
 };
