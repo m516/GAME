@@ -164,7 +164,6 @@
     <ClInclude Include="src\GUI\menu\settingsMenu.h" />
     <ClInclude Include="src\GUI\menu\statMenu.h" />
     <ClInclude Include="src\GUI\menu\profileMenu.h" />
-    <ClInclude Include="src\GUI\menu\settingsMenu.h" />
     <ClInclude Include="src\GUI\theme.h" />
     <ClInclude Include="src\modules\events.h" />
     <ClInclude Include="src\modules\network.h" />
