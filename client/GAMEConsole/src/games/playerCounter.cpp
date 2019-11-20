@@ -20,8 +20,6 @@ PlayerCounter::PlayerCounter(Game* game)
 
 	numJoinedLabel->setFillColor(theme->color_deselected);
 	gameIDLabel->setFillColor(theme->color_selected);
-
-	NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&PlayerCounter::checkGameStatus, this));
 }
 
 PlayerCounter::~PlayerCounter()
@@ -32,11 +30,23 @@ PlayerCounter::~PlayerCounter()
 
 void PlayerCounter::render()
 {
+
+	counter++;
+	if (counter == 100) {
+		counter = 0;
+		Session::updateAvailableGames();
+	}
+
 	if (renderer != NULL) 
 	{
 
-		gameIDLabel->setString("Waiting for game " + std::to_string(game->getGameID()));
-		numJoinedLabel->setString("1 of " + std::to_string(game->getNumPlayers()) + " players has joined");
+		gameIDLabel->setString("Waiting to start");
+		if (Session::currentGame()==nullptr) {
+			numJoinedLabel->setString("NULL GAME");
+		}
+		else {
+			numJoinedLabel->setString(Session::currentGame()->getInfo());
+		}
 
 
 		gameIDLabel->setCharacterSize(renderer->getSize().y / 8);
@@ -54,32 +64,6 @@ void PlayerCounter::render()
 	}
 }
 
-void PlayerCounter::ping()
-{
-	Session::updateAvailableGames();
-}
-
-void PlayerCounter::lockUntilFull()
-{
-	while (numJoinedPlayers < expectedNumPlayers || !NetworkConnection::isConnected())
-	{
-		ping();
-		//Sleep to not hog the CPU and network
-		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-		
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			return;
-		}
-
-		//Render
-		renderer->clear();
-		render();
-		renderer->display();
-	}
-
-	NetworkConnection::send("G");
-}
-
 int PlayerCounter::getNumPlayers()
 {
 	return 0;
@@ -88,20 +72,4 @@ int PlayerCounter::getNumPlayers()
 bool PlayerCounter::isFull()
 {
 	return false;
-}
-
-void PlayerCounter::checkGameStatus() {
-	/*
-	std::string response = NetworkConnection::getString();
-	std::string delimiter = ";";
-
-	size_t pos = 0;
-	std::string token;
-	while ((pos = response.find(delimiter)) != std::string::npos) {
-		token = response.substr(0, pos);
-		std::cout << token << std::endl;
-		response.erase(0, pos + delimiter.length());
-	}
-	std::cout << response << std::endl;
-	*/
 }
