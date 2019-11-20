@@ -26,7 +26,6 @@ void PaddleNetworkController::setLeftPaddleAction(paddle_action_t action)
 }
 
 void PaddleNetworkController::beginTransmission() {
-		NetworkConnection::send("G");
 }
 
 int PaddleNetworkController::update()

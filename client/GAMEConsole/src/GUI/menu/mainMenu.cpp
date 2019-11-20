@@ -72,8 +72,11 @@ void MainMenu::play()
 
 void MainMenu::profile()
 {
-    ProfileMenu profileMenu(renderer, theme);
-    profileMenu.lockRender();
+	/**
+	THIS IS HARDCODED RN - CHANGE IT ASAP
+	*/
+	ProfileMenu p(renderer, theme, 1);
+	p.lockRender();
 }
 
 void MainMenu::party()

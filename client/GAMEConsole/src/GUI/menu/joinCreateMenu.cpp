@@ -32,7 +32,7 @@ JoinCreateMenu::JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* them
 	item.setPressedFunction(std::bind(&JoinCreateMenu::joinGame, this));
 	menu->addItem(item);
 
-	NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&JoinCreateMenu::getGameID, this));
+	NetworkConnection::send("?");
 }
 
 JoinCreateMenu::~JoinCreateMenu()
@@ -49,11 +49,10 @@ void JoinCreateMenu::render()
 		menu->render();
 	}
 
-	if (gameID != -1) {
+	if (Session::getStatus() == Session::OnlineGame::Status::AVAILABLE) {
 		//Initialize in network mode
-		std::cout << "GameID set to " << std::to_string(gameID);
-		std::cout << std::endl;
-		game->setGameID(gameID);
+		Session::joinGame(Session::currentGame());
+		game->setRenderer(renderer);
 		game->beginNetworkGame();
 		game->lockRender();
 		unlockRender();
@@ -63,20 +62,10 @@ void JoinCreateMenu::render()
 void JoinCreateMenu::joinGame()
 {
 	//Begin game
-	game->lockRender();
-	unlockRender();
+	gameID = 0; //TODO get list
 }
 
 void JoinCreateMenu::createGame()
 {
-	//Begin game
-	NetworkConnection::send("C" + std::to_string(game->getNumPlayers()) + std::to_string(game->getGameType()));
-}
-
-void JoinCreateMenu::getGameID()
-{
-	std::string s = NetworkConnection::getString();
-	if (s.substr(0, 3) == "GID") {
-		gameID = std::stoi(s.substr(3, 2));
-	}
+	Session::createGame(game->getGameType(), game->getNumPlayers());
 }
