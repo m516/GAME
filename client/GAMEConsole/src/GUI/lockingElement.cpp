@@ -3,6 +3,8 @@
 
 #include <thread>
 
+
+
 void LockingElement::lockRender()
 {
 	locked = true;

@@ -35,7 +35,6 @@ private:
 	//private menu-specific functions
 	void joinGame();
 	void createGame();
-	void getGameID();
 
 	Game* game;
 };
