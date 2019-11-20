@@ -31,7 +31,7 @@ namespace Session {
 	}
 	void createGame(int game_type, int num_players)
 	{
-		NetworkConnection::send("C" + std::to_string(game_type) + std::to_string(num_players));
+		NetworkConnection::send("PLS" + std::to_string(game_type) + std::to_string(num_players));
 	}
 	void connectToGame(OnlineGame* game)
 	{
