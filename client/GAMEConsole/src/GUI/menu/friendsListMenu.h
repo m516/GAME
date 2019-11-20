@@ -2,6 +2,7 @@
 
 #include "components/menuPane.h"
 #include "../lockingElement.h"
+#include "profileMenu.h"
 
 class FriendsListMenu : public LockingElement
 {

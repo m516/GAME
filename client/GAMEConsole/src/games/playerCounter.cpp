@@ -56,8 +56,7 @@ void PlayerCounter::render()
 
 void PlayerCounter::ping()
 {
-
-	NetworkConnection::send("GS");
+	Session::updateAvailableGames();
 }
 
 void PlayerCounter::lockUntilFull()
@@ -77,6 +76,8 @@ void PlayerCounter::lockUntilFull()
 		render();
 		renderer->display();
 	}
+
+	NetworkConnection::send("G");
 }
 
 int PlayerCounter::getNumPlayers()

@@ -33,6 +33,8 @@ JoinCreateMenu::JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* them
 	menu->addItem(item);
 
 	NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&JoinCreateMenu::getGameID, this));
+
+	NetworkConnection::send("?");
 }
 
 JoinCreateMenu::~JoinCreateMenu()
@@ -63,14 +65,12 @@ void JoinCreateMenu::render()
 void JoinCreateMenu::joinGame()
 {
 	//Begin game
-	game->lockRender();
-	unlockRender();
+	gameID = 0;
 }
 
 void JoinCreateMenu::createGame()
 {
-	//Begin game
-	NetworkConnection::send("C" + std::to_string(game->getNumPlayers()) + std::to_string(game->getGameType()));
+	Session::createGame(game->getGameType(), game->getNumPlayers());
 }
 
 void JoinCreateMenu::getGameID()
