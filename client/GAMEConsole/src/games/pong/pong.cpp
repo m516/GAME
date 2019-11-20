@@ -45,17 +45,7 @@ void Pong::beginNetworkGame(){
 
 	//Create the player counter
 	player_counter = new PlayerCounter(this);
-
-	//Join the game
-	std::string join_command = "J";
-	if (gameID < 10) join_command += "0";
-	join_command += std::to_string(gameID);
-	join_command += std::to_string(getGameType());
-	join_command += "00000000";
-	NetworkConnection::send(join_command);
-
-	//Wait until all the players join to continue
-	player_counter->lockUntilFull();
+	player_counter->lockRender();
 
 	//Create the right paddle controller
 	right_controller = new PaddleKeyboardController;
@@ -192,12 +182,9 @@ void Pong::update(){
 }
 
 void Pong::render() {
-	//Check if the game has been properly configured
-	if (player_counter != NULL) {
-		if (!player_counter->isFull()) {
-			unlockRender();
-			return;
-		}
+	if (Session::currentGame()->status < Session::OnlineGame::Status::IN_PROGRESS) {
+		unlockRender();
+		return;
 	}
 
 	update();

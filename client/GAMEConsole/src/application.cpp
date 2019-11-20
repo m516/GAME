@@ -7,6 +7,7 @@
 #include "modules/renderer.h"
 #include "modules/events.h"
 #include "modules/network.h"
+#include "modules/session.h"
 
 Application::Application()
 {
@@ -31,8 +32,12 @@ Application::Application()
 	theme.border_size = 0;
 	theme.loadGenericFont();
 
+	NetworkConnection::connect();
+	Session::initialize();
+
 	renderer = new Renderer(this);
 	events = new Events(this);
+
 }
 
 /**
