@@ -36,8 +36,9 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 	sf::Http::Request request(path, sf::Http::Request::Get);
 	sf::Http::Response response = http.sendRequest(request);
 	std::string responseString = response.getBody();
-	std::string shortenedString = responseString.substr(1, (responseString.length() - 2));
+	std::string shortenedString = responseString.substr(1, (responseString.length()));
 	int size = shortenedString.length();
+	std::cout << shortenedString << std::endl;
 
 	std::string delimeter = ",";
 
@@ -45,31 +46,38 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 	std::string token;
 	std::string user_name;
 	std::string user_level; 
+	std::string user_address;
 	int count = 0;
 
-	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
-		switch (count) {
-			case 0: 
-			{//These are the values to extract exaclty the username --DON'T CHANGE
-				token = shortenedString.substr(0, pos);
-				std::cout << token << std::endl;
-				user_name = token.substr(12, pos - 13);
-				count++;
-			}
-	
-			default: 
-			{
-				token = shortenedString.substr(0, pos);
-				count++;
+	while ((count < 3)){
+		std::cout << "COUNT IS" << std::endl;
+		std::cout << count << std::endl;
+		if ((pos = shortenedString.find(delimeter)) != std::string::npos){
+			switch (count) {
+				case 0: {//USER LEVEL - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_level = token.substr(12, pos);
+					break;
+				}
+				case 1: {//USER ADDRESS - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_address = token.substr(11, pos - 12);
+					break;
+				}
+				case 2: {//USER NAME - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_name = token.substr(12, pos - 13);
+					break;
+				}
+				default: {//USER ID - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+				}
 			}
 		}
+		count++;
 		shortenedString.erase(0, pos + delimeter.length());
+
 	}
-	user_level = shortenedString.substr(12, pos);
-	std::cout << user_level << std::endl;
-	std::cout << user_name << std::endl;
-
-
 
     levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));
     levelSquare.setPosition(5, 5);
