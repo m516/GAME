@@ -21,6 +21,7 @@ namespace Session {
 		}Status;
 
 		typedef enum class Interaction {
+			NONE = -1,
 			CREATOR = 0,
 			PLAYER,
 			SPECTATOR,
@@ -70,4 +71,5 @@ namespace Session {
 	OnlineGame* getGame(int id);
 	OnlineGame::Status getStatus();
 	void networkMessageListener();
+	void clearGame();
 }
