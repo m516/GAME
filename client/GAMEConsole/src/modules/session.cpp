@@ -147,4 +147,9 @@ namespace Session {
 		}
 #endif
 	}
+	void clearGame()
+	{
+		current_game = OnlineGame();
+		current_role = OnlineGame::Interaction::NONE;
+	}
 }
