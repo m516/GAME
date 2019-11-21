@@ -4,6 +4,12 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
+stages:
+  - build
+  - test
+  - mavenbuild
+  - maventest
+
 frontend-build:
   tags:
     - c++_tag
@@ -30,3 +36,27 @@ frontend-test:
   script:
     - cd client/GAMEConsole/test/console_test
     - ./Console_Test
+
+
+maven-build: 
+  stage: mavenbuild
+  tags:
+    - spring-backend
+  script:
+    - cd GameProject.zip_expanded/GameProject
+    - mvn package -B
+
+maven-test:
+  stage: maventest
+  tags: 
+    - spring-backend
+  script: 
+    - cd GameProject.zip_expanded/GameProject
+    - mvn test
+  artifacts: 
+    paths:
+      - GameProject.zip_expanded/GameProject/target/*.jar
+
+
+
+    
