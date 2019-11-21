@@ -13,7 +13,7 @@ frontend-build:
   before_script:
     - apt update -y
     - apt upgrade -y
-    - apt -y install libsfml-dev cmake make
+    - apt -y install libsfml-dev cmake make libwebsocketpp-dev
   script:
     - cd client/GAMEConsole/test/console_test
     - cmake ./
