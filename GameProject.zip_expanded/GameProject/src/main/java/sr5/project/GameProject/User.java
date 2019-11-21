@@ -11,15 +11,17 @@ import javax.persistence.Table;
 public class User {
 	private int Id;
 	private String name;
-	private int user_level;
+	private int userLevel;
+	private String address;
 	
 	public User() {
 	}
 
-	public User(int id, String name, int user_level){
+	public User(int id, String name, int userLevel, String address){
 		this.Id = id;
 		this.name = name;
-		this.user_level = user_level;
+		this.userLevel = userLevel;
+		this.address = address;
 	}
 	
 	@Id
@@ -40,20 +42,19 @@ public class User {
 		this.name = username;
 	}
 	
+	public String getAddress() {
+		return address; 
+	}
 	
-//	public java.util.Date getDateCreated(){
-//		return dateCreated;
-//	}
-//	
-//	public void setDateCreated(java.util.Date dateCreated) {
-//		this.dateCreated = dateCreated;
-//	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	
 	public int getUserLevel() {
-		return user_level;
+		return userLevel;
 	}
 	
 	public void setUserLevel(int userLevel) {
-		this.user_level = userLevel;
+		this.userLevel = userLevel;
 	}
 }
