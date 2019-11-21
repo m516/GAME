@@ -65,25 +65,32 @@ public class WebSocketServer {
     {
     	if(sessionGameObjectMap.get(session) == null)
     	{
-    		for(int i = 0; i < players.size(); i++)
-    		{
-    			if(players.get(i) != sessionGameObjectMap.get(session))
-    			{
-    				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText("!");
-    			}
-    		}
     		WebGameObject g = new WebGameObject(0,"0","0");
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
-    		players.add(g);
+    		broadcastNew("I am here");
     	}
-    	if(message.startsWith("!"))
-    	{
-    		WebGameObject g = new WebGameObject(0,"0","0");
-    		sessionGameObjectMap.put(session, g);
-    		GameObjectSessionMap.put(g, session);
-    		players.add(g);
-    	}
+//    	if(sessionGameObjectMap.get(session) == null)
+//    	{
+//    		for(int i = 0; i < players.size(); i++)
+//    		{
+//    			if(players.get(i) != sessionGameObjectMap.get(session))
+//    			{
+//    				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText("!");
+//    			}
+//    		}
+//    		WebGameObject g = new WebGameObject(0,"0","0");
+//    		sessionGameObjectMap.put(session, g);
+//    		GameObjectSessionMap.put(g, session);
+//    		players.add(g);
+//    	}
+//    	if(message.startsWith("!"))
+//    	{
+//    		WebGameObject g = new WebGameObject(0,"0","0");
+//    		sessionGameObjectMap.put(session, g);
+//    		GameObjectSessionMap.put(g, session);
+//    		players.add(g);
+//    	}
     	//TODO Setup sending to multiple people
     	if(message.startsWith("."))
     	{
@@ -470,6 +477,19 @@ public class WebSocketServer {
 				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText(message);
 			}
 		}
+	}
+    private static void broadcastNew(String message) 
+  	      throws IOException 
+  {	  
+  	sessionGameObjectMap.forEach((session, username) -> {
+  		synchronized (session) {
+	            try {
+	                session.getBasicRemote().sendText(message);
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    });
 	}
 	//***************************************START OLD METHODS****************************************************************
 	private void sendMessageToPArticularUserOLD(String message) 
