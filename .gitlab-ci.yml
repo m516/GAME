@@ -30,3 +30,37 @@ frontend-test:
   script:
     - cd client/GAMEConsole/test/console_test
     - ./Console_Test
+
+# tags: "shell" should match with the tag name provided to runner, for spring runner should execute in shell.
+# Notice that in petclinic project, the spring project is in root of master, if yours is in folder then cd to that folder.
+maven-build:
+  stage: mavenbuild
+  tags:
+    - shell
+  script:
+    - cd Spring
+    - mvn package -B
+    
+    
+maven-build: 
+  stage: mavenbuild
+  tags:
+    - shell
+  script:
+    - cd GameProject.zip_expanded/GameProject
+    - mvn package -B
+
+maven-test:
+  stage: maventest
+  tags: 
+    - shell
+  script: 
+    - cd GameProject.zip_expanded/GameProject
+    - mvn test
+  artifacts: 
+    paths:
+      - GameProject.zip_expanded/GameProject/target/*.jar
+
+
+
+    
