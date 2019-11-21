@@ -4,6 +4,12 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
+stages:
+  - build
+  - test
+  - mavenbuild
+  - maventest
+
 frontend-build:
   tags:
     - c++_tag
@@ -33,7 +39,7 @@ frontend-test:
 
 
 maven-build: 
-  stage: build
+  stage: mavenbuild
   tags:
     - shell
   script:
@@ -41,7 +47,7 @@ maven-build:
     - mvn package -B
 
 maven-test:
-  stage: test
+  stage: maventest
   tags: 
     - shell
   script: 
