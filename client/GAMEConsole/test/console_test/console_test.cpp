@@ -2,6 +2,7 @@
 //
 
 #include "console_test.h"
+#include "application.h"
 
 using namespace std;
 
