@@ -33,7 +33,7 @@ frontend-test:
 
 
 maven-build: 
-  stage: mavenbuild
+  stage: build
   tags:
     - shell
   script:
@@ -41,7 +41,7 @@ maven-build:
     - mvn package -B
 
 maven-test:
-  stage: maventest
+  stage: test
   tags: 
     - shell
   script: 
