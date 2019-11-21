@@ -13,7 +13,7 @@ frontend-build:
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-    - apt-get --force-yes install libsfml-dev 
+    - apt-get -m install libsfml-dev 
         cmake 
         make 
         libwebsocketpp-dev 
