@@ -101,4 +101,8 @@ public class WebGames
 	{
 		return players.size();
 	}
+	public String getGameType()
+	{
+		return gameType;
+	}
 }
