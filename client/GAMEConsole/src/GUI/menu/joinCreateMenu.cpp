@@ -39,6 +39,7 @@ JoinCreateMenu::~JoinCreateMenu()
 {
 	delete menu;
 	delete title;
+	Session::clearGame();
 }
 
 void JoinCreateMenu::render()
