@@ -41,7 +41,7 @@ frontend-test:
 maven-build: 
   stage: mavenbuild
   tags:
-    - shell
+    - spring-backend
   script:
     - cd GameProject.zip_expanded/GameProject
     - mvn package -B
@@ -49,7 +49,7 @@ maven-build:
 maven-test:
   stage: maventest
   tags: 
-    - shell
+    - spring-backend
   script: 
     - cd GameProject.zip_expanded/GameProject
     - mvn test
