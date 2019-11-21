@@ -13,9 +13,10 @@ import javax.websocket.Session;
 //import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import org.slf4j.Logger;
+import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * This class runs the connection between different players while 
  * completing against each other in real time.
@@ -526,4 +527,5 @@ public class WebSocketServer {
     
 	//***************************************END OLD METHODS******************************************************************
 }
+
 
