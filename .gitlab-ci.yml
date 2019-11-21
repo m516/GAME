@@ -11,9 +11,16 @@ frontend-build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-    - apt update -y
-    - apt upgrade -y
-    - apt -y install libsfml-dev cmake make libwebsocketpp-dev libboost-all-dev
+    - apt-get update --yes
+    - apt-get upgrade --yes
+    - apt-get --yes install libsfml-dev 
+        cmake 
+        make 
+        libwebsocketpp-dev 
+        libboost-all-dev
+        build-essential
+        libgl1-mesa-dev 
+        libxt-dev
   script:
     - cd client/GAMEConsole/test/console_test
     - cmake ./
