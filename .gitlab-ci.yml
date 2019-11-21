@@ -23,6 +23,7 @@ frontend-build:
     - mkdir build && cd build
     - cmake -DCMAKE_INSTALL_PREFIX=/usr/include/websocketpp ..
     - cmake --build . --target install
+    - cd
   script:
     - cd client/GAMEConsole/test/console_test
     - cmake ./
