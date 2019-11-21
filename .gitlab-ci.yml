@@ -13,14 +13,13 @@ frontend-build:
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-    - apt-get --yes install libsfml-dev 
+    - apt-get --force-yes install libsfml-dev 
         cmake 
         make 
         libwebsocketpp-dev 
-        libboost-all-dev
-        build-essential
-        libgl1-mesa-dev 
-        libxt-dev
+        build-essential 
+        libssl-dev 
+        scons
   script:
     - cd client/GAMEConsole/test/console_test
     - cmake ./
