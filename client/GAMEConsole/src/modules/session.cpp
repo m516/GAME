@@ -1,6 +1,8 @@
 #include "session.h"
 
+#ifdef TEST_SYSTEM
 #define SESSION_DEBUG 1
+#endif
 
 namespace Session {
 

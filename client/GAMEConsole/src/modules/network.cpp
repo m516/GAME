@@ -8,8 +8,10 @@
 
 #define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
 
+#ifdef TEST_SYSTEM
 #define NETWORK_DEBUG
-//#define CONNECTION_DEBUG
+#define CONNECTION_DEBUG
+#endif
 
 
 namespace NetworkConnection {
