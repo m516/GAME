@@ -15,6 +15,7 @@ frontend-build:
     - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
     - cd client/GAMEConsole
     - make test
+    - find / libsfml-graphics.so.2.5
   artifacts:
     paths:
       - client/GAMEConsole
@@ -25,5 +26,6 @@ frontend-test:
     - c++_tag
   stage: test
   script:
+    - find / libsfml-graphics.so.2.5
     - cd client/GAMEConsole
     - ./console-test
