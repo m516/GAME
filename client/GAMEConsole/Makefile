@@ -15,21 +15,22 @@ MAIN := game
 DOCCMD := doxygen
 DOCFILE := Doxyfile
 
+ifdef ($(TEST),true)
+TEST_FLAGS = "-DTEST_SYSTEM"
+else
+TEST_FLAGS = ""
+endif
+
 all: $(MAIN)
 
 remake: clean all
 
 $(MAIN): $(OBJ_FILES)
-	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
+	g++ $(CLFAGS) $(TEST_FLAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
-	ifeq ($(TEST),true)
-		@mkdir -p $(OBJ_DIRS)
-		g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
-	else
-		@mkdir -p $(OBJ_DIRS)
-		g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
-	endif
+	@mkdir -p $(OBJ_DIRS)
+	g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
 
 .PHONY: clean docs depend test
 
