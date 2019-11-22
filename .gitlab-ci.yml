@@ -26,4 +26,4 @@ frontend-test:
   stage: test
   script:
     - cd client/GAMEConsole
-    - ./test
+    - ./console-test
