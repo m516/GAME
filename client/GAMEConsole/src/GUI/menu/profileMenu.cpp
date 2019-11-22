@@ -19,18 +19,18 @@
 #endif
 
 
-ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
+ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 {
-    renderer = window;
-    this->theme = theme == NULL ? new Theme() : theme;
+	renderer = window;
+	this->theme = theme == NULL ? new Theme() : theme;
 	int id = user_id;
 
 
 	//MAKE THE GET REQUEST TO GET ALL THE DATA FROM THE DATABASE
 	sf::Http http;
 	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
-	
-	
+
+
 	std::string strId = std::to_string(id);
 	std::string path = ("user/" + strId);
 	sf::Http::Request request(path, sf::Http::Request::Get);
@@ -79,9 +79,9 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
 	}
 
-    levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));
-    levelSquare.setPosition(5, 5);
-    levelSquare.setFillColor(sf::Color::Blue);
+	levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));
+	levelSquare.setPosition(5, 5);
+	levelSquare.setFillColor(sf::Color::Blue);
 
     level.setCharacterSize(24);
     level.setFont(theme->font_standard);
@@ -152,36 +152,37 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
 ProfileMenu::~ProfileMenu()
 {
-    
+
 }
 
 void ProfileMenu::render()
 {
-	if (renderer != NULL) 
-    {
-        renderer->draw(levelSquare);
-        renderer->draw(level);
+	if (renderer != NULL)
+	{
+		renderer->draw(levelSquare);
+		renderer->draw(level);
 		renderer->draw(usernameLabel);
-        renderer->draw(username);
-        renderer->draw(userID);
-        renderer->draw(userIDLabel);
-        renderer->draw(friends);
-        renderer->draw(friendsLabel);
-        renderer->draw(games);
-        renderer->draw(gamesLabel);
+		renderer->draw(username);
+		renderer->draw(userID);
+		renderer->draw(userIDLabel);
+		renderer->draw(friends);
+		renderer->draw(friendsLabel);
+		renderer->draw(games);
+		renderer->draw(gamesLabel);
 	}
 }
+
 
 /*
 // https://www.includehelp.com/cpp-programs/get-mac-address-of-linux-based-network-device.aspx
 std::string ProfileMenu::getMacAddress()
 {
-    std::string macAddress;
-   	int fd;
+	std::string macAddress;
+	int fd;
 	struct ifreq ifr;
 	char *iface = "wlan0";
 	char *mac;
-	
+
 	fd = socket(AF_INET, SOCK_DGRAM, 0);
 
 	ifr.ifr_addr.sa_family = AF_INET;
@@ -190,16 +191,16 @@ std::string ProfileMenu::getMacAddress()
 	ioctl(fd, SIOCGIFHWADDR, &ifr);
 
 	close(fd);
-	
+
 	mac = (char *)ifr.ifr_hwaddr.sa_data;
-    int test1 = mac[0];
-    printf("%02X ", test1 & 0xFF);
-    printf("%02X ", mac[1]);
-	
-    for (int i = 0; i <= 5; i++)
-    {
-        macAddress += mac[i] & 0xff;
-    }
+	int test1 = mac[0];
+	printf("%02X ", test1 & 0xFF);
+	printf("%02X ", mac[1]);
+
+	for (int i = 0; i <= 5; i++)
+	{
+		macAddress += mac[i] & 0xff;
+	}
 
 	//display mac address
 	//sprintf((char *)uc_Mac,(const char *)"%.2x:%.2x:%.2x:%.2x:%.2x:%.2x\n" , mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
