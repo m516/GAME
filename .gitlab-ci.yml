@@ -22,6 +22,9 @@ frontend-build:
     - ldconfig -v
     - cd client/GAMEConsole
     - make all TEST=true
+  artifacts:
+    paths:
+      - client/GAMEConsole/
 
 # run tests using the binary built before
 frontend-test:
