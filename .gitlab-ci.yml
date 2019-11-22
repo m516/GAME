@@ -6,38 +6,25 @@ image: gcc
 
 stages:
   - build
-  - test
   - mavenbuild
   - maventest
 
-frontend-build:
+frontend:
   tags:
     - c++_tag
   stage: build
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-  script:
     - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
     - ldconfig -v
     - cd client/GAMEConsole
-    - make all TEST=true
+  script:
+    - make all TEST=true -j4
+    - ./game
   artifacts:
     paths:
       - client/GAMEConsole/
-
-# run tests using the binary built before
-frontend-test:
-  tags:
-    - c++_tag
-  stage: test
-  script:
-    - ls
-    - ls client/GAMEConsole
-    - client/GAMEConsole/game
-  dependencies:
-    - frontend-build
-
 
 maven-build:
   stage: mavenbuild
