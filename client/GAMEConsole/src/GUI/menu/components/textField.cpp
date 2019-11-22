@@ -76,12 +76,12 @@ void TextField::updateKeys() {
 		}
 	}
 
-	if (control_status[sf::Keyboard::Key::Backspace] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::BackSpace] == Status::PRESSED) {
 		if(text.size()>0) text.pop_back();
 		label.setString(text);
 	}
 
-	if (control_status[sf::Keyboard::Key::Enter] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::Return] == Status::PRESSED) {
 		callPressedFunction();
 	}
 }
