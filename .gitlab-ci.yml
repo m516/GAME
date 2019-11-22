@@ -19,7 +19,7 @@ frontend-build:
     - make test
   artifacts:
     paths:
-      - client/GAMEConsole/test/console_test
+      - client/GAMEConsole/src
 
 # run tests using the binary built before
 frontend-test:
@@ -27,5 +27,5 @@ frontend-test:
     - c++_tag
   stage: test
   script:
-    - cd client/GAMEConsole/test/console_test
-    - ./Console_Test
+    - cd client/GAMEConsole/src
+    - ./test
