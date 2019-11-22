@@ -32,6 +32,8 @@ frontend-test:
     - ls
     - ls client/GAMEConsole
     - client/GAMEConsole/game
+  dependencies:
+    - frontend-build
 
 
 maven-build:
