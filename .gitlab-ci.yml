@@ -32,8 +32,10 @@ frontend-test:
     - c++_tag
   stage: test
   script:
-    - cd client/GAMEConsole
-    - ./game
+    - cd
+    - ls
+    - ls client/GAMEConsole
+    - client/GAMEConsole/game
 
 
 maven-build:
