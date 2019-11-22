@@ -6,39 +6,27 @@ image: gcc
 
 stages:
   - build
-  - test
   - mavenbuild
   - maventest
 
-frontend-build:
+frontend:
   tags:
     - c++_tag
   stage: build
-  # instead of calling g++ directly you can also use some build toolkit like make
-  # install the necessary build tools when needed
   before_script:
-    - apt update -y
-    - apt upgrade -y
-    - apt -y install libsfml-dev cmake make
+    - apt-get update --yes
+    - apt-get upgrade --yes
+    - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
+    - ldconfig -v
+    - cd client/GAMEConsole
   script:
-    - cd client/GAMEConsole/test/console_test
-    - cmake ./
-    - make
+    - make all TEST=true -j4
+    - ./game
   artifacts:
     paths:
-      - client/GAMEConsole/test/console_test
+      - client/GAMEConsole/
 
-# run tests using the binary built before
-frontend-test:
-  tags:
-    - c++_tag
-  stage: test
-  script:
-    - cd client/GAMEConsole/test/console_test
-    - ./Console_Test
-
-
-maven-build: 
+maven-build:
   stage: mavenbuild
   tags:
     - spring-backend
@@ -48,15 +36,11 @@ maven-build:
 
 maven-test:
   stage: maventest
-  tags: 
+  tags:
     - spring-backend
-  script: 
+  script:
     - cd GameProject.zip_expanded/GameProject
     - mvn test
-  artifacts: 
+  artifacts:
     paths:
       - GameProject.zip_expanded/GameProject/target/*.jar
-
-
-
-    
