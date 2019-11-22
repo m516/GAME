@@ -9,6 +9,7 @@
 #include "GUI/menu/components/menuPane.h"
 #include "modules/network.h"
 #include "modules/session.h"
+#include <exception>
 
 
 MenuPane mp;
@@ -48,10 +49,28 @@ int testNetwork() {
 	clicked = false;
 	NetworkConnection::addListener(NetworkConnection::Listener::OPEN, &onClicked);
 	NetworkConnection::connect();
-	std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-	if (!clicked) {
-		std::cout << "Failed connecting to server" << std::endl;
+	NetworkConnection::send("blah");
+	try {
+
+	}
+	catch (const std::exception & ex) {
+		std::cout << "Exception thrown" << std::endl;
+		std::cout << ex.what() << std::endl;
 		return 1;
+	}
+	catch (const std::string & ex) {
+		std::cout << "Exception thrown" << std::endl;
+		std::cout << ex << std::endl;
+		return 2;
+	}
+	catch(...){
+		std::cout << "Failed for some unknown reason" << std::endl;
+		return 3;
+	}
+
+	if (!clicked) {
+		std::cout << "Failed to set flag" << std::endl;
+		return 4;
 	}
 	NetworkConnection::disconnect();
 	return 0;
