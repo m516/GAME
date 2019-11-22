@@ -45,33 +45,33 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 	size_t pos = 0;
 	std::string token;
 	std::string user_name;
-	std::string user_level;
+	std::string user_level; 
 	std::string user_address;
 	int count = 0;
 
-	while ((count < 3)) {
+	while ((count < 3)){
 		std::cout << "COUNT IS" << std::endl;
 		std::cout << count << std::endl;
-		if ((pos = shortenedString.find(delimeter)) != std::string::npos) {
+		if ((pos = shortenedString.find(delimeter)) != std::string::npos){
 			switch (count) {
-			case 0: {//USER LEVEL - DON'T CHANGE
-				token = shortenedString.substr(0, pos);
-				user_level = token.substr(12, pos);
-				break;
-			}
-			case 1: {//USER ADDRESS - DON'T CHANGE
-				token = shortenedString.substr(0, pos);
-				user_address = token.substr(11, pos - 12);
-				break;
-			}
-			case 2: {//USER NAME - DON'T CHANGE
-				token = shortenedString.substr(0, pos);
-				user_name = token.substr(12, pos - 13);
-				break;
-			}
-			default: {//USER ID - DON'T CHANGE
-				token = shortenedString.substr(0, pos);
-			}
+				case 0: {//USER LEVEL - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_level = token.substr(12, pos);
+					break;
+				}
+				case 1: {//USER ADDRESS - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_address = token.substr(11, pos - 12);
+					break;
+				}
+				case 2: {//USER NAME - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+					user_name = token.substr(12, pos - 13);
+					break;
+				}
+				default: {//USER ID - DON'T CHANGE
+					token = shortenedString.substr(0, pos);
+				}
 			}
 		}
 		count++;
@@ -83,71 +83,71 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 	levelSquare.setPosition(5, 5);
 	levelSquare.setFillColor(sf::Color::Blue);
 
-	level.setCharacterSize(24);
-	level.setFont(theme->font_standard);
-	level.setColor(theme->color_selected);
-	level.setString(user_level);
-	level.setPosition(32, 24);
+    level.setCharacterSize(24);
+    level.setFont(theme->font_standard);
+    level.setFillColor(theme->color_selected);
+    level.setString(user_level);
+    level.setPosition(32, 24);
 
 	level = theme->sharpenText(level);
 
 	username.setCharacterSize(18);
 	username.setFont(theme->font_standard);
-	username.setColor(theme->color_selected);
+	username.setFillColor(theme->color_selected);
 	username.setString(user_name);
 	username.setPosition(78, 5);
-	username = theme->sharpenText(username);
+    username = theme->sharpenText(username);
 
-	usernameLabel.setCharacterSize(8);
-	usernameLabel.setFont(theme->font_standard);
-	usernameLabel.setColor(theme->color_selected);
-	usernameLabel.setString("Username");
-	usernameLabel.setPosition(78, 25);
-	usernameLabel = theme->sharpenText(usernameLabel);
+    usernameLabel.setCharacterSize(8);
+    usernameLabel.setFont(theme->font_standard);
+    usernameLabel.setFillColor(theme->color_selected);
+    usernameLabel.setString("Username");
+    usernameLabel.setPosition(78, 25);
+    usernameLabel = theme->sharpenText(usernameLabel);
 
-	userID.setCharacterSize(8);
-	userID.setFont(theme->font_standard);
-	userID.setColor(theme->color_selected);
-	userID.setString(strId);
-	userID.setPosition(78, 46);
-	userID = theme->sharpenText(userID);
+    userID.setCharacterSize(8);
+    userID.setFont(theme->font_standard);
+    userID.setFillColor(theme->color_selected);
+    userID.setString(strId);
+    userID.setPosition(78, 46);
+    userID = theme->sharpenText(userID);
+    
+    userIDLabel.setCharacterSize(8);
+    userIDLabel.setFont(theme->font_standard);
+    userIDLabel.setFillColor(theme->color_selected);
+    userIDLabel.setString("User ID");
+    userIDLabel.setPosition(78, 60);
+    userIDLabel = theme->sharpenText(userIDLabel);
 
-	userIDLabel.setCharacterSize(8);
-	userIDLabel.setFont(theme->font_standard);
-	userIDLabel.setColor(theme->color_selected);
-	userIDLabel.setString("User ID");
-	userIDLabel.setPosition(78, 60);
-	userIDLabel = theme->sharpenText(userIDLabel);
-
-	friends.setCharacterSize(8);
-	friends.setFont(theme->font_standard);
-	friends.setColor(theme->color_selected);
+    friends.setCharacterSize(8);
+    friends.setFont(theme->font_standard);
+    friends.setFillColor(theme->color_selected);
 	//TODO DON'T HARDCODE THIS
-	friends.setString("ASTRELION\nYodaSpock\nmmundy\nParker");
-	friends.setPosition(5, 114);
-	friends = theme->sharpenText(friends);
+    friends.setString("ASTRELION\nYodaSpock\nmmundy\nParker");
+    friends.setPosition(5, 114);
+    friends = theme->sharpenText(friends);
 
-	friendsLabel.setCharacterSize(14);
-	friendsLabel.setFont(theme->font_standard);
-	friendsLabel.setColor(theme->color_selected);
-	friendsLabel.setString("Friends");
-	friendsLabel.setPosition(5, 90);
-	friendsLabel = theme->sharpenText(friendsLabel);
+    friendsLabel.setCharacterSize(14);
+    friendsLabel.setFont(theme->font_standard);
+    friendsLabel.setFillColor(theme->color_selected);
+    friendsLabel.setString("Friends");
+    friendsLabel.setPosition(5, 90);
+    friendsLabel = theme->sharpenText(friendsLabel);
 
-	games.setCharacterSize(8);
-	games.setFont(theme->font_standard);
-	games.setColor(theme->color_selected);
+    games.setCharacterSize(8);
+    games.setFont(theme->font_standard);
+    games.setFillColor(theme->color_selected);
 	//TODO DON'T HARDCODE THIS
-	games.setString("Pong");
-	games.setPosition(164, 114);
-	games = theme->sharpenText(games);
+    games.setString("Pong");
+    games.setPosition(164, 114);
+    games = theme->sharpenText(games);
 
-	gamesLabel.setCharacterSize(14);
-	gamesLabel.setFont(theme->font_standard);
-	gamesLabel.setColor(theme->color_selected);
-	gamesLabel.setString("Games");
-	gamesLabel.setPosition(164, 90);
-	gamesLabel = theme->sharpenText(gamesLabel);
+    gamesLabel.setCharacterSize(14);
+    gamesLabel.setFont(theme->font_standard);
+    gamesLabel.setFillColor(theme->color_selected);
+    gamesLabel.setString("Games");
+    gamesLabel.setPosition(164, 90);
+    gamesLabel = theme->sharpenText(gamesLabel);
 }
 
 ProfileMenu::~ProfileMenu()

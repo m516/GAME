@@ -16,7 +16,7 @@ JoinCreateMenu::JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* them
 	title = new sf::Text();
 	title->setCharacterSize(window->getSize().y/6);
 	title->setFont(theme->font_standard);
-	title->setColor(theme->color_selected);
+	title->setFillColor(theme->color_selected);
 	title->setString("Create/Join" + game->getName());
 	title->setPosition((window->getSize().x-title->getGlobalBounds().width)/2, 5);
 

@@ -7,13 +7,17 @@ SRC_DIRS := $(dir $(SRC_FILES))
 OBJ_DIRS := $(dir $(OBJ_FILES))
 
 CFLAGS := -Werror
-LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
+LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lboost_system
 INCLUDES := -I include -I assets
 
 MAIN := game
 
 DOCCMD := doxygen
 DOCFILE := Doxyfile
+
+ifndef (TEST)
+TEST = ""
+endif
 
 all: $(MAIN)
 
@@ -23,8 +27,13 @@ $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
+ifeq ($(strip $(TEST)),)
 	@mkdir -p $(OBJ_DIRS)
 	g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
+else
+	@mkdir -p $(OBJ_DIRS)
+	g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
+endif
 
 .PHONY: clean docs depend test
 

@@ -11,3 +11,4 @@ vgcore.*
 *.o
 *.vcxproj.user
 *.vcxproj.filters
+out/

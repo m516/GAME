@@ -53,7 +53,7 @@ void TextField::render()
 }
 
 void TextField::updateKeys() {
-	for (int i = sf::Keyboard::A; i != sf::Keyboard::KeyCount; i++) {
+	for (int i = sf::Keyboard::Key::A; i != sf::Keyboard::KeyCount; i++) {
 		sf::Keyboard::Key curr_key = (sf::Keyboard::Key)i;
 		if (sf::Keyboard::isKeyPressed(curr_key)) {
 			if (control_status[i] == Status::UP) control_status[i] = Status::PRESSED;
@@ -76,12 +76,12 @@ void TextField::updateKeys() {
 		}
 	}
 
-	if (control_status[sf::Keyboard::Backspace] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::BackSpace] == Status::PRESSED) {
 		if(text.size()>0) text.pop_back();
 		label.setString(text);
 	}
 
-	if (control_status[sf::Keyboard::Enter] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::Return] == Status::PRESSED) {
 		callPressedFunction();
 	}
 }
