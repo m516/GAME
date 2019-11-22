@@ -16,7 +16,7 @@ GameMenu::GameMenu(sf::RenderWindow* window, Game* game, Theme* theme = 0)
 	title = new sf::Text();
 	title->setCharacterSize(window->getSize().y/4);
 	title->setFont(theme->font_standard);
-	title->setColor(theme->color_selected);
+	title->setFillColor(theme->color_selected);
 	title->setString("Play " + game->getName());
 	title->setPosition((window->getSize().x-title->getGlobalBounds().width)/2, 5);
 

@@ -85,7 +85,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
     level.setCharacterSize(24);
     level.setFont(theme->font_standard);
-    level.setColor(theme->color_selected);
+    level.setFillColor(theme->color_selected);
     level.setString(user_level);
     level.setPosition(32, 24);
 
@@ -93,35 +93,35 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
 	username.setCharacterSize(18);
 	username.setFont(theme->font_standard);
-	username.setColor(theme->color_selected);
+	username.setFillColor(theme->color_selected);
 	username.setString(user_name);
 	username.setPosition(78, 5);
     username = theme->sharpenText(username);
 
     usernameLabel.setCharacterSize(8);
     usernameLabel.setFont(theme->font_standard);
-    usernameLabel.setColor(theme->color_selected);
+    usernameLabel.setFillColor(theme->color_selected);
     usernameLabel.setString("Username");
     usernameLabel.setPosition(78, 25);
     usernameLabel = theme->sharpenText(usernameLabel);
 
     userID.setCharacterSize(8);
     userID.setFont(theme->font_standard);
-    userID.setColor(theme->color_selected);
+    userID.setFillColor(theme->color_selected);
     userID.setString(strId);
     userID.setPosition(78, 46);
     userID = theme->sharpenText(userID);
     
     userIDLabel.setCharacterSize(8);
     userIDLabel.setFont(theme->font_standard);
-    userIDLabel.setColor(theme->color_selected);
+    userIDLabel.setFillColor(theme->color_selected);
     userIDLabel.setString("User ID");
     userIDLabel.setPosition(78, 60);
     userIDLabel = theme->sharpenText(userIDLabel);
 
     friends.setCharacterSize(8);
     friends.setFont(theme->font_standard);
-    friends.setColor(theme->color_selected);
+    friends.setFillColor(theme->color_selected);
 	//TODO DON'T HARDCODE THIS
     friends.setString("ASTRELION\nYodaSpock\nmmundy\nParker");
     friends.setPosition(5, 114);
@@ -129,14 +129,14 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
     friendsLabel.setCharacterSize(14);
     friendsLabel.setFont(theme->font_standard);
-    friendsLabel.setColor(theme->color_selected);
+    friendsLabel.setFillColor(theme->color_selected);
     friendsLabel.setString("Friends");
     friendsLabel.setPosition(5, 90);
     friendsLabel = theme->sharpenText(friendsLabel);
 
     games.setCharacterSize(8);
     games.setFont(theme->font_standard);
-    games.setColor(theme->color_selected);
+    games.setFillColor(theme->color_selected);
 	//TODO DON'T HARDCODE THIS
     games.setString("Pong");
     games.setPosition(164, 114);
@@ -144,7 +144,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme , int user_id)
 
     gamesLabel.setCharacterSize(14);
     gamesLabel.setFont(theme->font_standard);
-    gamesLabel.setColor(theme->color_selected);
+    gamesLabel.setFillColor(theme->color_selected);
     gamesLabel.setString("Games");
     gamesLabel.setPosition(164, 90);
     gamesLabel = theme->sharpenText(gamesLabel);
