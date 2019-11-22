@@ -11,26 +11,29 @@ LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-au
 INCLUDES := -I include -I assets
 
 MAIN := game
-TEST := console-test
-TEST_FLAGS := -DTEST_SYSTEM=1
 
 DOCCMD := doxygen
 DOCFILE := Doxyfile
 
+ifndef (TEST)
+TEST = ""
+endif
+
 all: $(MAIN)
-test: $(TEST)
 
 remake: clean all
 
 $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
-	
-$(TEST): $(OBJ_FILES)
-	g++ $(CLFAGS) $(TEST_FLAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
+ifeq ($(strip $(TEST)),)
 	@mkdir -p $(OBJ_DIRS)
 	g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
+else
+	@mkdir -p $(OBJ_DIRS)
+	g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
+endif
 
 .PHONY: clean docs depend test
 
