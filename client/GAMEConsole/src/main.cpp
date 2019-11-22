@@ -31,6 +31,6 @@ int main()
 #endif
 
 
-#endif // TEST
+#endif // TEST_SYSTEM
 
 

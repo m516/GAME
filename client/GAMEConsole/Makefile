@@ -7,7 +7,7 @@ SRC_DIRS := $(dir $(SRC_FILES))
 OBJ_DIRS := $(dir $(OBJ_FILES))
 
 CFLAGS := -Werror
-LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
+LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lboost_system
 INCLUDES := -I include -I assets
 
 MAIN := game
