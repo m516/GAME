@@ -12,7 +12,7 @@ public:
 	sf::Font font_standard;
 	/** test header */
 	Theme();
-	void loadGenericFont();
+	bool loadGenericFont();
 	sf::Text sharpenText(sf::Text text);
 	Theme clone();
 	static Theme* universal_theme;

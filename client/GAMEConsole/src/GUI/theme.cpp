@@ -11,9 +11,9 @@ Theme::Theme()
 /**
  * Set font standard to Alien-Encounters-Regular.ttf
  */
-void Theme::loadGenericFont()
+bool Theme::loadGenericFont()
 {
-	font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+	return font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
 }
 
 /**

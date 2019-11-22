@@ -18,13 +18,9 @@ typedef std::vector<MenuItem> MenuItem_vec_t;
 class MenuPane : public GUIElement {
 public:
 	/**
-	Constructs a new MenuPane
-	*/
-	MenuPane(int initial_size);
-	/**
 	 * Prevent seg faults by init with render target
 	 */
-	MenuPane(int initial_size, sf::RenderWindow* renderTarget);
+	MenuPane(int initial_size = 5, sf::RenderWindow* renderTarget = nullptr);
 
 	/**
 	Adds an item to the list of items to display

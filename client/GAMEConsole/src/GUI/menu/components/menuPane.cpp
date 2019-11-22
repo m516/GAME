@@ -1,11 +1,6 @@
 #include "menuPane.h"
 
 
-MenuPane::MenuPane(int initial_size) {
-	//Initialize list of items
-	items.reserve(initial_size);
-}
-
 MenuPane::MenuPane(int initial_size, sf::RenderWindow* renderTarget)
 {
 	items.reserve(initial_size);
