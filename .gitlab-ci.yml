@@ -13,7 +13,14 @@ frontend-build:
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-    - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev
+    - apt-get --yes -m install 
+    libboost-all-dev 
+    libssl-dev 
+    libwebsocketpp-dev 
+    libsfml-dev
+    gfortran-
+    libcoarrays-dev-
+    libcoarrays-openmpi-dev-
   script:
     - cd client/GAMEConsole
     - make test
