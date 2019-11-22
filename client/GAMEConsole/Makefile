@@ -23,13 +23,13 @@ $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
-ifndef (TEST)
-	@mkdir -p $(OBJ_DIRS)
-	g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
-else
-	@mkdir -p $(OBJ_DIRS)
-	g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
-endif
+	ifeq($(TEST),true)
+		@mkdir -p $(OBJ_DIRS)
+		g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
+	else
+		@mkdir -p $(OBJ_DIRS)
+		g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
+	endif
 
 .PHONY: clean docs depend test
 
