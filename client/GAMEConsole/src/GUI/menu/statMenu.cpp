@@ -71,7 +71,7 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	username = new sf::Text();
 	username->setCharacterSize(50);
 	username->setFont(theme->font_standard);
-	username->setColor(theme->color_selected);
+	username->setFillColor(theme->color_selected);
 	//TODO -> get this information from the database
 	username->setString("Username:" + responseString);
 
@@ -81,7 +81,7 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	wins = new sf::Text();
 	wins->setCharacterSize(50);
 	wins->setFont(theme->font_standard);
-	wins->setColor(theme->color_selected);
+	wins->setFillColor(theme->color_selected);
 	//TODO -> get this information from the database
 	wins->setString("Wins: 0");
 
@@ -91,7 +91,7 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	losses = new sf::Text();
 	losses->setCharacterSize(50);
 	losses->setFont(theme->font_standard);
-	losses->setColor(theme->color_selected);
+	losses->setFillColor(theme->color_selected);
 	//TODO -> get this information from the database
 	losses->setString("Losses: 1");
 
@@ -101,7 +101,7 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	level = new sf::Text();
 	level->setCharacterSize(50);
 	level->setFont(theme->font_standard);
-	level->setColor(theme->color_selected);
+	level->setFillColor(theme->color_selected);
 	//TODO -> get this information from the database
 	level->setString("Level: 2");
 

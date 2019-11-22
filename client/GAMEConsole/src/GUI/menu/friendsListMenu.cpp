@@ -12,7 +12,7 @@ FriendsListMenu::FriendsListMenu(sf::RenderWindow* window, Theme* theme)
     removingFriend = false;
     title.setCharacterSize(window->getSize().y / 8);
     title.setFont(theme->font_standard);
-    title.setColor(theme->color_selected);
+    title.setFillColor(theme->color_selected);
     title.setString(titleString);
     title.setPosition(5, 5);
     title = theme->sharpenText(title);
@@ -53,12 +53,12 @@ void FriendsListMenu::render()
         if (removingFriend)
         {
             title.setString("REMOVING " + titleString);
-            title.setColor(sf::Color::Red);
+            title.setFillColor(sf::Color::Red);
         }
         else
         {
             title.setString(titleString);
-            title.setColor(theme->color_selected);
+            title.setFillColor(theme->color_selected);
         }
         
         renderer->draw(title);
