@@ -15,10 +15,6 @@ MAIN := game
 DOCCMD := doxygen
 DOCFILE := Doxyfile
 
-ifndef (TEST)
-TEST = ""
-endif
-
 all: $(MAIN)
 
 remake: clean all
@@ -27,7 +23,7 @@ $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
-ifeq ($(strip $(TEST)),)
+ifndef (TEST)
 	@mkdir -p $(OBJ_DIRS)
 	g++ $(CLFAGS) $(INCLUDES) -c -o $@ $<
 else
