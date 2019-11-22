@@ -1,7 +1,15 @@
-//Source: https://www.sfml-dev.org/tutorials/2.5/start-linux.php
 #include "application.h"
 #include <iostream>
 
+#ifdef TEST_SYSTEM
+
+int main() {
+	std::cout << "Hello testing environment!" << std::endl;
+}
+
+#else
+
+//Run the program normally
 //Windows
 #if defined(_WIN32) || defined(_WIN64) 
 int main()
@@ -21,5 +29,8 @@ int main()
 	app.run();
 }
 #endif
+
+
+#endif // TEST
 
 

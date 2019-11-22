@@ -13,21 +13,10 @@ frontend-build:
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-    - apt-get --yes -m install libsfml-dev 
-        cmake 
-        make 
-        build-essential 
-        libssl-dev 
-        scons
-    - git clone https://github.com/zaphoyd/websocketpp.git && cd websocketpp
-    - mkdir build && cd build
-    - cmake -DCMAKE_INSTALL_PREFIX=/usr/include/websocketpp ..
-    - cmake --build . --target install
-    - cd
+    - apt-get --yes -m install libsfml-dev libwebsocketpp-dev
   script:
-    - cd client/GAMEConsole/test/console_test
-    - cmake ./
-    - make
+    - cd client/GAMEConsole
+    - make test
   artifacts:
     paths:
       - client/GAMEConsole/test/console_test
