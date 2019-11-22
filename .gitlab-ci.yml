@@ -5,9 +5,10 @@
 image: gcc
 
 stages:
- - build
- - test
-
+  - build
+  - test
+  - mavenbuild
+  - maventest
 
 frontend-build:
   tags:
@@ -33,3 +34,23 @@ frontend-test:
   script:
     - cd client/GAMEConsole
     - ./console-test
+
+
+maven-build:
+  stage: mavenbuild
+  tags:
+    - spring-backend
+  script:
+    - cd GameProject.zip_expanded/GameProject
+    - mvn package -B
+
+maven-test:
+  stage: maventest
+  tags:
+    - spring-backend
+  script:
+    - cd GameProject.zip_expanded/GameProject
+    - mvn test
+  artifacts:
+    paths:
+      - GameProject.zip_expanded/GameProject/target/*.jar

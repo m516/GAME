@@ -74,8 +74,8 @@ private:
 		DISABLED = 4
 	} Status;
 
-	Status control_status[sf::Keyboard::KeyCount];
-	const char characters[sf::Keyboard::KeyCount][2] = {
+	Status control_status[sf::Keyboard::Key::KeyCount];
+	const char characters[sf::Keyboard::Key::KeyCount][2] = {
 		{'a','A'},   // A = 0,        ///< The A key
 		{'b','B'},   // B,            ///< The B key
 		{'c','C'},   // C,            ///< The C key

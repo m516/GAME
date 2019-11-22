@@ -7,7 +7,7 @@ SettingsMenu::SettingsMenu(sf::RenderWindow* window, Theme* theme)
 
     title.setCharacterSize(window->getSize().y / 8);
     title.setFont(theme->font_standard);
-    title.setColor(theme->color_selected);
+    title.setFillColor(theme->color_selected);
     title.setString("Settings");
     title.setPosition(5, 5);
     title = theme->sharpenText(title);

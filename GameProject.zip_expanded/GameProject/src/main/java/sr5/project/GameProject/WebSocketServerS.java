@@ -9,14 +9,13 @@ import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
-import javax.websocket.Session;
+//import javax.websocket.String;
 //import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import org.slf4j.Logger; 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * This class runs the connection between different players while 
  * completing against each other in real time.
@@ -25,31 +24,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @ServerEndpoint("/")
 @Component
-public class WebSocketServer {
+public class WebSocketServerS {
 
-	private static Map<Session, WebGameObject> sessionGameObjectMap = new HashMap<>();
-	private static Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
+	private static Map<String, WebGameObject> StringGameObjectMap = new HashMap<>();
+	private static Map<WebGameObject, String> GameObjectStringMap = new HashMap<>();
     
 	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
 	public ArrayList<WebGames> game = new ArrayList<WebGames>();
 	
 	//***************************************START OLD METHODS****************************************************************
-    private static Map<Session, String> sessionUsernameMap = new HashMap<>();
-    private static Map<String, Session> usernameSessionMap = new HashMap<>();
+    private static Map<String, String> StringUsernameMap = new HashMap<>();
+    private static Map<String, String> usernameStringMap = new HashMap<>();
 
     String username = "game";
     String player = "";
 	//***************************************END OLD METHODS******************************************************************
-    
+    String rMessage = "";
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     
     @OnOpen
     /**
      * This class is used for the initial connection between the client and websocket
-     * @param session the session for this user
+     * @param String the String for this user
      * @throws IOException 
      */
-    public void onOpen(Session session) throws IOException
+    public void onOpen(String String) throws IOException
     {
         logger.info("New Player entered into Open");
     }
@@ -58,38 +57,38 @@ public class WebSocketServer {
     /**
      * This class allows the user to join a game, define which player they are, and send
      * player locations
-     * @param session the session for the user
+     * @param String the String for the user
      * @param message the message sent from the user
      * @throws IOException
      */
-    public void onMessage(Session session, String message) throws IOException
+    public void onMessage(String String, String message) throws IOException
     {
-    	if(sessionGameObjectMap.get(session) == null)
+    	if(StringGameObjectMap.get(String) == null)
     	{
     		WebGameObject g = new WebGameObject(0,"0","0");
-    		sessionGameObjectMap.put(session, g);
-    		GameObjectSessionMap.put(g, session);
+    		StringGameObjectMap.put(String, g);
+    		GameObjectStringMap.put(g, String);
     		broadcastNew("I am here");
     	}
-//    	if(sessionGameObjectMap.get(session) == null)
+//    	if(StringGameObjectMap.get(String) == null)
 //    	{
 //    		for(int i = 0; i < players.size(); i++)
 //    		{
-//    			if(players.get(i) != sessionGameObjectMap.get(session))
+//    			if(players.get(i) != StringGameObjectMap.get(String))
 //    			{
-//    				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText("!");
+//    				GameObjectStringMap.get(players.get(i)).getBasicRemote().sendText("!");
 //    			}
 //    		}
 //    		WebGameObject g = new WebGameObject(0,"0","0");
-//    		sessionGameObjectMap.put(session, g);
-//    		GameObjectSessionMap.put(g, session);
+//    		StringGameObjectMap.put(String, g);
+//    		GameObjectStringMap.put(g, String);
 //    		players.add(g);
 //    	}
 //    	if(message.startsWith("!"))
 //    	{
 //    		WebGameObject g = new WebGameObject(0,"0","0");
-//    		sessionGameObjectMap.put(session, g);
-//    		GameObjectSessionMap.put(g, session);
+//    		StringGameObjectMap.put(String, g);
+//    		GameObjectStringMap.put(g, String);
 //    		players.add(g);
 //    	}
     	//TODO Setup sending to multiple people
@@ -99,7 +98,7 @@ public class WebSocketServer {
     	}
     	else
     	{
-    		sendMessageToAll(session, message);
+    		sendMessageToAll(String, message);
     	}
     	
     	if(message.startsWith("GSO"))
@@ -117,7 +116,7 @@ public class WebSocketServer {
     			}
     			if(!game.get(i).getState())
     			{
-        			sendMessageToPArticularUser(session, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+        			sendMessageToPArticularUser(String, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
     			}
     		}
     	}
@@ -125,7 +124,7 @@ public class WebSocketServer {
     	{
     		String s = "";
     		String s1 = "";
-    		sendMessageToPArticularUser(session, "Game size: " + game.size());
+    		sendMessageToPArticularUser(String, "Game size: " + game.size());
     		for(int i = 0; i < game.size(); i++)
     		{
     			if(i < 10)
@@ -144,7 +143,7 @@ public class WebSocketServer {
     			{
     				s = "P";
     			}
-    			sendMessageToPArticularUser(session, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
+    			sendMessageToPArticularUser(String, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
     		}
     	}
     	else if(message.startsWith("C"))
@@ -160,12 +159,12 @@ public class WebSocketServer {
 				}
 				WebGames wg = new WebGames(gameType, maxP);
 				game.add(wg);
-				sendMessageToPArticularUser(session, "GID" + s + gameID +" " + message + " has been built");
+				sendMessageToPArticularUser(String, "GID" + s + gameID +" " + message + " has been built");
 				logger.info("GID" + s + gameID +" " + message + " has been built");
     		}
     		catch(Exception e)
     		{
-				sendMessageToPArticularUser(session, "Invalid command, Please use: J :C : C#P : START GAME\n");
+				sendMessageToPArticularUser(String, "Invalid command, Please use: J :C : C#P : START GAME\n");
     		}
     	}
     	else if(message.startsWith("J"))
@@ -173,63 +172,63 @@ public class WebSocketServer {
     		try {
 				int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
 				int gameType = message.charAt(3);
-				sessionGameObjectMap.get(session).setGameType(gameType);
+				StringGameObjectMap.get(String).setGameType(gameType);
 				String x = "" + message.charAt(4) + message.charAt(5) + message.charAt(6) + message.charAt(7);
 				String y = "" + message.charAt(8) + message.charAt(9) + message.charAt(10) + message.charAt(11);
 				
 				if(game.size() > gameID)
 				{
-					sessionGameObjectMap.get(session).setX(x);
-					sessionGameObjectMap.get(session).setY(y);
-					sessionGameObjectMap.get(session).setGameID(gameID);
+					StringGameObjectMap.get(String).setX(x);
+					StringGameObjectMap.get(String).setY(y);
+					StringGameObjectMap.get(String).setGameID(gameID);
 					
-					boolean i = game.get(gameID).addPlayer(sessionGameObjectMap.get(session));
-					if(i)
+					boolean i = game.get(gameID).addPlayer(StringGameObjectMap.get(String));
+					if(i && !game.get(gameID).getState())
 					{
 						game.get(gameID).players.get(game.get(gameID).players.size() - 1).setpNum(game.get(gameID).players.size() - 1);
-						sendMessageToPArticularUser(session, "Successfully Joined");
+						sendMessageToPArticularUser(String, "Successfully Joined");
 						logger.info("Successfully Joined");
 					}
 					else
 					{
-						sendMessageToPArticularUser(session, "Full, Try again");
+						sendMessageToPArticularUser(String, "Full, Try again");
 						logger.info("Full, Try again");
 					}
 				}
 				else
 				{
-					sendMessageToPArticularUser(session, "Game does not exist");
+					sendMessageToPArticularUser(String, "Game does not exist");
 					logger.info("Game does not exist");
 				}
     		}
     		catch(Exception e)
     		{
-				sendMessageToPArticularUser(session, "Invalid command, Please use: J : J##TXXXXYYYY: JOIN GAME\n");
+				sendMessageToPArticularUser(String, "Invalid command, Please use: J : J##TXXXXYYYY: JOIN GAME\n");
     		}
 				
     	}
     	else if(message.startsWith("R"))
     	{
-    		game.get(sessionGameObjectMap.get(session).getGameID()).removePlayer(sessionGameObjectMap.get(session).getPNum());
+    		game.get(StringGameObjectMap.get(String).getGameID()).removePlayer(StringGameObjectMap.get(String).getPNum());
     		logger.info("Remove player");
     		
     	}
     	else if(message.startsWith("PL"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations();
-    		sendMessageToPArticularUser(session, s);
+    		String s = game.get(StringGameObjectMap.get(String).getGameID()).getPlayerLocations();
+    		sendMessageToPArticularUser(String, s);
     		logger.info("Get player locations");
     	}
     	else if(message.startsWith("OL"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
-    		sendMessageToPArticularUser(session, s);
+    		String s = game.get(StringGameObjectMap.get(String).getGameID()).getObjectLocations();
+    		sendMessageToPArticularUser(String, s);
     		logger.info("Get object locations");
     	}
     	else if(message.startsWith("BL"))
     	{
-    		String s = "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
-    		sendMessageToPArticularUser(session, s);
+    		String s = "P" + game.get(StringGameObjectMap.get(String).getGameID()).getObjectLocations() + "O" + game.get(StringGameObjectMap.get(String).getGameID()).getObjectLocations();
+    		sendMessageToPArticularUser(String, s);
     		logger.info("Get all locations");
     	}
     	else if(message.startsWith("ST"))
@@ -238,43 +237,43 @@ public class WebSocketServer {
     		sb.deleteCharAt(0);
     		sb.deleteCharAt(1);
     		String s1 = sb.toString();
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(s1);
+    		game.get(StringGameObjectMap.get(String).getGameID()).setScore(s1);
     	}
     	else if(message.startsWith("S"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
-    		sendMessageToPArticularUser(session, s);
+    		String s = game.get(StringGameObjectMap.get(String).getGameID()).getScore();
+    		sendMessageToPArticularUser(String, s);
     		logger.info("Get Score");
     	}
     	else if(message.startsWith("T"))
     	{
-    		if(game.get(sessionGameObjectMap.get(session).getGameID()).getState())
+    		if(game.get(StringGameObjectMap.get(String).getGameID()).getState())
     		{
-        		sendMessageToPArticularUser(session, "Game has started");
+        		sendMessageToPArticularUser(String, "Game has started");
     		}
     		else
     		{
-        		sendMessageToPArticularUser(session, "Game has not started");
+        		sendMessageToPArticularUser(String, "Game has not started");
     		}
 
     		logger.info("Get state");
     	}
     	else if(message.startsWith("G"))
     	{
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setState(true);
+    		game.get(StringGameObjectMap.get(String).getGameID()).setState(true);
     	}
     	else if(message.startsWith("PM"))
     	{
     		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
     		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
-    		sessionGameObjectMap.get(session).setX(x);
-    		sessionGameObjectMap.get(session).setY(y);
+    		StringGameObjectMap.get(String).setX(x);
+    		StringGameObjectMap.get(String).setY(y);
     	}
     	else if(message.startsWith("OM"))
     	{
     		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
     		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, x, y);
+    		game.get(StringGameObjectMap.get(String).getGameID()).setObjectMovement(0, x, y);
     	}
     	else if(message.startsWith("N?"))
     	{
@@ -314,53 +313,53 @@ public class WebSocketServer {
 
     	    s += "N?: GET NEW OPCODES\n";
     	    s += "O?: GET OLD OPCODES\n\n"; 
-    	    sendMessageToPArticularUser(session, s);
+    	    sendMessageToPArticularUser(String, s);
     		
-//    		sendMessageToPArticularUser(session, "Symbols\n");
-//    		sendMessageToPArticularUser(session, "# -> Game Type\n");
-//    		sendMessageToPArticularUser(session, "##-> Game id\n");
-//    		sendMessageToPArticularUser(session, "P -> Max Players\n");
-//    		sendMessageToPArticularUser(session, "XX-> X position\n");
-//    		sendMessageToPArticularUser(session, "YY-> Y postion\n");
-//    		sendMessageToPArticularUser(session, "ii-> Player/Object id\n\n");
+//    		sendMessageToPArticularUser(String, "Symbols\n");
+//    		sendMessageToPArticularUser(String, "# -> Game Type\n");
+//    		sendMessageToPArticularUser(String, "##-> Game id\n");
+//    		sendMessageToPArticularUser(String, "P -> Max Players\n");
+//    		sendMessageToPArticularUser(String, "XX-> X position\n");
+//    		sendMessageToPArticularUser(String, "YY-> Y postion\n");
+//    		sendMessageToPArticularUser(String, "ii-> Player/Object id\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "Commands\n");
-//    		sendMessageToPArticularUser(session, "C : C#P : START GAME\n");
-//    		sendMessageToPArticularUser(session, "J : J## : JOIN GAME\n");
-//    		sendMessageToPArticularUser(session, "R : R   : LEAVE GAME\n\n");
+//    		sendMessageToPArticularUser(String, "Commands\n");
+//    		sendMessageToPArticularUser(String, "C : C#P : START GAME\n");
+//    		sendMessageToPArticularUser(String, "J : J## : JOIN GAME\n");
+//    		sendMessageToPArticularUser(String, "R : R   : LEAVE GAME\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "PL: PL  : GET PLAYER LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "OL: OL  : GET OBJECT LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "BL: BL  : GET ALL LOCATIONS\n\n");
+//    		sendMessageToPArticularUser(String, "PL: PL  : GET PLAYER LOCATIONS\n");
+//    		sendMessageToPArticularUser(String, "OL: OL  : GET OBJECT LOCATIONS\n");
+//    		sendMessageToPArticularUser(String, "BL: BL  : GET ALL LOCATIONS\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "PM: PMXXYY : SET PLAYER LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n");
+//    		sendMessageToPArticularUser(String, "PM: PMXXYY : SET PLAYER LOCATIONS\n");
+//    		sendMessageToPArticularUser(String, "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "S : S  : GET SCORE\n");
-//    		sendMessageToPArticularUser(session, "ST: ST#: SET SCORE\n\n");
+//    		sendMessageToPArticularUser(String, "S : S  : GET SCORE\n");
+//    		sendMessageToPArticularUser(String, "ST: ST#: SET SCORE\n\n");
 //
-//    		sendMessageToPArticularUser(session, "T : T  : GET STATE\n");
-//    		sendMessageToPArticularUser(session, "G : G  : START GAME\n\n");
+//    		sendMessageToPArticularUser(String, "T : T  : GET STATE\n");
+//    		sendMessageToPArticularUser(String, "G : G  : START GAME\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "GS : GS  : RETURNS THE CURRENT GAMES\n");
-//    		sendMessageToPArticularUser(session, "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n");
+//    		sendMessageToPArticularUser(String, "GS : GS  : RETURNS THE CURRENT GAMES\n");
+//    		sendMessageToPArticularUser(String, "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n");
 //    		
-//    		sendMessageToPArticularUser(session, "W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
+//    		sendMessageToPArticularUser(String, "W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
 //
-//    		sendMessageToPArticularUser(session, "N?: GET NEW OPCODES\n");
-//    		sendMessageToPArticularUser(session, "O?: GET OLD OPCODES\n\n");     		
+//    		sendMessageToPArticularUser(String, "N?: GET NEW OPCODES\n");
+//    		sendMessageToPArticularUser(String, "O?: GET OLD OPCODES\n\n");     		
     	}
     	else if(message.startsWith("W"))
     	{
     		try {
 	    		int gameID  = Integer.parseInt("" + message.charAt(1) + message.charAt(2));
-	    		sessionGameObjectMap.get(session).setGameID(gameID);
-	    		game.get(gameID).spectators.add(sessionGameObjectMap.get(session));
+	    		StringGameObjectMap.get(String).setGameID(gameID);
+	    		game.get(gameID).spectators.add(StringGameObjectMap.get(String));
 	    		game.get(gameID).spectators.get(game.get(gameID).spectators.size() - 1).setpNum(game.get(gameID).spectators.size() - 1);
     		}
     		catch(Exception e)
     		{
-    			sendMessageToPArticularUser(session,"Invalid Command please use W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
+    			sendMessageToPArticularUser(String,"Invalid Command please use W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
     		}
     	}
     	//***************************************START OLD METHODS****************************************************************
@@ -371,10 +370,10 @@ public class WebSocketServer {
     		player = "" + message.charAt(2);  //The player number is stored in the second bit
     		logger.info("Player " + player + " has joined game " + username);
     		
-            sessionUsernameMap.put(session, username); //Log the session based off the game number
-            usernameSessionMap.put(username, session); 
+            StringUsernameMap.put(String, username); //Log the String based off the game number
+            usernameStringMap.put(username, String); 
             
-            logger.info("This is user " + sessionUsernameMap.size());
+            logger.info("This is user " + StringUsernameMap.size());
             
             broadcastOLD("Player " + player + " has joined game " + username);
     	}
@@ -409,50 +408,52 @@ public class WebSocketServer {
  
     @OnClose
     /**
-     * This class closes the session after the user is done.
-     * @param session session for the user
+     * This class closes the String after the user is done.
+     * @param String String for the user
      * @throws IOException
      */
-    public void onClose(Session session) throws IOException
+    public void onClose(String String) throws IOException
     {
     	logger.info("Entered into Close");    	
     	
     	//***************************************START OLD METHODS****************************************************************
-    	String username = sessionUsernameMap.get(session);
-    	sessionUsernameMap.remove(session);
-    	usernameSessionMap.remove(username);
+    	String username = StringUsernameMap.get(String);
+    	StringUsernameMap.remove(String);
+    	usernameStringMap.remove(username);
     	//***************************************END OLD METHODS******************************************************************
     	
-    	WebGameObject wgo = sessionGameObjectMap.get(session);
-    	sessionGameObjectMap.remove(session);
-    	GameObjectSessionMap.remove(wgo);
+    	WebGameObject wgo = StringGameObjectMap.get(String);
+    	StringGameObjectMap.remove(String);
+    	GameObjectStringMap.remove(wgo);
     }
  
     @OnError
     /**
      * This class displays an error message in the logger when present
-     * @param session session of the user
+     * @param String String of the user
      * @param throwable
      */
-    public void onError(Session session, Throwable throwable) 
+    public void onError(String String, Throwable throwable) 
     {
         // Do error handling here
     	logger.info("Entered into Error");
     }
     /**
-     * Send message to a specific session or game
-     * @param message message to send to the session
+     * Send message to a specific String or game
+     * @param message message to send to the String
      */
-	private void sendMessageToPArticularUser(Session s, String message) 
+	private String sendMessageToPArticularUser(String s, String message) 
     {	
-		
-    	try {
-    		GameObjectSessionMap.get(sessionGameObjectMap.get(s)).getBasicRemote().sendText(message);
-    		logger.info("sending dm to " + GameObjectSessionMap.get(sessionGameObjectMap.get(s)));
-        } catch (IOException e) {
-        	logger.info("Exception: " + e.getMessage().toString());
-            e.printStackTrace();
-        }
+//		
+//    	try {
+//    		GameObjectStringMap.get(StringGameObjectMap.get(s)).getBasicRemote().sendText(message);
+//    		logger.info("sending dm to " + GameObjectStringMap.get(StringGameObjectMap.get(s)));
+//        } catch (IOException e) {
+//        	logger.info("Exception: " + e.getMessage().toString());
+//            e.printStackTrace();
+//        }
+		rMessage = message;
+		return message;
     }
 	//This will be used for Admins
 //	private void sendMessgeToGame(WebGames wg, String message)
@@ -460,7 +461,7 @@ public class WebSocketServer {
 //    	try {
 //    		for(int i = 0; i < wg.players.size(); i++)
 //    		{
-//    			GameObjectSessionMap.get(wg.players.get(i)).getBasicRemote().sendText(message);
+//    			GameObjectStringMap.get(wg.players.get(i)).getBasicRemote().sendText(message);
 //    		}
 //    		logger.info("sending dm to " + wg);
 //        } catch (IOException e) {
@@ -468,64 +469,71 @@ public class WebSocketServer {
 //            e.printStackTrace();
 //        }
 //	}
-	private void sendMessageToAll(Session session, String message) throws IOException
+	private String sendMessageToAll(String String, String message) throws IOException
 	{
-		message = "." + message;
-		for(int i = 0; i < players.size(); i++)
-		{
-			if(players.get(i) != sessionGameObjectMap.get(session))
-			{
-				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText(message);
-			}
-		}
+//		message = "." + message;
+//		for(int i = 0; i < players.size(); i++)
+//		{
+//			if(players.get(i) != StringGameObjectMap.get(String))
+//			{
+//				GameObjectStringMap.get(players.get(i)).getBasicRemote().sendText(message);
+//			}
+//		}
+		return String;
 	}
-    private static void broadcastNew(String message) 
+    private static String broadcastNew(String message) 
   	      throws IOException 
   {	  
-  	sessionGameObjectMap.forEach((session, username) -> {
-  		synchronized (session) {
-	            try {
-	                session.getBasicRemote().sendText(message);
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        }
-	    });
+//  	StringGameObjectMap.forEach((String, username) -> {
+//  		synchronized (String) {
+//	            try {
+//	                String.getBasicRemote().sendText(message);
+//	            } catch (IOException e) {
+//	                e.printStackTrace();
+//	            }
+//	        }
+//	    });
+    	return message;
 	}
 	//***************************************START OLD METHODS****************************************************************
-	private void sendMessageToPArticularUserOLD(String message) 
+	private String sendMessageToPArticularUserOLD(String message) 
     {	
-		//String username = "user";
-		
-    	try {
-    		usernameSessionMap.get(username).getBasicRemote().sendText(message);
-    		logger.info("sending dm to " + usernameSessionMap.get(username));
-        } catch (IOException e) {
-        	logger.info("Exception: " + e.getMessage().toString());
-            e.printStackTrace();
-        }
+//		//String username = "user";
+//		
+//    	try {
+//    		usernameStringMap.get(username).getBasicRemote().sendText(message);
+//    		logger.info("sending dm to " + usernameStringMap.get(username));
+//        } catch (IOException e) {
+//        	logger.info("Exception: " + e.getMessage().toString());
+//            e.printStackTrace();
+//        }
+		return message;
     }
 
     /**
-     * Send message to all the sessions that are being used by the websocket
+     * Send message to all the Strings that are being used by the websocket
      * @param message message to be sent
      * @throws IOException
      */
-    private static void broadcastOLD(String message) 
+    private static String broadcastOLD(String message) 
     	      throws IOException 
     {	  
-    	sessionUsernameMap.forEach((session, username) -> {
-    		synchronized (session) {
-	            try {
-	                session.getBasicRemote().sendText(message);
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        }
-	    });
+//    	StringUsernameMap.forEach((String, username) -> {
+//    		synchronized (String) {
+//	            try {
+//	                String.getBasicRemote().sendText(message);
+//	            } catch (IOException e) {
+//	                e.printStackTrace();
+//	            }
+//	        }
+//	    });
+    	return message;
 	}
+    public String getRMessage()
+    {
+    	return rMessage;
+    }
     
 	//***************************************END OLD METHODS******************************************************************
 }
-
 
