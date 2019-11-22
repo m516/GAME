@@ -15,10 +15,8 @@ MAIN := game
 DOCCMD := doxygen
 DOCFILE := Doxyfile
 
-ifeq ($(TEST), "true")
-TEST_FLAGS = "-DTEST_SYSTEM"
-else
-TEST_FLAGS = ""
+ifdef TEST
+TEST_FLAGS := -DTEST_SYSTEM
 endif
 
 all: $(MAIN)
