@@ -21,7 +21,7 @@ frontend-build:
     - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
     - ldconfig -v
     - cd client/GAMEConsole
-    - make test
+    - make all TEST=true
   artifacts:
     paths:
       - client/GAMEConsole
@@ -33,7 +33,7 @@ frontend-test:
   stage: test
   script:
     - cd client/GAMEConsole
-    - ./console-test
+    - ./game
 
 
 maven-build:
