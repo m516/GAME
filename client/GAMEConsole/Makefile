@@ -11,7 +11,7 @@ LIBS := -lm -pthread -lX11 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-au
 INCLUDES := -I include -I assets
 
 MAIN := game
-TEST := test
+TEST := console-test
 TEST_FLAGS := -DTEST_SYSTEM=1
 
 DOCCMD := doxygen

@@ -4,25 +4,20 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
-frontend-install-dependencies:
-  tags:
-    - c++_tag
-  stage: build
-  script:
-    - apt-get update --yes
-    - apt-get upgrade --yes
-    - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
-
 frontend-build:
   tags:
     - c++_tag
   stage: build
+  before_script:
+    - apt-get update --yes
+    - apt-get upgrade --yes
   script:
+    - apt-get --yes -m install libboost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev gfortran- libcoarrays-dev- libcoarrays-openmpi-dev-
     - cd client/GAMEConsole
     - make test
   artifacts:
     paths:
-      - client/GAMEConsole/src
+      - client/GAMEConsole
 
 # run tests using the binary built before
 frontend-test:
@@ -30,5 +25,5 @@ frontend-test:
     - c++_tag
   stage: test
   script:
-    - cd client/GAMEConsole/src
+    - cd client/GAMEConsole
     - ./test
