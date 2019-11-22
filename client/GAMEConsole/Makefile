@@ -23,7 +23,7 @@ $(MAIN): $(OBJ_FILES)
 	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
-	ifeq($(TEST),true)
+	ifeq ($(TEST),true)
 		@mkdir -p $(OBJ_DIRS)
 		g++ $(CLFAGS) $(INCLUDES) -DTEST_SYSTEM -c -o $@ $<
 	else
