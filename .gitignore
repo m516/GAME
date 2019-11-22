@@ -502,3 +502,5 @@ local.properties
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi    .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 
 
+*.json
+client/GAMEConsole/out/build/x64-Debug/.ninja_deps

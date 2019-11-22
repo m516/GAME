@@ -28,11 +28,14 @@ set(SRC_GAME_DIR "${SRC_MAIN_DIR}/src")
 include_directories(${SRC_GAME_DIR})
 
 
-
-
 #SFML
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED system window graphics network)
+
+#Boost
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 #Websocketpp
 find_package(websocketpp REQUIRED)
 
