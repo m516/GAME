@@ -5,8 +5,8 @@
 image: gcc
 
 stages:
- - frontend-build
- - frontend-test
+ - build
+ - test
 
 
 frontend-build:
