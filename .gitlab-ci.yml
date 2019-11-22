@@ -13,7 +13,7 @@ frontend-build:
   before_script:
     - apt-get update --yes
     - apt-get upgrade --yes
-    - apt-get --yes -m install boost-all-dev libssl1.0-dev libwebsocketpp-dev libsfml-dev
+    - apt-get --yes -m install boost-all-dev libssl-dev libwebsocketpp-dev libsfml-dev
   script:
     - cd client/GAMEConsole
     - make test
