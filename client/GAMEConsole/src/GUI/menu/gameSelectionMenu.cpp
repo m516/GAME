@@ -10,7 +10,6 @@ GameSelectionMenu::GameSelectionMenu(sf::RenderWindow* window, Theme* theme = 0)
 	//Initialize a new theme if necessary
 	if (theme == NULL)  theme = Theme::universal_theme;
 
-
 	// Create main menu
 	title = new sf::Text();
 	title->setCharacterSize(window->getSize().y / 4);
@@ -40,20 +39,23 @@ GameSelectionMenu::~GameSelectionMenu()
 
 void GameSelectionMenu::render()
 {
-	if (renderer != NULL) {
+	if (renderer != NULL) 
+    {
 		renderer->draw(*title);
 		menu->update();
 		menu->render();
 	}
 }
 
-void GameSelectionMenu::runPong() {
+void GameSelectionMenu::runPong() 
+{
 	//Create Pong instance
 	Pong* pong_game = new Pong();
 	GameMenu g(renderer, pong_game, theme);
 	g.lockRender();
 	delete pong_game;
 }
-void GameSelectionMenu::goBack() {
+void GameSelectionMenu::goBack() 
+{
 	unlockRender();
 }

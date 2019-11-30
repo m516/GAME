@@ -5,20 +5,17 @@
 
 class StatMenu : public LockingElement
 {
-public:
-	StatMenu(sf::RenderWindow* window, Theme* theme);
+    public:
+        StatMenu(sf::RenderWindow* window, Theme* theme);
+        ~StatMenu();
 
-	~StatMenu();
+        //Inherited from GUIElement
+        void render();
 
-	//Inherited from GUIElement
-	void render();
-
-private:
-	sf::Http http;
-
-	sf::Text* username = 0;
-	sf::Text* wins = 0;
-	sf::Text* losses = 0;
-	sf::Text* level = 0;
-
+    private:
+        sf::Http http;
+        sf::Text* username = 0;
+        sf::Text* wins = 0;
+        sf::Text* losses = 0;
+        sf::Text* level = 0;
 };
