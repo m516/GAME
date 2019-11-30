@@ -27,22 +27,22 @@ all: $(MAIN)
 remake: clean all
 
 $(MAIN): $(OBJ_FILES)
-        g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
+	g++ $(CLFAGS) -o $@ $(OBJ_FILES) $(LIBS)
 
 .cpp.o:
-        @mkdir -p $(OBJ_DIRS)
-        g++ $(CLFAGS) $(INCLUDES) $(TEST_FLAGS) -c -o $@ $<
+	@mkdir -p $(OBJ_DIRS)
+	g++ $(CLFAGS) $(INCLUDES) $(TEST_FLAGS) -c -o $@ $<
 
 .PHONY: clean docs depend test
 
 test:
-        @echo $(SRC_FILES:.cpp=.o)
+	@echo $(SRC_FILES:.cpp=.o)
 
 clean:
-        $(RM) $(addprefix $(SOURCE), *~) $(MAIN); find . -type f -name '*.o' -delete
+	$(RM) $(addprefix $(SOURCE), *~) $(MAIN); find . -type f -name '*.o' -delete
 
 docs:
-        $(DOCCMD) $(DOCFILE)
+	$(DOCCMD) $(DOCFILE)
 
 depend: $(SRCS)
-        makedepend $(INCLUDES) $^
+	makedepend $(INCLUDES) $^
