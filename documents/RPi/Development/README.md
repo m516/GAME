@@ -1,3 +1,35 @@
+Welcome aboard to the GAME Console development team! 
+
+Here are some ways you can configure your devices to get started:
+1. Development with Visual Studio Code (compiled/executed locally, for Linux-based development platforms) (TODO document)
+2. Development with Visual Studio (compiled/executed locally)
+3. Development with Visual Studio (compiled/executed remotely on a Raspberry Pi)
+4. Compiling locally on a Raspberry Pi
+
+# Development with Visual Studio
+
+vcpkg install boost:x64-windows sfml:x64-windows websocketpp:x64-windows
+
+After completing the steps below, you should be able to develop and test the front-end code on any device capable of running Visual Studio.
+
+## 1. Install Visual Studio on your computer
+More info can be found at the 
+[Visual Studio download page](https://visualstudio.microsoft.com/downloads/)
+
+## 2. Install Vcpkg
+Vcpkg is a tool for Visual Studio developers to compile and build C++ libraries. Installation instruction and usage are documented in the 
+[Vcpkg Github repository](https://github.com/microsoft/vcpkg).
+
+## 3. Install libraries
+For this repository, you will need to have the following dependencies:
+* Boost
+* SFML
+* Websocketpp
+
+Here is an example vcpkg command for users with 64-bit Windows computers:
+
+`vcpkg install boost:x64-windows sfml:x64-windows websocketpp:x64-windows`
+
 # Remote Development for the Pi
 After completing the steps below, you should be able to write C++ code on any device capable of running Visual Studio. The code is stored on that device, but it's compiled and executed on a Raspberry Pi.
 
@@ -25,13 +57,6 @@ cd build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
 sudo make install
 sudo ldconfig
-sudo apt-get install boost-all-dev libssl1.0-dev
-cd
-git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
-cd socket.io-client-cpp/
-cmake ./
-sudo make install
-cd
 sudo apt-get install boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
 ```
 
@@ -186,3 +211,48 @@ int main()
 ...and (hopefully) SFML works on your Pi!
 
 ![The Pi successfully running and debugging our code!](documents/RPi/Development/images/14.png)
+
+# Compiling locally on a Raspberry Pi
+
+## Install packages
+In a Raspberry Pi terminal, enter the following commands to install the packages required to properly build the GAME Console project:
+```
+sudo raspi-config nonint do_expand_rootfs
+sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
+sudo raspi-config nonint do_ssh 0
+sudo apt-get install make git g++ gdb gdbserver libflac-dev libogg-dev libvorbis-dev libopenal-dev libjpeg8-dev libfreetype6-dev libudev-dev libraspberrypi-dev boost-all-dev libssl1.0-dev libwebsocketpp-dev libwebsocketpp-doc
+cd
+git clone https://github.com/mickelson/sfml-pi.git
+cd sfml-pi
+mkdir build
+cd build
+cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libbrcmEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libbrcmGLESv2.so
+sudo make install
+sudo ldconfig
+```
+
+## Download the GAME Console source code
+Clone this project onto the Pi with Git
+
+## Build the GAME Console
+First navigating to the root directory of the project.
+
+Then traverse into the client/GAMEConsole folder by entering the following command:
+
+`cd client/GAMEConsole`
+
+Build the project with Make with the following command:
+
+`make`
+
+Note that the libraries take a lot of RAM, so although the Pi 3s have four cores, they do not have enough space for building with multiple threads, so the following command won't work:
+
+`make -j4`
+
+Testing can be done by setting the TEST variable to "true"
+
+`make all TEST=true`
+
+## Run the GAME Console
+To run tests or the actual program, simply run `./game`
+
