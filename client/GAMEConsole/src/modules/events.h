@@ -14,6 +14,4 @@ class Events
 		Events(Application *app);
         void start();
         void eventLoop();
-	private:
-	protected:
 };

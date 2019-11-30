@@ -6,13 +6,8 @@
 
 #define NETWORK_SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
 
-
-
 namespace NetworkConnection
 {
-
-	
-
 	//Define websocket client type
 	typedef websocketpp::client<websocketpp::config::asio_client> client_t;
 	//Define message type
@@ -34,30 +29,23 @@ namespace NetworkConnection
 
 	//Add a listener
 	void addListener(Listener listener, std::function<void()> function);
-
 	void onOpen(client_t* c, websocketpp::connection_hdl hdl);
-
 	void onFail(client_t* c, websocketpp::connection_hdl hdl);
-
 	void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg);
-
 	void onClose(client_t* c, websocketpp::connection_hdl hdl);
 
 	int connect();
-
 	void disconnect();
-
 	bool isConnected();
 
 	void send(std::string message);
-
 
 	void runFunctions(std::vector<std::function<void()>>* function_list);
 
 	std::string getString();
 
-
-	namespace {
+	namespace 
+    {
 		thread_t network_client_thread;
 		client_t network_client;
 		client_t::connection_ptr connection;

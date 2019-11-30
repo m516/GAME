@@ -3,7 +3,6 @@
 #include <thread>
 #include <iostream>
 
-
 //See https://en.cppreference.com/w/cpp/utility/functional/function
 
 #define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
@@ -13,225 +12,224 @@
 #define CONNECTION_DEBUG
 #endif
 
-
-namespace NetworkConnection {
-
-
-
-
-//Connect to server
-int connect()
+namespace NetworkConnection 
 {
+    //Connect to server
+    int connect()
+    {
+        //Include some networking stuff
+        using websocketpp::lib::placeholders::_1;
+        using websocketpp::lib::placeholders::_2;
+        using websocketpp::lib::bind;
 
+        //Wait until connection complete
+        while (network_connecting) std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-	//Include some networking stuff
-	using websocketpp::lib::placeholders::_1;
-	using websocketpp::lib::placeholders::_2;
-	using websocketpp::lib::bind;
+        if (network_connected) return 0;
 
+        //Restart if initialized
+        if (network_initialized) disconnect();
 
+        //Create a new client
+        client = new client_t();
 
-	//Wait until connection complete
-	while (network_connecting) std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        // set logging policy if needed
+        #ifdef CONNECTION_DEBUG
+        client->set_access_channels(websocketpp::log::alevel::all);
+        client->set_error_channels(websocketpp::log::elevel::all);
+        #else
+        client->clear_access_channels(websocketpp::log::alevel::all);
+        client->clear_error_channels(websocketpp::log::elevel::all);
+        #endif
 
-	if (network_connected) return 0;
+        //Set listeners
+        client->set_open_handler(
+            bind(&NetworkConnection::onOpen, client, _1)
+        );
+        client->set_fail_handler(
+            bind(&NetworkConnection::onFail, client, _1)
+        );
+        client->set_close_handler(
+            bind(&NetworkConnection::onClose, client, _1)
+        );
+        client->set_message_handler(
+            bind(&NetworkConnection::onMessage, client, _1, _2)
+        );
 
-	//Restart if initialized
-	if (network_initialized) disconnect();
+        // Initialize ASIO
+        client->init_asio();
 
-	//Create a new client
-	client = new client_t();
+        //Marks the endpoint as perpetual, stopping it from exiting when empty
+        client->start_perpetual();
 
-	// set logging policy if needed
-#ifdef CONNECTION_DEBUG
+        websocket_thread = new websocketpp::lib::thread(&client_t::run, client);
 
-	client->set_access_channels(websocketpp::log::alevel::all);
-	client->set_error_channels(websocketpp::log::elevel::all);
-#else
-	client->clear_access_channels(websocketpp::log::alevel::all);
-	client->clear_error_channels(websocketpp::log::elevel::all);
-#endif
+        // Start the ASIO io_service run loop inside a new thread
+        client_thread.reset(websocket_thread);
 
+        //Print network initialized message
+        std::cout << "Network initialized" << std::endl;
 
-	//Set listeners
-	client->set_open_handler(
-		bind(&NetworkConnection::onOpen, client, _1)
-	);
-	client->set_fail_handler(
-		bind(&NetworkConnection::onFail, client, _1)
-	);
-	client->set_close_handler(
-		bind(&NetworkConnection::onClose, client, _1)
-	);
-	client->set_message_handler(
-		bind(&NetworkConnection::onMessage, client, _1, _2)
-	);
+        network_initialized = true;
 
-	// Initialize ASIO
-	client->init_asio();
+        std::string uri = SERVER_URI;
 
-	//Marks the endpoint as perpetual, stopping it from exiting when empty
-	client->start_perpetual();
+        //Now that the client is initialized, attempt a connection to the server
+        try 
+        {
 
-	websocket_thread = new websocketpp::lib::thread(&client_t::run, client);
+            // Create a connection to the given URI and queue it for connection once
+            // the event loop starts
+            websocketpp::lib::error_code ec;
+            client_t::connection_ptr connection = client->get_connection(uri, ec);
+            client->connect(connection);
+            network_connecting = true;
+            return 0;
+        }
+        catch (const std::exception & e) 
+        {
+            std::cout << e.what() << std::endl;
+            return 1;
+        }
+        catch (websocketpp::lib::error_code e) 
+        {
+            std::cout << e.message() << std::endl;
+            return 2;
+        }
+        catch (...) 
+        {
+            std::cout << "other exception" << std::endl;
+            return 3;
+        }
+    }
 
-	// Start the ASIO io_service run loop inside a new thread
-	client_thread.reset(websocket_thread);
+    void disconnect()
+    {
+        network_connecting = false;
 
-	//Print network initialized message
-	std::cout << "Network initialized" << std::endl;
+        client->stop_perpetual();
+        websocketpp::lib::error_code ec;
+        client->close(connection_hdl, websocketpp::close::status::normal, "Closing connection to server as normal", ec);
 
-	network_initialized = true;
+        if (ec) 
+        {
+            std::cout << "> Error closing connection: "
+                << ec.message() << std::endl;
+        }
 
-	std::string uri = SERVER_URI;
+        client_thread->join();
 
-	//Now that the client is initialized, attempt a connection to the server
-	try {
+        std::cout << "Connecton closed" << std::endl;
 
-		// Create a connection to the given URI and queue it for connection once
-		// the event loop starts
-		websocketpp::lib::error_code ec;
-		client_t::connection_ptr connection = client->get_connection(uri, ec);
-		client->connect(connection);
-		network_connecting = true;
-		return 0;
-	}
-	catch (const std::exception & e) {
-		std::cout << e.what() << std::endl;
-		return 1;
-	}
-	catch (websocketpp::lib::error_code e) {
-		std::cout << e.message() << std::endl;
-		return 2;
-	}
-	catch (...) {
-		std::cout << "other exception" << std::endl;
-		return 3;
+        network_connected = false;
+        network_initialized = false;
 
-	}
-}
+        delete client;
+    }
 
-void disconnect()
-{
+    bool isConnected()
+    {
+        return network_connected;
+    }
 
-	network_connecting = false;
+    void send(std::string message)
+    {
+        //Wait until connection complete
+        while(network_connecting) std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-	client->stop_perpetual();
-	websocketpp::lib::error_code ec;
-	client->close(connection_hdl, websocketpp::close::status::normal, "Closing connection to server as normal", ec);
-	if (ec) {
-		std::cout << "> Error closing connection: "
-			<< ec.message() << std::endl;
-	}
-	client_thread->join();
+        //Don't send anything if not connected
+        if (!network_connected) return;
 
-	std::cout << "Connecton closed" << std::endl;
+        try {
 
-	network_connected = false;
-	network_initialized = false;
+    #ifdef NETWORK_DEBUG
+            std::cout << "NetworkController: Sending " << message << std::endl;
+    #endif // NETWORK_DEBUG
 
-	delete client;
-}
+            client->send(connection_hdl, message, websocketpp::frame::opcode::text);
+        }
+        catch (std::exception & e)
+        {
+            std::cout << e.what() << '\n';
+            network_connected = false;
+        }
+    }
 
-bool isConnected()
-{
-	return network_connected;
-}
+    std::string getString()
+    {
+        return message;
+    }
 
+    void addListener(Listener listener, std::function<void()> function) 
+    {
+        listeners[(int)listener].push_back(function);
+    }
 
-void send(std::string message)
-{
-	//Wait until connection complete
-	while(network_connecting) std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    void runFunctions(std::vector<std::function<void()>>* function_list) 
+    {
+        for (int i = function_list->size() - 1; i >= 0; i--) 
+        {
+            std::function<void()> f = (*function_list)[i];
+            if (f) 
+            {
+                f();
+            }
+            else 
+            {
+                (*function_list).erase((*function_list).begin() + i);
+            }
+        }
+    }
 
-	//Don't send anything if not connected
-	if (!network_connected) return;
+    //Listeners
+    void onOpen(client_t* c, websocketpp::connection_hdl hdl)
+    {
+        if (network_connected) 
+        {
+            std::cout << "Warning! connection_hdl is already set!" << std::endl;
+        }
+        if (client == c) 
+        {
+            connection_hdl = hdl;
+            std::cout << "Network connected" << std::endl;
+            network_connected = true;
+            network_connecting = false;
+            runFunctions(&listeners[(int)Listener::OPEN]);
+        }
+        else 
+        {
+            std::cout << "Error: not the right client!" << std::endl;
+        }
+    }
 
-	try {
+    void onFail(client_t* c, websocketpp::connection_hdl hdl)
+    {
+        if (client == c) 
+        {
+            std::cout << "Failure from the right client!" << std::endl;
+        }
+        else 
+        {
+            std::cout << "Failure from the wrong client!" << std::endl;
+        }
 
-#ifdef NETWORK_DEBUG
-		std::cout << "NetworkController: Sending " << message << std::endl;
-#endif // NETWORK_DEBUG
+        network_connected = false;
+        network_connecting = false;
+        runFunctions(&listeners[(int)Listener::FAIL]);
+    }
 
-		client->send(connection_hdl, message, websocketpp::frame::opcode::text);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << '\n';
-		network_connected = false;
-	}
-}
+    void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg)
+    {
+        message = msg->get_payload();
+        std::cout << "Message from client: " << message << std::endl;
+        runFunctions(&listeners[(int)Listener::MESSAGE]);
+    }
 
-std::string getString()
-{
-	return message;
-}
-
-
-void addListener(Listener listener, std::function<void()> function) {
-	listeners[(int)listener].push_back(function);
-}
-
-
-
-void runFunctions(std::vector<std::function<void()>>* function_list) {
-	for (int i = function_list->size() - 1; i >= 0; i--) {
-		std::function<void()> f = (*function_list)[i];
-		if (f) {
-			f();
-		}
-		else {
-			(*function_list).erase((*function_list).begin() + i);
-		}
-	}
-}
-
-//Listeners
-void onOpen(client_t* c, websocketpp::connection_hdl hdl)
-{
-	if (network_connected) {
-		std::cout << "Warning! connection_hdl is already set!" << std::endl;
-	}
-	if (client == c) {
-		connection_hdl = hdl;
-		std::cout << "Network connected" << std::endl;
-		network_connected = true;
-		network_connecting = false;
-		runFunctions(&listeners[(int)Listener::OPEN]);
-	}
-	else {
-		std::cout << "Error: not the right client!" << std::endl;
-	}
-}
-
-void onFail(client_t* c, websocketpp::connection_hdl hdl)
-{
-	if (client == c) {
-		std::cout << "Failure from the right client!" << std::endl;
-	}
-	else {
-		std::cout << "Failure from the wrong client!" << std::endl;
-	}
-	network_connected = false;
-	network_connecting = false;
-	runFunctions(&listeners[(int)Listener::FAIL]);
-}
-
-void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg)
-{
-	message = msg->get_payload();
-	std::cout << "Message from client: " << message << std::endl;
-	runFunctions(&listeners[(int)Listener::MESSAGE]);
-}
-
-void onClose(client_t* c, websocketpp::connection_hdl hdl)
-{
-	std::cout << "NetworkController: Closing " << std::endl;
-	network_connected = false;
-	network_connecting = false;
-	runFunctions(&listeners[(int)Listener::CLOSE]);
-}
-
-
-
+    void onClose(client_t* c, websocketpp::connection_hdl hdl)
+    {
+        std::cout << "NetworkController: Closing " << std::endl;
+        network_connected = false;
+        network_connecting = false;
+        runFunctions(&listeners[(int)Listener::CLOSE]);
+    }
 }

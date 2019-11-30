@@ -29,7 +29,6 @@ Renderer::~Renderer()
 void Renderer::start()
 {
 	std::thread* renderThread = new std::thread(&Renderer::renderLoop, this);
-
 }
 
 /** 
@@ -42,12 +41,9 @@ void Renderer::renderLoop()
 	connection here, but it's already being initialized the instant
 	the main menu is initialized
 	*/
-
 	
 	main_menu->lockRender();
-
 	NetworkConnection::disconnect();
-
 	window->close();
 }
 
