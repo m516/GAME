@@ -15,9 +15,7 @@
 #include <sys/ioctl.h>
 #include <net/if.h>
 #include <unistd.h>
-
 #endif
-
 
 ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 {
@@ -25,11 +23,9 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 	this->theme = theme == NULL ? new Theme() : theme;
 	int id = user_id;
 
-
 	//MAKE THE GET REQUEST TO GET ALL THE DATA FROM THE DATABASE
 	sf::Http http;
 	http.setHost("coms-309-sr-5.misc.iastate.edu", 8080);
-
 
 	std::string strId = std::to_string(id);
 	std::string path = ("user/" + strId);
@@ -49,34 +45,42 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 	std::string user_address;
 	int count = 0;
 
-	while ((count < 3)){
+	while ((count < 3))
+    {
 		std::cout << "COUNT IS" << std::endl;
 		std::cout << count << std::endl;
-		if ((pos = shortenedString.find(delimeter)) != std::string::npos){
-			switch (count) {
-				case 0: {//USER LEVEL - DON'T CHANGE
+        
+		if ((pos = shortenedString.find(delimeter)) != std::string::npos)
+        {
+			switch (count) 
+            {
+				case 0: 
+                {//USER LEVEL - DON'T CHANGE
 					token = shortenedString.substr(0, pos);
 					user_level = token.substr(12, pos);
 					break;
 				}
-				case 1: {//USER ADDRESS - DON'T CHANGE
+				case 1: 
+                {//USER ADDRESS - DON'T CHANGE
 					token = shortenedString.substr(0, pos);
 					user_address = token.substr(11, pos - 12);
 					break;
 				}
-				case 2: {//USER NAME - DON'T CHANGE
+				case 2:
+                {//USER NAME - DON'T CHANGE
 					token = shortenedString.substr(0, pos);
 					user_name = token.substr(12, pos - 13);
 					break;
 				}
-				default: {//USER ID - DON'T CHANGE
+				default: 
+                {//USER ID - DON'T CHANGE
 					token = shortenedString.substr(0, pos);
 				}
 			}
 		}
+
 		count++;
 		shortenedString.erase(0, pos + delimeter.length());
-
 	}
 
 	levelSquare.setSize(sf::Vector2f(.25 * 256, .25 * 256));

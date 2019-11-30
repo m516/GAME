@@ -18,15 +18,16 @@ TextField::TextField(Theme* theme, const std::string& text, std::function<void()
 	border.setOutlineThickness(1.f);
 
 	//Reset all statuses
-	for (int i = 0; i < sf::Keyboard::KeyCount; i++) {
+	for (int i = 0; i < sf::Keyboard::KeyCount; i++) 
+    {
 		control_status[i] = Status::UP;
 	}
 }
 
 TextField::~TextField()
 {
-}
 
+}
 
 //renders the item as a box with text in it
 void TextField::render()
@@ -46,47 +47,57 @@ void TextField::render()
 		border.setOutlineColor(theme->color_deselected);
 	}
 
-
 	border.setFillColor(theme->color_background);
 	renderer->draw(border);
 	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
 }
 
-void TextField::updateKeys() {
-	for (int i = sf::Keyboard::Key::A; i != sf::Keyboard::KeyCount; i++) {
+void TextField::updateKeys() 
+{
+	for (int i = sf::Keyboard::Key::A; i != sf::Keyboard::KeyCount; i++) 
+    {
 		sf::Keyboard::Key curr_key = (sf::Keyboard::Key)i;
-		if (sf::Keyboard::isKeyPressed(curr_key)) {
-			if (control_status[i] == Status::UP) control_status[i] = Status::PRESSED;
-			else if (control_status[i] == Status::RELEASED) control_status[i] = Status::PRESSED;
-			else if (control_status[i] == Status::PRESSED) control_status[i] = Status::DOWN;
+		if (sf::Keyboard::isKeyPressed(curr_key)) 
+        {
+			if (control_status[i] == Status::UP) 
+                control_status[i] = Status::PRESSED;
+			else if (control_status[i] == Status::RELEASED) 
+                control_status[i] = Status::PRESSED;
+			else if (control_status[i] == Status::PRESSED) 
+                control_status[i] = Status::DOWN;
 		}
-		else {
-			if (control_status[i] == Status::DOWN) control_status[i] = Status::RELEASED;
-			else if (control_status[i] == Status::PRESSED) control_status[i] = Status::RELEASED;
-			else if (control_status[i] == Status::RELEASED) control_status[i] = Status::UP;
+		else 
+        {
+			if (control_status[i] == Status::DOWN) 
+                control_status[i] = Status::RELEASED;
+			else if (control_status[i] == Status::PRESSED) 
+                control_status[i] = Status::RELEASED;
+			else if (control_status[i] == Status::RELEASED) 
+                control_status[i] = Status::UP;
 		}
 
 		bool shift = control_status[sf::Keyboard::LShift] == Status::DOWN ||
 			control_status[sf::Keyboard::RShift] == Status::DOWN;
 
 		char c = characters[i][shift ? 1 : 0];
-		if (control_status[i] == Status::PRESSED && c) {
+		if (control_status[i] == Status::PRESSED && c) 
+        {
 			text += c;
 			label.setString(text);
 		}
 	}
 
-	if (control_status[sf::Keyboard::Key::BackSpace] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::BackSpace] == Status::PRESSED) 
+    {
 		if(text.size()>0) text.pop_back();
 		label.setString(text);
 	}
 
-	if (control_status[sf::Keyboard::Key::Return] == Status::PRESSED) {
+	if (control_status[sf::Keyboard::Key::Return] == Status::PRESSED) 
+    {
 		callPressedFunction();
 	}
 }
-
-
 
 void TextField::setText(const std::string& text)
 {
@@ -135,11 +146,13 @@ void TextField::setPosition(sf::Vector2f& new_position)
 	label.setPosition(position);
 }
 
-void TextField::setPressedFunction(std::function<void()> pressed) {
+void TextField::setPressedFunction(std::function<void()> pressed) 
+{
 	pressed_function = pressed;
 }
 
-void TextField::callPressedFunction() {
+void TextField::callPressedFunction() 
+{
 	if (pressed_function != NULL)
 		pressed_function();
 }

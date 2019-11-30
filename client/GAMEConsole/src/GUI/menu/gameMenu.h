@@ -18,6 +18,7 @@ class GameMenu : public LockingElement
     private:
         MenuPane* menu = 0;
         sf::Text* title = 0;
+        Game* game;
 
         /** Minimum frame time (essentially highest fps possible)*/
         const sf::Time frame_period = sf::milliseconds(10.f);
@@ -26,7 +27,5 @@ class GameMenu : public LockingElement
         void startOnlineGame();
         void startOfflineGame();
         void startSpectateGame();
-
-        Game* game;
 };
 
