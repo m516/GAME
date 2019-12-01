@@ -55,12 +55,10 @@
         <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-core</artifactId>
-    <version>2.15.0</version>
 </dependency>
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-inline</artifactId>
-    <version>2.15.0</version>
 </dependency>
 	</dependencies>
 

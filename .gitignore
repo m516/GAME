@@ -504,3 +504,4 @@ local.properties
 
 *.json
 client/GAMEConsole/out/build/x64-Debug/.ninja_deps
+.project
