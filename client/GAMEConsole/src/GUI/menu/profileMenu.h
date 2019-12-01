@@ -26,6 +26,4 @@ class ProfileMenu : public LockingElement
         sf::Text playTime = sf::Text();
 
         sf::RectangleShape levelSquare = sf::RectangleShape(sf::Vector2f(2, 2));
-
-    protected:
 };

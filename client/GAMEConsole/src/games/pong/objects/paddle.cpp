@@ -1,6 +1,7 @@
 #include "paddle.h"
 
-Paddle::Paddle(Game* game) {
+Paddle::Paddle(Game* game) 
+{
 	this->game = game;
 
 	//Set initial size and position
@@ -12,18 +13,20 @@ Paddle::Paddle(Game* game) {
 
 	//Create a rectangle to render
 	shape = sf::RectangleShape();
-
-
 }
 
-Paddle::~Paddle() {
+Paddle::~Paddle() 
+{
 }
 
 
-void Paddle::update() {
+void Paddle::update() 
+{
+    // Empty function
 }
 
-void Paddle::render() {
+void Paddle::render() 
+{
 	updateScreenDimensions();
 
 	shape.setPosition(screen_position);

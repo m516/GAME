@@ -4,10 +4,11 @@
 
 class PaddleController
 {
-public:
-	void setPaddle(Paddle* paddle);
-	virtual int update() = 0;
-protected:
-	Paddle* paddle;
+    public:
+        void setPaddle(Paddle* paddle);
+        virtual int update() = 0;
+        
+    protected:
+        Paddle* paddle;
 };
 

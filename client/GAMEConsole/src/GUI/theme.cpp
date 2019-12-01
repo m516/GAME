@@ -5,7 +5,7 @@ Theme* Theme::universal_theme = new Theme();
 
 Theme::Theme()
 {
-
+    // Empty constructor
 }
 
 /**

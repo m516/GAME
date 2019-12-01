@@ -11,7 +11,6 @@ GameMenu::GameMenu(sf::RenderWindow* window, Game* game, Theme* theme = 0)
 	//Initialize a new theme if necessary
 	if (theme == NULL)  theme = Theme::universal_theme;
 
-
 	// Create main menu
 	title = new sf::Text();
 	title->setCharacterSize(window->getSize().y/4);
@@ -85,11 +84,12 @@ void GameMenu::startOfflineGame()
 
 void GameMenu::startSpectateGame()
 {
-	
 	//Create Game instance
 	game->setPosition(0, 0);
-	game->setSize((float)(renderer->getSize().x),
-		(float)(renderer->getSize().y));
+	game->setSize(
+        (float)(renderer->getSize().x),
+		(float)(renderer->getSize().y)
+    );
 	game->setRenderer(renderer);
 	game->setTheme(theme);
 

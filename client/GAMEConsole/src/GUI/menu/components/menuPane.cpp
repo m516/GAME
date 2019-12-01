@@ -10,24 +10,25 @@ MenuPane::MenuPane(int initial_size, sf::RenderWindow* renderTarget)
 /**
 Adds an item to the list of items to display
 */
-void MenuPane::addItem(MenuItem item) {
+void MenuPane::addItem(MenuItem item) 
+{
 	item.setRenderer(renderer);
 	if (items.capacity() == items.size()) items.reserve(items.capacity() + 5);
 	items.push_back(item);
 	updateLook();
 }
 
-void MenuPane::updateLook() {
+void MenuPane::updateLook() 
+{
 	//Resize all the items
 	float desiredHeight = size.y / (float)items.size();
 
-
-	for (unsigned int i = 0; i < items.size(); i++) {
+	for (unsigned int i = 0; i < items.size(); i++) 
+    {
 		items[i].setSize(size.x, desiredHeight);
 		items[i].setPosition(position.x, position.y+(float)i * desiredHeight);
 	}
 }
-
 
 /**
 Updates the MenuPane
@@ -58,8 +59,10 @@ void MenuPane::update()
 /**
 Renders all the items
 */
-void MenuPane::render() {
-	for (unsigned int i = 0; i < items.size(); i++) {
+void MenuPane::render() 
+{
+	for (unsigned int i = 0; i < items.size(); i++) 
+    {
 		if (selected == i) items[i].selected = 1;
 		else items[i].selected = 0;
 		items[i].render();
@@ -71,24 +74,29 @@ void MenuPane::render() {
 /**
 Set the size of this object rendered on the screen
 */
-void MenuPane::setSize(float x, float y) {
+void MenuPane::setSize(float x, float y) 
+{
 	GUIElement::setSize(x, y);
 	updateLook();
 }
-void MenuPane::setSize(sf::Vector2f& new_size) {
+
+void MenuPane::setSize(sf::Vector2f& new_size) 
+{
 	GUIElement::setSize(new_size);
 	updateLook();
 }
 
-
 /**
 Set the size of this objet rendered on the screen
 */
-void MenuPane::setPosition(float x, float y) {
+void MenuPane::setPosition(float x, float y) 
+{
 	GUIElement::setPosition(x, y);
 	updateLook();
 }
-void MenuPane::setPosition(sf::Vector2f& new_position) {
+
+void MenuPane::setPosition(sf::Vector2f& new_position) 
+{
 	GUIElement::setPosition(new_position);
 	updateLook();
 }

@@ -1,6 +1,5 @@
 #include "playerCounter.h"
 
-
 PlayerCounter::PlayerCounter(Game* game)
 {
 	gameIDLabel = new sf::Text();
@@ -30,9 +29,9 @@ PlayerCounter::~PlayerCounter()
 
 void PlayerCounter::render()
 {
-
 	counter++;
-	if (counter == 100) {
+	if (counter == 100) 
+    {
 		counter = 0;
 		Session::updateAvailableGames();
 	}
@@ -41,17 +40,17 @@ void PlayerCounter::render()
 	{
 
 		gameIDLabel->setString("Waiting to start");
-		if (Session::currentGame()==nullptr) {
+		if (Session::currentGame()==nullptr) 
+        {
 			numJoinedLabel->setString("NULL GAME");
 		}
-		else {
+		else 
+        {
 			numJoinedLabel->setString(Session::currentGame()->getInfo());
 		}
 
-
 		gameIDLabel->setCharacterSize(renderer->getSize().y / 8);
 		gameIDLabel->setPosition((renderer->getSize().x - gameIDLabel->getGlobalBounds().width) / 2, 5);
-
 
 		numJoinedLabel->setCharacterSize(renderer->getSize().y / 12);
 		numJoinedLabel->setPosition((renderer->getSize().x - numJoinedLabel->getGlobalBounds().width) / 2, renderer->getSize().y /2.f);
@@ -59,7 +58,8 @@ void PlayerCounter::render()
 		renderer->draw(*gameIDLabel);
 		renderer->draw(*numJoinedLabel);
 	}
-	else {
+	else 
+    {
 		std::cout << "Renderer Is Null!" << std::endl;
 	}
 }

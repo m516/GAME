@@ -41,7 +41,6 @@ void MenuItem::render()
 		border.setFillColor(theme->color_deselected);
 	}
 	
-
 	renderer->draw(border);
 	renderer->draw(label); //TODO doesn't check if the text is longer than the border!
 }
@@ -90,11 +89,13 @@ void MenuItem::setPosition(sf::Vector2f &new_position)
 	label.setPosition(position.x + size.y + 10, position.y);
 }
 
-void MenuItem::setPressedFunction(std::function<void()> pressed) {
+void MenuItem::setPressedFunction(std::function<void()> pressed) 
+{
 	pressed_function = pressed;
 }
 
-void MenuItem::callPressedFunction() {
+void MenuItem::callPressedFunction() 
+{
 	if(pressed_function != NULL) 
 		pressed_function();
 }

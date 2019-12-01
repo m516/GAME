@@ -52,9 +52,8 @@ void Events::eventLoop()
 				}
 			}
 			*/
-		}//end while
+		} //end while
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
-
-	}//end while
-}//end eventLoop
+	} //end while
+} //end eventLoop

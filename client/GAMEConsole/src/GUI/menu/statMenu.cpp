@@ -30,19 +30,14 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	//ADD LOSES 
 	//ADD LEVEL
 
-	while ((pos = shortenedString.find(delimeter)) != std::string::npos) {
-
+	while ((pos = shortenedString.find(delimeter)) != std::string::npos) 
+    {
 		token = shortenedString.substr(0, pos);
 		std::cout << token << std::endl;
 		shortenedString.erase(0, pos + delimeter.length());
 	}
+
 	std::cout << shortenedString << std::endl;
-
-
-
-
-
-
 
 	//Convers the string into a char array to do parsing with
 
@@ -56,8 +51,6 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	//This removes the two curly braces from the end and the beginning, offset of 1
 	//and a shorter length of 2
 
-
-
 	//This prints the reponse Str to the console for testing 
 	//std::cout << responseString << std::endl;
 	//std::cout << responseChar << std::endl;
@@ -65,7 +58,6 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 	//std::cout << responseLength << std::endl;
 	//std::cout << shortenedString << std::endl;
 	std::cout << response.getField("email") << std::endl;
-
 
 	//Create Display for Stat Fields
 	username = new sf::Text();
@@ -111,7 +103,8 @@ StatMenu::StatMenu(sf::RenderWindow* window, Theme* theme = 0)
 
 void StatMenu::render()
 {
-	if (renderer != NULL) {
+	if (renderer != NULL) 
+    {
 		renderer->draw(*username);
 		renderer->draw(*wins);
 		renderer->draw(*losses);

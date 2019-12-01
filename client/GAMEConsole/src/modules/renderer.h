@@ -22,7 +22,7 @@ class Renderer
 		Application* application;
 		Theme* theme;
 		sf::RenderWindow* window;
-	private:
 
+	private:
 		MainMenu* main_menu = 0;
 };

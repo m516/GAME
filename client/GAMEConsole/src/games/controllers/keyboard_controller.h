@@ -4,55 +4,54 @@
 
 #include "controller.h"
 
-class KeyboardController : public Controller {
-public:
+class KeyboardController : public Controller 
+{
+    public:
+        KeyboardController();
 
-	KeyboardController();
+        virtual int update();
+        virtual void disable();
 
-	virtual int update();
+        //The list of controls
+        typedef enum class CONTROL
+        {
+            UP,
+            DOWN,
+            LEFT,
+            RIGHT,
+            ENTER,
+            EXIT,
+            NONE
+        } Control;
 
-	virtual void disable();
+        typedef enum class STATUS 
+        {
+            UP,
+            PRESSED,
+            DOWN,
+            RELEASED,
+            DISABLED
+        } Status;
 
-	//The list of controls
-	typedef enum class CONTROL
-	{
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-		ENTER,
-		EXIT,
-		NONE
-	} Control;
+        //Bind a key to a character on the keyboard.
+        //Default WASD controls
+        void setKey(Control controlToSet, sf::Keyboard::Key key);
 
-	typedef enum class STATUS {
-		UP,
-		PRESSED,
-		DOWN,
-		RELEASED,
-		DISABLED
-	} Status;
+    protected:
+        //Key bindings for each control
+        sf::Keyboard::Key keyUp = sf::Keyboard::W;
+        sf::Keyboard::Key keyDown = sf::Keyboard::S;
+        sf::Keyboard::Key keyLeft = sf::Keyboard::A;
+        sf::Keyboard::Key keyRight = sf::Keyboard::D;
+        sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
+        sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
 
-	//Bind a key to a character on the keyboard.
-	//Default WASD controls
-	void setKey(Control controlToSet, sf::Keyboard::Key key);
-
-protected:
-
-	//Key bindings for each control
-	sf::Keyboard::Key keyUp = sf::Keyboard::W;
-	sf::Keyboard::Key keyDown = sf::Keyboard::S;
-	sf::Keyboard::Key keyLeft = sf::Keyboard::A;
-	sf::Keyboard::Key keyRight = sf::Keyboard::D;
-	sf::Keyboard::Key keyEnter = sf::Keyboard::Return;
-	sf::Keyboard::Key keyExit = sf::Keyboard::Escape;
-
-	//Controls
-	Status up = Status::UP;
-	Status down = Status::UP;
-	Status left = Status::UP;
-	Status right = Status::UP;
-	Status enter = Status::UP;
-	Status exit = Status::UP;
-	Control current_control = Control::NONE;
+        //Controls
+        Status up = Status::UP;
+        Status down = Status::UP;
+        Status left = Status::UP;
+        Status right = Status::UP;
+        Status enter = Status::UP;
+        Status exit = Status::UP;
+        Control current_control = Control::NONE;
 };

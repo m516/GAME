@@ -11,7 +11,6 @@ JoinCreateMenu::JoinCreateMenu(sf::RenderWindow* window, Game* game, Theme* them
 	//Initialize a new theme if necessary
 	if (theme == NULL)  theme = Theme::universal_theme;
 
-
 	// Create main menu
 	title = new sf::Text();
 	title->setCharacterSize(window->getSize().y/6);
@@ -44,13 +43,15 @@ JoinCreateMenu::~JoinCreateMenu()
 
 void JoinCreateMenu::render()
 {
-	if (renderer != NULL) {
+	if (renderer != NULL) 
+    {
 		renderer->draw(*title);
 		menu->update();
 		menu->render();
 	}
 
-	if (Session::getStatus() == Session::OnlineGame::Status::AVAILABLE) {
+	if (Session::getStatus() == Session::OnlineGame::Status::AVAILABLE) 
+    {
 		//Initialize in network mode
 		Session::joinGame(Session::currentGame());
 		game->setRenderer(renderer);
