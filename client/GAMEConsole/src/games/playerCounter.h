@@ -11,28 +11,24 @@ or to join an existing one. Note that will only run preexisting games and WILL N
 and configure new ones*/
 class PlayerCounter : public LockingElement
 {
-public:
+    public:
+        PlayerCounter(Game* game);
+        ~PlayerCounter();
 
-	PlayerCounter(Game* game);
-	~PlayerCounter();
+        void render();
 
-	void render();
+        int getNumPlayers();
+        bool isFull();
 
-	int getNumPlayers();
-	bool isFull();
+    private:
+        int gameID;
+        int expectedNumPlayers;
+        sf::Text* gameIDLabel = 0;
+        sf::Text* numJoinedLabel = 0;
+        Game* game;
 
-private:
-	int gameID;
-	int expectedNumPlayers;
-	sf::Text* gameIDLabel = 0;
-	sf::Text* numJoinedLabel = 0;
-	Game* game;
-	/*
-	Counter for slow network refresh 
-	(we don't need to ping the server
-	to see if the game is full 60 times
-	per second
-	*/
-	int counter = 0;
+        // Counter for slow network refresh
+        // (we don't need to ping the server 60 times per second)
+        int counter = 0;
 };
 

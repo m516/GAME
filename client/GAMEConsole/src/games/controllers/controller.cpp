@@ -1,16 +1,21 @@
 #include "controller.h"
 
-Controller::~Controller(){
+Controller::~Controller()
+{
 
 }
 
-void Controller::enable() {
+void Controller::enable() 
+{
 	enabled = true;
 }
-void Controller::disable() {
+
+void Controller::disable() 
+{
 	enabled = false;
 }
 
-bool Controller::is_enabled() {
+bool Controller::is_enabled() 
+{
 	return enabled;
 }
