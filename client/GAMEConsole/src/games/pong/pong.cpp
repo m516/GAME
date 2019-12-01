@@ -1,12 +1,11 @@
 #include "pong.h"
 
-
-Pong::Pong() {
+Pong::Pong() 
+{
 	camera_location.x = 0;
 	camera_location.y = 0;
 
 	camera_scale = 1.f;
-
 
 	ball = new Ball(this);
 
@@ -14,11 +13,9 @@ Pong::Pong() {
 	paddle_right = new Paddle(this);
 	paddle_right->position.x = 0.9f - paddle_right->size.x;
 
-
 	//Create the left paddle
 	paddle_left = new Paddle(this);
 	paddle_left->position.x = 0.1f;
-
 
 	//Create the scoreboard
 	scoreboard = new ScoreBoard(this, 2);
@@ -31,17 +28,18 @@ Pong::Pong() {
 	paddle_network_controller = 0;
 }
 
-Pong::~Pong() {
+Pong::~Pong() 
+{
 	deinitialize();
 	delete ball;
 	delete paddle_right;
 	delete paddle_left;
 }
 
-void Pong::beginNetworkGame(){
+void Pong::beginNetworkGame()
+{
 	//Don't initialize twice, that's a memory leak
 	if (initialized) return;
-
 
 	//Create the player counter
 	player_counter = new PlayerCounter(this);
@@ -72,7 +70,8 @@ void Pong::beginNetworkGame(){
 	initialized = true;
 }
 
-void Pong::beginSpectateGame() {
+void Pong::beginSpectateGame() 
+{
 	//Don't initialize twice, that's a memory leak
 	if (initialized) return;
 
@@ -95,7 +94,8 @@ void Pong::beginSpectateGame() {
 	initialized = true;
 }
 
-void Pong::beginOfflineGame() {
+void Pong::beginOfflineGame() 
+{
 	//Don't initialize twice, that's a memory leak
 	if (initialized) return;
 
@@ -120,8 +120,8 @@ void Pong::beginOfflineGame() {
 	initialized = true;
 }
 
-void Pong::update(){
-
+void Pong::update()
+{
 	//Update controllers
 	if(right_controller != NULL) right_controller->update();
 	if(left_controller != NULL) left_controller->update();
@@ -146,7 +146,8 @@ void Pong::update(){
 	if (ball->position.x + ball->size.x > paddle_right->position.x &&
 		ball->position.x < paddle_right->position.x + paddle_right->size.x &&
 		ball->position.y + ball->size.y > paddle_right->position.y &&
-		ball->position.y < paddle_right->position.y + paddle_right->size.y) {
+		ball->position.y < paddle_right->position.y + paddle_right->size.y) 
+    {
 		//Assuming ball bounces off sideways
 		if (ball->velocity.x > 0) ball->velocity.x = -ball->velocity.x;
 
@@ -156,7 +157,8 @@ void Pong::update(){
 	if (ball->position.x + ball->size.x > paddle_left->position.x &&
 		ball->position.x < paddle_left->position.x + paddle_left->size.x &&
 		ball->position.y + ball->size.y > paddle_left->position.y &&
-		ball->position.y < paddle_left->position.y + paddle_left->size.y) {
+		ball->position.y < paddle_left->position.y + paddle_left->size.y) 
+    {
 		//Assuming ball bounces off sideways
 		if (ball->velocity.x < 0) ball->velocity.x = -ball->velocity.x;
 
@@ -166,14 +168,16 @@ void Pong::update(){
 	if (ball->position.y                < 0.f && ball->velocity.y < 0.0f) ball->velocity.y = -ball->velocity.y;
 	if (ball->position.y + ball->size.y > 1.f && ball->velocity.y > 0.0f) ball->velocity.y = -ball->velocity.y;
 
-
-	if (ball->position.x < 0.f) {
+	if (ball->position.x < 0.f)
+    {
 		ball->position.x = 0.1f;
 		ball->position.y = 1.f- ball->position.y;
 		ball->velocity.x = -ball->velocity.x;
 		scoreboard->incrementScore(0);
 	}
-	if (ball->position.x > 1.f) {
+
+	if (ball->position.x > 1.f) 
+    {
 		ball->position.x = 0.9f;
 		ball->position.y = 1.f - ball->position.y;
 		ball->velocity.x = -ball->velocity.x;
@@ -181,8 +185,10 @@ void Pong::update(){
 	}
 }
 
-void Pong::render() {
-	if (Session::currentGame()->status < Session::OnlineGame::Status::IN_PROGRESS) {
+void Pong::render() 
+{
+	if (Session::currentGame()->status < Session::OnlineGame::Status::IN_PROGRESS) 
+    {
 		unlockRender();
 		return;
 	}
@@ -194,16 +200,20 @@ void Pong::render() {
 	paddle_left->render();
 }
 
-void Pong::deinitialize() {
+void Pong::deinitialize() 
+{
 	if (!initialized) return;
 	delete right_controller;
 	delete left_controller;
 	delete paddle_network_controller;
 	delete scoreboard;
-	if (player_counter != NULL) {
+    
+	if (player_counter != NULL) 
+    {
 		delete player_counter;
 		player_counter = 0;
 	}
+    
 	initialized = false;
 }
 

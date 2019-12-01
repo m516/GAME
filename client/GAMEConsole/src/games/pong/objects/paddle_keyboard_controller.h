@@ -4,7 +4,8 @@
 #include "paddle_controller.h"
 #include "..//..//controllers/keyboard_controller.h"
 
-class PaddleKeyboardController : public KeyboardController, public  PaddleController{
-public:
-	virtual int update();
+class PaddleKeyboardController : public KeyboardController, public PaddleController
+{
+    public:
+        virtual int update();
 };

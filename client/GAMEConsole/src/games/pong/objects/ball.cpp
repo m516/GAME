@@ -1,6 +1,7 @@
 #include "ball.h"
 
-Ball::Ball(Game* game) {
+Ball::Ball(Game* game) 
+{
 	this->game = game;
 
 	//Set initial size and position
@@ -13,7 +14,6 @@ Ball::Ball(Game* game) {
 	//Create a circle to render
 	shape = sf::CircleShape();
 
-
 	//Make me move!
 	enable_motion = true;
 
@@ -21,11 +21,13 @@ Ball::Ball(Game* game) {
 	velocity.y = 0.006f;
 }
 
-void Ball::update() {
+void Ball::update() 
+{
 	Sprite::update();
 }
 
-void Ball::render() {
+void Ball::render() 
+{
 	updateScreenDimensions();
 
 	shape.setPosition(screen_position);

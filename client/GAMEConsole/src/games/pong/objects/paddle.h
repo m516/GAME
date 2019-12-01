@@ -4,16 +4,16 @@
 #include "..//..//controllers/keyboard_controller.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 
-class Paddle : public Sprite {
-public:
-	Paddle(Game* game);
+class Paddle : public Sprite 
+{
+    public:
+        Paddle(Game* game);
+        ~Paddle();
 
-	~Paddle();
+        //Inherited from Sprite class
+        void update();
+        void render();
 
-	//Inherited from Sprite class
-	void update();
-	void render();
-
-private:
-	sf::RectangleShape shape;
+    private:
+        sf::RectangleShape shape;
 };

@@ -1,7 +1,8 @@
 #include "score_board.h"
 
 
-ScoreBoard::ScoreBoard(Game* game, size_t num_players) {
+ScoreBoard::ScoreBoard(Game* game, size_t num_players) 
+{
 	//Set the game instance
 	this->game = game;
 
@@ -11,12 +12,14 @@ ScoreBoard::ScoreBoard(Game* game, size_t num_players) {
 	//Reset the scores
 	resetScores();
 }
-ScoreBoard::~ScoreBoard() {
+
+ScoreBoard::~ScoreBoard() 
+{
 	delete scores;
 }
 
-void ScoreBoard::render() {
-
+void ScoreBoard::render() 
+{
 	//Set text
 	label.setFont(game->getTheme()->font_standard);
 	label.setCharacterSize(game->getSize().y/3.f);
@@ -35,7 +38,8 @@ void ScoreBoard::render() {
 /*
 Adds one point to the player's score
 */
-void ScoreBoard::incrementScore(int player) {
+void ScoreBoard::incrementScore(int player) 
+{
 	checkPlayer(player);
 	scores[player]++;
 }
@@ -43,33 +47,42 @@ void ScoreBoard::incrementScore(int player) {
 /*
 Removes all points from a player
 */
-void ScoreBoard::resetScore(int player) {
+void ScoreBoard::resetScore(int player) 
+{
 	checkPlayer(player);
 	scores[player] = 0;
 }
 
 
-std::string ScoreBoard::getScoreString() {
+std::string ScoreBoard::getScoreString() 
+{
 	std::string text;
-	for (int i = 0; i < num_players-1; i++) {
+	for (int i = 0; i < num_players-1; i++) 
+    {
 		text.append(std::to_string(scores[i]));
 		text.append(", ");
 	}
+
 	if(num_players > 1) text.append(std::to_string(scores[num_players-1]));
+
 	return text;
 }
 
 /*
 Resets all scores to 0
 */
-void ScoreBoard::resetScores() {
-	for (int i = 0; i < num_players; i++) {
+void ScoreBoard::resetScores() 
+{
+	for (int i = 0; i < num_players; i++) 
+    {
 		scores[i] = 0;
 	}
 }
 
-void ScoreBoard::checkPlayer(int player) {
-	if (player >= num_players || player < 0) {
+void ScoreBoard::checkPlayer(int player) 
+{
+	if (player >= num_players || player < 0) 
+    {
 		std::cout << "Attempting to modify player " << player << " when only 0-" << num_players << " exist.";
 		throw NonexistentPlayerException;
 	}
