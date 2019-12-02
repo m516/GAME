@@ -101,11 +101,11 @@ public class WebSocketServer {
     	else if(message.startsWith("J"))
     	{
     		try {
-				int gameID = Integer.parseInt(""  + message.charAt(1) + message.charAt(2));
+				int gameID = Integer.parseInt(message.substring(1,3));
 				int gameType = message.charAt(3);
 				sessionGameObjectMap.get(session).setGameType(gameType);
-				String x = "" + message.charAt(4) + message.charAt(5) + message.charAt(6) + message.charAt(7);
-				String y = "" + message.charAt(8) + message.charAt(9) + message.charAt(10) + message.charAt(11);
+				String x = message.substring(5,8);
+				String y = message.substring(8, 12);
 				
 				if(game.size() > gameID)
 				{
@@ -113,8 +113,7 @@ public class WebSocketServer {
 					sessionGameObjectMap.get(session).setY(y);
 					sessionGameObjectMap.get(session).setGameID(gameID);
 					
-					boolean i = game.get(gameID).addPlayer(sessionGameObjectMap.get(session));
-					if(i)
+					if(game.get(gameID).addPlayer(sessionGameObjectMap.get(session)))
 					{
 						game.get(gameID).players.get(game.get(gameID).players.size() - 1).setpNum(game.get(gameID).players.size() - 1);
 						sendMessageToPArticularUser(session, "Successfully Joined");
