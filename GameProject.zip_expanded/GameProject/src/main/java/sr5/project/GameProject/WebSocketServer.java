@@ -27,15 +27,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Component
 public class WebSocketServer {
 
-	private static Map<Session, WebGameObject> sessionGameObjectMap = new HashMap<>();
-	private static Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
+	private static volatile Map<Session, WebGameObject> sessionGameObjectMap = new HashMap<>();
+	private static volatile Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
     
-	public ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
-	public ArrayList<WebGames> game = new ArrayList<WebGames>();
+	public static volatile ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
+	public static volatile ArrayList<WebGames> game = new ArrayList<WebGames>();
 	
 	//***************************************START OLD METHODS****************************************************************
-    private static Map<Session, String> sessionUsernameMap = new HashMap<>();
-    private static Map<String, Session> usernameSessionMap = new HashMap<>();
+    private static volatile Map<Session, String> sessionUsernameMap = new HashMap<>();
+    private static volatile Map<String, Session> usernameSessionMap = new HashMap<>();
 
     String username = "game";
     String player = "";
@@ -69,6 +69,8 @@ public class WebSocketServer {
     		WebGameObject g = new WebGameObject(0,"0","0");
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
+            logger.info("Game object map: " + GameObjectSessionMap.toString());
+            logger.info("Session object map: " + sessionGameObjectMap.toString());
     		broadcastNew("I am here");
     	}
 //    	if(sessionGameObjectMap.get(session) == null)
