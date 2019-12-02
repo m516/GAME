@@ -64,112 +64,40 @@ public class WebSocketServer {
      */
     public void onMessage(Session session, String message) throws IOException
     {
+    	//Create a session for the player if the player does not already have one
     	if(sessionGameObjectMap.get(session) == null)
     	{
     		WebGameObject g = new WebGameObject(0,"0","0");
     		sessionGameObjectMap.put(session, g);
     		GameObjectSessionMap.put(g, session);
-            logger.info("Game object map: " + GameObjectSessionMap.toString());
-            logger.info("Session object map: " + sessionGameObjectMap.toString());
-    		broadcastNew("I am here");
     	}
-//    	if(sessionGameObjectMap.get(session) == null)
-//    	{
-//    		for(int i = 0; i < players.size(); i++)
-//    		{
-//    			if(players.get(i) != sessionGameObjectMap.get(session))
-//    			{
-//    				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText("!");
-//    			}
-//    		}
-//    		WebGameObject g = new WebGameObject(0,"0","0");
-//    		sessionGameObjectMap.put(session, g);
-//    		GameObjectSessionMap.put(g, session);
-//    		players.add(g);
-//    	}
-//    	if(message.startsWith("!"))
-//    	{
-//    		WebGameObject g = new WebGameObject(0,"0","0");
-//    		sessionGameObjectMap.put(session, g);
-//    		GameObjectSessionMap.put(g, session);
-//    		players.add(g);
-//    	}
-    	//TODO Setup sending to multiple people
-    	if(message.startsWith("."))
-    	{
-    		message = message.substring(1);
-    	}
-    	else
-    	{
-    		sendMessageToAll(session, message);
-    	}
-    	
+    	//List all the open games
     	if(message.startsWith("GSO"))
     	{
-			String s = "";
-    		for(int i = 0; i < game.size(); i++)
-    		{
-    			if(i < 10)
-    			{
-    				s = "0";
-    			}
-    			else
-    			{
-    				s = "";
-    			}
-    			if(!game.get(i).getState())
-    			{
-        			sendMessageToPArticularUser(session, s + i + "O" + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
-    			}
-    		}
+    		getGames(false, session);
     	}
+    	//List all the games
     	else if(message.startsWith("GS"))
     	{
-    		String s = "";
-    		String s1 = "";
-    		sendMessageToPArticularUser(session, "Game size: " + game.size());
-    		for(int i = 0; i < game.size(); i++)
-    		{
-    			if(i < 10)
-    			{
-    				s1 = "0";
-    			}
-    			else
-    			{
-    				s1 = "";
-    			}
-    			if(!game.get(i).getState())
-    			{
-    				s = "O";
-    			}
-    			else
-    			{
-    				s = "P";
-    			}
-    			sendMessageToPArticularUser(session, s1  + i +"" + s + game.get(i).getNumPlayers() + "/" + game.get(i).getMaxPlayers());
-    		}
+    		getGames(true, session);
     	}
+    	//Create a new game
     	else if(message.startsWith("C"))
     	{
     		try {
 				String gameType = "" + message.charAt(1);
 				int maxP = Integer.parseInt("" + message.charAt(2));
 				int gameID = game.size();
-				String s = "";
-				if(gameID < 10)
-				{
-					s = "0";
-				}
-				WebGames wg = new WebGames(gameType, maxP);
-				game.add(wg);
-				sendMessageToPArticularUser(session, "GID" + s + gameID +" " + message + " has been built");
-				logger.info("GID" + s + gameID +" " + message + " has been built");
+				game.add(new WebGames(gameType, maxP));
+				sendMessageToPArticularUser(session, String.format("GID%02d %s has been built", gameID, message));
+				logger.info(String.format("GID%02d %s has been built", gameID, message));
     		}
     		catch(Exception e)
     		{
 				sendMessageToPArticularUser(session, "Invalid command, Please use: J :C : C#P : START GAME\n");
     		}
     	}
+    	//Join a game
     	else if(message.startsWith("J"))
     	{
     		try {
@@ -210,44 +138,43 @@ public class WebSocketServer {
     		}
 				
     	}
+    	//Remove a player
     	else if(message.startsWith("R"))
     	{
     		game.get(sessionGameObjectMap.get(session).getGameID()).removePlayer(sessionGameObjectMap.get(session).getPNum());
     		logger.info("Remove player");
     		
     	}
+    	//Get player locations
     	else if(message.startsWith("PL"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations();
-    		sendMessageToPArticularUser(session, s);
+    		sendMessageToPArticularUser(session, game.get(sessionGameObjectMap.get(session).getGameID()).getPlayerLocations());
     		logger.info("Get player locations");
     	}
+    	//Get object locations
     	else if(message.startsWith("OL"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
-    		sendMessageToPArticularUser(session, s);
+    		sendMessageToPArticularUser(session, game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations());
     		logger.info("Get object locations");
     	}
+    	//Get all locations
     	else if(message.startsWith("BL"))
     	{
-    		String s = "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations();
-    		sendMessageToPArticularUser(session, s);
+    		sendMessageToPArticularUser(session, "P" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations() + "O" + game.get(sessionGameObjectMap.get(session).getGameID()).getObjectLocations());
     		logger.info("Get all locations");
     	}
+    	//Set Score
     	else if(message.startsWith("ST"))
     	{
-    		StringBuilder sb = new StringBuilder(message);
-    		sb.deleteCharAt(0);
-    		sb.deleteCharAt(1);
-    		String s1 = sb.toString();
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(s1);
+    		message = message.substring(2);
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setScore(message);
     	}
     	else if(message.startsWith("S"))
     	{
-    		String s = game.get(sessionGameObjectMap.get(session).getGameID()).getScore();
-    		sendMessageToPArticularUser(session, s);
+    		sendMessageToPArticularUser(session, game.get(sessionGameObjectMap.get(session).getGameID()).getScore());
     		logger.info("Get Score");
     	}
+    	//Get game Status
     	else if(message.startsWith("T"))
     	{
     		if(game.get(sessionGameObjectMap.get(session).getGameID()).getState())
@@ -258,104 +185,30 @@ public class WebSocketServer {
     		{
         		sendMessageToPArticularUser(session, "Game has not started");
     		}
-
     		logger.info("Get state");
     	}
+    	//Start game
     	else if(message.startsWith("G"))
     	{
     		game.get(sessionGameObjectMap.get(session).getGameID()).setState(true);
     	}
     	else if(message.startsWith("PM"))
     	{
-    		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
-    		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
-    		sessionGameObjectMap.get(session).setX(x);
-    		sessionGameObjectMap.get(session).setY(y);
+    		sessionGameObjectMap.get(session).setX(message.substring(2,6));
+    		sessionGameObjectMap.get(session).setY(message.substring(6,10));
     	}
     	else if(message.startsWith("OM"))
     	{
-    		String x = "" + message.charAt(2) + message.charAt(3) + message.charAt(4) + message.charAt(5);
-    		String y = "" + message.charAt(6) + message.charAt(7) + message.charAt(8) + message.charAt(9);
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, x, y);
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, message.substring(2,6), message.substring(6,10));
     	}
     	else if(message.startsWith("N?"))
     	{
-    		String s = "";
-    		s += 
-
-    	    s += "Symbols\n";
-    	    s += "T -> Game Type\n";
-    	    s += "##-> Game id\n";
-    	    s += "P -> Max Players\n";
-    	    s += "XXXX-> X position\n";
-    	    s += "YYYY-> Y postion\n";
-    	    s += "ii-> Player/Object id\n\n";
-    		
-    	    s += "Commands\n";
-    	    s += "C : C#P         : START GAME\n";
-    	    s += "J : J##TXXXXYYYY: JOIN GAME\n";
-    	    s += "R : R           : LEAVE GAME\n\n";
-    		
-    	    s += "PL: PL  : GET PLAYER LOCATIONS\n";
-    	    s += "OL: OL  : GET OBJECT LOCATIONS\n";
-    	    s += "BL: BL  : GET ALL LOCATIONS\n\n";
-    		
-    	    s += "PM: PMXXXXYYYY : SET PLAYER LOCATIONS\n";
-    	    s += "OM: OMXXXXYYYY : SET OBJECT LOCATIONS --One Object only--\n\n";
-    		
-    	    s += "S : S  : GET SCORE\n";
-    	    s += "ST: STT: SET SCORE\n\n";
-
-    	    s += "T : T  : GET STATE\n";
-    	    s += "G : G  : START GAME\n\n";
-    		
-    	    s += "GS : GS  : RETURNS THE CURRENT GAMES\n";
-    	    s += "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n";
-    		
-    	    s += "W : W##  : JOINS A GAME AS A SPECTATOR\n\n";
-
-    	    s += "N?: GET NEW OPCODES\n";
-    	    s += "O?: GET OLD OPCODES\n\n"; 
-    	    sendMessageToPArticularUser(session, s);
-    		
-//    		sendMessageToPArticularUser(session, "Symbols\n");
-//    		sendMessageToPArticularUser(session, "# -> Game Type\n");
-//    		sendMessageToPArticularUser(session, "##-> Game id\n");
-//    		sendMessageToPArticularUser(session, "P -> Max Players\n");
-//    		sendMessageToPArticularUser(session, "XX-> X position\n");
-//    		sendMessageToPArticularUser(session, "YY-> Y postion\n");
-//    		sendMessageToPArticularUser(session, "ii-> Player/Object id\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "Commands\n");
-//    		sendMessageToPArticularUser(session, "C : C#P : START GAME\n");
-//    		sendMessageToPArticularUser(session, "J : J## : JOIN GAME\n");
-//    		sendMessageToPArticularUser(session, "R : R   : LEAVE GAME\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "PL: PL  : GET PLAYER LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "OL: OL  : GET OBJECT LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "BL: BL  : GET ALL LOCATIONS\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "PM: PMXXYY : SET PLAYER LOCATIONS\n");
-//    		sendMessageToPArticularUser(session, "OM: OMXXYY : SET OBJECT LOCATIONS --One Object only--\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "S : S  : GET SCORE\n");
-//    		sendMessageToPArticularUser(session, "ST: ST#: SET SCORE\n\n");
-//
-//    		sendMessageToPArticularUser(session, "T : T  : GET STATE\n");
-//    		sendMessageToPArticularUser(session, "G : G  : START GAME\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "GS : GS  : RETURNS THE CURRENT GAMES\n");
-//    		sendMessageToPArticularUser(session, "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n");
-//    		
-//    		sendMessageToPArticularUser(session, "W : W##  : JOINS A GAME AS A SPECTATOR\n\n");
-//
-//    		sendMessageToPArticularUser(session, "N?: GET NEW OPCODES\n");
-//    		sendMessageToPArticularUser(session, "O?: GET OLD OPCODES\n\n");     		
+    	    sendMessageToPArticularUser(session, newInstructions);    		
     	}
     	else if(message.startsWith("W"))
     	{
     		try {
-	    		int gameID  = Integer.parseInt("" + message.charAt(1) + message.charAt(2));
+	    		int gameID  = Integer.parseInt(message.substring(1,3));
 	    		sessionGameObjectMap.get(session).setGameID(gameID);
 	    		game.get(gameID).spectators.add(sessionGameObjectMap.get(session));
 	    		game.get(gameID).spectators.get(game.get(gameID).spectators.size() - 1).setpNum(game.get(gameID).spectators.size() - 1);
@@ -383,9 +236,9 @@ public class WebSocketServer {
     	//Send movement information using "."
     	else if(message.startsWith("."))
     	{
-    		logger.info("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		broadcastOLD("Player "  + player + " is at location " + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
-    		sendMessageToPArticularUserOLD("P" + player + "@" + message.charAt(1) +message.charAt(2) + ", " + message.charAt(3) + message.charAt(4));
+    		logger.info("Player "  + player + " is at location " + message.substring(1,5));
+    		broadcastOLD("Player "  + player + " is at location " + message.substring(1,5));
+    		sendMessageToPArticularUserOLD("P" + player + "@" + message.substring(1,5));
     	}
     	else if (message.startsWith("@")) // Direct message to a user using the format "@username <message>"
     	{
@@ -528,6 +381,65 @@ public class WebSocketServer {
 	}
     
 	//***************************************END OLD METHODS******************************************************************
+    public void getGames(Boolean includePlaying, Session session)
+    {
+    	String state = "O";
+        	
+    	for(int i = 0; i < game.size(); i++)
+    	{
+    		if(!game.get(i).getState())
+    		{
+    			sendMessageToPArticularUser(session, String.format("%02d%s%d/%d", i, state, game.get(i).getNumPlayers(), game.get(i).getMaxPlayers()));
+    		}
+    	}
+    	if(includePlaying)
+    	{
+    		state = "P";
+        	for(int i = 0; i < game.size(); i++)
+        	{
+        		if(game.get(i).getState())
+        		{
+        			sendMessageToPArticularUser(session, String.format("%02d%s%d/%d", i, state, game.get(i).getNumPlayers(), game.get(i).getMaxPlayers()));
+        		}
+        	}
+    	}
+    }
+    String newInstructions = 
+    	    		"Symbols\n"
+    	    	    +"T -> Game Type\n"
+    	    	    + "##-> Game id\n"
+    	    	    + "P -> Max Players\n"
+    	    	    + "XXXX-> X position\n"
+    	    	    + "YYYY-> Y postion\n"
+    	    	    + "ii-> Player/Object id\n\n"
+    	    		
+    	    	    + "Commands\n"
+    	    	    + "C : C#P         : START GAME\n"
+    	    	    + "J : J##TXXXXYYYY: JOIN GAME\n"
+    	    	    + "R : R           : LEAVE GAME\n\n"
+    	    		
+    	    	    + "PL: PL  : GET PLAYER LOCATIONS\n"
+    	    	    + "OL: OL  : GET OBJECT LOCATIONS\n"
+    	    	    + "BL: BL  : GET ALL LOCATIONS\n\n"
+    	    		
+    	    	    + "PM: PMXXXXYYYY : SET PLAYER LOCATIONS\n"
+    	    	    + "OM: OMXXXXYYYY : SET OBJECT LOCATIONS --One Object only--\n\n"
+    	    		
+    	    	    + "S : S  : GET SCORE\n"
+    	    	    + "ST: STT: SET SCORE\n\n"
+
+    	    	    + "T : T  : GET STATE\n"
+    	    	    + "G : G  : START GAME\n\n"
+    	    		
+    	    	    + "GS : GS  : RETURNS THE CURRENT GAMES\n"
+    	    	    + "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n"
+    	    		
+    	    	    + "W : W##  : JOINS A GAME AS A SPECTATOR\n\n"
+
+    	    	    + "N?: GET NEW OPCODES\n"
+    	    	    + "O?: GET OLD OPCODES\n\n";
+
+    
 }
 
 
