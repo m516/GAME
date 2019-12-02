@@ -189,7 +189,7 @@ void Pong::render()
 {
 	Session::OnlineGame* current_game = Session::currentGame();
 
-	if (current_game != nullptr && current_game->status < Session::OnlineGame::Status::IN_PROGRESS)
+	if (current_game != nullptr && current_game->status < Session::OnlineGame::Status::JOINING)
     {
 		unlockRender();
 		return;

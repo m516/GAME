@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\games\playerCounter.cpp" />
+    <ClCompile Include="src\GUI\menu\components\dialog.cpp" />
     <ClCompile Include="src\GUI\menu\components\textField.cpp" />
     <ClCompile Include="src\GUI\menu\friendsListMenu.cpp" />
     <ClCompile Include="src\GUI\menu\gameMenu.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="include\cereal\types\valarray.hpp" />
     <ClInclude Include="include\cereal\types\vector.hpp" />
     <ClInclude Include="src\games\playerCounter.h" />
+    <ClInclude Include="src\GUI\menu\components\dialog.h" />
     <ClInclude Include="src\GUI\menu\components\textField.h" />
     <ClInclude Include="src\GUI\menu\friendsListMenu.h" />
     <ClInclude Include="src\GUI\menu\gameMenu.h" />

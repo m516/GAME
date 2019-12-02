@@ -59,12 +59,17 @@ void JoinCreateMenu::render()
 		game->lockRender();
 		unlockRender();
 	}
+
+	if (!NetworkConnection::isConnected()) {
+		Dialog::show(this, "Network disconnected");
+		unlockRender();
+	}
 }
 
 void JoinCreateMenu::joinGame()
 {
 	//Begin game
-	gameID = 0; //TODO get list
+	Session::joinGame(0);
 }
 
 void JoinCreateMenu::createGame()

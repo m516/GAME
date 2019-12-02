@@ -3,9 +3,15 @@
 #include <thread>
 #include <iostream>
 
-//See https://en.cppreference.com/w/cpp/utility/functional/function
+#define LOCAL_SERVER
+//#define TEST_SYSTEM
 
+#ifdef LOCAL_SERVER
+#define SERVER_URI "ws://localhost:8080"
+#define TEST_SYSTEM
+#else
 #define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
+#endif
 
 #ifdef TEST_SYSTEM
 #define NETWORK_DEBUG

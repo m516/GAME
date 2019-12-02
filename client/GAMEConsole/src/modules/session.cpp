@@ -64,7 +64,7 @@ namespace Session
 
 	void createGame(int game_type, int num_players)
 	{
-		NetworkConnection::send("PLS" + std::to_string(game_type) + std::to_string(num_players));
+		NetworkConnection::send("C" + std::to_string(game_type) + std::to_string(num_players));
 	}
 
 	void connectToGame(OnlineGame* game)
@@ -77,9 +77,26 @@ namespace Session
 		NetworkConnection::send("G");
 	}
 
+	void joinGame(int id) {
+		OnlineGame* og = getGame(id);
+		if (og == nullptr) {
+			current_game = OnlineGame(id);
+			updateAvailableGames();
+		}
+		else {
+			joinGame(og);
+		}
+	}
+
 	void joinGame(OnlineGame* game)
 	{
+		if (game == nullptr) {
+			std::cerr << "Cannot join a null game!" << std::endl;
+			return;
+		}
+
 		current_game = OnlineGame(*game);
+		current_game.status = OnlineGame::Status::JOINING;
 		//Create join command
 		std::string join_command = "J";
 		if (game->getID() < 10) join_command += "0";
@@ -151,6 +168,8 @@ namespace Session
             {
 				current_game = OnlineGame(*og);
 			}
+
+			updateAvailableGames();
 		}
 		else if (s == "Successfully Joined") 
         {
