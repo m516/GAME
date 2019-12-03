@@ -2,6 +2,7 @@
 
 #include "../game.h"
 #include "../playerCounter.h"
+#include "../../GUI/menu/components/dialog.h"
 #include "../../modules/network.h"
 #include "objects/ball.h"
 #include "objects/paddle.h"

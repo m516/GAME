@@ -18,6 +18,11 @@ void MenuPane::addItem(MenuItem item)
 	updateLook();
 }
 
+void MenuPane::clearItems()
+{
+	items.clear();
+}
+
 void MenuPane::updateLook() 
 {
 	//Resize all the items

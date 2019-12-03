@@ -28,11 +28,11 @@ namespace Session
 	std::string OnlineGame::getInfo()
 	{
 		return "Game "+std::to_string(id)+
-			" with "+ 
+			" ("+ 
 			std::to_string(num_players)+
-			" of "+
+			"/"+
 			std::to_string(max_players)+
-			" players";
+			" p)";
 	}
 
 	int OnlineGame::getID()
@@ -136,7 +136,9 @@ namespace Session
 			int num_players = s[3] - '0';
 			int max_players = s[5] - '0';
 
-			OnlineGame og(index, is_open ? Session::OnlineGame::Status::AVAILABLE:Session::OnlineGame::Status::IN_PROGRESS);
+			OnlineGame og(index, 
+				is_open ? num_players == max_players ? Session::OnlineGame::Status::WAITING_FOR_START : Session::OnlineGame::Status::AVAILABLE :
+				Session::OnlineGame::Status::IN_PROGRESS);
 			og.num_players = num_players;
 			og.max_players = max_players;
 			std::cout << og.getInfo() << std::endl;

@@ -189,8 +189,11 @@ void Pong::render()
 {
 	Session::OnlineGame* current_game = Session::currentGame();
 
+	//If the current game was disconnected or failed
 	if (current_game != nullptr && current_game->status < Session::OnlineGame::Status::JOINING)
     {
+		//Halt the game
+		Dialog::show(this, "The online game disconnected :(");
 		unlockRender();
 		return;
 	}

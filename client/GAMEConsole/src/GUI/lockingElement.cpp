@@ -44,4 +44,6 @@ void LockingElement::unlockRender()
     {
 		unlock_function();
 	}
+
+	renderer->clear();
 }

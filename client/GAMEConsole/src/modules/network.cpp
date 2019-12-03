@@ -3,7 +3,7 @@
 #include <thread>
 #include <iostream>
 
-#define LOCAL_SERVER
+//#define LOCAL_SERVER
 //#define TEST_SYSTEM
 
 #ifdef LOCAL_SERVER

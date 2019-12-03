@@ -13,7 +13,7 @@ Theme::Theme()
  */
 bool Theme::loadGenericFont()
 {
-	return font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+	return font_standard.loadFromFile("assets/fonts/bitwise.ttf");
 }
 
 /**

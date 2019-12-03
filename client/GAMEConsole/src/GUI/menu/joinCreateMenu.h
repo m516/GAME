@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "../lockingElement.h"
 #include "../../games/game.h"
 #include "../../application.h"
@@ -33,5 +35,19 @@ class JoinCreateMenu : public LockingElement
         //private menu-specific functions
         void joinGame();
         void createGame();
+
+		class OpenGamesMenu : public LockingElement {
+		public:
+			OpenGamesMenu(sf::RenderWindow* window, Game* game, Theme* theme, int id = 0);
+			int selectedID = -1;
+			void render();
+		private:
+			std::vector<int> open_games;
+			int counter = 0;
+			MenuPane* menu = 0;
+			Game* game = 0;
+			sf::Text* title = 0;
+			void acceptButton();
+		};
 };
 
