@@ -33,13 +33,18 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
       <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11;boost_system</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
-      <Command>
-      </Command>
+      <Command>export DISPLAY=:0</Command>
       <Message>
       </Message>
     </RemotePostBuildEvent>
@@ -49,8 +54,7 @@
       <LibraryDependencies>pthread;sfml-graphics;sfml-window;sfml-system;sfml-audio;sfml-network;X11;boost_system</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
-      <Command>
-      </Command>
+      <Command>export DISPLAY=:0</Command>
       <Message>
       </Message>
     </RemotePostBuildEvent>
@@ -67,6 +71,9 @@
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>
     </CustomBuildStep>
+    <RemotePreLinkEvent>
+      <Command>export DISPLAY=:0</Command>
+    </RemotePreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Font Include="assets\fonts\alien_encounters\Alien-Encounters-Bold-Italic.ttf" />
@@ -101,6 +108,7 @@
     <ClCompile Include="src\GUI\guiElement.cpp" />
     <ClCompile Include="src\GUI\lockingElement.cpp" />
     <ClCompile Include="src\GUI\menu\components\button.cpp" />
+    <ClCompile Include="src\GUI\menu\components\dialog.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuItem.cpp" />
     <ClCompile Include="src\GUI\menu\components\menuPane.cpp" />
     <ClCompile Include="src\GUI\menu\components\textField.cpp" />
@@ -138,6 +146,7 @@
     <ClInclude Include="src\GUI\guiElement.h" />
     <ClInclude Include="src\GUI\lockingElement.h" />
     <ClInclude Include="src\GUI\menu\components\button.h" />
+    <ClInclude Include="src\GUI\menu\components\dialog.h" />
     <ClInclude Include="src\GUI\menu\components\menuItem.h" />
     <ClInclude Include="src\GUI\menu\components\menuPane.h" />
     <ClInclude Include="src\GUI\menu\components\textField.h" />
@@ -171,6 +180,9 @@
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>
     </CustomBuildStep>
+    <RemotePreLinkEvent>
+      <Command>export DISPLAY=:0</Command>
+    </RemotePreLinkEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

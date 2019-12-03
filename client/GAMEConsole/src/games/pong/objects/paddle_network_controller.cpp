@@ -2,6 +2,14 @@
 
 //#define NETWORK_DEBUG
 
+PaddleNetworkController::~PaddleNetworkController()
+{
+	//Tell the network controller to deregister this callback function
+	if (message_listener_function != nullptr) {
+		*message_listener_function = std::function<void* ()>();
+	}
+}
+
 void PaddleNetworkController::setRightPaddle(Paddle* paddle, paddle_action_t action)
 {
 	paddle_right = paddle;
@@ -51,8 +59,8 @@ int PaddleNetworkController::update()
 		}
 		else if (paddle_right_action == paddle_action_t::BROADCAST)
 		{
-			paddle_y = int(paddle_left->position.y * 9999);
-			paddle_x = int(paddle_left->position.x * 9999);
+			paddle_y = int(paddle_right->position.y * 9999);
+			paddle_x = int(paddle_right->position.x * 9999);
 		}
 		else
 		{
@@ -82,14 +90,13 @@ int PaddleNetworkController::update()
 
 		NetworkConnection::send(msg);
 	}
-
 	return 0;
 }
 
 int PaddleNetworkController::initialize() 
 {
 	// Register our handlers
-	NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&PaddleNetworkController::onMessage, this));
+	message_listener_function = NetworkConnection::addListener(NetworkConnection::LISTENER::MESSAGE, std::bind(&PaddleNetworkController::onMessage, this));
 	beginTransmission();
 	return 0;
 }
@@ -101,34 +108,44 @@ void PaddleNetworkController::onMessage()
     #endif
 
 	std::string payload = NetworkConnection::getString();
-	if (payload[2] == '@') 
-    {
-		payload = payload.substr(3, 2);
-		//std::cout << "Received position: " + payload << std::endl;
-		float position = std::stof(payload) * 100.f;
-		if (paddle_left_action == paddle_action_t::CONTROL) 
-        {
-			paddle_left->position.y = position / 10000;
-		}
-		else if (paddle_right_action == paddle_action_t::CONTROL) 
-        {
-			paddle_right->position.y = position / 10000;
-		}
-	}
-	if (payload.substr(0,2)=="0@") {
-		//TODO implement when server is fixed
-		std::size_t i = payload.find_first_of(',');
-		std::size_t j = 0;
-		while (i != std::string::npos) {
-			std::string p = payload.substr(j, i - j - 1);
-			std::cout << p << std::endl;
-			if (j - i != 11) {
-				std::cerr << "Failed to parse player position: " << p << std::endl;
+	if (payload.substr(0,3)=="00@") {
+		
+		if (payload.size() % 11 == 0) {
+
+
+			std::vector<std::string> players(payload.size() / 11);
+			for (int i = 0; i < payload.size() / 11; i++) {
+				players[i] = payload.substr(i * 11, 11);
 			}
 
-			j = i;
-			i = payload.find_first_of(',', i+1);
+			if (paddle_left_action == paddle_action::CONTROL) {
+				float x = std::stof(players[0].substr(3, 4)) / 10000.f;
+				float y = std::stof(players[0].substr(7, 4)) / 10000.f;
+				paddle_left->position.x = x;
+				paddle_left->position.y = y;
+			}
+			if (paddle_right_action == paddle_action::CONTROL) {
+				float x = std::stof(players[1].substr(3, 4)) / 10000.f;
+				float y = std::stof(players[1].substr(7, 4)) / 10000.f;
+				paddle_right->position.x = x;
+				paddle_right->position.y = y;
+			}
+
 		}
+		
+		////TODO implement when server is fixed
+		//std::size_t i = payload.find_first_of(',');
+		//std::size_t j = 0;
+		//while (i != std::string::npos) {
+		//	std::string p = payload.substr(j, i - j - 1);
+		//	std::cout << p << std::endl;
+		//	if (j - i != 11) {
+		//		std::cerr << "Failed to parse player position: " << p << std::endl;
+		//	}
+
+		//	j = i;
+		//	i = payload.find_first_of(',', i+1);
+		//}
 	}
 }
 

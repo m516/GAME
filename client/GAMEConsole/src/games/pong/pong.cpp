@@ -78,6 +78,8 @@ void Pong::beginNetworkGame()
 	//Tell the lock to call the deinitialize() function when unlocked
 	unlock_function = std::bind(&Pong::deinitialize, this);
 
+	std::cout << "My ID is " + std::to_string(Session::player_number) << std::endl;
+
 	initialized = true;
 }
 

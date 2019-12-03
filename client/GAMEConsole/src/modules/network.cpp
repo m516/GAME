@@ -167,9 +167,10 @@ namespace NetworkConnection
         return message;
     }
 
-    void addListener(Listener listener, std::function<void()> function) 
+	std::function<void()>* addListener(Listener listener, std::function<void()> function)
     {
         listeners[(int)listener].push_back(function);
+		return &listeners[(int)listener][listeners[(int)listener].size() - 1];
     }
 
     void runFunctions(std::vector<std::function<void()>>* function_list) 

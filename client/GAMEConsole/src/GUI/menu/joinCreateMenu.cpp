@@ -125,7 +125,7 @@ void JoinCreateMenu::OpenGamesMenu::render()
 		for (int i = 0; i < Session::games.size(); i++) {
 			Session::OnlineGame og = Session::games[i];
 			if (og.status == Session::OnlineGame::Status::AVAILABLE) {
-				open_games.push_back(i);
+				open_games.push_back(og.getID());
 				MenuItem item(theme, og.getInfo(), NULL);
 				item.setPressedFunction(std::bind(&JoinCreateMenu::OpenGamesMenu::acceptButton, this));
 				menu->addItem(item);
