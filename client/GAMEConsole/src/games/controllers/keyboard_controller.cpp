@@ -12,6 +12,7 @@ KeyboardController::KeyboardController()
 int KeyboardController::update() 
 {
 	//Update keyboard controls
+	if (!enabled) return 0;
 
 	//enter
 	if (sf::Keyboard::isKeyPressed(keyEnter)) 

@@ -40,7 +40,7 @@ class PaddleNetworkController : public Controller
 		int location_ping_timer = 0;
 		std::shared_ptr<std::string> message;
 		/*The number of frames before pinging the server*/
-		const int location_ping_time = 10;
+		const int location_ping_time = 4;
         void beginTransmission();
 };
 

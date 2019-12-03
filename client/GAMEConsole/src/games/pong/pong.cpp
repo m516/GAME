@@ -48,24 +48,24 @@ void Pong::beginNetworkGame()
 	//Create the right paddle controller
 	right_controller = new PaddleKeyboardController;
 	right_controller->setPaddle(paddle_right);
-	right_controller->setKey(KeyboardController::Control::UP, sf::Keyboard::I);
-	right_controller->setKey(KeyboardController::Control::DOWN, sf::Keyboard::K);
-	right_controller->enable();
 
 	//Create the left paddle controller
 	left_controller = new PaddleKeyboardController;
 	left_controller->setPaddle(paddle_left);
-	left_controller->enable();
 
-	//Create network controller
+	//Create network controller, paddle controller
 	paddle_network_controller = new PaddleNetworkController();
 	if (Session::player_number == 0) {
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+
+		left_controller->enable();
 	}
 	else if (Session::player_number == 1) {
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::CONTROL);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::BROADCAST);
+
+		right_controller->enable();
 	}
 	else {
 		std::cerr << "No such player: " << std::to_string(Session::player_number) << std::endl;
@@ -186,7 +186,7 @@ void Pong::update()
 		ball->position.x = 0.1f;
 		ball->position.y = 1.f- ball->position.y;
 		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(0);
+		scoreboard->incrementScore(1);
 	}
 
 	if (ball->position.x > 1.f) 
@@ -194,7 +194,7 @@ void Pong::update()
 		ball->position.x = 0.9f;
 		ball->position.y = 1.f - ball->position.y;
 		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(1);
+		scoreboard->incrementScore(0);
 	}
 }
 
