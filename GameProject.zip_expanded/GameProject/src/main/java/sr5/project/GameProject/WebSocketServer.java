@@ -16,7 +16,7 @@ import javax.websocket.server.ServerEndpoint;
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * This class runs the connection between different players while 
  * completing against each other in real time.
@@ -29,19 +29,53 @@ public class WebSocketServer {
 
 	private static volatile Map<Session, WebGameObject> sessionGameObjectMap = new HashMap<>();
 	private static volatile Map<WebGameObject, Session> GameObjectSessionMap = new HashMap<>();
-    
-	public static volatile ArrayList<WebGameObject> players = new ArrayList<WebGameObject>();
-	public static volatile ArrayList<WebGames> game = new ArrayList<WebGames>();
+	
+	private static volatile ArrayList<WebGames> game = new ArrayList<WebGames>();
 	
 	//***************************************START OLD METHODS****************************************************************
     private static volatile Map<Session, String> sessionUsernameMap = new HashMap<>();
     private static volatile Map<String, Session> usernameSessionMap = new HashMap<>();
 
-    String username = "game";
-    String player = "";
+    private String username = "game";
+    private String player = "";
 	//***************************************END OLD METHODS******************************************************************
     
     private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
+    
+    private String newInstructions = 
+    		"Symbols\n"
+    	    +"T -> Game Type\n"
+    	    + "##-> Game id\n"
+    	    + "P -> Max Players\n"
+    	    + "XXXX-> X position\n"
+    	    + "YYYY-> Y postion\n"
+    	    + "ii-> Player/Object id\n\n"
+    		
+    	    + "Commands\n"
+    	    + "C : C#P         : START GAME\n"
+    	    + "J : J##TXXXXYYYY: JOIN GAME\n"
+    	    + "R : R           : LEAVE GAME\n\n"
+    		
+    	    + "PL: PL  : GET PLAYER LOCATIONS\n"
+    	    + "OL: OL  : GET OBJECT LOCATIONS\n"
+    	    + "BL: BL  : GET ALL LOCATIONS\n\n"
+    		
+    	    + "PM: PMXXXXYYYY : SET PLAYER LOCATIONS\n"
+    	    + "OM: OMXXXXYYYY : SET OBJECT LOCATIONS --One Object only--\n\n"
+    		
+    	    + "S : S  : GET SCORE\n"
+    	    + "ST: STT: SET SCORE\n\n"
+
+    	    + "T : T  : GET STATE\n"
+    	    + "G : G  : START GAME\n\n"
+    		
+    	    + "GS : GS  : RETURNS THE CURRENT GAMES\n"
+    	    + "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n"
+    		
+    	    + "W : W##  : JOINS A GAME AS A SPECTATOR\n\n"
+
+    	    + "N?: GET NEW OPCODES\n"
+    	    + "O?: GET OLD OPCODES\n\n";
     
     @OnOpen
     /**
@@ -193,12 +227,11 @@ public class WebSocketServer {
     	}
     	else if(message.startsWith("PM"))
     	{
-    		sessionGameObjectMap.get(session).setX(message.substring(2,6));
-    		sessionGameObjectMap.get(session).setY(message.substring(6,10));
+    		sessionGameObjectMap.get(session).setPosition(message);
     	}
     	else if(message.startsWith("OM"))
     	{
-    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, message.substring(2,6), message.substring(6,10));
+    		game.get(sessionGameObjectMap.get(session).getGameID()).setObjectMovement(0, message.substring(2,6), message.substring(7,11));
     	}
     	else if(message.startsWith("N?"))
     	{
@@ -308,49 +341,33 @@ public class WebSocketServer {
             e.printStackTrace();
         }
     }
-	//This will be used for Admins
-//	private void sendMessgeToGame(WebGames wg, String message)
+//	private void sendMessageToAll(Session session, String message) throws IOException
 //	{
-//    	try {
-//    		for(int i = 0; i < wg.players.size(); i++)
-//    		{
-//    			GameObjectSessionMap.get(wg.players.get(i)).getBasicRemote().sendText(message);
-//    		}
-//    		logger.info("sending dm to " + wg);
-//        } catch (IOException e) {
-//        	logger.info("Exception: " + e.getMessage().toString());
-//            e.printStackTrace();
-//        }
+//		message = "." + message;
+//		for(int i = 0; i < players.size(); i++)
+//		{
+//			if(players.get(i) != sessionGameObjectMap.get(session))
+//			{
+//				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText(message);
+//			}
+//		}
 //	}
-	private void sendMessageToAll(Session session, String message) throws IOException
-	{
-		message = "." + message;
-		for(int i = 0; i < players.size(); i++)
-		{
-			if(players.get(i) != sessionGameObjectMap.get(session))
-			{
-				GameObjectSessionMap.get(players.get(i)).getBasicRemote().sendText(message);
-			}
-		}
-	}
-    private static void broadcastNew(String message) 
-  	      throws IOException 
-  {	  
-  	sessionGameObjectMap.forEach((session, username) -> {
-  		synchronized (session) {
-	            try {
-	                session.getBasicRemote().sendText(message);
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        }
-	    });
-	}
+//    private static void broadcastNew(String message) 
+//  	      throws IOException 
+//  {	  
+//  	sessionGameObjectMap.forEach((session, username) -> {
+//  		synchronized (session) {
+//	            try {
+//	                session.getBasicRemote().sendText(message);
+//	            } catch (IOException e) {
+//	                e.printStackTrace();
+//	            }
+//	        }
+//	    });
+//	}
 	//***************************************START OLD METHODS****************************************************************
 	private void sendMessageToPArticularUserOLD(String message) 
-    {	
-		//String username = "user";
-		
+    {			
     	try {
     		usernameSessionMap.get(username).getBasicRemote().sendText(message);
     		logger.info("sending dm to " + usernameSessionMap.get(username));
@@ -380,7 +397,7 @@ public class WebSocketServer {
 	}
     
 	//***************************************END OLD METHODS******************************************************************
-    public void getGames(Boolean includePlaying, Session session)
+    private void getGames(Boolean includePlaying, Session session)
     {
     	String state = "O";
         	
@@ -402,43 +419,7 @@ public class WebSocketServer {
         		}
         	}
     	}
-    }
-    String newInstructions = 
-    	    		"Symbols\n"
-    	    	    +"T -> Game Type\n"
-    	    	    + "##-> Game id\n"
-    	    	    + "P -> Max Players\n"
-    	    	    + "XXXX-> X position\n"
-    	    	    + "YYYY-> Y postion\n"
-    	    	    + "ii-> Player/Object id\n\n"
-    	    		
-    	    	    + "Commands\n"
-    	    	    + "C : C#P         : START GAME\n"
-    	    	    + "J : J##TXXXXYYYY: JOIN GAME\n"
-    	    	    + "R : R           : LEAVE GAME\n\n"
-    	    		
-    	    	    + "PL: PL  : GET PLAYER LOCATIONS\n"
-    	    	    + "OL: OL  : GET OBJECT LOCATIONS\n"
-    	    	    + "BL: BL  : GET ALL LOCATIONS\n\n"
-    	    		
-    	    	    + "PM: PMXXXXYYYY : SET PLAYER LOCATIONS\n"
-    	    	    + "OM: OMXXXXYYYY : SET OBJECT LOCATIONS --One Object only--\n\n"
-    	    		
-    	    	    + "S : S  : GET SCORE\n"
-    	    	    + "ST: STT: SET SCORE\n\n"
-
-    	    	    + "T : T  : GET STATE\n"
-    	    	    + "G : G  : START GAME\n\n"
-    	    		
-    	    	    + "GS : GS  : RETURNS THE CURRENT GAMES\n"
-    	    	    + "GSO: GSO : RETURNS THE CURRENT GAMES THAT CAN BE JOINED\n\n"
-    	    		
-    	    	    + "W : W##  : JOINS A GAME AS A SPECTATOR\n\n"
-
-    	    	    + "N?: GET NEW OPCODES\n"
-    	    	    + "O?: GET OLD OPCODES\n\n";
-
-    
+    }  
 }
 
 

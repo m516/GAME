@@ -8,18 +8,18 @@ public class WebGames
 {
 	Map<String, Integer> GameIDIndex = new HashMap<>();
 	
-	//Arraylist of objects
+	//ArrayList of objects
 	ArrayList <WebGameObject> objects = new ArrayList<WebGameObject>();
 	ArrayList <WebGameObject> players = new ArrayList<WebGameObject>();
 	ArrayList <WebGameObject> spectators = new ArrayList<WebGameObject>();
 	
 	//Max number of players
-	int pMax = 0;
+	private int pMax = 0;
 	//Score
-	String score = "";
+	private String score = "";
 	//State of the game
-	boolean isPlaying = false;
-	String gameType;
+	private boolean isPlaying = false;
+	private String gameType;
 	
 	public WebGames(String nGameType, int maxPlayers)
 	{
@@ -36,14 +36,28 @@ public class WebGames
 		else
 		{
 			players.add(player);
+			if(players.size() == pMax)
+			{
+				isPlaying = true;
+			}
 			return true;
 			//If player successfully joins
 		}
+	}
+	public boolean addObject(WebGameObject object)
+	{
+		objects.add(object);
+		return true;
 	}
 	public String removePlayer(int playerNumber)
 	{
 		players.remove(playerNumber);
 		return "Player " + playerNumber + " has been removed"; 
+	}
+	public String removeObject(int objectNumber)
+	{
+		objects.remove(objectNumber);
+		return "Object " + objectNumber + " has been removed"; 
 	}
 	public void setObjectMovement(int ObjectNumber, String x, String y)
 	{
@@ -60,7 +74,7 @@ public class WebGames
 		String s = "";
 		for(int i = 0; i < players.size(); i++)
 		{
-			s = s + i + "@" + players.get(i).getX() + players.get(i).getY() +",";
+			s = s + String.format("%02d@%s%s", i, players.get(i).getX(), players.get(i).getY());
 		}
 		return s;
 	}
@@ -69,7 +83,10 @@ public class WebGames
 		String s = "";
 		for(int i = 0; i < objects.size(); i++)
 		{
-			s = s + i + "@" + objects.get(i).getX() + objects.get(i).getY() +",";
+			//s = s + i + "@" + objects.get(i).getX() + objects.get(i).getY();
+			
+			
+			s = s + String.format("%02d@%s%s" ,i, objects.get(i).getX(), objects.get(i).getY());
 		}
 		return s;
 	}
