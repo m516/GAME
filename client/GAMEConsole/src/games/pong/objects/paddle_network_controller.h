@@ -3,6 +3,7 @@
 #include "paddle.h"
 #include "../../controllers/controller.h"
 #include "../../../modules/network.h"
+#include <string>
 
 class PaddleNetworkController : public Controller
 {
@@ -31,6 +32,9 @@ class PaddleNetworkController : public Controller
         paddle_action_t paddle_left_action = paddle_action_t::NONE;
         paddle_action_t paddle_right_action = paddle_action_t::NONE;
         bool connected = false;
+		int location_ping_timer = 0;
+		/*The number of frames before pinging the server*/
+		const int location_ping_time = 10;
         void beginTransmission();
 };
 

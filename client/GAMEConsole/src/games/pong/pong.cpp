@@ -59,8 +59,19 @@ void Pong::beginNetworkGame()
 
 	//Create network controller
 	paddle_network_controller = new PaddleNetworkController();
-	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
-	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	if (Session::player_number == 0) {
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	}
+	else if (Session::player_number == 1) {
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::CONTROL);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::BROADCAST);
+	}
+	else {
+		std::cerr << "No such player: " << std::to_string(Session::player_number) << std::endl;
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	}
 	paddle_network_controller->initialize();
 	paddle_network_controller->enable();
 
@@ -190,12 +201,20 @@ void Pong::render()
 	Session::OnlineGame* current_game = Session::currentGame();
 
 	//If the current game was disconnected or failed
-	if (current_game != nullptr && current_game->status < Session::OnlineGame::Status::JOINING)
-    {
-		//Halt the game
-		Dialog::show(this, "The online game disconnected :(");
-		unlockRender();
-		return;
+	if (current_game != nullptr) {
+		if (current_game->status < Session::OnlineGame::Status::JOINING)
+		{
+			//Halt the game
+			Dialog::show(this, "The online game broke :(");
+			unlockRender();
+			return;
+		}
+		else if (!NetworkConnection::isConnected()) {
+			//Halt the game
+			Dialog::show(this, "Couldn't connect to server :(");
+			unlockRender();
+			return;
+		}
 	}
 
 	update();

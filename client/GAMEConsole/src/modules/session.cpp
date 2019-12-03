@@ -13,10 +13,12 @@ namespace Session
 
 	std::vector<OnlineGame> games;
 	std::vector<User> friends;
+	int player_number = -1;
 
 	OnlineGame::OnlineGame() 
     {
-        // Empty constructor
+        this->id = -1;
+		this->status = OnlineGame::Status::DISCONNECTED;
 	}
 
 	OnlineGame::OnlineGame(int id, Status inital_status)
@@ -105,6 +107,11 @@ namespace Session
 		join_command += "00000000";
 		NetworkConnection::send(join_command);
 
+		//Set the player number (nobody in game sets player number to 0, etc.)
+		player_number = game->num_players;
+		if (player_number == 0) current_role = OnlineGame::Interaction::CREATOR;
+		else current_role = OnlineGame::Interaction::PLAYER;
+
 		std::cout << "Switched game: " << current_game.getInfo() << std::endl;
 	}
 
@@ -188,5 +195,6 @@ namespace Session
 	{
 		current_game = OnlineGame();
 		current_role = OnlineGame::Interaction::NONE;
+		player_number = -1;
 	}
 }

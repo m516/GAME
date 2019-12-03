@@ -5,6 +5,7 @@
 
 //#define LOCAL_SERVER
 //#define TEST_SYSTEM
+#define NETWORK_DEBUG
 
 #ifdef LOCAL_SERVER
 #define SERVER_URI "ws://localhost:8080"
