@@ -19,6 +19,8 @@ public class WebGames
 	private String score = "";
 	//State of the game
 	private boolean isPlaying = false;
+	private boolean isOver = false;
+	private String winner = "";
 	private String gameType;
 	
 	public WebGames(String nGameType, int maxPlayers)
@@ -76,6 +78,7 @@ public class WebGames
 		{
 			s = s + String.format("%02d@%s%s", i, players.get(i).getX(), players.get(i).getY());
 		}
+		
 		return s;
 	}
 	public String getObjectLocations()
@@ -99,8 +102,23 @@ public class WebGames
 	}
 	public String setScore(String nScore)
 	{
+		nScore = nScore.substring(2);
+		if(nScore.charAt(3) == '7')
+		{
+			isOver = true;
+			//winner = "00";
+		}
+		if(nScore.charAt(8) == '7')
+		{
+			isOver = true;
+			//winner = "01";
+		}
 		score = nScore;
-		return "Score is now " + nScore;
+		return score;
+	}
+	public boolean isOver()
+	{
+		return isOver;
 	}
 	public boolean getState()
 	{
