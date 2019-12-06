@@ -35,9 +35,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+    <MultiProcNumber>3</MultiProcNumber>
+    <CustomBuildBeforeTargets>Run</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+    <MultiProcNumber>3</MultiProcNumber>
+    <CustomBuildBeforeTargets>Run</CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
@@ -66,7 +70,8 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug\
+export DISPLAY=:0</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>
@@ -175,7 +180,8 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug</Command>
+      <Command>mv  $(RemoteDeployDir)/assets/  $(RemoteDeployDir)/bin/ARM/Debug\
+export DISPLAY=:0</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>Move asset directory into build location</Message>

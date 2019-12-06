@@ -32,6 +32,16 @@ void PaddleNetworkController::setLeftPaddleAction(paddle_action_t action)
 	paddle_left_action = action;
 }
 
+void PaddleNetworkController::setBall(Ball* ball)
+{
+	this->ball = ball;
+}
+
+void PaddleNetworkController::setScoreBoard(ScoreBoard* score_board)
+{
+	this->score_board = score_board;
+}
+
 void PaddleNetworkController::beginTransmission() 
 {
     // Empty function
@@ -39,15 +49,15 @@ void PaddleNetworkController::beginTransmission()
 
 int PaddleNetworkController::update()
 {
+
 	//Don't send anything to a disconnected server
 	if (!NetworkConnection::isConnected()) return 1;
-
+	
+	//Send my location occasionally
 	location_ping_timer++;
 	if (location_ping_timer >= location_ping_time) {
 		location_ping_timer = 0;
 
-		//Request player positions
-		NetworkConnection::send("PL");
 
 		int paddle_y;
 		int paddle_x;
@@ -90,6 +100,38 @@ int PaddleNetworkController::update()
 
 		NetworkConnection::send(msg);
 	}
+
+    // Controlls ball, score if alpha
+	if (isAlpha) {
+		//Only request player positions
+		NetworkConnection::send("PL");
+
+		if (ball != nullptr) {
+			//Update the score if the ball is out of bounds
+			if (ball->position.x < 0.f)
+			{
+				ball->position.x = 0.1f;
+				ball->position.y = 1.f - ball->position.y;
+				ball->velocity.x = -ball->velocity.x;
+				((ScoreBoard*)score_board)->incrementScore(1);
+
+			}
+
+			if (ball->position.x > 1.f)
+			{
+				ball->position.x = 0.9f;
+				ball->position.y = 1.f - ball->position.y;
+				ball->velocity.x = -ball->velocity.x;
+				((ScoreBoard*) score_board)->incrementScore(0);
+			}
+		}
+	}
+	else { //Updates
+		//Request all object positions
+		NetworkConnection::send("BL");
+	}
+
+
 	return 0;
 }
 
@@ -131,6 +173,58 @@ void PaddleNetworkController::onMessage()
 				paddle_right->position.y = y;
 			}
 
+		}
+
+		else if (payload.substr(0, 4) == "P00@") {
+
+			if (payload.size() % 11 == 0) {
+
+				//Extract the players
+				std::vector<std::string> players;
+				int i;
+				for (i = 1; i < payload.size() && payload[i] != 'O'; i += 11) {
+					players.push_back(payload.substr(i * 11, 11));
+				}
+				//Extract the objects
+				std::vector<std::string> objects;
+				i++;
+				for (; i < payload.size(); i += 11) {
+					players.push_back(payload.substr(i * 11, 11));
+				}
+
+				//Pong-specific functionality
+				//Reject if player size not equal to two
+				if (players.size() != 2) {
+					std::cerr << "I don't know what to do with " << players.size() << " players" << std::endl;
+					return;
+				}
+				//Set left player movement
+				if (paddle_left_action == paddle_action::CONTROL) {
+					float x = std::stof(players[0].substr(3, 4)) / 10000.f;
+					float y = std::stof(players[0].substr(7, 4)) / 10000.f;
+					paddle_left->position.x = x;
+					paddle_left->position.y = y;
+				}
+				//Set right player movement
+				if (paddle_right_action == paddle_action::CONTROL) {
+					float x = std::stof(players[1].substr(3, 4)) / 10000.f;
+					float y = std::stof(players[1].substr(7, 4)) / 10000.f;
+					paddle_right->position.x = x;
+					paddle_right->position.y = y;
+				}
+
+				//Reject if object size not equal to one
+				if (objects.size() != 1) {
+					std::cerr << "I don't know what to do with " << players.size() << " objects" << std::endl;
+					return;
+				}
+
+				//Ball movement
+				float x = std::stof(objects[0].substr(3, 4)) / 10000.f;
+				float y = std::stof(objects[0].substr(7, 4)) / 10000.f;
+				ball->position.x = x;
+				ball->position.y = y;
+			}
 		}
 		
 		////TODO implement when server is fixed

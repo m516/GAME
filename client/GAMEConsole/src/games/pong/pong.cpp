@@ -25,7 +25,7 @@ Pong::Pong()
 	//Wait to initialize the controllers
 	left_controller = 0;
 	right_controller = 0;
-	paddle_network_controller = 0;
+	paddle_network_controller = nullptr;
 }
 
 Pong::~Pong() 
@@ -55,6 +55,9 @@ void Pong::beginNetworkGame()
 
 	//Create network controller, paddle controller
 	paddle_network_controller = new PaddleNetworkController();
+	paddle_network_controller->setBall(ball);
+	paddle_network_controller->setScoreBoard(scoreboard);
+
 	if (Session::player_number == 0) {
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
@@ -181,21 +184,7 @@ void Pong::update()
 	if (ball->position.y                < 0.f && ball->velocity.y < 0.0f) ball->velocity.y = -ball->velocity.y;
 	if (ball->position.y + ball->size.y > 1.f && ball->velocity.y > 0.0f) ball->velocity.y = -ball->velocity.y;
 
-	if (ball->position.x < 0.f)
-    {
-		ball->position.x = 0.1f;
-		ball->position.y = 1.f- ball->position.y;
-		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(1);
-	}
-
-	if (ball->position.x > 1.f) 
-    {
-		ball->position.x = 0.9f;
-		ball->position.y = 1.f - ball->position.y;
-		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(0);
-	}
+	
 }
 
 void Pong::render() 
