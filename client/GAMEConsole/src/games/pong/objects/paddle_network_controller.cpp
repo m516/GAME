@@ -128,7 +128,7 @@ int PaddleNetworkController::update()
 	}
 	else { //Updates
 		//Request all object positions
-		NetworkConnection::send("BL");
+		NetworkConnection::send("PO");
 	}
 
 
