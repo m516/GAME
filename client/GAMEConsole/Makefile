@@ -26,14 +26,15 @@ all: $(EXE_FILE)
 
 $(EXE_FILE): $(OBJ_FILES)
 	@$(CC) -o $@ $^ $(LIBS)
-	@echo "Build successful!"
+	@echo "Compiled $(words $(SRC_FILES)) files."
+	@echo "Build successful! Run ./game"
 
 $(OBJ_FILES): $(OBJ)/%.o: %.cpp
 	@echo "Compiling" $<
 	@mkdir -p $(@D)
 	@$(CC) $(INCLUDES) $(CFLAGS) -o $@ $<
 
-.PHONY: clean remake
+.PHONY: clean remake docs depend
 
 remake: clean all
 
