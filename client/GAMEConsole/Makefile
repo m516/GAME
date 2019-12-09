@@ -36,10 +36,13 @@ $(OBJ_FILES): $(OBJ)/%.o: %.cpp
 
 .PHONY: clean remake docs depend
 
+# Cleans and rebuilds entire project
 remake: clean all
 
+# Removes all object files and executable
 clean:
 	rm -r -f $(BIN)
+	rm $(EXE_FILE)
 
 docs:
 	$(DOCCMD) $(DOCFILE)
