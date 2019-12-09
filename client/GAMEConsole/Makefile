@@ -19,12 +19,12 @@ DOCCMD = doxygen
 
 SRC_FILES = $(shell find $(SRC)/ -type f -name '*.cpp')
 
-EXE_FILES = $(EXE:%=$(BIN)/%)
+EXE_FILE = $(EXE)
 OBJ_FILES = $(SRC_FILES:%.cpp=$(OBJ)/%.o)
 
-all: $(EXE_FILES)
+all: $(EXE_FILE)
 
-$(EXE_FILES): $(OBJ_FILES)
+$(EXE_FILE): $(OBJ_FILES)
 	@$(CC) -o $@ $^ $(LIBS)
 	@echo "Build successful!"
 
