@@ -13,4 +13,6 @@ class SettingsMenu : public LockingElement
     private:
         sf::Text title = sf::Text();
         MenuPane* settingsItems;
+
+        void showFontSelect();
 };
