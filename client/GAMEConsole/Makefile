@@ -25,9 +25,10 @@ OBJ_FILES = $(SRC_FILES:%.cpp=$(OBJ)/%.o)
 all: $(EXE_FILE)
 
 $(EXE_FILE): $(OBJ_FILES)
+	@echo "Linking files..."
 	@$(CC) -o $@ $^ $(LIBS)
 	@echo "Compiled $(words $(SRC_FILES)) files."
-	@echo "Build successful! Run ./game"
+	@echo "Build successful! Run ./game to start."
 
 $(OBJ_FILES): $(OBJ)/%.o: %.cpp
 	@echo "Compiling" $<

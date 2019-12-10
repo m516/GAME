@@ -10,12 +10,27 @@ class Theme
         sf::Color color_border = color_selected;
         float border_size = 1.0;
         int sharpenFactor = 2;
+
+        /** Default font */
         sf::Font font_standard;
+        /** Array of all available fonts */
+        std::vector<sf::Font> fonts;
+        /** Index of the user-set font */
+        int userFont;
 
         static Theme* universal_theme;
 
+        std::string fontDirectory = "assets/fonts/";
+
+        std::vector<std::string> fontFiles = {
+            "bitwise.ttf",
+            "ka1.ttf"
+        };
+
         Theme();
         bool loadGenericFont();
+        void setUserFont(int f);
+        sf::Font getUserFont();
         sf::Text sharpenText(sf::Text text);
         Theme clone();
 };
