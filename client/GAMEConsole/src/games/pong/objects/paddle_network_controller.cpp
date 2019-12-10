@@ -124,11 +124,13 @@ int PaddleNetworkController::update()
 				ball->velocity.x = -ball->velocity.x;
 				((ScoreBoard*) score_board)->incrementScore(0);
 			}
+
+			((Ball*)ball)->update();
 		}
 	}
 	else { //Updates
 		//Request all object positions
-		NetworkConnection::send("PO");
+		NetworkConnection::send("BL");
 	}
 
 

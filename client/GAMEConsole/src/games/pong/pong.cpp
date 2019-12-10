@@ -59,18 +59,21 @@ void Pong::beginNetworkGame()
 	paddle_network_controller->setScoreBoard(scoreboard);
 
 	if (Session::player_number == 0) {
+		paddle_network_controller->setAlpha(true);
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
 
 		left_controller->enable();
 	}
 	else if (Session::player_number == 1) {
+		paddle_network_controller->setAlpha(false);
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::CONTROL);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::BROADCAST);
 
 		right_controller->enable();
 	}
 	else {
+		paddle_network_controller->setAlpha(false);
 		std::cerr << "No such player: " << std::to_string(Session::player_number) << std::endl;
 		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
 		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
@@ -141,12 +144,36 @@ void Pong::update()
 	//Update controllers
 	if(right_controller != NULL) right_controller->update();
 	if(left_controller != NULL) left_controller->update();
-	if(paddle_network_controller != NULL) paddle_network_controller->update();
+	//If playing an offline game
+	if (paddle_network_controller == NULL) {
+		//Control ball, score
+		if (ball->position.x < 0.f)
+		{
+			ball->position.x = 0.1f;
+			ball->position.y = 1.f - ball->position.y;
+			ball->velocity.x = -ball->velocity.x;
+			scoreboard->incrementScore(1);
+
+		}
+
+		if (ball->position.x > 1.f)
+		{
+			ball->position.x = 0.9f;
+			ball->position.y = 1.f - ball->position.y;
+			ball->velocity.x = -ball->velocity.x;
+			scoreboard->incrementScore(0);
+		}
+
+		ball->update();
+	}
+	else { //If playing a network game
+		//Let the network controller do its thing
+		paddle_network_controller->update();
+	}
 
 	//Update sprites
 	paddle_right->update();
 	paddle_left->update();
-	ball->update();
 
 	/*
 	Normally in large C++ programs, 
