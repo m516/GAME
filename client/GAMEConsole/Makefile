@@ -33,7 +33,7 @@ $(EXE_FILE): $(OBJ_FILES)
 $(OBJ_FILES): $(OBJ)/%.o: %.cpp
 	@echo "Compiling" $<
 	@mkdir -p $(@D)
-	@$(CC) $(INCLUDES) $(CFLAGS) -o $@ $<
+	@$(CC) $(INCLUDES) $(TEST_FLAGS) $(CFLAGS) -o $@ $<
 
 .PHONY: clean remake docs depend
 
