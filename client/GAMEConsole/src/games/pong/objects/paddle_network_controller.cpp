@@ -126,6 +126,28 @@ int PaddleNetworkController::update()
 			}
 
 			((Ball*)ball)->update();
+
+			//Send the location of the ball to the server
+
+			std::string msg;
+			if (ball->position.x < 10)
+				msg = "OM000" + std::to_string(ball->position.x);
+			else if (ball->position.x < 100)
+				msg = "OM00" + std::to_string(ball->position.x);
+			else if (ball->position.x < 1000)
+				msg = "OM0" + std::to_string(ball->position.x);
+			else
+				msg = "OM" + std::to_string(ball->position.x);
+
+			if (ball->position.y < 10)
+				msg += ",000" + std::to_string(ball->position.y);
+			else if (ball->position.y < 100)
+				msg += ",00" + std::to_string(ball->position.y);
+			else if (ball->position.y < 1000)
+				msg += ",0" + std::to_string(ball->position.y);
+			else
+				msg += "," + std::to_string(ball->position.y);
+
 		}
 	}
 	else { //Updates
