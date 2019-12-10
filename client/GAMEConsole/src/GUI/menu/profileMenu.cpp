@@ -55,7 +55,7 @@ ProfileMenu::ProfileMenu(sf::RenderWindow* window, Theme* theme, int user_id)
 			switch (count) 
             {
 				case 0: 
-                {//USER LEVEL - DON'T CHANGE
+                {//USER LEVEL - DON'T CHANGEsww
 					token = shortenedString.substr(0, pos);
 					user_level = token.substr(12, pos);
 					break;
