@@ -16,12 +16,13 @@ FontSelectMenu::FontSelectMenu(sf::RenderWindow* window, Theme* theme)
     title = theme->sharpenText(title);
 
     fontPane = new MenuPane(5, window);
-	fontPane->setPosition(10, window->getSize().y / 3.f);
-	fontPane->setSize(window->getSize().x - 20, window->getSize().y / 3.f);
+	fontPane->setPosition(10, title.getGlobalBounds().height + 50);
+	//fontPane->setSize(window->getSize().x - 20, window->getSize().y / 3.f);
+    fontPane->setSize(0, 50 * theme->fonts.size());
     
     for (int i = 0; i < theme->fonts.size(); i++)
     {
-        MenuItem item(theme, "Font " + std::to_string(i), NULL);
+        MenuItem item(theme, theme->fonts.at(i).getInfo().family, NULL);
         item.setPressedFunction(std::bind(&FontSelectMenu::setFont, this, i));
         fontPane->addItem(item);
     }

@@ -24,7 +24,11 @@ class Theme
 
         std::vector<std::string> fontFiles = {
             "bitwise.ttf",
-            "ka1.ttf"
+            "ka1.ttf",
+            "DS-DIGI.ttf",
+            "IHATCS.ttf",
+            "Halo.ttf",
+            "minecraft.ttf"
         };
 
         Theme();
