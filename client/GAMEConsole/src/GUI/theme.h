@@ -26,6 +26,7 @@ class Theme
             "bitwise.ttf",
             "ka1.ttf",
             "DS-DIGI.ttf",
+			"comicbd.ttf",
             "IHATCS.ttf",
             "Halo.ttf",
             "minecraft.ttf"
