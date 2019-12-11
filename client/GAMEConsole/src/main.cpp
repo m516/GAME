@@ -1,6 +1,8 @@
 #include "application.h"
 #include <iostream>
 
+#define TEST_SYSTEM
+
 #ifdef TEST_SYSTEM
 
 #include "GUI/menu/components/menuItem.h"
@@ -87,6 +89,22 @@ int testNetwork()
 	return 0;
 }
 
+int testSession() {
+	/*Create menu item*/
+	MenuItem i(nullptr, "test", &onClicked);
+	mp.addItem(i);
+
+	/*Test click functionality*/
+	i.callPressedFunction();
+	if (!clicked)
+	{
+		std::cout << "Menu system didn't respond to click" << std::endl;
+		return 1;
+	}
+
+	return 0;
+}
+
 int error_code = 0;
 int main() 
 {
@@ -130,6 +148,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Done" << std::endl;
 	return error_code;
+}
 }
 
 #else
