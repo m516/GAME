@@ -103,8 +103,7 @@ namespace Session
 		std::string join_command = "J";
 		if (game->getID() < 10) join_command += "0";
 		join_command += std::to_string(game->getID());
-		join_command += std::to_string(game->getType());
-		join_command += "00000000";
+		join_command += "000000000";
 		NetworkConnection::send(join_command);
 
 		//Set the player number (nobody in game sets player number to 0, etc.)
