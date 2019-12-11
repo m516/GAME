@@ -140,7 +140,7 @@ int PaddleNetworkController::update()
 			((Ball*)ball)->update();
 
 			//Send the location of the ball to the server
-			sendObjectData("OM", (Sprite*)ball);
+			sendObjectData("OM", (Ball*)ball);
 		}
 	}
 	else { //Updates
@@ -167,8 +167,8 @@ void PaddleNetworkController::onMessage()
     #endif
 
 	std::string payload = NetworkConnection::getString();
-	if (payload.substr(0,3)=="00@") {
-		
+	if (payload.substr(0, 3) == "00@") {
+
 		if (payload.size() % 11 == 0) {
 
 
@@ -191,57 +191,56 @@ void PaddleNetworkController::onMessage()
 			}
 
 		}
+	}
+	else if (payload.substr(0, 4) == "P00@") {
 
-		else if (payload.substr(0, 4) == "P00@") {
+		if (payload.size() % 11 == 2) {
 
-			if (payload.size() % 11 == 0) {
-
-				//Extract the players
-				std::vector<std::string> players;
-				int i;
-				for (i = 1; i < payload.size() && payload[i] != 'O'; i += 11) {
-					players.push_back(payload.substr((size_t)(i * 11), 11));
-				}
-				//Extract the objects
-				std::vector<std::string> objects;
-				i++;
-				for (; i < payload.size(); i += 11) {
-					players.push_back(payload.substr((size_t)(i * 11), 11));
-				}
-
-				//Pong-specific functionality
-				//Reject if player size not equal to two
-				if (players.size() != 2) {
-					std::cerr << "I don't know what to do with " << players.size() << " players" << std::endl;
-					return;
-				}
-				//Set left player movement
-				if (paddle_left_action == paddle_action::CONTROL) {
-					float x = std::stof(players[0].substr(3, 4)) / 10000.f;
-					float y = std::stof(players[0].substr(7, 4)) / 10000.f;
-					paddle_left->position.x = x;
-					paddle_left->position.y = y;
-				}
-				//Set right player movement
-				if (paddle_right_action == paddle_action::CONTROL) {
-					float x = std::stof(players[1].substr(3, 4)) / 10000.f;
-					float y = std::stof(players[1].substr(7, 4)) / 10000.f;
-					paddle_right->position.x = x;
-					paddle_right->position.y = y;
-				}
-
-				//Reject if object size not equal to one
-				if (objects.size() != 1) {
-					std::cerr << "I don't know what to do with " << players.size() << " objects" << std::endl;
-					return;
-				}
-
-				//Ball movement
-				float x = std::stof(objects[0].substr(3, 4)) / 10000.f;
-				float y = std::stof(objects[0].substr(7, 4)) / 10000.f;
-				ball->position.x = x;
-				ball->position.y = y;
+			//Extract the players
+			std::vector<std::string> players;
+			int i;
+			for (i = 1; i < payload.size() && payload[i] != 'O'; i += 11) {
+				players.push_back(payload.substr((size_t)i, 11));
 			}
+			//Extract the objects
+			std::vector<std::string> objects;
+			i++;
+			for (; i < payload.size(); i += 11) {
+				players.push_back(payload.substr((size_t)(i * 11), 11));
+			}
+
+			//Pong-specific functionality
+			//Reject if player size not equal to two
+			if (players.size() != 2) {
+				std::cerr << "I don't know what to do with " << players.size() << " players" << std::endl;
+				return;
+			}
+			//Set left player movement
+			if (paddle_left_action == paddle_action::CONTROL) {
+				float x = std::stof(players[0].substr(3, 4)) / 10000.f;
+				float y = std::stof(players[0].substr(7, 4)) / 10000.f;
+				paddle_left->position.x = x;
+				paddle_left->position.y = y;
+			}
+			//Set right player movement
+			if (paddle_right_action == paddle_action::CONTROL) {
+				float x = std::stof(players[1].substr(3, 4)) / 10000.f;
+				float y = std::stof(players[1].substr(7, 4)) / 10000.f;
+				paddle_right->position.x = x;
+				paddle_right->position.y = y;
+			}
+
+			//Reject if object size not equal to one
+			if (objects.size() != 1) {
+				std::cerr << "I don't know what to do with " << players.size() << " objects" << std::endl;
+				return;
+			}
+
+			//Ball movement
+			float x = std::stof(objects[0].substr(3, 4)) / 10000.f;
+			float y = std::stof(objects[0].substr(7, 4)) / 10000.f;
+			ball->position.x = x;
+			ball->position.y = y;
 		}
 	}
 }
