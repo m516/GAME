@@ -149,7 +149,6 @@ int main()
 	std::cout << "Done" << std::endl;
 	return error_code;
 }
-}
 
 #else
 
