@@ -206,7 +206,7 @@ void PaddleNetworkController::onMessage()
 			std::vector<std::string> objects;
 			i++;
 			for (; i < payload.size(); i += 11) {
-				players.push_back(payload.substr((size_t)(i * 11), 11));
+				players.push_back(payload.substr((size_t)i, 11));
 			}
 
 			//Pong-specific functionality
