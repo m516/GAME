@@ -59,24 +59,31 @@ void PaddleNetworkController::sendObjectData(const std::string prefix, Sprite* s
 
 	int sprite_x = int(sprite->position.y * 9999);
 	int sprite_y = int(sprite->position.x * 9999);
-
+	if(sprite_x < 0)
+		msg += "0000";
 	if (sprite_x < 10)
 		msg += "000" + std::to_string(sprite_x);
 	else if (sprite_x < 100)
 		msg += "00" + std::to_string(sprite_x);
 	else if (sprite_x < 1000)
 		msg += "0" + std::to_string(sprite_x);
-	else
+	else if (sprite_x < 10000)
 		msg += std::to_string(sprite_x);
+	else
+		msg += "9999";
 
-	if (sprite_y < 10)
+	if (sprite_y < 0)
+		msg += ",0000";
+	else if (sprite_y < 10)
 		msg += ",000" + std::to_string(sprite_y);
 	else if (sprite_y < 100)
 		msg += ",00" + std::to_string(sprite_y);
 	else if (sprite_y < 1000)
 		msg += ",0" + std::to_string(sprite_y);
-	else
+	else if(sprite_y < 10000)
 		msg += "," + std::to_string(sprite_y);
+	else
+		msg += ",9999";
 	NetworkConnection::send(msg);
 
 }
@@ -193,13 +200,13 @@ void PaddleNetworkController::onMessage()
 				std::vector<std::string> players;
 				int i;
 				for (i = 1; i < payload.size() && payload[i] != 'O'; i += 11) {
-					players.push_back(payload.substr(i * 11, 11));
+					players.push_back(payload.substr((size_t)(i * 11), 11));
 				}
 				//Extract the objects
 				std::vector<std::string> objects;
 				i++;
 				for (; i < payload.size(); i += 11) {
-					players.push_back(payload.substr(i * 11, 11));
+					players.push_back(payload.substr((size_t)(i * 11), 11));
 				}
 
 				//Pong-specific functionality
@@ -236,20 +243,6 @@ void PaddleNetworkController::onMessage()
 				ball->position.y = y;
 			}
 		}
-		
-		////TODO implement when server is fixed
-		//std::size_t i = payload.find_first_of(',');
-		//std::size_t j = 0;
-		//while (i != std::string::npos) {
-		//	std::string p = payload.substr(j, i - j - 1);
-		//	std::cout << p << std::endl;
-		//	if (j - i != 11) {
-		//		std::cerr << "Failed to parse player position: " << p << std::endl;
-		//	}
-
-		//	j = i;
-		//	i = payload.find_first_of(',', i+1);
-		//}
 	}
 }
 
