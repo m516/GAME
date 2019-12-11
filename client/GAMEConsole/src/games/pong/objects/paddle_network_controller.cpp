@@ -130,23 +130,29 @@ int PaddleNetworkController::update()
 			//Send the location of the ball to the server
 
 			std::string msg;
-			if (ball->position.x < 10)
-				msg = "OM000" + std::to_string(ball->position.x);
-			else if (ball->position.x < 100)
-				msg = "OM00" + std::to_string(ball->position.x);
-			else if (ball->position.x < 1000)
-				msg = "OM0" + std::to_string(ball->position.x);
-			else
-				msg = "OM" + std::to_string(ball->position.x);
 
-			if (ball->position.y < 10)
-				msg += ",000" + std::to_string(ball->position.y);
-			else if (ball->position.y < 100)
-				msg += ",00" + std::to_string(ball->position.y);
-			else if (ball->position.y < 1000)
-				msg += ",0" + std::to_string(ball->position.y);
+			int ball_x = int(paddle_right->position.y * 9999);
+			int ball_y = int(paddle_right->position.x * 9999);
+
+			if (ball_x < 10)
+				msg = "OM000" + std::to_string(ball_x);
+			else if (ball_x < 100)
+				msg = "OM00" + std::to_string(ball_x);
+			else if (ball_x < 1000)
+				msg = "OM0" + std::to_string(ball_x);
 			else
-				msg += "," + std::to_string(ball->position.y);
+				msg = "OM" + std::to_string(ball_x);
+
+			if (ball_y < 10)
+				msg += ",000" + std::to_string(ball_y);
+			else if (ball_y < 100)
+				msg += ",00" + std::to_string(ball_y);
+			else if (ball_y < 1000)
+				msg += ",0" + std::to_string(ball_y);
+			else
+				msg += "," + std::to_string(ball_y);
+			NetworkConnection::send(msg);
+
 
 		}
 	}
