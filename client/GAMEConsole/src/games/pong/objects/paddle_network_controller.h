@@ -55,6 +55,7 @@ class PaddleNetworkController : public Controller
 		/*The number of frames before pinging the server*/
 		const int location_ping_time = 4;
         void beginTransmission();
+        void sendObjectData(const std::string prefix, Sprite* sprite);
 		bool isAlpha = false;
 };
 

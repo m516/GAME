@@ -1,8 +1,6 @@
 #include "application.h"
 #include <iostream>
 
-#define TEST_SYSTEM
-
 #ifdef TEST_SYSTEM
 
 #include "GUI/menu/components/menuItem.h"

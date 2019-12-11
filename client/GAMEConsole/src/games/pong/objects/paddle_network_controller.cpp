@@ -44,7 +44,41 @@ void PaddleNetworkController::setScoreBoard(ScoreBoard* score_board)
 
 void PaddleNetworkController::beginTransmission() 
 {
-    // Empty function
+    // Create a ball game object if this client is the Alpha
+	if (isAlpha) {
+		if (ball != nullptr) {
+			sendObjectData("CR", (Ball*)ball);
+		}
+	}
+
+}
+
+void PaddleNetworkController::sendObjectData(const std::string prefix, Sprite* sprite)
+{
+	std::string msg = prefix;
+
+	int sprite_x = int(sprite->position.y * 9999);
+	int sprite_y = int(sprite->position.x * 9999);
+
+	if (sprite_x < 10)
+		msg += "000" + std::to_string(sprite_x);
+	else if (sprite_x < 100)
+		msg += "00" + std::to_string(sprite_x);
+	else if (sprite_x < 1000)
+		msg += "0" + std::to_string(sprite_x);
+	else
+		msg += std::to_string(sprite_x);
+
+	if (sprite_y < 10)
+		msg += ",000" + std::to_string(sprite_y);
+	else if (sprite_y < 100)
+		msg += ",00" + std::to_string(sprite_y);
+	else if (sprite_y < 1000)
+		msg += ",0" + std::to_string(sprite_y);
+	else
+		msg += "," + std::to_string(sprite_y);
+	NetworkConnection::send(msg);
+
 }
 
 int PaddleNetworkController::update()
@@ -58,47 +92,18 @@ int PaddleNetworkController::update()
 	if (location_ping_timer >= location_ping_time) {
 		location_ping_timer = 0;
 
-
-		int paddle_y;
-		int paddle_x;
-
 		if (paddle_left_action == paddle_action_t::BROADCAST)
 		{
-			paddle_y = int(paddle_left->position.y * 9999);
-			paddle_x = int(paddle_left->position.x * 9999);
+			sendObjectData("PM", (Sprite*)paddle_left);
 		}
 		else if (paddle_right_action == paddle_action_t::BROADCAST)
 		{
-			paddle_y = int(paddle_right->position.y * 9999);
-			paddle_x = int(paddle_right->position.x * 9999);
+			sendObjectData("PM", (Sprite*)paddle_right);
 		}
 		else
 		{
 			return 0;
 		}
-
-		//Set the movement command
-		std::string msg;
-
-		if (paddle_x < 10)
-			msg = "PM000" + std::to_string(paddle_x);
-		else if (paddle_x < 100)
-			msg = "PM00" + std::to_string(paddle_x);
-		else if (paddle_x < 1000)
-			msg = "PM0" + std::to_string(paddle_x);
-		else
-			msg = "PM" + std::to_string(paddle_x);
-
-		if (paddle_y < 10)
-			msg += ",000" + std::to_string(paddle_y);
-		else if (paddle_y < 100)
-			msg += ",00" + std::to_string(paddle_y);
-		else if (paddle_y < 1000)
-			msg += ",0" + std::to_string(paddle_y);
-		else
-			msg += "," + std::to_string(paddle_y);
-
-		NetworkConnection::send(msg);
 	}
 
     // Controlls ball, score if alpha
@@ -128,32 +133,7 @@ int PaddleNetworkController::update()
 			((Ball*)ball)->update();
 
 			//Send the location of the ball to the server
-
-			std::string msg;
-
-			int ball_x = int(paddle_right->position.y * 9999);
-			int ball_y = int(paddle_right->position.x * 9999);
-
-			if (ball_x < 10)
-				msg = "OM000" + std::to_string(ball_x);
-			else if (ball_x < 100)
-				msg = "OM00" + std::to_string(ball_x);
-			else if (ball_x < 1000)
-				msg = "OM0" + std::to_string(ball_x);
-			else
-				msg = "OM" + std::to_string(ball_x);
-
-			if (ball_y < 10)
-				msg += ",000" + std::to_string(ball_y);
-			else if (ball_y < 100)
-				msg += ",00" + std::to_string(ball_y);
-			else if (ball_y < 1000)
-				msg += ",0" + std::to_string(ball_y);
-			else
-				msg += "," + std::to_string(ball_y);
-			NetworkConnection::send(msg);
-
-
+			sendObjectData("OM", (Sprite*)ball);
 		}
 	}
 	else { //Updates

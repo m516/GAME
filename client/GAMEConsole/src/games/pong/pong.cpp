@@ -54,7 +54,7 @@ void Pong::beginNetworkGame()
 	left_controller->setPaddle(paddle_left);
 
 	//Create network controller, paddle controller
-	paddle_network_controller = new PaddleNetworkController();
+	paddle_network_controller = new PaddleNetworkController;
 	paddle_network_controller->setBall(ball);
 	paddle_network_controller->setScoreBoard(scoreboard);
 
