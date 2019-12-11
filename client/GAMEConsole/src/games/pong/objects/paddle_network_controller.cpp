@@ -57,8 +57,8 @@ void PaddleNetworkController::sendObjectData(const std::string prefix, Sprite* s
 {
 	std::string msg = prefix;
 
-	int sprite_x = int(sprite->position.y * 9999);
-	int sprite_y = int(sprite->position.x * 9999);
+	int sprite_x = int(sprite->position.x * 9999);
+	int sprite_y = int(sprite->position.y * 9999);
 	if(sprite_x < 0)
 		msg += "0000";
 	if (sprite_x < 10)
