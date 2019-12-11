@@ -13,10 +13,12 @@ namespace Session
 
 	std::vector<OnlineGame> games;
 	std::vector<User> friends;
+	int player_number = -1;
 
 	OnlineGame::OnlineGame() 
     {
-        // Empty constructor
+        this->id = -1;
+		this->status = OnlineGame::Status::DISCONNECTED;
 	}
 
 	OnlineGame::OnlineGame(int id, Status inital_status)
@@ -28,11 +30,11 @@ namespace Session
 	std::string OnlineGame::getInfo()
 	{
 		return "Game "+std::to_string(id)+
-			" with "+ 
+			" ("+ 
 			std::to_string(num_players)+
-			" of "+
+			"/"+
 			std::to_string(max_players)+
-			" players";
+			" p)";
 	}
 
 	int OnlineGame::getID()
@@ -64,7 +66,7 @@ namespace Session
 
 	void createGame(int game_type, int num_players)
 	{
-		NetworkConnection::send("PLS" + std::to_string(game_type) + std::to_string(num_players));
+		NetworkConnection::send("C" + std::to_string(game_type) + std::to_string(num_players));
 	}
 
 	void connectToGame(OnlineGame* game)
@@ -77,16 +79,37 @@ namespace Session
 		NetworkConnection::send("G");
 	}
 
+	void joinGame(int id) {
+		OnlineGame* og = getGame(id);
+		if (og == nullptr) {
+			current_game = OnlineGame(id);
+			updateAvailableGames();
+		}
+		else {
+			joinGame(og);
+		}
+	}
+
 	void joinGame(OnlineGame* game)
 	{
+		if (game == nullptr) {
+			std::cerr << "Cannot join a null game!" << std::endl;
+			return;
+		}
+
 		current_game = OnlineGame(*game);
+		current_game.status = OnlineGame::Status::JOINING;
 		//Create join command
 		std::string join_command = "J";
 		if (game->getID() < 10) join_command += "0";
 		join_command += std::to_string(game->getID());
-		join_command += std::to_string(game->getType());
-		join_command += "00000000";
+		join_command += "000000000";
 		NetworkConnection::send(join_command);
+
+		//Set the player number (nobody in game sets player number to 0, etc.)
+		player_number = game->num_players;
+		if (player_number == 0) current_role = OnlineGame::Interaction::CREATOR;
+		else current_role = OnlineGame::Interaction::PLAYER;
 
 		std::cout << "Switched game: " << current_game.getInfo() << std::endl;
 	}
@@ -119,7 +142,9 @@ namespace Session
 			int num_players = s[3] - '0';
 			int max_players = s[5] - '0';
 
-			OnlineGame og(index, is_open ? Session::OnlineGame::Status::AVAILABLE:Session::OnlineGame::Status::IN_PROGRESS);
+			OnlineGame og(index, 
+				is_open ? num_players == max_players ? Session::OnlineGame::Status::WAITING_FOR_START : Session::OnlineGame::Status::AVAILABLE :
+				Session::OnlineGame::Status::IN_PROGRESS);
 			og.num_players = num_players;
 			og.max_players = max_players;
 			std::cout << og.getInfo() << std::endl;
@@ -151,6 +176,8 @@ namespace Session
             {
 				current_game = OnlineGame(*og);
 			}
+
+			updateAvailableGames();
 		}
 		else if (s == "Successfully Joined") 
         {
@@ -167,5 +194,6 @@ namespace Session
 	{
 		current_game = OnlineGame();
 		current_role = OnlineGame::Interaction::NONE;
+		player_number = -1;
 	}
 }

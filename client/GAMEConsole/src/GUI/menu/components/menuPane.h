@@ -26,6 +26,11 @@ class MenuPane : public GUIElement
         */
         void addItem(MenuItem item);
 
+		/**
+		Clear all items
+		*/
+		void clearItems();
+
         /**
         The selected item's index
         */

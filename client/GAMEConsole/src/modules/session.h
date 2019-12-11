@@ -61,6 +61,7 @@ namespace Session
 
     extern std::vector<OnlineGame> games;
     extern std::vector<User> friends;
+	extern int player_number;
 
     void initialize();
     void updateAvailableGames();
@@ -68,6 +69,7 @@ namespace Session
     void connectToGame(OnlineGame* game); 
     void startGame();
     void joinGame(OnlineGame* game);
+	void joinGame(int id);
     OnlineGame* getGame(int id);
     OnlineGame::Status getStatus();
     void networkMessageListener();

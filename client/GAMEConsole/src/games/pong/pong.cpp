@@ -25,7 +25,7 @@ Pong::Pong()
 	//Wait to initialize the controllers
 	left_controller = 0;
 	right_controller = 0;
-	paddle_network_controller = 0;
+	paddle_network_controller = nullptr;
 }
 
 Pong::~Pong() 
@@ -48,24 +48,43 @@ void Pong::beginNetworkGame()
 	//Create the right paddle controller
 	right_controller = new PaddleKeyboardController;
 	right_controller->setPaddle(paddle_right);
-	right_controller->setKey(KeyboardController::Control::UP, sf::Keyboard::I);
-	right_controller->setKey(KeyboardController::Control::DOWN, sf::Keyboard::K);
-	right_controller->enable();
 
 	//Create the left paddle controller
 	left_controller = new PaddleKeyboardController;
 	left_controller->setPaddle(paddle_left);
-	left_controller->enable();
 
-	//Create network controller
-	paddle_network_controller = new PaddleNetworkController();
-	paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
-	paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	//Create network controller, paddle controller
+	paddle_network_controller = new PaddleNetworkController;
+	paddle_network_controller->setBall(ball);
+	paddle_network_controller->setScoreBoard(scoreboard);
+
+	if (Session::player_number == 0) {
+		paddle_network_controller->setAlpha(true);
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+
+		left_controller->enable();
+	}
+	else if (Session::player_number == 1) {
+		paddle_network_controller->setAlpha(false);
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::CONTROL);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::BROADCAST);
+
+		right_controller->enable();
+	}
+	else {
+		paddle_network_controller->setAlpha(false);
+		std::cerr << "No such player: " << std::to_string(Session::player_number) << std::endl;
+		paddle_network_controller->setLeftPaddle(paddle_left, PaddleNetworkController::paddle_action::BROADCAST);
+		paddle_network_controller->setRightPaddle(paddle_right, PaddleNetworkController::paddle_action::CONTROL);
+	}
 	paddle_network_controller->initialize();
 	paddle_network_controller->enable();
 
 	//Tell the lock to call the deinitialize() function when unlocked
 	unlock_function = std::bind(&Pong::deinitialize, this);
+
+	std::cout << "My ID is " + std::to_string(Session::player_number) << std::endl;
 
 	initialized = true;
 }
@@ -125,12 +144,36 @@ void Pong::update()
 	//Update controllers
 	if(right_controller != NULL) right_controller->update();
 	if(left_controller != NULL) left_controller->update();
-	if(paddle_network_controller != NULL) paddle_network_controller->update();
+	//If playing an offline game
+	if (paddle_network_controller == NULL) {
+		//Control ball, score
+		if (ball->position.x < 0.f)
+		{
+			ball->position.x = 0.1f;
+			ball->position.y = 1.f - ball->position.y;
+			ball->velocity.x = -ball->velocity.x;
+			scoreboard->incrementScore(1);
+
+		}
+
+		if (ball->position.x > 1.f)
+		{
+			ball->position.x = 0.9f;
+			ball->position.y = 1.f - ball->position.y;
+			ball->velocity.x = -ball->velocity.x;
+			scoreboard->incrementScore(0);
+		}
+
+		ball->update();
+	}
+	else { //If playing a network game
+		//Let the network controller do its thing
+		paddle_network_controller->update();
+	}
 
 	//Update sprites
 	paddle_right->update();
 	paddle_left->update();
-	ball->update();
 
 	/*
 	Normally in large C++ programs, 
@@ -168,31 +211,28 @@ void Pong::update()
 	if (ball->position.y                < 0.f && ball->velocity.y < 0.0f) ball->velocity.y = -ball->velocity.y;
 	if (ball->position.y + ball->size.y > 1.f && ball->velocity.y > 0.0f) ball->velocity.y = -ball->velocity.y;
 
-	if (ball->position.x < 0.f)
-    {
-		ball->position.x = 0.1f;
-		ball->position.y = 1.f- ball->position.y;
-		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(0);
-	}
-
-	if (ball->position.x > 1.f) 
-    {
-		ball->position.x = 0.9f;
-		ball->position.y = 1.f - ball->position.y;
-		ball->velocity.x = -ball->velocity.x;
-		scoreboard->incrementScore(1);
-	}
+	
 }
 
 void Pong::render() 
 {
 	Session::OnlineGame* current_game = Session::currentGame();
 
-	if (current_game != nullptr && current_game->status < Session::OnlineGame::Status::IN_PROGRESS)
-    {
-		unlockRender();
-		return;
+	//If the current game was disconnected or failed
+	if (current_game != nullptr) {
+		if (current_game->status < Session::OnlineGame::Status::JOINING)
+		{
+			//Halt the game
+			Dialog::show(this, "The online game broke :(");
+			unlockRender();
+			return;
+		}
+		else if (!NetworkConnection::isConnected()) {
+			//Halt the game
+			Dialog::show(this, "Couldn't connect to server :(");
+			unlockRender();
+			return;
+		}
 	}
 
 	update();

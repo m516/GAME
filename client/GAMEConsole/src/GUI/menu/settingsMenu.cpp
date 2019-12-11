@@ -1,4 +1,5 @@
 #include "settingsMenu.h"
+#include "fontSelectMenu.h"
 
 SettingsMenu::SettingsMenu(sf::RenderWindow* window, Theme* theme)
 {
@@ -14,21 +15,13 @@ SettingsMenu::SettingsMenu(sf::RenderWindow* window, Theme* theme)
 
     settingsItems = new MenuPane(5, window);
     settingsItems->setPosition(5, title.getGlobalBounds().height + 30);
-    settingsItems->setSize(window->getSize().x - 5, window->getSize().y - title.getGlobalBounds().height - 100);
+    settingsItems->setSize(0, 50 * 2);
 
-    MenuItem settingsItem(theme, "Volume");
-    settingsItems->addItem(settingsItem);
-
-    settingsItem = MenuItem(theme, "Logout");
+    MenuItem settingsItem(theme, "Menu Font");
+    settingsItem.setPressedFunction(std::bind(&SettingsMenu::showFontSelect, this));
     settingsItems->addItem(settingsItem);
 
     settingsItem = MenuItem(theme, "Credits");
-    settingsItems->addItem(settingsItem);
-
-    settingsItem = MenuItem(theme, "Logout");
-    settingsItems->addItem(settingsItem);
-
-    settingsItem = MenuItem(theme, "Back");
     settingsItems->addItem(settingsItem);
 }
 
@@ -45,4 +38,10 @@ void SettingsMenu::render()
         settingsItems->update();
         settingsItems->render();
     }
+}
+
+void SettingsMenu::showFontSelect()
+{
+    FontSelectMenu f(renderer, theme);
+    f.lockRender();
 }

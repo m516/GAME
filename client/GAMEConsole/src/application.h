@@ -16,7 +16,7 @@ class Application
 		void run();
 
 		sf::RenderWindow* window = 0;
-		Theme theme;
+		Theme theme = Theme();
 		Renderer* renderer = 0;
 		Events* events = 0;
 };

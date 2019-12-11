@@ -28,7 +28,7 @@ namespace NetworkConnection
 	} Listener;
 
 	//Add a listener
-	void addListener(Listener listener, std::function<void()> function);
+	std::function<void()>* addListener(Listener listener, std::function<void()> function);
 	void onOpen(client_t* c, websocketpp::connection_hdl hdl);
 	void onFail(client_t* c, websocketpp::connection_hdl hdl);
 	void onMessage(client_t* c, websocketpp::connection_hdl hdl, message_ptr msg);

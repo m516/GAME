@@ -5,7 +5,31 @@ Theme* Theme::universal_theme = new Theme();
 
 Theme::Theme()
 {
-    // Empty constructor
+    userFont = 0;
+
+    // Load all fonts into font vector
+    for (int i = 0; i < fontFiles.size(); i++)
+    {
+        sf::Font font;
+        font.loadFromFile(fontDirectory + fontFiles[i]);
+        fonts.push_back(sf::Font(font));
+    }
+}
+
+/**
+ * Get the set user's font
+ */
+sf::Font Theme::getUserFont()
+{
+    return fonts.at(userFont);
+}
+
+/**
+ * Set the new font
+ */
+void Theme::setUserFont(int f)
+{
+    userFont = f;
 }
 
 /**
@@ -13,7 +37,9 @@ Theme::Theme()
  */
 bool Theme::loadGenericFont()
 {
-	return font_standard.loadFromFile("assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+    font_standard = fonts.at(userFont);
+    return true;
+	// return font_standard.loadFromFile("assets/fonts/bitwise.ttf");
 }
 
 /**
