@@ -37,6 +37,7 @@ int testMenuSystem() {
 
 int testTheme() 
 {
+	/*Test theme components that are critical to menus, games*/
 	if (Theme::universal_theme == nullptr) 
     {
 		std::cout << "Universal theme doesn't exist. This will cause GUI elements without a reference to a theme to break" << std::endl;
@@ -54,12 +55,14 @@ int testTheme()
 int testNetwork() 
 {
 	clicked = false;
-	NetworkConnection::addListener(NetworkConnection::Listener::OPEN, &onClicked);
-	NetworkConnection::connect();
-	NetworkConnection::send("blah");
 	try 
     {
-        // Empty try
+		/*Test the network connection with the listener created above*/
+		NetworkConnection::addListener(NetworkConnection::Listener::OPEN, &onClicked);
+		/*Attempt to connect to the server*/
+		NetworkConnection::connect();
+		/*Send something to the server*/
+		NetworkConnection::send("blah");
 	}
 	catch (const std::exception & ex) 
     {
@@ -79,30 +82,31 @@ int testNetwork()
 		return 3;
 	}
 
+	/*Check for a response from the server*/
 	if (!clicked) 
     {
 		std::cout << "Failed to set flag" << std::endl;
 		return 4;
 	}
 
+	/*Close the connection*/
 	NetworkConnection::disconnect();
 	return 0;
 }
 
 int testSession() {
-	/*Create menu item*/
-	MenuItem i(nullptr, "test", &onClicked);
-	mp.addItem(i);
-
-	/*Test click functionality*/
-	i.callPressedFunction();
-	if (!clicked)
-	{
-		std::cout << "Menu system didn't respond to click" << std::endl;
+	try {
+		/*Begin by attempting to initialize the session. 
+		If we can't, we're in trouble*/
+		Session::initialize();
+		/*Create a new game, which tests all the features 
+		of the connection between the session and the network*/
+		Session::startGame();
+		return 0;
+	}
+	catch (...) {
 		return 1;
 	}
-
-	return 0;
 }
 
 int error_code = 0;
@@ -111,6 +115,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Hello testing environment!" << std::endl;
 
+	//Menu
 	std::cout << "Testing menu system" << std::endl;
 	if (testMenuSystem()) 
     {
@@ -122,6 +127,7 @@ int main()
 		std::cout << "Menu system passed" << std::endl;
 	}
 
+	//Theme
 	std::cout << std::endl;
 	std::cout << "Testing theme" << std::endl;
 	if (testTheme()) 
@@ -134,6 +140,7 @@ int main()
 		std::cout << "Theme passed" << std::endl;
 	}
 
+	//Network
 	std::cout << std::endl;
 	std::cout << "Testing Newtork module" << std::endl;
 	if (testNetwork()) 
@@ -143,6 +150,27 @@ int main()
 	else 
     {
 		std::cout << "Network passed" << std::endl;
+	}
+	std::cout << "Testing Newtork module again" << std::endl;
+	if (testNetwork())
+	{
+		std::cout << "Network failed (ignoring)" << std::endl;
+	}
+	else
+	{
+		std::cout << "Network passed" << std::endl;
+	}
+
+	//Session
+	std::cout << std::endl;
+	std::cout << "Testing Session module" << std::endl;
+	if (testSession())
+	{
+		std::cout << "Session failed (ignoring)" << std::endl;
+	}
+	else
+	{
+		std::cout << "Session passed" << std::endl;
 	}
 
 	std::cout << std::endl;
