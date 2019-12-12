@@ -3,9 +3,16 @@
 #include <thread>
 #include <iostream>
 
-//See https://en.cppreference.com/w/cpp/utility/functional/function
+//#define LOCAL_SERVER
+//#define TEST_SYSTEM
+#define NETWORK_DEBUG
 
+#ifdef LOCAL_SERVER
+#define SERVER_URI "ws://localhost:8080"
+#define TEST_SYSTEM
+#else
 #define SERVER_URI "ws://coms-309-sr-5.misc.iastate.edu:8080"
+#endif
 
 #ifdef TEST_SYSTEM
 #define NETWORK_DEBUG
@@ -160,9 +167,10 @@ namespace NetworkConnection
         return message;
     }
 
-    void addListener(Listener listener, std::function<void()> function) 
+	std::function<void()>* addListener(Listener listener, std::function<void()> function)
     {
         listeners[(int)listener].push_back(function);
+		return &listeners[(int)listener][listeners[(int)listener].size() - 1];
     }
 
     void runFunctions(std::vector<std::function<void()>>* function_list) 

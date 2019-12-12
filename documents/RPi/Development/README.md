@@ -245,7 +245,7 @@ Build the project with Make with the following command:
 
 `make`
 
-Note that the libraries take a lot of RAM, so although the Pi 3s have four cores, they do not have enough space for building with multiple threads, so the following command won't work:
+Increase the speed of the compilation process by using multiple threads
 
 `make -j4`
 
@@ -254,5 +254,26 @@ Testing can be done by setting the TEST variable to "true"
 `make all TEST=true`
 
 ## Run the GAME Console
+### On a GNOME terminal emulator
+---
 To run tests or the actual program, simply run `./game`
 
+
+### Via SSH onto a GNOME desktop environment
+---
+Set the display to use with `export DISPLAY=:0`
+
+Then to run tests or the actual program, simply run `./game`
+
+### Via SSH onto a Debian-based OS without a desktop environment
+---
+
+Tests are meant to run without X, so to test, simply run `./game`
+
+If Xorg isn't installed on your device, do so now: `sudo apt-get install xorg`
+
+Set the display to use with `export DISPLAY=:0`
+
+Start the X server and push it into the background with `sudo X &`
+
+Then to run the actual program, simply run `./game`

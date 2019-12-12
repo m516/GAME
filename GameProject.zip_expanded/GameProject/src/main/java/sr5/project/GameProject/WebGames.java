@@ -7,12 +7,12 @@ import java.util.Map;
 public class WebGames 
 {
 	Map<String, Integer> GameIDIndex = new HashMap<>();
-	
+
 	//ArrayList of objects
-	ArrayList <WebGameObject> objects = new ArrayList<WebGameObject>();
-	ArrayList <WebGameObject> players = new ArrayList<WebGameObject>();
-	ArrayList <WebGameObject> spectators = new ArrayList<WebGameObject>();
-	
+	volatile ArrayList <WebGameObject> objects = new ArrayList<WebGameObject>();
+	volatile ArrayList <WebGameObject> players = new ArrayList<WebGameObject>();
+	volatile ArrayList <WebGameObject> spectators = new ArrayList<WebGameObject>();
+
 	//Max number of players
 	private int pMax = 0;
 	//Score
@@ -22,12 +22,12 @@ public class WebGames
 	private boolean isOver = false;
 	private String winner = "";
 	private String gameType;
-	
+
 	public WebGames(String nGameType, int maxPlayers)
 	{
 		gameType = nGameType;
 		pMax = maxPlayers;
- 	}
+	}
 	public boolean addPlayer(WebGameObject player)
 	{
 		if(players.size() >= pMax)
@@ -63,7 +63,14 @@ public class WebGames
 	}
 	public void setObjectMovement(int ObjectNumber, String x, String y)
 	{
+		//Quick patch for object count
+		//TODO fix
+		while(objects.size()<=ObjectNumber) {
+			objects.add(new WebGameObject(objects.size()-1, "0000","0000"));
+		}
+
 		WebGameObject o = new WebGameObject(objects.get(ObjectNumber), x, y);
+
 		objects.set(ObjectNumber, o);
 	}
 	public void setPlayerMovement(int playerNumber, String x, String y)
@@ -78,7 +85,7 @@ public class WebGames
 		{
 			s = s + String.format("%02d@%s%s", i, players.get(i).getX(), players.get(i).getY());
 		}
-		
+
 		return s;
 	}
 	public String getObjectLocations()
@@ -87,8 +94,8 @@ public class WebGames
 		for(int i = 0; i < objects.size(); i++)
 		{
 			//s = s + i + "@" + objects.get(i).getX() + objects.get(i).getY();
-			
-			
+
+
 			s = s + String.format("%02d@%s%s" ,i, objects.get(i).getX(), objects.get(i).getY());
 		}
 		return s;

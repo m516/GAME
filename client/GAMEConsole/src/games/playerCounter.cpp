@@ -29,6 +29,7 @@ PlayerCounter::~PlayerCounter()
 
 void PlayerCounter::render()
 {
+	//Set the counter so we know how to periodically check the server for game stats
 	counter++;
 	if (counter == 100) 
     {
@@ -36,6 +37,10 @@ void PlayerCounter::render()
 		Session::updateAvailableGames();
 	}
 
+	//Check for a full game
+	if (isFull()) unlockRender();
+
+	//Draw stuff!
 	if (renderer != NULL) 
 	{
 
@@ -66,10 +71,10 @@ void PlayerCounter::render()
 
 int PlayerCounter::getNumPlayers()
 {
-	return 0;
+	return Session::currentGame()->num_players;
 }
 
 bool PlayerCounter::isFull()
 {
-	return false;
+	return Session::currentGame()->num_players >= Session::currentGame()->max_players;
 }
