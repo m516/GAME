@@ -57,4 +57,50 @@ public class TestUserService {
         assertEquals(333, user.getScore());
         assertEquals("addressHere", user.getAddress());
     }
+    
+    @Test
+    public void deleteUserByIdTest() {
+    	
+    	when(repo.delete(userOne)).thenReturn(java.util.Option.of(new User(1, "YodaSpock", 40, "address1here")));
+    	
+    	User userOne = new User(1, "YodaSpock", 40, "address1here");
+    	repo.delete(userOne);
+    }
+    
+    @Test
+    public void updateuserByIdTest() {
+    	  when(repo.findById(1)).thenReturn(java.util.Optional.of(new User(1, "ClimbingFan", 333, "addressHere")));
+
+          User user = userService.updateUser(1, "YodaSpock", 40, "address1here");
+          assertEquals(1, user.getId());
+          assertEquals("YodaSpock", user.getUsername());
+          assertEquals(40, user.getScore());
+          assertEquals("address1here", user.getAddress());
+    }
+    @Test
+    public void getUpdategetTest() {
+    	 when(repo.findById(1)).thenReturn(java.util.Optional.of(new User(1, "ClimbingFan", 333, "addressHere")));
+
+         User user = userService.getUser(1);
+         assertEquals(1, user.getId());
+         assertEquals("ClimbingFan", user.getUsername());
+         assertEquals(333, user.getScore());
+         assertEquals("addressHere", user.getAddress());
+         
+         when(repo.findById(1)).thenReturn(java.util.Optional.of(new User(1, "ClimbingFan", 333, "addressHere")));
+
+         User user = userService.updateUser(1, "YodaSpock", 40, "address1here");
+         assertEquals(1, user.getId());
+         assertEquals("YodaSpock", user.getUsername());
+         assertEquals(40, user.getScore());
+         assertEquals("address1here", user.getAddress());
+         
+         User user = userService.getUser(1);
+         assertEquals(1, user.getId());
+         assertEquals("YodaSpock", user.getUsername());
+         assertEquals(40, user.getScore());
+         assertEquals("address1here", user.getAddress());
+         
+         
+    }
 }
